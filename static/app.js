@@ -22,11 +22,7 @@ const CORE_MACRO_HUBS = new Set([
   'domain-ai-cognitive-systems',
   'domain-medicina-salute',
   'domain-filosofia-valori',
-  'domain-design-creativita',
-  'proj-streaksup-app',
-  'universal-ai-brain',
-  'aule-studio-app',
-  'proj-caretrack'
+  'domain-design-creativita'
 ]);
 
 // Terminal and Activity Logger State
@@ -472,19 +468,20 @@ function renderGraphData() {
     const nid = (n.id || '').toLowerCase();
     const pl = (n.primary_label || '').toUpperCase();
     const cat = (n.category || '').toLowerCase();
-    const d = degrees[n.id] || 0;
 
-    // Floor 0: Attico Macro-Domini & Core Hubs (Identità, Nuovi domini domain-*, Connettoma primario)
-    if (nid === 'person-pierfrancesco' || nid.startsWith('domain-') || ['domain', 'root_domain', 'macro_domain'].includes(cat) || ['bi-hemispheric-model', 'fastapi-core', 'sqlite-wal', 'cervello-cognitivo-unificato', 'concept-modular-domain-subgraphs', 'concept-graph-of-graphs-hypergraph'].includes(nid) || (['ARCHITECTURE', 'MENTAL_MODEL'].includes(pl) && d >= 6)) {
+    // Floor 0: Attico Macro-Domini & Core Hubs (SOLO IDENTITÀ E MACRO-DOMINI)
+    if (nid === 'person-pierfrancesco' || nid.startsWith('domain-') || ['domain', 'root_domain', 'macro_domain'].includes(cat)) {
       return 0;
     }
     
-    // Floor 2: Moduli, Algoritmi & Dettagli Atomici
-    if (['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'API_SPEC', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE', 'BUSINESS_LOGIC'].includes(pl) || cat.includes('schema') || cat.includes('token') || cat.includes('dettaglio') || cat.includes('modul')) {
-      return 2;
+    // Floor 2: Moduli, Algoritmi & Dettagli Atomici (NON progetti o applicazioni)
+    if (cat !== 'application_project' && !nid.startsWith('proj-') && !nid.endsWith('-app') && nid !== 'universal-ai-brain' && nid !== 'aule-studio-app') {
+      if (['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'API_SPEC', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE', 'BUSINESS_LOGIC'].includes(pl) || cat.includes('schema') || cat.includes('token') || cat.includes('dettaglio') || cat.includes('modul')) {
+        return 2;
+      }
     }
     
-    // Floor 1: Progetti & Aree Tematiche (Episodi, Intenti, Valori, Idee)
+    // Floor 1: Progetti, Applicazioni, Episodi, Intenti, Valori, Idee
     return 1;
   };
 

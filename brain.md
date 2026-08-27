@@ -68,7 +68,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-27 21:33:01 UTC | **Nodi Totali:** 196 (SX: 123 · DX: 73) | **Sinapsi:** 562
+> **Data Generazione:** 2026-08-27 21:36:35 UTC | **Nodi Totali:** 196 (SX: 123 · DX: 73) | **Sinapsi:** 562
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -272,15 +272,15 @@
   - **Dettagli:** `id`: node_commit_965f0a8, `label`: Commit 965f0a8 (110 Nodes, 253 Synapses), `type`: GRAPH_STATE, `layer`: DEVOPS_TIMELINE
 - **Dominio: Ingegneria Software & Architetture** (`domain-software-engineering`)
   - **Tags:** `#domain-hub` `#software-engineering` `#architecture` `#systems` `#mobile-ios` `#backend`
-  - **Sintesi:** Macro-dominio che racchiude tutte le applicazioni, architetture, stack tecnologici, protocolli e sistemi software.
+  - **Sintesi:** Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite.
   - **Dettagli:** `scope`: All active software projects and engineering foundations
 - **Dominio: Medicina, Salute & Fisiologia** (`domain-medicina-salute`)
   - **Tags:** `#domain-hub` `#medicina` `#salute` `#dermatologia` `#podologia` `#fisiologia`
-  - **Sintesi:** Macro-dominio dedicato a nozioni mediche, diagnosi, patologie specialistiche, fisiologia e benessere.
+  - **Sintesi:** Medicina, Salute, Nutrizione, Fisiologia, Fitness e Bioinformatica Deep Learning (ricerca ICAR-CNR).
   - **Dettagli:** `scope`: Medical knowledge, health entities, clinical logic
 - **Dominio: Sistemi Cognitivi, Neuro-Simbolico & LLM** (`domain-ai-cognitive-systems`)
   - **Tags:** `#domain-hub` `#cognitive-ai` `#neuro-symbolic` `#graphrag` `#memory-systems` `#mcp`
-  - **Sintesi:** Macro-dominio dedicato a grafi di conoscenza, memorie persistenti, epistemologia, algoritmi di ricerca e protocolli MCP.
+  - **Sintesi:** Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP (Model Context Protocol), Metacognizione.
   - **Dettagli:** `scope`: Cognitive architectures, graph reasoning, LLM symbiosis
 - **Epistemic Grading (Extracted/Inferred/Ambiguous)** (`node-epistemic-grading-system`)
   - **Tags:** `#mutation-import` `#epistemic-layer` `#representation-feature`
@@ -710,7 +710,7 @@
   - **Dettagli:** `paradigm`: Co-evolution, `substrate`: Dual Brain Knowledge Graph, `accessibility`: Universal to all LLM agents
 - **Dominio: Design, Brand Voice & Creatività** (`domain-design-creativita`)
   - **Tags:** `#domain-hub` `#design-system` `#ui-ux` `#brand-voice` `#creativita` `#estetica`
-  - **Sintesi:** Macro-dominio dedicato ai design token, palette cromatiche, UX flow, brand voice e composizioni creative.
+  - **Sintesi:** UI/UX Design Dark-Tech, Graphic Design, Brand Voice, Arte, Musica ed Ear Training.
   - **Dettagli:** `scope`: Aesthetic world, UI/UX systems, sensory design
 - **Evoluzione UI & Architettura di Memoria Resiliente** (`session-evolution-ui-persistence`)
   - **Tags:** `#session-evolution` `#ui-polish` `#resilience` `#centaur` `#antigravity`
@@ -798,7 +798,7 @@
   - **Dettagli:** `anti_pattern_blocked`: Reset amnesico della chat e perdita del filo logico, `principle`: Ogni sessione AI è un frammento transitorio; il grafo è la coscienza persistente unificata., `temporal_scope`: Passato, presente e futuro
 - **Dominio: Filosofia, Etica & Principi di Vita** (`domain-filosofia-valori`)
   - **Tags:** `#domain-hub` `#filosofia` `#etica` `#resilienza` `#stoicismo` `#valori-personali`
-  - **Sintesi:** Macro-dominio dedicato all'etica, resilienza stoica, indipendenza, lealtà e lezioni di vita.
+  - **Sintesi:** Filosofia, Modelli Mentali, Principi etici, Decision Making, abitudini e autodisciplina.
   - **Dettagli:** `scope`: Personal values, life lessons, human relationships
 - **Lealtà & Cura dei Legami Significativi** (`val-transparency-loyalty`)
   - **Tags:** `#core-value` `#loyalty` `#family` `#friendship`
@@ -806,7 +806,7 @@
   - **Dettagli:** `expression`: Presenza attiva, riconoscenza esplicita e protezione dei rapporti veri
 - **Pierfrancesco Amendola** (`person-pierfrancesco`)
   - **Tags:** `#identity` `#creator` `#software-architect` `#ai-researcher` `#human-core`
-  - **Sintesi:** Ingegnere del software, ricercatore AI e creatore del Universal Cognitive Brain.
+  - **Sintesi:** Identità centrale, connettoma fondativo e profilo di Pierfrancesco Amendola.
   - **Dettagli:** `role`: Architect & Founder, `location`: Italy
 - **Privacy-by-Design & Zero-Cloud** (`streaksup-privacy-zero-cloud`)
   - **Tags:** `#privacy-by-design` `#zero-cloud` `#no-tracking` `#data-sovereignty`

@@ -746,8 +746,8 @@ def get_node_subgraph(
 def determine_node_floor_level(node_id: str, primary_label: str, category: str, degree: int = 0, explicit_level: Optional[int] = None) -> int:
     """
     Classifica il piano nel Palazzo Cognitivo:
-    - Piano 0: Attico Macro-Domini & Core Hubs (Identità, Nuovi Macro-Domini domain-*, Connettoma Primario)
-    - Piano 1: Progetti & Aree Tematiche (Applicazioni attive, Episodi conversazionali, Intenti, Valori)
+    - Piano 0: Attico Macro-Domini & Core Hubs (SOLO Identità person-pierfrancesco e Macro-Domini domain-*)
+    - Piano 1: Progetti & Applicazioni (StreaksUp, AuleStudio, CareTrack, Brain, Episodi, Intenti, Valori)
     - Piano 2: Moduli, Algoritmi & Dettagli Atomici (Schemi dati, Algoritmi specialistici, Token UI)
     """
     if explicit_level is not None and explicit_level in (0, 1, 2):
@@ -756,13 +756,14 @@ def determine_node_floor_level(node_id: str, primary_label: str, category: str, 
     pl = (primary_label or "").upper()
     cat = (category or "").lower()
     
-    # Floor 0: Attico Macro-Domini & Core Hubs
-    if nid == 'person-pierfrancesco' or nid.startswith('domain-') or cat in ('domain', 'root_domain', 'macro_domain') or nid in ['bi-hemispheric-model', 'fastapi-core', 'sqlite-wal', 'cervello-cognitivo-unificato', 'concept-modular-domain-subgraphs', 'concept-graph-of-graphs-hypergraph'] or (pl in ['ARCHITECTURE', 'MENTAL_MODEL'] and degree >= 6):
+    # Floor 0: Attico Macro-Domini & Core Hubs (SOLO IDENTITÀ E MACRO-DOMINI)
+    if nid == 'person-pierfrancesco' or nid.startswith('domain-') or cat in ('domain', 'root_domain', 'macro_domain'):
         return 0
-    # Floor 2: Moduli Atomici, Algoritmi, Token, Schemi
-    if pl in ['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'API_SPEC', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE', 'BUSINESS_LOGIC'] or 'schema' in cat or 'token' in cat or 'dettaglio' in cat:
-        return 2
-    # Floor 1: Progetti, Episodi, Intenti, Valori, Idee
+    # Floor 2: Moduli Atomici, Algoritmi, Token, Schemi (NON progetti)
+    if cat != 'application_project' and not nid.startswith('proj-') and not nid.endswith('-app') and nid not in ('universal-ai-brain', 'aule-studio-app'):
+        if pl in ['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'API_SPEC', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE', 'BUSINESS_LOGIC'] or 'schema' in cat or 'token' in cat or 'dettaglio' in cat:
+            return 2
+    # Floor 1: Progetti, Applicazioni, Episodi, Intenti, Valori, Idee
     return 1
 
 
