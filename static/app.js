@@ -652,15 +652,19 @@ function renderGraphData() {
           },
           stabilization: {
             enabled: true,
-            iterations: 120,
-            updateInterval: 120,
+            iterations: 150,
+            updateInterval: 150,
             fit: true
           }
         }
       });
-      network.once('stabilizationIterationsDone', () => {
+      network.stabilize(150);
+      network.once('stabilized', () => {
         network.setOptions({ physics: { enabled: false } });
       });
+      setTimeout(() => {
+        if (network) network.setOptions({ physics: { enabled: false } });
+      }, 200);
     }
   }
 }
