@@ -288,24 +288,34 @@ function selectPalazzoFloor(floorOption) {
     else if (floorOption === 2) statusText.textContent = 'Piano: 2 (Moduli Atomici)';
   }
 
-  // Adjust physics and options for vertical view vs flat floor
+  // Adjust layout engine: Hierarchical Top-Down Tree for Vertical view, Force-directed for Flat
   if (network) {
     if (floorOption === 'vertical') {
       network.setOptions({
-        physics: {
-          enabled: true,
-          solver: 'barnesHut',
-          barnesHut: {
-            gravitationalConstant: -3500,
-            centralGravity: 0.08,
-            springLength: 110,
-            springConstant: 0.04,
-            damping: 0.09
+        layout: {
+          hierarchical: {
+            enabled: true,
+            direction: 'UD', // Up-Down (Top to bottom tree)
+            sortMethod: 'directed',
+            levelSeparation: 220,
+            nodeSpacing: 180,
+            treeSpacing: 250,
+            blockShifting: true,
+            edgeMinimization: true,
+            parentCentralization: true
           }
+        },
+        physics: {
+          enabled: false
         }
       });
     } else {
       network.setOptions({
+        layout: {
+          hierarchical: {
+            enabled: false
+          }
+        },
         physics: {
           enabled: true,
           solver: 'forceAtlas2Based',
@@ -566,11 +576,8 @@ function renderGraphData() {
       _isExpanded: isExpanded
     };
 
-    // Vertical View Positioning: lock tiers on Y axis while allowing horizontal spring relaxation
     if (currentPalazzoFloor === 'vertical') {
-      const yTier = floorLvl === 0 ? -360 : (floorLvl === 1 ? 0 : 360);
-      nodeObj.y = yTier + (Math.random() * 60 - 30);
-      // Give initial hint for vertical stratification
+      nodeObj.level = floorLvl;
     }
 
     visNodes.push(nodeObj);

@@ -759,18 +759,9 @@ def build_palazzo_hierarchy(conn: sqlite3.Connection) -> Dict[str, Any]:
     }
 
     for n in nodes:
-        lvl = n.get("layer_level", 0)
-        # Smart heuristic assignment if default 0
-        if lvl == 0 and n["id"] not in ("person-pierfrancesco", "bi-hemispheric-model", "fastapi-core", "sqlite-wal", "node-neuro-symbolic-brain", "node-knowledge-graph-memory", "domain-medicina-salute", "concept-modular-domain-subgraphs", "concept-graph-of-graphs-hypergraph"):
-            pl = n.get("primary_label", "")
-            cat = (n.get("category") or "").lower()
-            nid = n["id"].lower()
-            if any(k in nid for k in ("proj-", "app", "episode-", "intent-", "reason-", "bot-", "engine", "skill-", "rule-")):
-                lvl = 1
-            elif pl in ("ALGORITHM", "DATA_STRUCTURE", "DEPENDENCY", "UI_COMPONENT", "DESIGN_TOKEN", "COLOR_PALETTE") or "dettaglio" in cat or "pathology" in cat or "schema" in cat or "leaf" in cat:
-                lvl = 2
-            else:
-                lvl = 1
+        lvl = int(n.get("layer_level", 0)) if n.get("layer_level") is not None else 0
+        if lvl not in (0, 1, 2):
+            lvl = 1
 
         n_clean = {
             "id": n["id"],
