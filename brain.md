@@ -68,7 +68,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-27 21:47:29 UTC | **Nodi Totali:** 200 (SX: 126 · DX: 74) | **Sinapsi:** 562
+> **Data Generazione:** 2026-08-27 21:52:36 UTC | **Nodi Totali:** 200 (SX: 126 · DX: 74) | **Sinapsi:** 575
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -953,9 +953,12 @@
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-modular-domain-graph-topology`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-fractal-graph-of-graphs-evaluation`) *(Corpo Calloso)*
 - (`ai-reasoning-cross-model-provenance-validation`) --[BELONGS_TO_EPISODE]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
+- (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[BELONGS_TO_EPISODE]--> (`ep-20260827-render-cloud-vs-local-hybrid-architecture`) *(Corpo Calloso)*
 - (`ai-reasoning-infinite-context-architecture`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
 - (`ai-reasoning-shared-cognitive-state-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-2026-08-27-universal-context-definition`) *(Corpo Calloso)*
+- (`concept-llm-indirect-injection-safeguard`) --[BELONGS_TO_EPISODE]--> (`ep-20260827-render-cloud-vs-local-hybrid-architecture`) *(Corpo Calloso)*
 - (`goal-multi-ai-shared-context-persistence`) --[BELONGS_TO_EPISODE]--> (`episode-2026-08-27-universal-context-definition`) *(Corpo Calloso)*
+- (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[BELONGS_TO_EPISODE]--> (`ep-20260827-render-cloud-vs-local-hybrid-architecture`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
 - (`user-intent-provenance-model-tracking`) --[BELONGS_TO_EPISODE]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
 - (`proj-harmonyapp`) --[BRIDGES_TO]--> (`art-piano-composition`) *(Corpo Calloso)*
@@ -1107,6 +1110,7 @@
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-hierarchical-overlay-reassurance`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-hierarchical-tree-deployment-sync`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`) *(Corpo Calloso)*
+- (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`aule-studio-backend-arch`) --[FEEDS_DATA_TO]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
@@ -1173,6 +1177,8 @@
 - (`node-hierarchical-dendrogram`) --[ACTS_AS_INDEXING_OVERLAY_UPON]--> (`node-knowledge-graph-memory`)
 - (`proj-streaksup-app`) --[ALIGNED_WITH]--> (`rule-zero-cost`)
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[APPLIED_DESIGN_SYSTEM]--> (`design-token-cyberpunk-minimalist-palette`)
+- (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[ARCHITECTURAL_DECISION_FOR]--> (`domain-software-engineering`)
+- (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[ARCHITECTURAL_PILLAR_OF]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-design-creativita`)
 - (`identity-cs-researcher`) --[AUTHORED]--> (`proj-kdp-ai-book`)
@@ -1308,6 +1314,7 @@
 - (`person-pierfrancesco`) --[CHAMPIONS_VISION]--> (`continuous-ai-symbiosis`)
 - (`art-piano-composition`) --[CHANNELS_AND_HEALS]--> (`memory-perfectionism-tension`)
 - (`person-pierfrancesco`) --[CHERISHES]--> (`rel-parents`)
+- (`concept-llm-indirect-injection-safeguard`) --[COGNITIVE_RULE_OF]--> (`domain-ai-cognitive-systems`)
 - (`person-pierfrancesco`) --[COLLABORATES_WITH]--> (`rel-antonio-chieppa`)
 - (`goal-multi-ai-shared-context-persistence`) --[COMPLEMENTS]--> (`user-intent-provenance-model-tracking`)
 - (`node-search-tree-deliberation`) --[CONSOLIDATES_DISCOVERED_PATHS_INTO]--> (`node-knowledge-graph-memory`)
@@ -1332,6 +1339,7 @@
 - (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-i18n-runtime-engine`)
 - (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-swiftdata-arch`)
 - (`domain-medicina-salute`) --[CONTAINS_PATHOLOGY]--> (`medical-onicocriptosi-unghia-incarnita`)
+- (`ep-20260827-render-cloud-vs-local-hybrid-architecture`) --[CONVERSATION_WITH]--> (`person-pierfrancesco`)
 - (`ai-reasoning-hybrid-search-mcp`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`ai-reasoning-hybrid-search-mcp`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`analysis-bst-vs-graph-taxonomy`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
@@ -1406,6 +1414,7 @@
 - (`user-intent-tree-search-enhancement`) --[EVALUATED_BY]--> (`analysis-bst-vs-graph-taxonomy`)
 - (`node-telegram-webhook-gateway`) --[EXECUTES_VIA_COMMAND_PATH]--> (`node-bidirectional-bfs-pathfinding`)
 - (`node-telegram-webhook-gateway`) --[EXECUTES_VIA_COMMAND_TREE]--> (`node-hierarchical-tree-engine-impl`)
+- (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[EXPANDS_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`proj-streaksup-app`) --[EXPOSES_INTERACTIVITY_VIA]--> (`streaksup-app-intents-engine`)
 - (`universal-ai-brain`) --[EXPOSES_PROTOCOL]--> (`ai-memory-ingest-spec`)
 - (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`)
@@ -1426,6 +1435,7 @@
 - (`intent-ep-20260827-tree-structures-evaluation`) --[GENERATES_REASONING]--> (`reason-ep-20260827-tree-structures-evaluation`)
 - (`user-intent-connect-gemini-claude-chatgpt-mcp`) --[GENERATES_REASONING]--> (`ai-reasoning-multi-llm-mcp-skill-distribution`)
 - (`tax-ai-reasoning`) --[GOVERNS]--> (`ai-reasoning-clustering-decision`)
+- (`concept-llm-indirect-injection-safeguard`) --[GOVERNS_INGESTION_FOR]--> (`universal-ai-brain`)
 - (`node-tree-architecture-verdict`) --[GOVERNS_MULTISCALE_RETRIEVAL_OF]--> (`node-knowledge-graph-memory`)
 - (`concept-modular-domain-subgraphs`) --[GOVERNS_PARTITIONING]--> (`domain-medicina-salute`)
 - (`val-eternal-cognitive-continuity`) --[HELD_BY]--> (`person-pierfrancesco`)
@@ -1458,6 +1468,7 @@
 - (`universal-ai-brain`) --[POWERED_BY]--> (`fastapi-python-stack`)
 - (`person-pierfrancesco`) --[PRACTICES]--> (`art-piano-composition`)
 - (`node-knowledge-graph-memory`) --[PRESERVES_TOTAL_TOPOLOGY_IN]--> (`node-multiscale-overlay-pattern`)
+- (`concept-llm-indirect-injection-safeguard`) --[PREVENTS_FALSE_POSITIVES_IN]--> (`ai-reasoning-hybrid-cloud-local-symbiosis`)
 - (`person-pierfrancesco`) --[PRODUCES]--> (`art-creative-writing`)
 - (`node-knowledge-graph-memory`) --[PROJECTS_INTO_LINEAR_DEDUCTION_VIA]--> (`node-mst-conceptual-backbone`)
 - (`user-intent-hierarchical-multi-layer-graph-design`) --[PROPOSES_CONCEPT]--> (`concept-graph-of-graphs-hypergraph`)
@@ -1471,6 +1482,8 @@
 - (`lesson-boundaries-clarity`) --[REINFORCES]--> (`val-authenticity`)
 - (`identity-cs-researcher`) --[RESEARCHED]--> (`proj-bioinformatics-icar`)
 - (`identity-cs-researcher`) --[RESEARCHING_THESIS]--> (`proj-tesi-busbra-cnr`)
+- (`concept-llm-indirect-injection-safeguard`) --[RESOLVES_ISSUE_OF]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
+- (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[RESPONDS_TO_INTENT]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`person-pierfrancesco`) --[ROOTED_IN]--> (`rel-napoli-culture`)
 - (`person-pierfrancesco`) --[STRIVES_FOR]--> (`val-impact-utility`)
 - (`identity-cs-researcher`) --[STUDIED]--> (`coursework-cs-federico2`)
