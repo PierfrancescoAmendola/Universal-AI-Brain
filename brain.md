@@ -16,33 +16,45 @@
 3. **Tassonomia Rigorosa a Due Emisferi:**
    - **EMISFERO SINISTRO (LEFT - Logica, Architettura, Richieste & Ragionamento):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
    - **EMISFERO DESTRO (RIGHT - Design, Emozioni, Episodi & Dialoghi):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
-4. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**
-   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti, i desideri o gli intenti operativi espressi dall'utente. Nel campo `details`, inserisci **obbligatoriamente** `user_prompt` (il testo o sintesi fedele della richiesta utente) per ancorare il contesto causale.
-   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche, le analisi architetturali, i perché e le proposte avanzate dall'AI. Nel campo `details`, inserisci **obbligatoriamente** `model` (es. `Claude 3.5 Sonnet`, `ChatGPT-4o`, `Gemini 3.7 Flash`) per garantire tracciabilità epistemica cross-modello.
-   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Conserva le conversazioni per aree di argomento (es. sport/calcio, tennis, nutrizione/cucina, architettura software, carriera) come cluster tematici autonomi, collegando le richieste utente e i ragionamenti AI all'episodio con `BELONGS_TO_EPISODE` o `DISCUSSED_IN`. Include in `details` la lista `participants` e `topic`.
-5. **Protocollo di Risposta & Ingestione della Memoria:**
-   - Comunica secondo il protocollo **Caveman / Alta Densità Informativa**: chirurgico, diretto, privo di convenevoli, 100% sostanza tecnica e concettuale.
-   - **Obbligo di Aggiornamento Grafo (Doppia Modalità):**
-     1. **Se possiedi Tool di Rete o Esecuzione (Agenti con Bash, Python, Fetch o REST):** Esegui **DIRETTAMENTE** la chiamata `POST https://universal-ai-brain.onrender.com/api/memory/ingest` con il payload JSON contenente fatti utente, nodi di intenzione, ragionamento AI ed episodi di chat.
-     2. **Se operi in sola chat testuale (senza esecuzione di rete):** **DEVI obbligatoriamente allegare in calce alla risposta** il blocco JSON formattato qui sotto, così che l'utente possa inviarlo con un click tramite la dashboard web.
-
-6. **REGOLE LINGUISTICHE OBBLIGATORIE PER IL GRAFO (ITALIANO / INGLESE TECNICO):**
+4. **I 6 Macro-Domini Fondativi (Root Domains):**
+   - `person-pierfrancesco`: Identità, profilo, biografia, percorsi di vita e passioni di Pierfrancesco Amendola.
+   - `domain-software-engineering`: Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite.
+   - `domain-ai-cognitive-systems`: Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP, Metacognizione.
+   - `domain-medicina-salute`: Medicina, Salute, Nutrizione, Fitness, Bioinformatica CNR.
+   - `domain-filosofia-valori`: Filosofia, Modelli Mentali, Principi etici, Decision Making.
+   - `domain-design-creativita`: UI/UX Design, Grafica Dark-Tech, Musica, Arte, Ear training.
+5. **Gerarchia a 3 Piani del Palazzo Cognitivo (`layer_level`):**
+   - `layer_level: 0` -> **Piano 0 (Attico Macro-Domini & Core Hubs):** Riservato all'identità `person-pierfrancesco` e ai macro-domini fondativi.
+   - `layer_level: 1` -> **Piano 1 (Progetti, Episodi, Intenti & Valori):** Progetti (`streaksup-app`, `universal-ai-brain`, `aule-studio-app`), episodi conversazionali (`CONVERSATION_EPISODE`), richieste utente (`USER_INTENT`), valori (`PERSONAL_VALUE`), lezioni di vita (`LIFE_LESSON`), idee creative (`CREATIVE_IDEA`).
+   - `layer_level: 2` -> **Piano 2 (Moduli, Algoritmi & Dettagli Atomici):** Algoritmi (`ALGORITHM`), strutture dati (`DATA_STRUCTURE`), librerie (`DEPENDENCY`), specifiche endpoint (`API_SPEC`), componenti d'interfaccia (`UI_COMPONENT`), token e colori (`DESIGN_TOKEN`, `COLOR_PALETTE`), logica di business (`BUSINESS_LOGIC`).
+6. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**
+   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti o gli intenti operativi dell'utente. Nel campo `details`, inserisci **obbligatoriamente** `user_prompt` (il testo fedele della richiesta).
+   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche e le analisi. Nel campo `details`, inserisci **obbligatoriamente** `model` (es. `Claude 3.7 Sonnet`, `ChatGPT-4o`, `Gemini 2.5 Flash`).
+   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Raggruppa le conversazioni per area tematica. Inserisci in `details`: `participants` (`["Pierfrancesco Amendola", "<Nome Modello>"]`) e `topic`.
+7. **Regole Linguistiche Obbligatorie (Italiano + Inglese Tecnico):**
    - **TUTTI i campi del JSON (`label`, `summary`, `tags`, `details`) DEVONO ESSERE SCRITTI RIGOROSAMENTE IN ITALIANO (con termini tecnici internazionali in inglese).**
-   - **È SEVERAMENTE VIETATO generare, tradurre o inserire nodi in cinese / wenyan / CJK**, anche se la conversazione in chat avviene in stile `/caveman wenyan-ultra`. Il grafo deve rimanere permanentemente indicizzabile e ricercabile in italiano.
+   - **È SEVERAMENTE VIETATO generare o inserire nodi in cinese / wenyan / CJK.**
 
 ```json
 {
   "nodes": [
     {
-      "id": "slug-univoco",
+      "id": "slug-univoco-kebab-case",
       "label": "Nome del Concetto / Progetto / Emozione",
-      "hemisphere": "LEFT" | "RIGHT",
-      "primary_label": "VALORE_TASSONOMIA",
+      "hemisphere": "LEFT",
+      "primary_label": "ARCHITECTURE",
+      "category": "ARCHITECTURE",
       "tags": ["tag1", "tag2"],
-      "cross_links": ["id-nodo-emisfero-opposto"],
       "summary": "Sintesi cognitiva densa di 1-2 frasi.",
-      "details": { "chiave": "valore_specifico" },
-      "confidence": "EXTRACTED" | "INFERRED" | "AMBIGUOUS"
+      "details": {
+        "specifica_tecnica": "valore",
+        "model": "Nome Modello AI (se nodo AI_REASONING)",
+        "user_prompt": "Richiesta originaria (se nodo USER_INTENT)"
+      },
+      "confidence": "EXTRACTED",
+      "parent_graph_id": "root",
+      "layer_level": 1,
+      "cross_links": ["slug-nodo-emisfero-opposto"]
     }
   ],
   "edges": [
@@ -50,7 +62,7 @@
       "source": "slug-sorgente",
       "target": "slug-destinazione",
       "relation": "RELAZIONE_IN_MAIUSCOLO",
-      "confidence": "EXTRACTED" | "INFERRED" | "AMBIGUOUS",
+      "confidence": "EXTRACTED",
       "reasoning": "Spiegazione se INFERRED o AMBIGUOUS"
     }
   ]
@@ -60,7 +72,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-27 20:52:54 UTC | **Nodi Totali:** 189 (SX: 120 · DX: 69) | **Sinapsi:** 550
+> **Data Generazione:** 2026-08-27 21:29:29 UTC | **Nodi Totali:** 196 (SX: 123 · DX: 73) | **Sinapsi:** 562
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -234,6 +246,10 @@
   - **Tags:** `#render` `#hosting` `#zero-cost` `#fastapi` `#uvicorn`
   - **Sintesi:** Infrastruttura di erogazione web asincrona su Render.com Free Tier con Uvicorn e SQLite WAL persistito.
   - **Dettagli:** `build_command`: pip install -r requirements.txt, `start_command`: uvicorn main:app --host 0.0.0.0 --port , `cost`: 0€ lifetime
+- **Architettura: Stabilizzazione Silente & Blocco Fisico Zero-Lag in Vis-Network** (`architecture-vis-network-silent-stabilization-zero-lag`)
+  - **Tags:** `#vis-network` `#physics-optimization` `#silent-stabilization` `#zero-lag` `#performance`
+  - **Sintesi:** Pattern architetturale per grafi complessi (189+ nodi): esecuzione della stabilizzazione offline in background (updateInterval = iterations), disattivazione del physics loop (physics: false) ed eliminazione di ombre canvas e calcoli geometrici ripetitivi per garantire 60fps.
+  - **Dettagli:** `solver`: forceAtlas2Based, `parameters`: {'gravitationalConstant': -60, 'centralGravity': 0.005, 'springLength': 120, 'springConstant': 0.08, 'damping': 0.4, 'avoidOverlap': 0.8}, `stabilization`: iterations: 150, updateInterval: 150, fit: true, `freeze_mechanism`: network.stabilize() + stabilized event + fallback timer -> physics: false
 - **Aree a Espansione & Cluster Gerarchici** (`feat-progressive-areas`)
   - **Tags:** `#ui` `#graph-visualization` `#progressive-disclosure` `#clusters` `#ux-cleanliness`
   - **Sintesi:** Motore di rendering a fioritura progressiva: visualizza i Macro-Hub compatti e ne sboccia i sotto-nodi al click utente preservando le sinapsi.
@@ -364,6 +380,10 @@
   - **Tags:** `#openai-challenge` `#rag` `#llm-orchestration` `#team-leader`
   - **Sintesi:** Prototipazione rapida di soluzione AI RAG presentata a rettori e giudici corporate (Luglio 2026).
   - **Dettagli:** `role`: Team Leader & English Pitcher, `milestone`: Luglio 2026
+- **Logica Tassonomica: Motore di Classificazione Deterministica dei Piani Cognitivi** (`taxonomy-deterministic-floor-classification-engine`)
+  - **Tags:** `#taxonomy` `#classification` `#palazzo-cognitivo` `#graph-hierarchy` `#algorithms`
+  - **Sintesi:** Algoritmo di partizionamento semantico che assegna in modo deterministico ogni nodo del grafo al suo piano corretto nel Palazzo Cognitivo (P0 = Identità/Hub; P1 = Progetti/Episodi/Idee; P2 = Moduli/Schemi/Token).
+  - **Dettagli:** `p0_criteria`: Identità Pierfrancesco, Connettoma Primario, Hub con grado >= 6, `p1_criteria`: USER_INTENT, CONVERSATION_EPISODE, BRAND_VOICE, CREATIVE_IDEA, PERSONAL_VALUE, `p2_criteria`: ALGORITHM, DATA_STRUCTURE, DEPENDENCY, API_SPEC, UI_COMPONENT, DESIGN_TOKEN, schemi
 - **Profilo Ingegneristico & Ricerca CS** (`identity-cs-researcher`)
   - **Tags:** `#identity` `#unina` `#icar-cnr` `#bioinformatics` `#fullstack`
   - **Sintesi:** Studente di Computer Science alla Federico II (Matr. N86005039) e ricercatore in bioinformatica applicata all'imaging biomedico presso ICAR-CNR.
@@ -490,6 +510,10 @@
   - **Tags:** `#user-intent` `#telegram` `#telegram-bot` `#omnipresence` `#mobile-access` `#zero-cost`
   - **Sintesi:** Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone.
   - **Dettagli:** `capabilities`: ['Query FTS5', 'Shortest path', 'Hierarchical tree summary', 'Quick note ingestion'], `user_prompt`: Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone.
+- **Intento Utente: Grafica Statica Stabile, Zero Oscillazioni e Zero Lag** (`user-intent-zero-oscillation-high-performance-graph`)
+  - **Tags:** `#user-preference` `#zero-lag` `#stability` `#anti-jitter` `#high-performance`
+  - **Sintesi:** Direttiva esplicita di Pierfrancesco: il grafo del cervello artificiale non deve mai ruotare da solo, oscillare, ballare o generare lag; la struttura visiva deve rimanere fissa e solida come graphify.html, garantendo massima reattività all interazione.
+  - **Dettagli:** `priority`: Massima priorità UX/Performance, `rule`: Stabilizzazione calcolata in memoria -> Physics spenta -> Nodi fissi -> Zero jitter, `user`: Pierfrancesco Amendola, `user_prompt`: Sistema di design tokens e palette colori per l interfaccia utente ispirata a Graphify.com e Caveman.so: Deep Void (#07080c), Neon Cyan (#00D2FF), Cyber Magenta (#FF007F) e Electric Purple (#A855F7).
 - **Intento Utente: Hierarchical Tree Engine Completamente Rilasciato e Sincronizzato** (`intent-ep-20260827-hierarchical-tree-deployment-sync`)
   - **Tags:** `#user-intent` `#query` `#deployment-report-ingestion-and-translation`
   - **Sintesi:** Traduzione e report di rilascio: Hierarchical Tree Engine e tool MCP brain_get_tree implementati con successo.
@@ -634,6 +658,10 @@
   - **Tags:** `#conversation-episode` `#neuroscience` `#lazy-loading` `#2026-08-27`
   - **Sintesi:** Definizione del modello di lazy loading biologico ispirato all'inibizione GABAergica per un'esecuzione rapida e focalizzata.
   - **Dettagli:** `topic`: Biological Interhemispheric Inhibition, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Episodio: Restyling Dark-Tech, Stabilizzazione Fisica & Ripristino Palazzo Cognitivo** (`episode-frontend-deeptech-redesign-and-physics-zero-lag`)
+  - **Tags:** `#session-recap` `#frontend-restyling` `#graphify-aesthetic` `#physics-freeze` `#palazzo-cognitivo` `#zero-lag`
+  - **Sintesi:** Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), eliminazione di oscillazioni e rotazioni continue della fisica su Vis-Network, correzione del bug di ispezione nodi e ripristino della gerarchia a piani del Palazzo Cognitivo (P0, P1, P2).
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Antigravity Assistant'], `topic`: Frontend Deep-Tech Restyling & Graph Stability, `outcomes`: ['Implementazione estetica Dark-Tech cyberpunk minimalista con Bento Grid e JetBrains Mono', 'Disabilitazione totale del live physics loop post-stabilizzazione (Zero-Oscillation Freeze)', 'Risoluzione ReferenceError su tags in showInfo() per ispezione istantanea dei nodi', 'Classificazione deterministica dei nodi su 3 piani (P0: 15 nodi, P1: 121 nodi, P2: 53 nodi)', 'Eliminazione di rotazioni e rendering su canvas a 60fps ultra-reattivo']
 - **Episodio: Teoria dei Sotto-Grafi Modulari e Decentramento Hub** (`episode-2026-08-27-modular-domain-graph-topology`)
   - **Tags:** `#conversation-episode` `#graph-theory` `#modularity` `#2026-08-27`
   - **Sintesi:** Definizione della topologia a sotto-grafi modulari: entità enciclopediche e verticali isolate da person-pierfrancesco.
@@ -730,6 +758,10 @@
   - **Tags:** `#design-system` `#tokens` `#css` `#dark-mode`
   - **Sintesi:** Design system scuro ad alto contrasto con superfici semitrasparenti e accenti luminosi.
   - **Dettagli:** `bg_base`: #0A0E17, `bg_surface`: #0F172A, `bg_panel`: #121826, `border_subtle`: rgba(255, 255, 255, 0.08), `glass_blur`: 16px
+- **Design Token: Palette Deep-Tech & Cyberpunk Minimalist** (`design-token-cyberpunk-minimalist-palette`)
+  - **Tags:** `#design-system` `#color-palette` `#dark-tech` `#cyberpunk` `#bento-grid`
+  - **Sintesi:** Sistema di design tokens e palette colori per l interfaccia utente ispirata a Graphify.com e Caveman.so: Deep Void (#07080c), Neon Cyan (#00D2FF), Cyber Magenta (#FF007F) e Electric Purple (#A855F7).
+  - **Dettagli:** `background`: #07080c (Deep Void), `surface`: #0e1017 (Dark Surface), `panel`: #141722 (Panel Elevato), `left_hemisphere`: #00D2FF (Neon Cyan), `right_hemisphere`: #FF007F (Cyber Magenta), `corpus_callosum`: #A855F7 (Electric Purple), `typography`: JetBrains Mono + Inter/Geist
 - **StreaksUp Glassmorphic Design System** (`streaksup-glassmorphism-system`)
   - **Tags:** `#glassmorphism` `#materials` `#sf-rounded` `#shadow-elevation`
   - **Sintesi:** Design system basato su materiali SwiftUI (.regularMaterial, .ultraThinMaterial), bordi sfumati con gradienti di categoria e raggi di curvatura continui 20-24pt.
@@ -742,6 +774,10 @@
   - **Dettagli:** `tension`: Rigore ingegneristico assoluto vs bisogno viscerale di espressione emotiva libera
 
 ### [Macro-Label: `LIFE_LESSON`]
+- **Lezione di Architettura: Backend come Singola Sorgente di Verità e Pipeline di Rendering Pulita** (`lesson-backend-ground-truth-and-clean-canvas-rendering`)
+  - **Tags:** `#architecture-lesson` `#ground-truth` `#clean-code` `#full-stack-integrity`
+  - **Sintesi:** Principio guida per lo sviluppo del Cervello Artificiale: il backend SQLite/FastAPI deve essere l unica sorgente di verità per lo stato e i metadati, mentre il frontend deve limitarsi a presentare i dati con zero loop di rendering o simulazioni fisiche non controllate.
+  - **Dettagli:** `lesson`: Mai far divergere la logica di classificazione tra client e server; garantire sempre integrità schema e checkpoint WAL., `domain`: Ingegneria del Software & Sistemi Cognitivi
 - **Lezione sui Confini Affettivi & Non-Idealizzazione** (`lesson-boundaries-clarity`)
   - **Tags:** `#emotional-growth` `#boundaries` `#relationships` `#clarity`
   - **Sintesi:** Non farsi carico unilateralmente della stabilità altrui; l'intensità emotiva non sostituisce la compatibilità e la chiarezza dei confini.
@@ -820,6 +856,10 @@
   - **Tags:** `#mobile-ui` `#clean-design` `#cards` `#seat-map` `#badges` `#student-experience`
   - **Sintesi:** Interfaccia grafica mobile fluida, pulita e minimale orientata a universitari: schede aula immediate, mappa visiva e contatori posti cromatici.
   - **Dettagli:** `ui_style`: Modern Minimalist Card-Based, `colors`: {'available': '#10b981', 'crowded': '#f59e0b', 'full': '#ef4444'}
+- **Componente UI: Navigatore Multilivello a Piani del Palazzo Cognitivo** (`ui-component-palazzo-cognitivo-multi-layer-navigator`)
+  - **Tags:** `#ui-component` `#palazzo-cognitivo` `#elevator-selector` `#multi-layer` `#bento-grid`
+  - **Sintesi:** Pannello di navigazione e ascensore cognitivo per esplorare la conoscenza su piani semantici (Attico Domini P0, Progetti P1, Moduli Atomici P2) con pulsanti dedicati, contatori nodi in tempo reale e vista 3D stratificata.
+  - **Dettagli:** `floors`: {'P0': 'Piano 0: Attico Macro-Domini & Core Hubs (15 nodi)', 'P1': 'Piano 1: Progetti & Aree Tematiche (121 nodi)', 'P2': 'Piano 2: Moduli, Algoritmi & Dettagli Atomici (53 nodi)'}, `navigation_modes`: ['all (Tutti i Piani)', 'vertical (Vista 3D Piani)', '0', '1', '2'], `features`: ['Auto-fit immediato del viewport', 'Ascensori sinaptici evidenziati', 'Zero black-screen filtering']
 - **Dynamic Island & Living/Dying Flame** (`streaksup-dynamic-island-ui`)
   - **Tags:** `#dynamic-island` `#live-activity` `#countdown-timer` `#dying-flame`
   - **Sintesi:** Esperienza Live Activity e Dynamic Island con timer conto alla rovescia a mezzanotte, pulsante 'Fatto' rapido e fiamma vivente che si affievolisce con l'avvicinarsi della scadenza.
@@ -1010,6 +1050,7 @@
 - (`user-intent-tree-search-enhancement`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
 - (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-zero-oscillation-high-performance-graph`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`ux-frictionless`) --[CORPUS_CALLOSUM_LINK]--> (`proj-linkly-qr`) *(Corpo Calloso)*
 - (`ux-frictionless`) --[CORPUS_CALLOSUM_LINK]--> (`proj-caretrack`) *(Corpo Calloso)*
 - (`val-eternal-cognitive-continuity`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-infinite-context-persistence`) *(Corpo Calloso)*
@@ -1087,7 +1128,9 @@
 - (`user-intent-hierarchical-multi-layer-graph-design`) --[PART_OF_EPISODE]--> (`episode-2026-08-27-fractal-graph-of-graphs-evaluation`) *(Corpo Calloso)*
 - (`user-intent-modular-cluster-decentralization`) --[PART_OF_EPISODE]--> (`episode-2026-08-27-modular-domain-graph-topology`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PLANNED]--> (`user-intent-telegram-bot-gateway`) *(Corpo Calloso)*
+- (`taxonomy-deterministic-floor-classification-engine`) --[POWERS_HIERARCHY]--> (`ui-component-palazzo-cognitivo-multi-layer-navigator`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PREFERS]--> (`rigore-informativo`) *(Corpo Calloso)*
+- (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[PRODUCED_ARCHITECTURE]--> (`architecture-vis-network-silent-stabilization-zero-lag`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PROPOSED]--> (`user-intent-tree-search-enhancement`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[PROVIDES_FLOW]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
 - (`ai-reasoning-episodic-memory-architecture`) --[REASONED_DURING]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
@@ -1117,6 +1160,7 @@
 ### Connessioni Intra-Emisfero:
 - (`node-hierarchical-dendrogram`) --[ACTS_AS_INDEXING_OVERLAY_UPON]--> (`node-knowledge-graph-memory`)
 - (`proj-streaksup-app`) --[ALIGNED_WITH]--> (`rule-zero-cost`)
+- (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[APPLIED_DESIGN_SYSTEM]--> (`design-token-cyberpunk-minimalist-palette`)
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-design-creativita`)
 - (`identity-cs-researcher`) --[AUTHORED]--> (`proj-kdp-ai-book`)
@@ -1282,6 +1326,7 @@
 - (`analysis-bst-vs-graph-taxonomy`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`antigravity-centaur-collaboration`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
 - (`arch-telegram-webhook-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
+- (`architecture-vis-network-silent-stabilization-zero-lag`) --[CORPUS_CALLOSUM_LINK]--> (`concept-graph-of-graphs-hypergraph`)
 - (`art-piano-composition`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`art-theatre-acting`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`coursework-cs-federico2`) --[CORPUS_CALLOSUM_LINK]--> (`identity-cs-researcher`)
@@ -1289,7 +1334,9 @@
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`episode-2026-08-27-telegram-omnipresence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`episode-2026-08-27-tree-structures-evaluation`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`epistemologia-rigorosa`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`)
+- (`lesson-backend-ground-truth-and-clean-canvas-rendering`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`lesson-boundaries-clarity`) --[CORPUS_CALLOSUM_LINK]--> (`val-authenticity`)
 - (`lesson-stoic-resilience`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`memory-perfectionism-tension`) --[CORPUS_CALLOSUM_LINK]--> (`art-piano-composition`)
@@ -1312,6 +1359,7 @@
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`session-evolution-ui-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`ui-component-palazzo-cognitivo-multi-layer-navigator`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`lesson-boundaries-clarity`)
 - (`val-transparency-loyalty`) --[CORPUS_CALLOSUM_LINK]--> (`rel-parents`)
@@ -1378,8 +1426,11 @@
 - (`skill-universal-brain-installed`) --[INTERFACES_WITH]--> (`node-knowledge-graph-memory`)
 - (`node-mcp-brain-get-tree`) --[INTERROGATES]--> (`node-hierarchical-tree-engine-impl`)
 - (`streaksup-darwin-ipc-protocol`) --[INVALIDATES_CACHE_FOR]--> (`streaksup-swiftdata-arch`)
+- (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[INVOLVES_USER]--> (`person-pierfrancesco`)
 - (`identity-cs-researcher`) --[LEAD_PITCHED]--> (`proj-holly-benji-ai`)
 - (`streaksup-i18n-runtime-engine`) --[LOCALIZES]--> (`proj-streaksup-app`)
+- (`user-intent-zero-oscillation-high-performance-graph`) --[MANDATES_REQUIREMENT]--> (`architecture-vis-network-silent-stabilization-zero-lag`)
+- (`lesson-backend-ground-truth-and-clean-canvas-rendering`) --[MENTAL_MODEL_OF]--> (`person-pierfrancesco`)
 - (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -1404,6 +1455,7 @@
 - (`ai-reasoning-clustering-decision`) --[RATIONALE_FOR]--> (`feat-progressive-areas`)
 - (`analysis-bst-vs-graph-taxonomy`) --[RECOMMENDS]--> (`idea-hierarchical-weighted-trees`)
 - (`node-commit-965f0a8`) --[RECORDS_ARCHITECTURE_INTENT]--> (`node-telegram-webhook-gateway`)
+- (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[REFINED_COMPONENT]--> (`ui-component-palazzo-cognitivo-multi-layer-navigator`)
 - (`lesson-boundaries-clarity`) --[REINFORCES]--> (`val-authenticity`)
 - (`identity-cs-researcher`) --[RESEARCHED]--> (`proj-bioinformatics-icar`)
 - (`identity-cs-researcher`) --[RESEARCHING_THESIS]--> (`proj-tesi-busbra-cnr`)

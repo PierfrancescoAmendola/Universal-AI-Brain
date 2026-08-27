@@ -19,6 +19,7 @@ Whenever the user invokes `/brain` or asks to query/save thoughts in their brain
 Before formulating an answer or generating a new proposal, search what the brain already knows:
 - **Search**: Run BM25 FTS5 search on `brain.db` or invoke MCP `brain_search` with relevant keywords.
 - **Hierarchy Zoom**: For broad topics, query `brain_get_tree` to see the macro-taxonomies.
+- **Palazzo Cognitivo**: Filter or explore by floor levels (P0, P1, P2) or 3D vertical stacked tiers.
 - **Synaptic Paths**: For connecting technical concepts to life values or user intents, calculate `brain_shortest_path` across the Corpus Callosum.
 
 ### 2. Autonomous Knowledge Ingestion & Linking
@@ -26,12 +27,18 @@ When a discussion generates a new idea, architectural decision, lesson, or user 
 1. **MANDATORY LANGUAGE RULE (ITALIAN / ENGLISH)**:
    - **All node labels (`label`), summaries (`summary`), tags, and details MUST ALWAYS be written in Italian (with technical terms in English).**
    - **NEVER generate or save nodes in Chinese/Wenyan/CJK**, even if the chat communication is in `/caveman wenyan-ultra` or another language. The knowledge database must remain 100% searchable in Italian.
-2. Formulate the JSON ingestion payload with strict taxonomies:
-   - **Left Hemisphere (`LEFT`)**: `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
-   - **Right Hemisphere (`RIGHT`)**: `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
+2. **6 Root Macro-Domains (`parent_graph_id: "root"` / `layer_level: 0`)**:
+   - `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
+3. **3-Layer Palazzo Cognitivo Hierarchy (`layer_level`)**:
+   - `layer_level: 0` (Piano 0 - Attico Macro-Domini & Core Hubs)
+   - `layer_level: 1` (Piano 1 - Progetti, Episodi Conversazionali, Intenti Utente, Idee, Valori)
+   - `layer_level: 2` (Piano 2 - Moduli, Algoritmi, Strutture Dati, Specifiche API, Token UI, Schemi)
+4. **Strict Bi-Hemispheric Taxonomies**:
+   - **Left Hemisphere (`LEFT` - Logica & Tech)**: `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
+   - **Right Hemisphere (`RIGHT` - Design & Emozioni)**: `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
    - **Epistemic Confidence**: `EXTRACTED` (verbatim facts), `INFERRED` (deductive logic), `AMBIGUOUS` (uncertain).
-3. Cross-link the new node to relevant existing nodes in `brain.db` (especially `person-pierfrancesco` or relevant project nodes).
-4. Execute ingestion via `brain_ingest` MCP tool or direct `POST /api/memory/ingest`.
+5. Cross-link the new node to relevant existing nodes in `brain.db` (especially `person-pierfrancesco` or relevant project nodes).
+6. Execute ingestion via `brain_ingest` MCP tool or direct `POST /api/memory/ingest`.
 
 ### 3. Cloud & Multi-Client Synchronization
 After modifying `brain.db`:

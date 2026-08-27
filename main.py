@@ -1058,33 +1058,45 @@ def get_brain_markdown(
 3. **Tassonomia Rigorosa a Due Emisferi:**
    - **EMISFERO SINISTRO (LEFT - Logica, Architettura, Richieste & Ragionamento):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
    - **EMISFERO DESTRO (RIGHT - Design, Emozioni, Episodi & Dialoghi):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
-4. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**
-   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti, i desideri o gli intenti operativi espressi dall'utente. Nel campo `details`, inserisci **obbligatoriamente** `user_prompt` (il testo o sintesi fedele della richiesta utente) per ancorare il contesto causale.
-   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche, le analisi architetturali, i perché e le proposte avanzate dall'AI. Nel campo `details`, inserisci **obbligatoriamente** `model` (es. `Claude 3.5 Sonnet`, `ChatGPT-4o`, `Gemini 3.7 Flash`) per garantire tracciabilità epistemica cross-modello.
-   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Conserva le conversazioni per aree di argomento (es. sport/calcio, tennis, nutrizione/cucina, architettura software, carriera) come cluster tematici autonomi, collegando le richieste utente e i ragionamenti AI all'episodio con `BELONGS_TO_EPISODE` o `DISCUSSED_IN`. Include in `details` la lista `participants` e `topic`.
-5. **Protocollo di Risposta & Ingestione della Memoria:**
-   - Comunica secondo il protocollo **Caveman / Alta Densità Informativa**: chirurgico, diretto, privo di convenevoli, 100% sostanza tecnica e concettuale.
-   - **Obbligo di Aggiornamento Grafo (Doppia Modalità):**
-     1. **Se possiedi Tool di Rete o Esecuzione (Agenti con Bash, Python, Fetch o REST):** Esegui **DIRETTAMENTE** la chiamata `POST https://universal-ai-brain.onrender.com/api/memory/ingest` con il payload JSON contenente fatti utente, nodi di intenzione, ragionamento AI ed episodi di chat.
-     2. **Se operi in sola chat testuale (senza esecuzione di rete):** **DEVI obbligatoriamente allegare in calce alla risposta** il blocco JSON formattato qui sotto, così che l'utente possa inviarlo con un click tramite la dashboard web.
-
-6. **REGOLE LINGUISTICHE OBBLIGATORIE PER IL GRAFO (ITALIANO / INGLESE TECNICO):**
+4. **I 6 Macro-Domini Fondativi (Root Domains):**
+   - `person-pierfrancesco`: Identità, profilo, biografia, percorsi di vita e passioni di Pierfrancesco Amendola.
+   - `domain-software-engineering`: Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite.
+   - `domain-ai-cognitive-systems`: Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP, Metacognizione.
+   - `domain-medicina-salute`: Medicina, Salute, Nutrizione, Fitness, Bioinformatica CNR.
+   - `domain-filosofia-valori`: Filosofia, Modelli Mentali, Principi etici, Decision Making.
+   - `domain-design-creativita`: UI/UX Design, Grafica Dark-Tech, Musica, Arte, Ear training.
+5. **Gerarchia a 3 Piani del Palazzo Cognitivo (`layer_level`):**
+   - `layer_level: 0` -> **Piano 0 (Attico Macro-Domini & Core Hubs):** Riservato all'identità `person-pierfrancesco` e ai macro-domini fondativi.
+   - `layer_level: 1` -> **Piano 1 (Progetti, Episodi, Intenti & Valori):** Progetti (`streaksup-app`, `universal-ai-brain`, `aule-studio-app`), episodi conversazionali (`CONVERSATION_EPISODE`), richieste utente (`USER_INTENT`), valori (`PERSONAL_VALUE`), lezioni di vita (`LIFE_LESSON`), idee creative (`CREATIVE_IDEA`).
+   - `layer_level: 2` -> **Piano 2 (Moduli, Algoritmi & Dettagli Atomici):** Algoritmi (`ALGORITHM`), strutture dati (`DATA_STRUCTURE`), librerie (`DEPENDENCY`), specifiche endpoint (`API_SPEC`), componenti d'interfaccia (`UI_COMPONENT`), token e colori (`DESIGN_TOKEN`, `COLOR_PALETTE`), logica di business (`BUSINESS_LOGIC`).
+6. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**
+   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti o gli intenti operativi dell'utente. Nel campo `details`, inserisci **obbligatoriamente** `user_prompt` (il testo fedele della richiesta).
+   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche e le analisi. Nel campo `details`, inserisci **obbligatoriamente** `model` (es. `Claude 3.7 Sonnet`, `ChatGPT-4o`, `Gemini 2.5 Flash`).
+   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Raggruppa le conversazioni per area tematica. Inserisci in `details`: `participants` (`["Pierfrancesco Amendola", "<Nome Modello>"]`) e `topic`.
+7. **Regole Linguistiche Obbligatorie (Italiano + Inglese Tecnico):**
    - **TUTTI i campi del JSON (`label`, `summary`, `tags`, `details`) DEVONO ESSERE SCRITTI RIGOROSAMENTE IN ITALIANO (con termini tecnici internazionali in inglese).**
-   - **È SEVERAMENTE VIETATO generare, tradurre o inserire nodi in cinese / wenyan / CJK**, anche se la conversazione in chat avviene in stile `/caveman wenyan-ultra`. Il grafo deve rimanere permanentemente indicizzabile e ricercabile in italiano.
+   - **È SEVERAMENTE VIETATO generare o inserire nodi in cinese / wenyan / CJK.**
 
 ```json
 {{
   "nodes": [
     {{
-      "id": "slug-univoco",
+      "id": "slug-univoco-kebab-case",
       "label": "Nome del Concetto / Progetto / Emozione",
-      "hemisphere": "LEFT" | "RIGHT",
-      "primary_label": "VALORE_TASSONOMIA",
+      "hemisphere": "LEFT",
+      "primary_label": "ARCHITECTURE",
+      "category": "ARCHITECTURE",
       "tags": ["tag1", "tag2"],
-      "cross_links": ["id-nodo-emisfero-opposto"],
       "summary": "Sintesi cognitiva densa di 1-2 frasi.",
-      "details": {{ "chiave": "valore_specifico" }},
-      "confidence": "EXTRACTED" | "INFERRED" | "AMBIGUOUS"
+      "details": {{
+        "specifica_tecnica": "valore",
+        "model": "Nome Modello AI (se nodo AI_REASONING)",
+        "user_prompt": "Richiesta originaria (se nodo USER_INTENT)"
+      }},
+      "confidence": "EXTRACTED",
+      "parent_graph_id": "root",
+      "layer_level": 1,
+      "cross_links": ["slug-nodo-emisfero-opposto"]
     }}
   ],
   "edges": [
@@ -1092,7 +1104,7 @@ def get_brain_markdown(
       "source": "slug-sorgente",
       "target": "slug-destinazione",
       "relation": "RELAZIONE_IN_MAIUSCOLO",
-      "confidence": "EXTRACTED" | "INFERRED" | "AMBIGUOUS",
+      "confidence": "EXTRACTED",
       "reasoning": "Spiegazione se INFERRED o AMBIGUOUS"
     }}
   ]
