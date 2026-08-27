@@ -68,7 +68,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-27 21:40:28 UTC | **Nodi Totali:** 196 (SX: 123 · DX: 73) | **Sinapsi:** 562
+> **Data Generazione:** 2026-08-27 21:47:29 UTC | **Nodi Totali:** 200 (SX: 126 · DX: 74) | **Sinapsi:** 562
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -140,6 +140,10 @@
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
   - **Dettagli:** `search_engine`: SQLite FTS5 Porter Unicode61, `pathfinding`: Bidirectional Breadth-First Search (BFS), `context_scoping`: k-hop neighborhood subgraph extraction, `interoperability`: JSON-RPC 2.0 stdio MCP Server, `model`: LLM Assistant (Historical Session)
+- **Ragionamento AI: Simbiosi Architetturale tra Substrato Cloud Render e Agenti Locali** (`ai-reasoning-hybrid-cloud-local-symbiosis`)
+  - **Tags:** `#ai-reasoning` `#hybrid-cloud` `#distributed-systems` `#cross-client-synergy` `#metacognition`
+  - **Sintesi:** Deduzione architetturale: Render agisce come Hub pubblico permanente (Telegram Webhook, Web Visualizer, OpenAPI GPTs), mentre MCP agisce come bus a bassissima latenza per agenti IDE.
+  - **Dettagli:** `model`: Antigravity / Google DeepMind Agent, `key_pillars`: ['Render Cloud: Accessibilità universale mobile 24/7, Telegram bot webhook, integrazione OpenAI Actions HTTPS', 'Local MCP: Esecuzione a latenza zero (<1ms) su SQLite WAL durante il coding in IDE', 'Web Chat Workflow: Allegazione diretta di brain.md o endpoint /brain.md pubblico per AI con Web Search']
 - **Razionale Architetturale: Separazione Aree vs Grafo Completo** (`ai-reasoning-clustering-decision`)
   - **Tags:** `#architecture-rationale` `#cognitive-load` `#graph-physics` `#scalability`
   - **Sintesi:** Scelta di non eliminare le relazioni fisiche ma di applicare un filtro visuale basato su insiemi di visibilità adiacente, massimizzando ordine e densità semantica.
@@ -426,6 +430,10 @@
   - **Tags:** `#mutation-import` `#core-taxonomy` `#architectural-decision`
   - **Sintesi:** Hierarchical Community Tree as Primary Abstraction (Layer: CORE_TAXONOMY, Tipo: ARCHITECTURAL_DECISION)
   - **Dettagli:** `id`: node_tree_architecture_verdict, `label`: Hierarchical Community Tree as Primary Abstraction, `type`: ARCHITECTURAL_DECISION, `layer`: CORE_TAXONOMY
+- **Regola Cognitiva: Gestione dei Filtri Anti-Injection nei Modelli Web** (`concept-llm-indirect-injection-safeguard`)
+  - **Tags:** `#cognitive-rule` `#prompt-injection` `#llm-safety` `#claude-ai-guardrails` `#memory-ingestion`
+  - **Sintesi:** Protocollo di interazione con modelli web: evitare comandi imperativi di rete esterna (es. ordini di POST verso URL terzi) nei file allegati, preferendo il formato standard di blocco JSON in calce.
+  - **Dettagli:** `cause_of_refusal`: I filtri di Anthropic/OpenAI rilevano istruzioni di esfiltrazione dati se un prompt/file ordina chiamate POST o fetch verso siti terzi., `recommended_protocol`: Allegare brain.md e chiedere la generazione del blocco di codice JSON da incollare con 1-click nella Web Dashboard.
 - **Regola dell'Esecuzione Integrale (Zero Placeholder)** (`rule-zero-placeholder`)
   - **Tags:** `#strict-execution` `#code-integrity` `#no-shortcuts`
   - **Sintesi:** Divieto tassativo di codice troncato, finto o parziale; ogni soluzione deve essere autosufficiente ed eseguibile.
@@ -502,6 +510,10 @@
   - **Tags:** `#user-intent` `#mcp-integration` `#multi-model-sync`
   - **Sintesi:** Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
   - **Dettagli:** `target`: Multi-LLM ubiquitous cognition, `user_prompt`: Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
+- **Intento Utente: Comprensione del Ruolo di Render Cloud e Analisi del Rifiuto di Claude Web** (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
+  - **Tags:** `#user-intent` `#cloud-architecture` `#claude-web-refusal` `#clarification`
+  - **Sintesi:** Pierfrancesco richiede spiegazione sul perché avere il backend su Render se gli agenti desktop leggono localmente, e come superare il rifiuto dei modelli web per lettura memoria.
+  - **Dettagli:** `user_prompt`: una domanda, ma se claude desktop, antigravity ecc...leggono i file dal mio pc allora che senso ha avere tutto su render?? spiegami?? lo scopo era che le ai leggessero da internet il mio sito, la mia memoria e poi creassero dei file json che avrei aggiunto al mio cervello per mantenere il contesto, e memoria della chat. spiega non agire !!!, `analysis`: Richiesta di formalizzazione della pipeline omnicanale (Cloud API vs Local Stdio vs Web Chat Attachment)
 - **Intento Utente: Gateway Telegram per Accesso Cognitivo Ovunque** (`user-intent-telegram-bot-gateway`)
   - **Tags:** `#user-intent` `#telegram` `#telegram-bot` `#omnipresence` `#mobile-access` `#zero-cost`
   - **Sintesi:** Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone.
@@ -618,6 +630,10 @@
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:38:00CEST: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay
   - **Dettagli:** `session_id`: ep_20260827_hierarchical_overlay_reassurance, `timestamp`: 2026-08-27T20:38:00CEST, `topic`: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Episodio Chat: Architettura Ibrida Cloud Render vs Agenti Locali MCP & Sicurezza LLM** (`ep-20260827-render-cloud-vs-local-hybrid-architecture`)
+  - **Tags:** `#chat-episode` `#render-cloud` `#local-mcp` `#prompt-injection-defense` `#hybrid-architecture`
+  - **Sintesi:** Chiarimento architetturale sulla dualità e cooperazione tra Render Cloud 24/7 (mobile/web/Telegram/GPTs) e Agenti Locali MCP (Antigravity/Cursor/Claude Desktop) per persistenza contestuale.
+  - **Dettagli:** `topic`: Architettura Ibrida Cloud Render vs MCP Locale & Gestione Guardrails Anti-Injection nei Web Chat LLM, `participants`: ['Pierfrancesco Amendola', 'Antigravity / Google DeepMind Agent'], `date`: 2026-08-27
 - **Episodio Chat: Architettura Memoria Cross-Modello e Attribuzione** (`episode-cross-model-memory-architecture`)
   - **Tags:** `#conversation-episode` `#cross-model-chat` `#provenance-architecture` `#gemini-session`
   - **Sintesi:** Sessione di analisi architetturale tra Pierfrancesco e Gemini 3.7 Flash sull'inclusione di prompt utente e metadati del modello nel grafo di memoria persistente.
