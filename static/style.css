@@ -1431,4 +1431,130 @@ body {
   border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
+/* ==========================================================================
+   Palazzo Cognitivo: Elevator Floor Navigator & Vertical View Styles
+   ========================================================================== */
+.palazzo-elevator-panel {
+  position: absolute;
+  top: 70px;
+  left: 16px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 12px;
+  padding: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 15px rgba(56, 189, 248, 0.1);
+  min-width: 160px;
+  animation: fadeInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.elevator-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.elevator-icon {
+  font-size: 14px;
+}
+
+.elevator-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+}
+
+.elevator-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.elevator-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 11px;
+  font-family: inherit;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.elevator-btn:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #fff;
+  transform: translateX(2px);
+}
+
+.elevator-btn.active {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(168, 85, 247, 0.25));
+  border-color: #38bdf8;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+}
+
+.fl-num {
+  font-weight: 800;
+  font-size: 11px;
+  color: #38bdf8;
+  width: 18px;
+  text-align: center;
+}
+
+.fl-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.fl-label {
+  font-size: 11px;
+}
+
+.fl-count {
+  font-size: 9.5px;
+  color: var(--text-muted);
+}
+
+.elevator-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 2px 0;
+}
+
+.elevator-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--text-muted);
+  padding-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pulse-cyan {
+  width: 6px;
+  height: 6px;
+  background: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #38bdf8;
+  animation: pulseAnim 2s infinite;
+}
+
 

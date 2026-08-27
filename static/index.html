@@ -36,6 +36,49 @@
       </button>
     </div>
 
+    <!-- Left Floating Elevator / Floor Navigator for Palazzo Cognitivo -->
+    <div class="palazzo-elevator-panel" id="palazzo-elevator">
+      <div class="elevator-header">
+        <span class="elevator-icon">🏢</span>
+        <span class="elevator-title">Palazzo Cognitivo</span>
+      </div>
+      <div class="elevator-buttons">
+        <button class="elevator-btn active" id="fl-btn-all" onclick="selectPalazzoFloor('all')" title="Vista Orizzontale Standard">
+          <span class="fl-num">🌐</span>
+          <span class="fl-label">Tutti i Nodi</span>
+        </button>
+        <button class="elevator-btn" id="fl-btn-vertical" onclick="selectPalazzoFloor('vertical')" title="Vista Verticale a Piani Sovrapposti con Ascensori Sinaptici">
+          <span class="fl-num">📐</span>
+          <span class="fl-label">Vista Verticale 3D</span>
+        </button>
+        <div class="elevator-divider"></div>
+        <button class="elevator-btn" id="fl-btn-0" onclick="selectPalazzoFloor(0)" title="Piano 0: Attico Macro-Domini & Core Hubs">
+          <span class="fl-num">P0</span>
+          <div class="fl-text">
+            <span class="fl-label">Attico Domini</span>
+            <span class="fl-count" id="fl-count-0">0 nodi</span>
+          </div>
+        </button>
+        <button class="elevator-btn" id="fl-btn-1" onclick="selectPalazzoFloor(1)" title="Piano 1: Progetti & Aree Tematiche">
+          <span class="fl-num">P1</span>
+          <div class="fl-text">
+            <span class="fl-label">Progetti & Aree</span>
+            <span class="fl-count" id="fl-count-1">0 nodi</span>
+          </div>
+        </button>
+        <button class="elevator-btn" id="fl-btn-2" onclick="selectPalazzoFloor(2)" title="Piano 2: Moduli & Dettagli Atomici">
+          <span class="fl-num">P2</span>
+          <div class="fl-text">
+            <span class="fl-label">Moduli Atomici</span>
+            <span class="fl-count" id="fl-count-2">0 nodi</span>
+          </div>
+        </button>
+      </div>
+      <div class="elevator-status" id="elevator-status">
+        <span class="pulse-cyan"></span> <span id="elevator-status-text">Piano: Tutti</span>
+      </div>
+    </div>
+
     <!-- Floating Graph View Mode Controller -->
     <div class="view-controls-bar">
       <div class="view-mode-pill">

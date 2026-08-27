@@ -54,6 +54,9 @@ I due emisferi comunicano attraverso il **Corpo Calloso**, che collega le scelte
    - Ispezione real-time di nodi aggiunti, aggiornamenti SQLite WAL e chiamate API.
 7. **🤖 Skill Universale `/brain`**:
    - Installabile globalmente su qualsiasi computer per permettere a qualsiasi assistente AI di consultare e salvare memorie.
+8. **🏢 Palazzo Cognitivo & Vista Verticale 3D (Graph-of-Graphs)**:
+   - Architettura frattale a piani sovrapposti: `Piano 0 (Attico Domini)` ➜ `Piano 1 (Progetti)` ➜ `Piano 2 (Moduli & Dettagli)`.
+   - Visualizzazione orizzontale per singolo piano con drill-down a doppio click e vista spaccato 3D verticale con ascensori sinaptici inter-piano fluorescenti.
 
 ---
 

@@ -12,6 +12,10 @@ let graphViewMode = 'areas'; // 'areas' (macro clusters) or 'full' (all nodes)
 let expandedNodeIds = new Set(['person-pierfrancesco']);
 let allExpanded = false;
 
+// Palazzo Cognitivo Multi-Layer State
+let currentPalazzoFloor = 'all'; // 'all', 'vertical', 0, 1, 2
+let cachedPalazzo = null;
+
 const CORE_MACRO_HUBS = new Set([
   'person-pierfrancesco',
   'identity-cs-researcher',
@@ -213,6 +217,25 @@ function initNetwork() {
     }
   });
 
+  network.on('doubleClick', (params) => {
+    if (params.nodes.length > 0) {
+      const clickedId = params.nodes[0];
+      const n = rawNodes.find(x => x.id === clickedId);
+      if (n) {
+        const lvl = n.layer_level !== undefined ? n.layer_level : 0;
+        if (lvl === 0) {
+          selectPalazzoFloor(1);
+        } else if (lvl === 1) {
+          selectPalazzoFloor(2);
+        } else {
+          selectPalazzoFloor('all');
+        }
+      }
+    } else {
+      selectPalazzoFloor('all');
+    }
+  });
+
   network.on('hoverNode', () => {
     container.style.cursor = 'pointer';
   });
@@ -220,6 +243,85 @@ function initNetwork() {
   network.on('blurNode', () => {
     container.style.cursor = 'default';
   });
+}
+
+/**
+ * Palazzo Cognitivo Multi-Layer & Floor Selectors
+ */
+async function loadPalazzoData() {
+  try {
+    const res = await fetch('/api/graph/palazzo');
+    if (!res.ok) return;
+    cachedPalazzo = await res.json();
+    if (cachedPalazzo && cachedPalazzo.floors) {
+      cachedPalazzo.floors.forEach(fl => {
+        const countEl = document.getElementById(`fl-count-${fl.level}`);
+        if (countEl) countEl.textContent = `${fl.node_count} nodi`;
+      });
+    }
+  } catch (e) {
+    console.error('Failed to load palazzo hierarchy:', e);
+  }
+}
+
+function selectPalazzoFloor(floorOption) {
+  currentPalazzoFloor = floorOption;
+  
+  // Update button active state
+  ['all', 'vertical', 0, 1, 2].forEach(opt => {
+    const btn = document.getElementById(`fl-btn-${opt}`);
+    if (btn) {
+      if (opt === floorOption) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    }
+  });
+
+  const statusText = document.getElementById('elevator-status-text');
+  if (statusText) {
+    if (floorOption === 'all') statusText.textContent = 'Piano: Tutti';
+    else if (floorOption === 'vertical') statusText.textContent = 'Vista: 3D Verticale';
+    else if (floorOption === 0) statusText.textContent = 'Piano: 0 (Attico Domini)';
+    else if (floorOption === 1) statusText.textContent = 'Piano: 1 (Progetti & Aree)';
+    else if (floorOption === 2) statusText.textContent = 'Piano: 2 (Moduli Atomici)';
+  }
+
+  // Adjust physics and options for vertical view vs flat floor
+  if (network) {
+    if (floorOption === 'vertical') {
+      network.setOptions({
+        physics: {
+          enabled: true,
+          solver: 'barnesHut',
+          barnesHut: {
+            gravitationalConstant: -3500,
+            centralGravity: 0.08,
+            springLength: 110,
+            springConstant: 0.04,
+            damping: 0.09
+          }
+        }
+      });
+    } else {
+      network.setOptions({
+        physics: {
+          enabled: true,
+          solver: 'forceAtlas2Based',
+          forceAtlas2Based: {
+            gravitationalConstant: -50,
+            centralGravity: 0.01,
+            springLength: 80,
+            springConstant: 0.08,
+            damping: 0.4
+          }
+        }
+      });
+    }
+  }
+
+  renderGraphData();
 }
 
 /**
@@ -329,6 +431,7 @@ async function fetchBrainData() {
       }
     }
 
+    await loadPalazzoData();
     renderGraphData();
     updateStatsHUD();
     buildLegend();
@@ -340,9 +443,22 @@ async function fetchBrainData() {
 }
 
 /**
- * Transform & Render Vis-Network Datasets with Progressive Areas Support
+ * Transform & Render Vis-Network Datasets with Progressive Areas & Multi-Layer Palazzo Support
  */
 function renderGraphData() {
+  // Helper to determine floor level of a node
+  const getFloor = (n) => {
+    if (!n) return 1;
+    if (n.layer_level !== undefined && n.layer_level !== null) return Number(n.layer_level);
+    const nid = (n.id || '').toLowerCase();
+    const pl = (n.primary_label || '').toUpperCase();
+    const cat = (n.category || '').toLowerCase();
+    if (['person-pierfrancesco', 'bi-hemispheric-model', 'fastapi-core', 'sqlite-wal', 'domain-medicina-salute', 'concept-modular-domain-subgraphs', 'concept-graph-of-graphs-hypergraph'].includes(n.id)) return 0;
+    if (nid.includes('proj-') || nid.includes('app') || nid.includes('episode-') || nid.includes('intent-') || nid.includes('reason-') || nid.includes('bot-') || nid.includes('engine')) return 1;
+    if (['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE'].includes(pl) || cat.includes('dettaglio') || cat.includes('pathology') || cat.includes('schema')) return 2;
+    return 1;
+  };
+
   // Count degrees (connections per node) and adjacency
   const degrees = {};
   const adjacency = {};
@@ -363,9 +479,18 @@ function renderGraphData() {
   const nodeMap = {};
   rawNodes.forEach(n => nodeMap[n.id] = n);
 
-  // Determine Visible Nodes based on View Mode
+  // Determine Visible Nodes based on View Mode and Palazzo Floor Selection
   let visibleNodeIds = new Set();
-  if (graphViewMode === 'full') {
+
+  if (currentPalazzoFloor === 0 || currentPalazzoFloor === 1 || currentPalazzoFloor === 2) {
+    // Specific Floor Filter: only show nodes belonging to that floor
+    rawNodes.forEach(n => {
+      if (getFloor(n) === currentPalazzoFloor) {
+        visibleNodeIds.add(n.id);
+      }
+    });
+  } else if (graphViewMode === 'full' || currentPalazzoFloor === 'vertical') {
+    // Full view or Vertical 3D view: show all nodes
     rawNodes.forEach(n => visibleNodeIds.add(n.id));
   } else {
     // Areas Mode: show macro hubs and all nodes connected to expanded nodes
@@ -373,10 +498,8 @@ function renderGraphData() {
       if (nodeMap[hubId]) visibleNodeIds.add(hubId);
     });
     
-    // Always include person-pierfrancesco if present
     if (nodeMap['person-pierfrancesco']) visibleNodeIds.add('person-pierfrancesco');
 
-    // Add neighbors of all expanded nodes
     expandedNodeIds.forEach(expId => {
       if (nodeMap[expId]) {
         visibleNodeIds.add(expId);
@@ -394,7 +517,7 @@ function renderGraphData() {
     const isLeft = n.hemisphere === 'LEFT';
     const catColor = CATEGORY_COLORS[n.primary_label] || (isLeft ? LEFT_COLOR : RIGHT_COLOR);
     const degree = degrees[n.id] || 1;
-    let size = Math.min(24, Math.max(13, 11 + degree * 1.4));
+    let size = Math.min(26, Math.max(13, 11 + degree * 1.4));
     
     // Count hidden neighbors
     const totalNeighbors = adjacency[n.id] ? adjacency[n.id].size : 0;
@@ -407,7 +530,11 @@ function renderGraphData() {
 
     const isExpanded = expandedNodeIds.has(n.id);
     let label = n.label;
-    if (graphViewMode === 'areas') {
+    const floorLvl = getFloor(n);
+
+    if (currentPalazzoFloor === 'vertical') {
+      label = `[P${floorLvl}] ${n.label}`;
+    } else if (graphViewMode === 'areas' && currentPalazzoFloor === 'all') {
       if (hiddenCount > 0) {
         label = `${n.label} ⊕${hiddenCount}`;
       } else if (isExpanded && totalNeighbors > 1) {
@@ -415,28 +542,38 @@ function renderGraphData() {
       }
     }
 
-    const isHub = CORE_MACRO_HUBS.has(n.id) || n.id === 'person-pierfrancesco';
+    const isHub = CORE_MACRO_HUBS.has(n.id) || n.id === 'person-pierfrancesco' || floorLvl === 0;
     if (isHub) {
       size += 4;
     }
 
-    visNodes.push({
+    const nodeObj = {
       id: n.id,
       label: label,
-      title: `${n.label} [${n.primary_label || n.category}]${hiddenCount > 0 ? ` (Clicca per espandere +${hiddenCount} nodi collegati)` : ''}`,
+      title: `${n.label} [Piano ${floorLvl}: ${n.primary_label || n.category}]${hiddenCount > 0 ? ` (Clicca per espandere +${hiddenCount} nodi collegati)` : ''}`,
       size: size,
       color: {
         background: catColor,
-        border: isHub ? '#ffffff' : (isLeft ? '#00D2FF' : '#FF007F'),
+        border: floorLvl === 0 ? '#38bdf8' : (isHub ? '#ffffff' : (isLeft ? '#00D2FF' : '#FF007F')),
         highlight: { background: '#ffffff', border: catColor }
       },
       borderWidth: isHub ? 3 : (hiddenCount > 0 ? 2.5 : 1.5),
       shadow: isHub ? { enabled: true, color: catColor, size: 8 } : false,
       _data: n,
       _degree: degree,
+      _floor: floorLvl,
       _hiddenCount: hiddenCount,
       _isExpanded: isExpanded
-    });
+    };
+
+    // Vertical View Positioning: lock tiers on Y axis while allowing horizontal spring relaxation
+    if (currentPalazzoFloor === 'vertical') {
+      const yTier = floorLvl === 0 ? -360 : (floorLvl === 1 ? 0 : 360);
+      nodeObj.y = yTier + (Math.random() * 60 - 30);
+      // Give initial hint for vertical stratification
+    }
+
+    visNodes.push(nodeObj);
   });
 
   const visEdges = [];
@@ -444,24 +581,39 @@ function renderGraphData() {
     const sId = typeof e.source === 'object' ? e.source.id : e.source;
     const tId = typeof e.target === 'object' ? e.target.id : e.target;
     
-    // Only draw edge if both nodes are currently visible
     if (!visibleNodeIds.has(sId) || !visibleNodeIds.has(tId)) return;
 
     const sNode = nodeMap[sId];
     const tNode = nodeMap[tId];
     const isCross = (sNode && tNode && sNode.hemisphere !== tNode.hemisphere);
+    
+    const sFloor = getFloor(sNode);
+    const tFloor = getFloor(tNode);
+    const isCrossFloor = (sFloor !== tFloor);
+
+    let edgeColor = isCross ? CALLOSUM_COLOR : 'rgba(148, 163, 184, 0.45)';
+    let edgeWidth = isCross ? 2.2 : 1.2;
+    let isDashed = isCross;
+    let edgeTitle = `${e.relation || 'CONNECTS_TO'}${isCross ? ' (Corpo Calloso)' : ''}`;
+
+    if (currentPalazzoFloor === 'vertical' && isCrossFloor) {
+      edgeColor = '#38bdf8';
+      edgeWidth = 2.8;
+      isDashed = [6, 4];
+      edgeTitle = `⚡ Ascensore Sinaptico [Piano ${sFloor} ↔ Piano ${tFloor}] · ${e.relation || 'CONNECTS'}`;
+    }
 
     visEdges.push({
       id: idx,
       from: sId,
       to: tId,
-      title: `${e.relation || 'CONNECTS_TO'}${isCross ? ' (Corpo Calloso)' : ''}`,
-      width: isCross ? 2.2 : 1.2,
-      dashes: isCross,
+      title: edgeTitle,
+      width: edgeWidth,
+      dashes: isDashed,
       color: {
-        color: isCross ? CALLOSUM_COLOR : 'rgba(148, 163, 184, 0.45)',
+        color: edgeColor,
         highlight: '#ffffff',
-        hover: isCross ? '#e9d5ff' : '#cbd5e1'
+        hover: isCross ? '#e9d5ff' : '#38bdf8'
       }
     });
   });

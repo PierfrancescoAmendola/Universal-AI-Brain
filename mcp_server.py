@@ -384,11 +384,74 @@ def tool_brain_get_tree(hemisphere: Optional[str] = None) -> Dict[str, Any]:
         return tree
 
 
+def tool_brain_get_palazzo() -> Dict[str, Any]:
+    """Retrieve the complete 3D Multi-Layer Palazzo Cognitivo (Graph-of-Graphs) structure."""
+    with get_db() as conn:
+        nodes_rows = conn.execute("SELECT * FROM nodes ORDER BY layer_level, hemisphere, primary_label, label").fetchall()
+        edges_rows = conn.execute("SELECT * FROM edges").fetchall()
+        nodes = [dict(r) for r in nodes_rows]
+        edges = [dict(r) for r in edges_rows]
+        
+        degrees: Dict[str, int] = {}
+        for e in edges:
+            degrees[e["source"]] = degrees.get(e["source"], 0) + 1
+            degrees[e["target"]] = degrees.get(e["target"], 0) + 1
+
+        node_floor_map: Dict[str, int] = {}
+        floors_data: Dict[int, Dict[str, Any]] = {
+            0: {"level": 0, "name": "Piano 0: Attico Macro-Domini", "icon": "👑", "nodes": []},
+            1: {"level": 1, "name": "Piano 1: Progetti & Aree", "icon": "🚀", "nodes": []},
+            2: {"level": 2, "name": "Piano 2: Moduli & Dettagli", "icon": "🧩", "nodes": []}
+        }
+
+        for n in nodes:
+            lvl = n.get("layer_level", 0)
+            if lvl == 0 and n["id"] not in ("person-pierfrancesco", "bi-hemispheric-model", "fastapi-core", "sqlite-wal", "node-neuro-symbolic-brain", "node-knowledge-graph-memory", "domain-medicina-salute", "concept-modular-domain-subgraphs", "concept-graph-of-graphs-hypergraph"):
+                pl = n.get("primary_label", "")
+                cat = (n.get("category") or "").lower()
+                nid = n["id"].lower()
+                if any(k in nid for k in ("proj-", "app", "episode-", "intent-", "reason-", "bot-", "engine", "skill-")):
+                    lvl = 1
+                elif pl in ("ALGORITHM", "DATA_STRUCTURE", "DEPENDENCY", "UI_COMPONENT", "DESIGN_TOKEN") or "schema" in cat or "pathology" in cat:
+                    lvl = 2
+                else:
+                    lvl = 1
+
+            n_clean = {
+                "id": n["id"],
+                "label": n["label"],
+                "hemisphere": n["hemisphere"],
+                "primary_label": n["primary_label"],
+                "degree": degrees.get(n["id"], 0),
+                "layer_level": lvl
+            }
+            node_floor_map[n["id"]] = lvl
+            floors_data.get(lvl, floors_data[1])["nodes"].append(n_clean)
+
+        cross_layer_count = sum(1 for e in edges if node_floor_map.get(e["source"], 0) != node_floor_map.get(e["target"], 0))
+
+        return {
+            "title": "Palazzo Cognitivo (Graph-of-Graphs)",
+            "total_nodes": len(nodes),
+            "total_edges": len(edges),
+            "cross_layer_elevators": cross_layer_count,
+            "floors": [floors_data[0], floors_data[1], floors_data[2]]
+        }
+
+
 # -----------------------------------------------------------------------------
 # MCP JSON-RPC 2.0 Server Protocol Dispatcher
 # -----------------------------------------------------------------------------
 
 MCP_TOOLS = [
+    {
+        "name": "brain_get_palazzo",
+        "description": "Retrieve the 3D Multi-Layer Palazzo Cognitivo (Graph-of-Graphs) floor layout and vertical elevator synapses.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {}
+        }
+    },
     {
         "name": "brain_get_tree",
         "description": "Retrieve the Hierarchical Knowledge Tree (層級譜系樹) to explore macro-areas, taxonomies, and atomic nodes hierarchically.",
@@ -515,7 +578,9 @@ def handle_json_rpc(req: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         args = params.get("arguments", {})
 
         try:
-            if tool_name == "brain_get_tree":
+            if tool_name == "brain_get_palazzo":
+                res = tool_brain_get_palazzo()
+            elif tool_name == "brain_get_tree":
                 res = tool_brain_get_tree(args.get("hemisphere"))
             elif tool_name == "brain_search":
                 res = tool_brain_search(args.get("query", ""), args.get("limit", 15))

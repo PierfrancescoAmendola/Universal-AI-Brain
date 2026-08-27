@@ -10,6 +10,7 @@ Questo permette a **Claude Desktop, Google Antigravity, Cursor, Windsurf e ChatG
 
 | Nome Tool | Parametri | Funzione |
 | :--- | :--- | :--- |
+| `brain_get_palazzo` | *nessuno* | Recupera il Palazzo Cognitivo a 3 piani (Attico, Progetti, Moduli) e gli ascensori verticali. |
 | `brain_search` | `query` (str), `limit` (int) | Ricerca semantica BM25 FTS5 in millisecondi. |
 | `brain_get_tree` | `hemisphere` (str) | Esplora l'albero gerarchico (層級譜系樹) per macro-aree. |
 | `brain_get_node` | `node_id` (str) | Recupera la scheda completa di un nodo e tutte le sue sinapsi. |

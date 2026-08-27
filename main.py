@@ -94,6 +94,10 @@ def init_db():
             conn.execute("ALTER TABLE nodes ADD COLUMN tags TEXT NOT NULL DEFAULT '[]';")
         if "confidence" not in columns:
             conn.execute("ALTER TABLE nodes ADD COLUMN confidence TEXT NOT NULL DEFAULT 'EXTRACTED';")
+        if "parent_graph_id" not in columns:
+            conn.execute("ALTER TABLE nodes ADD COLUMN parent_graph_id TEXT NOT NULL DEFAULT 'root';")
+        if "layer_level" not in columns:
+            conn.execute("ALTER TABLE nodes ADD COLUMN layer_level INTEGER NOT NULL DEFAULT 0;")
 
         conn.execute("""
             CREATE TABLE IF NOT EXISTS edges (
@@ -324,6 +328,8 @@ class NodeModel(BaseModel):
     summary: Optional[str] = Field("", description="Cognitive synthesis for LLM memory")
     details: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Structured metadata dictionary")
     confidence: Optional[Literal["EXTRACTED", "INFERRED", "AMBIGUOUS"]] = Field("EXTRACTED", description="Graphify audit confidence rubric")
+    parent_graph_id: Optional[str] = Field("root", description="ID of parent container graph/floor ('root' for top level)")
+    layer_level: Optional[int] = Field(0, description="Floor level in the cognitive building (0 = Attic/Root, 1 = Domains/Projects, 2 = Modules/Details)")
 
 class EdgeModel(BaseModel):
     source: str = Field(..., description="Source node slug ID")
@@ -729,6 +735,133 @@ def get_node_subgraph(
         return result
 
 
+def build_palazzo_hierarchy(conn: sqlite3.Connection) -> Dict[str, Any]:
+    """
+    Builds the 3D Multi-Layer Palazzo Cognitivo (Graph-of-Graphs) representation,
+    separating knowledge into floor levels (L0, L1, L2) and tracing vertical elevator synapses.
+    """
+    nodes_rows = conn.execute("SELECT * FROM nodes ORDER BY layer_level, hemisphere, primary_label, label").fetchall()
+    edges_rows = conn.execute("SELECT * FROM edges").fetchall()
+    
+    nodes = [dict(r) for r in nodes_rows]
+    edges = [dict(r) for r in edges_rows]
+    
+    degrees: Dict[str, int] = {}
+    for e in edges:
+        degrees[e["source"]] = degrees.get(e["source"], 0) + 1
+        degrees[e["target"]] = degrees.get(e["target"], 0) + 1
+
+    node_floor_map: Dict[str, int] = {}
+    floors_data: Dict[int, Dict[str, Any]] = {
+        0: {"level": 0, "name": "Piano 0: Attico Macro-Domini & Core Hubs", "icon": "👑", "description": "Macro-aree fondative, connettoma primario e identità", "nodes": [], "subgraphs": set()},
+        1: {"level": 1, "name": "Piano 1: Progetti & Aree Tematiche", "icon": "🚀", "description": "Applicazioni attive, domini verticali ed episodi conversazionali", "nodes": [], "subgraphs": set()},
+        2: {"level": 2, "name": "Piano 2: Moduli, Algoritmi & Dettagli Atomici", "icon": "🧩", "description": "Schemi di dati, algoritmi specialistici e dettagli tecnici", "nodes": [], "subgraphs": set()}
+    }
+
+    for n in nodes:
+        lvl = n.get("layer_level", 0)
+        # Smart heuristic assignment if default 0
+        if lvl == 0 and n["id"] not in ("person-pierfrancesco", "bi-hemispheric-model", "fastapi-core", "sqlite-wal", "node-neuro-symbolic-brain", "node-knowledge-graph-memory", "domain-medicina-salute", "concept-modular-domain-subgraphs", "concept-graph-of-graphs-hypergraph"):
+            pl = n.get("primary_label", "")
+            cat = (n.get("category") or "").lower()
+            nid = n["id"].lower()
+            if any(k in nid for k in ("proj-", "app", "episode-", "intent-", "reason-", "bot-", "engine", "skill-", "rule-")):
+                lvl = 1
+            elif pl in ("ALGORITHM", "DATA_STRUCTURE", "DEPENDENCY", "UI_COMPONENT", "DESIGN_TOKEN", "COLOR_PALETTE") or "dettaglio" in cat or "pathology" in cat or "schema" in cat or "leaf" in cat:
+                lvl = 2
+            else:
+                lvl = 1
+
+        n_clean = {
+            "id": n["id"],
+            "label": n["label"],
+            "hemisphere": n["hemisphere"],
+            "primary_label": n["primary_label"],
+            "category": n["category"],
+            "tags": json.loads(n["tags"]) if n.get("tags") else [],
+            "summary": n["summary"],
+            "degree": degrees.get(n["id"], 0),
+            "confidence": n.get("confidence", "EXTRACTED"),
+            "parent_graph_id": n.get("parent_graph_id", "root"),
+            "layer_level": lvl
+        }
+        node_floor_map[n["id"]] = lvl
+        target_floor = floors_data.get(lvl, floors_data[1])
+        target_floor["nodes"].append(n_clean)
+        if n_clean["parent_graph_id"] != "root":
+            target_floor["subgraphs"].add(n_clean["parent_graph_id"])
+
+    intra_edges = []
+    cross_layer_edges = []
+
+    for e in edges:
+        s_lvl = node_floor_map.get(e["source"], 0)
+        t_lvl = node_floor_map.get(e["target"], 0)
+        e_clean = {
+            "source": e["source"],
+            "target": e["target"],
+            "relation": e["relation"],
+            "confidence": e.get("confidence", "EXTRACTED"),
+            "source_level": s_lvl,
+            "target_level": t_lvl,
+            "is_cross_layer": (s_lvl != t_lvl)
+        }
+        if s_lvl == t_lvl:
+            intra_edges.append(e_clean)
+        else:
+            cross_layer_edges.append(e_clean)
+
+    floors_list = []
+    for fl_id in sorted(floors_data.keys()):
+        fl = floors_data[fl_id]
+        fl_nodes = fl["nodes"]
+        fl_node_ids = {x["id"] for x in fl_nodes}
+        fl_edges = [e for e in intra_edges if e["source"] in fl_node_ids and e["target"] in fl_node_ids]
+        floors_list.append({
+            "level": fl["level"],
+            "name": fl["name"],
+            "icon": fl["icon"],
+            "description": fl["description"],
+            "node_count": len(fl_nodes),
+            "edge_count": len(fl_edges),
+            "subgraphs": list(fl["subgraphs"]),
+            "nodes": fl_nodes,
+            "edges": fl_edges
+        })
+
+    return {
+        "title": "🏢 Palazzo Cognitivo (Multi-Layer Graph-of-Graphs)",
+        "total_nodes": len(nodes),
+        "total_edges": len(edges),
+        "total_floors": len(floors_list),
+        "cross_layer_count": len(cross_layer_edges),
+        "floors": floors_list,
+        "cross_layer_edges": cross_layer_edges
+    }
+
+
+@app.get("/api/graph/palazzo", tags=["Palazzo Cognitivo"])
+def get_palazzo_hierarchy():
+    """
+    Returns the complete 3D Multi-Layer Palazzo Cognitivo structure with vertical elevator synapses.
+    """
+    with get_db_connection() as conn:
+        return build_palazzo_hierarchy(conn)
+
+
+@app.get("/api/graph/palazzo/floor/{level}", tags=["Palazzo Cognitivo"])
+def get_palazzo_floor(level: int):
+    """
+    Returns scoped nodes and edges for a specific floor (0, 1, 2) in the Palazzo Cognitivo.
+    """
+    with get_db_connection() as conn:
+        palazzo = build_palazzo_hierarchy(conn)
+        for fl in palazzo["floors"]:
+            if fl["level"] == level:
+                return fl
+        raise HTTPException(status_code=404, detail=f"Floor level {level} not found.")
+
+
 @app.get("/api/graph/tree", tags=["GraphRAG"])
 def get_knowledge_tree(
     hemisphere: Optional[str] = Query(None, description="Filter by hemisphere ('LEFT' or 'RIGHT')")
@@ -1070,12 +1203,16 @@ def ingest_memory(payload: IngestPayload):
             created_at = existing["created_at"] if existing else now
 
             confidence = getattr(n, "confidence", "EXTRACTED") or "EXTRACTED"
+            parent_graph_id = getattr(n, "parent_graph_id", "root") or "root"
+            layer_level = getattr(n, "layer_level", 0)
+            if layer_level is None:
+                layer_level = 0
 
             conn.execute("""
                 INSERT OR REPLACE INTO nodes 
-                (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, created_at, updated_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (slug, label, hemi, primary_label, category, tags_str, summary, details_str, confidence, created_at, now))
+                (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, parent_graph_id, layer_level, created_at, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (slug, label, hemi, primary_label, category, tags_str, summary, details_str, confidence, parent_graph_id, layer_level, created_at, now))
             nodes_upserted += 1
 
             if n.cross_links:
