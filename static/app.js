@@ -1435,9 +1435,180 @@ function exportTerminalLogs() {
   downloadAnchor.remove();
 }
 
+// ============================================================================
+// Hierarchical Knowledge Tree Controller (層級譜系樹)
+// ============================================================================
+let currentTreeData = null;
+
+async function openTreeModal() {
+  const backdrop = document.getElementById('tree-modal-backdrop');
+  if (!backdrop) return;
+  backdrop.style.display = 'flex';
+  
+  const container = document.getElementById('tree-container');
+  if (container) {
+    container.innerHTML = '<div style="text-align:center; padding:40px; color:var(--text-muted);">Caricamento albero gerarchico in corso...</div>';
+  }
+
+  try {
+    const res = await fetch('/api/graph/tree');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    currentTreeData = await res.json();
+    renderTree(currentTreeData);
+    
+    const statsEl = document.getElementById('tree-footer-stats');
+    if (statsEl) {
+      statsEl.textContent = `Totale: ${currentTreeData.total_nodes} nodi · ${currentTreeData.total_edges} sinapsi organizzati in ${currentTreeData.children.length} emisferi`;
+    }
+  } catch (err) {
+    if (container) {
+      container.innerHTML = `<div style="color:#ef4444; padding:20px;">Errore nel caricamento dell'albero: ${err.message}</div>`;
+    }
+  }
+}
+
+function closeTreeModal() {
+  const backdrop = document.getElementById('tree-modal-backdrop');
+  if (backdrop) {
+    backdrop.style.display = 'none';
+  }
+}
+
+function renderTree(treeData, filterQuery = "") {
+  const container = document.getElementById('tree-container');
+  if (!container || !treeData) return;
+
+  const q = filterQuery.toLowerCase().trim();
+  let html = '';
+
+  treeData.children.forEach(hemi => {
+    let hemiMatches = false;
+    let hemiChildrenHtml = '';
+
+    hemi.children.forEach(tax => {
+      let taxMatches = false;
+      let nodesHtml = '';
+
+      tax.children.forEach(node => {
+        const matchTitle = node.name.toLowerCase().includes(q);
+        const matchSlug = node.id.toLowerCase().includes(q);
+        const matchSummary = (node.summary || '').toLowerCase().includes(q);
+        const matchTags = (node.tags || []).some(t => t.toLowerCase().includes(q));
+
+        if (!q || matchTitle || matchSlug || matchSummary || matchTags) {
+          taxMatches = true;
+          hemiMatches = true;
+          const tagsHtml = (node.tags || []).map(t => `<span style="color:#38bdf8; margin-right:4px;">#${t}</span>`).join('');
+          nodesHtml += `
+            <div class="tree-node-item" onclick="focusAndCloseTree('${node.id}')">
+              <div style="flex:1;">
+                <div>
+                  <span class="tree-node-title">${esc(node.name)}</span>
+                  <span class="tree-node-slug">(${esc(node.id)})</span>
+                </div>
+                <div class="tree-node-desc">${esc(node.summary)}</div>
+                ${tagsHtml ? `<div style="font-size:10px; margin-top:3px;">${tagsHtml}</div>` : ''}
+              </div>
+              <div style="display:flex; align-items:center;">
+                <span class="tree-badge deg" title="Connessioni sinaptiche">${node.degree} sinapsi</span>
+                <span class="tree-badge extracted">${node.confidence || 'EXTRACTED'}</span>
+              </div>
+            </div>
+          `;
+        }
+      });
+
+      if (!q || taxMatches) {
+        hemiChildrenHtml += `
+          <div class="tree-branch tax-branch">
+            <div class="tree-tax-header" onclick="toggleTreeBranch(this)">
+              <span>📂 <strong>[${esc(tax.name)}]</strong> (${tax.node_count} nodi)</span>
+              <span class="branch-arrow">▼</span>
+            </div>
+            <div class="branch-content" style="padding-left:8px;">
+              ${nodesHtml}
+            </div>
+          </div>
+        `;
+      }
+    });
+
+    if (!q || hemiMatches) {
+      html += `
+        <div class="tree-branch hemi-branch">
+          <div class="tree-hemi-header" style="border-left:4px solid ${hemi.color || '#38bdf8'};" onclick="toggleTreeBranch(this)">
+            <span>${hemi.icon || '🧠'} <strong>${esc(hemi.name)}</strong> (${hemi.node_count} nodi)</span>
+            <span class="branch-arrow">▼</span>
+          </div>
+          <div class="branch-content">
+            ${hemiChildrenHtml}
+          </div>
+        </div>
+      `;
+    }
+  });
+
+  if (!html) {
+    html = `<div style="text-align:center; padding:30px; color:var(--text-muted);">Nessun nodo corrisponde alla ricerca "${esc(filterQuery)}".</div>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function toggleTreeBranch(headerEl) {
+  const content = headerEl.nextElementSibling;
+  const arrow = headerEl.querySelector('.branch-arrow');
+  if (!content) return;
+
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    if (arrow) arrow.textContent = '▼';
+  } else {
+    content.style.display = 'none';
+    if (arrow) arrow.textContent = '▶';
+  }
+}
+
+function expandAllTreeNodes() {
+  document.querySelectorAll('.branch-content').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.branch-arrow').forEach(el => el.textContent = '▼');
+}
+
+function collapseAllTreeNodes() {
+  document.querySelectorAll('.branch-content').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.branch-arrow').forEach(el => el.textContent = '▶');
+}
+
+function filterTreeView(q) {
+  if (currentTreeData) {
+    renderTree(currentTreeData, q);
+    if (q) expandAllTreeNodes();
+  }
+}
+
+function focusAndCloseTree(nodeId) {
+  closeTreeModal();
+  focusNode(nodeId);
+}
+
+async function copyTreeMarkdown() {
+  try {
+    const res = await fetch('/brain.md?view=tree');
+    const text = await res.text();
+    await navigator.clipboard.writeText(text);
+    alert("Copiato l'intero Albero di Conoscenza in Markdown negli appunti!");
+  } catch (err) {
+    alert("Errore copia: " + err.message);
+  }
+}
+
 // Global Keyboard shortcuts & Backdrop click handlers
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
+    const treeModal = document.getElementById('tree-modal-backdrop');
+    if (treeModal && treeModal.style.display === 'flex') {
+      closeTreeModal();
+    }
     const wrapper = document.getElementById('light-terminal-wrapper');
     if (wrapper && wrapper.classList.contains('open')) {
       toggleTerminal();
@@ -1457,6 +1628,15 @@ document.addEventListener('keydown', (e) => {
 });
 
 function setupBackdropClicks() {
+  const treeModal = document.getElementById('tree-modal-backdrop');
+  if (treeModal) {
+    treeModal.addEventListener('click', (e) => {
+      if (e.target === treeModal) {
+        closeTreeModal();
+      }
+    });
+  }
+
   const terminalWrapper = document.getElementById('light-terminal-wrapper');
   if (terminalWrapper) {
     terminalWrapper.addEventListener('click', (e) => {

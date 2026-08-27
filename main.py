@@ -538,6 +538,135 @@ def extract_subgraph(conn: sqlite3.Connection, focal_id: str, depth: int = 1) ->
     }
 
 
+def build_hierarchical_tree(conn: sqlite3.Connection, hemisphere: Optional[str] = None) -> Dict[str, Any]:
+    """
+    Construct a Hierarchical Knowledge Tree (層級譜系樹) enabling multi-level Semantic Zoom:
+    Root -> Hemispheres -> Primary Taxonomies -> Concept Clusters -> Atomic Nodes.
+    """
+    query = "SELECT * FROM nodes"
+    params = []
+    if hemisphere and hemisphere.upper() in ("LEFT", "RIGHT"):
+        query += " WHERE hemisphere = ?"
+        params.append(hemisphere.upper())
+    query += " ORDER BY hemisphere, primary_label, label"
+
+    nodes_rows = conn.execute(query, params).fetchall()
+    edges_rows = conn.execute("SELECT source, target, relation FROM edges").fetchall()
+
+    # Calculate degrees
+    degrees: Dict[str, int] = {}
+    for e in edges_rows:
+        degrees[e["source"]] = degrees.get(e["source"], 0) + 1
+        degrees[e["target"]] = degrees.get(e["target"], 0) + 1
+
+    tree: Dict[str, Any] = {
+        "id": "brain-root",
+        "name": "🧠 Universal AI Brain",
+        "type": "root",
+        "total_nodes": len(nodes_rows),
+        "total_edges": len(edges_rows),
+        "children": []
+    }
+
+    # Group by Hemisphere -> Primary Label
+    hemi_groups: Dict[str, Dict[str, List[Dict[str, Any]]]] = {
+        "LEFT": {},
+        "RIGHT": {}
+    }
+
+    for r in nodes_rows:
+        h = r["hemisphere"]
+        pl = r["primary_label"]
+        hemi_groups.setdefault(h, {}).setdefault(pl, []).append(dict(r))
+
+    hemi_meta = {
+        "LEFT": {
+            "name": "Left Hemisphere (Logica, Tech, Architetture, Regole)",
+            "icon": "⚡",
+            "color": "#00D2FF"
+        },
+        "RIGHT": {
+            "name": "Right Hemisphere (Arte, Emozioni, Relazioni, Valori)",
+            "icon": "🌸",
+            "color": "#FF007F"
+        }
+    }
+
+    for h_key in ["LEFT", "RIGHT"]:
+        if hemisphere and hemisphere.upper() != h_key:
+            continue
+        
+        pl_dict = hemi_groups.get(h_key, {})
+        h_children = []
+
+        for pl_key, node_list in pl_dict.items():
+            pl_children = []
+            for n in node_list:
+                tags = json.loads(n["tags"]) if n.get("tags") else []
+                pl_children.append({
+                    "id": n["id"],
+                    "name": n["label"],
+                    "type": "node",
+                    "primary_label": n["primary_label"],
+                    "category": n["category"],
+                    "tags": tags,
+                    "summary": n["summary"],
+                    "degree": degrees.get(n["id"], 0),
+                    "confidence": n.get("confidence", "EXTRACTED"),
+                    "hemisphere": h_key
+                })
+
+            # Sort nodes by degree centrality (God nodes first)
+            pl_children.sort(key=lambda x: x["degree"], reverse=True)
+
+            h_children.append({
+                "id": f"tax-{h_key.lower()}-{pl_key.lower()}",
+                "name": pl_key,
+                "type": "taxonomy",
+                "hemisphere": h_key,
+                "node_count": len(pl_children),
+                "children": pl_children
+            })
+
+        h_children.sort(key=lambda x: x["node_count"], reverse=True)
+
+        tree["children"].append({
+            "id": f"hemi-{h_key.lower()}",
+            "name": hemi_meta[h_key]["name"],
+            "type": "hemisphere",
+            "hemisphere": h_key,
+            "color": hemi_meta[h_key]["color"],
+            "icon": hemi_meta[h_key]["icon"],
+            "taxonomy_count": len(h_children),
+            "node_count": sum(c["node_count"] for c in h_children),
+            "children": h_children
+        })
+
+    return tree
+
+
+def format_tree_as_markdown(tree: Dict[str, Any]) -> str:
+    """Renders an indented hierarchical tree markdown view with semantic symbols."""
+    lines = [f"# 🌳 HIERARCHICAL KNOWLEDGE TREE (層級譜系樹)"]
+    lines.append(f"> **Nodi Totali:** {tree['total_nodes']} | **Sinapsi Totali:** {tree['total_edges']}\n")
+
+    for hemi in tree.get("children", []):
+        lines.append(f"## {hemi.get('icon', '🔹')} {hemi['name']} ({hemi['node_count']} Nodi)")
+        for tax in hemi.get("children", []):
+            lines.append(f"  ### 📂 [{tax['name']}] ({tax['node_count']} nodi)")
+            for node in tax.get("children", []):
+                tags_str = " ".join(f"#{t}" for t in node.get("tags", []))
+                conf_badge = f"[{node.get('confidence', 'EXTRACTED')}]"
+                lines.append(f"    - **{node['name']}** (`{node['id']}`) · *Deg: {node['degree']}* {conf_badge}")
+                lines.append(f"      > {node['summary']}")
+                if tags_str:
+                    lines.append(f"      > *Tags:* `{tags_str}`")
+            lines.append("")
+        lines.append("")
+
+    return "\n".join(lines)
+
+
 # -----------------------------------------------------------------------------
 # Core Endpoints
 # -----------------------------------------------------------------------------
@@ -600,19 +729,36 @@ def get_node_subgraph(
         return result
 
 
+@app.get("/api/graph/tree", tags=["GraphRAG"])
+def get_knowledge_tree(
+    hemisphere: Optional[str] = Query(None, description="Filter by hemisphere ('LEFT' or 'RIGHT')")
+):
+    """
+    Returns the Hierarchical Knowledge Tree (層級譜系樹) structured for multi-level Semantic Zoom.
+    """
+    with get_db_connection() as conn:
+        return build_hierarchical_tree(conn, hemisphere=hemisphere)
+
+
 @app.get("/brain.md", tags=["Memory Access"])
 def get_brain_markdown(
     q: Optional[str] = Query(None, description="Search term filter (BM25 FTS)"),
     tag: Optional[str] = Query(None, description="Tag filter"),
     primary_label: Optional[str] = Query(None, description="Primary taxonomy filter"),
     subgraph_of: Optional[str] = Query(None, description="Extract scoped k-hop subgraph around a focal node"),
-    depth: int = Query(1, ge=1, le=3, description="Depth if subgraph_of is specified")
+    depth: int = Query(1, ge=1, le=3, description="Depth if subgraph_of is specified"),
+    view: Optional[str] = Query("graph", description="'graph' for default bi-hemispheric network view, 'tree' for hierarchical knowledge tree view")
 ):
     """
     Returns complete or scoped bi-hemispheric graph memory formatted with the mandatory
     System Cognitive Meta-Directive and Graphify Protocol at the very top.
     """
     with get_db_connection() as conn:
+        if view and view.strip().lower() == "tree":
+            tree = build_hierarchical_tree(conn)
+            tree_md = format_tree_as_markdown(tree)
+            return Response(content=tree_md, media_type="text/markdown; charset=utf-8")
+
         if subgraph_of and subgraph_of.strip():
             sub = extract_subgraph(conn, subgraph_of.strip(), depth=depth)
             if sub:

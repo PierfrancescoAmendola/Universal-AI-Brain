@@ -306,11 +306,99 @@ def tool_brain_get_stats() -> Dict[str, Any]:
         }
 
 
+def tool_brain_get_tree(hemisphere: Optional[str] = None) -> Dict[str, Any]:
+    """Retrieve the complete Hierarchical Knowledge Tree (層級譜系樹) for multi-level semantic zoom."""
+    with get_db() as conn:
+        query = "SELECT * FROM nodes"
+        params = []
+        if hemisphere and hemisphere.upper() in ("LEFT", "RIGHT"):
+            query += " WHERE hemisphere = ?"
+            params.append(hemisphere.upper())
+        query += " ORDER BY hemisphere, primary_label, label"
+
+        nodes_rows = conn.execute(query, params).fetchall()
+        edges_rows = conn.execute("SELECT source, target FROM edges").fetchall()
+
+        degrees: Dict[str, int] = {}
+        for e in edges_rows:
+            degrees[e["source"]] = degrees.get(e["source"], 0) + 1
+            degrees[e["target"]] = degrees.get(e["target"], 0) + 1
+
+        tree: Dict[str, Any] = {
+            "id": "brain-root",
+            "name": "🧠 Universal AI Brain",
+            "type": "root",
+            "total_nodes": len(nodes_rows),
+            "total_edges": len(edges_rows),
+            "children": []
+        }
+
+        hemi_groups: Dict[str, Dict[str, List[Dict[str, Any]]]] = {"LEFT": {}, "RIGHT": {}}
+        for r in nodes_rows:
+            hemi_groups.setdefault(r["hemisphere"], {}).setdefault(r["primary_label"], []).append(dict(r))
+
+        hemi_meta = {
+            "LEFT": {"name": "Left Hemisphere (Logic & Tech)", "icon": "⚡"},
+            "RIGHT": {"name": "Right Hemisphere (Art, Emotions & Values)", "icon": "🌸"}
+        }
+
+        for h_key in ["LEFT", "RIGHT"]:
+            if hemisphere and hemisphere.upper() != h_key:
+                continue
+            pl_dict = hemi_groups.get(h_key, {})
+            h_children = []
+            for pl_key, node_list in pl_dict.items():
+                pl_children = []
+                for n in node_list:
+                    tags = json.loads(n["tags"]) if n.get("tags") else []
+                    pl_children.append({
+                        "id": n["id"],
+                        "name": n["label"],
+                        "primary_label": n["primary_label"],
+                        "category": n["category"],
+                        "tags": tags,
+                        "summary": n["summary"],
+                        "degree": degrees.get(n["id"], 0),
+                        "confidence": n.get("confidence", "EXTRACTED")
+                    })
+                pl_children.sort(key=lambda x: x["degree"], reverse=True)
+                h_children.append({
+                    "id": f"tax-{h_key.lower()}-{pl_key.lower()}",
+                    "name": pl_key,
+                    "type": "taxonomy",
+                    "hemisphere": h_key,
+                    "node_count": len(pl_children),
+                    "children": pl_children
+                })
+            h_children.sort(key=lambda x: x["node_count"], reverse=True)
+            tree["children"].append({
+                "id": f"hemi-{h_key.lower()}",
+                "name": hemi_meta[h_key]["name"],
+                "type": "hemisphere",
+                "hemisphere": h_key,
+                "icon": hemi_meta[h_key]["icon"],
+                "node_count": sum(c["node_count"] for c in h_children),
+                "children": h_children
+            })
+
+        return tree
+
+
 # -----------------------------------------------------------------------------
 # MCP JSON-RPC 2.0 Server Protocol Dispatcher
 # -----------------------------------------------------------------------------
 
 MCP_TOOLS = [
+    {
+        "name": "brain_get_tree",
+        "description": "Retrieve the Hierarchical Knowledge Tree (層級譜系樹) to explore macro-areas, taxonomies, and atomic nodes hierarchically.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "hemisphere": {"type": "string", "description": "Optional filter: 'LEFT' or 'RIGHT'"}
+            }
+        }
+    },
     {
         "name": "brain_search",
         "description": "Perform high-precision BM25 Full-Text Search on Pierfrancesco's Universal Knowledge Graph.",
@@ -427,7 +515,9 @@ def handle_json_rpc(req: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         args = params.get("arguments", {})
 
         try:
-            if tool_name == "brain_search":
+            if tool_name == "brain_get_tree":
+                res = tool_brain_get_tree(args.get("hemisphere"))
+            elif tool_name == "brain_search":
                 res = tool_brain_search(args.get("query", ""), args.get("limit", 15))
             elif tool_name == "brain_get_node":
                 res = tool_brain_get_node(args.get("node_id", ""))

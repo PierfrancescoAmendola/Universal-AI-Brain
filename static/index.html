@@ -22,6 +22,10 @@
         <span><span class="hud-stat-dot right"></span>Destro: <strong id="hud-right" style="color:#fff">0</strong></span>
         <span><span class="hud-stat-dot callosum"></span>Ponti: <strong id="hud-callosum" style="color:#fff">0</strong></span>
       </div>
+      <button class="btn-hud-terminal" id="btn-hud-tree" onclick="openTreeModal()" title="Visualizza Albero Gerarchico di Conoscenza (層級譜系樹)">
+        <span>🌳</span>
+        <span>Albero Gerarchico</span>
+      </button>
       <button class="btn-hud-terminal" id="btn-hud-term" onclick="toggleTerminal()" title="Apri Console / Terminale Chiaro">
         <span class="term-pulse-dot"></span>
         <span>💻 Terminale Attività</span>
@@ -247,6 +251,44 @@
           <span class="term-meta-sep">·</span>
           <span id="term-total-nodes">0 nodi nel catalogo</span>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hierarchical Knowledge Tree Explorer Modal (層級譜系樹) -->
+  <div class="modal-backdrop" id="tree-modal-backdrop" style="display:none;" onclick="closeTreeModal()">
+    <div class="modal-dialog modal-tree-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:22px;">🌳</span>
+          <div>
+            <h3 style="margin:0; font-size:16px;">Albero Gerarchico di Conoscenza (層級譜系樹)</h3>
+            <span style="font-size:12px; color:var(--text-muted);">Esplorazione tassonomica strutturata per macro-aree, categorie e nodi</span>
+          </div>
+        </div>
+        <button class="modal-close" onclick="closeTreeModal()">✕</button>
+      </div>
+
+      <div class="tree-toolbar">
+        <div style="display:flex; gap:8px;">
+          <button class="tree-tool-btn" onclick="expandAllTreeNodes()">➕ Espandi Tutti i Rami</button>
+          <button class="tree-tool-btn" onclick="collapseAllTreeNodes()">➖ Ricompatta</button>
+          <button class="tree-tool-btn" onclick="copyTreeMarkdown()">📋 Copia Markdown Albero</button>
+        </div>
+        <div class="tree-search-wrap">
+          <span>🔍</span>
+          <input type="text" id="tree-search-input" placeholder="Cerca nell'albero..." oninput="filterTreeView(this.value)">
+        </div>
+      </div>
+
+      <div class="modal-body tree-modal-body" id="tree-container">
+        <!-- Tree dynamically rendered here -->
+        <div style="text-align:center; padding:40px; color:var(--text-muted);">Caricamento albero gerarchico...</div>
+      </div>
+
+      <div class="modal-footer" style="justify-content:space-between;">
+        <span style="font-size:12px; color:var(--text-muted);" id="tree-footer-stats">Caricamento nodi...</span>
+        <button type="button" class="btn-cancel" onclick="closeTreeModal()">Chiudi</button>
       </div>
     </div>
   </div>
