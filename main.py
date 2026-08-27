@@ -740,6 +740,29 @@ def get_knowledge_tree(
         return build_hierarchical_tree(conn, hemisphere=hemisphere)
 
 
+@app.post("/api/telegram/webhook", tags=["Telegram Gateway"])
+async def telegram_webhook(request: Request):
+    """
+    Receives incoming Telegram updates from Bot API and executes knowledge graph commands.
+    """
+    from telegram_bot import process_telegram_message, send_telegram_message, get_main_keyboard
+    try:
+        data = await request.json()
+        msg = data.get("message")
+        if not msg or "text" not in msg:
+            return {"status": "ignored"}
+
+        chat_id = msg["chat"]["id"]
+        user_name = msg.get("from", {}).get("first_name", "Pierfrancesco")
+        text = msg["text"]
+
+        reply_text = process_telegram_message(chat_id, user_name, text)
+        send_telegram_message(chat_id, reply_text, reply_markup=get_main_keyboard())
+        return {"status": "ok"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+
 @app.get("/brain.md", tags=["Memory Access"])
 def get_brain_markdown(
     q: Optional[str] = Query(None, description="Search term filter (BM25 FTS)"),
