@@ -187,14 +187,14 @@ function initNetwork() {
       enabled: true,
       solver: 'forceAtlas2Based',
       forceAtlas2Based: {
-        gravitationalConstant: -65,
+        gravitationalConstant: -60,
         centralGravity: 0.005,
         springLength: 120,
         springConstant: 0.08,
-        damping: 0.45,
-        avoidOverlap: 0.85
+        damping: 0.4,
+        avoidOverlap: 0.8
       },
-      stabilization: { iterations: 180, fit: true }
+      stabilization: { iterations: 150, fit: true }
     },
     interaction: {
       hover: true,
@@ -206,6 +206,7 @@ function initNetwork() {
     nodes: {
       shape: 'dot',
       borderWidth: 1.5,
+      shadow: false,
       font: {
         size: 11,
         color: '#f8fafc',
@@ -217,7 +218,7 @@ function initNetwork() {
     edges: {
       smooth: { type: 'continuous', roundness: 0.2 },
       arrows: { to: { enabled: true, scaleFactor: 0.45 } },
-      selectionWidth: 2.4
+      selectionWidth: 2
     }
   };
 
@@ -225,64 +226,6 @@ function initNetwork() {
 
   network.once('stabilizationIterationsDone', () => {
     network.setOptions({ physics: { enabled: false } });
-  });
-
-  // Render hyperedges / cluster shaded halos on canvas (Stile Graphify)
-  network.on('afterDrawing', function(ctx) {
-    if (!network || currentPalazzoFloor === 'vertical') return;
-    
-    // Group visible nodes by primary_label
-    const clusterMap = {};
-    const visibleIds = nodesDS.getIds({ filter: item => !item.hidden });
-    if (visibleIds.length === 0) return;
-
-    const positions = network.getPositions(visibleIds);
-    visibleIds.forEach(id => {
-      const node = rawNodes.find(n => n.id === id);
-      if (!node) return;
-      const cat = node.primary_label || 'GENERAL';
-      if (!clusterMap[cat]) clusterMap[cat] = [];
-      if (positions[id]) {
-        clusterMap[cat].push({ x: positions[id].x, y: positions[id].y, id: id, node: node });
-      }
-    });
-
-    Object.keys(clusterMap).forEach(cat => {
-      const pts = clusterMap[cat];
-      if (pts.length < 3) return; // Disegna convex hull per cluster con almeno 3 nodi
-
-      const color = CATEGORY_COLORS[cat] || '#38bdf8';
-      const cx = pts.reduce((s, p) => s + p.x, 0) / pts.length;
-      const cy = pts.reduce((s, p) => s + p.y, 0) / pts.length;
-      const hull = convexHull(pts);
-
-      const expanded = hull.map(p => ({
-        x: cx + (p.x - cx) * 1.25,
-        y: cy + (p.y - cy) * 1.25
-      }));
-
-      ctx.save();
-      ctx.globalAlpha = 0.07;
-      ctx.fillStyle = color;
-      ctx.strokeStyle = color;
-      ctx.lineWidth = 1.5;
-      ctx.beginPath();
-      ctx.moveTo(expanded[0].x, expanded[0].y);
-      expanded.slice(1).forEach(p => ctx.lineTo(p.x, p.y));
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.globalAlpha = 0.35;
-      ctx.stroke();
-
-      // Cluster label
-      ctx.globalAlpha = 0.75;
-      ctx.fillStyle = color;
-      ctx.font = "bold 10px 'JetBrains Mono', monospace";
-      ctx.textAlign = 'center';
-      ctx.fillText(cat.toUpperCase(), cx, cy - 8);
-      ctx.restore();
-    });
   });
 
   network.on('click', (params) => {
@@ -778,14 +721,12 @@ function focusNode(nodeId) {
     expandedNodeIds.add(nodeId);
     renderGraphData();
   }
-  setTimeout(() => {
-    if (network) {
-      try {
-        network.focus(nodeId, { scale: 1.3, animation: { duration: 600, easingFunction: 'easeInOutQuad' } });
-        network.selectNodes([nodeId]);
-      } catch (e) {}
-    }
-  }, 100);
+  if (network) {
+    try {
+      network.focus(nodeId, { scale: 1.3, animation: false });
+      network.selectNodes([nodeId]);
+    } catch (e) {}
+  }
   showInfo(nodeId);
 }
 
