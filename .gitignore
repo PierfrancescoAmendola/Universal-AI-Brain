@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# SQLite temp WAL files (the main brain.db is included so initial cloud deployment has all memory seeded)
+brain.db-wal
+brain.db-shm

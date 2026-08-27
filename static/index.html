@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal AI Brain - Cognitive Knowledge Graph</title>
+  
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/vendor/vis-network.min.js"></script>
+</head>
+<body>
+
+  <!-- Left: Main Interactive Graph Canvas -->
+  <div id="graph-container">
+    <div class="top-hud">
+      <div class="brand-title">
+        <span>🧠 Universal AI Brain</span>
+        <span class="brand-badge">Bi-Hemispheric</span>
+      </div>
+      <div class="hud-stats">
+        <span><span class="hud-stat-dot left"></span>Sinistro: <strong id="hud-left" style="color:#fff">0</strong></span>
+        <span><span class="hud-stat-dot right"></span>Destro: <strong id="hud-right" style="color:#fff">0</strong></span>
+        <span><span class="hud-stat-dot callosum"></span>Ponti: <strong id="hud-callosum" style="color:#fff">0</strong></span>
+      </div>
+    </div>
+    
+    <div id="graph"></div>
+  </div>
+
+  <!-- Right: Graphify Sidebar Inspector -->
+  <div id="sidebar">
+    <div id="search-wrap">
+      <div class="action-row">
+        <button class="btn btn-primary" onclick="openAddModal()">+ Aggiungi Nodo</button>
+        <a href="/brain.md" target="_blank" class="btn">📄 brain.md</a>
+      </div>
+      <input id="search" type="text" placeholder="Cerca nodi, #tag o label..." autocomplete="off">
+      <div id="search-results"></div>
+    </div>
+
+    <div id="info-panel">
+      <h3>
+        <span>Dettagli Nodo</span>
+        <button id="btn-delete-node" style="display:none; background:none; border:none; color:#ef4444; cursor:pointer; font-size:11px;" onclick="deleteSelectedNode()">Elimina</button>
+      </h3>
+      <div id="info-content">
+        <span class="empty">Clicca su un nodo nel grafo per ispezionarlo</span>
+      </div>
+    </div>
+
+    <div id="legend-wrap">
+      <h3>Macro-Categorie &amp; Tassonomia</h3>
+      <div id="legend-controls">
+        <label><input type="checkbox" id="select-all-cb" checked onchange="toggleAllCommunities(!this.checked)"> Seleziona Tutti</label>
+      </div>
+      <div id="legend"></div>
+    </div>
+
+    <div id="stats">
+      <span id="stat-nodes-edges">0 nodi · 0 archi</span>
+      <span style="color:#38bdf8; cursor:pointer;" onclick="fetchBrainData()">⚡ Ricarica</span>
+    </div>
+  </div>
+
+  <!-- Ingest Knowledge Modal -->
+  <div class="modal-overlay" id="add-modal">
+    <div class="modal">
+      <h3 class="modal-title">Memorizza Nuovo Concetto</h3>
+      
+      <div class="form-group">
+        <label>Emisfero Cognitivo</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="new-hemi" value="LEFT" checked onchange="updateTaxonomyOptions()">
+            <span style="color:#00D2FF; font-weight:700;">Sinistro (Logica)</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="new-hemi" value="RIGHT" onchange="updateTaxonomyOptions()">
+            <span style="color:#FF007F; font-weight:700;">Destro (Design)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Macro-Label Tassonomica</label>
+        <select id="new-primary-label" class="form-control" required></select>
+      </div>
+
+      <div class="form-group">
+        <label>Titolo Nodo</label>
+        <input type="text" id="new-label" class="form-control" placeholder="es. Flutter BLoC Architecture" required>
+      </div>
+
+      <div class="form-group">
+        <label>Micro-Tags (Separati da virgola)</label>
+        <input type="text" id="new-tags" class="form-control" placeholder="es. flutter, bloc, state-management">
+      </div>
+
+      <div class="form-group">
+        <label>Sintesi per LLM</label>
+        <textarea id="new-summary" class="form-control" rows="2" placeholder="Sintesi descrittiva essenziale..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Ponte Corpo Calloso / Collegamento (Opzionale)</label>
+        <select id="new-link-target" class="form-control">
+          <option value="">-- Nessun collegamento immediato --</option>
+        </select>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
+        <button class="btn" onclick="closeAddModal()">Annulla</button>
+        <button class="btn btn-primary" onclick="submitNewNode()">Salva nel Cervello</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
