@@ -58,8 +58,8 @@ def get_main_keyboard() -> Dict[str, Any]:
     return {
         "keyboard": [
             [{"text": "📋 Menu Comandi"}, {"text": "📊 Statistiche Cervello"}],
-            [{"text": "🌳 Albero Gerarchico"}, {"text": "🔍 Ricerca Progetti"}],
-            [{"text": "📥 Posta JSON AI"}, {"text": "⚡ Corpo Calloso"}]
+            [{"text": "💻 Terminale Log"}, {"text": "🌳 Albero Gerarchico"}],
+            [{"text": "📥 Posta JSON AI"}, {"text": "🔍 Ricerca Progetti"}]
         ],
         "resize_keyboard": True,
         "persistent": True
@@ -235,7 +235,8 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
             f"• <code>/search &lt;query&gt;</code> - Ricerca BM25 istantanea\n"
             f"• <code>/tree</code> - Albero gerarchico di tutte le categorie\n"
             f"• <code>/stats</code> - Metriche globali (nodi, sinapsi, ponti)\n"
-            f"• <code>/path &lt;id1&gt; &lt;id2&gt;</code> - Cammino minimo tra concetti\n\n"
+            f"• <code>/path &lt;id1&gt; &lt;id2&gt;</code> - Cammino minimo tra concetti\n"
+            f"• <code>/terminal</code> - Console e log delle ultime attività/notifiche\n\n"
             f"<b>📥 Inserimento & Ingestione:</b>\n"
             f"• <b>Incolla JSON di ChatGPT/Claude</b> - Riconoscimento e salvataggio automatico!\n"
             f"• <code>/post &lt;JSON&gt;</code> - Inserimento esplicito blocco JSON\n"
@@ -244,6 +245,59 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
             f"<b>🌐 Web Dashboard:</b>\n"
             f"https://universal-ai-brain.onrender.com"
         )
+
+    # 3. /terminal or /logs
+    if cmd in ("/terminal", "/logs", "terminal", "logs", "💻 Terminale Log"):
+        with get_db() as conn:
+            recent_nodes = conn.execute("""
+                SELECT id, label, hemisphere, primary_label, confidence, updated_at, details
+                FROM nodes
+                ORDER BY datetime(updated_at) DESC
+                LIMIT 8
+            """).fetchall()
+
+            recent_edges = conn.execute("""
+                SELECT source, target, relation, confidence, created_at
+                FROM edges
+                ORDER BY datetime(created_at) DESC
+                LIMIT 4
+            """).fetchall()
+
+            tot_nodes = conn.execute("SELECT COUNT(*) AS c FROM nodes").fetchone()["c"]
+            tot_edges = conn.execute("SELECT COUNT(*) AS c FROM edges").fetchone()["c"]
+
+            log_entries = []
+            for n in recent_nodes:
+                ts = n["updated_at"].replace("T", " ")[:19] if n["updated_at"] else "RECENT"
+                hemi_ico = "⚡" if n["hemisphere"] == "LEFT" else "🌸"
+                log_entries.append(
+                    f"<code>[{ts}]</code> 🟢 <b>[NODE_UPSERT]</b>\n"
+                    f"  {hemi_ico} <b>{n['label']}</b> (<code>{n['id']}</code>)\n"
+                    f"  📂 <i>{n['primary_label']}</i> · <code>{n['confidence']}</code>"
+                )
+
+            edge_entries = []
+            for e in recent_edges:
+                ts = e["created_at"].replace("T", " ")[:19] if e["created_at"] else "RECENT"
+                edge_entries.append(
+                    f"<code>[{ts}]</code> 🔗 <b>[SYNAPSE]</b> <code>{e['source']}</code> --[{e['relation']}]--> <code>{e['target']}</code>"
+                )
+
+            logs_formatted = "\n\n".join(log_entries)
+            edges_formatted = "\n".join(edge_entries)
+
+            return (
+                f"💻 <b>COGNITIVE TERMINAL &amp; LIVE ACTIVITY LOGS</b>\n"
+                f"<code>brain@ai-backend:~/journal/activity.log</code>\n"
+                f"────────────────────────\n"
+                f"<b>📡 Ultimi Nodi Inseriti / Aggiornati:</b>\n\n"
+                f"{logs_formatted}\n\n"
+                f"<b>🔗 Ultime Sinapsi Generate:</b>\n"
+                f"{edges_formatted}\n"
+                f"────────────────────────\n"
+                f"📊 <b>Stato Kernel:</b> ONLINE (SQLite WAL) · {tot_nodes} nodi · {tot_edges} sinapsi\n"
+                f"🌐 <i>Live Console Web:</i> https://universal-ai-brain.onrender.com"
+            )
 
     # 3. /stats
     if cmd in ("/stats", "📊 Statistiche Cervello"):
