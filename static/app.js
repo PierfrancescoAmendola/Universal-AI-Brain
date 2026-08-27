@@ -372,55 +372,15 @@ function selectPalazzoFloor(floorOption) {
     else if (floorOption === 2) statusText.textContent = 'Piano: 2 (Moduli Atomici)';
   }
 
-  // Adjust layout engine: Hierarchical Top-Down Tree for Vertical view, Force-directed for Flat
-  if (network) {
-    if (floorOption === 'vertical') {
-      network.setOptions({
-        layout: {
-          hierarchical: {
-            enabled: true,
-            direction: 'UD', // Up-Down (Top to bottom tree)
-            sortMethod: 'directed',
-            levelSeparation: 220,
-            nodeSpacing: 180,
-            treeSpacing: 250,
-            blockShifting: true,
-            edgeMinimization: true,
-            parentCentralization: true
-          }
-        },
-        physics: {
-          enabled: false
-        }
-      });
-    } else {
-      network.setOptions({
-        layout: {
-          hierarchical: {
-            enabled: false
-          }
-        },
-        physics: {
-          enabled: true,
-          solver: 'forceAtlas2Based',
-          forceAtlas2Based: {
-            gravitationalConstant: -60,
-            centralGravity: 0.005,
-            springLength: 120,
-            springConstant: 0.08,
-            damping: 0.4,
-            avoidOverlap: 0.8
-          },
-          stabilization: { iterations: 150, fit: true }
-        }
-      });
-      network.once('stabilizationIterationsDone', () => {
-        network.setOptions({ physics: { enabled: false } });
-      });
-    }
-  }
-
   renderGraphData();
+
+  setTimeout(() => {
+    if (network) {
+      try {
+        network.fit({ animation: { duration: 400, easingFunction: 'easeInOutQuad' } });
+      } catch (e) {}
+    }
+  }, 100);
 }
 
 /**
@@ -653,7 +613,9 @@ function renderGraphData() {
     };
 
     if (currentPalazzoFloor === 'vertical') {
-      nodeObj.level = floorLvl;
+      const yTier = floorLvl === 0 ? -320 : (floorLvl === 1 ? 0 : 320);
+      nodeObj.y = yTier + (Math.random() * 50 - 25);
+      nodeObj.fixed = { y: true, x: false };
     }
 
     visNodes.push(nodeObj);
