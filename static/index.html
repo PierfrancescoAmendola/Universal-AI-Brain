@@ -71,7 +71,10 @@
 
     <div id="stats">
       <span id="stat-nodes-edges">0 nodi · 0 archi</span>
-      <span style="color:#38bdf8; cursor:pointer;" onclick="fetchBrainData()">⚡ Ricarica</span>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a href="/api/memory/backup" target="_blank" style="color:#10b981; text-decoration:none; font-size:11px;" title="Scarica dump JSON completo">💾 Backup</a>
+        <span style="color:#38bdf8; cursor:pointer;" onclick="fetchBrainData()" title="Ricarica dati dal backend">⚡ Ricarica</span>
+      </div>
     </div>
   </div>
 

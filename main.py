@@ -846,6 +846,46 @@ def delete_node(node_id: str):
     return {"status": "deleted", "id": node_id}
 
 
+@app.get("/api/memory/backup", tags=["Memory Management"])
+def export_memory_backup():
+    """
+    Returns complete atomic dump of nodes, edges and metadata for backup & migration.
+    """
+    with get_db_connection() as conn:
+        nodes = [dict(r) for r in conn.execute("SELECT * FROM nodes ORDER BY hemisphere, label").fetchall()]
+        edges = [dict(r) for r in conn.execute("SELECT * FROM edges ORDER BY source, target").fetchall()]
+    
+    for n in nodes:
+        try:
+            n["tags"] = json.loads(n["tags"]) if n.get("tags") else []
+        except Exception:
+            pass
+        try:
+            n["details"] = json.loads(n["details"]) if n.get("details") else {}
+        except Exception:
+            pass
+
+    return {
+        "version": "1.1.0",
+        "exported_at": datetime.now(timezone.utc).isoformat(),
+        "total_nodes": len(nodes),
+        "total_edges": len(edges),
+        "nodes": nodes,
+        "edges": edges
+    }
+
+
+@app.get("/api/memory/download-db", tags=["Memory Management"])
+def download_database_file():
+    """Download the raw SQLite binary database file."""
+    if os.path.exists(DB_PATH):
+        # Force checkpoint before serving binary
+        with get_db_connection() as conn:
+            conn.execute("PRAGMA wal_checkpoint(FULL);")
+        return FileResponse(DB_PATH, filename="brain.db", media_type="application/x-sqlite3")
+    raise HTTPException(status_code=404, detail="Database file not found")
+
+
 # -----------------------------------------------------------------------------
 # Frontend SPA & Static File Serving
 # -----------------------------------------------------------------------------
