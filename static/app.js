@@ -186,15 +186,15 @@ function initNetwork() {
       font: {
         size: 11,
         color: '#f8fafc',
-        face: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+        face: "'JetBrains Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         strokeWidth: 3,
-        strokeColor: '#0f0f1a'
+        strokeColor: '#07080c'
       }
     },
     edges: {
       smooth: { type: 'continuous', roundness: 0.2 },
-      arrows: { to: { enabled: true, scaleFactor: 0.5 } },
-      selectionWidth: 2.5
+      arrows: { to: { enabled: true, scaleFactor: 0.45 } },
+      selectionWidth: 2.2
     }
   };
 
