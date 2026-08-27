@@ -1731,51 +1731,59 @@ function init3DGraph() {
   const container = document.getElementById('graph-3d');
   if (!container || graph3D) return;
 
-  graph3D = ForceGraph3D()(container)
-    .backgroundColor('#0a0a14')
-    .nodeId('id')
-    .nodeLabel(node => `
-      <div style="background:rgba(15,15,26,0.92); border:1px solid rgba(255,255,255,0.2); padding:8px 12px; border-radius:8px; font-family:sans-serif; color:#fff; box-shadow:0 8px 24px rgba(0,0,0,0.6);">
-        <div style="font-weight:700; font-size:13px; color:${node.color};">${esc(node.label)}</div>
-        <div style="font-size:10px; color:#94a3b8; margin-top:2px;">${esc(node.primary_label || node.category)} · ${node.hemisphere === 'LEFT' ? 'SX (Logica)' : 'DX (Design)'}</div>
-        <div style="font-size:11px; color:#cbd5e1; margin-top:4px; max-width:240px; line-height:1.3;">${esc(node.summary || '')}</div>
-      </div>
-    `)
-    .nodeVal(node => {
-      const isHub = CORE_MACRO_HUBS.has(node.id) || node.id === 'person-pierfrancesco';
-      return isHub ? 8 : Math.min(6, Math.max(2.5, (node._degree || 1) * 0.8));
-    })
-    .nodeColor(node => node.color)
-    .nodeResolution(24)
-    .linkSource('source')
-    .linkTarget('target')
-    .linkLabel(link => `<span style="background:rgba(15,15,26,0.85); color:#cbd5e1; padding:3px 6px; border-radius:4px; font-size:10px;">${esc(link.relation || 'CONNECTS_TO')}</span>`)
-    .linkColor(link => link.isCross ? '#a855f7' : 'rgba(148, 163, 184, 0.35)')
-    .linkWidth(link => link.isCross ? 1.8 : 0.8)
-    .linkDirectionalParticles(2)
-    .linkDirectionalParticleWidth(link => link.isCross ? 2.5 : 1.5)
-    .linkDirectionalParticleSpeed(0.005)
-    .linkDirectionalParticleColor(link => link.isCross ? '#d946ef' : '#38bdf8')
-    .onNodeClick(node => {
-      showInfo(node.id);
-      // Smoothly zoom camera towards the clicked node
-      const distance = 90;
-      const distRatio = 1 + distance / Math.hypot(node.x || 1, node.y || 1, node.z || 1);
-      graph3D.cameraPosition(
-        { x: (node.x || 0) * distRatio, y: (node.y || 0) * distRatio, z: (node.z || 0) * distRatio },
-        node,
-        1400
-      );
-    })
-    .onNodeHover(node => {
-      container.style.cursor = node ? 'pointer' : 'default';
-    });
+  if (typeof ForceGraph3D === 'undefined') {
+    console.error("ForceGraph3D is not loaded!");
+    return;
+  }
 
-  // Enable auto-rotation
-  const controls = graph3D.controls();
-  if (controls) {
-    controls.autoRotate = is3DAutoRotate;
-    controls.autoRotateSpeed = 0.6;
+  try {
+    graph3D = ForceGraph3D()(container)
+      .backgroundColor('#0a0a14')
+      .nodeId('id')
+      .nodeLabel(node => `
+        <div style="background:rgba(15,15,26,0.92); border:1px solid rgba(255,255,255,0.2); padding:8px 12px; border-radius:8px; font-family:sans-serif; color:#fff; box-shadow:0 8px 24px rgba(0,0,0,0.6);">
+          <div style="font-weight:700; font-size:13px; color:${node.color};">${esc(node.label)}</div>
+          <div style="font-size:10px; color:#94a3b8; margin-top:2px;">${esc(node.primary_label || node.category)} · ${node.hemisphere === 'LEFT' ? 'SX (Logica)' : 'DX (Design)'}</div>
+          <div style="font-size:11px; color:#cbd5e1; margin-top:4px; max-width:240px; line-height:1.3;">${esc(node.summary || '')}</div>
+        </div>
+      `)
+      .nodeVal(node => {
+        const isHub = CORE_MACRO_HUBS.has(node.id) || node.id === 'person-pierfrancesco';
+        return isHub ? 8 : Math.min(6, Math.max(2.5, (node._degree || 1) * 0.8));
+      })
+      .nodeColor(node => node.color)
+      .nodeResolution(24)
+      .linkSource('source')
+      .linkTarget('target')
+      .linkLabel(link => `<span style="background:rgba(15,15,26,0.85); color:#cbd5e1; padding:3px 6px; border-radius:4px; font-size:10px;">${esc(link.relation || 'CONNECTS_TO')}</span>`)
+      .linkColor(link => link.isCross ? '#a855f7' : 'rgba(148, 163, 184, 0.35)')
+      .linkWidth(link => link.isCross ? 1.8 : 0.8)
+      .linkDirectionalParticles(2)
+      .linkDirectionalParticleWidth(link => link.isCross ? 2.5 : 1.5)
+      .linkDirectionalParticleSpeed(0.005)
+      .linkDirectionalParticleColor(link => link.isCross ? '#d946ef' : '#38bdf8')
+      .onNodeClick(node => {
+        showInfo(node.id);
+        const distance = 90;
+        const distRatio = 1 + distance / Math.hypot(node.x || 1, node.y || 1, node.z || 1);
+        graph3D.cameraPosition(
+          { x: (node.x || 0) * distRatio, y: (node.y || 0) * distRatio, z: (node.z || 0) * distRatio },
+          node,
+          1400
+        );
+      })
+      .onNodeHover(node => {
+        container.style.cursor = node ? 'pointer' : 'default';
+      });
+
+    // Enable auto-rotation
+    const controls = graph3D.controls();
+    if (controls) {
+      controls.autoRotate = is3DAutoRotate;
+      controls.autoRotateSpeed = 0.6;
+    }
+  } catch (err) {
+    console.error("Errore inizializzazione 3D graph:", err);
   }
 }
 
@@ -1852,6 +1860,9 @@ function setDimensionMode(dim) {
     if (areasActionPill) areasActionPill.style.display = 'none';
     if (planet3DActionPill) planet3DActionPill.style.display = 'flex';
 
+    if (!graph3D) {
+      init3DGraph();
+    }
     render3DGraphData();
 
     setTimeout(() => {
@@ -1860,7 +1871,7 @@ function setDimensionMode(dim) {
         const h = graph3DEl.clientHeight || window.innerHeight;
         graph3D.width(w).height(h);
       }
-    }, 80);
+    }, 50);
   } else {
     if (btn2D) btn2D.classList.add('active');
     if (btn3D) btn3D.classList.remove('active');

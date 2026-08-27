@@ -6,7 +6,6 @@
   <title>Universal AI Brain - Cognitive Knowledge Graph</title>
   
   <link rel="stylesheet" href="/static/style.css">
-  <script src="/static/vendor/three.min.js"></script>
   <script src="/static/vendor/3d-force-graph.min.js"></script>
   <script src="/static/vendor/vis-network.min.js"></script>
 </head>
@@ -281,17 +280,17 @@
   </div>
 
   <!-- Hierarchical Knowledge Tree Explorer Modal (層級譜系樹) -->
-  <div class="modal-backdrop" id="tree-modal-backdrop" style="display:none;" onclick="closeTreeModal()">
-    <div class="modal-dialog modal-tree-dialog" onclick="event.stopPropagation()">
-      <div class="modal-header">
+  <div class="modal-overlay" id="tree-modal-backdrop" style="display:none;" onclick="closeTreeModal()">
+    <div class="modal modal-lg modal-tree-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header-row" style="margin-bottom:10px;">
         <div style="display:flex; align-items:center; gap:10px;">
           <span style="font-size:22px;">🌳</span>
           <div>
-            <h3 style="margin:0; font-size:16px;">Albero Gerarchico di Conoscenza (層級譜系樹)</h3>
+            <h3 class="modal-title" style="margin:0; font-size:16px;">Albero Gerarchico di Conoscenza (層級譜系樹)</h3>
             <span style="font-size:12px; color:var(--text-muted);">Esplorazione tassonomica strutturata per macro-aree, categorie e nodi</span>
           </div>
         </div>
-        <button class="modal-close" onclick="closeTreeModal()">✕</button>
+        <button class="modal-close-icon" onclick="closeTreeModal()" title="Chiudi">✕</button>
       </div>
 
       <div class="tree-toolbar">
@@ -311,9 +310,9 @@
         <div style="text-align:center; padding:40px; color:var(--text-muted);">Caricamento albero gerarchico...</div>
       </div>
 
-      <div class="modal-footer" style="justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px;">
         <span style="font-size:12px; color:var(--text-muted);" id="tree-footer-stats">Caricamento nodi...</span>
-        <button type="button" class="btn-cancel" onclick="closeTreeModal()">Chiudi</button>
+        <button type="button" class="btn" onclick="closeTreeModal()">Chiudi</button>
       </div>
     </div>
   </div>

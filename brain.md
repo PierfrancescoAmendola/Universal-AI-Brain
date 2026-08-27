@@ -56,7 +56,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-27 18:34:50 UTC | **Nodi Totali:** 113 (SX: 68 · DX: 45) | **Sinapsi:** 259
+> **Data Generazione:** 2026-08-27 18:38:07 UTC | **Nodi Totali:** 116 (SX: 70 · DX: 46) | **Sinapsi:** 267
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -150,6 +150,10 @@
   - **Dettagli:** `platform`: Apple App Store, `algorithms`: K-Means / Median Cut Color Quantization
 
 ### [Macro-Label: `ARCHITECTURE`]
+- **Architettura Webhook Telegram 0€ (FastAPI + Bot API)** (`arch-telegram-webhook-gateway`)
+  - **Tags:** `#telegram-bot` `#webhook` `#fastapi` `#zero-cost` `#mobile-gateway`
+  - **Sintesi:** Infrastruttura serverless su webhook FastAPI per ricezione comandi (/search, /path, /tree) e inserimento memorie asincrono 0€.
+  - **Dettagli:** `endpoint`: POST /api/telegram/webhook, `auth`: Telegram Secret Token / Authorized User ID whitelist, `cost`: 0€ illimitato
 - **Architettura di Hosting Render.com 0€** (`deploy-render-zero-cost`)
   - **Tags:** `#render` `#hosting` `#zero-cost` `#fastapi` `#uvicorn`
   - **Sintesi:** Infrastruttura di erogazione web asincrona su Render.com Free Tier con Uvicorn e SQLite WAL persistito.
@@ -326,6 +330,10 @@
   - **Dettagli:** `human_role`: Visione, intenzionalità etica, discernimento critico, anima artistica, `machine_role`: Velocità esecutiva, esplorazione combinatoria, precisione formale
 
 ### [Macro-Label: `USER_INTENT`]
+- **Intento Utente: Gateway Telegram per Accesso Cognitivo Ovunque** (`user-intent-telegram-bot-gateway`)
+  - **Tags:** `#user-intent` `#telegram` `#telegram-bot` `#omnipresence` `#mobile-access` `#zero-cost`
+  - **Sintesi:** Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone.
+  - **Dettagli:** `capabilities`: ['Query FTS5', 'Shortest path', 'Hierarchical tree summary', 'Quick note ingestion']
 - **Intento Utente: Potenziamento GraphRAG & MCP a Costo Zero** (`user-intent-zero-cost-graphrag`)
   - **Tags:** `#user-intent` `#graphrag` `#mcp` `#zero-cost` `#high-efficiency` `#fts5`
   - **Sintesi:** Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shortest Path) e server MCP per Claude/Cursor senza costi aggiuntivi.
@@ -390,6 +398,10 @@
   - **Tags:** `#session-chat` `#ui-evolution` `#progressive-areas` `#cloud-persistence`
   - **Sintesi:** Episodio conversazionale incentrato sulla pulizia grafica del terminale, l'introduzione di viste a macro-aree progressive e la memoria episodica.
   - **Dettagli:** `date`: 2026-08-27, `topics`: ['terminal-overlay-fix', 'progressive-areas', 'lossless-sync', 'ai-reasoning-tracking', 'episodic-chat-memory']
+- **Episodio Conversazionale: Concezione Gateway Mobile Telegram** (`episode-2026-08-27-telegram-omnipresence`)
+  - **Tags:** `#conversation-episode` `#telegram` `#omnipresence` `#2026-08-27`
+  - **Sintesi:** Ideazione e pianificazione dell'interfaccia mobile Telegram per estendere l'ubiquità del cervello artificiale.
+  - **Dettagli:** `date`: 2026-08-27, `status`: Pianificato e integrato nel grafo
 - **Episodio Conversazionale: Evoluzione GraphRAG & Protocollo MCP** (`episode-2026-08-27-graphrag-mcp-evolution`)
   - **Tags:** `#conversation-episode` `#evolution` `#graphrag` `#mcp` `#antigravity` `#2026-08-27`
   - **Sintesi:** Sessione di ingegnerizzazione avanzata: sviluppo e verifica del motore FTS5 BM25, cammini minimi attraverso il Corpo Calloso e server MCP conforme allo standard Model Context Protocol.
@@ -582,6 +594,8 @@
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`episode-2026-08-27-telegram-omnipresence`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`) *(Corpo Calloso)*
+- (`episode-2026-08-27-telegram-omnipresence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`episode-2026-08-27-tree-structures-evaluation`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`episode-2026-08-27-tree-structures-evaluation`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-provenance-model-tracking`) *(Corpo Calloso)*
@@ -640,6 +654,7 @@
 - (`streaksup-widget-suite-ui`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-app-intents-engine`) *(Corpo Calloso)*
 - (`streaksup-widget-suite-ui`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-darwin-ipc-protocol`) *(Corpo Calloso)*
 - (`user-intent-provenance-model-tracking`) --[CORPUS_CALLOSUM_LINK]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
+- (`user-intent-telegram-bot-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`user-intent-tree-search-enhancement`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
 - (`ux-frictionless`) --[CORPUS_CALLOSUM_LINK]--> (`proj-linkly-qr`) *(Corpo Calloso)*
@@ -672,6 +687,7 @@
 - (`session-continuous-evolution`) --[INSTANTIATES]--> (`antigravity-centaur-collaboration`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`) *(Corpo Calloso)*
+- (`arch-telegram-webhook-gateway`) --[PART_OF]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`idea-hierarchical-weighted-trees`) --[PART_OF]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PERFORMS_IN]--> (`art-theatre-acting`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PRACTICES]--> (`art-piano-composition`) *(Corpo Calloso)*
@@ -719,6 +735,7 @@
 - (`analysis-bst-vs-graph-taxonomy`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`analysis-bst-vs-graph-taxonomy`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`antigravity-centaur-collaboration`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
+- (`arch-telegram-webhook-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`coursework-cs-federico2`) --[CORPUS_CALLOSUM_LINK]--> (`identity-cs-researcher`)
 - (`deploy-render-zero-cost`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`epistemologia-rigorosa`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`)
@@ -740,6 +757,7 @@
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`user-intent-telegram-bot-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`user-intent-tree-search-enhancement`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
@@ -752,6 +770,7 @@
 - (`person-pierfrancesco`) --[CREATOR_OF]--> (`aule-studio-app`)
 - (`person-pierfrancesco`) --[DECLARED]--> (`user-intent-zero-cost-graphrag`)
 - (`person-pierfrancesco`) --[DEFINED]--> (`feat-copy-ai-prompt`)
+- (`user-intent-telegram-bot-gateway`) --[DEFINES]--> (`arch-telegram-webhook-gateway`)
 - (`cyber-dark-theme`) --[DEFINES_TOKENS]--> (`design-tokens-core`)
 - (`person-pierfrancesco`) --[DEPLOYED]--> (`proj-specula`)
 - (`person-pierfrancesco`) --[DEPLOYED]--> (`proj-linkly-qr`)
@@ -796,6 +815,7 @@
 - (`user-intent-reasoning-and-chat-memory`) --[ORIGINATED]--> (`tax-ai-reasoning`)
 - (`universal-ai-brain`) --[PERSISTS_INTO]--> (`sqlite-wal-persistence`)
 - (`proj-streaksup-app`) --[PERSISTS_WITH]--> (`streaksup-swiftdata-arch`)
+- (`person-pierfrancesco`) --[PLANNED]--> (`user-intent-telegram-bot-gateway`)
 - (`proj-streaksup-app`) --[POWERED_BY]--> (`streaksup-gamification-engine`)
 - (`universal-ai-brain`) --[POWERED_BY]--> (`fastapi-python-stack`)
 - (`person-pierfrancesco`) --[PREFERS]--> (`rigore-informativo`)
