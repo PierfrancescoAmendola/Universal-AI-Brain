@@ -18,14 +18,15 @@ let cachedPalazzo = null;
 
 const CORE_MACRO_HUBS = new Set([
   'person-pierfrancesco',
-  'identity-cs-researcher',
+  'domain-software-engineering',
+  'domain-ai-cognitive-systems',
+  'domain-medicina-salute',
+  'domain-filosofia-valori',
+  'domain-design-creativita',
+  'proj-streaksup-app',
   'universal-ai-brain',
   'aule-studio-app',
-  'proj-caretrack',
-  'rule-zero-cost',
-  'cyber-dark-theme',
-  'continuous-ai-symbiosis',
-  'feat-light-terminal'
+  'proj-caretrack'
 ]);
 
 // Terminal and Activity Logger State
@@ -457,15 +458,10 @@ async function fetchBrainData() {
  */
 function renderGraphData() {
   // Helper to determine floor level of a node
+  // Helper to determine floor level of a node directly from database
   const getFloor = (n) => {
     if (!n) return 1;
     if (n.layer_level !== undefined && n.layer_level !== null) return Number(n.layer_level);
-    const nid = (n.id || '').toLowerCase();
-    const pl = (n.primary_label || '').toUpperCase();
-    const cat = (n.category || '').toLowerCase();
-    if (['person-pierfrancesco', 'bi-hemispheric-model', 'fastapi-core', 'sqlite-wal', 'domain-medicina-salute', 'concept-modular-domain-subgraphs', 'concept-graph-of-graphs-hypergraph'].includes(n.id)) return 0;
-    if (nid.includes('proj-') || nid.includes('app') || nid.includes('episode-') || nid.includes('intent-') || nid.includes('reason-') || nid.includes('bot-') || nid.includes('engine')) return 1;
-    if (['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE'].includes(pl) || cat.includes('dettaglio') || cat.includes('pathology') || cat.includes('schema')) return 2;
     return 1;
   };
 

@@ -1106,6 +1106,9 @@ def get_brain_json():
             "tags": tags_val,
             "summary": r["summary"],
             "details": details_val,
+            "confidence": r["confidence"] if "confidence" in r.keys() else "EXTRACTED",
+            "layer_level": r["layer_level"] if "layer_level" in r.keys() else 0,
+            "parent_graph_id": r["parent_graph_id"] if "parent_graph_id" in r.keys() else "root",
             "created_at": r["created_at"],
             "updated_at": r["updated_at"]
         })
@@ -1115,7 +1118,8 @@ def get_brain_json():
         links.append({
             "source": e["source"],
             "target": e["target"],
-            "relation": e["relation"]
+            "relation": e["relation"],
+            "confidence": e["confidence"] if "confidence" in e.keys() else "EXTRACTED"
         })
 
     return {"nodes": nodes, "links": links}
