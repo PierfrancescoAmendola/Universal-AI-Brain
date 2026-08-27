@@ -148,6 +148,29 @@ function esc(s) {
 }
 
 /**
+ * Andrew's Monotone Chain Convex Hull Algorithm (da Graphify)
+ * Calcola l'involucro convesso dei nodi di un cluster in coordinate di rete
+ */
+function convexHull(pts) {
+  const p = pts.slice().sort((a, b) => (a.x - b.x) || (a.y - b.y));
+  if (p.length < 3) return p;
+  const cross = (o, a, b) => (a.x - o.x) * (b.y - o.y) - (a.y - o.y) * (b.x - o.x);
+  const build = seq => {
+    const out = [];
+    for (const q of seq) {
+      while (out.length >= 2 && cross(out[out.length - 2], out[out.length - 1], q) <= 0) out.pop();
+      out.push(q);
+    }
+    out.pop();
+    return out;
+  };
+  const hull = build(p).concat(build(p.slice().reverse()));
+  return hull.length >= 3 ? hull : p;
+}
+
+let hoveredNodeId = null;
+
+/**
  * Initialize vis-network Graph
  */
 function initNetwork() {
@@ -164,19 +187,19 @@ function initNetwork() {
       enabled: true,
       solver: 'forceAtlas2Based',
       forceAtlas2Based: {
-        gravitationalConstant: -70,
-        centralGravity: 0.006,
-        springLength: 130,
+        gravitationalConstant: -65,
+        centralGravity: 0.005,
+        springLength: 120,
         springConstant: 0.08,
         damping: 0.45,
         avoidOverlap: 0.85
       },
-      stabilization: { iterations: 200, fit: true }
+      stabilization: { iterations: 180, fit: true }
     },
     interaction: {
       hover: true,
-      tooltipDelay: 120,
-      hideEdgesOnDrag: false,
+      tooltipDelay: 100,
+      hideEdgesOnDrag: true,
       navigationButtons: false,
       keyboard: false
     },
@@ -194,7 +217,7 @@ function initNetwork() {
     edges: {
       smooth: { type: 'continuous', roundness: 0.2 },
       arrows: { to: { enabled: true, scaleFactor: 0.45 } },
-      selectionWidth: 2.2
+      selectionWidth: 2.4
     }
   };
 
@@ -202,6 +225,64 @@ function initNetwork() {
 
   network.once('stabilizationIterationsDone', () => {
     network.setOptions({ physics: { enabled: false } });
+  });
+
+  // Render hyperedges / cluster shaded halos on canvas (Stile Graphify)
+  network.on('afterDrawing', function(ctx) {
+    if (!network || currentPalazzoFloor === 'vertical') return;
+    
+    // Group visible nodes by primary_label
+    const clusterMap = {};
+    const visibleIds = nodesDS.getIds({ filter: item => !item.hidden });
+    if (visibleIds.length === 0) return;
+
+    const positions = network.getPositions(visibleIds);
+    visibleIds.forEach(id => {
+      const node = rawNodes.find(n => n.id === id);
+      if (!node) return;
+      const cat = node.primary_label || 'GENERAL';
+      if (!clusterMap[cat]) clusterMap[cat] = [];
+      if (positions[id]) {
+        clusterMap[cat].push({ x: positions[id].x, y: positions[id].y, id: id, node: node });
+      }
+    });
+
+    Object.keys(clusterMap).forEach(cat => {
+      const pts = clusterMap[cat];
+      if (pts.length < 3) return; // Disegna convex hull per cluster con almeno 3 nodi
+
+      const color = CATEGORY_COLORS[cat] || '#38bdf8';
+      const cx = pts.reduce((s, p) => s + p.x, 0) / pts.length;
+      const cy = pts.reduce((s, p) => s + p.y, 0) / pts.length;
+      const hull = convexHull(pts);
+
+      const expanded = hull.map(p => ({
+        x: cx + (p.x - cx) * 1.25,
+        y: cy + (p.y - cy) * 1.25
+      }));
+
+      ctx.save();
+      ctx.globalAlpha = 0.07;
+      ctx.fillStyle = color;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(expanded[0].x, expanded[0].y);
+      expanded.slice(1).forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.globalAlpha = 0.35;
+      ctx.stroke();
+
+      // Cluster label
+      ctx.globalAlpha = 0.75;
+      ctx.fillStyle = color;
+      ctx.font = "bold 10px 'JetBrains Mono', monospace";
+      ctx.textAlign = 'center';
+      ctx.fillText(cat.toUpperCase(), cx, cy - 8);
+      ctx.restore();
+    });
   });
 
   network.on('click', (params) => {
@@ -237,11 +318,13 @@ function initNetwork() {
     }
   });
 
-  network.on('hoverNode', () => {
+  network.on('hoverNode', (params) => {
+    hoveredNodeId = params.node;
     container.style.cursor = 'pointer';
   });
 
   network.on('blurNode', () => {
+    hoveredNodeId = null;
     container.style.cursor = 'default';
   });
 }
@@ -746,15 +829,20 @@ function setupSearch() {
     }).slice(0, 15);
 
     if (matches.length === 0) {
-      searchResults.innerHTML = `<div style="padding:6px; font-size:11px; color:#64748b;">Nessun nodo trovato</div>`;
+      searchResults.innerHTML = `<div style="padding:8px; font-size:11px; color:#64748b; font-family:var(--font-mono);">Nessun nodo trovato</div>`;
     } else {
       matches.forEach(n => {
         const item = document.createElement('div');
         item.className = 'search-item';
-        const color = n.hemisphere === 'LEFT' ? LEFT_COLOR : RIGHT_COLOR;
+        const color = CATEGORY_COLORS[n.primary_label] || (n.hemisphere === 'LEFT' ? LEFT_COLOR : RIGHT_COLOR);
+        item.style.borderLeft = `3px solid ${color}`;
+        item.style.paddingLeft = '8px';
+        item.style.display = 'flex';
+        item.style.alignItems = 'center';
+        item.style.justifyContent = 'space-between';
         item.innerHTML = `
-          <span><span style="color:${color}; font-weight:700;">●</span> ${esc(n.label)}</span>
-          <span style="font-size:10px; color:#94a3b8; font-family:monospace;">[${esc(n.primary_label)}]</span>
+          <span><b>${esc(n.label)}</b></span>
+          <span style="font-size:10px; color:#94a3b8; font-family:var(--font-mono);">[${esc(n.primary_label || n.category)}]</span>
         `;
         item.onclick = () => {
           focusNode(n.id);
@@ -775,9 +863,19 @@ function setupSearch() {
 }
 
 /**
- * Build Legend & Filter Checklist
+ * Build Legend & Filter Checklist (Stile Graphify con 3-State Select All)
  */
 const hiddenCategories = new Set();
+
+function updateSelectAllState() {
+  const selectAllCb = document.getElementById('select-all-cb');
+  if (!selectAllCb) return;
+  const totalCategories = Object.keys(CATEGORY_COLORS).length;
+  const hiddenCount = hiddenCategories.size;
+  
+  selectAllCb.checked = (hiddenCount === 0);
+  selectAllCb.indeterminate = (hiddenCount > 0 && hiddenCount < totalCategories);
+}
 
 function buildLegend() {
   const legendEl = document.getElementById('legend');
@@ -810,6 +908,7 @@ function buildLegend() {
         item.classList.add('dimmed');
       }
       applyCategoryFilters();
+      updateSelectAllState();
     });
 
     item.innerHTML = `
@@ -827,6 +926,8 @@ function buildLegend() {
 
     legendEl.appendChild(item);
   });
+
+  updateSelectAllState();
 }
 
 function toggleAllCommunities(hide) {
@@ -842,6 +943,7 @@ function toggleAllCommunities(hide) {
   });
 
   applyCategoryFilters();
+  updateSelectAllState();
 }
 
 function applyCategoryFilters() {
@@ -850,6 +952,7 @@ function applyCategoryFilters() {
     hidden: hiddenCategories.has(n.primary_label)
   }));
   nodesDS.update(updates);
+  if (network) network.redraw();
 }
 
 /**
