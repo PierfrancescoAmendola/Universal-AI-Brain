@@ -106,7 +106,7 @@ def init_db():
                 relation TEXT NOT NULL,
                 confidence TEXT NOT NULL DEFAULT 'EXTRACTED',
                 reasoning TEXT,
-                created_at TEXT NOT NULL,
+                created_at TEXT NOT NULL DEFAULT (datetime('now')),
                 PRIMARY KEY (source, target, relation),
                 FOREIGN KEY (source) REFERENCES nodes(id) ON DELETE CASCADE,
                 FOREIGN KEY (target) REFERENCES nodes(id) ON DELETE CASCADE
