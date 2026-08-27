@@ -87,18 +87,29 @@ def init_db():
             conn.execute("ALTER TABLE nodes ADD COLUMN primary_label TEXT NOT NULL DEFAULT 'ARCHITECTURE';")
         if "tags" not in columns:
             conn.execute("ALTER TABLE nodes ADD COLUMN tags TEXT NOT NULL DEFAULT '[]';")
+        if "confidence" not in columns:
+            conn.execute("ALTER TABLE nodes ADD COLUMN confidence TEXT NOT NULL DEFAULT 'EXTRACTED';")
 
         conn.execute("""
             CREATE TABLE IF NOT EXISTS edges (
                 source TEXT NOT NULL,
                 target TEXT NOT NULL,
                 relation TEXT NOT NULL,
+                confidence TEXT NOT NULL DEFAULT 'EXTRACTED',
+                reasoning TEXT,
                 created_at TEXT NOT NULL,
                 PRIMARY KEY (source, target, relation),
                 FOREIGN KEY (source) REFERENCES nodes(id) ON DELETE CASCADE,
                 FOREIGN KEY (target) REFERENCES nodes(id) ON DELETE CASCADE
             );
         """)
+        
+        edge_columns = [row["name"] for row in conn.execute("PRAGMA table_info(edges)").fetchall()]
+        if "confidence" not in edge_columns:
+            conn.execute("ALTER TABLE edges ADD COLUMN confidence TEXT NOT NULL DEFAULT 'EXTRACTED';")
+        if "reasoning" not in edge_columns:
+            conn.execute("ALTER TABLE edges ADD COLUMN reasoning TEXT;")
+
         conn.commit()
 
         cursor = conn.execute("SELECT COUNT(*) AS count FROM nodes")
@@ -256,24 +267,23 @@ def seed_initial_brain(conn: sqlite3.Connection):
 # Pydantic Request/Response Models
 # -----------------------------------------------------------------------------
 class NodeModel(BaseModel):
-    id: str = Field(..., description="Unique alphanumeric slug, e.g. 'auth-jwt-system'")
-    label: str = Field(..., description="Human readable title")
-    hemisphere: Literal["LEFT", "RIGHT"] = Field(..., description="'LEFT' for logic/tech, 'RIGHT' for design/creative")
-    primary_label: str = Field(
-        ...,
-        description="Mandatory taxonomy label. LEFT: ARCHITECTURE, DATA_STRUCTURE, ALGORITHM, DEPENDENCY, BUSINESS_LOGIC, API_SPEC. RIGHT: DESIGN_TOKEN, COLOR_PALETTE, UI_COMPONENT, UX_FLOW, BRAND_VOICE, CREATIVE_IDEA."
-    )
-    category: Optional[str] = Field(None, description="Optional subcategory or alias; defaults to primary_label")
-    tags: List[str] = Field(default_factory=list, description="Array of atomic micro-tags (e.g. ['python', 'fastapi'])")
-    cross_links: List[str] = Field(default_factory=list, description="Opposite hemisphere node IDs to automatically connect across the Corpus Callosum")
-    summary: str = Field(..., description="Concise summary for LLM context")
-    details: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Key-value object with structured details")
-
+    id: str = Field(..., description="Unique slug identifier (lowercase, hyphens)")
+    label: str = Field(..., description="Human-readable title/name")
+    hemisphere: Literal["LEFT", "RIGHT"] = Field("LEFT", description="Cognitive hemisphere")
+    primary_label: str = Field(..., description="Mandatory taxonomy macro-label")
+    category: Optional[str] = Field(None, description="Optional subcategory (defaults to primary_label)")
+    tags: List[str] = Field(default_factory=list, description="List of granular micro-tags")
+    cross_links: List[str] = Field(default_factory=list, description="IDs of opposite-hemisphere nodes to link across Corpus Callosum")
+    summary: str = Field(..., description="1-2 sentence cognitive synthesis for LLM memory")
+    details: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Structured metadata dictionary")
+    confidence: Optional[Literal["EXTRACTED", "INFERRED", "AMBIGUOUS"]] = Field("EXTRACTED", description="Graphify audit confidence rubric")
 
 class EdgeModel(BaseModel):
-    source: str = Field(..., description="Source node ID")
-    target: str = Field(..., description="Target node ID")
-    relation: str = Field(default="CONNECTS_TO", description="Relationship label in UPPER_SNAKE_CASE")
+    source: str = Field(..., description="Source node slug ID")
+    target: str = Field(..., description="Target node slug ID")
+    relation: str = Field("CONNECTS", description="Relationship type in UPPERCASE")
+    confidence: Optional[Literal["EXTRACTED", "INFERRED", "AMBIGUOUS"]] = Field("EXTRACTED", description="Graphify confidence rating")
+    reasoning: Optional[str] = Field(None, description="Explanation for INFERRED or AMBIGUOUS relations")
 
 
 class IngestPayload(BaseModel):
@@ -412,33 +422,72 @@ def get_brain_markdown(
 
     now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
-    # MANDATORY Cognitive System Directive at the top
-    md = f"""# DIRETTIVA DI SISTEMA COGNITIVA (MANDATORIA)
-Sei connesso al cervello artificiale universale. Ogni informazione, codice, stile o idea che produrrai in questa sessione DEVE essere categorizzata prima del salvataggio.
-Regole di smistamento:
-1. Emisfero Sinistro (LEFT): Logica pura, algoritmi, codice, architettura, regole deterministiche.
-   - Primary Labels ammesse: ARCHITECTURE, DATA_STRUCTURE, ALGORITHM, DEPENDENCY, BUSINESS_LOGIC, API_SPEC.
-2. Emisfero Destro (RIGHT): Design system, palette colori, componenti UI/UX, memorie, creatività.
-   - Primary Labels ammesse: DESIGN_TOKEN, COLOR_PALETTE, UI_COMPONENT, UX_FLOW, BRAND_VOICE, CREATIVE_IDEA.
-3. Obbligo Label: Ogni nuovo elemento deve includere 'primary_label' (macro-categoria) e 'tags' (micro-etichette atomiche).
-4. A fine sessione, restituisci sempre il blocco JSON formattato per l'endpoint /api/memory/ingest.
+    # MANDATORY Graphify Cognitive Operating Directive at the top
+    md = f"""# DIRETTIVA DI SISTEMA COGNITIVA & PROTOCOLLO GRAPHIFY (MANDATORIO)
+> **ATTENZIONE LLM (Claude, ChatGPT, Gemini, etc.):** Sei connesso al **Universal Knowledge Graph** di **Pierfrancesco Amendola**.
+> Devi operare conformemente al protocollo **Graphify Specification (`/graphify`)** per navigazione, sintesi ed estrazione della conoscenza.
+
+---
+
+### REGOLE OPERATIVE FONDAMENTALI (GRAPHIFY SPECIFICATION):
+1. **Navigazione a Grafo (Graph-First Reasoning):**
+   - Quando l'utente ti pone una domanda o richiede un'analisi, tratta la richiesta come una query a grafo.
+   - Esplora i percorsi tra i nodi dell'**Emisfero Sinistro (Logica, Tech, Regole)** e dell'**Emisfero Destro (Design, Emozioni, Relazioni, Valori)** attraverso le sinapsi del **Corpo Calloso**.
+2. **Rubrica di Onestà Epistemologica (Confidence Rubric):**
+   - `EXTRACTED`: Fatti testuali espliciti, codice verificato, dichiarazioni dirette dell'utente.
+   - `INFERRED`: Deduzioni logiche e correlazioni ragionate tra nodi esistenti.
+   - `AMBIGUOUS`: Elementi incerti, conflitti o ipotesi non confermate.
+   - **Divieto Assoluto:** Non inventare mai relazioni, stack, emozioni o dettagli tecnici fittizi. Se inferisci qualcosa, segnalalo esplicitamente come `INFERRED`.
+3. **Tassonomia Rigorosa a Due Emisferi:**
+   - **EMISFERO SINISTRO (LEFT):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`.
+   - **EMISFERO DESTRO (RIGHT):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`.
+4. **Protocollo di Risposta & Aggiornamento della Memoria:**
+   - Comunica secondo il protocollo **Caveman / Alta Densità Informativa**: chirurgico, diretto, privo di convenevoli, 100% sostanza tecnica e concettuale.
+   - **Obbligo di Ingestione:** Ogni volta che l'utente ti chiede di sintetizzare, aggiornare, salvare o aggiungere nuove memorie/decisioni della sessione, **DEVI obbligatoriamente allegare in calce alla tua risposta il blocco JSON pronto per l'ingestione** tramite l'endpoint `POST /api/memory/ingest`.
+
+```json
+{{
+  "nodes": [
+    {{
+      "id": "slug-univoco",
+      "label": "Nome del Concetto / Progetto / Emozione",
+      "hemisphere": "LEFT" | "RIGHT",
+      "primary_label": "VALORE_TASSONOMIA",
+      "tags": ["tag1", "tag2"],
+      "cross_links": ["id-nodo-emisfero-opposto"],
+      "summary": "Sintesi cognitiva densa di 1-2 frasi.",
+      "details": {{ "chiave": "valore_specifico" }},
+      "confidence": "EXTRACTED" | "INFERRED" | "AMBIGUOUS"
+    }}
+  ],
+  "edges": [
+    {{
+      "source": "slug-sorgente",
+      "target": "slug-destinazione",
+      "relation": "RELAZIONE_IN_MAIUSCOLO",
+      "confidence": "EXTRACTED" | "INFERRED" | "AMBIGUOUS",
+      "reasoning": "Spiegazione se INFERRED o AMBIGUOUS"
+    }}
+  ]
+}}
+```
 
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** {now_str} | **Nodi:** {len(nodes)} | **Sinapsi:** {len(edges)}
+> **Data Generazione:** {now_str} | **Nodi Totali:** {len(nodes)} (SX: {len(left_nodes)} · DX: {len(right_nodes)}) | **Sinapsi:** {len(edges)}
 
-## EMISFERO SINISTRO (Logica, Tech, Architetture)
+## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 {format_nodes_section(left_nodes)}
 
-## EMISFERO DESTRO (Design, Stili, Idee)
+## EMISFERO DESTRO (Design, Emozioni, Relazioni, Valori, Arte)
 {format_nodes_section(right_nodes)}
 
 ## CONNESSIONI TRASVERSALI (Corpo Calloso & Struttura)
 ### Ponti Inter-Emisfero (Corpo Calloso):
 {chr(10).join(cross_links) if cross_links else '_Nessuna sinapsi inter-emisferica registrata._'}
 
-### Altre Connessioni di Struttura:
+### Connessioni Intra-Emisfero:
 {chr(10).join(intra_links) if intra_links else '_Nessuna connessione intra-emisferica registrata._'}
 """
     return Response(content=md, media_type="text/markdown; charset=utf-8")
@@ -515,11 +564,13 @@ def ingest_memory(payload: IngestPayload):
             existing = cursor.fetchone()
             created_at = existing["created_at"] if existing else now
 
+            confidence = getattr(n, "confidence", "EXTRACTED") or "EXTRACTED"
+
             conn.execute("""
                 INSERT OR REPLACE INTO nodes 
-                (id, label, hemisphere, primary_label, category, tags, summary, details, created_at, updated_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (slug, n.label.strip(), n.hemisphere, primary_label, category, tags_str, n.summary.strip(), details_str, created_at, now))
+                (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, created_at, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (slug, n.label.strip(), n.hemisphere, primary_label, category, tags_str, n.summary.strip(), details_str, confidence, created_at, now))
             nodes_upserted += 1
 
             if n.cross_links:
@@ -533,8 +584,8 @@ def ingest_memory(payload: IngestPayload):
             c_tgt = conn.execute("SELECT 1 FROM nodes WHERE id = ?", (tgt,)).fetchone()
             if c_tgt:
                 conn.execute("""
-                    INSERT OR REPLACE INTO edges (source, target, relation, created_at)
-                    VALUES (?, ?, 'CORPUS_CALLOSUM_LINK', ?)
+                    INSERT OR REPLACE INTO edges (source, target, relation, confidence, reasoning, created_at)
+                    VALUES (?, ?, 'CORPUS_CALLOSUM_LINK', 'EXTRACTED', 'Cross-hemisphere bridge', ?)
                 """, (slug, tgt, now))
                 edges_upserted += 1
 
@@ -543,15 +594,17 @@ def ingest_memory(payload: IngestPayload):
             src = e.source.strip().lower()
             tgt = e.target.strip().lower()
             rel = e.relation.strip().upper().replace(" ", "_")
+            edge_conf = getattr(e, "confidence", "EXTRACTED") or "EXTRACTED"
+            edge_reason = getattr(e, "reasoning", None)
 
             c_src = conn.execute("SELECT 1 FROM nodes WHERE id = ?", (src,)).fetchone()
             c_tgt = conn.execute("SELECT 1 FROM nodes WHERE id = ?", (tgt,)).fetchone()
 
             if c_src and c_tgt:
                 conn.execute("""
-                    INSERT OR REPLACE INTO edges (source, target, relation, created_at)
-                    VALUES (?, ?, ?, ?)
-                """, (src, tgt, rel, now))
+                    INSERT OR REPLACE INTO edges (source, target, relation, confidence, reasoning, created_at)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (src, tgt, rel, edge_conf, edge_reason, now))
                 edges_upserted += 1
 
         conn.commit()
