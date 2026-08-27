@@ -1580,7 +1580,15 @@ def serve_index():
     """Serves the main single-page 3D WebGL graph dashboard."""
     index_file = os.path.join(STATIC_DIR, "index.html")
     if os.path.exists(index_file):
-        return FileResponse(index_file, media_type="text/html")
+        return FileResponse(
+            index_file, 
+            media_type="text/html",
+            headers={
+                "Cache-Control": "no-cache, no-store, must-revalidate, max-age=0",
+                "Pragma": "no-cache",
+                "Expires": "0"
+            }
+        )
     return HTMLResponse("<h1>Universal AI Brain</h1><p>index.html not found in static folder.</p>")
 
 
