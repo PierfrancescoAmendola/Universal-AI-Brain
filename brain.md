@@ -56,7 +56,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-27 18:38:07 UTC | **Nodi Totali:** 116 (SX: 70 · DX: 46) | **Sinapsi:** 267
+> **Data Generazione:** 2026-08-27 18:41:59 UTC | **Nodi Totali:** 113 (SX: 67 · DX: 46) | **Sinapsi:** 262
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -68,10 +68,6 @@
   - **Tags:** `#ai-deduction` `#episodic-memory` `#semantic-clustering` `#knowledge-architecture`
   - **Sintesi:** Ragionamento architetturale: creare nodi CONVERSATION_EPISODE autonomi permette di archiviare chat eterogenee senza creare collegamenti artificiali.
   - **Dettagli:** `rationale`: Argomenti non correlati non devono condividere sinapsi dirette ma gravitare attorno al rispettivo nodo di episodio o intenzione utente, `benefit`: Zero allucinazioni relazionali e massima purezza semantica
-- **Deduzione AI: Integrazione Dual-Engine 2D/3D a Costo Zero** (`ai-reasoning-3d-planet-architecture`)
-  - **Tags:** `#dual-engine` `#vis-network` `#3d-force-graph` `#zero-cost` `#local-vendor`
-  - **Sintesi:** Scelta di mantenere vis-network per il 2D e 3d-force-graph con Three.js locale per il 3D sferico, garantendo transizioni istantanee e zero chiamate di rete esterne.
-  - **Dettagli:** `libraries`: ['vis-network.min.js', 'three.min.js', '3d-force-graph.min.js'], `offline_ready`: True
 - **Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€** (`ai-reasoning-hybrid-search-mcp`)
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
@@ -178,10 +174,6 @@
   - **Tags:** `#ios` `#app-store` `#qr-matrix` `#vector-engine`
   - **Sintesi:** Generatore dinamico vettoriale di codici QR con preview live e styling avanzato.
   - **Dettagli:** `platform`: Apple App Store, `engine`: Client-side SVG/PNG Vector Engine
-- **Motore 3D Pianeta Neurale (Three.js & 3D Force-Graph)** (`feat-3d-planet-graph`)
-  - **Tags:** `#3d-graph` `#threejs` `#force-graph-3d` `#planetary-view` `#webgl` `#orbital-camera`
-  - **Sintesi:** Motore di rendering sferico 3D con Three.js e 3D-Force-Graph: orbita planetaria interattiva, rotazione automatica, impulsi di luce e particelle tra sinapsi.
-  - **Dettagli:** `engine`: Three.js + 3D-Force-Graph, `features`: ['auto-rotation', 'particle-beams', 'hemispheric-clustering', 'smooth-flyto-camera']
 - **SQLite WAL Storage Engine** (`sqlite-wal-persistence`)
   - **Tags:** `#sqlite` `#wal` `#embedded` `#atomic` `#zero-cost` `#persistence`
   - **Sintesi:** Motore di persistenza embedded senza server né costi di licenza, con Write-Ahead Logging per letture e scritture concorrenti sicure.
@@ -350,10 +342,6 @@
   - **Tags:** `#user-request` `#ai-reasoning` `#chat-memory` `#multi-topic`
   - **Sintesi:** Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) in aree separate.
   - **Dettagli:** `user`: Pierfrancesco Amendola, `goal`: Mappare ogni sessione senza forzare connessioni artificiali tra argomenti disomogenei
-- **Richiesta Utente: Vista 3D a Pianeta Sferico con Rotazione** (`user-intent-3d-planet-view`)
-  - **Tags:** `#user-request` `#3d-planet` `#orbital-view` `#threejs-visualization`
-  - **Sintesi:** Richiesta di poter visualizzare il grafo anche in 3D come un pianeta sferico ruotabile e navigabile, alternabile con la mappa 2D classica.
-  - **Dettagli:** `user`: Pierfrancesco Amendola, `feature_goal`: Esperienza visiva tridimensionale sferica planetaria
 - **Tracciamento Richiesta Utente & Modello AI nella Memoria** (`user-intent-provenance-model-tracking`)
   - **Tags:** `#user-intent` `#model-attribution` `#context-preservation` `#cross-model-memory` `#episodic-tracking`
   - **Sintesi:** Proposta utente: includere nel JSON di ingestione il prompt integrale e il modello AI sorgente per preservare contesto e consentire recall cross-modello.
@@ -670,7 +658,6 @@
 - (`person-pierfrancesco`) --[EMBODIES]--> (`val-authenticity`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[EMBODIES_VALUE]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`ai-memory-ingest-spec`) --[ENABLES_PERSISTENCE]--> (`continuous-ai-symbiosis`) *(Corpo Calloso)*
-- (`chat-session-2026-08-27-ui-evolution`) --[ENCOMPASSES_FEATURE]--> (`feat-3d-planet-graph`) *(Corpo Calloso)*
 - (`zero-debt-cost-rule`) --[ENFORCES_MINIMALISM]--> (`cyber-slate-space-aesthetic`) *(Corpo Calloso)*
 - (`streaksup-alertless-icon-ux`) --[ENHANCES_EXPERIENCE_OF]--> (`proj-streaksup-app`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[EXPORTS_WIDGETS]--> (`streaksup-widget-suite-ui`) *(Corpo Calloso)*
@@ -782,7 +769,6 @@
 - (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-alcolsafe`)
 - (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-harmonyapp`)
 - (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-cinematch`)
-- (`user-intent-3d-planet-view`) --[DRIVES_IMPLEMENTATION]--> (`feat-3d-planet-graph`)
 - (`user-intent-clean-clustered-ui`) --[DRIVES_IMPLEMENTATION]--> (`feat-progressive-areas`)
 - (`person-pierfrancesco`) --[EMBODIES_PROFILE]--> (`identity-cs-researcher`)
 - (`tax-ai-reasoning`) --[ENFORCED_BY]--> (`rule-ai-thought-tracing`)
@@ -809,7 +795,6 @@
 - (`person-pierfrancesco`) --[MASTERS_STACK]--> (`flutter-dart-ecosystem`)
 - (`person-pierfrancesco`) --[MASTERS_STACK]--> (`fastapi-python-stack`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
-- (`universal-ai-brain`) --[OFFERS_DIMENSION]--> (`feat-3d-planet-graph`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-continuous-evolution`)
 - (`user-intent-reasoning-and-chat-memory`) --[ORIGINATED]--> (`tax-ai-reasoning`)
@@ -820,14 +805,12 @@
 - (`universal-ai-brain`) --[POWERED_BY]--> (`fastapi-python-stack`)
 - (`person-pierfrancesco`) --[PREFERS]--> (`rigore-informativo`)
 - (`person-pierfrancesco`) --[PROPOSED]--> (`user-intent-tree-search-enhancement`)
-- (`ai-reasoning-3d-planet-architecture`) --[RATIONALE_FOR]--> (`feat-3d-planet-graph`)
 - (`ai-reasoning-clustering-decision`) --[RATIONALE_FOR]--> (`feat-progressive-areas`)
 - (`analysis-bst-vs-graph-taxonomy`) --[RECOMMENDS]--> (`idea-hierarchical-weighted-trees`)
 - (`lesson-boundaries-clarity`) --[REINFORCES]--> (`val-authenticity`)
 - (`bi-hemispheric-model`) --[RENDERED_IN]--> (`cyber-dark-theme`)
 - (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-clean-clustered-ui`)
 - (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-reasoning-and-chat-memory`)
-- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-3d-planet-view`)
 - (`identity-cs-researcher`) --[RESEARCHED]--> (`proj-bioinformatics-icar`)
 - (`person-pierfrancesco`) --[RESEARCHES_AT]--> (`proj-bioinformatics-icar`)
 - (`identity-cs-researcher`) --[RESEARCHING_THESIS]--> (`proj-tesi-busbra-cnr`)
