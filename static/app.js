@@ -564,6 +564,64 @@ function closeAddModal() {
 }
 
 /**
+ * AI Directive & Sync Prompt Copy Management
+ */
+const AI_SYNC_PROMPT = `Leggi il mio Universal Knowledge Graph all'indirizzo: https://universal-ai-brain.onrender.com/brain.md
+Segui rigorosamente la Direttiva Graphify in cima alla pagina.
+Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST /api/memory/ingest.`;
+
+async function copyAIPrompt() {
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(AI_SYNC_PROMPT);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = AI_SYNC_PROMPT;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+
+    // Visual Feedback
+    const buttons = document.querySelectorAll('.btn-copy-prompt, .btn-hud-prompt');
+    buttons.forEach(btn => {
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = `<span>✅</span> Copiato!`;
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+
+    // Record in Terminal Log
+    addTerminalLog({
+      id: 'prompt-' + Date.now(),
+      type: 'node',
+      method: 'PROMPT',
+      actionType: 'COPIED TO CLIPBOARD',
+      nodeId: 'ai-prompt-directive',
+      label: 'Prompt per AI Copiato negli Appunti',
+      hemisphere: 'LEFT',
+      primaryLabel: 'COGNITIVE_RULE',
+      tags: ['prompt', 'ai-sync', 'graphify', 'clipboard'],
+      summary: 'Prompt copiato per ChatGPT / Claude / Gemini: istruzioni di lettura brain.md e aggiornamento grafo.',
+      timestamp: new Date(),
+      timeStr: new Date().toLocaleTimeString(),
+      details: {
+        target_endpoint: 'https://universal-ai-brain.onrender.com/brain.md',
+        ingest_endpoint: 'POST /api/memory/ingest'
+      }
+    });
+  } catch (err) {
+    alert("Impossibile copiare il prompt negli appunti: " + err.message);
+  }
+}
+
+/**
  * AI JSON Ingest Modal Management
  */
 function openUploadModal() {

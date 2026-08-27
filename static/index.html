@@ -27,6 +27,9 @@
         <span>💻 Terminale Attività</span>
         <span id="hud-terminal-badge" class="hud-term-badge">0</span>
       </button>
+      <button class="btn-hud-prompt" id="btn-hud-prompt" onclick="copyAIPrompt()" title="Copia prompt istruzioni per ChatGPT / Claude / Gemini">
+        <span>📋</span> Copia Prompt
+      </button>
     </div>
     
     <div id="graph"></div>
@@ -35,6 +38,9 @@
   <!-- Right: Graphify Sidebar Inspector -->
   <div id="sidebar">
     <div id="search-wrap">
+      <button class="btn btn-copy-prompt" id="btn-copy-prompt" onclick="copyAIPrompt()" title="Copia negli appunti le istruzioni da inviare a qualsiasi AI">
+        <span>📋</span> Copia Prompt per le AI
+      </button>
       <div class="action-grid">
         <button class="btn btn-primary" onclick="openAddModal()">+ Aggiungi Nodo</button>
         <button class="btn btn-accent" onclick="openUploadModal()">📥 Carica JSON AI</button>
