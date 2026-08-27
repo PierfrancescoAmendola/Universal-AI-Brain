@@ -18,9 +18,9 @@ Il Cervello Artificiale di Pierfrancesco è un grafo di conoscenza permanente me
 
 ---
 
-## 2. I 6 MACRO-DOMINI FONDATIVI (ROOT DOMAINS)
+## 2. MACRO-DOMINI FONDATIVI & REGOLE DI CREAZIONE DINAMICA
 
-Tutti i progetti, moduli e concetti devono gravitare o connettersi ad almeno uno dei 6 domini primari:
+### A. Domini Primari Esistenti:
 1. `person-pierfrancesco`: Identità, profilo, biografia, percorsi di vita e passioni di Pierfrancesco Amendola.
 2. `domain-software-engineering`: Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite.
 3. `domain-ai-cognitive-systems`: Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP (Model Context Protocol), Metacognizione.
@@ -28,16 +28,26 @@ Tutti i progetti, moduli e concetti devono gravitare o connettersi ad almeno uno
 5. `domain-filosofia-valori`: Filosofia, Modelli Mentali, Principi etici, Decision Making e abitudini.
 6. `domain-design-creativita`: UI/UX Design (Dark-Tech / Cyberpunk Minimalist), Grafica, Musica, Ear training.
 
+### B. AUTORIZZAZIONE ESPLICITA A CREARE NUOVI MACRO-DOMINI:
+- **Regola Fondamentale:** Se il tema trattato riguarda una macro-area della vita o della conoscenza che **NON** rientra accuratamente nei 6 domini esistenti (es. Storia/Cultura, Relazioni/Sentimenti, Finanza/Economia, Diritto/Normativa, ecc.), **l'AI è ESPLICITAMENTE AUTORIZZATA e INCORAGGIATA a istanziare un NUOVO MACRO-DOMINIO**.
+- **Convenzione per i Nuovi Macro-Domini:**
+  - `id`: prefisso `domain-<nome-in-italiano>` (es. `domain-storia-cultura`, `domain-relazioni-sentimenti`, `domain-finanza-investimenti`).
+  - `category`: `"ROOT_DOMAIN"`
+  - `layer_level`: `0` (Piano 0 - Attico Macro-Domini)
+  - `parent_graph_id`: `"root"`
+  - **Sinapsi Obbligatoria:** Collega sempre il nuovo dominio a `person-pierfrancesco` con arco `relation: "FOUNDATIONAL_PILLAR"` o `"LIFE_DOMAIN"`.
+- **Criterio di Parsimonia:** Non creare domini per argomenti puntiformi o per sottoprogetti (quelli vanno a Piano 1 come progetti o episodi). Crea un nuovo macro-dominio solo quando l'area ha respiro enciclopedico/esistenziale autonomo.
+
 ---
 
 ## 3. LA GERARCHIA A 3 PIANI DEL PALAZZO COGNITIVO (`layer_level`)
 
 Ogni nodo deve possedere un livello di piano esplicito (`layer_level`):
 - **Piano 0 (`layer_level: 0` - Attico Macro-Domini & Core Hubs):**
-  - Riservato ESCLUSIVAMENTE all'identità `person-pierfrancesco` e ai 6 domini macro fondativi.
+  - Riservato all'identità `person-pierfrancesco` e a tutti i macro-domini fondativi (esistenti o creati dinamicamente con prefisso `domain-*`).
 - **Piano 1 (`layer_level: 1` - Progetti, Applicazioni, Episodi, Intenti & Valori):**
   - Progetti attivi (es. `proj-streaksup-app`, `universal-ai-brain`, `aule-studio-app`, `proj-caretrack`).
-  - Sessioni di chat ed episodi (`CONVERSATION_EPISODE`).
+  - Sessioni di chat ed episodi tematici (`CONVERSATION_EPISODE`).
   - Intenzioni e richieste chiave dell'utente (`USER_INTENT`).
   - Valori personali (`PERSONAL_VALUE`), lezioni di vita (`LIFE_LESSON`), idee creative (`CREATIVE_IDEA`).
 - **Piano 2 (`layer_level: 2` - Moduli, Algoritmi & Dettagli Atomici):**

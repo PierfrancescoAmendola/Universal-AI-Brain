@@ -746,18 +746,18 @@ def get_node_subgraph(
 def determine_node_floor_level(node_id: str, primary_label: str, category: str, degree: int = 0, explicit_level: Optional[int] = None) -> int:
     """
     Classifica il piano nel Palazzo Cognitivo:
-    - Piano 0: Attico Macro-Domini & Core Hubs (Identità, Connettoma Primario, Macro-Architettura)
-    - Piano 1: Progetti & Aree Tematiche (Applicazioni attive, Domini verticali, Episodi conversazionali)
+    - Piano 0: Attico Macro-Domini & Core Hubs (Identità, Nuovi Macro-Domini domain-*, Connettoma Primario)
+    - Piano 1: Progetti & Aree Tematiche (Applicazioni attive, Episodi conversazionali, Intenti, Valori)
     - Piano 2: Moduli, Algoritmi & Dettagli Atomici (Schemi dati, Algoritmi specialistici, Token UI)
     """
-    if explicit_level is not None and explicit_level in (0, 1, 2) and explicit_level > 0:
+    if explicit_level is not None and explicit_level in (0, 1, 2):
         return explicit_level
     nid = (node_id or "").lower()
     pl = (primary_label or "").upper()
     cat = (category or "").lower()
     
     # Floor 0: Attico Macro-Domini & Core Hubs
-    if nid in ['person-pierfrancesco', 'bi-hemispheric-model', 'fastapi-core', 'sqlite-wal', 'domain-medicina-salute', 'cervello-cognitivo-unificato', 'concept-modular-domain-subgraphs', 'concept-graph-of-graphs-hypergraph'] or (pl in ['ARCHITECTURE', 'MENTAL_MODEL'] and degree >= 6):
+    if nid == 'person-pierfrancesco' or nid.startswith('domain-') or cat in ('domain', 'root_domain', 'macro_domain') or nid in ['bi-hemispheric-model', 'fastapi-core', 'sqlite-wal', 'cervello-cognitivo-unificato', 'concept-modular-domain-subgraphs', 'concept-graph-of-graphs-hypergraph'] or (pl in ['ARCHITECTURE', 'MENTAL_MODEL'] and degree >= 6):
         return 0
     # Floor 2: Moduli Atomici, Algoritmi, Token, Schemi
     if pl in ['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'API_SPEC', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE', 'BUSINESS_LOGIC'] or 'schema' in cat or 'token' in cat or 'dettaglio' in cat:
@@ -1058,15 +1058,11 @@ def get_brain_markdown(
 3. **Tassonomia Rigorosa a Due Emisferi:**
    - **EMISFERO SINISTRO (LEFT - Logica, Architettura, Richieste & Ragionamento):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
    - **EMISFERO DESTRO (RIGHT - Design, Emozioni, Episodi & Dialoghi):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
-4. **I 6 Macro-Domini Fondativi (Root Domains):**
-   - `person-pierfrancesco`: Identità, profilo, biografia, percorsi di vita e passioni di Pierfrancesco Amendola.
-   - `domain-software-engineering`: Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite.
-   - `domain-ai-cognitive-systems`: Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP, Metacognizione.
-   - `domain-medicina-salute`: Medicina, Salute, Nutrizione, Fitness, Bioinformatica CNR.
-   - `domain-filosofia-valori`: Filosofia, Modelli Mentali, Principi etici, Decision Making.
-   - `domain-design-creativita`: UI/UX Design, Grafica Dark-Tech, Musica, Arte, Ear training.
+4. **Macro-Domini Fondativi & Regole di Creazione Dinamica:**
+   - **Pilastri Esistenti:** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
+   - **Autorizzazione Nuovi Domini:** Se un argomento non è rappresentabile dai domini esistenti (es. Storia/Cultura, Relazioni/Sentimenti, Finanza), l'AI è **esplicitamente autorizzata a creare un nuovo macro-dominio** (`id: "domain-<nome>"`, `category: "ROOT_DOMAIN"`, `layer_level: 0`, `parent_graph_id: "root"`), collegandolo a `person-pierfrancesco` con arco `FOUNDATIONAL_PILLAR` o `LIFE_DOMAIN`.
 5. **Gerarchia a 3 Piani del Palazzo Cognitivo (`layer_level`):**
-   - `layer_level: 0` -> **Piano 0 (Attico Macro-Domini & Core Hubs):** Riservato all'identità `person-pierfrancesco` e ai macro-domini fondativi.
+   - `layer_level: 0` -> **Piano 0 (Attico Macro-Domini & Core Hubs):** Riservato all'identità `person-pierfrancesco` e a tutti i macro-domini fondativi (`domain-*`).
    - `layer_level: 1` -> **Piano 1 (Progetti, Episodi, Intenti & Valori):** Progetti (`streaksup-app`, `universal-ai-brain`, `aule-studio-app`), episodi conversazionali (`CONVERSATION_EPISODE`), richieste utente (`USER_INTENT`), valori (`PERSONAL_VALUE`), lezioni di vita (`LIFE_LESSON`), idee creative (`CREATIVE_IDEA`).
    - `layer_level: 2` -> **Piano 2 (Moduli, Algoritmi & Dettagli Atomici):** Algoritmi (`ALGORITHM`), strutture dati (`DATA_STRUCTURE`), librerie (`DEPENDENCY`), specifiche endpoint (`API_SPEC`), componenti d'interfaccia (`UI_COMPONENT`), token e colori (`DESIGN_TOKEN`, `COLOR_PALETTE`), logica di business (`BUSINESS_LOGIC`).
 6. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**

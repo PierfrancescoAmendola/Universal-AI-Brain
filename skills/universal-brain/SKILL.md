@@ -27,8 +27,9 @@ When a discussion generates a new idea, architectural decision, lesson, or user 
 1. **MANDATORY LANGUAGE RULE (ITALIAN / ENGLISH)**:
    - **All node labels (`label`), summaries (`summary`), tags, and details MUST ALWAYS be written in Italian (with technical terms in English).**
    - **NEVER generate or save nodes in Chinese/Wenyan/CJK**, even if the chat communication is in `/caveman wenyan-ultra` or another language. The knowledge database must remain 100% searchable in Italian.
-2. **6 Root Macro-Domains (`parent_graph_id: "root"` / `layer_level: 0`)**:
-   - `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
+2. **Macro-Domains & Dynamic Domain Creation Authorization**:
+   - **Existing Pillars**: `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
+   - **Dynamic Domain Creation**: If a discussion covers a whole new area of life or knowledge that does NOT fit into existing domains (e.g. `domain-storia-cultura`, `domain-relazioni-sentimenti`, `domain-finanza-economia`), the AI is **EXPLICITLY AUTHORIZED AND ENCOURAGED** to instantiate a new macro-domain (`id: "domain-<nome>"`, `category: "ROOT_DOMAIN"`, `layer_level: 0`, `parent_graph_id: "root"`) and link it to `person-pierfrancesco`.
 3. **3-Layer Palazzo Cognitivo Hierarchy (`layer_level`)**:
    - `layer_level: 0` (Piano 0 - Attico Macro-Domini & Core Hubs)
    - `layer_level: 1` (Piano 1 - Progetti, Episodi Conversazionali, Intenti Utente, Idee, Valori)

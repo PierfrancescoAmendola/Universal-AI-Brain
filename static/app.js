@@ -467,24 +467,24 @@ function renderGraphData() {
   const getFloor = (n) => {
     if (!n) return 1;
     const rawLvl = (n.layer_level !== undefined && n.layer_level !== null) ? Number(n.layer_level) : null;
-    if (rawLvl === 1 || rawLvl === 2) return rawLvl;
+    if (rawLvl === 0 || rawLvl === 1 || rawLvl === 2) return rawLvl;
     
     const nid = (n.id || '').toLowerCase();
     const pl = (n.primary_label || '').toUpperCase();
     const cat = (n.category || '').toLowerCase();
     const d = degrees[n.id] || 0;
 
-    // Floor 0: Attico Macro-Domini & Core Hubs (15 nodi)
-    if (['person-pierfrancesco', 'bi-hemispheric-model', 'fastapi-core', 'sqlite-wal', 'domain-medicina-salute', 'cervello-cognitivo-unificato', 'concept-modular-domain-subgraphs', 'concept-graph-of-graphs-hypergraph'].includes(n.id) || (['ARCHITECTURE', 'MENTAL_MODEL'].includes(pl) && d >= 6)) {
+    // Floor 0: Attico Macro-Domini & Core Hubs (Identità, Nuovi domini domain-*, Connettoma primario)
+    if (nid === 'person-pierfrancesco' || nid.startsWith('domain-') || ['domain', 'root_domain', 'macro_domain'].includes(cat) || ['bi-hemispheric-model', 'fastapi-core', 'sqlite-wal', 'cervello-cognitivo-unificato', 'concept-modular-domain-subgraphs', 'concept-graph-of-graphs-hypergraph'].includes(nid) || (['ARCHITECTURE', 'MENTAL_MODEL'].includes(pl) && d >= 6)) {
       return 0;
     }
     
-    // Floor 2: Moduli, Algoritmi & Dettagli Atomici (53 nodi)
+    // Floor 2: Moduli, Algoritmi & Dettagli Atomici
     if (['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'API_SPEC', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE', 'BUSINESS_LOGIC'].includes(pl) || cat.includes('schema') || cat.includes('token') || cat.includes('dettaglio') || cat.includes('modul')) {
       return 2;
     }
     
-    // Floor 1: Progetti & Aree Tematiche (121 nodi)
+    // Floor 1: Progetti & Aree Tematiche (Episodi, Intenti, Valori, Idee)
     return 1;
   };
 
