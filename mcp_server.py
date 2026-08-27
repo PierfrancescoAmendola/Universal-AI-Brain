@@ -27,8 +27,8 @@ def get_db():
 # Tool Implementations
 # -----------------------------------------------------------------------------
 
-def tool_brain_search(query: str, limit: int = 15) -> Dict[str, Any]:
-    """Search knowledge graph via BM25 Full-Text Search across labels, tags, summaries, and details."""
+def tool_brain_search(query: str, limit: int = 15, hemisphere: Optional[str] = None) -> Dict[str, Any]:
+    """Search knowledge graph via BM25 Full-Text Search with optional biological hemispheric gating."""
     with get_db() as conn:
         clean_q = query.strip()
         if not clean_q:
@@ -62,6 +62,11 @@ def tool_brain_search(query: str, limit: int = 15) -> Dict[str, Any]:
         row_dict = {r["id"]: dict(r) for r in rows}
         ordered = [row_dict[mid] for mid in matched_ids if mid in row_dict]
         
+        # Apply biological hemispheric inhibition gating if requested
+        if hemisphere and hemisphere.strip().upper() in ("LEFT", "RIGHT"):
+            target_h = hemisphere.strip().upper()
+            ordered = [n for n in ordered if n.get("hemisphere") == target_h]
+
         # Parse JSON fields
         for item in ordered:
             try:
@@ -456,12 +461,13 @@ MCP_TOOLS = [
     },
     {
         "name": "brain_search",
-        "description": "Perform high-precision BM25 Full-Text Search on Pierfrancesco's Universal Knowledge Graph.",
+        "description": "Perform high-precision BM25 Full-Text Search on Pierfrancesco's Universal Knowledge Graph with optional biological hemispheric gating.",
         "inputSchema": {
             "type": "object",
             "properties": {
                 "query": {"type": "string", "description": "Search term or concept keywords"},
-                "limit": {"type": "integer", "description": "Max results to return (default: 15)"}
+                "limit": {"type": "integer", "description": "Max results to return (default: 15)"},
+                "hemisphere": {"type": "string", "description": "Optional biological gating filter: 'LEFT' (Logic & Tech) or 'RIGHT' (Design & Values)"}
             },
             "required": ["query"]
         }
@@ -575,7 +581,7 @@ def handle_json_rpc(req: Dict[str, Any]) -> Optional[Dict[str, Any]]:
             elif tool_name == "brain_get_tree":
                 res = tool_brain_get_tree(args.get("hemisphere"))
             elif tool_name == "brain_search":
-                res = tool_brain_search(args.get("query", ""), args.get("limit", 15))
+                res = tool_brain_search(args.get("query", ""), args.get("limit", 15), args.get("hemisphere"))
             elif tool_name == "brain_get_node":
                 res = tool_brain_get_node(args.get("node_id", ""))
             elif tool_name == "brain_shortest_path":

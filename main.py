@@ -684,9 +684,12 @@ def health_check():
 
 
 @app.get("/api/graph/search", tags=["GraphRAG"])
-def search_brain(q: str = Query(..., description="Query for BM25 full text search")):
+def search_brain(
+    q: str = Query(..., description="Query for BM25 full text search"),
+    hemisphere: Optional[str] = Query(None, description="Filter by hemisphere ('LEFT' or 'RIGHT') to simulate selective hemispheric gating")
+):
     """
-    Lightning-fast BM25 Full-Text Search across node labels, tags, summaries, and details.
+    Lightning-fast BM25 Full-Text Search with optional interhemispheric inhibition gating.
     """
     with get_db_connection() as conn:
         matched_ids = search_nodes_fts(conn, q)
@@ -698,8 +701,13 @@ def search_brain(q: str = Query(..., description="Query for BM25 full text searc
         row_dict = {r["id"]: dict(r) for r in rows}
         ordered = [row_dict[mid] for mid in matched_ids if mid in row_dict]
         
+        if hemisphere and hemisphere.strip().upper() in ("LEFT", "RIGHT"):
+            target_hemi = hemisphere.strip().upper()
+            ordered = [n for n in ordered if n.get("hemisphere") == target_hemi]
+        
         return {
             "query": q,
+            "hemisphere_filter": hemisphere.upper() if hemisphere else "ALL",
             "count": len(ordered),
             "results": ordered
         }
@@ -892,17 +900,17 @@ def get_brain_markdown(
     q: Optional[str] = Query(None, description="Search term filter (BM25 FTS)"),
     tag: Optional[str] = Query(None, description="Tag filter"),
     primary_label: Optional[str] = Query(None, description="Primary taxonomy filter"),
+    hemisphere: Optional[str] = Query(None, description="Biological Gating: Selectively activate one hemisphere ('LEFT' or 'RIGHT') and inhibit contralateral noise"),
     subgraph_of: Optional[str] = Query(None, description="Extract scoped k-hop subgraph around a focal node"),
     depth: int = Query(1, ge=1, le=3, description="Depth if subgraph_of is specified"),
     view: Optional[str] = Query("graph", description="'graph' for default bi-hemispheric network view, 'tree' for hierarchical knowledge tree view")
 ):
     """
-    Returns complete or scoped bi-hemispheric graph memory formatted with the mandatory
-    System Cognitive Meta-Directive and Graphify Protocol at the very top.
+    Renders system markdown representation with Graphify Operating Protocol and optional Biological Hemispheric Gating.
     """
     with get_db_connection() as conn:
         if isinstance(view, str) and view.strip().lower() == "tree":
-            tree = build_hierarchical_tree(conn)
+            tree = build_hierarchical_tree(conn, hemisphere=hemisphere)
             tree_md = format_tree_as_markdown(tree)
             return Response(content=tree_md, media_type="text/markdown; charset=utf-8")
 
@@ -945,6 +953,21 @@ def get_brain_markdown(
         nodes = [n for n in nodes if n["primary_label"] == pl_search]
         node_ids = {n["id"] for n in nodes}
         edges = [e for e in edges if e["source"] in node_ids or e["target"] in node_ids]
+
+    # Biological Interhemispheric Inhibition (GABAergic Gating & Lazy Loading)
+    if isinstance(hemisphere, str) and hemisphere.strip().upper() in ("LEFT", "RIGHT"):
+        target_h = hemisphere.strip().upper()
+        active_ids = {n["id"] for n in nodes if n["hemisphere"] == target_h}
+        callosal_connected_ids = set()
+        for e in edges:
+            if e["source"] in active_ids:
+                callosal_connected_ids.add(e["target"])
+            if e["target"] in active_ids:
+                callosal_connected_ids.add(e["source"])
+        
+        nodes = [n for n in nodes if n["id"] in active_ids or n["id"] in callosal_connected_ids]
+        node_ids = {n["id"] for n in nodes}
+        edges = [e for e in edges if e["source"] in node_ids and e["target"] in node_ids]
 
     # Partition nodes
     left_nodes = [n for n in nodes if n["hemisphere"] == "LEFT"]
