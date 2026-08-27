@@ -278,13 +278,14 @@ function initNetwork() {
 async function loadPalazzoData() {
   try {
     const res = await fetch('/api/graph/palazzo');
-    if (!res.ok) return;
-    cachedPalazzo = await res.json();
-    if (cachedPalazzo && cachedPalazzo.floors) {
-      cachedPalazzo.floors.forEach(fl => {
-        const countEl = document.getElementById(`fl-count-${fl.level}`);
-        if (countEl) countEl.textContent = `${fl.node_count} nodi`;
-      });
+    if (res.ok) {
+      cachedPalazzo = await res.json();
+      if (cachedPalazzo && cachedPalazzo.floors) {
+        cachedPalazzo.floors.forEach(fl => {
+          const countEl = document.getElementById(`fl-count-${fl.level}`);
+          if (countEl) countEl.textContent = `${fl.node_count} nodi`;
+        });
+      }
     }
   } catch (e) {
     console.error('Failed to load palazzo hierarchy:', e);
@@ -320,10 +321,10 @@ function selectPalazzoFloor(floorOption) {
   setTimeout(() => {
     if (network) {
       try {
-        network.fit({ animation: { duration: 400, easingFunction: 'easeInOutQuad' } });
+        network.fit({ animation: false });
       } catch (e) {}
     }
-  }, 100);
+  }, 50);
 }
 
 /**
@@ -440,14 +441,6 @@ async function fetchBrainData() {
  * Transform & Render Vis-Network Datasets with Progressive Areas & Multi-Layer Palazzo Support
  */
 function renderGraphData() {
-  // Helper to determine floor level of a node
-  // Helper to determine floor level of a node directly from database
-  const getFloor = (n) => {
-    if (!n) return 1;
-    if (n.layer_level !== undefined && n.layer_level !== null) return Number(n.layer_level);
-    return 1;
-  };
-
   // Count degrees (connections per node) and adjacency
   const degrees = {};
   const adjacency = {};
@@ -464,6 +457,31 @@ function renderGraphData() {
     if (adjacency[s]) adjacency[s].add(t);
     if (adjacency[t]) adjacency[t].add(s);
   });
+
+  // Helper to determine floor level of a node directly and deterministically
+  const getFloor = (n) => {
+    if (!n) return 1;
+    const rawLvl = (n.layer_level !== undefined && n.layer_level !== null) ? Number(n.layer_level) : null;
+    if (rawLvl === 1 || rawLvl === 2) return rawLvl;
+    
+    const nid = (n.id || '').toLowerCase();
+    const pl = (n.primary_label || '').toUpperCase();
+    const cat = (n.category || '').toLowerCase();
+    const d = degrees[n.id] || 0;
+
+    // Floor 0: Attico Macro-Domini & Core Hubs (15 nodi)
+    if (['person-pierfrancesco', 'bi-hemispheric-model', 'fastapi-core', 'sqlite-wal', 'domain-medicina-salute', 'cervello-cognitivo-unificato', 'concept-modular-domain-subgraphs', 'concept-graph-of-graphs-hypergraph'].includes(n.id) || (['ARCHITECTURE', 'MENTAL_MODEL'].includes(pl) && d >= 6)) {
+      return 0;
+    }
+    
+    // Floor 2: Moduli, Algoritmi & Dettagli Atomici (53 nodi)
+    if (['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'API_SPEC', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE', 'BUSINESS_LOGIC'].includes(pl) || cat.includes('schema') || cat.includes('token') || cat.includes('dettaglio') || cat.includes('modul')) {
+      return 2;
+    }
+    
+    // Floor 1: Progetti & Aree Tematiche (121 nodi)
+    return 1;
+  };
 
   const nodeMap = {};
   rawNodes.forEach(n => nodeMap[n.id] = n);
