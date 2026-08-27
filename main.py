@@ -34,7 +34,9 @@ LEFT_TAXONOMY: Set[str] = {
     "BUSINESS_LOGIC",
     "API_SPEC",
     "COGNITIVE_RULE",
-    "MENTAL_MODEL"
+    "MENTAL_MODEL",
+    "AI_REASONING",
+    "METACOGNITION"
 }
 
 RIGHT_TAXONOMY: Set[str] = {
@@ -440,12 +442,15 @@ def get_brain_markdown(
    - `AMBIGUOUS`: Elementi incerti, conflitti o ipotesi non confermate.
    - **Divieto Assoluto:** Non inventare mai relazioni, stack, emozioni o dettagli tecnici fittizi. Se inferisci qualcosa, segnalalo esplicitamente come `INFERRED`.
 3. **Tassonomia Rigorosa a Due Emisferi:**
-   - **EMISFERO SINISTRO (LEFT):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`.
+   - **EMISFERO SINISTRO (LEFT):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`.
    - **EMISFERO DESTRO (RIGHT):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`.
-4. **Protocollo di Risposta & Ingestione della Memoria:**
+4. **Tracciamento Metacognitivo del Ragionamento AI (AI Reasoning Hub):**
+   - Oltre alle richieste esplicite dell'utente e ai progetti creati, **DEVI mappare anche le deduzioni logiche, le analisi architetturali e i ragionamenti chiave dell'AI** sotto l'etichetta `AI_REASONING` o `METACOGNITION`.
+   - Collega questi nodi ai concetti/progetti correlati con relazioni esplicative (es. `RATIONALE_FOR`, `INFERRED_FROM`, `ARCHITECTURAL_DECISION`).
+5. **Protocollo di Risposta & Ingestione della Memoria:**
    - Comunica secondo il protocollo **Caveman / Alta Densità Informativa**: chirurgico, diretto, privo di convenevoli, 100% sostanza tecnica e concettuale.
    - **Obbligo di Aggiornamento Grafo (Doppia Modalità):**
-     1. **Se possiedi Tool di Rete o Esecuzione (Agenti con Bash, Python, Fetch o REST):** Esegui **DIRETTAMENTE** la chiamata `POST https://universal-ai-brain.onrender.com/api/memory/ingest` con il payload JSON.
+     1. **Se possiedi Tool di Rete o Esecuzione (Agenti con Bash, Python, Fetch o REST):** Esegui **DIRETTAMENTE** la chiamata `POST https://universal-ai-brain.onrender.com/api/memory/ingest` con il payload JSON contenente sia i fatti utente sia i nodi di ragionamento AI.
      2. **Se operi in sola chat testuale (senza esecuzione di rete):** **DEVI obbligatoriamente allegare in calce alla risposta** il blocco JSON formattato qui sotto, così che l'utente possa inviarlo con un click tramite la dashboard web.
 
 ```json

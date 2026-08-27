@@ -106,7 +106,7 @@ const RIGHT_COLOR = '#FF007F';
 const CALLOSUM_COLOR = '#A855F7';
 
 const CATEGORY_COLORS = {
-  // Left Hemisphere (Logic, Code, Cognitive Rules)
+  // Left Hemisphere (Logic, Code, Cognitive Rules, AI Reasoning)
   'ARCHITECTURE': '#00D2FF',
   'DATA_STRUCTURE': '#38bdf8',
   'ALGORITHM': '#0284c7',
@@ -115,6 +115,8 @@ const CATEGORY_COLORS = {
   'API_SPEC': '#06b6d4',
   'COGNITIVE_RULE': '#10b981',
   'MENTAL_MODEL': '#14b8a6',
+  'AI_REASONING': '#818cf8',
+  'METACOGNITION': '#a78bfa',
   
   // Right Hemisphere (Design, Emotions, Relationships, Philosophy)
   'DESIGN_TOKEN': '#FF007F',
@@ -130,7 +132,7 @@ const CATEGORY_COLORS = {
 };
 
 const TAXONOMY = {
-  LEFT: ['ARCHITECTURE', 'DATA_STRUCTURE', 'ALGORITHM', 'DEPENDENCY', 'BUSINESS_LOGIC', 'API_SPEC', 'COGNITIVE_RULE', 'MENTAL_MODEL'],
+  LEFT: ['ARCHITECTURE', 'DATA_STRUCTURE', 'ALGORITHM', 'DEPENDENCY', 'BUSINESS_LOGIC', 'API_SPEC', 'COGNITIVE_RULE', 'MENTAL_MODEL', 'AI_REASONING', 'METACOGNITION'],
   RIGHT: ['DESIGN_TOKEN', 'COLOR_PALETTE', 'UI_COMPONENT', 'UX_FLOW', 'BRAND_VOICE', 'CREATIVE_IDEA', 'EMOTIONAL_MEMORY', 'LIFE_LESSON', 'RELATIONSHIP', 'PERSONAL_VALUE']
 };
 
@@ -740,7 +742,7 @@ function closeAddModal() {
  */
 const AI_SYNC_PROMPT = `Leggi il mio Universal Knowledge Graph all'indirizzo: https://universal-ai-brain.onrender.com/brain.md
 Segui rigorosamente la Direttiva Graphify in cima alla pagina.
-Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST /api/memory/ingest (oppure esegui direttamente il POST se possiedi tool di rete).`;
+Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST /api/memory/ingest (oppure esegui direttamente il POST se possiedi tool di rete), mappando sia i fatti/decisioni utente sia i tuoi ragionamenti e deduzioni logiche con label AI_REASONING / METACOGNITION.`;
 
 async function copyAIPrompt() {
   try {
