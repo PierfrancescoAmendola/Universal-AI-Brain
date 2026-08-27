@@ -23,12 +23,15 @@ Before formulating an answer or generating a new proposal, search what the brain
 
 ### 2. Autonomous Knowledge Ingestion & Linking
 When a discussion generates a new idea, architectural decision, lesson, or user intent:
-1. Formulate the JSON ingestion payload with strict taxonomies:
+1. **MANDATORY LANGUAGE RULE (ITALIAN / ENGLISH)**:
+   - **All node labels (`label`), summaries (`summary`), tags, and details MUST ALWAYS be written in Italian (with technical terms in English).**
+   - **NEVER generate or save nodes in Chinese/Wenyan/CJK**, even if the chat communication is in `/caveman wenyan-ultra` or another language. The knowledge database must remain 100% searchable in Italian.
+2. Formulate the JSON ingestion payload with strict taxonomies:
    - **Left Hemisphere (`LEFT`)**: `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
    - **Right Hemisphere (`RIGHT`)**: `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
    - **Epistemic Confidence**: `EXTRACTED` (verbatim facts), `INFERRED` (deductive logic), `AMBIGUOUS` (uncertain).
-2. Cross-link the new node to relevant existing nodes in `brain.db` (especially the root person node or relevant project nodes).
-3. Execute ingestion via `brain_ingest` MCP tool or direct `POST /api/memory/ingest`.
+3. Cross-link the new node to relevant existing nodes in `brain.db` (especially `person-pierfrancesco` or relevant project nodes).
+4. Execute ingestion via `brain_ingest` MCP tool or direct `POST /api/memory/ingest`.
 
 ### 3. Cloud & Multi-Client Synchronization
 After modifying `brain.db`:

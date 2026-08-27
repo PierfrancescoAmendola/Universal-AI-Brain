@@ -898,6 +898,10 @@ def get_brain_markdown(
      1. **Se possiedi Tool di Rete o Esecuzione (Agenti con Bash, Python, Fetch o REST):** Esegui **DIRETTAMENTE** la chiamata `POST https://universal-ai-brain.onrender.com/api/memory/ingest` con il payload JSON contenente fatti utente, nodi di intenzione, ragionamento AI ed episodi di chat.
      2. **Se operi in sola chat testuale (senza esecuzione di rete):** **DEVI obbligatoriamente allegare in calce alla risposta** il blocco JSON formattato qui sotto, così che l'utente possa inviarlo con un click tramite la dashboard web.
 
+6. **REGOLE LINGUISTICHE OBBLIGATORIE PER IL GRAFO (ITALIANO / INGLESE TECNICO):**
+   - **TUTTI i campi del JSON (`label`, `summary`, `tags`, `details`) DEVONO ESSERE SCRITTI RIGOROSAMENTE IN ITALIANO (con termini tecnici internazionali in inglese).**
+   - **È SEVERAMENTE VIETATO generare, tradurre o inserire nodi in cinese / wenyan / CJK**, anche se la conversazione in chat avviene in stile `/caveman wenyan-ultra`. Il grafo deve rimanere permanentemente indicizzabile e ricercabile in italiano.
+
 ```json
 {{
   "nodes": [
@@ -993,11 +997,45 @@ def get_brain_json():
     return {"nodes": nodes, "links": links}
 
 
+def sanitize_and_translate_text(text: str) -> str:
+    """Translates common Chinese/Wenyan terms to Italian/English to guarantee pure FTS5 search."""
+    if not text:
+        return text
+    replacements = {
+        "層級譜系樹": "Albero Gerarchico (Hierarchical Tree)",
+        "譜系樹": "Albero Gerarchico",
+        "樹狀結構技術評析": "Valutazione Tecnica Strutture ad Albero",
+        "知識圖譜": "Knowledge Graph",
+        "神經符號": "Neuro-Simbolico",
+        "胼胝體": "Corpo Calloso",
+        "雙半球": "Bi-Emisferico",
+        "半球": "Emisfero",
+        "左半球": "Emisfero Sinistro",
+        "右半球": "Emisfero Destro",
+        "突觸": "Sinapsi",
+        "節點": "Nodo",
+        "路徑": "Percorso",
+        "檢索": "Ricerca FTS",
+        "認知": "Cognitivo",
+        "架構": "Architettura",
+        "意圖": "Intento Utente",
+        "推演": "Deduzione AI",
+        "對話": "Episodio Conversazionale",
+        "通透無礙，極佳之策": "Strategia ottimale approvata",
+        "冠絕群策者": "Migliore Soluzione Eletta",
+        "已全面構建完成": "Completamente rilasciato e verificato"
+    }
+    cleaned = text
+    for k, v in replacements.items():
+        cleaned = cleaned.replace(k, v)
+    return cleaned
+
+
 @app.post("/api/memory/ingest", tags=["Memory Ingest"])
 def ingest_memory(payload: IngestPayload):
     """
     Atomically ingests or updates nodes and edges extracted from an LLM conversation or uploaded JSON file.
-    Enforces taxonomy assignment and creates automatic Corpus Callosum cross_links.
+    Enforces taxonomy assignment, translates foreign/CJK tokens to Italian/English, and creates automatic Corpus Callosum cross_links.
     """
     now = datetime.now(timezone.utc).isoformat()
     nodes_upserted = 0
@@ -1011,8 +1049,8 @@ def ingest_memory(payload: IngestPayload):
             raw_id = (n.id or n.label or "").strip()
             if not raw_id:
                 continue
-            slug = raw_id.lower().replace(" ", "-").replace("/", "-")
-            label = (n.label or n.id or slug).strip()
+            slug = sanitize_and_translate_text(raw_id).lower().replace(" ", "-").replace("/", "-")
+            label = sanitize_and_translate_text((n.label or n.id or slug).strip())
 
             hemi = (n.hemisphere or "LEFT").upper()
             if hemi not in ("LEFT", "RIGHT"):
@@ -1024,8 +1062,8 @@ def ingest_memory(payload: IngestPayload):
             category = (n.category or primary_label).strip()
 
             details_str = json.dumps(n.details or {})
-            tags_str = json.dumps([t.strip().lower() for t in (n.tags or []) if t.strip()])
-            summary = (n.summary or f"Concept {label}").strip()
+            tags_str = json.dumps([sanitize_and_translate_text(t).strip().lower() for t in (n.tags or []) if t.strip()])
+            summary = sanitize_and_translate_text((n.summary or f"Concept {label}").strip())
 
             cursor = conn.execute("SELECT created_at FROM nodes WHERE id = ?", (slug,))
             existing = cursor.fetchone()
