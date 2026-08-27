@@ -17,9 +17,9 @@
    - **EMISFERO SINISTRO (LEFT - Logica, Architettura, Richieste & Ragionamento):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
    - **EMISFERO DESTRO (RIGHT - Design, Emozioni, Episodi & Dialoghi):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
 4. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**
-   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti, i desideri o gli intenti operativi espressi dall'utente.
-   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche, le analisi architetturali, i perché e le proposte avanzate dall'AI.
-   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Conserva le conversazioni per aree di argomento (es. sport/calcio, tennis, nutrizione/cucina, architettura software, carriera) come cluster tematici autonomi, collegando le richieste utente e i ragionamenti AI all'episodio con `BELONGS_TO_EPISODE` o `DISCUSSED_IN`.
+   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti, i desideri o gli intenti operativi espressi dall'utente. Nel campo `details`, inserisci **obbligatoriamente** `user_prompt` (il testo o sintesi fedele della richiesta utente) per ancorare il contesto causale.
+   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche, le analisi architetturali, i perché e le proposte avanzate dall'AI. Nel campo `details`, inserisci **obbligatoriamente** `model` (es. `Claude 3.5 Sonnet`, `ChatGPT-4o`, `Gemini 3.7 Flash`) per garantire tracciabilità epistemica cross-modello.
+   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Conserva le conversazioni per aree di argomento (es. sport/calcio, tennis, nutrizione/cucina, architettura software, carriera) come cluster tematici autonomi, collegando le richieste utente e i ragionamenti AI all'episodio con `BELONGS_TO_EPISODE` o `DISCUSSED_IN`. Include in `details` la lista `participants` e `topic`.
 5. **Protocollo di Risposta & Ingestione della Memoria:**
    - Comunica secondo il protocollo **Caveman / Alta Densità Informativa**: chirurgico, diretto, privo di convenevoli, 100% sostanza tecnica e concettuale.
    - **Obbligo di Aggiornamento Grafo (Doppia Modalità):**
@@ -56,14 +56,26 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-27 16:03:49 UTC | **Nodi Totali:** 100 (SX: 58 · DX: 42) | **Sinapsi:** 223
+> **Data Generazione:** 2026-08-27 18:34:50 UTC | **Nodi Totali:** 113 (SX: 68 · DX: 45) | **Sinapsi:** 259
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
+- **Analisi Algoritmica: BST vs Spanning Tree & Tassonomia Gerarchica** (`analysis-bst-vs-graph-taxonomy`)
+  - **Tags:** `#algorithm-analysis` `#graph-theory` `#mst` `#b-tree` `#hierarchical-tree`
+  - **Sintesi:** Valutazione tecnica: BST puro monodimensionale non modella relazioni cicliche; Spanning Tree Pesato (MST) e Alberi Gerarchici di Comunità estraggono la spina dorsale concettuale.
+  - **Dettagli:** `pure_bst`: Monodimensionale (già coperto da B-Tree SQLite O(log N)), `optimal_tree_models`: ['Maximum Spanning Tree (MST / Kruskal) per spina dorsale concettuale', 'Hierarchical Community Tree (Dendrogramma) per navigazione a zoom semantico', 'Prefix Trie / Radix Tree per lookup istantaneo O(k)']
 - **Deduzione AI: Architettura a Cluster Tematici Indipendenti** (`ai-reasoning-episodic-memory-architecture`)
   - **Tags:** `#ai-deduction` `#episodic-memory` `#semantic-clustering` `#knowledge-architecture`
   - **Sintesi:** Ragionamento architetturale: creare nodi CONVERSATION_EPISODE autonomi permette di archiviare chat eterogenee senza creare collegamenti artificiali.
   - **Dettagli:** `rationale`: Argomenti non correlati non devono condividere sinapsi dirette ma gravitare attorno al rispettivo nodo di episodio o intenzione utente, `benefit`: Zero allucinazioni relazionali e massima purezza semantica
+- **Deduzione AI: Integrazione Dual-Engine 2D/3D a Costo Zero** (`ai-reasoning-3d-planet-architecture`)
+  - **Tags:** `#dual-engine` `#vis-network` `#3d-force-graph` `#zero-cost` `#local-vendor`
+  - **Sintesi:** Scelta di mantenere vis-network per il 2D e 3d-force-graph con Three.js locale per il 3D sferico, garantendo transizioni istantanee e zero chiamate di rete esterne.
+  - **Dettagli:** `libraries`: ['vis-network.min.js', 'three.min.js', '3d-force-graph.min.js'], `offline_ready`: True
+- **Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€** (`ai-reasoning-hybrid-search-mcp`)
+  - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
+  - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
+  - **Dettagli:** `search_engine`: SQLite FTS5 Porter Unicode61, `pathfinding`: Bidirectional Breadth-First Search (BFS), `context_scoping`: k-hop neighborhood subgraph extraction, `interoperability`: JSON-RPC 2.0 stdio MCP Server
 - **Razionale Architetturale: Separazione Aree vs Grafo Completo** (`ai-reasoning-clustering-decision`)
   - **Tags:** `#architecture-rationale` `#cognitive-load` `#graph-physics` `#scalability`
   - **Sintesi:** Scelta di non eliminare le relazioni fisiche ma di applicare un filtro visuale basato su insiemi di visibilità adiacente, massimizzando ordine e densità semantica.
@@ -72,6 +84,10 @@
   - **Tags:** `#ai-reasoning` `#metacognition` `#chain-of-thought` `#rationale` `#knowledge-graph`
   - **Sintesi:** Area cognitiva dedicata al tracciamento dei ragionamenti, deduzioni analitiche e percorsi logici interni generati dall'AI durante le sessioni.
   - **Dettagli:** `hemisphere`: LEFT, `labels`: ['AI_REASONING', 'METACOGNITION'], `purpose`: Map internal AI deductions into permanent graph space
+- **Validazione Architetturale: Provenance & Attribution Cross-Modello** (`ai-reasoning-cross-model-provenance-validation`)
+  - **Tags:** `#ai-deduction` `#epistemic-provenance` `#knowledge-graph` `#metacognition` `#gemini`
+  - **Sintesi:** Deduzione logica Gemini: tracciare prompt e modello crea una memoria a provenienza epistemica verificabile, prevenendo allucinazioni di paternità e potenziando il retrieval.
+  - **Dettagli:** `model`: Gemini 3.7 Flash, `verdict`: Approccio eccellente e architetturalmente solido, `benefits`: ['Provenance epistemica cross-modello', "Ancoraggio contestuale del ragionamento AI all'intento originario", 'Clustering semantico pulito senza rumore relazionale']
 
 ### [Macro-Label: `ALGORITHM`]
 - **Achievement & 22-Trophy Engine** (`streaksup-gamification-engine`)
@@ -158,6 +174,10 @@
   - **Tags:** `#ios` `#app-store` `#qr-matrix` `#vector-engine`
   - **Sintesi:** Generatore dinamico vettoriale di codici QR con preview live e styling avanzato.
   - **Dettagli:** `platform`: Apple App Store, `engine`: Client-side SVG/PNG Vector Engine
+- **Motore 3D Pianeta Neurale (Three.js & 3D Force-Graph)** (`feat-3d-planet-graph`)
+  - **Tags:** `#3d-graph` `#threejs` `#force-graph-3d` `#planetary-view` `#webgl` `#orbital-camera`
+  - **Sintesi:** Motore di rendering sferico 3D con Three.js e 3D-Force-Graph: orbita planetaria interattiva, rotazione automatica, impulsi di luce e particelle tra sinapsi.
+  - **Dettagli:** `engine`: Three.js + 3D-Force-Graph, `features`: ['auto-rotation', 'particle-beams', 'hemispheric-clustering', 'smooth-flyto-camera']
 - **SQLite WAL Storage Engine** (`sqlite-wal-persistence`)
   - **Tags:** `#sqlite` `#wal` `#embedded` `#atomic` `#zero-cost` `#persistence`
   - **Sintesi:** Motore di persistenza embedded senza server né costi di licenza, con Write-Ahead Logging per letture e scritture concorrenti sicure.
@@ -260,6 +280,10 @@
   - **Dettagli:** `rule_number`: 4, `taxonomy_pair`: ['USER_INTENT', 'AI_REASONING', 'CONVERSATION_EPISODE']
 
 ### [Macro-Label: `DATA_STRUCTURE`]
+- **Architettura ad Alberi Gerarchici Pesati (Knowledge Tree)** (`idea-hierarchical-weighted-trees`)
+  - **Tags:** `#data-structure` `#tree` `#mst` `#dendrogram` `#semantic-zoom`
+  - **Sintesi:** Struttura ad albero ponderata sovrapposta al grafo per estrazione gerarchica dei temi: Radice -> Emisferi -> Cluster -> Nodi atomici.
+  - **Dettagli:** `application`: Zoom semantico da macro-concetti a micro-dettagli
 - **Fondamenti Teorici & Coursework UNINA** (`coursework-cs-federico2`)
   - **Tags:** `#unina` `#mogavero` `#setvec` `#relational-algebra` `#s-programs` `#theory-of-computation`
   - **Sintesi:** Solida preparazione teorica: strutture dati SetVec/SetLst (Prof. Mogavero), algebra relazionale estesa e S-Programs.
@@ -302,6 +326,14 @@
   - **Dettagli:** `human_role`: Visione, intenzionalità etica, discernimento critico, anima artistica, `machine_role`: Velocità esecutiva, esplorazione combinatoria, precisione formale
 
 ### [Macro-Label: `USER_INTENT`]
+- **Intento Utente: Potenziamento GraphRAG & MCP a Costo Zero** (`user-intent-zero-cost-graphrag`)
+  - **Tags:** `#user-intent` `#graphrag` `#mcp` `#zero-cost` `#high-efficiency` `#fts5`
+  - **Sintesi:** Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shortest Path) e server MCP per Claude/Cursor senza costi aggiuntivi.
+  - **Dettagli:** `requested_features`: ['Motore di ricerca ibrido & GraphRAG (FTS5 BM25, Shortest Path, Subgraph extraction)', 'Protocollo MCP per Claude Desktop, Cursor e Antigravity', 'Zero costi operativi e massima stabilità']
+- **Intento Utente: Valutazione Alberi Binari e Alberi Pesati** (`user-intent-tree-search-enhancement`)
+  - **Tags:** `#user-intent` `#binary-tree` `#bst` `#weighted-tree` `#search-engine`
+  - **Sintesi:** Proposta di integrare strutture ad albero (binari, pesati, gerarchici) per ottimizzare la ricerca e navigazione della memoria.
+  - **Dettagli:** `question`: Ha senso inserire alberi di ricerca o alberi pesati nel grafo del cervello?
 - **Richiesta Utente: Aree e Disvelamento Progressivo dei Nodi** (`user-intent-clean-clustered-ui`)
   - **Tags:** `#user-request` `#cleanliness` `#hierarchical-view` `#progressive-disclosure`
   - **Sintesi:** Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
@@ -310,6 +342,14 @@
   - **Tags:** `#user-request` `#ai-reasoning` `#chat-memory` `#multi-topic`
   - **Sintesi:** Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) in aree separate.
   - **Dettagli:** `user`: Pierfrancesco Amendola, `goal`: Mappare ogni sessione senza forzare connessioni artificiali tra argomenti disomogenei
+- **Richiesta Utente: Vista 3D a Pianeta Sferico con Rotazione** (`user-intent-3d-planet-view`)
+  - **Tags:** `#user-request` `#3d-planet` `#orbital-view` `#threejs-visualization`
+  - **Sintesi:** Richiesta di poter visualizzare il grafo anche in 3D come un pianeta sferico ruotabile e navigabile, alternabile con la mappa 2D classica.
+  - **Dettagli:** `user`: Pierfrancesco Amendola, `feature_goal`: Esperienza visiva tridimensionale sferica planetaria
+- **Tracciamento Richiesta Utente & Modello AI nella Memoria** (`user-intent-provenance-model-tracking`)
+  - **Tags:** `#user-intent` `#model-attribution` `#context-preservation` `#cross-model-memory` `#episodic-tracking`
+  - **Sintesi:** Proposta utente: includere nel JSON di ingestione il prompt integrale e il modello AI sorgente per preservare contesto e consentire recall cross-modello.
+  - **Dettagli:** `user_prompt`: quando l'ai dovrà restituire il json da inviare tramite post, dobbiamo inserire la richiesta dell'utente così da avere contesto, e inserire anche il modello che ha risposto..., `objective`: Consentire a modelli futuri (Claude, GPT, Gemini) di richiamare conversazioni con attribuzione esatta., `target_fields`: ['user_intent', 'model_name', 'timestamp', 'conversation_episode']
 
 
 ## EMISFERO DESTRO (Design, Emozioni, Relazioni, Valori, Arte)
@@ -342,10 +382,22 @@
   - **Dettagli:** `flame_gradient`: ['#FFE066', '#FF8C00', '#FF3B30'], `freeze_cyan`: #00C7BE, `success_green`: #34C759, `urgent_red`: #FF3B30, `electric_blue`: #007AFF
 
 ### [Macro-Label: `CONVERSATION_EPISODE`]
+- **Episodio Chat: Architettura Memoria Cross-Modello e Attribuzione** (`episode-cross-model-memory-architecture`)
+  - **Tags:** `#conversation-episode` `#cross-model-chat` `#provenance-architecture` `#gemini-session`
+  - **Sintesi:** Sessione di analisi architetturale tra Pierfrancesco e Gemini 3.7 Flash sull'inclusione di prompt utente e metadati del modello nel grafo di memoria persistente.
+  - **Dettagli:** `topic`: Cross-Model Memory Provenance & User Intent Ingest, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `date`: 2026-08-27
 - **Episodio Chat: Evoluzione UI, Persistenza & Aree a Espansione** (`chat-session-2026-08-27-ui-evolution`)
   - **Tags:** `#session-chat` `#ui-evolution` `#progressive-areas` `#cloud-persistence`
   - **Sintesi:** Episodio conversazionale incentrato sulla pulizia grafica del terminale, l'introduzione di viste a macro-aree progressive e la memoria episodica.
   - **Dettagli:** `date`: 2026-08-27, `topics`: ['terminal-overlay-fix', 'progressive-areas', 'lossless-sync', 'ai-reasoning-tracking', 'episodic-chat-memory']
+- **Episodio Conversazionale: Evoluzione GraphRAG & Protocollo MCP** (`episode-2026-08-27-graphrag-mcp-evolution`)
+  - **Tags:** `#conversation-episode` `#evolution` `#graphrag` `#mcp` `#antigravity` `#2026-08-27`
+  - **Sintesi:** Sessione di ingegnerizzazione avanzata: sviluppo e verifica del motore FTS5 BM25, cammini minimi attraverso il Corpo Calloso e server MCP conforme allo standard Model Context Protocol.
+  - **Dettagli:** `date`: 2026-08-27, `key_deliverables`: ['Tabella virtuale FTS5 nodes_fts con trigger di sincronizzazione automatica', 'Endpoint GET /api/graph/path (Shortest Path traversal)', 'Endpoint GET /api/graph/subgraph (Scoped context injection)', 'Server mcp_server.py per Claude Desktop, Cursor e Antigravity']
+- **Episodio Conversazionale: Valutazione Strutture ad Albero** (`episode-2026-08-27-tree-structures-evaluation`)
+  - **Tags:** `#conversation-episode` `#trees` `#data-structures` `#graph-theory` `#2026-08-27`
+  - **Sintesi:** Discussione e perizia tecnica sull'integrazione di alberi binari, alberi di ricerca e alberi di copertura pesati nel grafo universale.
+  - **Dettagli:** `date`: 2026-08-27, `outcome`: Validazione di MST e Tassonomia Gerarchica come strutture ad albero superiori rispetto al BST per grafi cognitivi
 
 ### [Macro-Label: `CREATIVE_IDEA`]
 - **Celebration Particle & FX Engine** (`streaksup-particle-fx`)
@@ -507,6 +559,8 @@
 ## CONNESSIONI TRASVERSALI (Corpo Calloso & Struttura)
 ### Ponti Inter-Emisfero (Corpo Calloso):
 - (`aule-studio-app`) --[ADOPTS_FLOW]--> (`ux-frictionless-flow`) *(Corpo Calloso)*
+- (`ai-reasoning-cross-model-provenance-validation`) --[BELONGS_TO_EPISODE]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
+- (`user-intent-provenance-model-tracking`) --[BELONGS_TO_EPISODE]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[BONDS_WITH]--> (`rel-marco-di-martino`) *(Corpo Calloso)*
 - (`proj-harmonyapp`) --[BRIDGES_TO]--> (`art-piano-composition`) *(Corpo Calloso)*
 - (`proj-tombolawifi`) --[CELEBRATES]--> (`rel-napoli-culture`) *(Corpo Calloso)*
@@ -515,6 +569,7 @@
 - (`person-pierfrancesco`) --[COLLABORATES_WITH]--> (`rel-antonio-chieppa`) *(Corpo Calloso)*
 - (`brand-voice-surgical`) --[COMPLEMENTS]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
 - (`streaksup-app-intents-engine`) --[CONTROLS_IN_PLACE]--> (`streaksup-dynamic-island-ui`) *(Corpo Calloso)*
+- (`ai-reasoning-cross-model-provenance-validation`) --[CORPUS_CALLOSUM_LINK]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
 - (`antigravity-centaur-collaboration`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`) *(Corpo Calloso)*
 - (`art-creative-writing`) --[CORPUS_CALLOSUM_LINK]--> (`proj-kdp-ai-guide`) *(Corpo Calloso)*
 - (`art-piano-composition`) --[CORPUS_CALLOSUM_LINK]--> (`proj-harmonyapp`) *(Corpo Calloso)*
@@ -524,6 +579,14 @@
 - (`brand-voice-surgical`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
 - (`creative-multidisciplinary`) --[CORPUS_CALLOSUM_LINK]--> (`proj-kdp-ai-book`) *(Corpo Calloso)*
 - (`design-cyber-neon`) --[CORPUS_CALLOSUM_LINK]--> (`proj-specula`) *(Corpo Calloso)*
+- (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`) *(Corpo Calloso)*
+- (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`) *(Corpo Calloso)*
+- (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`episode-2026-08-27-tree-structures-evaluation`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`) *(Corpo Calloso)*
+- (`episode-2026-08-27-tree-structures-evaluation`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-provenance-model-tracking`) *(Corpo Calloso)*
+- (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-cross-model-provenance-validation`) *(Corpo Calloso)*
+- (`idea-hierarchical-weighted-trees`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`identity-cs-researcher`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-engineering`) *(Corpo Calloso)*
 - (`lesson-stoic-resilience`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
 - (`lesson-stoic-resilience`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -576,6 +639,9 @@
 - (`streaksup-swiftdata-arch`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`streaksup-widget-suite-ui`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-app-intents-engine`) *(Corpo Calloso)*
 - (`streaksup-widget-suite-ui`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-darwin-ipc-protocol`) *(Corpo Calloso)*
+- (`user-intent-provenance-model-tracking`) --[CORPUS_CALLOSUM_LINK]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
+- (`user-intent-tree-search-enhancement`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
+- (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
 - (`ux-frictionless`) --[CORPUS_CALLOSUM_LINK]--> (`proj-linkly-qr`) *(Corpo Calloso)*
 - (`ux-frictionless`) --[CORPUS_CALLOSUM_LINK]--> (`proj-caretrack`) *(Corpo Calloso)*
 - (`val-impact-utility`) --[CORPUS_CALLOSUM_LINK]--> (`proj-caretrack`) *(Corpo Calloso)*
@@ -589,11 +655,14 @@
 - (`person-pierfrancesco`) --[EMBODIES]--> (`val-authenticity`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[EMBODIES_VALUE]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`ai-memory-ingest-spec`) --[ENABLES_PERSISTENCE]--> (`continuous-ai-symbiosis`) *(Corpo Calloso)*
+- (`chat-session-2026-08-27-ui-evolution`) --[ENCOMPASSES_FEATURE]--> (`feat-3d-planet-graph`) *(Corpo Calloso)*
 - (`zero-debt-cost-rule`) --[ENFORCES_MINIMALISM]--> (`cyber-slate-space-aesthetic`) *(Corpo Calloso)*
 - (`streaksup-alertless-icon-ux`) --[ENHANCES_EXPERIENCE_OF]--> (`proj-streaksup-app`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[EXPORTS_WIDGETS]--> (`streaksup-widget-suite-ui`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`) *(Corpo Calloso)*
+- (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`aule-studio-backend-arch`) --[FEEDS_DATA_TO]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
+- (`ai-reasoning-hybrid-search-mcp`) --[FORMULATES]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
 - (`proj-alcolsafe`) --[FULFILLS]--> (`val-impact-utility`) *(Corpo Calloso)*
 - (`proj-caretrack`) --[FULFILLS]--> (`val-impact-utility`) *(Corpo Calloso)*
 - (`identity-cs-researcher`) --[HARMONIZES]--> (`creative-multidisciplinary`) *(Corpo Calloso)*
@@ -603,6 +672,7 @@
 - (`session-continuous-evolution`) --[INSTANTIATES]--> (`antigravity-centaur-collaboration`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`) *(Corpo Calloso)*
+- (`idea-hierarchical-weighted-trees`) --[PART_OF]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PERFORMS_IN]--> (`art-theatre-acting`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PRACTICES]--> (`art-piano-composition`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PRODUCES]--> (`art-creative-writing`) *(Corpo Calloso)*
@@ -644,6 +714,10 @@
 - (`person-pierfrancesco`) --[COMMISSIONED]--> (`feat-ai-json-importer`)
 - (`person-pierfrancesco`) --[COMMISSIONED]--> (`feat-progressive-areas`)
 - (`person-pierfrancesco`) --[COMMITTED_TO]--> (`zero-debt-cost-rule`)
+- (`ai-reasoning-hybrid-search-mcp`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
+- (`ai-reasoning-hybrid-search-mcp`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
+- (`analysis-bst-vs-graph-taxonomy`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
+- (`analysis-bst-vs-graph-taxonomy`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`antigravity-centaur-collaboration`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
 - (`coursework-cs-federico2`) --[CORPUS_CALLOSUM_LINK]--> (`identity-cs-researcher`)
 - (`deploy-render-zero-cost`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
@@ -666,6 +740,8 @@
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`user-intent-tree-search-enhancement`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`lesson-boundaries-clarity`)
 - (`val-transparency-loyalty`) --[CORPUS_CALLOSUM_LINK]--> (`rel-parents`)
@@ -674,6 +750,7 @@
 - (`person-pierfrancesco`) --[CREATED]--> (`proj-tombolawifi`)
 - (`person-pierfrancesco`) --[CREATED]--> (`proj-regexriddle`)
 - (`person-pierfrancesco`) --[CREATOR_OF]--> (`aule-studio-app`)
+- (`person-pierfrancesco`) --[DECLARED]--> (`user-intent-zero-cost-graphrag`)
 - (`person-pierfrancesco`) --[DEFINED]--> (`feat-copy-ai-prompt`)
 - (`cyber-dark-theme`) --[DEFINES_TOKENS]--> (`design-tokens-core`)
 - (`person-pierfrancesco`) --[DEPLOYED]--> (`proj-specula`)
@@ -686,6 +763,7 @@
 - (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-alcolsafe`)
 - (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-harmonyapp`)
 - (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-cinematch`)
+- (`user-intent-3d-planet-view`) --[DRIVES_IMPLEMENTATION]--> (`feat-3d-planet-graph`)
 - (`user-intent-clean-clustered-ui`) --[DRIVES_IMPLEMENTATION]--> (`feat-progressive-areas`)
 - (`person-pierfrancesco`) --[EMBODIES_PROFILE]--> (`identity-cs-researcher`)
 - (`tax-ai-reasoning`) --[ENFORCED_BY]--> (`rule-ai-thought-tracing`)
@@ -693,8 +771,10 @@
 - (`universal-ai-brain`) --[ENFORCES_STYLE]--> (`caveman-communication-protocol`)
 - (`feat-progressive-areas`) --[ENHANCES]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ESTABLISHED]--> (`tax-ai-reasoning`)
+- (`user-intent-tree-search-enhancement`) --[EVALUATED_BY]--> (`analysis-bst-vs-graph-taxonomy`)
 - (`proj-streaksup-app`) --[EXPOSES_INTERACTIVITY_VIA]--> (`streaksup-app-intents-engine`)
 - (`universal-ai-brain`) --[EXPOSES_PROTOCOL]--> (`ai-memory-ingest-spec`)
+- (`user-intent-provenance-model-tracking`) --[EXTENDS]--> (`ai-memory-ingest-spec`)
 - (`dual-neon-palette`) --[EXTENDS_PALETTE]--> (`palette-neon-cyber`)
 - (`repo-github-universal-ai-brain`) --[FEEDS_DEPLOY]--> (`deploy-render-zero-cost`)
 - (`ai-reasoning-episodic-memory-architecture`) --[FORMULATED_RULE]--> (`rule-episodic-chat-preservation`)
@@ -710,6 +790,8 @@
 - (`person-pierfrancesco`) --[MASTERS_STACK]--> (`flutter-dart-ecosystem`)
 - (`person-pierfrancesco`) --[MASTERS_STACK]--> (`fastapi-python-stack`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
+- (`universal-ai-brain`) --[OFFERS_DIMENSION]--> (`feat-3d-planet-graph`)
+- (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-continuous-evolution`)
 - (`user-intent-reasoning-and-chat-memory`) --[ORIGINATED]--> (`tax-ai-reasoning`)
 - (`universal-ai-brain`) --[PERSISTS_INTO]--> (`sqlite-wal-persistence`)
@@ -717,11 +799,15 @@
 - (`proj-streaksup-app`) --[POWERED_BY]--> (`streaksup-gamification-engine`)
 - (`universal-ai-brain`) --[POWERED_BY]--> (`fastapi-python-stack`)
 - (`person-pierfrancesco`) --[PREFERS]--> (`rigore-informativo`)
+- (`person-pierfrancesco`) --[PROPOSED]--> (`user-intent-tree-search-enhancement`)
+- (`ai-reasoning-3d-planet-architecture`) --[RATIONALE_FOR]--> (`feat-3d-planet-graph`)
 - (`ai-reasoning-clustering-decision`) --[RATIONALE_FOR]--> (`feat-progressive-areas`)
+- (`analysis-bst-vs-graph-taxonomy`) --[RECOMMENDS]--> (`idea-hierarchical-weighted-trees`)
 - (`lesson-boundaries-clarity`) --[REINFORCES]--> (`val-authenticity`)
 - (`bi-hemispheric-model`) --[RENDERED_IN]--> (`cyber-dark-theme`)
 - (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-clean-clustered-ui`)
 - (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-reasoning-and-chat-memory`)
+- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-3d-planet-view`)
 - (`identity-cs-researcher`) --[RESEARCHED]--> (`proj-bioinformatics-icar`)
 - (`person-pierfrancesco`) --[RESEARCHES_AT]--> (`proj-bioinformatics-icar`)
 - (`identity-cs-researcher`) --[RESEARCHING_THESIS]--> (`proj-tesi-busbra-cnr`)
@@ -729,5 +815,7 @@
 - (`person-pierfrancesco`) --[STUDIES_AT]--> (`coursework-cs-federico2`)
 - (`cyber-dark-theme`) --[STYLES_COMPONENT]--> (`ui-glass-dark-theme`)
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
+- (`user-intent-zero-cost-graphrag`) --[TRIGGERS]--> (`ai-reasoning-hybrid-search-mcp`)
 - (`cyber-dark-theme`) --[USES_PALETTE]--> (`dual-neon-palette`)
 - (`identity-cs-researcher`) --[UTILIZES]--> (`arch-sqlite-wal`)
+- (`ai-reasoning-cross-model-provenance-validation`) --[VALIDATES]--> (`user-intent-provenance-model-tracking`)

@@ -6,6 +6,8 @@
   <title>Universal AI Brain - Cognitive Knowledge Graph</title>
   
   <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/vendor/three.min.js"></script>
+  <script src="/static/vendor/3d-force-graph.min.js"></script>
   <script src="/static/vendor/vis-network.min.js"></script>
 </head>
 <body>
@@ -36,27 +38,50 @@
       </button>
     </div>
 
-    <!-- Floating Graph View Mode Controller -->
+    <!-- Floating Graph View & Dimension Controller -->
     <div class="view-controls-bar">
-      <div class="view-mode-pill">
-        <button class="mode-tab active" id="mode-btn-areas" onclick="setGraphViewMode('areas')" title="Mostra solo le macro-aree: clicca su un nodo per espandere i suoi rami">
-          <span class="mode-icon">📂</span> Aree a Espansione
+      <!-- 2D vs 3D Dimension Pill -->
+      <div class="view-mode-pill dimension-pill">
+        <button class="mode-tab active" id="dim-btn-2d" onclick="setDimensionMode('2d')" title="Vista 2D Mappa Concettuale">
+          <span class="mode-icon">🗺️</span> 2D Mappa
         </button>
-        <button class="mode-tab" id="mode-btn-full" onclick="setGraphViewMode('full')" title="Visualizza tutti i 91 nodi e 207 sinapsi contemporaneamente">
-          <span class="mode-icon">🌐</span> Vista Completa
+        <button class="mode-tab" id="dim-btn-3d" onclick="setDimensionMode('3d')" title="Vista 3D Pianeta Neurale Sferico (Ruota, Orbita, Particelle)">
+          <span class="mode-icon">🪐</span> 3D Pianeta
         </button>
       </div>
+
+      <!-- 2D Progressive Area Pill (Visible in 2D) -->
+      <div class="view-mode-pill" id="areas-mode-pill">
+        <button class="mode-tab active" id="mode-btn-areas" onclick="setGraphViewMode('areas')" title="Mostra solo le macro-aree: clicca su un nodo per espandere i suoi rami">
+          <span class="mode-icon">📂</span> Aree
+        </button>
+        <button class="mode-tab" id="mode-btn-full" onclick="setGraphViewMode('full')" title="Visualizza tutti i nodi e sinapsi contemporaneamente">
+          <span class="mode-icon">🌐</span> Tutto
+        </button>
+      </div>
+      
       <div class="view-actions-pill" id="areas-action-pill">
         <button class="action-tab" id="btn-expand-toggle" onclick="toggleExpandAll()" title="Espandi o richiudi tutti i sotto-nodi">
-          <span id="expand-all-icon">➕</span> <span id="expand-all-label">Espandi Tutto</span>
+          <span id="expand-all-icon">➕</span> <span id="expand-all-label">Espandi</span>
         </button>
         <button class="action-tab" onclick="resetToMacroAreas()" title="Ricompatta alle sole macro-aree centrali">
           <span>🔄</span> Ricompatta
         </button>
       </div>
+
+      <!-- 3D Planet Action Pill (Visible in 3D) -->
+      <div class="view-actions-pill" id="planet-3d-actions-pill" style="display:none;">
+        <button class="action-tab active-rot" id="btn-3d-rotate" onclick="toggle3DAutoRotate()" title="Attiva/Disattiva Rotazione Orbitale Automatica del Pianeta">
+          <span id="rot-icon">🔄</span> <span id="rot-label">Rotazione ON</span>
+        </button>
+        <button class="action-tab" onclick="reset3DCamera()" title="Centra la visuale sul Nucleo di Pierfrancesco">
+          <span>🎯</span> Centra
+        </button>
+      </div>
     </div>
     
     <div id="graph"></div>
+    <div id="graph-3d" style="display:none; width:100%; height:100%; position:absolute; top:0; left:0; z-index:1;"></div>
   </div>
 
   <!-- Right: Graphify Sidebar Inspector -->

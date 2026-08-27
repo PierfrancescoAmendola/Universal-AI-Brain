@@ -754,13 +754,13 @@ def get_brain_markdown(
     System Cognitive Meta-Directive and Graphify Protocol at the very top.
     """
     with get_db_connection() as conn:
-        if view and view.strip().lower() == "tree":
+        if isinstance(view, str) and view.strip().lower() == "tree":
             tree = build_hierarchical_tree(conn)
             tree_md = format_tree_as_markdown(tree)
             return Response(content=tree_md, media_type="text/markdown; charset=utf-8")
 
-        if subgraph_of and subgraph_of.strip():
-            sub = extract_subgraph(conn, subgraph_of.strip(), depth=depth)
+        if isinstance(subgraph_of, str) and subgraph_of.strip():
+            sub = extract_subgraph(conn, subgraph_of.strip(), depth=depth if isinstance(depth, int) else 1)
             if sub:
                 nodes = sub["nodes"]
                 edges = sub["edges"]
@@ -866,9 +866,9 @@ def get_brain_markdown(
    - **EMISFERO SINISTRO (LEFT - Logica, Architettura, Richieste & Ragionamento):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
    - **EMISFERO DESTRO (RIGHT - Design, Emozioni, Episodi & Dialoghi):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
 4. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**
-   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti, i desideri o gli intenti operativi espressi dall'utente.
-   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche, le analisi architetturali, i perché e le proposte avanzate dall'AI.
-   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Conserva le conversazioni per aree di argomento (es. sport/calcio, tennis, nutrizione/cucina, architettura software, carriera) come cluster tematici autonomi, collegando le richieste utente e i ragionamenti AI all'episodio con `BELONGS_TO_EPISODE` o `DISCUSSED_IN`.
+   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti, i desideri o gli intenti operativi espressi dall'utente. Nel campo `details`, inserisci **obbligatoriamente** `user_prompt` (il testo o sintesi fedele della richiesta utente) per ancorare il contesto causale.
+   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche, le analisi architetturali, i perché e le proposte avanzate dall'AI. Nel campo `details`, inserisci **obbligatoriamente** `model` (es. `Claude 3.5 Sonnet`, `ChatGPT-4o`, `Gemini 3.7 Flash`) per garantire tracciabilità epistemica cross-modello.
+   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Conserva le conversazioni per aree di argomento (es. sport/calcio, tennis, nutrizione/cucina, architettura software, carriera) come cluster tematici autonomi, collegando le richieste utente e i ragionamenti AI all'episodio con `BELONGS_TO_EPISODE` o `DISCUSSED_IN`. Include in `details` la lista `participants` e `topic`.
 5. **Protocollo di Risposta & Ingestione della Memoria:**
    - Comunica secondo il protocollo **Caveman / Alta Densità Informativa**: chirurgico, diretto, privo di convenevoli, 100% sostanza tecnica e concettuale.
    - **Obbligo di Aggiornamento Grafo (Doppia Modalità):**

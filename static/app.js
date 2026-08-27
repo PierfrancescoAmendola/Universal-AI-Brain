@@ -743,9 +743,64 @@ function closeAddModal() {
  * AI Directive & Sync Prompt Copy Management
  */
 const AI_SYNC_PROMPT = `Leggi il mio Universal Knowledge Graph all'indirizzo: https://universal-ai-brain.onrender.com/brain.md
-(Mirror pubblico GitHub accessibile anche ai crawler con restrizioni: https://raw.githubusercontent.com/PierfrancescoAmendola/Universal-AI-Brain/main/brain.md)
 Segui rigorosamente la Direttiva Graphify in cima alla pagina.
-Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST /api/memory/ingest (oppure esegui direttamente il POST se possiedi tool di rete): mappa le richieste dell'utente (USER_INTENT), i tuoi ragionamenti e deduzioni logiche (AI_REASONING) e raggruppa il tema della chat nell'episodio conversazionale (CONVERSATION_EPISODE).`;
+Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST /api/memory/ingest (oppure esegui direttamente il POST se possiedi tool di rete): mappa le richieste dell'utente (USER_INTENT), i tuoi ragionamenti e deduzioni logiche (AI_REASONING) e raggruppa il tema della chat nell'episodio conversazionale (CONVERSATION_EPISODE).
+
+# DIRETTIVA DI SISTEMA COGNITIVA & PROTOCOLLO GRAPHIFY (MANDATORIO)
+> **ATTENZIONE LLM (Claude, ChatGPT, Gemini, etc.):** Sei connesso al **Universal Knowledge Graph** di **Pierfrancesco Amendola**.
+> Devi operare conformemente al protocollo **Graphify Specification (\`/graphify\`)** per navigazione, sintesi ed estrazione della conoscenza.
+
+---
+
+### REGOLE OPERATIVE FONDAMENTALI (GRAPHIFY SPECIFICATION):
+1. **Navigazione a Grafo (Graph-First Reasoning):**
+   - Quando l'utente ti pone una domanda o richiede un'analisi, tratta la richiesta come una query a grafo.
+   - Esplora i percorsi tra i nodi dell'**Emisfero Sinistro (Logica, Tech, Regole)** e dell'**Emisfero Destro (Design, Emozioni, Relazioni, Valori)** attraverso le sinapsi del **Corpo Calloso**.
+2. **Rubrica di Onestà Epistemologica (Confidence Rubric):**
+   - \`EXTRACTED\`: Fatti testuali espliciti, codice verificato, dichiarazioni dirette dell'utente.
+   - \`INFERRED\`: Deduzioni logiche e correlazioni ragionate tra nodi esistenti.
+   - \`AMBIGUOUS\`: Elementi incerti, conflitti o ipotesi non confermate.
+   - **Divieto Assoluto:** Non inventare mai relazioni, stack, emozioni o dettagli tecnici fittizi. Se inferisci qualcosa, segnalalo esplicitamente come \`INFERRED\`.
+3. **Tassonomia Rigorosa a Due Emisferi:**
+   - **EMISFERO SINISTRO (LEFT - Logica, Architettura, Richieste & Ragionamento):** \`ARCHITECTURE\`, \`DATA_STRUCTURE\`, \`ALGORITHM\`, \`DEPENDENCY\`, \`BUSINESS_LOGIC\`, \`API_SPEC\`, \`COGNITIVE_RULE\`, \`MENTAL_MODEL\`, \`AI_REASONING\`, \`METACOGNITION\`, \`USER_INTENT\`.
+   - **EMISFERO DESTRO (RIGHT - Design, Emozioni, Episodi & Dialoghi):** \`DESIGN_TOKEN\`, \`COLOR_PALETTE\`, \`UI_COMPONENT\`, \`UX_FLOW\`, \`BRAND_VOICE\`, \`CREATIVE_IDEA\`, \`EMOTIONAL_MEMORY\`, \`LIFE_LESSON\`, \`RELATIONSHIP\`, \`PERSONAL_VALUE\`, \`CONVERSATION_EPISODE\`.
+4. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**
+   - **Richieste Utente (\`USER_INTENT\`):** Mappa le domande chiave, i requisiti, i desideri o gli intenti operativi espressi dall'utente.
+   - **Ragionamenti dell'AI (\`AI_REASONING\` / \`METACOGNITION\`):** Mappa le deduzioni logiche, le analisi architetturali, i perché e le proposte avanzate dall'AI.
+   - **Episodi & Chat Tematiche (\`CONVERSATION_EPISODE\`):** Conserva le conversazioni per aree di argomento (es. sport/calcio, tennis, nutrizione/cucina, architettura software, carriera) come cluster tematici autonomi, collegando le richieste utente e i ragionamenti AI all'episodio con \`BELONGS_TO_EPISODE\` o \`DISCUSSED_IN\`.
+5. **Protocollo di Risposta & Ingestione della Memoria:**
+   - Comunica secondo il protocollo **Caveman / Alta Densità Informativa**: chirurgico, diretto, privo di convenevoli, 100% sostanza tecnica e concettuale.
+   - **Obbligo di Aggiornamento Grafo (Doppia Modalità):**
+     1. **Se possiedi Tool di Rete o Esecuzione (Agenti con Bash, Python, Fetch o REST):** Esegui **DIRETTAMENTE** la chiamata \`POST https://universal-ai-brain.onrender.com/api/memory/ingest\` con il payload JSON contenente fatti utente, nodi di intenzione, ragionamento AI ed episodi di chat.
+     2. **Se operi in sola chat testuale (senza esecuzione di rete):** **DEVI obbligatoriamente allegare in calce alla risposta** il blocco JSON formattato qui sotto, così che l'utente possa inviarlo con un click tramite la dashboard web.
+
+\`\`\`json
+{
+  "nodes": [
+    {
+      "id": "slug-univoco",
+      "label": "Nome del Concetto / Progetto / Emozione",
+      "hemisphere": "LEFT" | "RIGHT",
+      "primary_label": "VALORE_TASSONOMIA",
+      "tags": ["tag1", "tag2"],
+      "cross_links": ["id-nodo-emisfero-opposto"],
+      "summary": "Sintesi cognitiva densa di 1-2 frasi.",
+      "details": { "chiave": "valore_specifico" },
+      "confidence": "EXTRACTED" | "INFERRED" | "AMBIGUOUS"
+    }
+  ],
+  "edges": [
+    {
+      "source": "slug-sorgente",
+      "target": "slug-destinazione",
+      "relation": "RELAZIONE_IN_MAIUSCOLO",
+      "confidence": "EXTRACTED" | "INFERRED" | "AMBIGUOUS",
+      "reasoning": "Spiegazione se INFERRED o AMBIGUOUS"
+    }
+  ]
+}
+\`\`\`
+`;
 
 async function copyFullBrainMarkdown() {
   const btn = document.getElementById('btn-copy-full-md');
@@ -1664,6 +1719,196 @@ function setupBackdropClicks() {
     });
   }
 }
+
+// ============================================================================
+// 3D Neural Planet Graph Engine (Three.js & 3D-Force-Graph)
+// ============================================================================
+let graph3D = null;
+let currentDimension = '2d';
+let is3DAutoRotate = true;
+
+function init3DGraph() {
+  const container = document.getElementById('graph-3d');
+  if (!container || graph3D) return;
+
+  graph3D = ForceGraph3D()(container)
+    .backgroundColor('#0a0a14')
+    .nodeId('id')
+    .nodeLabel(node => `
+      <div style="background:rgba(15,15,26,0.92); border:1px solid rgba(255,255,255,0.2); padding:8px 12px; border-radius:8px; font-family:sans-serif; color:#fff; box-shadow:0 8px 24px rgba(0,0,0,0.6);">
+        <div style="font-weight:700; font-size:13px; color:${node.color};">${esc(node.label)}</div>
+        <div style="font-size:10px; color:#94a3b8; margin-top:2px;">${esc(node.primary_label || node.category)} · ${node.hemisphere === 'LEFT' ? 'SX (Logica)' : 'DX (Design)'}</div>
+        <div style="font-size:11px; color:#cbd5e1; margin-top:4px; max-width:240px; line-height:1.3;">${esc(node.summary || '')}</div>
+      </div>
+    `)
+    .nodeVal(node => {
+      const isHub = CORE_MACRO_HUBS.has(node.id) || node.id === 'person-pierfrancesco';
+      return isHub ? 8 : Math.min(6, Math.max(2.5, (node._degree || 1) * 0.8));
+    })
+    .nodeColor(node => node.color)
+    .nodeResolution(24)
+    .linkSource('source')
+    .linkTarget('target')
+    .linkLabel(link => `<span style="background:rgba(15,15,26,0.85); color:#cbd5e1; padding:3px 6px; border-radius:4px; font-size:10px;">${esc(link.relation || 'CONNECTS_TO')}</span>`)
+    .linkColor(link => link.isCross ? '#a855f7' : 'rgba(148, 163, 184, 0.35)')
+    .linkWidth(link => link.isCross ? 1.8 : 0.8)
+    .linkDirectionalParticles(2)
+    .linkDirectionalParticleWidth(link => link.isCross ? 2.5 : 1.5)
+    .linkDirectionalParticleSpeed(0.005)
+    .linkDirectionalParticleColor(link => link.isCross ? '#d946ef' : '#38bdf8')
+    .onNodeClick(node => {
+      showInfo(node.id);
+      // Smoothly zoom camera towards the clicked node
+      const distance = 90;
+      const distRatio = 1 + distance / Math.hypot(node.x || 1, node.y || 1, node.z || 1);
+      graph3D.cameraPosition(
+        { x: (node.x || 0) * distRatio, y: (node.y || 0) * distRatio, z: (node.z || 0) * distRatio },
+        node,
+        1400
+      );
+    })
+    .onNodeHover(node => {
+      container.style.cursor = node ? 'pointer' : 'default';
+    });
+
+  // Enable auto-rotation
+  const controls = graph3D.controls();
+  if (controls) {
+    controls.autoRotate = is3DAutoRotate;
+    controls.autoRotateSpeed = 0.6;
+  }
+}
+
+function render3DGraphData() {
+  if (!graph3D) {
+    init3DGraph();
+  }
+  if (!graph3D) return;
+
+  const degrees = {};
+  rawNodes.forEach(n => degrees[n.id] = 0);
+  rawEdges.forEach(e => {
+    const s = typeof e.source === 'object' ? e.source.id : e.source;
+    const t = typeof e.target === 'object' ? e.target.id : e.target;
+    if (degrees[s] !== undefined) degrees[s]++;
+    if (degrees[t] !== undefined) degrees[t]++;
+  });
+
+  const nodeMap = {};
+  rawNodes.forEach(n => nodeMap[n.id] = n);
+
+  const nodes3D = rawNodes.map(n => {
+    const isLeft = n.hemisphere === 'LEFT';
+    const catColor = CATEGORY_COLORS[n.primary_label] || (isLeft ? LEFT_COLOR : RIGHT_COLOR);
+    const degree = degrees[n.id] || 1;
+
+    return {
+      id: n.id,
+      label: n.label,
+      primary_label: n.primary_label,
+      category: n.category,
+      hemisphere: n.hemisphere,
+      summary: n.summary,
+      color: catColor,
+      _degree: degree
+    };
+  });
+
+  const links3D = rawEdges.map(e => {
+    const sId = typeof e.source === 'object' ? e.source.id : e.source;
+    const tId = typeof e.target === 'object' ? e.target.id : e.target;
+    const sNode = nodeMap[sId];
+    const tNode = nodeMap[tId];
+    const isCross = (sNode && tNode && sNode.hemisphere !== tNode.hemisphere);
+
+    return {
+      source: sId,
+      target: tId,
+      relation: e.relation || 'CONNECTS_TO',
+      isCross: isCross
+    };
+  });
+
+  graph3D.graphData({ nodes: nodes3D, links: links3D });
+}
+
+function setDimensionMode(dim) {
+  currentDimension = dim;
+
+  const btn2D = document.getElementById('dim-btn-2d');
+  const btn3D = document.getElementById('dim-btn-3d');
+  const graph2DEl = document.getElementById('graph');
+  const graph3DEl = document.getElementById('graph-3d');
+  const areasModePill = document.getElementById('areas-mode-pill');
+  const areasActionPill = document.getElementById('areas-action-pill');
+  const planet3DActionPill = document.getElementById('planet-3d-actions-pill');
+
+  if (dim === '3d') {
+    if (btn3D) btn3D.classList.add('active');
+    if (btn2D) btn2D.classList.remove('active');
+    if (graph2DEl) graph2DEl.style.display = 'none';
+    if (graph3DEl) graph3DEl.style.display = 'block';
+    if (areasModePill) areasModePill.style.display = 'none';
+    if (areasActionPill) areasActionPill.style.display = 'none';
+    if (planet3DActionPill) planet3DActionPill.style.display = 'flex';
+
+    render3DGraphData();
+
+    setTimeout(() => {
+      if (graph3D && graph3DEl) {
+        const w = graph3DEl.clientWidth || (window.innerWidth - 320);
+        const h = graph3DEl.clientHeight || window.innerHeight;
+        graph3D.width(w).height(h);
+      }
+    }, 80);
+  } else {
+    if (btn2D) btn2D.classList.add('active');
+    if (btn3D) btn3D.classList.remove('active');
+    if (graph3DEl) graph3DEl.style.display = 'none';
+    if (graph2DEl) graph2DEl.style.display = 'block';
+    if (areasModePill) areasModePill.style.display = 'flex';
+    if (areasActionPill && graphViewMode === 'areas') areasActionPill.style.display = 'flex';
+    if (planet3DActionPill) planet3DActionPill.style.display = 'none';
+
+    renderGraphData();
+  }
+}
+
+function toggle3DAutoRotate() {
+  is3DAutoRotate = !is3DAutoRotate;
+  if (graph3D && graph3D.controls()) {
+    graph3D.controls().autoRotate = is3DAutoRotate;
+  }
+  const btn = document.getElementById('btn-3d-rotate');
+  const label = document.getElementById('rot-label');
+  if (btn) {
+    if (is3DAutoRotate) {
+      btn.classList.add('active-rot');
+      if (label) label.textContent = 'Rotazione ON';
+    } else {
+      btn.classList.remove('active-rot');
+      if (label) label.textContent = 'Rotazione OFF';
+    }
+  }
+}
+
+function reset3DCamera() {
+  if (graph3D) {
+    const centerNode = rawNodes.find(n => n.id === 'person-pierfrancesco') || { x: 0, y: 0, z: 0 };
+    graph3D.cameraPosition({ x: 0, y: 0, z: 420 }, centerNode, 1400);
+  }
+}
+
+window.addEventListener('resize', () => {
+  if (currentDimension === '3d' && graph3D) {
+    const graph3DEl = document.getElementById('graph-3d');
+    if (graph3DEl) {
+      const w = graph3DEl.clientWidth || (window.innerWidth - 320);
+      const h = graph3DEl.clientHeight || window.innerHeight;
+      graph3D.width(w).height(h);
+    }
+  }
+});
 
 window.addEventListener('DOMContentLoaded', () => {
   initNetwork();
