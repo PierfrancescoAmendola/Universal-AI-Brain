@@ -31,6 +31,26 @@
         <span>📋</span> Copia Prompt
       </button>
     </div>
+
+    <!-- Floating Graph View Mode Controller -->
+    <div class="view-controls-bar">
+      <div class="view-mode-pill">
+        <button class="mode-tab active" id="mode-btn-areas" onclick="setGraphViewMode('areas')" title="Mostra solo le macro-aree: clicca su un nodo per espandere i suoi rami">
+          <span class="mode-icon">📂</span> Aree a Espansione
+        </button>
+        <button class="mode-tab" id="mode-btn-full" onclick="setGraphViewMode('full')" title="Visualizza tutti i 91 nodi e 207 sinapsi contemporaneamente">
+          <span class="mode-icon">🌐</span> Vista Completa
+        </button>
+      </div>
+      <div class="view-actions-pill" id="areas-action-pill">
+        <button class="action-tab" id="btn-expand-toggle" onclick="toggleExpandAll()" title="Espandi o richiudi tutti i sotto-nodi">
+          <span id="expand-all-icon">➕</span> <span id="expand-all-label">Espandi Tutto</span>
+        </button>
+        <button class="action-tab" onclick="resetToMacroAreas()" title="Ricompatta alle sole macro-aree centrali">
+          <span>🔄</span> Ricompatta
+        </button>
+      </div>
+    </div>
     
     <div id="graph"></div>
   </div>

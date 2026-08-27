@@ -7,7 +7,22 @@ let nodesDS = null;
 let edgesDS = null;
 let rawNodes = [];
 let rawEdges = [];
-let selectedNodeId = null;
+// Progressive Area & Cluster View Modes
+let graphViewMode = 'areas'; // 'areas' (macro clusters) or 'full' (all nodes)
+let expandedNodeIds = new Set(['person-pierfrancesco']);
+let allExpanded = false;
+
+const CORE_MACRO_HUBS = new Set([
+  'person-pierfrancesco',
+  'identity-cs-researcher',
+  'universal-ai-brain',
+  'aule-studio-app',
+  'proj-caretrack',
+  'rule-zero-cost',
+  'cyber-dark-theme',
+  'continuous-ai-symbiosis',
+  'feat-light-terminal'
+]);
 
 // Terminal and Activity Logger State
 const terminalLogs = [];
@@ -182,7 +197,13 @@ function initNetwork() {
 
   network.on('click', (params) => {
     if (params.nodes.length > 0) {
-      showInfo(params.nodes[0]);
+      const clickedId = params.nodes[0];
+      showInfo(clickedId);
+      
+      // If in Areas mode, clicking expands/toggles its neighbors
+      if (graphViewMode === 'areas') {
+        toggleNodeExpansion(clickedId);
+      }
     } else {
       clearInfo();
     }
@@ -195,6 +216,77 @@ function initNetwork() {
   network.on('blurNode', () => {
     container.style.cursor = 'default';
   });
+}
+
+/**
+ * Progressive Areas View Mode Switchers
+ */
+function setGraphViewMode(mode) {
+  graphViewMode = mode;
+  
+  const btnAreas = document.getElementById('mode-btn-areas');
+  const btnFull = document.getElementById('mode-btn-full');
+  const actionsPill = document.getElementById('areas-action-pill');
+
+  if (btnAreas && btnFull) {
+    if (mode === 'areas') {
+      btnAreas.classList.add('active');
+      btnFull.classList.remove('active');
+      if (actionsPill) actionsPill.style.display = 'flex';
+    } else {
+      btnFull.classList.add('active');
+      btnAreas.classList.remove('active');
+      if (actionsPill) actionsPill.style.display = 'none';
+    }
+  }
+
+  renderGraphData();
+}
+
+function toggleNodeExpansion(nodeId) {
+  if (expandedNodeIds.has(nodeId)) {
+    // If already expanded, collapse it (unless it is the only root)
+    if (expandedNodeIds.size > 1) {
+      expandedNodeIds.delete(nodeId);
+    }
+  } else {
+    expandedNodeIds.add(nodeId);
+  }
+  
+  renderGraphData();
+  
+  // Smoothly center or relax physics
+  if (network) {
+    network.setOptions({ physics: { enabled: true } });
+    setTimeout(() => {
+      if (network) network.setOptions({ physics: { enabled: false } });
+    }, 1200);
+  }
+}
+
+function resetToMacroAreas() {
+  expandedNodeIds = new Set(['person-pierfrancesco']);
+  allExpanded = false;
+  const labelEl = document.getElementById('expand-all-label');
+  const iconEl = document.getElementById('expand-all-icon');
+  if (labelEl) labelEl.textContent = 'Espandi Tutto';
+  if (iconEl) iconEl.textContent = '➕';
+  
+  renderGraphData();
+}
+
+function toggleExpandAll() {
+  if (!allExpanded) {
+    rawNodes.forEach(n => expandedNodeIds.add(n.id));
+    allExpanded = true;
+    const labelEl = document.getElementById('expand-all-label');
+    const iconEl = document.getElementById('expand-all-icon');
+    if (labelEl) labelEl.textContent = 'Ricompatta';
+    if (iconEl) iconEl.textContent = '➖';
+  } else {
+    resetToMacroAreas();
+  }
+  renderGraphData();
 }
 
 /**
@@ -244,51 +336,118 @@ async function fetchBrainData() {
 }
 
 /**
- * Transform & Render Vis-Network Datasets
+ * Transform & Render Vis-Network Datasets with Progressive Areas Support
  */
 function renderGraphData() {
-  // Count degrees (connections per node)
+  // Count degrees (connections per node) and adjacency
   const degrees = {};
-  rawNodes.forEach(n => degrees[n.id] = 0);
+  const adjacency = {};
+  rawNodes.forEach(n => {
+    degrees[n.id] = 0;
+    adjacency[n.id] = new Set();
+  });
+  
   rawEdges.forEach(e => {
     const s = typeof e.source === 'object' ? e.source.id : e.source;
     const t = typeof e.target === 'object' ? e.target.id : e.target;
     if (degrees[s] !== undefined) degrees[s]++;
     if (degrees[t] !== undefined) degrees[t]++;
+    if (adjacency[s]) adjacency[s].add(t);
+    if (adjacency[t]) adjacency[t].add(s);
   });
 
   const nodeMap = {};
   rawNodes.forEach(n => nodeMap[n.id] = n);
 
-  const visNodes = rawNodes.map(n => {
+  // Determine Visible Nodes based on View Mode
+  let visibleNodeIds = new Set();
+  if (graphViewMode === 'full') {
+    rawNodes.forEach(n => visibleNodeIds.add(n.id));
+  } else {
+    // Areas Mode: show macro hubs and all nodes connected to expanded nodes
+    CORE_MACRO_HUBS.forEach(hubId => {
+      if (nodeMap[hubId]) visibleNodeIds.add(hubId);
+    });
+    
+    // Always include person-pierfrancesco if present
+    if (nodeMap['person-pierfrancesco']) visibleNodeIds.add('person-pierfrancesco');
+
+    // Add neighbors of all expanded nodes
+    expandedNodeIds.forEach(expId => {
+      if (nodeMap[expId]) {
+        visibleNodeIds.add(expId);
+        if (adjacency[expId]) {
+          adjacency[expId].forEach(nbrId => visibleNodeIds.add(nbrId));
+        }
+      }
+    });
+  }
+
+  const visNodes = [];
+  rawNodes.forEach(n => {
+    if (!visibleNodeIds.has(n.id)) return;
+
     const isLeft = n.hemisphere === 'LEFT';
     const catColor = CATEGORY_COLORS[n.primary_label] || (isLeft ? LEFT_COLOR : RIGHT_COLOR);
     const degree = degrees[n.id] || 1;
-    const size = Math.min(22, Math.max(12, 10 + degree * 1.5));
+    let size = Math.min(24, Math.max(13, 11 + degree * 1.4));
+    
+    // Count hidden neighbors
+    const totalNeighbors = adjacency[n.id] ? adjacency[n.id].size : 0;
+    let hiddenCount = 0;
+    if (adjacency[n.id]) {
+      adjacency[n.id].forEach(nbrId => {
+        if (!visibleNodeIds.has(nbrId)) hiddenCount++;
+      });
+    }
 
-    return {
+    const isExpanded = expandedNodeIds.has(n.id);
+    let label = n.label;
+    if (graphViewMode === 'areas') {
+      if (hiddenCount > 0) {
+        label = `${n.label} ⊕${hiddenCount}`;
+      } else if (isExpanded && totalNeighbors > 1) {
+        label = `${n.label} ⊖`;
+      }
+    }
+
+    const isHub = CORE_MACRO_HUBS.has(n.id) || n.id === 'person-pierfrancesco';
+    if (isHub) {
+      size += 4;
+    }
+
+    visNodes.push({
       id: n.id,
-      label: n.label,
-      title: `${n.label} [${n.primary_label || n.category}]`,
+      label: label,
+      title: `${n.label} [${n.primary_label || n.category}]${hiddenCount > 0 ? ` (Clicca per espandere +${hiddenCount} nodi collegati)` : ''}`,
       size: size,
       color: {
         background: catColor,
-        border: isLeft ? '#00D2FF' : '#FF007F',
+        border: isHub ? '#ffffff' : (isLeft ? '#00D2FF' : '#FF007F'),
         highlight: { background: '#ffffff', border: catColor }
       },
+      borderWidth: isHub ? 3 : (hiddenCount > 0 ? 2.5 : 1.5),
+      shadow: isHub ? { enabled: true, color: catColor, size: 8 } : false,
       _data: n,
-      _degree: degree
-    };
+      _degree: degree,
+      _hiddenCount: hiddenCount,
+      _isExpanded: isExpanded
+    });
   });
 
-  const visEdges = rawEdges.map((e, idx) => {
+  const visEdges = [];
+  rawEdges.forEach((e, idx) => {
     const sId = typeof e.source === 'object' ? e.source.id : e.source;
     const tId = typeof e.target === 'object' ? e.target.id : e.target;
+    
+    // Only draw edge if both nodes are currently visible
+    if (!visibleNodeIds.has(sId) || !visibleNodeIds.has(tId)) return;
+
     const sNode = nodeMap[sId];
     const tNode = nodeMap[tId];
     const isCross = (sNode && tNode && sNode.hemisphere !== tNode.hemisphere);
 
-    return {
+    visEdges.push({
       id: idx,
       from: sId,
       to: tId,
@@ -300,7 +459,7 @@ function renderGraphData() {
         highlight: '#ffffff',
         hover: isCross ? '#e9d5ff' : '#cbd5e1'
       }
-    };
+    });
   });
 
   nodesDS.clear();
@@ -359,6 +518,9 @@ function showInfo(nodeId) {
     <div class="field"><b>Macro-Label:</b> <code style="color:#a855f7">${esc(node.primary_label || node.category)}</code></div>
     ${tags.length ? `<div class="tag-list">${tagsHtml}</div>` : ''}
     <div class="summary-box">${esc(node.summary || 'Nessuna descrizione')}</div>
+    <button class="btn" style="width:100%; margin-top:8px; font-size:11px; padding:5px 10px; background:rgba(0,210,255,0.12); border-color:rgba(0,210,255,0.35); color:#38bdf8;" onclick="toggleNodeExpansion('${esc(nodeId)}')">
+      <span>${expandedNodeIds.has(nodeId) ? '⊖ Ricompatta questo ramo' : '⊕ Espandi nodi collegati'}</span>
+    </button>
     <div class="field" style="margin-top:10px; color:#aaa; font-size:11px;">
       <b>Sinapsi Connesse (${connectedEdges.length}):</b>
     </div>
@@ -376,8 +538,18 @@ function clearInfo() {
 
 function focusNode(nodeId) {
   if (!network) return;
-  network.focus(nodeId, { scale: 1.3, animation: { duration: 600, easingFunction: 'easeInOutQuad' } });
-  network.selectNodes([nodeId]);
+  if (graphViewMode === 'areas' && !expandedNodeIds.has(nodeId)) {
+    expandedNodeIds.add(nodeId);
+    renderGraphData();
+  }
+  setTimeout(() => {
+    if (network) {
+      try {
+        network.focus(nodeId, { scale: 1.3, animation: { duration: 600, easingFunction: 'easeInOutQuad' } });
+        network.selectNodes([nodeId]);
+      } catch (e) {}
+    }
+  }, 100);
   showInfo(nodeId);
 }
 
