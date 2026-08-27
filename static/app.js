@@ -318,15 +318,7 @@ function selectPalazzoFloor(floorOption) {
           }
         },
         physics: {
-          enabled: true,
-          solver: 'forceAtlas2Based',
-          forceAtlas2Based: {
-            gravitationalConstant: -50,
-            centralGravity: 0.01,
-            springLength: 80,
-            springConstant: 0.08,
-            damping: 0.4
-          }
+          enabled: false
         }
       });
     }
@@ -371,14 +363,6 @@ function toggleNodeExpansion(nodeId) {
   }
   
   renderGraphData();
-  
-  // Smoothly center or relax physics
-  if (network) {
-    network.setOptions({ physics: { enabled: true } });
-    setTimeout(() => {
-      if (network) network.setOptions({ physics: { enabled: false } });
-    }, 1200);
-  }
 }
 
 function resetToMacroAreas() {
@@ -627,7 +611,10 @@ function renderGraphData() {
   edgesDS.add(visEdges);
 
   if (network) {
-    network.setOptions({ physics: { enabled: true } });
+    if (currentPalazzoFloor !== 'vertical') {
+      network.stabilize(100);
+    }
+    network.setOptions({ physics: { enabled: false } });
   }
 }
 
