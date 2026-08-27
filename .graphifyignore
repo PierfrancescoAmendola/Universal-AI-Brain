@@ -1,0 +1,3 @@
+static/vendor/
+.venv/
+__pycache__/

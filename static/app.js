@@ -9,6 +9,83 @@ let rawNodes = [];
 let rawEdges = [];
 let selectedNodeId = null;
 
+// Terminal and Activity Logger State
+const terminalLogs = [];
+let terminalFilter = 'all';
+let terminalSearchQuery = '';
+let terminalIsOpen = false;
+let isTerminalMinimized = false;
+let isTerminalExpanded = false;
+let seenNodeIds = new Set();
+let isInitialLoad = true;
+
+// Transparent Network Interceptor (logs all requests and posts)
+const _nativeFetch = window.fetch;
+window.fetch = async function(...args) {
+  const url = typeof args[0] === 'string' ? args[0] : (args[0] && args[0].url ? args[0].url : 'unknown');
+  const options = args[1] || {};
+  const method = (options.method || 'GET').toUpperCase();
+  const startTime = performance.now();
+  const timestamp = new Date();
+  
+  let requestBody = null;
+  if (options.body) {
+    try {
+      requestBody = typeof options.body === 'string' ? JSON.parse(options.body) : options.body;
+    } catch(e) {
+      requestBody = options.body;
+    }
+  }
+
+  const logEntry = {
+    id: 'log-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5),
+    type: 'http',
+    method: method,
+    url: url,
+    timestamp: timestamp,
+    timeStr: timestamp.toLocaleTimeString() + '.' + String(timestamp.getMilliseconds()).padStart(3, '0'),
+    payload: requestBody,
+    status: 'pending',
+    statusCode: null,
+    durationMs: 0,
+    responseSnippet: null
+  };
+
+  addTerminalLog(logEntry);
+
+  try {
+    const response = await _nativeFetch.apply(this, args);
+    const duration = Math.round(performance.now() - startTime);
+    
+    logEntry.durationMs = duration;
+    logEntry.statusCode = response.status;
+    logEntry.status = response.ok ? 'success' : 'error';
+
+    try {
+      const clone = response.clone();
+      const text = await clone.text();
+      try {
+        logEntry.responseSnippet = JSON.parse(text);
+      } catch(e) {
+        logEntry.responseSnippet = text.slice(0, 300);
+      }
+    } catch(e) {
+      // response stream not readable
+    }
+
+    updateTerminalLog(logEntry);
+    return response;
+  } catch (error) {
+    const duration = Math.round(performance.now() - startTime);
+    logEntry.durationMs = duration;
+    logEntry.status = 'error';
+    logEntry.statusCode = 0;
+    logEntry.error = error.message;
+    updateTerminalLog(logEntry);
+    throw error;
+  }
+};
+
 const LEFT_COLOR = '#00D2FF';
 const RIGHT_COLOR = '#FF007F';
 const CALLOSUM_COLOR = '#A855F7';
@@ -132,10 +209,35 @@ async function fetchBrainData() {
     rawNodes = data.nodes || [];
     rawEdges = data.links || [];
 
+    // Track nodes in terminal feed
+    if (rawNodes.length > 0) {
+      const sorted = [...rawNodes].sort((a, b) => {
+        const timeA = new Date(a.created_at || 0).getTime();
+        const timeB = new Date(b.created_at || 0).getTime();
+        return timeB - timeA;
+      });
+
+      if (isInitialLoad) {
+        sorted.forEach(n => {
+          seenNodeIds.add(n.id);
+          recordNodeActivity(n, 'INGESTED / PERSISTED');
+        });
+        isInitialLoad = false;
+      } else {
+        sorted.forEach(n => {
+          if (!seenNodeIds.has(n.id)) {
+            seenNodeIds.add(n.id);
+            recordNodeActivity(n, 'NEWLY ADDED');
+          }
+        });
+      }
+    }
+
     renderGraphData();
     updateStatsHUD();
     buildLegend();
     populateLinkDropdown();
+    updateTerminalStats();
   } catch (err) {
     console.error('Failed to load brain data:', err);
   }
@@ -461,6 +563,258 @@ function closeAddModal() {
   document.getElementById('new-tags').value = '';
 }
 
+/**
+ * AI JSON Ingest Modal Management
+ */
+function openUploadModal() {
+  const modal = document.getElementById('upload-json-modal');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  const statusEl = document.getElementById('json-upload-status');
+  if (statusEl) statusEl.style.display = 'none';
+  const pasteInput = document.getElementById('json-paste-input');
+  if (pasteInput) {
+    if (pasteInput.value.trim()) {
+      validateAndPreviewJson(pasteInput.value);
+    } else {
+      updateJsonPreviewBadge(0, 0, false);
+    }
+  }
+}
+
+function closeUploadModal() {
+  const modal = document.getElementById('upload-json-modal');
+  if (!modal) return;
+  modal.style.display = 'none';
+  const fileNameEl = document.getElementById('json-file-name');
+  if (fileNameEl) fileNameEl.textContent = '';
+  const fileInput = document.getElementById('json-file-input');
+  if (fileInput) fileInput.value = '';
+}
+
+function handleJsonFileSelect(event) {
+  const file = event.target.files && event.target.files[0];
+  if (!file) return;
+  readJsonFile(file);
+}
+
+function readJsonFile(file) {
+  const fileNameEl = document.getElementById('json-file-name');
+  if (fileNameEl) fileNameEl.textContent = `File caricato: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const content = e.target.result;
+    const pasteInput = document.getElementById('json-paste-input');
+    if (pasteInput) {
+      pasteInput.value = content;
+      validateAndPreviewJson(content);
+    }
+  };
+  reader.onerror = () => {
+    alert("Errore nella lettura del file.");
+  };
+  reader.readAsText(file);
+}
+
+function setupDropzone() {
+  const dropzone = document.getElementById('json-dropzone');
+  if (!dropzone) return;
+
+  ['dragenter', 'dragover'].forEach(eventName => {
+    dropzone.addEventListener(eventName, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropzone.classList.add('dragover');
+    }, false);
+  });
+
+  ['dragleave', 'drop'].forEach(eventName => {
+    dropzone.addEventListener(eventName, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropzone.classList.remove('dragover');
+    }, false);
+  });
+
+  dropzone.addEventListener('drop', (e) => {
+    const dt = e.dataTransfer;
+    const files = dt.files;
+    if (files && files.length > 0) {
+      readJsonFile(files[0]);
+    }
+  }, false);
+}
+
+function cleanJsonString(raw) {
+  let str = (raw || '').trim();
+  // Strip Markdown code block indicators
+  str = str.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim();
+  return str;
+}
+
+function parseFlexibleJson(raw) {
+  const cleaned = cleanJsonString(raw);
+  if (!cleaned) return null;
+
+  const parsed = JSON.parse(cleaned);
+
+  let nodes = [];
+  let edges = [];
+
+  if (Array.isArray(parsed)) {
+    // Array of nodes
+    nodes = parsed;
+  } else if (typeof parsed === 'object' && parsed !== null) {
+    if (Array.isArray(parsed.nodes)) {
+      nodes = parsed.nodes;
+    } else if (parsed.id || parsed.label) {
+      nodes = [parsed];
+    }
+
+    if (Array.isArray(parsed.edges)) {
+      edges = parsed.edges;
+    } else if (Array.isArray(parsed.links)) {
+      edges = parsed.links;
+    }
+  }
+
+  return { nodes, edges, raw: parsed };
+}
+
+function updateJsonPreviewBadge(nodesCount, edgesCount, isValid, errorMsg = '') {
+  const badge = document.getElementById('json-preview-badge');
+  if (!badge) return;
+
+  if (!isValid && errorMsg) {
+    badge.textContent = `⚠ ${errorMsg}`;
+    badge.style.color = '#ef4444';
+    badge.style.borderColor = '#ef4444';
+  } else {
+    badge.textContent = `✓ ${nodesCount} nodi · ${edgesCount} archi rilevati`;
+    badge.style.color = nodesCount > 0 ? '#10b981' : '#38bdf8';
+    badge.style.borderColor = nodesCount > 0 ? '#10b981' : '#3a3a5e';
+  }
+}
+
+function validateAndPreviewJson(text) {
+  if (!text || !text.trim()) {
+    updateJsonPreviewBadge(0, 0, false);
+    return null;
+  }
+
+  try {
+    const payload = parseFlexibleJson(text);
+    if (!payload || (payload.nodes.length === 0 && payload.edges.length === 0)) {
+      updateJsonPreviewBadge(0, 0, false, "Nessun nodo/arco trovato nel JSON");
+      return null;
+    }
+    updateJsonPreviewBadge(payload.nodes.length, payload.edges.length, true);
+    return payload;
+  } catch (err) {
+    updateJsonPreviewBadge(0, 0, false, "Sintassi JSON non valida");
+    return null;
+  }
+}
+
+async function submitJsonUpload() {
+  const pasteInput = document.getElementById('json-paste-input');
+  const rawText = pasteInput ? pasteInput.value : '';
+  const statusEl = document.getElementById('json-upload-status');
+  const btn = document.getElementById('btn-submit-json');
+
+  if (!rawText.trim()) {
+    alert("Seleziona un file .json o incolla il payload JSON prima di inviare.");
+    return;
+  }
+
+  let payload = null;
+  try {
+    payload = parseFlexibleJson(rawText);
+  } catch (err) {
+    if (statusEl) {
+      statusEl.className = 'upload-status-box error';
+      statusEl.style.display = 'block';
+      statusEl.textContent = `Errore sintassi JSON: ${err.message}`;
+    }
+    return;
+  }
+
+  if (!payload || (payload.nodes.length === 0 && payload.edges.length === 0)) {
+    if (statusEl) {
+      statusEl.className = 'upload-status-box error';
+      statusEl.style.display = 'block';
+      statusEl.textContent = "Il JSON non contiene nodi o relazioni valide.";
+    }
+    return;
+  }
+
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "⏳ Invio in corso...";
+  }
+
+  try {
+    const res = await fetch('/api/memory/ingest', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nodes: payload.nodes,
+        edges: payload.edges
+      })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      if (statusEl) {
+        statusEl.className = 'upload-status-box success';
+        statusEl.style.display = 'block';
+        statusEl.innerHTML = `<strong>✅ Memoria Ingestita con successo!</strong><br>${esc(data.message || `Aggiunti ${payload.nodes.length} nodi e ${payload.edges.length} archi.`)}`;
+      }
+
+      await fetchBrainData();
+
+      // Focus first ingested node if available
+      if (payload.nodes.length > 0) {
+        const firstId = (payload.nodes[0].id || payload.nodes[0].label || '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        if (firstId) {
+          setTimeout(() => focusNode(firstId), 300);
+        }
+      }
+
+      setTimeout(() => {
+        closeUploadModal();
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "🚀 Invia POST & Aggiorna Grafo";
+        }
+      }, 1200);
+
+    } else {
+      if (statusEl) {
+        statusEl.className = 'upload-status-box error';
+        statusEl.style.display = 'block';
+        statusEl.textContent = `Errore server (${res.status}): ${data.detail || 'Impossibile salvare i nodi'}`;
+      }
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = "🚀 Invia POST & Aggiorna Grafo";
+      }
+    }
+  } catch (err) {
+    if (statusEl) {
+      statusEl.className = 'upload-status-box error';
+      statusEl.style.display = 'block';
+      statusEl.textContent = `Errore connessione: ${err.message}`;
+    }
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = "🚀 Invia POST & Aggiorna Grafo";
+    }
+  }
+}
+
 function populateLinkDropdown() {
   const select = document.getElementById('new-link-target');
   if (!select) return;
@@ -541,8 +895,283 @@ async function deleteSelectedNode() {
   }
 }
 
+/**
+ * ==========================================================================
+ * Light Terminal & Activity Logger Functions
+ * ==========================================================================
+ */
+
+function recordNodeActivity(node, actionType = 'ADDED') {
+  const ts = node.created_at ? new Date(node.created_at) : new Date();
+  const logEntry = {
+    id: 'node-' + node.id + '-' + (ts.getTime() || Date.now()),
+    type: 'node',
+    method: 'NODE',
+    actionType: actionType,
+    nodeId: node.id,
+    label: node.label,
+    hemisphere: node.hemisphere,
+    primaryLabel: node.primary_label || node.category,
+    tags: Array.isArray(node.tags) ? node.tags : [],
+    summary: node.summary,
+    timestamp: ts,
+    timeStr: ts.toLocaleTimeString() + '.' + String(ts.getMilliseconds()).padStart(3, '0'),
+    details: node.details || {}
+  };
+  addTerminalLog(logEntry);
+}
+
+function addTerminalLog(entry) {
+  terminalLogs.unshift(entry);
+  if (terminalLogs.length > 500) terminalLogs.pop();
+  updateTerminalStats();
+  renderTerminalLogs();
+}
+
+function updateTerminalLog(entry) {
+  const idx = terminalLogs.findIndex(l => l.id === entry.id);
+  if (idx !== -1) {
+    terminalLogs[idx] = { ...entry };
+  }
+  updateTerminalStats();
+  renderTerminalLogs();
+}
+
+function updateTerminalStats() {
+  const allCount = terminalLogs.length;
+  const httpCount = terminalLogs.filter(l => l.type === 'http').length;
+  const nodesCount = terminalLogs.filter(l => l.type === 'node').length;
+
+  const countAllEl = document.getElementById('count-all');
+  const countHttpEl = document.getElementById('count-http');
+  const countNodesEl = document.getElementById('count-nodes');
+  const hudBadgeEl = document.getElementById('hud-terminal-badge');
+  const totalReqsEl = document.getElementById('term-total-reqs');
+  const totalNodesEl = document.getElementById('term-total-nodes');
+
+  if (countAllEl) countAllEl.textContent = allCount;
+  if (countHttpEl) countHttpEl.textContent = httpCount;
+  if (countNodesEl) countNodesEl.textContent = nodesCount;
+  if (hudBadgeEl) hudBadgeEl.textContent = allCount;
+  if (totalReqsEl) totalReqsEl.textContent = `${httpCount} chiamate API`;
+  if (totalNodesEl) totalNodesEl.textContent = `${rawNodes.length} nodi attivi`;
+}
+
+function setTerminalFilter(filter) {
+  terminalFilter = filter;
+  document.querySelectorAll('.term-tab').forEach(tab => {
+    if (tab.dataset.filter === filter) {
+      tab.classList.add('active');
+    } else {
+      tab.classList.remove('active');
+    }
+  });
+  renderTerminalLogs();
+}
+
+function filterTerminalLogs(query) {
+  terminalSearchQuery = (query || '').toLowerCase().trim();
+  renderTerminalLogs();
+}
+
+function renderTerminalLogs() {
+  const container = document.getElementById('terminal-body');
+  if (!container) return;
+
+  let filtered = terminalLogs;
+
+  if (terminalFilter === 'http') {
+    filtered = filtered.filter(l => l.type === 'http');
+  } else if (terminalFilter === 'nodes') {
+    filtered = filtered.filter(l => l.type === 'node');
+  }
+
+  if (terminalSearchQuery) {
+    filtered = filtered.filter(l => {
+      if (l.type === 'http') {
+        const urlMatch = (l.url || '').toLowerCase().includes(terminalSearchQuery);
+        const methodMatch = (l.method || '').toLowerCase().includes(terminalSearchQuery);
+        const statusMatch = String(l.statusCode || '').includes(terminalSearchQuery);
+        return urlMatch || methodMatch || statusMatch;
+      } else {
+        const labelMatch = (l.label || '').toLowerCase().includes(terminalSearchQuery);
+        const idMatch = (l.nodeId || '').toLowerCase().includes(terminalSearchQuery);
+        const sumMatch = (l.summary || '').toLowerCase().includes(terminalSearchQuery);
+        const tagMatch = l.tags && l.tags.some(t => t.toLowerCase().includes(terminalSearchQuery));
+        return labelMatch || idMatch || sumMatch || tagMatch;
+      }
+    });
+  }
+
+  if (filtered.length === 0) {
+    container.innerHTML = `<div class="term-empty-state">Nessun evento o richiesta registrata con i filtri correnti.</div>`;
+    return;
+  }
+
+  const html = filtered.map(item => {
+    if (item.type === 'http') {
+      const methodClass = item.method.toLowerCase();
+      const statusClass = (item.statusCode >= 200 && item.statusCode < 300) ? 's-200' : 's-err';
+      const statusText = item.statusCode ? `${item.statusCode} ${item.status.toUpperCase()}` : 'PENDING';
+      const durationText = item.durationMs ? `${item.durationMs}ms` : '...';
+
+      let payloadHtml = '';
+      if (item.payload) {
+        payloadHtml = `
+          <div class="term-payload-toggle" onclick="toggleLogPayload('${item.id}-req')">▶ Mostra Payload Inviato (JSON)</div>
+          <div id="${item.id}-req" style="display:none;">
+            <pre>${esc(JSON.stringify(item.payload, null, 2))}</pre>
+          </div>
+        `;
+      }
+
+      let resHtml = '';
+      if (item.responseSnippet) {
+        resHtml = `
+          <div class="term-payload-toggle" onclick="toggleLogPayload('${item.id}-res')">▶ Risposta Server (Preview)</div>
+          <div id="${item.id}-res" style="display:none;">
+            <pre>${esc(typeof item.responseSnippet === 'object' ? JSON.stringify(item.responseSnippet, null, 2) : item.responseSnippet)}</pre>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="term-entry type-${methodClass}">
+          <div class="term-entry-header">
+            <div class="term-entry-left">
+              <span class="term-time">${item.timeStr}</span>
+              <span class="term-badge-method ${methodClass}">${item.method}</span>
+              <span class="term-entry-url">${esc(item.url)}</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span class="term-duration">${durationText}</span>
+              <span class="term-badge-status ${statusClass}">${statusText}</span>
+            </div>
+          </div>
+          <div class="term-entry-detail">
+            ${payloadHtml}
+            ${resHtml}
+          </div>
+        </div>
+      `;
+    } else {
+      // Node Entry
+      const isLeft = item.hemisphere === 'LEFT';
+      const hemiClass = isLeft ? 'left' : 'right';
+      const tagsStr = item.tags && item.tags.length ? item.tags.map(t => `#${t}`).join(' ') : '';
+
+      return `
+        <div class="term-entry type-node">
+          <div class="term-entry-header">
+            <div class="term-entry-left">
+              <span class="term-time">${item.timeStr}</span>
+              <span class="term-badge-method node">CONCETTO</span>
+              <span class="term-node-title" onclick="focusNode('${esc(item.nodeId)}')" style="cursor:pointer;" title="Clicca per evidenziare nel grafo">
+                ${esc(item.label)}
+              </span>
+              <span class="term-hemi-tag ${hemiClass}">${item.hemisphere}</span>
+              <code style="font-size:10px; color:#8b5cf6;">[${esc(item.primaryLabel)}]</code>
+            </div>
+            <span class="term-badge-status s-200">${esc(item.actionType)}</span>
+          </div>
+          <div class="term-entry-detail">
+            <div style="color:#1e293b; font-size:11px;">${esc(item.summary || 'Nessuna sintesi')}</div>
+            ${tagsStr ? `<div style="color:#0284c7; font-size:10px; margin-top:2px;">${esc(tagsStr)}</div>` : ''}
+            <div class="term-payload-toggle" onclick="toggleLogPayload('${item.id}-det')">▶ Dettagli e Metadati</div>
+            <div id="${item.id}-det" style="display:none;">
+              <pre>${esc(JSON.stringify({ id: item.nodeId, hemisphere: item.hemisphere, primary_label: item.primaryLabel, tags: item.tags, details: item.details }, null, 2))}</pre>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  }).join('');
+
+  container.innerHTML = html;
+}
+
+function toggleLogPayload(elementId) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
+function toggleTerminal() {
+  const wrapper = document.getElementById('light-terminal-wrapper');
+  if (!wrapper) return;
+  terminalIsOpen = !terminalIsOpen;
+  if (terminalIsOpen) {
+    wrapper.classList.add('open');
+    renderTerminalLogs();
+    const searchInput = document.getElementById('term-search');
+    if (searchInput) searchInput.focus();
+  } else {
+    wrapper.classList.remove('open');
+  }
+}
+
+function minimizeTerminal() {
+  const term = document.getElementById('light-terminal');
+  if (!term) return;
+  isTerminalMinimized = !isTerminalMinimized;
+  if (isTerminalMinimized) {
+    term.classList.add('minimized');
+  } else {
+    term.classList.remove('minimized');
+  }
+}
+
+function expandTerminal() {
+  const term = document.getElementById('light-terminal');
+  if (!term) return;
+  isTerminalExpanded = !isTerminalExpanded;
+  if (isTerminalExpanded) {
+    term.classList.add('expanded');
+  } else {
+    term.classList.remove('expanded');
+  }
+}
+
+function clearTerminalLogs() {
+  terminalLogs.length = 0;
+  updateTerminalStats();
+  renderTerminalLogs();
+}
+
+function exportTerminalLogs() {
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(terminalLogs, null, 2));
+  const downloadAnchor = document.createElement('a');
+  downloadAnchor.setAttribute("href", dataStr);
+  downloadAnchor.setAttribute("download", `brain-activity-logs-${new Date().toISOString().slice(0, 10)}.json`);
+  document.body.appendChild(downloadAnchor);
+  downloadAnchor.click();
+  downloadAnchor.remove();
+}
+
+// Global Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const wrapper = document.getElementById('light-terminal-wrapper');
+    if (wrapper && wrapper.classList.contains('open')) {
+      toggleTerminal();
+    }
+    const addModal = document.getElementById('add-modal');
+    if (addModal && addModal.style.display === 'flex') {
+      closeAddModal();
+    }
+    const uploadModal = document.getElementById('upload-json-modal');
+    if (uploadModal && uploadModal.style.display === 'flex') {
+      closeUploadModal();
+    }
+  } else if ((e.ctrlKey || e.metaKey) && e.key === '`') {
+    e.preventDefault();
+    toggleTerminal();
+  }
+});
+
 window.addEventListener('DOMContentLoaded', () => {
   initNetwork();
   fetchBrainData();
   setupSearch();
+  setupDropzone();
 });

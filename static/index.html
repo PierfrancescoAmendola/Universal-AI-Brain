@@ -22,6 +22,11 @@
         <span><span class="hud-stat-dot right"></span>Destro: <strong id="hud-right" style="color:#fff">0</strong></span>
         <span><span class="hud-stat-dot callosum"></span>Ponti: <strong id="hud-callosum" style="color:#fff">0</strong></span>
       </div>
+      <button class="btn-hud-terminal" id="btn-hud-term" onclick="toggleTerminal()" title="Apri Console / Terminale Chiaro">
+        <span class="term-pulse-dot"></span>
+        <span>💻 Terminale Attività</span>
+        <span id="hud-terminal-badge" class="hud-term-badge">0</span>
+      </button>
     </div>
     
     <div id="graph"></div>
@@ -30,9 +35,11 @@
   <!-- Right: Graphify Sidebar Inspector -->
   <div id="sidebar">
     <div id="search-wrap">
-      <div class="action-row">
+      <div class="action-grid">
         <button class="btn btn-primary" onclick="openAddModal()">+ Aggiungi Nodo</button>
-        <a href="/brain.md" target="_blank" class="btn">📄 brain.md</a>
+        <button class="btn btn-accent" onclick="openUploadModal()">📥 Carica JSON AI</button>
+        <button class="btn btn-terminal-sidebar" onclick="toggleTerminal()">💻 Terminale</button>
+        <a href="/brain.md" target="_blank" class="btn" title="Vedi Markdown LLM">📄 .md</a>
       </div>
       <input id="search" type="text" placeholder="Cerca nodi, #tag o label..." autocomplete="off">
       <div id="search-results"></div>
@@ -111,6 +118,106 @@
       <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
         <button class="btn" onclick="closeAddModal()">Annulla</button>
         <button class="btn btn-primary" onclick="submitNewNode()">Salva nel Cervello</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ingest AI JSON File/Text Modal -->
+  <div class="modal-overlay" id="upload-json-modal">
+    <div class="modal modal-lg">
+      <div class="modal-header-row">
+        <h3 class="modal-title">📥 Carica JSON o File generato dall'AI</h3>
+        <button class="modal-close-icon" onclick="closeUploadModal()" title="Chiudi">✕</button>
+      </div>
+      
+      <p class="modal-desc">
+        Carica un file <code>.json</code> oppure incolla il blocco JSON restituito da Claude / ChatGPT / Gemini per eseguire il <strong>POST</strong> su <code>/api/memory/ingest</code> e aggiornare live il grafo.
+      </p>
+
+      <!-- Dropzone for File Upload -->
+      <div class="dropzone" id="json-dropzone" onclick="document.getElementById('json-file-input').click()">
+        <input type="file" id="json-file-input" accept=".json,application/json" style="display:none;" onchange="handleJsonFileSelect(event)">
+        <div class="dropzone-icon">📁</div>
+        <div class="dropzone-text">
+          <strong>Clicca per scegliere un file .json</strong> oppure trascinalo qui
+        </div>
+        <div id="json-file-name" class="dropzone-filename"></div>
+      </div>
+
+      <div class="form-group" style="margin-top:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
+          <label style="margin:0;">Oppure Incolla Payload JSON</label>
+          <span class="json-badge-preview" id="json-preview-badge">0 nodi · 0 archi rilevati</span>
+        </div>
+        <textarea id="json-paste-input" class="form-control json-editor" rows="7" placeholder='{\n  "nodes": [\n    {\n      "id": "flutter-bloc",\n      "label": "Flutter BLoC",\n      "hemisphere": "LEFT",\n      "primary_label": "ARCHITECTURE",\n      "tags": ["flutter", "bloc"],\n      "summary": "Gestione dello stato reattivo."\n    }\n  ],\n  "edges": []\n}' oninput="validateAndPreviewJson(this.value)"></textarea>
+      </div>
+
+      <div id="json-upload-status" class="upload-status-box" style="display:none;"></div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
+        <button class="btn" onclick="closeUploadModal()">Annulla</button>
+        <button class="btn btn-primary" id="btn-submit-json" onclick="submitJsonUpload()">🚀 Invia POST &amp; Aggiorna Grafo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Light Terminal Drawer / Live Activity Console -->
+  <div class="light-terminal-overlay" id="light-terminal-wrapper">
+    <div class="light-terminal" id="light-terminal">
+      <div class="terminal-header">
+        <div class="terminal-controls">
+          <span class="term-dot close" onclick="toggleTerminal()" title="Chiudi (Esc)"></span>
+          <span class="term-dot min" onclick="minimizeTerminal()" title="Minimizza / Ripristina"></span>
+          <span class="term-dot max" onclick="expandTerminal()" title="Espandi a tutto schermo"></span>
+        </div>
+        <div class="terminal-title">
+          <span class="term-title-icon">⚡</span>
+          <span class="term-title-text">Cognitive Live Terminal &amp; Network Inspector</span>
+          <span class="term-status-live"><span class="pulse-green"></span>ONLINE</span>
+        </div>
+        <div class="terminal-actions">
+          <button class="term-btn" onclick="clearTerminalLogs()" title="Pulisci log correnti">
+            <span>🗑️</span> Pulisci
+          </button>
+          <button class="term-btn" onclick="exportTerminalLogs()" title="Esporta log in formato JSON">
+            <span>📥</span> Esporta
+          </button>
+          <button class="term-close-btn" onclick="toggleTerminal()" title="Chiudi">✕</button>
+        </div>
+      </div>
+
+      <div class="terminal-toolbar">
+        <div class="terminal-tabs">
+          <button class="term-tab active" data-filter="all" onclick="setTerminalFilter('all')">
+            Tutti i Log <span class="term-tab-pill" id="count-all">0</span>
+          </button>
+          <button class="term-tab" data-filter="http" onclick="setTerminalFilter('http')">
+            Richieste HTTP (POST/GET/DEL) <span class="term-tab-pill" id="count-http">0</span>
+          </button>
+          <button class="term-tab" data-filter="nodes" onclick="setTerminalFilter('nodes')">
+            Nodi Aggiunti &amp; Feed <span class="term-tab-pill" id="count-nodes">0</span>
+          </button>
+        </div>
+        <div class="terminal-search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="term-search" placeholder="Filtra per endpoint, status o nodo..." oninput="filterTerminalLogs(this.value)">
+        </div>
+      </div>
+
+      <div class="terminal-body" id="terminal-body">
+        <!-- Log entries dynamically injected here -->
+      </div>
+
+      <div class="terminal-footer">
+        <div class="term-prompt">
+          <span class="prompt-user">brain@ai-frontend</span>:<span class="prompt-path">~/logs</span>$&nbsp;
+          <span class="prompt-text" id="terminal-status-text">In ascolto attivo su chiamate API e inserimenti nel database...</span>
+        </div>
+        <div class="term-meta">
+          <span id="term-total-reqs">0 richieste HTTP</span>
+          <span class="term-meta-sep">·</span>
+          <span id="term-total-nodes">0 nodi nel catalogo</span>
+        </div>
       </div>
     </div>
   </div>

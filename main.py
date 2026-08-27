@@ -267,21 +267,21 @@ def seed_initial_brain(conn: sqlite3.Connection):
 # Pydantic Request/Response Models
 # -----------------------------------------------------------------------------
 class NodeModel(BaseModel):
-    id: str = Field(..., description="Unique slug identifier (lowercase, hyphens)")
-    label: str = Field(..., description="Human-readable title/name")
-    hemisphere: Literal["LEFT", "RIGHT"] = Field("LEFT", description="Cognitive hemisphere")
-    primary_label: str = Field(..., description="Mandatory taxonomy macro-label")
-    category: Optional[str] = Field(None, description="Optional subcategory (defaults to primary_label)")
+    id: Optional[str] = Field(None, description="Unique slug identifier (lowercase, hyphens)")
+    label: Optional[str] = Field(None, description="Human-readable title/name")
+    hemisphere: Optional[Literal["LEFT", "RIGHT"]] = Field("LEFT", description="Cognitive hemisphere")
+    primary_label: Optional[str] = Field(None, description="Taxonomy macro-label")
+    category: Optional[str] = Field(None, description="Optional subcategory")
     tags: List[str] = Field(default_factory=list, description="List of granular micro-tags")
-    cross_links: List[str] = Field(default_factory=list, description="IDs of opposite-hemisphere nodes to link across Corpus Callosum")
-    summary: str = Field(..., description="1-2 sentence cognitive synthesis for LLM memory")
+    cross_links: List[str] = Field(default_factory=list, description="IDs of opposite-hemisphere nodes")
+    summary: Optional[str] = Field("", description="Cognitive synthesis for LLM memory")
     details: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Structured metadata dictionary")
     confidence: Optional[Literal["EXTRACTED", "INFERRED", "AMBIGUOUS"]] = Field("EXTRACTED", description="Graphify audit confidence rubric")
 
 class EdgeModel(BaseModel):
     source: str = Field(..., description="Source node slug ID")
     target: str = Field(..., description="Target node slug ID")
-    relation: str = Field("CONNECTS", description="Relationship type in UPPERCASE")
+    relation: Optional[str] = Field("CONNECTS", description="Relationship type in UPPERCASE")
     confidence: Optional[Literal["EXTRACTED", "INFERRED", "AMBIGUOUS"]] = Field("EXTRACTED", description="Graphify confidence rating")
     reasoning: Optional[str] = Field(None, description="Explanation for INFERRED or AMBIGUOUS relations")
 
@@ -289,6 +289,7 @@ class EdgeModel(BaseModel):
 class IngestPayload(BaseModel):
     nodes: List[NodeModel] = Field(default_factory=list, description="List of nodes to upsert")
     edges: List[EdgeModel] = Field(default_factory=list, description="List of explicit edges to upsert")
+    links: Optional[List[EdgeModel]] = Field(default_factory=list, description="Alias for edges")
 
 
 # -----------------------------------------------------------------------------
@@ -543,7 +544,7 @@ def get_brain_json():
 @app.post("/api/memory/ingest", tags=["Memory Ingest"])
 def ingest_memory(payload: IngestPayload):
     """
-    Atomically ingests or updates nodes and edges extracted from an LLM conversation.
+    Atomically ingests or updates nodes and edges extracted from an LLM conversation or uploaded JSON file.
     Enforces taxonomy assignment and creates automatic Corpus Callosum cross_links.
     """
     now = datetime.now(timezone.utc).isoformat()
@@ -554,11 +555,25 @@ def ingest_memory(payload: IngestPayload):
         # 1. Upsert Nodes
         cross_links_to_add = []
         for n in payload.nodes:
-            slug = n.id.strip().lower()
-            details_str = json.dumps(n.details or {})
-            tags_str = json.dumps([t.strip().lower() for t in n.tags if t.strip()])
-            primary_label = n.primary_label.strip().upper()
+            # Determine node slug ID and human label
+            raw_id = (n.id or n.label or "").strip()
+            if not raw_id:
+                continue
+            slug = raw_id.lower().replace(" ", "-").replace("/", "-")
+            label = (n.label or n.id or slug).strip()
+
+            hemi = (n.hemisphere or "LEFT").upper()
+            if hemi not in ("LEFT", "RIGHT"):
+                hemi = "LEFT"
+
+            # Determine taxonomy label with intelligent fallbacks
+            default_pl = "ARCHITECTURE" if hemi == "LEFT" else "CREATIVE_IDEA"
+            primary_label = (n.primary_label or n.category or default_pl).strip().upper()
             category = (n.category or primary_label).strip()
+
+            details_str = json.dumps(n.details or {})
+            tags_str = json.dumps([t.strip().lower() for t in (n.tags or []) if t.strip()])
+            summary = (n.summary or f"Concept {label}").strip()
 
             cursor = conn.execute("SELECT created_at FROM nodes WHERE id = ?", (slug,))
             existing = cursor.fetchone()
@@ -570,7 +585,7 @@ def ingest_memory(payload: IngestPayload):
                 INSERT OR REPLACE INTO nodes 
                 (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, created_at, updated_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (slug, n.label.strip(), n.hemisphere, primary_label, category, tags_str, n.summary.strip(), details_str, confidence, created_at, now))
+            """, (slug, label, hemi, primary_label, category, tags_str, summary, details_str, confidence, created_at, now))
             nodes_upserted += 1
 
             if n.cross_links:
@@ -589,11 +604,12 @@ def ingest_memory(payload: IngestPayload):
                 """, (slug, tgt, now))
                 edges_upserted += 1
 
-        # 3. Upsert Explicit Edges
-        for e in payload.edges:
+        # 3. Upsert Explicit Edges and Links
+        all_edges = list(payload.edges or []) + list(payload.links or [])
+        for e in all_edges:
             src = e.source.strip().lower()
             tgt = e.target.strip().lower()
-            rel = e.relation.strip().upper().replace(" ", "_")
+            rel = (e.relation or "CONNECTS_TO").strip().upper().replace(" ", "_")
             edge_conf = getattr(e, "confidence", "EXTRACTED") or "EXTRACTED"
             edge_reason = getattr(e, "reasoning", None)
 
