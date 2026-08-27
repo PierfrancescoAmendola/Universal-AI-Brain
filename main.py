@@ -350,7 +350,7 @@ def get_brain_markdown(
         edges = [dict(row) for row in edges_cursor.fetchall()]
 
     # Filter logic
-    if q and q.strip():
+    if isinstance(q, str) and q.strip():
         search = q.strip().lower()
         matched_ids = set()
         filtered = []
@@ -362,7 +362,7 @@ def get_brain_markdown(
         nodes = filtered
         edges = [e for e in edges if e["source"] in matched_ids or e["target"] in matched_ids]
 
-    if tag and tag.strip():
+    if isinstance(tag, str) and tag.strip():
         search_tag = tag.strip().lower()
         matched_ids = set()
         filtered = []
@@ -374,7 +374,7 @@ def get_brain_markdown(
         nodes = filtered
         edges = [e for e in edges if e["source"] in matched_ids or e["target"] in matched_ids]
 
-    if primary_label and primary_label.strip():
+    if isinstance(primary_label, str) and primary_label.strip():
         pl_search = primary_label.strip().upper()
         nodes = [n for n in nodes if n["primary_label"] == pl_search]
         node_ids = {n["id"] for n in nodes}

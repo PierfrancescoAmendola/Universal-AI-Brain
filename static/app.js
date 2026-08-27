@@ -743,8 +743,61 @@ function closeAddModal() {
  * AI Directive & Sync Prompt Copy Management
  */
 const AI_SYNC_PROMPT = `Leggi il mio Universal Knowledge Graph all'indirizzo: https://universal-ai-brain.onrender.com/brain.md
+(Mirror pubblico GitHub accessibile anche ai crawler con restrizioni: https://raw.githubusercontent.com/PierfrancescoAmendola/Universal-AI-Brain/main/brain.md)
 Segui rigorosamente la Direttiva Graphify in cima alla pagina.
 Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST /api/memory/ingest (oppure esegui direttamente il POST se possiedi tool di rete): mappa le richieste dell'utente (USER_INTENT), i tuoi ragionamenti e deduzioni logiche (AI_REASONING) e raggruppa il tema della chat nell'episodio conversazionale (CONVERSATION_EPISODE).`;
+
+async function copyFullBrainMarkdown() {
+  const btn = document.getElementById('btn-copy-full-md');
+  const originalText = btn ? btn.innerHTML : '📄 Copia .md';
+  try {
+    if (btn) btn.innerHTML = `<span>⏳</span> Carico...`;
+    const res = await fetch('/brain.md');
+    if (!res.ok) throw new Error("Errore nel recupero di brain.md");
+    const mdText = await res.text();
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(mdText);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = mdText;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+
+    if (btn) {
+      btn.innerHTML = `<span>✅</span> .md Copiato!`;
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.remove('copied');
+      }, 2500);
+    }
+
+    addTerminalLog({
+      id: 'copy-md-' + Date.now(),
+      type: 'node',
+      method: 'GET',
+      actionType: 'EXPORT_MARKDOWN',
+      nodeId: 'brain-md-export',
+      label: 'File brain.md Copiato Interamente negli Appunti',
+      hemisphere: 'LEFT',
+      primaryLabel: 'COGNITIVE_RULE',
+      tags: ['markdown', 'export', 'clipboard', 'gemini-paste'],
+      summary: `Copiati ${mdText.length} caratteri di brain.md negli appunti. Pronto da incollare in qualsiasi chat Gemini/ChatGPT.`,
+      timestamp: new Date(),
+      timeStr: new Date().toLocaleTimeString(),
+      details: { size_bytes: mdText.length, lines: mdText.split('\n').length }
+    });
+  } catch (err) {
+    if (btn) btn.innerHTML = originalText;
+    alert("Errore nella copia del markdown: " + err.message);
+  }
+}
 
 async function copyAIPrompt() {
   try {

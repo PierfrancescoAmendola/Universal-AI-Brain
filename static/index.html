@@ -65,7 +65,7 @@
         <button class="btn btn-primary" onclick="openAddModal()">+ Aggiungi Nodo</button>
         <button class="btn btn-accent" onclick="openUploadModal()">📥 Carica JSON AI</button>
         <button class="btn btn-terminal-sidebar" onclick="toggleTerminal()">💻 Terminale</button>
-        <a href="/brain.md" target="_blank" class="btn" title="Vedi Markdown LLM">📄 .md</a>
+        <button class="btn" id="btn-copy-full-md" onclick="copyFullBrainMarkdown()" title="Copia l'intero testo di brain.md negli appunti da incollare direttamente su Gemini o Claude">📄 Copia .md</button>
       </div>
       <input id="search" type="text" placeholder="Cerca nodi, #tag o label..." autocomplete="off">
       <div id="search-results"></div>
