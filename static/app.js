@@ -756,6 +756,9 @@ function showInfo(nodeId) {
     ? `<span style="font-family:var(--font-mono); font-size:10px; font-weight:700; color:#10b981; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); padding:1px 6px; border-radius:4px;">● EXTRACTED</span>`
     : `<span style="font-family:var(--font-mono); font-size:10px; font-weight:700; color:#38bdf8; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.3); padding:1px 6px; border-radius:4px;">✦ INFERRED</span>`;
 
+  const tags = Array.isArray(node.tags) ? node.tags : (node.tags ? [node.tags] : []);
+  const tagsHtml = tags.map(t => `<span class="tag-badge">#${esc(t)}</span>`).join('');
+
   document.getElementById('info-content').innerHTML = `
     <div class="node-title">${esc(node.label)}</div>
     <div class="node-meta-row">

@@ -743,6 +743,29 @@ def get_node_subgraph(
         return result
 
 
+def determine_node_floor_level(node_id: str, primary_label: str, category: str, degree: int = 0, explicit_level: Optional[int] = None) -> int:
+    """
+    Classifica il piano nel Palazzo Cognitivo:
+    - Piano 0: Attico Macro-Domini & Core Hubs (Identità, Connettoma Primario, Macro-Architettura)
+    - Piano 1: Progetti & Aree Tematiche (Applicazioni attive, Domini verticali, Episodi conversazionali)
+    - Piano 2: Moduli, Algoritmi & Dettagli Atomici (Schemi dati, Algoritmi specialistici, Token UI)
+    """
+    if explicit_level is not None and explicit_level in (0, 1, 2) and explicit_level > 0:
+        return explicit_level
+    nid = (node_id or "").lower()
+    pl = (primary_label or "").upper()
+    cat = (category or "").lower()
+    
+    # Floor 0: Attico Macro-Domini & Core Hubs
+    if nid in ['person-pierfrancesco', 'bi-hemispheric-model', 'fastapi-core', 'sqlite-wal', 'domain-medicina-salute', 'cervello-cognitivo-unificato', 'concept-modular-domain-subgraphs', 'concept-graph-of-graphs-hypergraph'] or (pl in ['ARCHITECTURE', 'MENTAL_MODEL'] and degree >= 6):
+        return 0
+    # Floor 2: Moduli Atomici, Algoritmi, Token, Schemi
+    if pl in ['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'API_SPEC', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE', 'BUSINESS_LOGIC'] or 'schema' in cat or 'token' in cat or 'dettaglio' in cat:
+        return 2
+    # Floor 1: Progetti, Episodi, Intenti, Valori, Idee
+    return 1
+
+
 def build_palazzo_hierarchy(conn: sqlite3.Connection) -> Dict[str, Any]:
     """
     Builds the 3D Multi-Layer Palazzo Cognitivo (Graph-of-Graphs) representation,
@@ -767,9 +790,9 @@ def build_palazzo_hierarchy(conn: sqlite3.Connection) -> Dict[str, Any]:
     }
 
     for n in nodes:
-        lvl = int(n.get("layer_level", 0)) if n.get("layer_level") is not None else 0
-        if lvl not in (0, 1, 2):
-            lvl = 1
+        raw_lvl = n.get("layer_level")
+        deg = degrees.get(n["id"], 0)
+        lvl = determine_node_floor_level(n["id"], n.get("primary_label", ""), n.get("category", ""), degree=deg, explicit_level=raw_lvl)
 
         n_clean = {
             "id": n["id"],
@@ -779,7 +802,7 @@ def build_palazzo_hierarchy(conn: sqlite3.Connection) -> Dict[str, Any]:
             "category": n["category"],
             "tags": json.loads(n["tags"]) if n.get("tags") else [],
             "summary": n["summary"],
-            "degree": degrees.get(n["id"], 0),
+            "degree": deg,
             "confidence": n.get("confidence", "EXTRACTED"),
             "parent_graph_id": n.get("parent_graph_id", "root"),
             "layer_level": lvl
@@ -1243,9 +1266,8 @@ def ingest_memory(payload: IngestPayload):
 
             confidence = getattr(n, "confidence", "EXTRACTED") or "EXTRACTED"
             parent_graph_id = getattr(n, "parent_graph_id", "root") or "root"
-            layer_level = getattr(n, "layer_level", 0)
-            if layer_level is None:
-                layer_level = 0
+            raw_lvl = getattr(n, "layer_level", None)
+            layer_level = determine_node_floor_level(slug, primary_label, category, explicit_level=raw_lvl)
 
             conn.execute("""
                 INSERT OR REPLACE INTO nodes 
