@@ -194,7 +194,12 @@ function initNetwork() {
         damping: 0.4,
         avoidOverlap: 0.8
       },
-      stabilization: { iterations: 150, fit: true }
+      stabilization: {
+        enabled: true,
+        iterations: 150,
+        updateInterval: 150,
+        fit: true
+      }
     },
     interaction: {
       hover: true,
@@ -645,7 +650,12 @@ function renderGraphData() {
             damping: 0.4,
             avoidOverlap: 0.8
           },
-          stabilization: { iterations: 120, fit: true }
+          stabilization: {
+            enabled: true,
+            iterations: 120,
+            updateInterval: 120,
+            fit: true
+          }
         }
       });
       network.once('stabilizationIterationsDone', () => {
