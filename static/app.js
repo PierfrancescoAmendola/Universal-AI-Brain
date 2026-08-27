@@ -404,13 +404,18 @@ function selectPalazzoFloor(floorOption) {
           enabled: true,
           solver: 'forceAtlas2Based',
           forceAtlas2Based: {
-            gravitationalConstant: -50,
-            centralGravity: 0.01,
-            springLength: 80,
+            gravitationalConstant: -60,
+            centralGravity: 0.005,
+            springLength: 120,
             springConstant: 0.08,
-            damping: 0.4
-          }
+            damping: 0.4,
+            avoidOverlap: 0.8
+          },
+          stabilization: { iterations: 150, fit: true }
         }
+      });
+      network.once('stabilizationIterationsDone', () => {
+        network.setOptions({ physics: { enabled: false } });
       });
     }
   }
@@ -454,14 +459,6 @@ function toggleNodeExpansion(nodeId) {
   }
   
   renderGraphData();
-  
-  // Smoothly center or relax physics
-  if (network) {
-    network.setOptions({ physics: { enabled: true } });
-    setTimeout(() => {
-      if (network) network.setOptions({ physics: { enabled: false } });
-    }, 1200);
-  }
 }
 
 function resetToMacroAreas() {
@@ -710,7 +707,28 @@ function renderGraphData() {
   edgesDS.add(visEdges);
 
   if (network) {
-    network.setOptions({ physics: { enabled: true } });
+    if (currentPalazzoFloor === 'vertical') {
+      network.setOptions({ physics: { enabled: false } });
+    } else {
+      network.setOptions({
+        physics: {
+          enabled: true,
+          solver: 'forceAtlas2Based',
+          forceAtlas2Based: {
+            gravitationalConstant: -60,
+            centralGravity: 0.005,
+            springLength: 120,
+            springConstant: 0.08,
+            damping: 0.4,
+            avoidOverlap: 0.8
+          },
+          stabilization: { iterations: 120, fit: true }
+        }
+      });
+      network.once('stabilizationIterationsDone', () => {
+        network.setOptions({ physics: { enabled: false } });
+      });
+    }
   }
 }
 
