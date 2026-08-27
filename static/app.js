@@ -1148,7 +1148,7 @@ function exportTerminalLogs() {
   downloadAnchor.remove();
 }
 
-// Global Keyboard shortcuts
+// Global Keyboard shortcuts & Backdrop click handlers
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     const wrapper = document.getElementById('light-terminal-wrapper');
@@ -1169,9 +1169,39 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+function setupBackdropClicks() {
+  const terminalWrapper = document.getElementById('light-terminal-wrapper');
+  if (terminalWrapper) {
+    terminalWrapper.addEventListener('click', (e) => {
+      if (e.target === terminalWrapper) {
+        toggleTerminal();
+      }
+    });
+  }
+
+  const addModal = document.getElementById('add-modal');
+  if (addModal) {
+    addModal.addEventListener('click', (e) => {
+      if (e.target === addModal) {
+        closeAddModal();
+      }
+    });
+  }
+
+  const uploadModal = document.getElementById('upload-json-modal');
+  if (uploadModal) {
+    uploadModal.addEventListener('click', (e) => {
+      if (e.target === uploadModal) {
+        closeUploadModal();
+      }
+    });
+  }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   initNetwork();
   fetchBrainData();
   setupSearch();
   setupDropzone();
+  setupBackdropClicks();
 });

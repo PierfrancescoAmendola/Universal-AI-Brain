@@ -175,15 +175,15 @@
           <span class="term-title-text">Cognitive Live Terminal &amp; Network Inspector</span>
           <span class="term-status-live"><span class="pulse-green"></span>ONLINE</span>
         </div>
-        <div class="terminal-actions">
-          <button class="term-btn" onclick="clearTerminalLogs()" title="Pulisci log correnti">
-            <span>🗑️</span> Pulisci
-          </button>
-          <button class="term-btn" onclick="exportTerminalLogs()" title="Esporta log in formato JSON">
-            <span>📥</span> Esporta
-          </button>
-          <button class="term-close-btn" onclick="toggleTerminal()" title="Chiudi">✕</button>
-        </div>
+      <div class="terminal-actions">
+        <button class="term-btn term-btn-danger" onclick="clearTerminalLogs()" title="Pulisci tutti i log correnti">
+          <span>🗑️</span> Pulisci
+        </button>
+        <button class="term-btn" onclick="exportTerminalLogs()" title="Esporta i log in formato JSON">
+          <span>📥</span> Esporta JSON
+        </button>
+        <button class="term-close-btn" onclick="toggleTerminal()" title="Chiudi (Esc)">✕</button>
+      </div>
       </div>
 
       <div class="terminal-toolbar">
