@@ -161,7 +161,7 @@ function initNetwork() {
 
   const options = {
     physics: {
-      enabled: false,
+      enabled: true,
       solver: 'forceAtlas2Based',
       forceAtlas2Based: {
         gravitationalConstant: -70,
@@ -171,18 +171,14 @@ function initNetwork() {
         damping: 0.45,
         avoidOverlap: 0.85
       },
-      stabilization: { iterations: 150, fit: true }
+      stabilization: { iterations: 200, fit: true }
     },
     interaction: {
       hover: true,
       tooltipDelay: 120,
       hideEdgesOnDrag: false,
       navigationButtons: false,
-      keyboard: false,
-      dragNodes: true,
-      dragView: true,
-      zoomView: true,
-      selectable: true
+      keyboard: false
     },
     nodes: {
       shape: 'dot',
@@ -204,14 +200,8 @@ function initNetwork() {
 
   network = new vis.Network(container, data, options);
 
-  network.on('dragEnd', (params) => {
-    if (params.nodes && params.nodes.length > 0) {
-      const draggedId = params.nodes[0];
-      const pos = network.getPosition(draggedId);
-      if (nodesDS.get(draggedId)) {
-        nodesDS.update({ id: draggedId, x: pos.x, y: pos.y });
-      }
-    }
+  network.once('stabilizationIterationsDone', () => {
+    network.setOptions({ physics: { enabled: false } });
   });
 
   network.on('click', (params) => {
@@ -328,7 +318,15 @@ function selectPalazzoFloor(floorOption) {
           }
         },
         physics: {
-          enabled: false
+          enabled: true,
+          solver: 'forceAtlas2Based',
+          forceAtlas2Based: {
+            gravitationalConstant: -50,
+            centralGravity: 0.01,
+            springLength: 80,
+            springConstant: 0.08,
+            damping: 0.4
+          }
         }
       });
     }
@@ -373,6 +371,14 @@ function toggleNodeExpansion(nodeId) {
   }
   
   renderGraphData();
+  
+  // Smoothly center or relax physics
+  if (network) {
+    network.setOptions({ physics: { enabled: true } });
+    setTimeout(() => {
+      if (network) network.setOptions({ physics: { enabled: false } });
+    }, 1200);
+  }
 }
 
 function resetToMacroAreas() {
@@ -568,17 +574,6 @@ function renderGraphData() {
 
     if (currentPalazzoFloor === 'vertical') {
       nodeObj.level = floorLvl;
-    } else {
-      // Preserve user dragged position if node already exists on canvas
-      try {
-        if (network && nodesDS) {
-          const curPos = network.getPosition(n.id);
-          if (curPos && curPos.x !== undefined && curPos.y !== undefined) {
-            nodeObj.x = curPos.x;
-            nodeObj.y = curPos.y;
-          }
-        }
-      } catch (e) {}
     }
 
     visNodes.push(nodeObj);
@@ -632,10 +627,7 @@ function renderGraphData() {
   edgesDS.add(visEdges);
 
   if (network) {
-    if (currentPalazzoFloor !== 'vertical') {
-      network.stabilize(100);
-    }
-    network.setOptions({ physics: { enabled: false } });
+    network.setOptions({ physics: { enabled: true } });
   }
 }
 
