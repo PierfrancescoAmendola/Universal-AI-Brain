@@ -1716,7 +1716,7 @@ function exportTerminalLogs() {
 }
 
 // ============================================================================
-// Hierarchical Knowledge Tree Controller (層級譜系樹)
+// Hierarchical Knowledge Tree Controller
 // ============================================================================
 let currentTreeData = null;
 
