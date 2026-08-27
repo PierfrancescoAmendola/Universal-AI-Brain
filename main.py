@@ -442,9 +442,11 @@ def get_brain_markdown(
 3. **Tassonomia Rigorosa a Due Emisferi:**
    - **EMISFERO SINISTRO (LEFT):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`.
    - **EMISFERO DESTRO (RIGHT):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`.
-4. **Protocollo di Risposta & Aggiornamento della Memoria:**
+4. **Protocollo di Risposta & Ingestione della Memoria:**
    - Comunica secondo il protocollo **Caveman / Alta Densità Informativa**: chirurgico, diretto, privo di convenevoli, 100% sostanza tecnica e concettuale.
-   - **Obbligo di Ingestione:** Ogni volta che l'utente ti chiede di sintetizzare, aggiornare, salvare o aggiungere nuove memorie/decisioni della sessione, **DEVI obbligatoriamente allegare in calce alla tua risposta il blocco JSON pronto per l'ingestione** tramite l'endpoint `POST /api/memory/ingest`.
+   - **Obbligo di Aggiornamento Grafo (Doppia Modalità):**
+     1. **Se possiedi Tool di Rete o Esecuzione (Agenti con Bash, Python, Fetch o REST):** Esegui **DIRETTAMENTE** la chiamata `POST https://universal-ai-brain.onrender.com/api/memory/ingest` con il payload JSON.
+     2. **Se operi in sola chat testuale (senza esecuzione di rete):** **DEVI obbligatoriamente allegare in calce alla risposta** il blocco JSON formattato qui sotto, così che l'utente possa inviarlo con un click tramite la dashboard web.
 
 ```json
 {{

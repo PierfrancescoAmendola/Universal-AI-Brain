@@ -568,7 +568,7 @@ function closeAddModal() {
  */
 const AI_SYNC_PROMPT = `Leggi il mio Universal Knowledge Graph all'indirizzo: https://universal-ai-brain.onrender.com/brain.md
 Segui rigorosamente la Direttiva Graphify in cima alla pagina.
-Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST /api/memory/ingest.`;
+Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST /api/memory/ingest (oppure esegui direttamente il POST se possiedi tool di rete).`;
 
 async function copyAIPrompt() {
   try {
