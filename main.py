@@ -8,6 +8,7 @@ import json
 import sqlite3
 import base64
 import urllib.parse
+from collections import deque
 from datetime import datetime, timezone
 from typing import Dict, Any, List, Optional, Literal, Set
 from contextlib import asynccontextmanager
@@ -113,6 +114,48 @@ def init_db():
             conn.execute("ALTER TABLE edges ADD COLUMN confidence TEXT NOT NULL DEFAULT 'EXTRACTED';")
         if "reasoning" not in edge_columns:
             conn.execute("ALTER TABLE edges ADD COLUMN reasoning TEXT;")
+
+        # Create FTS5 virtual table for lightning-fast BM25 full-text search
+        conn.execute("""
+            CREATE VIRTUAL TABLE IF NOT EXISTS nodes_fts USING fts5(
+                id UNINDEXED,
+                label,
+                primary_label,
+                category,
+                tags,
+                summary,
+                details,
+                tokenize='porter unicode61'
+            );
+        """)
+
+        # Triggers to keep FTS5 table in sync with nodes table
+        conn.execute("""
+            CREATE TRIGGER IF NOT EXISTS nodes_ai AFTER INSERT ON nodes BEGIN
+                INSERT INTO nodes_fts (id, label, primary_label, category, tags, summary, details)
+                VALUES (new.id, new.label, new.primary_label, new.category, new.tags, new.summary, new.details);
+            END;
+        """)
+        conn.execute("""
+            CREATE TRIGGER IF NOT EXISTS nodes_ad AFTER DELETE ON nodes BEGIN
+                DELETE FROM nodes_fts WHERE id = old.id;
+            END;
+        """)
+        conn.execute("""
+            CREATE TRIGGER IF NOT EXISTS nodes_au AFTER UPDATE ON nodes BEGIN
+                DELETE FROM nodes_fts WHERE id = old.id;
+                INSERT INTO nodes_fts (id, label, primary_label, category, tags, summary, details)
+                VALUES (new.id, new.label, new.primary_label, new.category, new.tags, new.summary, new.details);
+            END;
+        """)
+
+        # Backfill FTS if empty
+        fts_count = conn.execute("SELECT COUNT(*) AS count FROM nodes_fts").fetchone()["count"]
+        if fts_count == 0:
+            conn.execute("""
+                INSERT INTO nodes_fts (id, label, primary_label, category, tags, summary, details)
+                SELECT id, label, primary_label, category, tags, summary, details FROM nodes;
+            """)
 
         conn.commit()
 
@@ -323,6 +366,179 @@ app.add_middleware(
 
 
 # -----------------------------------------------------------------------------
+# GraphRAG & Traversal Algorithms (Shortest Path, Subgraph, FTS5)
+# -----------------------------------------------------------------------------
+def search_nodes_fts(conn: sqlite3.Connection, query: str, limit: int = 50) -> List[str]:
+    """Execute BM25 ranked full-text search against nodes_fts virtual table."""
+    clean_q = query.strip()
+    if not clean_q:
+        return []
+    
+    # Escape special FTS5 operators for safety, handle prefix matching
+    terms = [f'"{t.replace(chr(34), "")}"*' for t in clean_q.split() if t.strip()]
+    if not terms:
+        return []
+    match_query = " ".join(terms)
+    
+    try:
+        cursor = conn.execute("""
+            SELECT id FROM nodes_fts
+            WHERE nodes_fts MATCH ?
+            ORDER BY rank
+            LIMIT ?
+        """, (match_query, limit))
+        return [row["id"] for row in cursor.fetchall()]
+    except sqlite3.OperationalError:
+        # Fallback to LIKE substring search if FTS query syntax is invalid
+        search_like = f"%{clean_q.lower()}%"
+        cursor = conn.execute("""
+            SELECT id FROM nodes
+            WHERE lower(id) LIKE ? OR lower(label) LIKE ? OR lower(summary) LIKE ? OR lower(tags) LIKE ?
+            LIMIT ?
+        """, (search_like, search_like, search_like, search_like, limit))
+        return [row["id"] for row in cursor.fetchall()]
+
+
+def find_shortest_path(conn: sqlite3.Connection, source_id: str, target_id: str) -> Optional[Dict[str, Any]]:
+    """
+    Bidirectional BFS to find shortest semantic path connecting two concepts across the graph.
+    Detects whether the path crosses the Corpus Callosum.
+    """
+    src = source_id.strip().lower()
+    tgt = target_id.strip().lower()
+
+    if src == tgt:
+        node_row = conn.execute("SELECT * FROM nodes WHERE id = ?", (src,)).fetchone()
+        if not node_row:
+            return None
+        return {
+            "source": src,
+            "target": tgt,
+            "distance": 0,
+            "path": [src],
+            "crosses_corpus_callosum": False,
+            "edges": []
+        }
+
+    # Fetch all nodes and edges
+    nodes_rows = conn.execute("SELECT id, label, hemisphere, primary_label FROM nodes").fetchall()
+    nodes_map = {r["id"]: dict(r) for r in nodes_rows}
+
+    if src not in nodes_map or tgt not in nodes_map:
+        return None
+
+    edges_rows = conn.execute("SELECT source, target, relation, confidence, reasoning FROM edges").fetchall()
+    
+    # Build undirected adjacency list for pathfinding
+    adj: Dict[str, List[Dict[str, Any]]] = {}
+    for r in edges_rows:
+        s, t = r["source"], r["target"]
+        adj.setdefault(s, []).append({"neighbor": t, "relation": r["relation"], "direction": "OUT", "confidence": r["confidence"]})
+        adj.setdefault(t, []).append({"neighbor": s, "relation": r["relation"], "direction": "IN", "confidence": r["confidence"]})
+
+    # BFS Traversal
+    queue = deque([[src]])
+    visited = {src}
+    path_edges: Dict[str, Dict[str, Any]] = {}
+
+    found_path: Optional[List[str]] = None
+    while queue:
+        current_path = queue.popleft()
+        current_node = current_path[-1]
+
+        if current_node == tgt:
+            found_path = current_path
+            break
+
+        for edge_info in adj.get(current_node, []):
+            nbr = edge_info["neighbor"]
+            if nbr not in visited:
+                visited.add(nbr)
+                path_edges[f"{current_node}->{nbr}"] = edge_info
+                queue.append(current_path + [nbr])
+
+    if not found_path:
+        return None
+
+    # Reconstruct edge traversal sequence & check Corpus Callosum crossing
+    path_details = []
+    crosses_callosum = False
+    for i in range(len(found_path) - 1):
+        u, v = found_path[i], found_path[i+1]
+        e_info = path_edges.get(f"{u}->{v}") or {"relation": "CONNECTS", "direction": "OUT", "confidence": "EXTRACTED"}
+        u_hemi = nodes_map.get(u, {}).get("hemisphere")
+        v_hemi = nodes_map.get(v, {}).get("hemisphere")
+        if u_hemi and v_hemi and u_hemi != v_hemi:
+            crosses_callosum = True
+        path_details.append({
+            "from": u,
+            "to": v,
+            "from_label": nodes_map.get(u, {}).get("label", u),
+            "to_label": nodes_map.get(v, {}).get("label", v),
+            "relation": e_info["relation"],
+            "confidence": e_info.get("confidence", "EXTRACTED"),
+            "crosses_corpus_callosum": (u_hemi != v_hemi)
+        })
+
+    return {
+        "source": src,
+        "target": tgt,
+        "distance": len(found_path) - 1,
+        "path_nodes": [nodes_map[nid] for nid in found_path],
+        "path_sequence": found_path,
+        "crosses_corpus_callosum": crosses_callosum,
+        "edges": path_details
+    }
+
+
+def extract_subgraph(conn: sqlite3.Connection, focal_id: str, depth: int = 1) -> Optional[Dict[str, Any]]:
+    """
+    Extract k-hop subgraph around a focal node for scoped GraphRAG context injection.
+    """
+    focal = focal_id.strip().lower()
+    root_row = conn.execute("SELECT * FROM nodes WHERE id = ?", (focal,)).fetchone()
+    if not root_row:
+        return None
+
+    # BFS up to depth hops
+    visited = {focal}
+    frontier = {focal}
+    all_edges_rows = conn.execute("SELECT * FROM edges").fetchall()
+    
+    adj: Dict[str, Set[str]] = {}
+    for r in all_edges_rows:
+        adj.setdefault(r["source"], set()).add(r["target"])
+        adj.setdefault(r["target"], set()).add(r["source"])
+
+    for _ in range(max(1, min(depth, 3))):
+        next_frontier = set()
+        for node in frontier:
+            for nbr in adj.get(node, set()):
+                if nbr not in visited:
+                    visited.add(nbr)
+                    next_frontier.add(nbr)
+        frontier = next_frontier
+
+    # Fetch node and edge details
+    placeholders = ",".join("?" for _ in visited)
+    subgraph_nodes = [dict(r) for r in conn.execute(f"SELECT * FROM nodes WHERE id IN ({placeholders})", list(visited)).fetchall()]
+    
+    subgraph_edges = [
+        dict(r) for r in all_edges_rows
+        if r["source"] in visited and r["target"] in visited
+    ]
+
+    return {
+        "focal_node": dict(root_row),
+        "depth": depth,
+        "total_nodes": len(subgraph_nodes),
+        "total_edges": len(subgraph_edges),
+        "nodes": subgraph_nodes,
+        "edges": subgraph_edges
+    }
+
+
+# -----------------------------------------------------------------------------
 # Core Endpoints
 # -----------------------------------------------------------------------------
 
@@ -332,35 +548,92 @@ def health_check():
     return {"status": "alive", "timestamp": datetime.now(timezone.utc).isoformat()}
 
 
-@app.get("/brain.md", tags=["Memory Access"])
-def get_brain_markdown(
-    q: Optional[str] = Query(None, description="Search term filter"),
-    tag: Optional[str] = Query(None, description="Tag filter"),
-    primary_label: Optional[str] = Query(None, description="Primary taxonomy filter")
-):
+@app.get("/api/graph/search", tags=["GraphRAG"])
+def search_brain(q: str = Query(..., description="Query for BM25 full text search")):
     """
-    Returns complete bi-hemispheric graph memory formatted with the mandatory
-    System Cognitive Meta-Directive at the very top.
+    Lightning-fast BM25 Full-Text Search across node labels, tags, summaries, and details.
     """
     with get_db_connection() as conn:
-        nodes_cursor = conn.execute("SELECT * FROM nodes ORDER BY hemisphere, primary_label, label")
-        nodes = [dict(row) for row in nodes_cursor.fetchall()]
+        matched_ids = search_nodes_fts(conn, q)
+        if not matched_ids:
+            return {"query": q, "count": 0, "results": []}
+        
+        placeholders = ",".join("?" for _ in matched_ids)
+        rows = conn.execute(f"SELECT * FROM nodes WHERE id IN ({placeholders})", matched_ids).fetchall()
+        row_dict = {r["id"]: dict(r) for r in rows}
+        ordered = [row_dict[mid] for mid in matched_ids if mid in row_dict]
+        
+        return {
+            "query": q,
+            "count": len(ordered),
+            "results": ordered
+        }
 
-        edges_cursor = conn.execute("SELECT * FROM edges ORDER BY relation, source")
-        edges = [dict(row) for row in edges_cursor.fetchall()]
 
-    # Filter logic
-    if isinstance(q, str) and q.strip():
-        search = q.strip().lower()
-        matched_ids = set()
-        filtered = []
-        for n in nodes:
-            combined = f"{n['id']} {n['label']} {n['primary_label']} {n['category']} {n['tags']} {n['summary']} {n['details']}".lower()
-            if search in combined:
-                filtered.append(n)
-                matched_ids.add(n['id'])
-        nodes = filtered
-        edges = [e for e in edges if e["source"] in matched_ids or e["target"] in matched_ids]
+@app.get("/api/graph/path", tags=["GraphRAG"])
+def get_shortest_path(
+    from_node: str = Query(..., description="Source node slug ID"),
+    to_node: str = Query(..., description="Target node slug ID")
+):
+    """
+    Find shortest path between two concepts, tracing through logic, emotions, and Corpus Callosum.
+    """
+    with get_db_connection() as conn:
+        result = find_shortest_path(conn, from_node, to_node)
+        if not result:
+            raise HTTPException(status_code=404, detail=f"No path found between '{from_node}' and '{to_node}'")
+        return result
+
+
+@app.get("/api/graph/subgraph", tags=["GraphRAG"])
+def get_node_subgraph(
+    node_id: str = Query(..., description="Focal node slug ID"),
+    depth: int = Query(1, ge=1, le=3, description="Neighbor hop depth (1-3)")
+):
+    """
+    Extract k-hop scoped subgraph around a specific node for focused context.
+    """
+    with get_db_connection() as conn:
+        result = extract_subgraph(conn, node_id, depth=depth)
+        if not result:
+            raise HTTPException(status_code=404, detail=f"Node '{node_id}' not found")
+        return result
+
+
+@app.get("/brain.md", tags=["Memory Access"])
+def get_brain_markdown(
+    q: Optional[str] = Query(None, description="Search term filter (BM25 FTS)"),
+    tag: Optional[str] = Query(None, description="Tag filter"),
+    primary_label: Optional[str] = Query(None, description="Primary taxonomy filter"),
+    subgraph_of: Optional[str] = Query(None, description="Extract scoped k-hop subgraph around a focal node"),
+    depth: int = Query(1, ge=1, le=3, description="Depth if subgraph_of is specified")
+):
+    """
+    Returns complete or scoped bi-hemispheric graph memory formatted with the mandatory
+    System Cognitive Meta-Directive and Graphify Protocol at the very top.
+    """
+    with get_db_connection() as conn:
+        if subgraph_of and subgraph_of.strip():
+            sub = extract_subgraph(conn, subgraph_of.strip(), depth=depth)
+            if sub:
+                nodes = sub["nodes"]
+                edges = sub["edges"]
+            else:
+                nodes = []
+                edges = []
+        else:
+            nodes_cursor = conn.execute("SELECT * FROM nodes ORDER BY hemisphere, primary_label, label")
+            nodes = [dict(row) for row in nodes_cursor.fetchall()]
+
+            edges_cursor = conn.execute("SELECT * FROM edges ORDER BY relation, source")
+            edges = [dict(row) for row in edges_cursor.fetchall()]
+
+            # FTS5 search filter
+            if isinstance(q, str) and q.strip():
+                fts_ids = set(search_nodes_fts(conn, q.strip()))
+                nodes = [n for n in nodes if n["id"] in fts_ids]
+                matched_ids = {n["id"] for n in nodes}
+                edges = [e for e in edges if e["source"] in matched_ids or e["target"] in matched_ids]
 
     if isinstance(tag, str) and tag.strip():
         search_tag = tag.strip().lower()
