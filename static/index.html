@@ -5,162 +5,227 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Universal AI Brain - Cognitive Knowledge Graph</title>
   
+  <!-- Fonts: Inter & JetBrains Mono for elite tech aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/static/style.css">
   <script src="/static/vendor/vis-network.min.js"></script>
 </head>
-<body>
+<body class="dark-tech-theme">
 
-  <!-- Left: Main Interactive Graph Canvas -->
-  <div id="graph-container">
-    <div class="top-hud">
+  <!-- Full-Width Master IDE Topbar -->
+  <header class="master-topbar">
+    <div class="topbar-left">
       <div class="brand-title">
-        <span>🧠 Universal AI Brain</span>
-        <span class="brand-badge">Bi-Hemispheric</span>
+        <span class="brand-logo-glow">🧠</span>
+        <div class="brand-text-wrap">
+          <span class="brand-name">UNIVERSAL AI BRAIN</span>
+          <span class="brand-tagline">Persistent Cognitive Graph</span>
+        </div>
+        <span class="brand-version-badge">v2.4</span>
       </div>
-      <div class="hud-stats">
-        <span><span class="hud-stat-dot left"></span>Sinistro: <strong id="hud-left" style="color:#fff">0</strong></span>
-        <span><span class="hud-stat-dot right"></span>Destro: <strong id="hud-right" style="color:#fff">0</strong></span>
-        <span><span class="hud-stat-dot callosum"></span>Ponti: <strong id="hud-callosum" style="color:#fff">0</strong></span>
+
+      <div class="topbar-divider"></div>
+
+      <!-- Live Synaptic Stats HUD -->
+      <div class="hud-stats-group">
+        <div class="hud-stat-pill" title="Emisfero Sinistro: Logica, Architettura, Algoritmi, Intenti">
+          <span class="hud-dot dot-left"></span>
+          <span class="hud-stat-name">SX</span>
+          <strong id="hud-left" class="hud-stat-val">0</strong>
+        </div>
+        <div class="hud-stat-pill" title="Emisfero Destro: Design, Emozioni, Relazioni, Episodi">
+          <span class="hud-dot dot-right"></span>
+          <span class="hud-stat-name">DX</span>
+          <strong id="hud-right" class="hud-stat-val">0</strong>
+        </div>
+        <div class="hud-stat-pill" title="Ponti del Corpo Calloso: Sinapsi Interemisferiche">
+          <span class="hud-dot dot-callosum"></span>
+          <span class="hud-stat-name">Ponti</span>
+          <strong id="hud-callosum" class="hud-stat-val">0</strong>
+        </div>
       </div>
-      <button class="btn-hud-terminal" id="btn-hud-tree" onclick="openTreeModal()" title="Visualizza Albero Gerarchico di Conoscenza (層級譜系樹)">
+    </div>
+
+    <!-- Right Header Actions -->
+    <div class="topbar-right">
+      <button class="topbar-action-btn" id="btn-hud-tree" onclick="openTreeModal()" title="Visualizza Albero Gerarchico di Conoscenza (層級譜系樹)">
         <span>🌳</span>
         <span>Albero Gerarchico</span>
       </button>
-      <button class="btn-hud-terminal" id="btn-hud-term" onclick="toggleTerminal()" title="Apri Console / Terminale Chiaro">
+
+      <button class="topbar-action-btn btn-terminal-trigger" id="btn-hud-term" onclick="toggleTerminal()" title="Apri Console di Attività &amp; HTTP Inspector (⌘`)">
         <span class="term-pulse-dot"></span>
-        <span>💻 Terminale Attività</span>
+        <span>💻 Terminale Live</span>
         <span id="hud-terminal-badge" class="hud-term-badge">0</span>
       </button>
-      <button class="btn-hud-prompt" id="btn-hud-prompt" onclick="copyAIPrompt()" title="Copia prompt istruzioni per ChatGPT / Claude / Gemini">
-        <span>📋</span> Copia Prompt
+
+      <div class="topbar-divider"></div>
+
+      <button class="topbar-action-btn btn-prompt-copy" id="btn-hud-prompt" onclick="copyAIPrompt()" title="Copia prompt direttiva Graphify per Claude / ChatGPT / Gemini">
+        <span>📋</span>
+        <span>Copia Prompt</span>
       </button>
-    </div>
 
-    <!-- Left Floating Elevator / Floor Navigator for Palazzo Cognitivo -->
-    <div class="palazzo-elevator-panel" id="palazzo-elevator">
-      <div class="elevator-header">
-        <span class="elevator-icon">🏢</span>
-        <span class="elevator-title">Palazzo Cognitivo</span>
-      </div>
-      <div class="elevator-buttons">
-        <button class="elevator-btn active" id="fl-btn-all" onclick="selectPalazzoFloor('all')" title="Vista Orizzontale Standard">
-          <span class="fl-num">🌐</span>
-          <span class="fl-label">Tutti i Nodi</span>
-        </button>
-        <button class="elevator-btn" id="fl-btn-vertical" onclick="selectPalazzoFloor('vertical')" title="Vista Verticale a Piani Sovrapposti con Ascensori Sinaptici">
-          <span class="fl-num">📐</span>
-          <span class="fl-label">Vista Verticale 3D</span>
-        </button>
-        <div class="elevator-divider"></div>
-        <button class="elevator-btn" id="fl-btn-0" onclick="selectPalazzoFloor(0)" title="Piano 0: Attico Macro-Domini & Core Hubs">
-          <span class="fl-num">P0</span>
-          <div class="fl-text">
-            <span class="fl-label">Attico Domini</span>
-            <span class="fl-count" id="fl-count-0">0 nodi</span>
-          </div>
-        </button>
-        <button class="elevator-btn" id="fl-btn-1" onclick="selectPalazzoFloor(1)" title="Piano 1: Progetti & Aree Tematiche">
-          <span class="fl-num">P1</span>
-          <div class="fl-text">
-            <span class="fl-label">Progetti & Aree</span>
-            <span class="fl-count" id="fl-count-1">0 nodi</span>
-          </div>
-        </button>
-        <button class="elevator-btn" id="fl-btn-2" onclick="selectPalazzoFloor(2)" title="Piano 2: Moduli & Dettagli Atomici">
-          <span class="fl-num">P2</span>
-          <div class="fl-text">
-            <span class="fl-label">Moduli Atomici</span>
-            <span class="fl-count" id="fl-count-2">0 nodi</span>
-          </div>
-        </button>
-      </div>
-      <div class="elevator-status" id="elevator-status">
-        <span class="pulse-cyan"></span> <span id="elevator-status-text">Piano: Tutti</span>
-      </div>
-    </div>
+      <button class="topbar-action-btn" id="btn-copy-full-md" onclick="copyFullBrainMarkdown()" title="Copia l'intero testo di brain.md negli appunti">
+        <span>📄</span>
+        <span>.md</span>
+      </button>
 
-    <!-- Floating Graph View Mode Controller -->
-    <div class="view-controls-bar">
-      <div class="view-mode-pill">
-        <button class="mode-tab active" id="mode-btn-areas" onclick="setGraphViewMode('areas')" title="Mostra solo le macro-aree: clicca su un nodo per espandere i suoi rami">
-          <span class="mode-icon">📂</span> Aree a Espansione
-        </button>
-        <button class="mode-tab" id="mode-btn-full" onclick="setGraphViewMode('full')" title="Visualizza tutti i nodi e sinapsi contemporaneamente">
-          <span class="mode-icon">🌐</span> Vista Completa
-        </button>
+      <a href="/api/memory/backup" target="_blank" class="topbar-action-btn btn-backup" title="Scarica Dump JSON Completo del Cervello">
+        <span>💾</span>
+        <span>Backup</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- App Main Workspace -->
+  <main class="app-workspace">
+    <!-- Left: Main Interactive Graph Canvas Area -->
+    <div id="graph-container">
+      <!-- Left Floating Elevator / Floor Navigator for Palazzo Cognitivo -->
+      <div class="palazzo-elevator-panel" id="palazzo-elevator">
+        <div class="elevator-header">
+          <span class="elevator-icon">🏢</span>
+          <span class="elevator-title">Palazzo Cognitivo</span>
+        </div>
+        <div class="elevator-buttons">
+          <button class="elevator-btn active" id="fl-btn-all" onclick="selectPalazzoFloor('all')" title="Vista Orizzontale Standard">
+            <span class="fl-num">🌐</span>
+            <span class="fl-label">Tutti i Piani</span>
+          </button>
+          <button class="elevator-btn" id="fl-btn-vertical" onclick="selectPalazzoFloor('vertical')" title="Vista Verticale a Piani Sovrapposti con Ascensori Sinaptici">
+            <span class="fl-num">📐</span>
+            <span class="fl-label">Vista 3D Piani</span>
+          </button>
+          <div class="elevator-divider"></div>
+          <button class="elevator-btn" id="fl-btn-0" onclick="selectPalazzoFloor(0)" title="Piano 0: Attico Macro-Domini &amp; Core Hubs">
+            <span class="fl-num">P0</span>
+            <div class="fl-text">
+              <span class="fl-label">Attico Domini</span>
+              <span class="fl-count" id="fl-count-0">0 nodi</span>
+            </div>
+          </button>
+          <button class="elevator-btn" id="fl-btn-1" onclick="selectPalazzoFloor(1)" title="Piano 1: Progetti &amp; Aree Tematiche">
+            <span class="fl-num">P1</span>
+            <div class="fl-text">
+              <span class="fl-label">Progetti &amp; Aree</span>
+              <span class="fl-count" id="fl-count-1">0 nodi</span>
+            </div>
+          </button>
+          <button class="elevator-btn" id="fl-btn-2" onclick="selectPalazzoFloor(2)" title="Piano 2: Moduli &amp; Dettagli Atomici">
+            <span class="fl-num">P2</span>
+            <div class="fl-text">
+              <span class="fl-label">Moduli Atomici</span>
+              <span class="fl-count" id="fl-count-2">0 nodi</span>
+            </div>
+          </button>
+        </div>
+        <div class="elevator-status" id="elevator-status">
+          <span class="pulse-cyan"></span> <span id="elevator-status-text">Tutti i Piani</span>
+        </div>
+      </div>
+
+      <!-- Floating Graph View Mode Controller -->
+      <div class="view-controls-bar">
+        <div class="view-mode-pill">
+          <button class="mode-tab active" id="mode-btn-areas" onclick="setGraphViewMode('areas')" title="Mostra solo le macro-aree: clicca su un nodo per espandere i suoi rami">
+            <span class="mode-icon">📂</span> Aree a Espansione
+          </button>
+          <button class="mode-tab" id="mode-btn-full" onclick="setGraphViewMode('full')" title="Visualizza tutti i nodi e sinapsi contemporaneamente">
+            <span class="mode-icon">🌐</span> Vista Completa
+          </button>
+        </div>
+        
+        <div class="view-actions-pill" id="areas-action-pill">
+          <button class="action-tab" id="btn-expand-toggle" onclick="toggleExpandAll()" title="Espandi o richiudi tutti i sotto-nodi">
+            <span id="expand-all-icon">➕</span> <span id="expand-all-label">Espandi Tutto</span>
+          </button>
+          <button class="action-tab" onclick="resetToMacroAreas()" title="Ricompatta alle sole macro-aree centrali">
+            <span>🔄</span> Ricompatta
+          </button>
+        </div>
       </div>
       
-      <div class="view-actions-pill" id="areas-action-pill">
-        <button class="action-tab" id="btn-expand-toggle" onclick="toggleExpandAll()" title="Espandi o richiudi tutti i sotto-nodi">
-          <span id="expand-all-icon">➕</span> <span id="expand-all-label">Espandi Tutto</span>
-        </button>
-        <button class="action-tab" onclick="resetToMacroAreas()" title="Ricompatta alle sole macro-aree centrali">
-          <span>🔄</span> Ricompatta
-        </button>
-      </div>
-    </div>
-    
-    <div id="graph"></div>
-  </div>
-
-  <!-- Right: Graphify Sidebar Inspector -->
-  <div id="sidebar">
-    <div id="search-wrap">
-      <button class="btn btn-copy-prompt" id="btn-copy-prompt" onclick="copyAIPrompt()" title="Copia negli appunti le istruzioni da inviare a qualsiasi AI">
-        <span>📋</span> Copia Prompt per le AI
-      </button>
-      <div class="action-grid">
-        <button class="btn btn-primary" onclick="openAddModal()">+ Aggiungi Nodo</button>
-        <button class="btn btn-accent" onclick="openUploadModal()">📥 Carica JSON AI</button>
-        <button class="btn btn-terminal-sidebar" onclick="toggleTerminal()">💻 Terminale</button>
-        <button class="btn" id="btn-copy-full-md" onclick="copyFullBrainMarkdown()" title="Copia l'intero testo di brain.md negli appunti da incollare direttamente su Gemini o Claude">📄 Copia .md</button>
-      </div>
-      <input id="search" type="text" placeholder="Cerca nodi, #tag o label..." autocomplete="off">
-      <div id="search-results"></div>
+      <div id="graph"></div>
     </div>
 
-    <div id="info-panel">
-      <h3>
-        <span>Dettagli Nodo</span>
-        <button id="btn-delete-node" style="display:none; background:none; border:none; color:#ef4444; cursor:pointer; font-size:11px;" onclick="deleteSelectedNode()">Elimina</button>
-      </h3>
-      <div id="info-content">
-        <span class="empty">Clicca su un nodo nel grafo per ispezionarlo</span>
-      </div>
-    </div>
+    <!-- Right: Graphify Sidebar Inspector -->
+    <aside id="sidebar">
+      <div id="search-wrap">
+        <div class="search-input-box">
+          <span class="search-box-icon">🔍</span>
+          <input id="search" type="text" placeholder="Cerca nodi, #tag o label..." autocomplete="off">
+          <kbd class="search-shortcut-badge">⌘K</kbd>
+        </div>
+        <div id="search-results"></div>
 
-    <div id="legend-wrap">
-      <h3>Macro-Categorie &amp; Tassonomia</h3>
-      <div id="legend-controls">
-        <label><input type="checkbox" id="select-all-cb" checked onchange="toggleAllCommunities(!this.checked)"> Seleziona Tutti</label>
+        <div class="action-grid">
+          <button class="btn btn-primary" onclick="openAddModal()" title="Crea un nuovo nodo manualmente">
+            <span>+</span> Aggiungi Nodo
+          </button>
+          <button class="btn btn-accent" onclick="openUploadModal()" title="Carica file JSON generato dall'AI">
+            <span>📥</span> Carica JSON AI
+          </button>
+        </div>
       </div>
-      <div id="legend"></div>
-    </div>
 
-    <div id="stats">
-      <span id="stat-nodes-edges">0 nodi · 0 archi</span>
-      <div style="display:flex; gap:10px; align-items:center;">
-        <a href="/api/memory/backup" target="_blank" style="color:#10b981; text-decoration:none; font-size:11px;" title="Scarica dump JSON completo">💾 Backup</a>
-        <span style="color:#38bdf8; cursor:pointer;" onclick="fetchBrainData()" title="Ricarica dati dal backend">⚡ Ricarica</span>
+      <div id="info-panel">
+        <div class="panel-section-header">
+          <h3>Dettagli Nodo</h3>
+          <button id="btn-delete-node" style="display:none;" class="btn-delete-link" onclick="deleteSelectedNode()">Elimina</button>
+        </div>
+        <div id="info-content">
+          <div class="empty-state-box">
+            <span class="empty-icon">📍</span>
+            <span class="empty-text">Clicca su un nodo nel grafo per ispezionarlo</span>
+            <span class="empty-sub">oppure premi <kbd>⌘K</kbd> per cercare</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+
+      <div id="legend-wrap">
+        <div class="panel-section-header">
+          <h3>Macro-Categorie &amp; Tassonomia</h3>
+        </div>
+        <div id="legend-controls">
+          <label><input type="checkbox" id="select-all-cb" checked onchange="toggleAllCommunities(!this.checked)"> Seleziona Tutti</label>
+        </div>
+        <div id="legend"></div>
+      </div>
+
+      <footer id="stats">
+        <div class="stat-info">
+          <span class="stat-indicator-dot"></span>
+          <span id="stat-nodes-edges">0 nodi · 0 archi</span>
+        </div>
+        <div class="stat-actions">
+          <span class="reload-btn" onclick="fetchBrainData()" title="Ricarica dati dal database">⚡ Ricarica</span>
+        </div>
+      </footer>
+    </aside>
+  </main>
 
   <!-- Ingest Knowledge Modal -->
-  <div class="modal-overlay" id="add-modal">
+  <div class="modal-overlay" id="add-modal" style="display:none;">
     <div class="modal">
-      <h3 class="modal-title">Memorizza Nuovo Concetto</h3>
+      <div class="modal-header-row">
+        <h3 class="modal-title" style="margin:0;">🧠 Memorizza Nuovo Concetto</h3>
+        <button class="modal-close-icon" onclick="closeAddModal()" title="Chiudi">✕</button>
+      </div>
       
       <div class="form-group">
         <label>Emisfero Cognitivo</label>
         <div class="radio-group">
           <label class="radio-label">
             <input type="radio" name="new-hemi" value="LEFT" checked onchange="updateTaxonomyOptions()">
-            <span style="color:#00D2FF; font-weight:700;">Sinistro (Logica)</span>
+            <span style="color:#00D2FF; font-weight:700;">Sinistro (Logica &amp; Tech)</span>
           </label>
           <label class="radio-label">
             <input type="radio" name="new-hemi" value="RIGHT" onchange="updateTaxonomyOptions()">
-            <span style="color:#FF007F; font-weight:700;">Destro (Design)</span>
+            <span style="color:#FF007F; font-weight:700;">Destro (Design &amp; Emozione)</span>
           </label>
         </div>
       </div>
@@ -200,15 +265,15 @@
   </div>
 
   <!-- Ingest AI JSON File/Text Modal -->
-  <div class="modal-overlay" id="upload-json-modal">
+  <div class="modal-overlay" id="upload-json-modal" style="display:none;">
     <div class="modal modal-lg">
       <div class="modal-header-row">
-        <h3 class="modal-title">📥 Carica JSON o File generato dall'AI</h3>
+        <h3 class="modal-title" style="margin:0;">📥 Ingestione Payload JSON da AI</h3>
         <button class="modal-close-icon" onclick="closeUploadModal()" title="Chiudi">✕</button>
       </div>
       
       <p class="modal-desc">
-        Carica un file <code>.json</code> oppure incolla il blocco JSON restituito da Claude / ChatGPT / Gemini per eseguire il <strong>POST</strong> su <code>/api/memory/ingest</code> e aggiornare live il grafo.
+        Carica un file <code>.json</code> o incolla il blocco restituito da Claude / ChatGPT / Gemini conforme alla <strong>Direttiva Graphify</strong> per eseguire il sync atomico su <code>/api/memory/ingest</code>.
       </p>
 
       <!-- Dropzone for File Upload -->
@@ -226,7 +291,19 @@
           <label style="margin:0;">Oppure Incolla Payload JSON</label>
           <span class="json-badge-preview" id="json-preview-badge">0 nodi · 0 archi rilevati</span>
         </div>
-        <textarea id="json-paste-input" class="form-control json-editor" rows="7" placeholder='{\n  "nodes": [\n    {\n      "id": "flutter-bloc",\n      "label": "Flutter BLoC",\n      "hemisphere": "LEFT",\n      "primary_label": "ARCHITECTURE",\n      "tags": ["flutter", "bloc"],\n      "summary": "Gestione dello stato reattivo."\n    }\n  ],\n  "edges": []\n}' oninput="validateAndPreviewJson(this.value)"></textarea>
+        <textarea id="json-paste-input" class="form-control json-editor" rows="7" placeholder='{
+  "nodes": [
+    {
+      "id": "flutter-bloc",
+      "label": "Flutter BLoC",
+      "hemisphere": "LEFT",
+      "primary_label": "ARCHITECTURE",
+      "tags": ["flutter", "bloc"],
+      "summary": "Gestione dello stato reattivo."
+    }
+  ],
+  "edges": []
+}' oninput="validateAndPreviewJson(this.value)"></textarea>
       </div>
 
       <div id="json-upload-status" class="upload-status-box" style="display:none;"></div>
@@ -252,15 +329,15 @@
           <span class="term-title-text">Cognitive Live Terminal &amp; Network Inspector</span>
           <span class="term-status-live"><span class="pulse-green"></span>ONLINE</span>
         </div>
-      <div class="terminal-actions">
-        <button class="term-btn term-btn-danger" onclick="clearTerminalLogs()" title="Pulisci tutti i log correnti">
-          <span>🗑️</span> Pulisci
-        </button>
-        <button class="term-btn" onclick="exportTerminalLogs()" title="Esporta i log in formato JSON">
-          <span>📥</span> Esporta JSON
-        </button>
-        <button class="term-close-btn" onclick="toggleTerminal()" title="Chiudi (Esc)">✕</button>
-      </div>
+        <div class="terminal-actions">
+          <button class="term-btn term-btn-danger" onclick="clearTerminalLogs()" title="Pulisci tutti i log correnti">
+            <span>🗑️</span> Pulisci
+          </button>
+          <button class="term-btn" onclick="exportTerminalLogs()" title="Esporta i log in formato JSON">
+            <span>📥</span> Esporta JSON
+          </button>
+          <button class="term-close-btn" onclick="toggleTerminal()" title="Chiudi (Esc)">✕</button>
+        </div>
       </div>
 
       <div class="terminal-toolbar">
@@ -315,9 +392,9 @@
 
       <div class="tree-toolbar">
         <div style="display:flex; gap:8px;">
-          <button class="tree-tool-btn" onclick="expandAllTreeNodes()">➕ Espandi Tutti i Rami</button>
+          <button class="tree-tool-btn" onclick="expandAllTreeNodes()">➕ Espandi Tutti</button>
           <button class="tree-tool-btn" onclick="collapseAllTreeNodes()">➖ Ricompatta</button>
-          <button class="tree-tool-btn" onclick="copyTreeMarkdown()">📋 Copia Markdown Albero</button>
+          <button class="tree-tool-btn" onclick="copyTreeMarkdown()">📋 Copia Markdown</button>
         </div>
         <div class="tree-search-wrap">
           <span>🔍</span>

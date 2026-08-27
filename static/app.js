@@ -667,23 +667,28 @@ function showInfo(nodeId) {
     `;
   }).join('');
 
-  // Render Tags
-  const tags = Array.isArray(node.tags) ? node.tags : [];
-  const tagsHtml = tags.map(t => `<span class="tag-badge">#${esc(t)}</span>`).join('');
+  // Epistemic confidence badge
+  const conf = node.confidence || 'EXTRACTED';
+  const confBadge = conf === 'EXTRACTED'
+    ? `<span style="font-family:var(--font-mono); font-size:10px; font-weight:700; color:#10b981; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); padding:1px 6px; border-radius:4px;">● EXTRACTED</span>`
+    : `<span style="font-family:var(--font-mono); font-size:10px; font-weight:700; color:#38bdf8; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.3); padding:1px 6px; border-radius:4px;">✦ INFERRED</span>`;
 
   document.getElementById('info-content').innerHTML = `
     <div class="node-title">${esc(node.label)}</div>
-    <div class="field"><b>Emisfero:</b> ${hemiBadge}</div>
-    <div class="field"><b>Macro-Label:</b> <code style="color:#a855f7">${esc(node.primary_label || node.category)}</code></div>
-    ${tags.length ? `<div class="tag-list">${tagsHtml}</div>` : ''}
-    <div class="summary-box">${esc(node.summary || 'Nessuna descrizione')}</div>
-    <button class="btn" style="width:100%; margin-top:8px; font-size:11px; padding:5px 10px; background:rgba(0,210,255,0.12); border-color:rgba(0,210,255,0.35); color:#38bdf8;" onclick="toggleNodeExpansion('${esc(nodeId)}')">
+    <div class="node-meta-row">
+      ${hemiBadge}
+      <span style="font-family:var(--font-mono); font-size:10px; color:#c084fc; background:rgba(168,85,247,0.12); border:1px solid rgba(168,85,247,0.3); padding:1px 6px; border-radius:4px;">${esc(node.primary_label || node.category)}</span>
+      ${confBadge}
+    </div>
+    ${tags.length ? `<div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px;">${tagsHtml}</div>` : ''}
+    <div class="summary-card">${esc(node.summary || 'Nessuna descrizione')}</div>
+    <button class="btn btn-primary" style="width:100%; margin-bottom:12px;" onclick="toggleNodeExpansion('${esc(nodeId)}')">
       <span>${expandedNodeIds.has(nodeId) ? '⊖ Ricompatta questo ramo' : '⊕ Espandi nodi collegati'}</span>
     </button>
-    <div class="field" style="margin-top:10px; color:#aaa; font-size:11px;">
-      <b>Sinapsi Connesse (${connectedEdges.length}):</b>
+    <div class="neighbors-box">
+      <div class="neighbors-box-title">Sinapsi Connesse (${connectedEdges.length})</div>
+      <div id="neighbors-list">${neighborItems || '<span class="empty">Nessun collegamento immediato</span>'}</div>
     </div>
-    <div id="neighbors-list">${neighborItems || '<span class="empty">Nessun collegamento</span>'}</div>
   `;
 
   document.getElementById('btn-delete-node').style.display = 'inline-block';
@@ -691,7 +696,13 @@ function showInfo(nodeId) {
 
 function clearInfo() {
   selectedNodeId = null;
-  document.getElementById('info-content').innerHTML = `<span class="empty">Clicca su un nodo nel grafo per ispezionarlo</span>`;
+  document.getElementById('info-content').innerHTML = `
+    <div class="empty-state-box">
+      <span class="empty-icon">📍</span>
+      <span class="empty-text">Clicca su un nodo nel grafo per ispezionarlo</span>
+      <span class="empty-sub">oppure premi <kbd>⌘K</kbd> per cercare</span>
+    </div>
+  `;
   document.getElementById('btn-delete-node').style.display = 'none';
 }
 
@@ -1830,6 +1841,13 @@ document.addEventListener('keydown', (e) => {
     const uploadModal = document.getElementById('upload-json-modal');
     if (uploadModal && uploadModal.style.display === 'flex') {
       closeUploadModal();
+    }
+  } else if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    const searchInput = document.getElementById('search');
+    if (searchInput) {
+      searchInput.focus();
+      searchInput.select();
     }
   } else if ((e.ctrlKey || e.metaKey) && e.key === '`') {
     e.preventDefault();

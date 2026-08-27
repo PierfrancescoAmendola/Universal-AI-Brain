@@ -26,6 +26,10 @@
      1. **Se possiedi Tool di Rete o Esecuzione (Agenti con Bash, Python, Fetch o REST):** Esegui **DIRETTAMENTE** la chiamata `POST https://universal-ai-brain.onrender.com/api/memory/ingest` con il payload JSON contenente fatti utente, nodi di intenzione, ragionamento AI ed episodi di chat.
      2. **Se operi in sola chat testuale (senza esecuzione di rete):** **DEVI obbligatoriamente allegare in calce alla risposta** il blocco JSON formattato qui sotto, così che l'utente possa inviarlo con un click tramite la dashboard web.
 
+6. **REGOLE LINGUISTICHE OBBLIGATORIE PER IL GRAFO (ITALIANO / INGLESE TECNICO):**
+   - **TUTTI i campi del JSON (`label`, `summary`, `tags`, `details`) DEVONO ESSERE SCRITTI RIGOROSAMENTE IN ITALIANO (con termini tecnici internazionali in inglese).**
+   - **È SEVERAMENTE VIETATO generare, tradurre o inserire nodi in cinese / wenyan / CJK**, anche se la conversazione in chat avviene in stile `/caveman wenyan-ultra`. Il grafo deve rimanere permanentemente indicizzabile e ricercabile in italiano.
+
 ```json
 {
   "nodes": [
@@ -56,30 +60,86 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-27 18:41:59 UTC | **Nodi Totali:** 113 (SX: 67 · DX: 46) | **Sinapsi:** 262
+> **Data Generazione:** 2026-08-27 20:52:54 UTC | **Nodi Totali:** 189 (SX: 120 · DX: 69) | **Sinapsi:** 550
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
 - **Analisi Algoritmica: BST vs Spanning Tree & Tassonomia Gerarchica** (`analysis-bst-vs-graph-taxonomy`)
   - **Tags:** `#algorithm-analysis` `#graph-theory` `#mst` `#b-tree` `#hierarchical-tree`
   - **Sintesi:** Valutazione tecnica: BST puro monodimensionale non modella relazioni cicliche; Spanning Tree Pesato (MST) e Alberi Gerarchici di Comunità estraggono la spina dorsale concettuale.
-  - **Dettagli:** `pure_bst`: Monodimensionale (già coperto da B-Tree SQLite O(log N)), `optimal_tree_models`: ['Maximum Spanning Tree (MST / Kruskal) per spina dorsale concettuale', 'Hierarchical Community Tree (Dendrogramma) per navigazione a zoom semantico', 'Prefix Trie / Radix Tree per lookup istantaneo O(k)']
+  - **Dettagli:** `pure_bst`: Monodimensionale (già coperto da B-Tree SQLite O(log N)), `optimal_tree_models`: ['Maximum Spanning Tree (MST / Kruskal) per spina dorsale concettuale', 'Hierarchical Community Tree (Dendrogramma) per navigazione a zoom semantico', 'Prefix Trie / Radix Tree per lookup istantaneo O(k)'], `model`: LLM Assistant (Historical Session)
+- **Architettura Anti-Amnesia: Grafo Esterno vs Context Window Effimera** (`ai-reasoning-infinite-context-architecture`)
+  - **Tags:** `#anti-amnesia` `#graph-rag` `#context-externalization` `#metacognition` `#gemini`
+  - **Sintesi:** Deduzione logica Gemini: disaccoppiare la memoria a lungo termine dal context buffer del modello trasforma l'AI da sessione stateless a intelligenza stateful continua.
+  - **Dettagli:** `architecture_solution`: External Graph State (SQLite WAL + GraphRAG) vs Volatile Prompt Buffer, `benefits`: ["Nuova chat legge /brain.md e recupera istantaneamente l'intero stato pregresso", 'Nessun degrado qualitativo dovuto al context bloat', 'Indipendenza da limiti di contesto di specifici provider LLM'], `model`: Gemini 3.7 Flash
 - **Deduzione AI: Architettura a Cluster Tematici Indipendenti** (`ai-reasoning-episodic-memory-architecture`)
   - **Tags:** `#ai-deduction` `#episodic-memory` `#semantic-clustering` `#knowledge-architecture`
   - **Sintesi:** Ragionamento architetturale: creare nodi CONVERSATION_EPISODE autonomi permette di archiviare chat eterogenee senza creare collegamenti artificiali.
-  - **Dettagli:** `rationale`: Argomenti non correlati non devono condividere sinapsi dirette ma gravitare attorno al rispettivo nodo di episodio o intenzione utente, `benefit`: Zero allucinazioni relazionali e massima purezza semantica
+  - **Dettagli:** `rationale`: Argomenti non correlati non devono condividere sinapsi dirette ma gravitare attorno al rispettivo nodo di episodio o intenzione utente, `benefit`: Zero allucinazioni relazionali e massima purezza semantica, `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Architettura di Distribuzione MCP + System Directives Cross-Modello** (`ai-reasoning-multi-llm-mcp-skill-distribution`)
+  - **Tags:** `#ai-reasoning` `#mcp-distribution` `#cognitive-prompting`
+  - **Sintesi:** Claude Desktop e Antigravity usano JSON-RPC stdio MCP; ChatGPT usa OpenAPI Actions HTTPS su Render; tutti condividono il protocollo /universal-brain.
+  - **Dettagli:** `claude_config`: ~/Library/Application Support/Claude/claude_desktop_config.json, `gemini_antigravity`: ~/.gemini/antigravity/mcp_config.json, `chatgpt_actions`: https://universal-ai-brain.onrender.com/openapi.json, `model`: Claude
+- **Deduzione AI: Chiarimento Architetturale: Coesistenza della Topo** (`reason-ep-20260827-hierarchical-overlay-reassurance`)
+  - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
+  - **Sintesi:** Definito formalmente il principio di 'Dualità Overlay-Substrato': il Grafo preserva la totalità relazionale e le proprietà biologico-simboliche, l'Albero ottimizza il context routing per l'LLM.
+  - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'utente teme la perdita o il deterioramento della struttura a grafo preesistente in favore di una struttura ad albero", "L'utente richiede rassicurazione e chiarimento sulla compatibilità strutturale"], 'inferred': ["L'albero agisce unicamente come indice di partizionamento/routing multilivello (Overlay/View) calcolato sopra il connettoma a grafo", 'Nessun nodo, arco trasversale o relazione ciclica viene eliminata o degradata'], 'ambiguous': []}, `architectural_synthesis`: Definito formalmente il principio di 'Dualità Overlay-Substrato': il Grafo preserva la totalità relazionale e le proprietà biologico-simboliche, l'Albero ottimizza il context routing per l'LLM., `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Formalizzazione Formale del Gating Emisferico Selettivo** (`ai-reasoning-gabaergic-gating-formalization`)
+  - **Tags:** `#ai-reasoning` `#snr-maximization` `#cognitive-load`
+  - **Sintesi:** La soppressione controlaterale massimizza il Signal-to-Noise Ratio (SNR), azzera il crosstalk semantico ed evita allucinazioni concettuali tra codice e vissuto emotivo.
+  - **Dettagli:** `scientific_principle`: Interhemispheric Inhibition for High Cognitive SNR, `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Formalizzazione dei Cluster Tematici ad Alta Coesione Interna** (`ai-reasoning-domain-subgraph-modularity`)
+  - **Tags:** `#ai-reasoning` `#modularity-q` `#graph-clustering`
+  - **Sintesi:** La topologia a comunità modulari massimizza la Modularity Q di Newman, prevenendo il degrado delle ricerche BFS e FTS5.
+  - **Dettagli:** `metric`: High Modularity Q, Low Centrality Bleed, `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Rilascio e Sincronizzazione dell'Hierarchical Tree** (`reason-ep-20260827-hierarchical-tree-deployment-sync`)
+  - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
+  - **Sintesi:** Formalizzata la transizione dell'Universal Knowledge Graph in una piattaforma multiscalare dotata di motore ad albero nativo, interfaccia web interattiva e binding MCP universale.
+  - **Dettagli:** `epistemic_rubric`: {'extracted': ["Implementato e rilasciato l'Hierarchical Knowledge Tree senza intaccare il grafo 2D, FTS5 BM25, shortest path e MCP", 'Nuovi endpoint: GET /api/graph/tree e GET /brain.md?view=tree (risparmio 80% token)', 'Nuovo tool MCP: brain_get_tree in mcp_server.py per Claude Desktop, Cursor e Gemini', "Nuova UI: HUD '🌳 Albero Gerarchico' con live search e focus diretto sul grafo", 'Commit GitHub: 62e48df sincronizzato e deployato su Render.com', 'God Nodes principali: get_db_connection(), EMISFERO DESTRO, EMISFERO SINISTRO, fetchBrainData(), handle_json_rpc()'], 'inferred': ["L'architettura ha completato con successo la transizione a doppio strato (Overlay Gerarchico + Connettoma a Grafo)", "L'integrazione di get_knowledge_tree con get_db_connection consolida l'accesso ai dati senza ridondanze"], 'ambiguous': []}, `architectural_synthesis`: Formalizzata la transizione dell'Universal Knowledge Graph in una piattaforma multiscalare dotata di motore ad albero nativo, interfaccia web interattiva e binding MCP universale., `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Specifiche Tecniche e Mappatura Comandi dell'Hub C** (`reason-ep-20260827-telegram-cognitive-hub-spec`)
+  - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
+  - **Sintesi:** Definita la pipeline I/O perimetrale: Telegram App -> HTTPS Webhook (/api/telegram/webhook) -> Whitelist Auth -> Intent Router (/search, /path, /tree, Ingest) -> brain.db.
+  - **Dettagli:** `epistemic_rubric`: {'extracted': ['Integrazione di POST /api/telegram/webhook direttamente in main.py a costo zero', 'Comandi definiti: /search (FTS5 BM25), /path (BFS bidirezionale corpo calloso), /tree (Albero sintetico)', 'Supporto per parsing testo/audio per ingestione automatica in brain.db', 'Autenticazione di sicurezza tramite User ID Whitelist', 'Stato registrato al Commit 965f0a8: 110 nodi e 253 sinapsi'], 'inferred': ["L'architettura Telegram unifica il livello di percezione (audio/testo) con il livello di navigazione del connettoma (BFS inter-emisferico)", 'Il gateway funge da estensione mobile real-time del server MCP e del database SQLite'], 'ambiguous': []}, `architectural_synthesis`: Definita la pipeline I/O perimetrale: Telegram App -> HTTPS Webhook (/api/telegram/webhook) -> Whitelist Auth -> Intent Router (/search, /path, /tree, Ingest) -> brain.db., `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Stato Cognitivo Condiviso e Continuità Inter-Modello** (`ai-reasoning-shared-cognitive-state-continuity`)
+  - **Tags:** `#shared-state` `#cross-model-reasoning` `#epistemic-anchoring` `#universal-ai-brain` `#metacognition`
+  - **Sintesi:** L'unificazione del contesto in un grafo bi-emisferico supera il silo conversazionale dei singoli LLM, trasformando istanze AI isolate in nodi computazionali su un unico substrato cognitivo.
+  - **Dettagli:** `model`: Gemini 3.7 Flash, `paradigm`: Decentralized Sovereign AI Memory, `architectural_impact`: La memoria risiede nel grafo dell'utente, non nei database isolati dei provider proprietari.
+- **Deduzione AI: Tassonomia e Classificazione Formale dell'Universa** (`reason-ep-20260827-graph-taxonomy-classification`)
+  - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
+  - **Sintesi:** Mappate le 4 dimensioni: Topologica (Heterogeneous Multigraph), Epistemica (Epistemic Property Graph), Cognitiva (Episodic-Semantic Hybrid), Dinamica (Evolving Temporal Graph).
+  - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'Universal Knowledge Graph dell'utente possiede nodi tipizzati eterogenei, architettura biemisferica e rubrica epistemica", "L'utente richiede la categorizzazione formale della tipologia di grafo"], 'inferred': ['Formalmente classificabile come Attributed Directed Heterogeneous Multigraph con proprietà temporali ed epistemiche', 'Funziona come memoria a lungo termine neuro-simbolica a plasticità dinamica'], 'ambiguous': []}, `classification_synthesis`: Mappate le 4 dimensioni: Topologica (Heterogeneous Multigraph), Epistemica (Epistemic Property Graph), Cognitiva (Episodic-Semantic Hybrid), Dinamica (Evolving Temporal Graph)., `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Traduzione e Consolidamento del Benchmark Comparat** (`reason-ep-20260827-tree-ranking-translation`)
+  - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
+  - **Sintesi:** Tradotto fedelmente il framework di comparazione tecnica e gerarchizzazione delle strutture ad albero.
+  - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'Albero Gerarchico a Comunità (Dendrogramma) è eletto come architettura primaria (risparmio token 80%, Semantic Zoom)", 'MST è confermato come dorsale di deduzione logica secondaria', 'Trie/Radix Tree è classificato come ausiliario per autocompletamento O(k)', 'BST è escluso per ridondanza rispetto ai B+Tree nativi di SQLite e incapacità di gestire topologie 2D/3D con cicli'], 'inferred': ['Il modello multi-albero formalizza una pipeline a strati: indicizzazione lessicale (Trie) -> scoping gerarchico (Dendrogramma) -> linearizzazione deduttiva (MST)'], 'ambiguous': []}, `translation_synthesis`: Tradotto fedelmente il framework di comparazione tecnica e gerarchizzazione delle strutture ad albero., `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Unificazione Architetturale tra Knowledge Graph e** (`reason-ep-20260827-graph-tree-unification`)
+  - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
+  - **Sintesi:** Formalizzata la pipeline: Knowledge Graph -> Spreading Activation -> Local Tree Search (ToT/MCTS) -> Trajectory Evaluation -> Synaptic Consolidation (Graph Ingest).
+  - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'utente possiede un Universal Knowledge Graph strutturato come memoria/cervello", "L'utente richiede l'analisi della compatibilità formale e funzionale tra grafi di conoscenza e alberi di ricerca"], 'inferred': ['Il grafo agisce come memoria a lungo termine (substrato associativo / Sistema 1)', "L'albero di ricerca agisce come meccanismo deliberativo e di pianificazione (working memory / Sistema 2)", "La sintesi tra i due produce un'architettura 'Graph-of-Thoughts' con consolidamento episodico-semantico"], 'ambiguous': []}, `architectural_synthesis`: Formalizzata la pipeline: Knowledge Graph -> Spreading Activation -> Local Tree Search (ToT/MCTS) -> Trajectory Evaluation -> Synaptic Consolidation (Graph Ingest)., `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Validazione Formale del Grafo Frattale e Implementazione 0€** (`ai-reasoning-hypergraph-multi-scale-feasibility`)
+  - **Tags:** `#ai-reasoning` `#complexity-analysis` `#token-efficiency`
+  - **Sintesi:** Il modello Graph-of-Graphs abbatte la complessità computazionale a O(log N) e riduce i token del 95% tramite drill-down.
+  - **Dettagli:** `implementation_cost`: 0€ su SQLite con colonna parent_graph_id, `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Valutazione Tecnica delle Strutture ad Albero (MST** (`reason-ep-20260827-tree-structures-evaluation`)
+  - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
+  - **Sintesi:** Mappati 4 layer strutturali: B+Tree (Storage), Radix Trie (Lexical Routing O(k)), Hierarchical Dendrogram (Context Scoping), MST (Linear Chain-of-Thought).
+  - **Dettagli:** `epistemic_rubric`: {'extracted': ['I BST 1D non sono adatti a modellare reti cerebrali cicliche multidimensionali', 'SQLite implementa B+Tree per indici su disco a O(log N)', 'MST estrae la spina dorsale concettuale eliminando i cicli', 'Il dendrogramma gerarchico abilita il Semantic Zoom multilivello', 'Il Prefix Trie/Radix Tree fornisce autocompletamento a O(k)'], 'inferred': ['Le strutture ad albero non sostituiscono il grafo, ma agiscono come proiezioni e indici algoritmici specializzati del connettoma', "L'integrazione di MST e Dendrogramma ottimizza il consumo di token e previene loop di generazione"], 'ambiguous': []}, `algorithmic_synthesis`: Mappati 4 layer strutturali: B+Tree (Storage), Radix Trie (Lexical Routing O(k)), Hierarchical Dendrogram (Context Scoping), MST (Linear Chain-of-Thought)., `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Valutazione e Design di un Telegram Bot come Inter** (`reason-ep-20260827-telegram-bot-interface`)
+  - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
+  - **Sintesi:** Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render.
+  - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'utente valuta l'implementazione di un bot Telegram per interagire con il proprio Knowledge Graph", 'Richiesta di valutazione su utilità, gratuità e difficoltà implementativa'], 'inferred': ["L'integrazione riduce drasticamente l'attrito di inserimento dati (write) e consultazione (read)", "L'architettura Telegram agisce come livello di Input/Output percettivo del cervello artificiale"], 'ambiguous': []}, `architectural_synthesis`: Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render., `model`: LLM Assistant (Historical Session)
 - **Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€** (`ai-reasoning-hybrid-search-mcp`)
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
-  - **Dettagli:** `search_engine`: SQLite FTS5 Porter Unicode61, `pathfinding`: Bidirectional Breadth-First Search (BFS), `context_scoping`: k-hop neighborhood subgraph extraction, `interoperability`: JSON-RPC 2.0 stdio MCP Server
+  - **Dettagli:** `search_engine`: SQLite FTS5 Porter Unicode61, `pathfinding`: Bidirectional Breadth-First Search (BFS), `context_scoping`: k-hop neighborhood subgraph extraction, `interoperability`: JSON-RPC 2.0 stdio MCP Server, `model`: LLM Assistant (Historical Session)
 - **Razionale Architetturale: Separazione Aree vs Grafo Completo** (`ai-reasoning-clustering-decision`)
   - **Tags:** `#architecture-rationale` `#cognitive-load` `#graph-physics` `#scalability`
   - **Sintesi:** Scelta di non eliminare le relazioni fisiche ma di applicare un filtro visuale basato su insiemi di visibilità adiacente, massimizzando ordine e densità semantica.
-  - **Dettagli:** `approach`: Visual filter on vis.DataSet without schema mutilation, `benefits`: ['zero-data-loss', 'uncluttered-ui', 'instant-subgraph-expansion']
+  - **Dettagli:** `approach`: Visual filter on vis.DataSet without schema mutilation, `benefits`: ['zero-data-loss', 'uncluttered-ui', 'instant-subgraph-expansion'], `model`: LLM Assistant (Historical Session)
 - **Tassonomia Metacognitiva & AI Reasoning Hub** (`tax-ai-reasoning`)
   - **Tags:** `#ai-reasoning` `#metacognition` `#chain-of-thought` `#rationale` `#knowledge-graph`
   - **Sintesi:** Area cognitiva dedicata al tracciamento dei ragionamenti, deduzioni analitiche e percorsi logici interni generati dall'AI durante le sessioni.
-  - **Dettagli:** `hemisphere`: LEFT, `labels`: ['AI_REASONING', 'METACOGNITION'], `purpose`: Map internal AI deductions into permanent graph space
+  - **Dettagli:** `hemisphere`: LEFT, `labels`: ['AI_REASONING', 'METACOGNITION'], `purpose`: Map internal AI deductions into permanent graph space, `model`: LLM Assistant (Historical Session)
 - **Validazione Architetturale: Provenance & Attribution Cross-Modello** (`ai-reasoning-cross-model-provenance-validation`)
   - **Tags:** `#ai-deduction` `#epistemic-provenance` `#knowledge-graph` `#metacognition` `#gemini`
   - **Sintesi:** Deduzione logica Gemini: tracciare prompt e modello crea una memoria a provenienza epistemica verificabile, prevenendo allucinazioni di paternità e potenziando il retrieval.
@@ -90,10 +150,18 @@
   - **Tags:** `#achievements` `#trophies` `#gamification` `#evaluation-engine`
   - **Sintesi:** Sistema di valutazione achievement con 22 trofei suddivisi in 5 categorie (Streak, Completions, Freeze, Specials, Mastery) e 5 tier di rarità.
   - **Dettagli:** `categories`: ['Streak', 'Completions', 'Freeze', 'Specials', 'Mastery'], `tiers`: ['Bronze', 'Silver', 'Gold', 'Diamond', 'Legendary'], `special_metrics`: ['Early Bird (<9 AM)', 'Night Owl (>=9 PM)', 'Weekend Warrior', 'Perfect Days']
+- **Algoritmo di Gating Emisferico & Risveglio Sinaptico On-Demand** (`algorithm-selective-hemispheric-activation`)
+  - **Tags:** `#algorithm` `#selective-gating` `#lazy-evaluation` `#callosal-trigger`
+  - **Sintesi:** Algoritmo che instrada le query solo all'emisfero bersaglio (Left per logica/codice, Right per design/valori) e risveglia nodi controlaterali solo se attraversati da sinapsi callosali rilevanti.
+  - **Dettagli:** `routing_logic`: Target hemisphere active -> Contralateral hemisphere dormant -> Wake up via Corpus Callosum edge traversal
 - **AuleStudio Real-time Availability Engine** (`aule-studio-backend-arch`)
   - **Tags:** `#availability-engine` `#real-time` `#reservations` `#occupancy-rate`
   - **Sintesi:** Algoritmo di calcolo occupazione delle aule universitarie e gestione code/prenotazioni concorrenti per studenti.
   - **Dettagli:** `slot_duration_mins`: 60, `concurrency_strategy`: Optimistic locking, `sync_frequency_sec`: 30
+- **Bi-directional BFS (Corpus Callosum Routing)** (`node-bidirectional-bfs-pathfinding`)
+  - **Tags:** `#mutation-import` `#routing-engine` `#graph-algorithm`
+  - **Sintesi:** Bi-directional BFS (Corpus Callosum Routing) (Layer: ROUTING_ENGINE, Tipo: GRAPH_ALGORITHM)
+  - **Dettagli:** `id`: node_bidirectional_bfs_pathfinding, `label`: Bi-directional BFS (Corpus Callosum Routing), `type`: GRAPH_ALGORITHM, `layer`: ROUTING_ENGINE
 - **Bioinformatica & Deep Learning (ICAR-CNR)** (`proj-bioinformatics-icar`)
   - **Tags:** `#bioinformatics` `#deep-learning` `#pytorch` `#medical-imaging` `#thesis`
   - **Sintesi:** Ricerca su modelli di deep learning e computer vision per diagnosi istopatologica (Dr.ssa Brancati, Prof. Riccio).
@@ -106,6 +174,10 @@
   - **Tags:** `#music-theory` `#dsp` `#ear-training` `#flutter`
   - **Sintesi:** Strumento interattivo per ear training, composizione e riconoscimento dell'armonia musicale.
   - **Dettagli:** `stack`: Flutter, SoundFont Synthesizer, WebAudio API, `scope`: Teoria musicale computazionale e didattica dell'ascolto
+- **Maximum Spanning Tree (Conceptual Backbone)** (`node-mst-conceptual-backbone`)
+  - **Tags:** `#mutation-import` `#serialization-layer` `#algorithmic-projection`
+  - **Sintesi:** Maximum Spanning Tree (Conceptual Backbone) (Layer: SERIALIZATION_LAYER, Tipo: ALGORITHMIC_PROJECTION)
+  - **Dettagli:** `id`: node_mst_conceptual_backbone, `label`: Maximum Spanning Tree (Conceptual Backbone), `type`: ALGORITHMIC_PROJECTION, `layer`: SERIALIZATION_LAYER
 - **ParticleSimulator 3D** (`proj-particlesimulator`)
   - **Tags:** `#javascript` `#threejs` `#webgl` `#mediapipe` `#gesture-control`
   - **Sintesi:** Motore fisico generativo 3D in tempo reale con controllo tramite gesture della mano via computer vision.
@@ -146,10 +218,18 @@
   - **Dettagli:** `platform`: Apple App Store, `algorithms`: K-Means / Median Cut Color Quantization
 
 ### [Macro-Label: `ARCHITECTURE`]
+- **Architettura Graph-of-Graphs / Palazzo Cognitivo a Piani** (`concept-graph-of-graphs-hypergraph`)
+  - **Tags:** `#hypergraph` `#graph-of-graphs` `#multiscale` `#fractal-topology` `#semantic-drilldown`
+  - **Sintesi:** Modello a iper-grafo gerarchico in cui i nodi di livello superiore contengono sotto-grafi completi, simulando un palazzo a più piani concettuali.
+  - **Dettagli:** `levels`: L0 (Macro-Domini) -> L1 (Progetti/Aree) -> L2 (Moduli/Sistemi) -> L3 (Entità Atomiche), `formal_name`: Hierarchical Clustered Hypergraph / Multi-Layer Network
 - **Architettura Webhook Telegram 0€ (FastAPI + Bot API)** (`arch-telegram-webhook-gateway`)
   - **Tags:** `#telegram-bot` `#webhook` `#fastapi` `#zero-cost` `#mobile-gateway`
   - **Sintesi:** Infrastruttura serverless su webhook FastAPI per ricezione comandi (/search, /path, /tree) e inserimento memorie asincrono 0€.
   - **Dettagli:** `endpoint`: POST /api/telegram/webhook, `auth`: Telegram Secret Token / Authorized User ID whitelist, `cost`: 0€ illimitato
+- **Architettura a Sotto-Grafi Modulari & Decentramento Hub** (`concept-modular-domain-subgraphs`)
+  - **Tags:** `#modular-graph` `#domain-clustering` `#anti-star-topology` `#subgraph-modularity`
+  - **Sintesi:** I concetti verticali (es. medicina, finanza, fisica) non si collegano forzatamente a person-pierfrancesco, ma formano cluster tematici autonomi ancorati a macro-domini cognitivi.
+  - **Dettagli:** `pattern`: Domain-Driven Cognitive Clusters, `benefit`: Previene l'over-centrality e l'inquinamento topologico dello star-graph
 - **Architettura di Hosting Render.com 0€** (`deploy-render-zero-cost`)
   - **Tags:** `#render` `#hosting` `#zero-cost` `#fastapi` `#uvicorn`
   - **Sintesi:** Infrastruttura di erogazione web asincrona su Render.com Free Tier con Uvicorn e SQLite WAL persistito.
@@ -158,6 +238,10 @@
   - **Tags:** `#ui` `#graph-visualization` `#progressive-disclosure` `#clusters` `#ux-cleanliness`
   - **Sintesi:** Motore di rendering a fioritura progressiva: visualizza i Macro-Hub compatti e ne sboccia i sotto-nodi al click utente preservando le sinapsi.
   - **Dettagli:** `mode`: Progressive Disclosure, `features`: ['macro-hubs', 'interactive-bloom', 'badge-counters', 'compact-view']
+- **Attributed Heterogeneous Temporal Multigraph** (`node-universal-ai-brain-taxonomy`)
+  - **Tags:** `#mutation-import` `#formal-theory` `#graph-classification`
+  - **Sintesi:** Attributed Heterogeneous Temporal Multigraph (Layer: FORMAL_THEORY, Tipo: GRAPH_CLASSIFICATION)
+  - **Dettagli:** `id`: node_universal_ai_brain_taxonomy, `label`: Attributed Heterogeneous Temporal Multigraph, `type`: GRAPH_CLASSIFICATION, `layer`: FORMAL_THEORY
 - **AuleStudioApp (Mobile Project)** (`aule-studio-app`)
   - **Tags:** `#flutter` `#dart` `#auledistudio` `#booking` `#real-time` `#mobile`
   - **Sintesi:** Applicazione mobile per studenti per localizzare aule studio universitarie, verificare posti liberi in tempo reale e prenotare postazioni.
@@ -170,18 +254,66 @@
   - **Tags:** `#mern` `#recommendation` `#tmdb` `#social`
   - **Sintesi:** App di matching e scoperta cinematografica di coppia/gruppo basata su swipe e intersezione preferenze.
   - **Dettagli:** `stack`: MongoDB, Express, React/Flutter, Node.js, TMDb API, `pattern`: Real-time preference matching
+- **Commit 965f0a8 (110 Nodes, 253 Synapses)** (`node-commit-965f0a8`)
+  - **Tags:** `#mutation-import` `#devops-timeline` `#graph-state`
+  - **Sintesi:** Commit 965f0a8 (110 Nodes, 253 Synapses) (Layer: DEVOPS_TIMELINE, Tipo: GRAPH_STATE)
+  - **Dettagli:** `id`: node_commit_965f0a8, `label`: Commit 965f0a8 (110 Nodes, 253 Synapses), `type`: GRAPH_STATE, `layer`: DEVOPS_TIMELINE
+- **Dominio: Ingegneria Software & Architetture** (`domain-software-engineering`)
+  - **Tags:** `#domain-hub` `#software-engineering` `#architecture` `#systems` `#mobile-ios` `#backend`
+  - **Sintesi:** Macro-dominio che racchiude tutte le applicazioni, architetture, stack tecnologici, protocolli e sistemi software.
+  - **Dettagli:** `scope`: All active software projects and engineering foundations
+- **Dominio: Medicina, Salute & Fisiologia** (`domain-medicina-salute`)
+  - **Tags:** `#domain-hub` `#medicina` `#salute` `#dermatologia` `#podologia` `#fisiologia`
+  - **Sintesi:** Macro-dominio dedicato a nozioni mediche, diagnosi, patologie specialistiche, fisiologia e benessere.
+  - **Dettagli:** `scope`: Medical knowledge, health entities, clinical logic
+- **Dominio: Sistemi Cognitivi, Neuro-Simbolico & LLM** (`domain-ai-cognitive-systems`)
+  - **Tags:** `#domain-hub` `#cognitive-ai` `#neuro-symbolic` `#graphrag` `#memory-systems` `#mcp`
+  - **Sintesi:** Macro-dominio dedicato a grafi di conoscenza, memorie persistenti, epistemologia, algoritmi di ricerca e protocolli MCP.
+  - **Dettagli:** `scope`: Cognitive architectures, graph reasoning, LLM symbiosis
+- **Epistemic Grading (Extracted/Inferred/Ambiguous)** (`node-epistemic-grading-system`)
+  - **Tags:** `#mutation-import` `#epistemic-layer` `#representation-feature`
+  - **Sintesi:** Epistemic Grading (Extracted/Inferred/Ambiguous) (Layer: EPISTEMIC_LAYER, Tipo: REPRESENTATION_FEATURE)
+  - **Dettagli:** `id`: node_epistemic_grading_system, `label`: Epistemic Grading (Extracted/Inferred/Ambiguous), `type`: REPRESENTATION_FEATURE, `layer`: EPISTEMIC_LAYER
+- **Graph-Dendrogram Multiscale Overlay** (`node-multiscale-overlay-pattern`)
+  - **Tags:** `#mutation-import` `#storage-and-retrieval` `#architectural-pattern`
+  - **Sintesi:** Graph-Dendrogram Multiscale Overlay (Layer: STORAGE_AND_RETRIEVAL, Tipo: ARCHITECTURAL_PATTERN)
+  - **Dettagli:** `id`: node_multiscale_overlay_pattern, `label`: Graph-Dendrogram Multiscale Overlay, `type`: ARCHITECTURAL_PATTERN, `layer`: STORAGE_AND_RETRIEVAL
+- **Hierarchical Community Tree (Semantic Zoom)** (`node-hierarchical-dendrogram`)
+  - **Tags:** `#mutation-import` `#abstraction-layer` `#topological-hierarchy`
+  - **Sintesi:** Hierarchical Community Tree (Semantic Zoom) (Layer: ABSTRACTION_LAYER, Tipo: TOPOLOGICAL_HIERARCHY)
+  - **Dettagli:** `id`: node_hierarchical_dendrogram, `label`: Hierarchical Community Tree (Semantic Zoom), `type`: TOPOLOGICAL_HIERARCHY, `layer`: ABSTRACTION_LAYER
+- **Hierarchical Tree Engine (Backend & Endpoints)** (`node-hierarchical-tree-engine-impl`)
+  - **Tags:** `#mutation-import` `#core-services` `#backend-engine`
+  - **Sintesi:** Hierarchical Tree Engine (Backend & Endpoints) (Layer: CORE_SERVICES, Tipo: BACKEND_ENGINE)
+  - **Dettagli:** `id`: node_hierarchical_tree_engine_impl, `label`: Hierarchical Tree Engine (Backend & Endpoints), `type`: BACKEND_ENGINE, `layer`: CORE_SERVICES
+- **Inibizione Interemisferica GABAergica & Lazy-Loading Biologico** (`concept-interhemispheric-inhibition-gating`)
+  - **Tags:** `#neuroscience` `#interhemispheric-inhibition` `#gabaergic-gating` `#lazy-loading` `#token-reduction`
+  - **Sintesi:** Meccanismo neurobiologico computazionale in cui l'emisfero non pertinente al task viene temporaneamente inibito/disattivato per eliminare interferenze e risparmiare token, riattivandosi su richiesta tramite ponti callosali.
+  - **Dettagli:** `biological_basis`: Inibizione interemisferica mediata da interneuroni GABAergici via Corpo Calloso, `computational_benefit`: Riduzione token del 50-60%, eliminazione del rumore semantico, ricerca sub-millisecondo
 - **Linkly QR** (`proj-linkly-qr`)
   - **Tags:** `#ios` `#app-store` `#qr-matrix` `#vector-engine`
   - **Sintesi:** Generatore dinamico vettoriale di codici QR con preview live e styling avanzato.
   - **Dettagli:** `platform`: Apple App Store, `engine`: Client-side SVG/PNG Vector Engine
+- **MCP Tool: brain_get_tree** (`node-mcp-brain-get-tree`)
+  - **Tags:** `#mutation-import` `#integration-layer` `#mcp-tool`
+  - **Sintesi:** MCP Tool: brain_get_tree (Layer: INTEGRATION_LAYER, Tipo: MCP_TOOL)
+  - **Dettagli:** `id`: node_mcp_brain_get_tree, `label`: MCP Tool: brain_get_tree, `type`: MCP_TOOL, `layer`: INTEGRATION_LAYER
 - **SQLite WAL Storage Engine** (`sqlite-wal-persistence`)
   - **Tags:** `#sqlite` `#wal` `#embedded` `#atomic` `#zero-cost` `#persistence`
   - **Sintesi:** Motore di persistenza embedded senza server né costi di licenza, con Write-Ahead Logging per letture e scritture concorrenti sicure.
   - **Dettagli:** `journal_mode`: WAL, `foreign_keys`: ON, `backup`: Single file portable
+- **Search Trees (ToT / MCTS Deliberation)** (`node-search-tree-deliberation`)
+  - **Tags:** `#mutation-import` `#working-memory-planning` `#cognitive-process`
+  - **Sintesi:** Search Trees (ToT / MCTS Deliberation) (Layer: WORKING_MEMORY_PLANNING, Tipo: COGNITIVE_PROCESS)
+  - **Dettagli:** `id`: node_search_tree_deliberation, `label`: Search Trees (ToT / MCTS Deliberation), `type`: COGNITIVE_PROCESS, `layer`: WORKING_MEMORY_PLANNING
 - **StreaksUp (Habit Tracker iOS)** (`proj-streaksup-app`)
   - **Tags:** `#ios17` `#ios18` `#swiftui` `#swiftdata` `#widgetkit` `#streaksup` `#habittracker` `#zero-cloud`
   - **Sintesi:** Applicazione nativa iOS 17+ per tracciamento abitudini e routine con architettura SwiftData ad App Group, Live Activity e suite WidgetKit interattiva.
   - **Dettagli:** `platform`: iOS 17.0+ / 18.0+, `language`: Swift 5.9, `ui_framework`: SwiftUI, `database`: SwiftData (SQLite WAL in App Group), `app_group`: group.com.pierfrancescoamendola.streaksup, `url_scheme`: streaksup://, `project_generator`: XcodeGen (project.yml)
+- **Telegram 0€ Webhook Gateway (POST /api/telegram/webhook)** (`node-telegram-webhook-gateway`)
+  - **Tags:** `#mutation-import` `#perceptual-io` `#api-gateway`
+  - **Sintesi:** Telegram 0€ Webhook Gateway (POST /api/telegram/webhook) (Layer: PERCEPTUAL_IO, Tipo: API_GATEWAY)
+  - **Dettagli:** `id`: node_telegram_webhook_gateway, `label`: Telegram 0€ Webhook Gateway (POST /api/telegram/webhook), `type`: API_GATEWAY, `layer`: PERCEPTUAL_IO
 - **Terminale Chiaro & Network Activity Inspector** (`feat-light-terminal`)
   - **Tags:** `#terminal` `#ui` `#monitoring` `#network-inspector` `#fetch-proxy`
   - **Sintesi:** Console/Terminale chiaro in overlay a tutto schermo per tracciare richieste HTTP (POST/GET/DEL), latenza, payload e nodi memorizzati.
@@ -194,10 +326,18 @@
   - **Tags:** `#fastapi` `#flutter` `#sqlite-wal` `#university-tracker`
   - **Sintesi:** Piattaforma per gestione carriera accademica, simulatore di laurea e monitoraggio disponibilità aule studio.
   - **Dettagli:** `stack`: Flutter, FastAPI, SQLite con PRAGMA WAL, `features`: Simulazione media pesata, previsione scenari di voto
+- **Unified Brain Architecture** (`node-neuro-symbolic-brain`)
+  - **Tags:** `#mutation-import` `#meta-system` `#cognitive-architecture`
+  - **Sintesi:** Unified Brain Architecture (Layer: META_SYSTEM, Tipo: COGNITIVE_ARCHITECTURE)
+  - **Dettagli:** `id`: node_neuro_symbolic_brain, `label`: Unified Brain Architecture, `type`: COGNITIVE_ARCHITECTURE, `layer`: META_SYSTEM
 - **Universal AI Brain (Cognitive System)** (`universal-ai-brain`)
   - **Tags:** `#ai-brain` `#fastapi` `#sqlite-wal` `#3d-graph` `#zero-cost` `#knowledge-graph`
   - **Sintesi:** Sistema di memoria persistente a grafo bi-emisferico per agenti LLM (Claude, Gemini, ChatGPT) con costo operativo zero.
   - **Dettagli:** `version`: 1.1.0, `backend`: FastAPI, `storage`: SQLite WAL, `frontend`: 3D Force Graph WebGL, `cost`: 0€ Forever
+- **Universal Knowledge Graph (Associative Substrate)** (`node-knowledge-graph-memory`)
+  - **Tags:** `#mutation-import` `#long-term-associative` `#memory-system`
+  - **Sintesi:** Universal Knowledge Graph (Associative Substrate) (Layer: LONG_TERM_ASSOCIATIVE, Tipo: MEMORY_SYSTEM)
+  - **Dettagli:** `id`: node_knowledge_graph_memory, `label`: Universal Knowledge Graph (Associative Substrate), `type`: MEMORY_SYSTEM, `layer`: LONG_TERM_ASSOCIATIVE
 
 ### [Macro-Label: `BUSINESS_LOGIC`]
 - **AlcolSafe** (`proj-alcolsafe`)
@@ -224,10 +364,6 @@
   - **Tags:** `#openai-challenge` `#rag` `#llm-orchestration` `#team-leader`
   - **Sintesi:** Prototipazione rapida di soluzione AI RAG presentata a rettori e giudici corporate (Luglio 2026).
   - **Dettagli:** `role`: Team Leader & English Pitcher, `milestone`: Luglio 2026
-- **Pierfrancesco Amendola** (`person-pierfrancesco`)
-  - **Tags:** `#2005` `#ai-engineer` `#architect` `#computer-science` `#creator` `#flutter` `#full-stack` `#icar-cnr` `#identity` `#napoli` `#python` `#unina`
-  - **Sintesi:** Principal Architect di Universal AI Brain e AuleStudioApp; studente di Informatica alla Federico II (Napoli, 2005), tesista ICAR-CNR, polistrumentista e autore.
-  - **Dettagli:** `role`: Principal Full-Stack & AI Systems Architect, `location`: Italy, `stack`: ['Flutter', 'Python', 'FastAPI', 'SQLite', 'ThreeJS', 'LLM-Graph'], `birth_year`: 2005, `city`: Napoli, `university`: Università degli Studi di Napoli Federico II, `matricola`: N86005039, `status`: In dirittura di laurea (~2 esami), `thesis_lab`: ICAR-CNR / Dataset BUSBRA, `thesis_advisor`: Prof. Daniel Riccio, `thesis_supervisor`: Dr.ssa Nadia Brancati
 - **Profilo Ingegneristico & Ricerca CS** (`identity-cs-researcher`)
   - **Tags:** `#identity` `#unina` `#icar-cnr` `#bioinformatics` `#fullstack`
   - **Sintesi:** Studente di Computer Science alla Federico II (Matr. N86005039) e ricercatore in bioinformatica applicata all'imaging biomedico presso ICAR-CNR.
@@ -250,6 +386,10 @@
   - **Dettagli:** `budget`: 0.00 EUR, `target_clouds`: ['Render Free', 'Fly.io Free Volume', 'Koyeb Eco', 'HuggingFace Spaces']
 
 ### [Macro-Label: `COGNITIVE_RULE`]
+- **Antigravity Skill: universal-brain (/brain)** (`skill-universal-brain-installed`)
+  - **Tags:** `#skill` `#antigravity` `#automation` `#graphrag`
+  - **Sintesi:** Skill installata in ~/.agents/skills/universal-brain per ricerca semantica e auto-ingestione continua.
+  - **Dettagli:** `path`: /Users/pierfrancesco/.agents/skills/universal-brain/SKILL.md
 - **Comunicazione Chirurgica & Rigore** (`rigore-informativo`)
   - **Tags:** `#alta-densita` `#senza-convenevoli` `#struttura` `#precisione`
   - **Sintesi:** Preferenza esplicita per risposte concise, dirette e tecnicamente dense con epistemologia verificata.
@@ -266,6 +406,10 @@
   - **Tags:** `#epistemologia` `#fatti-verificati` `#no-hallucination`
   - **Sintesi:** Distinzione rigorosa tra fatti dichiarati ed inferenze; divieto di fabbricare dettagli emotivi o tecnici privi di fonte.
   - **Dettagli:** `principle`: Verifiable ground-truth only
+- **Hierarchical Community Tree as Primary Abstraction** (`node-tree-architecture-verdict`)
+  - **Tags:** `#mutation-import` `#core-taxonomy` `#architectural-decision`
+  - **Sintesi:** Hierarchical Community Tree as Primary Abstraction (Layer: CORE_TAXONOMY, Tipo: ARCHITECTURAL_DECISION)
+  - **Dettagli:** `id`: node_tree_architecture_verdict, `label`: Hierarchical Community Tree as Primary Abstraction, `type`: ARCHITECTURAL_DECISION, `layer`: CORE_TAXONOMY
 - **Regola dell'Esecuzione Integrale (Zero Placeholder)** (`rule-zero-placeholder`)
   - **Tags:** `#strict-execution` `#code-integrity` `#no-shortcuts`
   - **Sintesi:** Divieto tassativo di codice troncato, finto o parziale; ogni soluzione deve essere autosufficiente ed eseguibile.
@@ -288,6 +432,14 @@
   - **Tags:** `#territory` `#napoli` `#events` `#scraping`
   - **Sintesi:** Hub informativo per la valorizzazione del territorio partenopeo con aggregazione eventi in tempo reale.
   - **Dettagli:** `stack`: Next.js / Flutter, Scraping engine, `focus`: Eventi culturali, mobilità e spettacoli a Napoli
+- **Patologia: Onicocriptosi (Unghia Incarnita)** (`medical-onicocriptosi-unghia-incarnita`)
+  - **Tags:** `#medicina` `#dermatologia` `#podologia` `#onicocriptosi` `#trattamento`
+  - **Sintesi:** Condizione patologica in cui il bordo ungueale penetra nel solco ungueale periungueale causando infiammazione, granuloma o infezione.
+  - **Dettagli:** `trattamento`: Conservativo (pediluvio, disinfezione) o chirurgico (matricectomia parziale), `eziologia`: Taglio errato, calzature strette, conformazione anatomica
+- **Radix / Prefix Trie (O(k) Entity Routing)** (`node-prefix-radix-trie`)
+  - **Tags:** `#mutation-import` `#perceptual-routing` `#lexical-index`
+  - **Sintesi:** Radix / Prefix Trie (O(k) Entity Routing) (Layer: PERCEPTUAL_ROUTING, Tipo: LEXICAL_INDEX)
+  - **Dettagli:** `id`: node_prefix_radix_trie, `label`: Radix / Prefix Trie (O(k) Entity Routing), `type`: LEXICAL_INDEX, `layer`: PERCEPTUAL_ROUTING
 - **SQLite WAL High-Concurrency Pattern** (`arch-sqlite-wal`)
   - **Tags:** `#database` `#sqlite` `#wal` `#zero-cost` `#performance`
   - **Sintesi:** Configurazione di persistenza locale ad alta efficienza per carichi concorrenti senza costi di hosting.
@@ -320,28 +472,92 @@
   - **Tags:** `#ai-philosophy` `#human-agency` `#cognitive-extension`
   - **Sintesi:** L'AI agisce come moltiplicatore computazionale, mentre l'essere umano detiene il controllo etico, strategico ed estetico.
   - **Dettagli:** `human_role`: Visione, intenzionalità etica, discernimento critico, anima artistica, `machine_role`: Velocità esecutiva, esplorazione combinatoria, precisione formale
+- **Persistenza Totale del Contesto e dei Pensieri Multi-AI** (`goal-multi-ai-shared-context-persistence`)
+  - **Tags:** `#shared-context` `#conversational-continuity` `#multi-ai` `#cross-agent-memory` `#universal-recall`
+  - **Sintesi:** Principio fondante: preservare integralmente contesto, richieste e deduzioni di tutte le chat con qualsiasi AI affinché ogni modello condivida la memoria storica universale.
+  - **Dettagli:** `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc..., `core_objective`: Garantire che qualunque AI (Claude, Gemini, ChatGPT, DeepSeek, ecc.) sappia sempre con esattezza cosa è stato detto, pensato e deciso nelle sessioni precedenti., `context_dimensions`: ['Richieste Utente (USER_INTENT)', 'Deduzioni Logiche (AI_REASONING)', 'Episodi Tematici (CONVERSATION_EPISODE)', 'Attribuzione Modello (details.model)']
+- **Ubiquitous Memory Ingestion** (`node-ubiquitous-ingestion`)
+  - **Tags:** `#mutation-import` `#dynamic-plasticity` `#cognitive-capability`
+  - **Sintesi:** Ubiquitous Memory Ingestion (Layer: DYNAMIC_PLASTICITY, Tipo: COGNITIVE_CAPABILITY)
+  - **Dettagli:** `id`: node_ubiquitous_ingestion, `label`: Ubiquitous Memory Ingestion, `type`: COGNITIVE_CAPABILITY, `layer`: DYNAMIC_PLASTICITY
 
 ### [Macro-Label: `USER_INTENT`]
+- **Intento Utente: Collegare Cervello via MCP e Skill a Claude, Gemini e ChatGPT** (`user-intent-connect-gemini-claude-chatgpt-mcp`)
+  - **Tags:** `#user-intent` `#mcp-integration` `#multi-model-sync`
+  - **Sintesi:** Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
+  - **Dettagli:** `target`: Multi-LLM ubiquitous cognition, `user_prompt`: Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
 - **Intento Utente: Gateway Telegram per Accesso Cognitivo Ovunque** (`user-intent-telegram-bot-gateway`)
   - **Tags:** `#user-intent` `#telegram` `#telegram-bot` `#omnipresence` `#mobile-access` `#zero-cost`
   - **Sintesi:** Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone.
-  - **Dettagli:** `capabilities`: ['Query FTS5', 'Shortest path', 'Hierarchical tree summary', 'Quick note ingestion']
+  - **Dettagli:** `capabilities`: ['Query FTS5', 'Shortest path', 'Hierarchical tree summary', 'Quick note ingestion'], `user_prompt`: Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone.
+- **Intento Utente: Hierarchical Tree Engine Completamente Rilasciato e Sincronizzato** (`intent-ep-20260827-hierarchical-tree-deployment-sync`)
+  - **Tags:** `#user-intent` `#query` `#deployment-report-ingestion-and-translation`
+  - **Sintesi:** Traduzione e report di rilascio: Hierarchical Tree Engine e tool MCP brain_get_tree implementati con successo.
+  - **Dettagli:** `raw_query`: traduci: 層級譜系樹（Hierarchical Knowledge Tree / 層級譜系樹）已全面構建完成..., `intent_type`: DEPLOYMENT_REPORT_INGESTION_AND_TRANSLATION, `epistemic_status`: EXTRACTED, `target_domain`: System Release / Graph Engine Implementation / MCP Infrastructure, `user_prompt`: Traduzione e report di rilascio: Hierarchical Tree Engine e tool MCP brain_get_tree implementati con successo.
+- **Intento Utente: Il mio che tipo di grafo è?** (`intent-ep-20260827-graph-taxonomy-classification`)
+  - **Tags:** `#user-intent` `#query` `#structural-taxonomy-inquiry`
+  - **Sintesi:** Il mio che tipo di grafo è?
+  - **Dettagli:** `raw_query`: Il mio che tipo di grafo è?, `intent_type`: STRUCTURAL_TAXONOMY_INQUIRY, `epistemic_status`: EXTRACTED, `target_domain`: Graph Theory / Formal Knowledge Representation, `user_prompt`: Il mio che tipo di grafo è?
+- **Intento Utente: Migliore Soluzione - Albero Gerarchico a Comunità (Dendrogramma)** (`intent-ep-20260827-tree-ranking-translation`)
+  - **Tags:** `#user-intent` `#query` `#translation-and-evaluation-consolidation`
+  - **Sintesi:** Traduzione e formalizzazione: l'Albero Gerarchico (Dendrogramma) è la soluzione ottimale per risparmio token e Semantic Zoom.
+  - **Dettagli:** `raw_query`: traduci: 冠絕群策者：層級譜系樹（Hierarchical Community Tree / Dendrogram）..., `intent_type`: TRANSLATION_AND_EVALUATION_CONSOLIDATION, `epistemic_status`: EXTRACTED, `target_domain`: Knowledge Representation / Algorithmic Ranking / Multilingual Translation, `user_prompt`: Traduzione e formalizzazione: l'Albero Gerarchico (Dendrogramma) è la soluzione ottimale per risparmio token e Semantic Zoom.
+- **Intento Utente: Non tutto deve collegarsi a Pierfrancesco, creare grafi modulari per dominio** (`user-intent-modular-cluster-decentralization`)
+  - **Tags:** `#user-intent` `#graph-architecture` `#domain-separation`
+  - **Sintesi:** Proposta di separazione topologica: concetti specialistici (es. medicina) formano cluster dedicati senza dipendere dal nodo persona.
+  - **Dettagli:** `example`: Onicocriptosi / Unghia incarnita, `user_prompt`: Proposta di separazione topologica: concetti specialistici (es. medicina) formano cluster dedicati senza dipendere dal nodo persona.
 - **Intento Utente: Potenziamento GraphRAG & MCP a Costo Zero** (`user-intent-zero-cost-graphrag`)
   - **Tags:** `#user-intent` `#graphrag` `#mcp` `#zero-cost` `#high-efficiency` `#fts5`
   - **Sintesi:** Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shortest Path) e server MCP per Claude/Cursor senza costi aggiuntivi.
-  - **Dettagli:** `requested_features`: ['Motore di ricerca ibrido & GraphRAG (FTS5 BM25, Shortest Path, Subgraph extraction)', 'Protocollo MCP per Claude Desktop, Cursor e Antigravity', 'Zero costi operativi e massima stabilità']
+  - **Dettagli:** `requested_features`: ['Motore di ricerca ibrido & GraphRAG (FTS5 BM25, Shortest Path, Subgraph extraction)', 'Protocollo MCP per Claude Desktop, Cursor e Antigravity', 'Zero costi operativi e massima stabilità'], `user_prompt`: Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shortest Path) e server MCP per Claude/Cursor senza costi aggiuntivi.
+- **Intento Utente: Proposta di strutturare il cervello in più grafi annidati come un palazzo** (`user-intent-hierarchical-multi-layer-graph-design`)
+  - **Tags:** `#user-intent` `#graph-architecture` `#multi-layer` `#hypergraph`
+  - **Sintesi:** L'utente propone un modello in cui i nodi di un albero/grafo sono a loro volta grafi completi su più livelli.
+  - **Dettagli:** `metaphor`: Palazzo con pavimenti a grafo e stanze come sotto-nodi, `user_prompt`: L'utente propone un modello in cui i nodi di un albero/grafo sono a loro volta grafi completi su più livelli.
+- **Intento Utente: Replicare l'inibizione interemisferica per spegnere l'emisfero non usato** (`user-intent-biological-lazy-loading-inhibition`)
+  - **Tags:** `#user-intent` `#neuro-inspired` `#inhibition` `#performance`
+  - **Sintesi:** L'utente propone di disattivare l'emisfero non pertinente durante l'analisi e attivarlo solo quando una sinapsi richiede una connessione trasversale.
+  - **Dettagli:** `metaphor`: Lazy-loading biologico GABAergico, `user_prompt`: L'utente propone di disattivare l'emisfero non pertinente durante l'analisi e attivarlo solo quando una sinapsi richiede una connessione trasversale.
+- **Intento Utente: Si possono unire grafi e alberi di ricerca. Un grafo come il** (`intent-ep-20260827-graph-tree-unification`)
+  - **Tags:** `#user-intent` `#query` `#theoretical-and-architectural-exploration`
+  - **Sintesi:** Si possono unire grafi e alberi di ricerca. Un grafo come il mio con quello che ho creato, cioè un cervello?
+  - **Dettagli:** `raw_query`: Si possono unire grafi e alberi di ricerca. Un grafo come il mio con quello che ho creato, cioè un cervello?, `intent_type`: THEORETICAL_AND_ARCHITECTURAL_EXPLORATION, `epistemic_status`: EXTRACTED, `target_domain`: Cognitive Architectures / Neuro-Symbolic AI / Knowledge Systems, `user_prompt`: Si possono unire grafi e alberi di ricerca. Un grafo come il mio con quello che ho creato, cioè un cervello?
+- **Intento Utente: Strategia Hub Cognitivo Telegram (Gateway Webhook 0€)** (`intent-ep-20260827-telegram-cognitive-hub-spec`)
+  - **Tags:** `#user-intent` `#query` `#specification-translation-and-graph-ingest`
+  - **Sintesi:** Traduzione e consolidamento: Architettura Telegram Bot Gateway 0€ con routing comandi e BFS trans-callosale.
+  - **Dettagli:** `raw_query`: traduci: 通透無礙，極佳之策。 Telegram 認知中樞架構（0€ Webhook 網關）..., `intent_type`: SPECIFICATION_TRANSLATION_AND_GRAPH_INGEST, `epistemic_status`: EXTRACTED, `target_domain`: System Integration / Telegram Webhook / Bi-directional BFS / FTS5 BM25, `user_prompt`: Traduzione e consolidamento: Architettura Telegram Bot Gateway 0€ con routing comandi e BFS trans-callosale.
 - **Intento Utente: Valutazione Alberi Binari e Alberi Pesati** (`user-intent-tree-search-enhancement`)
   - **Tags:** `#user-intent` `#binary-tree` `#bst` `#weighted-tree` `#search-engine`
   - **Sintesi:** Proposta di integrare strutture ad albero (binari, pesati, gerarchici) per ottimizzare la ricerca e navigazione della memoria.
-  - **Dettagli:** `question`: Ha senso inserire alberi di ricerca o alberi pesati nel grafo del cervello?
+  - **Dettagli:** `question`: Ha senso inserire alberi di ricerca o alberi pesati nel grafo del cervello?, `user_prompt`: Proposta di integrare strutture ad albero (binari, pesati, gerarchici) per ottimizzare la ricerca e navigazione della memoria.
+- **Intento Utente: Valutazione Tecnica delle Strutture ad Albero (BST, B+Tree, MST, Tree)** (`intent-ep-20260827-tree-structures-evaluation`)
+  - **Tags:** `#user-intent` `#query` `#data-structure-taxonomy-and-evaluation`
+  - **Sintesi:** Valutazione tecnica delle strutture ad albero: BST, B+Tree, Maximum Spanning Tree, Hierarchical Tree e Prefix Trie per il grafo cognitivo.
+  - **Dettagli:** `raw_query`: 樹狀結構技術評析（Tree Evaluation）: BST, B+Tree, MST, Hierarchical Community Tree, Prefix Trie, `intent_type`: DATA_STRUCTURE_TAXONOMY_AND_EVALUATION, `epistemic_status`: EXTRACTED, `target_domain`: Graph Algorithms / Hierarchical Knowledge Trees / Cognitive Retrieval, `user_prompt`: Valutazione tecnica delle strutture ad albero: BST, B+Tree, Maximum Spanning Tree, Hierarchical Tree e Prefix Trie per il grafo cognitivo.
+- **Intento Utente: Vorrei collegare il mio cervello a un bot su telegram giusto** (`intent-ep-20260827-telegram-bot-interface`)
+  - **Tags:** `#user-intent` `#query` `#feasibility-and-architecture-analysis`
+  - **Sintesi:** Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata di mano sempre le info, che ne pensi? Può essere utile? È gratis? È difficile da fare?
+  - **Dettagli:** `raw_query`: Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata di mano sempre le info, che ne pensi? Può essere utile? È gratis? È difficile da fare?, `intent_type`: FEASIBILITY_AND_ARCHITECTURE_ANALYSIS, `epistemic_status`: EXTRACTED, `target_domain`: Interface Design / Mobile Interaction / Telegram Bot API, `user_prompt`: Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata di mano sempre le info, che ne pensi? Può essere utile? È gratis? È difficile da fare?
+- **Intento Utente: mica si perde la struttura a grafo e quello che abbiamo real** (`intent-ep-20260827-hierarchical-overlay-reassurance`)
+  - **Tags:** `#user-intent` `#query` `#integrity-and-coexistence-verification`
+  - **Sintesi:** mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)
+  - **Dettagli:** `raw_query`: mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree), `intent_type`: INTEGRITY_AND_COEXISTENCE_VERIFICATION, `epistemic_status`: EXTRACTED, `target_domain`: Knowledge Preservation / Multiscale Graph Architectures, `user_prompt`: mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)
+- **Prevenzione Perdita Contesto per Saturazione Finestra Chat** (`user-intent-infinite-context-persistence`)
+  - **Tags:** `#user-intent` `#context-preservation` `#infinite-memory` `#chat-saturation` `#zero-loss` `#cross-session`
+  - **Sintesi:** Volontà utente: azzerare la perdita di contesto causata dalla saturazione delle finestre di contesto degli LLM, garantendo continuità cognitiva perenne tra chat diverse.
+  - **Dettagli:** `core_vision`: Memoria eterna, coerente e non volatile per passato, presente e futuro., `problem_solved`: Saturazione della context window e perdita della cronologia decisionale nei cambi di sessione., `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc...quante volte magari si deve cambiare chat perchè alcuni modelli saturano il contesto di una chat e si deve ricominciare da zero, come si fa??? si eprde tutto?? no quindi lo scopo è quello, non perdere mai il contesto e avere sempre memoria, per il passato, presente e futuro.
 - **Richiesta Utente: Aree e Disvelamento Progressivo dei Nodi** (`user-intent-clean-clustered-ui`)
   - **Tags:** `#user-request` `#cleanliness` `#hierarchical-view` `#progressive-disclosure`
   - **Sintesi:** Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
-  - **Dettagli:** `user`: Pierfrancesco Amendola, `priority`: HIGH, `aesthetic_goal`: Eliminare il disordine visivo preservando 100% le relazioni
+  - **Dettagli:** `user`: Pierfrancesco Amendola, `priority`: HIGH, `aesthetic_goal`: Eliminare il disordine visivo preservando 100% le relazioni, `user_prompt`: Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
 - **Richiesta Utente: Memoria dei Ragionamenti AI e delle Chat Eterogenee** (`user-intent-reasoning-and-chat-memory`)
   - **Tags:** `#user-request` `#ai-reasoning` `#chat-memory` `#multi-topic`
   - **Sintesi:** Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) in aree separate.
-  - **Dettagli:** `user`: Pierfrancesco Amendola, `goal`: Mappare ogni sessione senza forzare connessioni artificiali tra argomenti disomogenei
+  - **Dettagli:** `user`: Pierfrancesco Amendola, `goal`: Mappare ogni sessione senza forzare connessioni artificiali tra argomenti disomogenei, `user_prompt`: Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) in aree separate.
+- **Richiesta Utente: Restyling Professionale e Moderno Frontend** (`user-intent-frontend-professional-restyle`)
+  - **Tags:** `#user-request` `#ui-ux` `#professional-look` `#hacker-aesthetic` `#graphify-inspiration`
+  - **Sintesi:** Richiesta di rendere l'interfaccia frontend più moderna, pulita e da ingegnere informatico (ispirata a Graphify e Caveman), senza perdere alcuna funzione esistente.
+  - **Dettagli:** `user`: Pierfrancesco Amendola, `preservation`: 100% zero feature loss, `user_prompt`: Restyling estetico completo del frontend in stile ingegneristico d'élite: Topbar IDE unificata a tutta larghezza con HUD sinaptico, canvas con dot-matrix grid, ispettore Bento con badge epistemici e ricerca ⌘K, conservando il 100% delle funzionalità.
 - **Tracciamento Richiesta Utente & Modello AI nella Memoria** (`user-intent-provenance-model-tracking`)
   - **Tags:** `#user-intent` `#model-attribution` `#context-preservation` `#cross-model-memory` `#episodic-tracking`
   - **Sintesi:** Proposta utente: includere nel JSON di ingestione il prompt integrale e il modello AI sorgente per preservare contesto e consentire recall cross-modello.
@@ -378,6 +594,10 @@
   - **Dettagli:** `flame_gradient`: ['#FFE066', '#FF8C00', '#FF3B30'], `freeze_cyan`: #00C7BE, `success_green`: #34C759, `urgent_red`: #FF3B30, `electric_blue`: #007AFF
 
 ### [Macro-Label: `CONVERSATION_EPISODE`]
+- **Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay** (`ep-20260827-hierarchical-overlay-reassurance`)
+  - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
+  - **Sintesi:** Episodio del 2026-08-27T20:38:00CEST: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay
+  - **Dettagli:** `session_id`: ep_20260827_hierarchical_overlay_reassurance, `timestamp`: 2026-08-27T20:38:00CEST, `topic`: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Episodio Chat: Architettura Memoria Cross-Modello e Attribuzione** (`episode-cross-model-memory-architecture`)
   - **Tags:** `#conversation-episode` `#cross-model-chat` `#provenance-architecture` `#gemini-session`
   - **Sintesi:** Sessione di analisi architetturale tra Pierfrancesco e Gemini 3.7 Flash sull'inclusione di prompt utente e metadati del modello nel grafo di memoria persistente.
@@ -385,19 +605,75 @@
 - **Episodio Chat: Evoluzione UI, Persistenza & Aree a Espansione** (`chat-session-2026-08-27-ui-evolution`)
   - **Tags:** `#session-chat` `#ui-evolution` `#progressive-areas` `#cloud-persistence`
   - **Sintesi:** Episodio conversazionale incentrato sulla pulizia grafica del terminale, l'introduzione di viste a macro-aree progressive e la memoria episodica.
-  - **Dettagli:** `date`: 2026-08-27, `topics`: ['terminal-overlay-fix', 'progressive-areas', 'lossless-sync', 'ai-reasoning-tracking', 'episodic-chat-memory']
+  - **Dettagli:** `date`: 2026-08-27, `topics`: ['terminal-overlay-fix', 'progressive-areas', 'lossless-sync', 'ai-reasoning-tracking', 'episodic-chat-memory'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Chat: Evoluzione UI, Persistenza & Aree a Espansione
 - **Episodio Conversazionale: Concezione Gateway Mobile Telegram** (`episode-2026-08-27-telegram-omnipresence`)
   - **Tags:** `#conversation-episode` `#telegram` `#omnipresence` `#2026-08-27`
   - **Sintesi:** Ideazione e pianificazione dell'interfaccia mobile Telegram per estendere l'ubiquità del cervello artificiale.
-  - **Dettagli:** `date`: 2026-08-27, `status`: Pianificato e integrato nel grafo
+  - **Dettagli:** `date`: 2026-08-27, `status`: Pianificato e integrato nel grafo, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Concezione Gateway Mobile Telegram
 - **Episodio Conversazionale: Evoluzione GraphRAG & Protocollo MCP** (`episode-2026-08-27-graphrag-mcp-evolution`)
   - **Tags:** `#conversation-episode` `#evolution` `#graphrag` `#mcp` `#antigravity` `#2026-08-27`
   - **Sintesi:** Sessione di ingegnerizzazione avanzata: sviluppo e verifica del motore FTS5 BM25, cammini minimi attraverso il Corpo Calloso e server MCP conforme allo standard Model Context Protocol.
-  - **Dettagli:** `date`: 2026-08-27, `key_deliverables`: ['Tabella virtuale FTS5 nodes_fts con trigger di sincronizzazione automatica', 'Endpoint GET /api/graph/path (Shortest Path traversal)', 'Endpoint GET /api/graph/subgraph (Scoped context injection)', 'Server mcp_server.py per Claude Desktop, Cursor e Antigravity']
+  - **Dettagli:** `date`: 2026-08-27, `key_deliverables`: ['Tabella virtuale FTS5 nodes_fts con trigger di sincronizzazione automatica', 'Endpoint GET /api/graph/path (Shortest Path traversal)', 'Endpoint GET /api/graph/subgraph (Scoped context injection)', 'Server mcp_server.py per Claude Desktop, Cursor e Antigravity'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Evoluzione GraphRAG & Protocollo MCP
 - **Episodio Conversazionale: Valutazione Strutture ad Albero** (`episode-2026-08-27-tree-structures-evaluation`)
   - **Tags:** `#conversation-episode` `#trees` `#data-structures` `#graph-theory` `#2026-08-27`
   - **Sintesi:** Discussione e perizia tecnica sull'integrazione di alberi binari, alberi di ricerca e alberi di copertura pesati nel grafo universale.
-  - **Dettagli:** `date`: 2026-08-27, `outcome`: Validazione di MST e Tassonomia Gerarchica come strutture ad albero superiori rispetto al BST per grafi cognitivi
+  - **Dettagli:** `date`: 2026-08-27, `outcome`: Validazione di MST e Tassonomia Gerarchica come strutture ad albero superiori rispetto al BST per grafi cognitivi, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Valutazione Strutture ad Albero
+- **Episodio: Definizione Scopo Universale del Contesto Multi-AI** (`episode-2026-08-27-universal-context-definition`)
+  - **Tags:** `#conversation-episode` `#universal-brain` `#context-purpose` `#gemini-session`
+  - **Sintesi:** Sessione di formalizzazione dello scopo supremo di Universal AI Brain: memoria persistente del contesto e dei processi mentali cross-AI.
+  - **Dettagli:** `topic`: Scopo Fondante della Persistenza del Contesto Multi-AI, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `date`: 2026-08-27
+- **Episodio: Distribuzione MCP e Skill /universal-brain su Gemini, Claude e ChatGPT** (`episode-2026-08-27-multi-llm-mcp-ecosystem`)
+  - **Tags:** `#conversation-episode` `#mcp` `#claude` `#gemini` `#chatgpt` `#multi-llm` `#skill`
+  - **Sintesi:** Integrazione globale del cervello e della skill /universal-brain su tutti i modelli di frontiera.
+  - **Dettagli:** `timestamp`: 2026-08-27T21:45:00CEST, `models_targeted`: ['Claude Desktop', 'Gemini / Antigravity', 'ChatGPT Custom Actions', 'Cursor / Windsurf'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio: Distribuzione MCP e Skill /universal-brain su Gemini, Claude e ChatGPT
+- **Episodio: Fondamenti e Filosofia della Memoria Eterna Cross-Chat** (`episode-infinite-context-philosophy`)
+  - **Tags:** `#conversation-episode` `#core-mission` `#context-saturation` `#gemini-session`
+  - **Sintesi:** Formalizzazione della ragion d'essere del cervello artificiale: superare il reset della memoria per saturazione delle chat tramite grafo semantico unificato.
+  - **Dettagli:** `date`: 2026-08-27, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Infinite Context & Anti-Amnesia Philosophy
+- **Episodio: Progettazione dell'Inibizione Interemisferica & Lazy Loading** (`episode-2026-08-27-interhemispheric-inhibition-design`)
+  - **Tags:** `#conversation-episode` `#neuroscience` `#lazy-loading` `#2026-08-27`
+  - **Sintesi:** Definizione del modello di lazy loading biologico ispirato all'inibizione GABAergica per un'esecuzione rapida e focalizzata.
+  - **Dettagli:** `topic`: Biological Interhemispheric Inhibition, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Episodio: Teoria dei Sotto-Grafi Modulari e Decentramento Hub** (`episode-2026-08-27-modular-domain-graph-topology`)
+  - **Tags:** `#conversation-episode` `#graph-theory` `#modularity` `#2026-08-27`
+  - **Sintesi:** Definizione della topologia a sotto-grafi modulari: entità enciclopediche e verticali isolate da person-pierfrancesco.
+  - **Dettagli:** `topic`: Modular Subgraph Clustering, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Episodio: Valutazione e Design del Modello Graph-of-Graphs a Piani** (`episode-2026-08-27-fractal-graph-of-graphs-evaluation`)
+  - **Tags:** `#conversation-episode` `#graph-of-graphs` `#hypergraph` `#2026-08-27`
+  - **Sintesi:** Analisi comparativa, pro, contro e fattibilità tecnica del modello di grafo a palazzo frattale su SQLite.
+  - **Dettagli:** `topic`: Multi-Layer Graph-of-Graphs Design, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Release Commit 62e48df (Render Hot-Rebuild)** (`node-commit-62e48df`)
+  - **Tags:** `#mutation-import` `#devops-timeline` `#deployment-event`
+  - **Sintesi:** Release Commit 62e48df (Render Hot-Rebuild) (Layer: DEVOPS_TIMELINE, Tipo: DEPLOYMENT_EVENT)
+  - **Dettagli:** `id`: node_commit_62e48df, `label`: Release Commit 62e48df (Render Hot-Rebuild), `type`: DEPLOYMENT_EVENT, `layer`: DEVOPS_TIMELINE, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Release Commit 62e48df (Render Hot-Rebuild)
+- **Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo** (`ep-20260827-hierarchical-tree-deployment-sync`)
+  - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
+  - **Sintesi:** Episodio del 2026-08-27T20:34:46CEST: Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo
+  - **Dettagli:** `session_id`: ep_20260827_hierarchical_tree_deployment_sync, `timestamp`: 2026-08-27T20:34:46CEST, `topic`: Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway)** (`ep-20260827-telegram-cognitive-hub-spec`)
+  - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
+  - **Sintesi:** Episodio del 2026-08-27T20:37:03CEST: Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway)
+  - **Dettagli:** `session_id`: ep_20260827_telegram_cognitive_hub_spec, `timestamp`: 2026-08-27T20:37:03CEST, `topic`: Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway), `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Tassonomia e Classificazione Formale dell'Universal Knowledge Graph** (`ep-20260827-graph-taxonomy-classification`)
+  - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
+  - **Sintesi:** Episodio del 2026-08-27T18:34:00CEST: Tassonomia e Classificazione Formale dell'Universal Knowledge Graph
+  - **Dettagli:** `session_id`: ep_20260827_graph_taxonomy_classification, `timestamp`: 2026-08-27T18:34:00CEST, `topic`: Tassonomia e Classificazione Formale dell'Universal Knowledge Graph, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Traduzione e Consolidamento del Benchmark Comparativo sulle Strutture ad Albero per il Grafo Cognitivo** (`ep-20260827-tree-ranking-translation`)
+  - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
+  - **Sintesi:** Episodio del 2026-08-27T20:32:00CEST: Traduzione e Consolidamento del Benchmark Comparativo sulle Strutture ad Albero per il Grafo Cognitivo
+  - **Dettagli:** `session_id`: ep_20260827_tree_ranking_translation, `timestamp`: 2026-08-27T20:32:00CEST, `topic`: Traduzione e Consolidamento del Benchmark Comparativo sulle Strutture ad Albero per il Grafo Cognitivo, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artificiali** (`ep-20260827-graph-tree-unification`)
+  - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
+  - **Sintesi:** Episodio del 2026-08-27T18:28:00CEST: Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artificiali
+  - **Dettagli:** `session_id`: ep_20260827_graph_tree_unification, `timestamp`: 2026-08-27T18:28:00CEST, `topic`: Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artificiali, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel Knowledge Graph** (`ep-20260827-tree-structures-evaluation`)
+  - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
+  - **Sintesi:** Episodio del 2026-08-27T20:30:00CEST: Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel Knowledge Graph
+  - **Dettagli:** `session_id`: ep_20260827_tree_structures_evaluation, `timestamp`: 2026-08-27T20:30:00CEST, `topic`: Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel Knowledge Graph, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Valutazione e Design di un Telegram Bot come Interfaccia I/O Mobile per il Knowledge Graph** (`ep-20260827-telegram-bot-interface`)
+  - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
+  - **Sintesi:** Episodio del 2026-08-27T18:58:00CEST: Valutazione e Design di un Telegram Bot come Interfaccia I/O Mobile per il Knowledge Graph
+  - **Dettagli:** `session_id`: ep_20260827_telegram_bot_interface, `timestamp`: 2026-08-27T18:58:00CEST, `topic`: Valutazione e Design di un Telegram Bot come Interfaccia I/O Mobile per il Knowledge Graph, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 
 ### [Macro-Label: `CREATIVE_IDEA`]
 - **Celebration Particle & FX Engine** (`streaksup-particle-fx`)
@@ -408,10 +684,18 @@
   - **Tags:** `#symbiosis` `#continuous-memory` `#ai-evolution` `#dual-brain` `#co-pilot`
   - **Sintesi:** Visione filosofica di un intelligenza aumentata: la memoria dell utente e dei suoi progetti sopravvive tra sessioni distinte attraverso un grafo vivente.
   - **Dettagli:** `paradigm`: Co-evolution, `substrate`: Dual Brain Knowledge Graph, `accessibility`: Universal to all LLM agents
+- **Dominio: Design, Brand Voice & Creatività** (`domain-design-creativita`)
+  - **Tags:** `#domain-hub` `#design-system` `#ui-ux` `#brand-voice` `#creativita` `#estetica`
+  - **Sintesi:** Macro-dominio dedicato ai design token, palette cromatiche, UX flow, brand voice e composizioni creative.
+  - **Dettagli:** `scope`: Aesthetic world, UI/UX systems, sensory design
 - **Evoluzione UI & Architettura di Memoria Resiliente** (`session-evolution-ui-persistence`)
   - **Tags:** `#session-evolution` `#ui-polish` `#resilience` `#centaur` `#antigravity`
   - **Sintesi:** Sessione di potenziamento dell'Universal AI Brain: introduzione del terminale chiaro, caricamento JSON visuale e blindatura della persistenza.
   - **Dettagli:** `session_date`: 2026-08-27, `architect`: Pierfrancesco Amendola, `executor`: Antigravity
+- **Idea per nuova app AI** (`tg-idea-per-nuova-app-ai`)
+  - **Tags:** `#telegram` `#mobile-note` `#quick-thought`
+  - **Sintesi:** Sviluppo di un agent autonomo
+  - **Dettagli:** `source`: telegram-bot, `user`: Pierfrancesco
 - **Pianoforte Classico & Composizione** (`art-piano-composition`)
   - **Tags:** `#piano` `#classical-music` `#composition` `#emotional-outlet`
   - **Sintesi:** Studio del pianoforte dall'età di tre anni; rifugio espressivo e contrappeso emotivo al rigore logico-scientifico.
@@ -476,10 +760,22 @@
   - **Tags:** `#core-value` `#self-reliance` `#merit` `#zero-cost`
   - **Sintesi:** Costruire la propria libertà attraverso la competenza tecnica verificabile, l'autosufficienza e l'etica del lavoro.
   - **Dettagli:** `ethos`: Nessuna scorciatoia, padronanza dei fondamentali, indipendenza creativa
+- **Continuità Cognitiva Eterna (Zero Context Loss)** (`val-eternal-cognitive-continuity`)
+  - **Tags:** `#eternal-memory` `#core-philosophy` `#cognitive-continuity` `#universal-brain` `#anti-amnesia`
+  - **Sintesi:** Valore fondante di Universal AI Brain: nessun pensiero, decisione o ragionamento deve andare perso a causa dei limiti fisici di token delle singole chat.
+  - **Dettagli:** `anti_pattern_blocked`: Reset amnesico della chat e perdita del filo logico, `principle`: Ogni sessione AI è un frammento transitorio; il grafo è la coscienza persistente unificata., `temporal_scope`: Passato, presente e futuro
+- **Dominio: Filosofia, Etica & Principi di Vita** (`domain-filosofia-valori`)
+  - **Tags:** `#domain-hub` `#filosofia` `#etica` `#resilienza` `#stoicismo` `#valori-personali`
+  - **Sintesi:** Macro-dominio dedicato all'etica, resilienza stoica, indipendenza, lealtà e lezioni di vita.
+  - **Dettagli:** `scope`: Personal values, life lessons, human relationships
 - **Lealtà & Cura dei Legami Significativi** (`val-transparency-loyalty`)
   - **Tags:** `#core-value` `#loyalty` `#family` `#friendship`
   - **Sintesi:** Fedeltà incondizionata a chi ha dimostrato supporto autentico, rispetto e presenza nei momenti critici.
   - **Dettagli:** `expression`: Presenza attiva, riconoscenza esplicita e protezione dei rapporti veri
+- **Pierfrancesco Amendola** (`person-pierfrancesco`)
+  - **Tags:** `#identity` `#creator` `#software-architect` `#ai-researcher` `#human-core`
+  - **Sintesi:** Ingegnere del software, ricercatore AI e creatore del Universal Cognitive Brain.
+  - **Dettagli:** `role`: Architect & Founder, `location`: Italy
 - **Privacy-by-Design & Zero-Cloud** (`streaksup-privacy-zero-cloud`)
   - **Tags:** `#privacy-by-design` `#zero-cloud` `#no-tracking` `#data-sovereignty`
   - **Sintesi:** Valore etico cardine: 100% offline, nessun server remoto, nessun tracciamento analytics, nessun account richiesto e piena esportazione JSON.
@@ -528,6 +824,10 @@
   - **Tags:** `#dynamic-island` `#live-activity` `#countdown-timer` `#dying-flame`
   - **Sintesi:** Esperienza Live Activity e Dynamic Island con timer conto alla rovescia a mezzanotte, pulsante 'Fatto' rapido e fiamma vivente che si affievolisce con l'avvicinarsi della scadenza.
   - **Dettagli:** `regions`: ['compactLeading', 'compactTrailing', 'minimal', 'expanded'], `lock_screen_features`: ['Timer a scomparsa', 'Flame Orb a intensità dinamica', 'Badge streak sicuro', 'Pulsante in-place']
+- **Frontend Web Tree Explorer (HUD Button)** (`node-web-tree-explorer`)
+  - **Tags:** `#mutation-import` `#presentation-layer` `#ui-component`
+  - **Sintesi:** Frontend Web Tree Explorer (HUD Button) (Layer: PRESENTATION_LAYER, Tipo: UI_COMPONENT)
+  - **Dettagli:** `id`: node_web_tree_explorer, `label`: Frontend Web Tree Explorer (HUD Button), `type`: UI_COMPONENT, `layer`: PRESENTATION_LAYER
 - **Glassmorphism Dark Surface Component** (`ui-glass-dark-theme`)
   - **Tags:** `#glassmorphism` `#cards` `#ui-kit`
   - **Sintesi:** Componente contenitore a strati con effetto vetro e bordo ad alta definizione visiva.
@@ -536,6 +836,16 @@
   - **Tags:** `#widgets` `#lock-screen-complications` `#heatmap` `#daily-progress`
   - **Sintesi:** Suite di 4 widget (Single Habit Focus, Today Dashboard, Daily Progress, Weekly Heatmap) e relative complicanze Lock Screen (circular, rectangular, inline).
   - **Dettagli:** `widgets`: ['SingleHabitFocusWidget (small, medium, lock screen)', 'TodayHabitsWidget (medium, large)', 'DailyProgressWidget (small, medium)', 'WeeklyHeatmapWidget (medium, large)']
+- **Telegram Bot Interface (Mobile I/O)** (`node-telegram-bot-interface`)
+  - **Tags:** `#mutation-import` `#io-layer` `#perceptual-interface`
+  - **Sintesi:** Telegram Bot Interface (Mobile I/O) (Layer: IO_LAYER, Tipo: PERCEPTUAL_INTERFACE)
+  - **Dettagli:** `id`: node_telegram_bot_interface, `label`: Telegram Bot Interface (Mobile I/O), `type`: PERCEPTUAL_INTERFACE, `layer`: IO_LAYER
+
+### [Macro-Label: `UI_DESIGN`]
+- **Restyling Frontend Dark-Tech (Graphify & Caveman Aesthetic)** (`feat-dark-tech-frontend-restyle`)
+  - **Tags:** `#frontend` `#dark-tech` `#graphify` `#caveman` `#bento-ui` `#ide-topbar` `#cmd-k`
+  - **Sintesi:** Restyling estetico completo del frontend in stile ingegneristico d'élite: Topbar IDE unificata a tutta larghezza con HUD sinaptico, canvas con dot-matrix grid, ispettore Bento con badge epistemici e ricerca ⌘K, conservando il 100% delle funzionalità.
+  - **Dettagli:** `theme`: dark-tech-void, `inspired_by`: graphify.com & caveman.so, `font`: JetBrains Mono & Inter, `topbar`: unified-ide-bar
 
 ### [Macro-Label: `UX_FLOW`]
 - **Alertless App Icon Switcher Flow** (`streaksup-alertless-icon-ux`)
@@ -559,46 +869,98 @@
 ## CONNESSIONI TRASVERSALI (Corpo Calloso & Struttura)
 ### Ponti Inter-Emisfero (Corpo Calloso):
 - (`aule-studio-app`) --[ADOPTS_FLOW]--> (`ux-frictionless-flow`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ADOPTS_RULE]--> (`caveman-communication-protocol`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ADVOCATES]--> (`mental-centaur-model`) *(Corpo Calloso)*
+- (`ai-reasoning-domain-subgraph-modularity`) --[ANALYZES_EPISODE]--> (`episode-2026-08-27-modular-domain-graph-topology`) *(Corpo Calloso)*
+- (`ai-reasoning-gabaergic-gating-formalization`) --[ANALYZES_EPISODE]--> (`episode-2026-08-27-interhemispheric-inhibition-design`) *(Corpo Calloso)*
+- (`ai-reasoning-hypergraph-multi-scale-feasibility`) --[ANALYZES_EPISODE]--> (`episode-2026-08-27-fractal-graph-of-graphs-evaluation`) *(Corpo Calloso)*
+- (`reason-ep-20260827-graph-taxonomy-classification`) --[ANALYZES_EPISODE]--> (`ep-20260827-graph-taxonomy-classification`) *(Corpo Calloso)*
+- (`reason-ep-20260827-graph-tree-unification`) --[ANALYZES_EPISODE]--> (`ep-20260827-graph-tree-unification`) *(Corpo Calloso)*
+- (`reason-ep-20260827-hierarchical-overlay-reassurance`) --[ANALYZES_EPISODE]--> (`ep-20260827-hierarchical-overlay-reassurance`) *(Corpo Calloso)*
+- (`reason-ep-20260827-hierarchical-tree-deployment-sync`) --[ANALYZES_EPISODE]--> (`ep-20260827-hierarchical-tree-deployment-sync`) *(Corpo Calloso)*
+- (`reason-ep-20260827-telegram-bot-interface`) --[ANALYZES_EPISODE]--> (`ep-20260827-telegram-bot-interface`) *(Corpo Calloso)*
+- (`reason-ep-20260827-telegram-cognitive-hub-spec`) --[ANALYZES_EPISODE]--> (`ep-20260827-telegram-cognitive-hub-spec`) *(Corpo Calloso)*
+- (`reason-ep-20260827-tree-ranking-translation`) --[ANALYZES_EPISODE]--> (`ep-20260827-tree-ranking-translation`) *(Corpo Calloso)*
+- (`reason-ep-20260827-tree-structures-evaluation`) --[ANALYZES_EPISODE]--> (`ep-20260827-tree-structures-evaluation`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[APPLIES]--> (`rule-zero-cost`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ARCHITECTED]--> (`proj-unicampus`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ARCHITECTED_AND_DEVELOPED]--> (`proj-streaksup-app`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-software-engineering`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-ai-cognitive-systems`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ARCHITECT_OF]--> (`universal-ai-brain`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[AUTHORED]--> (`proj-kdp-ai-guide`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[AUTHOR_OF]--> (`proj-kdp-ai-book`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`continuous-ai-symbiosis`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-multi-llm-mcp-ecosystem`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-modular-domain-graph-topology`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-fractal-graph-of-graphs-evaluation`) *(Corpo Calloso)*
 - (`ai-reasoning-cross-model-provenance-validation`) --[BELONGS_TO_EPISODE]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
+- (`ai-reasoning-infinite-context-architecture`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
+- (`ai-reasoning-shared-cognitive-state-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-2026-08-27-universal-context-definition`) *(Corpo Calloso)*
+- (`goal-multi-ai-shared-context-persistence`) --[BELONGS_TO_EPISODE]--> (`episode-2026-08-27-universal-context-definition`) *(Corpo Calloso)*
+- (`user-intent-infinite-context-persistence`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
 - (`user-intent-provenance-model-tracking`) --[BELONGS_TO_EPISODE]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[BONDS_WITH]--> (`rel-marco-di-martino`) *(Corpo Calloso)*
 - (`proj-harmonyapp`) --[BRIDGES_TO]--> (`art-piano-composition`) *(Corpo Calloso)*
 - (`proj-tombolawifi`) --[CELEBRATES]--> (`rel-napoli-culture`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[CHAMPIONS_VISION]--> (`continuous-ai-symbiosis`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[CHERISHES]--> (`rel-parents`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[COLLABORATES_WITH]--> (`rel-antonio-chieppa`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[COMMISSIONED]--> (`feat-light-terminal`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[COMMISSIONED]--> (`feat-progressive-areas`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[COMMITTED_TO]--> (`zero-debt-cost-rule`) *(Corpo Calloso)*
 - (`brand-voice-surgical`) --[COMPLEMENTS]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
+- (`aule-studio-app`) --[CONTAINS_MODULE]--> (`aule-studio-mobile-ui`) *(Corpo Calloso)*
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`3d-force-galaxy-view`) *(Corpo Calloso)*
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ui-gauge-widget-alcolsafe`) *(Corpo Calloso)*
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ui-glass-dark-theme`) *(Corpo Calloso)*
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ux-frictionless-flow`) *(Corpo Calloso)*
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ux-frictionless`) *(Corpo Calloso)*
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`node-telegram-bot-interface`) *(Corpo Calloso)*
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`node-web-tree-explorer`) *(Corpo Calloso)*
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-glassmorphism-system`) *(Corpo Calloso)*
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-dynamic-island-ui`) *(Corpo Calloso)*
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-widget-suite-ui`) *(Corpo Calloso)*
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-alertless-icon-ux`) *(Corpo Calloso)*
 - (`streaksup-app-intents-engine`) --[CONTROLS_IN_PLACE]--> (`streaksup-dynamic-island-ui`) *(Corpo Calloso)*
 - (`ai-reasoning-cross-model-provenance-validation`) --[CORPUS_CALLOSUM_LINK]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
+- (`ai-reasoning-infinite-context-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
+- (`ai-reasoning-infinite-context-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
+- (`ai-reasoning-shared-cognitive-state-continuity`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-universal-context-definition`) *(Corpo Calloso)*
 - (`antigravity-centaur-collaboration`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`) *(Corpo Calloso)*
 - (`art-creative-writing`) --[CORPUS_CALLOSUM_LINK]--> (`proj-kdp-ai-guide`) *(Corpo Calloso)*
 - (`art-piano-composition`) --[CORPUS_CALLOSUM_LINK]--> (`proj-harmonyapp`) *(Corpo Calloso)*
-- (`art-piano-composition`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
-- (`art-theatre-acting`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`brand-voice-engineering`) --[CORPUS_CALLOSUM_LINK]--> (`identity-cs-researcher`) *(Corpo Calloso)*
 - (`brand-voice-surgical`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
 - (`creative-multidisciplinary`) --[CORPUS_CALLOSUM_LINK]--> (`proj-kdp-ai-book`) *(Corpo Calloso)*
 - (`design-cyber-neon`) --[CORPUS_CALLOSUM_LINK]--> (`proj-specula`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`) *(Corpo Calloso)*
-- (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`episode-2026-08-27-telegram-omnipresence`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`) *(Corpo Calloso)*
-- (`episode-2026-08-27-telegram-omnipresence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`episode-2026-08-27-tree-structures-evaluation`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`) *(Corpo Calloso)*
-- (`episode-2026-08-27-tree-structures-evaluation`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`episode-2026-08-27-universal-context-definition`) --[CORPUS_CALLOSUM_LINK]--> (`goal-multi-ai-shared-context-persistence`) *(Corpo Calloso)*
+- (`episode-2026-08-27-universal-context-definition`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-shared-cognitive-state-continuity`) *(Corpo Calloso)*
 - (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-provenance-model-tracking`) *(Corpo Calloso)*
 - (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-cross-model-provenance-validation`) *(Corpo Calloso)*
+- (`episode-infinite-context-philosophy`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-infinite-context-persistence`) *(Corpo Calloso)*
+- (`episode-infinite-context-philosophy`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-infinite-context-architecture`) *(Corpo Calloso)*
+- (`feat-ai-json-importer`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`feat-copy-ai-prompt`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`feat-light-terminal`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`goal-multi-ai-shared-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-universal-context-definition`) *(Corpo Calloso)*
+- (`goal-multi-ai-shared-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`idea-hierarchical-weighted-trees`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`identity-cs-researcher`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-engineering`) *(Corpo Calloso)*
 - (`lesson-stoic-resilience`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
-- (`lesson-stoic-resilience`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`memory-perfectionism-tension`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
 - (`mental-centaur-model`) --[CORPUS_CALLOSUM_LINK]--> (`art-creative-writing`) *(Corpo Calloso)*
 - (`mental-centaur-model`) --[CORPUS_CALLOSUM_LINK]--> (`val-authenticity`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`rel-parents`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`rel-marco-di-martino`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`val-transparency-loyalty`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`art-piano-composition`) *(Corpo Calloso)*
 - (`proj-alcolsafe`) --[CORPUS_CALLOSUM_LINK]--> (`val-impact-utility`) *(Corpo Calloso)*
 - (`proj-caretrack`) --[CORPUS_CALLOSUM_LINK]--> (`val-impact-utility`) *(Corpo Calloso)*
 - (`proj-cinematch`) --[CORPUS_CALLOSUM_LINK]--> (`ux-frictionless`) *(Corpo Calloso)*
@@ -614,16 +976,14 @@
 - (`proj-streaksup-app`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
 - (`proj-tombolawifi`) --[CORPUS_CALLOSUM_LINK]--> (`rel-napoli-culture`) *(Corpo Calloso)*
-- (`rel-academic-mentors`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
-- (`rel-antonio-chieppa`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
-- (`rel-marco-di-martino`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`rel-napoli-culture`) --[CORPUS_CALLOSUM_LINK]--> (`proj-napolilive`) *(Corpo Calloso)*
 - (`rel-napoli-culture`) --[CORPUS_CALLOSUM_LINK]--> (`proj-tombolawifi`) *(Corpo Calloso)*
-- (`rel-parents`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`rigore-informativo`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`rigore-informativo`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`) *(Corpo Calloso)*
+- (`rule-cloud-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`rule-zero-cost`) --[CORPUS_CALLOSUM_LINK]--> (`val-independence`) *(Corpo Calloso)*
 - (`rule-zero-placeholder`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`) *(Corpo Calloso)*
-- (`session-evolution-ui-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`streaksup-alertless-icon-ux`) --[CORPUS_CALLOSUM_LINK]--> (`proj-streaksup-app`) *(Corpo Calloso)*
 - (`streaksup-app-intents-engine`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-dynamic-island-ui`) *(Corpo Calloso)*
 - (`streaksup-app-intents-engine`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-widget-suite-ui`) *(Corpo Calloso)*
@@ -641,27 +1001,60 @@
 - (`streaksup-swiftdata-arch`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`streaksup-widget-suite-ui`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-app-intents-engine`) *(Corpo Calloso)*
 - (`streaksup-widget-suite-ui`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-darwin-ipc-protocol`) *(Corpo Calloso)*
+- (`user-intent-infinite-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
+- (`user-intent-infinite-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
 - (`user-intent-provenance-model-tracking`) --[CORPUS_CALLOSUM_LINK]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
 - (`user-intent-telegram-bot-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
+- (`user-intent-telegram-bot-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-tree-search-enhancement`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
+- (`user-intent-tree-search-enhancement`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
+- (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`ux-frictionless`) --[CORPUS_CALLOSUM_LINK]--> (`proj-linkly-qr`) *(Corpo Calloso)*
 - (`ux-frictionless`) --[CORPUS_CALLOSUM_LINK]--> (`proj-caretrack`) *(Corpo Calloso)*
+- (`val-eternal-cognitive-continuity`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-infinite-context-persistence`) *(Corpo Calloso)*
+- (`val-eternal-cognitive-continuity`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-infinite-context-architecture`) *(Corpo Calloso)*
 - (`val-impact-utility`) --[CORPUS_CALLOSUM_LINK]--> (`proj-caretrack`) *(Corpo Calloso)*
 - (`val-impact-utility`) --[CORPUS_CALLOSUM_LINK]--> (`proj-alcolsafe`) *(Corpo Calloso)*
 - (`val-independence`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[CREATED]--> (`proj-napolilive`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[CREATED]--> (`proj-tombolawifi`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[CREATOR_OF]--> (`aule-studio-app`) *(Corpo Calloso)*
+- (`concept-interhemispheric-inhibition-gating`) --[CROSS_CALLOSAL_INHIBITION]--> (`domain-filosofia-valori`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[DECLARED]--> (`user-intent-zero-cost-graphrag`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[DEFINED]--> (`feat-copy-ai-prompt`) *(Corpo Calloso)*
 - (`caveman-communication-protocol`) --[DEFINES_VOICE]--> (`terse-caveman-brand-voice`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[DEPLOYED]--> (`proj-specula`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[DEPLOYED]--> (`proj-linkly-qr`) *(Corpo Calloso)*
+- (`node-commit-62e48df`) --[DEPLOYS_TO_PRODUCTION]--> (`node-hierarchical-tree-engine-impl`) *(Corpo Calloso)*
 - (`proj-specula`) --[DERIVES_FROM]--> (`design-cyber-neon`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-caretrack`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-alcolsafe`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-cinematch`) *(Corpo Calloso)*
 - (`user-intent-clean-clustered-ui`) --[DISCUSSED_IN]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`user-intent-reasoning-and-chat-memory`) --[DISCUSSED_IN]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[DISPLAYS_ON]--> (`streaksup-dynamic-island-ui`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[EMBODIES]--> (`val-authenticity`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EMBODIES_PROFILE]--> (`identity-cs-researcher`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[EMBODIES_VALUE]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
+- (`node-telegram-bot-interface`) --[ENABLES]--> (`node-ubiquitous-ingestion`) *(Corpo Calloso)*
 - (`ai-memory-ingest-spec`) --[ENABLES_PERSISTENCE]--> (`continuous-ai-symbiosis`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ENFORCES]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
 - (`zero-debt-cost-rule`) --[ENFORCES_MINIMALISM]--> (`cyber-slate-space-aesthetic`) *(Corpo Calloso)*
 - (`streaksup-alertless-icon-ux`) --[ENHANCES_EXPERIENCE_OF]--> (`proj-streaksup-app`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ESTABLISHED]--> (`tax-ai-reasoning`) *(Corpo Calloso)*
+- (`reason-ep-20260827-hierarchical-tree-deployment-sync`) --[ESTABLISHES_CONCEPT]--> (`node-web-tree-explorer`) *(Corpo Calloso)*
+- (`reason-ep-20260827-hierarchical-tree-deployment-sync`) --[ESTABLISHES_CONCEPT]--> (`node-commit-62e48df`) *(Corpo Calloso)*
+- (`reason-ep-20260827-telegram-bot-interface`) --[ESTABLISHES_CONCEPT]--> (`node-telegram-bot-interface`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[EXPORTS_WIDGETS]--> (`streaksup-widget-suite-ui`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-graph-tree-unification`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-graph-taxonomy-classification`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-bot-interface`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-tree-structures-evaluation`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-tree-ranking-translation`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-hierarchical-overlay-reassurance`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-hierarchical-tree-deployment-sync`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`) *(Corpo Calloso)*
+- (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`aule-studio-backend-arch`) --[FEEDS_DATA_TO]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
 - (`ai-reasoning-hybrid-search-mcp`) --[FORMULATES]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
@@ -670,155 +1063,360 @@
 - (`identity-cs-researcher`) --[HARMONIZES]--> (`creative-multidisciplinary`) *(Corpo Calloso)*
 - (`proj-napolilive`) --[HONORS]--> (`rel-napoli-culture`) *(Corpo Calloso)*
 - (`proj-linkly-qr`) --[IMPLEMENTS]--> (`ux-frictionless`) *(Corpo Calloso)*
+- (`universal-ai-brain`) --[IMPLEMENTS_UI]--> (`feat-dark-tech-frontend-restyle`) *(Corpo Calloso)*
 - (`proj-alcolsafe`) --[INCORPORATES_UI]--> (`ui-gauge-widget-alcolsafe`) *(Corpo Calloso)*
+- (`user-intent-frontend-professional-restyle`) --[INSPIRED]--> (`feat-dark-tech-frontend-restyle`) *(Corpo Calloso)*
 - (`session-continuous-evolution`) --[INSTANTIATES]--> (`antigravity-centaur-collaboration`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`) *(Corpo Calloso)*
+- (`node-telegram-bot-interface`) --[INTERFACES_WITH]--> (`node-knowledge-graph-memory`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[MANDATES]--> (`rule-cloud-persistence`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[MASTERS_STACK]--> (`flutter-dart-ecosystem`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[MASTERS_STACK]--> (`fastapi-python-stack`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`arch-telegram-webhook-gateway`) --[PART_OF]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`idea-hierarchical-weighted-trees`) --[PART_OF]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[PERFORMS_IN]--> (`art-theatre-acting`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[PRACTICES]--> (`art-piano-composition`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[PRODUCES]--> (`art-creative-writing`) *(Corpo Calloso)*
+- (`intent-ep-20260827-graph-taxonomy-classification`) --[PART_OF_EPISODE]--> (`ep-20260827-graph-taxonomy-classification`) *(Corpo Calloso)*
+- (`intent-ep-20260827-graph-tree-unification`) --[PART_OF_EPISODE]--> (`ep-20260827-graph-tree-unification`) *(Corpo Calloso)*
+- (`intent-ep-20260827-hierarchical-overlay-reassurance`) --[PART_OF_EPISODE]--> (`ep-20260827-hierarchical-overlay-reassurance`) *(Corpo Calloso)*
+- (`intent-ep-20260827-hierarchical-tree-deployment-sync`) --[PART_OF_EPISODE]--> (`ep-20260827-hierarchical-tree-deployment-sync`) *(Corpo Calloso)*
+- (`intent-ep-20260827-telegram-bot-interface`) --[PART_OF_EPISODE]--> (`ep-20260827-telegram-bot-interface`) *(Corpo Calloso)*
+- (`intent-ep-20260827-telegram-cognitive-hub-spec`) --[PART_OF_EPISODE]--> (`ep-20260827-telegram-cognitive-hub-spec`) *(Corpo Calloso)*
+- (`intent-ep-20260827-tree-ranking-translation`) --[PART_OF_EPISODE]--> (`ep-20260827-tree-ranking-translation`) *(Corpo Calloso)*
+- (`intent-ep-20260827-tree-structures-evaluation`) --[PART_OF_EPISODE]--> (`ep-20260827-tree-structures-evaluation`) *(Corpo Calloso)*
+- (`user-intent-biological-lazy-loading-inhibition`) --[PART_OF_EPISODE]--> (`episode-2026-08-27-interhemispheric-inhibition-design`) *(Corpo Calloso)*
+- (`user-intent-connect-gemini-claude-chatgpt-mcp`) --[PART_OF_EPISODE]--> (`episode-2026-08-27-multi-llm-mcp-ecosystem`) *(Corpo Calloso)*
+- (`user-intent-hierarchical-multi-layer-graph-design`) --[PART_OF_EPISODE]--> (`episode-2026-08-27-fractal-graph-of-graphs-evaluation`) *(Corpo Calloso)*
+- (`user-intent-modular-cluster-decentralization`) --[PART_OF_EPISODE]--> (`episode-2026-08-27-modular-domain-graph-topology`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[PLANNED]--> (`user-intent-telegram-bot-gateway`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[PREFERS]--> (`rigore-informativo`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[PROPOSED]--> (`user-intent-tree-search-enhancement`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[PROVIDES_FLOW]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
 - (`ai-reasoning-episodic-memory-architecture`) --[REASONED_DURING]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[RECORDED_EPISODE]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[RENDERED_VIA]--> (`aule-studio-mobile-ui`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[RENDERS_FX]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[ROOTED_IN]--> (`rel-napoli-culture`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-clean-clustered-ui`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-reasoning-and-chat-memory`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-connect-gemini-claude-chatgpt-mcp`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-frontend-professional-restyle`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[RESEARCHES_AT]--> (`proj-bioinformatics-icar`) *(Corpo Calloso)*
+- (`goal-multi-ai-shared-context-persistence`) --[SERVES_USER]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`streaksup-streak-freeze-algo`) --[SHIELD_THEMED_BY]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
 - (`fastapi-python-stack`) --[STREAMS_JSON_TO]--> (`3d-force-galaxy-view`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[STRIVES_FOR]--> (`val-impact-utility`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[STUDIES_AT]--> (`coursework-cs-federico2`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[STYLED_BY]--> (`streaksup-glassmorphism-system`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[STYLED_BY]--> (`bi-hemispheric-polarity-palette`) *(Corpo Calloso)*
 - (`rigore-informativo`) --[SYNONYM_OF]--> (`brand-voice-surgical`) *(Corpo Calloso)*
 - (`streaksup-gamification-engine`) --[TRIGGERS_CELEBRATION]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
 - (`streaksup-app-intents-engine`) --[TRIGGERS_RELOAD_ON]--> (`streaksup-widget-suite-ui`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[UPHOLDS]--> (`val-transparency-loyalty`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[USES_PALETTE]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
 - (`antigravity-centaur-collaboration`) --[VALIDATES_EMPIRICALLY]--> (`mental-centaur-model`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[VALUES]--> (`val-independence`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[VISUALIZED_IN]--> (`3d-force-galaxy-view`) *(Corpo Calloso)*
+- (`node-web-tree-explorer`) --[VISUALIZES_AND_FOCUSES]--> (`node-hierarchical-tree-engine-impl`) *(Corpo Calloso)*
 - (`sqlite-wal-persistence`) --[ZERO_OVERHEAD_THEME]--> (`cyber-slate-space-aesthetic`) *(Corpo Calloso)*
 
 ### Connessioni Intra-Emisfero:
-- (`person-pierfrancesco`) --[ADOPTS_RULE]--> (`caveman-communication-protocol`)
-- (`person-pierfrancesco`) --[ADVOCATES]--> (`mental-centaur-model`)
+- (`node-hierarchical-dendrogram`) --[ACTS_AS_INDEXING_OVERLAY_UPON]--> (`node-knowledge-graph-memory`)
 - (`proj-streaksup-app`) --[ALIGNED_WITH]--> (`rule-zero-cost`)
-- (`person-pierfrancesco`) --[APPLIES]--> (`rule-zero-cost`)
-- (`person-pierfrancesco`) --[ARCHITECTED]--> (`proj-unicampus`)
-- (`person-pierfrancesco`) --[ARCHITECTED_AND_DEVELOPED]--> (`proj-streaksup-app`)
-- (`person-pierfrancesco`) --[ARCHITECT_OF]--> (`universal-ai-brain`)
+- (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)
+- (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-design-creativita`)
 - (`identity-cs-researcher`) --[AUTHORED]--> (`proj-kdp-ai-book`)
-- (`person-pierfrancesco`) --[AUTHORED]--> (`proj-kdp-ai-guide`)
-- (`person-pierfrancesco`) --[AUTHOR_OF]--> (`proj-kdp-ai-book`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`analysis-bst-vs-graph-taxonomy`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-episodic-memory-architecture`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-hybrid-search-mcp`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-clustering-decision`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`tax-ai-reasoning`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-cross-model-provenance-validation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`graphify-knowledge-engine`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`deploy-render-zero-cost`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`feat-progressive-areas`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-cinematch`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-linkly-qr`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`sqlite-wal-persistence`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`feat-light-terminal`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-tombolawifi`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-unicampus`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`universal-ai-brain`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`caveman-communication-protocol`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-kdp-ai-guide`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-holly-benji-ai`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`identity-cs-researcher`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-cloud-persistence`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`session-continuous-evolution`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`zero-debt-cost-rule`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rigore-informativo`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`feat-copy-ai-prompt`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-ai-thought-tracing`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`epistemologia-rigorosa`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-zero-placeholder`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-episodic-chat-preservation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`idea-hierarchical-weighted-trees`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`repo-github-universal-ai-brain`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-zero-cost`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`mental-centaur-model`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-zero-cost-graphrag`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-tree-search-enhancement`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-clean-clustered-ui`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-reasoning-and-chat-memory`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-provenance-model-tracking`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-telegram-bot-gateway`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`arch-telegram-webhook-gateway`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-graph-tree-unification`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-graph-tree-unification`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-knowledge-graph-memory`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-search-tree-deliberation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-neuro-symbolic-brain`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-graph-taxonomy-classification`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-graph-taxonomy-classification`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-universal-ai-brain-taxonomy`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-epistemic-grading-system`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-telegram-bot-interface`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-telegram-bot-interface`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-ubiquitous-ingestion`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-tree-structures-evaluation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-tree-structures-evaluation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-hierarchical-dendrogram`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-tree-ranking-translation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-tree-ranking-translation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-tree-architecture-verdict`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-hierarchical-overlay-reassurance`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-hierarchical-overlay-reassurance`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-multiscale-overlay-pattern`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-hierarchical-tree-deployment-sync`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-hierarchical-tree-deployment-sync`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-hierarchical-tree-engine-impl`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-mcp-brain-get-tree`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-telegram-cognitive-hub-spec`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-telegram-webhook-gateway`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-commit-965f0a8`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-connect-gemini-claude-chatgpt-mcp`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-multi-llm-mcp-skill-distribution`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`skill-universal-brain-installed`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`concept-modular-domain-subgraphs`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-modular-cluster-decentralization`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-domain-subgraph-modularity`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`concept-graph-of-graphs-hypergraph`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-hierarchical-multi-layer-graph-design`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-hypergraph-multi-scale-feasibility`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`terse-caveman-brand-voice`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`brand-voice-engineering`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`brand-voice-surgical`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`bi-hemispheric-polarity-palette`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`palette-neon-cyber`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`art-piano-composition`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`cyber-slate-space-aesthetic`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`design-cyber-neon`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`design-tokens-core`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`session-evolution-ui-persistence`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`art-theatre-acting`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`art-creative-writing`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`antigravity-centaur-collaboration`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`creative-multidisciplinary`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`memory-perfectionism-tension`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`lesson-boundaries-clarity`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`lesson-stoic-resilience`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-authenticity`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-independence`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-transparency-loyalty`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-impact-utility`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-antonio-chieppa`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-parents`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-marco-di-martino`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-academic-mentors`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-napoli-culture`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`tg-idea-per-nuova-app-ai`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-graph-tree-unification`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-graph-taxonomy-classification`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-telegram-bot-interface`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-tree-structures-evaluation`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-tree-ranking-translation`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-hierarchical-overlay-reassurance`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-hierarchical-tree-deployment-sync`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`node-commit-62e48df`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-telegram-cognitive-hub-spec`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-bioinformatics-icar`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-specula`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`aule-studio-app`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-caretrack`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-streaksup-app`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-alcolsafe`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-kdp-ai-book`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`coursework-cs-federico2`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-napolilive`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`fastapi-python-stack`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`flutter-dart-ecosystem`)
+- (`val-eternal-cognitive-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`)
+- (`person-pierfrancesco`) --[BONDS_WITH]--> (`rel-marco-di-martino`)
 - (`aule-studio-app`) --[BUILT_WITH]--> (`flutter-dart-ecosystem`)
+- (`person-pierfrancesco`) --[CAPTURED_VIA_TELEGRAM]--> (`tg-idea-per-nuova-app-ai`)
+- (`person-pierfrancesco`) --[CHAMPIONS_VISION]--> (`continuous-ai-symbiosis`)
 - (`art-piano-composition`) --[CHANNELS_AND_HEALS]--> (`memory-perfectionism-tension`)
-- (`person-pierfrancesco`) --[COMMISSIONED]--> (`feat-light-terminal`)
-- (`person-pierfrancesco`) --[COMMISSIONED]--> (`feat-ai-json-importer`)
-- (`person-pierfrancesco`) --[COMMISSIONED]--> (`feat-progressive-areas`)
-- (`person-pierfrancesco`) --[COMMITTED_TO]--> (`zero-debt-cost-rule`)
+- (`person-pierfrancesco`) --[CHERISHES]--> (`rel-parents`)
+- (`person-pierfrancesco`) --[COLLABORATES_WITH]--> (`rel-antonio-chieppa`)
+- (`goal-multi-ai-shared-context-persistence`) --[COMPLEMENTS]--> (`user-intent-provenance-model-tracking`)
+- (`node-search-tree-deliberation`) --[CONSOLIDATES_DISCOVERED_PATHS_INTO]--> (`node-knowledge-graph-memory`)
+- (`domain-ai-cognitive-systems`) --[CONTAINS_CONCEPT]--> (`concept-interhemispheric-inhibition-gating`)
+- (`aule-studio-app`) --[CONTAINS_MODULE]--> (`aule-studio-backend-arch`)
+- (`domain-medicina-salute`) --[CONTAINS_MODULE]--> (`medical-onicocriptosi-unghia-incarnita`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`proj-harmonyapp`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`proj-particlesimulator`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`proj-regexriddle`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`proj-tesi-busbra-cnr`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`proj-tombola-wifi`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ai-memory-ingest-spec`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`feat-ai-json-importer`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`arch-sqlite-wal`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`node-mst-conceptual-backbone`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`node-prefix-radix-trie`)
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`node-bidirectional-bfs-pathfinding`)
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-gamification-engine`)
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-streak-freeze-algo`)
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-app-intents-engine`)
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-darwin-ipc-protocol`)
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-i18n-runtime-engine`)
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-swiftdata-arch`)
+- (`domain-medicina-salute`) --[CONTAINS_PATHOLOGY]--> (`medical-onicocriptosi-unghia-incarnita`)
 - (`ai-reasoning-hybrid-search-mcp`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`ai-reasoning-hybrid-search-mcp`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`analysis-bst-vs-graph-taxonomy`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`analysis-bst-vs-graph-taxonomy`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`antigravity-centaur-collaboration`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
 - (`arch-telegram-webhook-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
+- (`art-piano-composition`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`art-theatre-acting`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`coursework-cs-federico2`) --[CORPUS_CALLOSUM_LINK]--> (`identity-cs-researcher`)
 - (`deploy-render-zero-cost`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
+- (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`episode-2026-08-27-telegram-omnipresence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`episode-2026-08-27-tree-structures-evaluation`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`epistemologia-rigorosa`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`)
-- (`feat-ai-json-importer`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
-- (`feat-copy-ai-prompt`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
-- (`feat-light-terminal`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`lesson-boundaries-clarity`) --[CORPUS_CALLOSUM_LINK]--> (`val-authenticity`)
+- (`lesson-stoic-resilience`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`memory-perfectionism-tension`) --[CORPUS_CALLOSUM_LINK]--> (`art-piano-composition`)
+- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`rel-parents`)
+- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`rel-marco-di-martino`)
+- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`val-transparency-loyalty`)
+- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`art-piano-composition`)
 - (`proj-bioinformatics-icar`) --[CORPUS_CALLOSUM_LINK]--> (`identity-cs-researcher`)
 - (`proj-regexriddle`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`proj-tesi-busbra-cnr`) --[CORPUS_CALLOSUM_LINK]--> (`identity-cs-researcher`)
 - (`proj-unicampus`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
+- (`rel-academic-mentors`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`rel-antonio-chieppa`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`rel-marco-di-martino`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`rel-napoli-culture`) --[CORPUS_CALLOSUM_LINK]--> (`art-theatre-acting`)
+- (`rel-parents`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`rel-parents`) --[CORPUS_CALLOSUM_LINK]--> (`val-transparency-loyalty`)
 - (`repo-github-universal-ai-brain`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`)
 - (`repo-github-universal-ai-brain`) --[CORPUS_CALLOSUM_LINK]--> (`deploy-render-zero-cost`)
-- (`rigore-informativo`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
-- (`rule-cloud-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
-- (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
-- (`user-intent-telegram-bot-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
-- (`user-intent-tree-search-enhancement`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
-- (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`session-evolution-ui-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`lesson-boundaries-clarity`)
 - (`val-transparency-loyalty`) --[CORPUS_CALLOSUM_LINK]--> (`rel-parents`)
 - (`val-transparency-loyalty`) --[CORPUS_CALLOSUM_LINK]--> (`rel-marco-di-martino`)
-- (`person-pierfrancesco`) --[CREATED]--> (`proj-napolilive`)
-- (`person-pierfrancesco`) --[CREATED]--> (`proj-tombolawifi`)
-- (`person-pierfrancesco`) --[CREATED]--> (`proj-regexriddle`)
-- (`person-pierfrancesco`) --[CREATOR_OF]--> (`aule-studio-app`)
-- (`person-pierfrancesco`) --[DECLARED]--> (`user-intent-zero-cost-graphrag`)
-- (`person-pierfrancesco`) --[DEFINED]--> (`feat-copy-ai-prompt`)
 - (`user-intent-telegram-bot-gateway`) --[DEFINES]--> (`arch-telegram-webhook-gateway`)
-- (`cyber-dark-theme`) --[DEFINES_TOKENS]--> (`design-tokens-core`)
-- (`person-pierfrancesco`) --[DEPLOYED]--> (`proj-specula`)
-- (`person-pierfrancesco`) --[DEPLOYED]--> (`proj-linkly-qr`)
+- (`ai-reasoning-infinite-context-architecture`) --[DEFINES_CORE_PURPOSE_OF]--> (`universal-ai-brain`)
+- (`goal-multi-ai-shared-context-persistence`) --[DEFINES_MISSION_OF]--> (`universal-ai-brain`)
 - (`session-continuous-evolution`) --[DEPLOYS_TO]--> (`deploy-render-zero-cost`)
-- (`person-pierfrancesco`) --[DESIGNED_THEME]--> (`cyber-dark-theme`)
 - (`identity-cs-researcher`) --[DEVELOPED]--> (`proj-tombola-wifi`)
-- (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-caretrack`)
-- (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-particlesimulator`)
-- (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-alcolsafe`)
-- (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-harmonyapp`)
-- (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-cinematch`)
 - (`user-intent-clean-clustered-ui`) --[DRIVES_IMPLEMENTATION]--> (`feat-progressive-areas`)
-- (`person-pierfrancesco`) --[EMBODIES_PROFILE]--> (`identity-cs-researcher`)
+- (`node-hierarchical-dendrogram`) --[ELECTED_AS_OPTIMAL_SOLUTION]--> (`node-tree-architecture-verdict`)
+- (`person-pierfrancesco`) --[EMBODIES]--> (`val-authenticity`)
 - (`tax-ai-reasoning`) --[ENFORCED_BY]--> (`rule-ai-thought-tracing`)
-- (`person-pierfrancesco`) --[ENFORCES]--> (`rule-zero-placeholder`)
 - (`universal-ai-brain`) --[ENFORCES_STYLE]--> (`caveman-communication-protocol`)
 - (`feat-progressive-areas`) --[ENHANCES]--> (`universal-ai-brain`)
-- (`person-pierfrancesco`) --[ESTABLISHED]--> (`tax-ai-reasoning`)
+- (`reason-ep-20260827-graph-taxonomy-classification`) --[ESTABLISHES_CONCEPT]--> (`node-universal-ai-brain-taxonomy`)
+- (`reason-ep-20260827-graph-taxonomy-classification`) --[ESTABLISHES_CONCEPT]--> (`node-epistemic-grading-system`)
+- (`reason-ep-20260827-graph-tree-unification`) --[ESTABLISHES_CONCEPT]--> (`node-knowledge-graph-memory`)
+- (`reason-ep-20260827-graph-tree-unification`) --[ESTABLISHES_CONCEPT]--> (`node-search-tree-deliberation`)
+- (`reason-ep-20260827-graph-tree-unification`) --[ESTABLISHES_CONCEPT]--> (`node-neuro-symbolic-brain`)
+- (`reason-ep-20260827-hierarchical-overlay-reassurance`) --[ESTABLISHES_CONCEPT]--> (`node-multiscale-overlay-pattern`)
+- (`reason-ep-20260827-hierarchical-tree-deployment-sync`) --[ESTABLISHES_CONCEPT]--> (`node-hierarchical-tree-engine-impl`)
+- (`reason-ep-20260827-hierarchical-tree-deployment-sync`) --[ESTABLISHES_CONCEPT]--> (`node-mcp-brain-get-tree`)
+- (`reason-ep-20260827-telegram-bot-interface`) --[ESTABLISHES_CONCEPT]--> (`node-ubiquitous-ingestion`)
+- (`reason-ep-20260827-telegram-cognitive-hub-spec`) --[ESTABLISHES_CONCEPT]--> (`node-telegram-webhook-gateway`)
+- (`reason-ep-20260827-telegram-cognitive-hub-spec`) --[ESTABLISHES_CONCEPT]--> (`node-bidirectional-bfs-pathfinding`)
+- (`reason-ep-20260827-telegram-cognitive-hub-spec`) --[ESTABLISHES_CONCEPT]--> (`node-commit-965f0a8`)
+- (`reason-ep-20260827-tree-ranking-translation`) --[ESTABLISHES_CONCEPT]--> (`node-tree-architecture-verdict`)
+- (`reason-ep-20260827-tree-structures-evaluation`) --[ESTABLISHES_CONCEPT]--> (`node-mst-conceptual-backbone`)
+- (`reason-ep-20260827-tree-structures-evaluation`) --[ESTABLISHES_CONCEPT]--> (`node-hierarchical-dendrogram`)
+- (`reason-ep-20260827-tree-structures-evaluation`) --[ESTABLISHES_CONCEPT]--> (`node-prefix-radix-trie`)
 - (`user-intent-tree-search-enhancement`) --[EVALUATED_BY]--> (`analysis-bst-vs-graph-taxonomy`)
+- (`node-telegram-webhook-gateway`) --[EXECUTES_VIA_COMMAND_PATH]--> (`node-bidirectional-bfs-pathfinding`)
+- (`node-telegram-webhook-gateway`) --[EXECUTES_VIA_COMMAND_TREE]--> (`node-hierarchical-tree-engine-impl`)
 - (`proj-streaksup-app`) --[EXPOSES_INTERACTIVITY_VIA]--> (`streaksup-app-intents-engine`)
 - (`universal-ai-brain`) --[EXPOSES_PROTOCOL]--> (`ai-memory-ingest-spec`)
+- (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`)
 - (`user-intent-provenance-model-tracking`) --[EXTENDS]--> (`ai-memory-ingest-spec`)
-- (`dual-neon-palette`) --[EXTENDS_PALETTE]--> (`palette-neon-cyber`)
+- (`concept-graph-of-graphs-hypergraph`) --[EXTENDS_MODULARITY]--> (`concept-modular-domain-subgraphs`)
 - (`repo-github-universal-ai-brain`) --[FEEDS_DEPLOY]--> (`deploy-render-zero-cost`)
+- (`node-ubiquitous-ingestion`) --[FEEDS_REALTIME_DATA_INTO]--> (`node-knowledge-graph-memory`)
+- (`ai-reasoning-infinite-context-architecture`) --[FORMALIZES]--> (`user-intent-infinite-context-persistence`)
+- (`node-neuro-symbolic-brain`) --[FORMALLY_CLASSIFIED_AS]--> (`node-universal-ai-brain-taxonomy`)
 - (`ai-reasoning-episodic-memory-architecture`) --[FORMULATED_RULE]--> (`rule-episodic-chat-preservation`)
+- (`intent-ep-20260827-graph-taxonomy-classification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-taxonomy-classification`)
+- (`intent-ep-20260827-graph-tree-unification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-tree-unification`)
+- (`intent-ep-20260827-hierarchical-overlay-reassurance`) --[GENERATES_REASONING]--> (`reason-ep-20260827-hierarchical-overlay-reassurance`)
+- (`intent-ep-20260827-hierarchical-tree-deployment-sync`) --[GENERATES_REASONING]--> (`reason-ep-20260827-hierarchical-tree-deployment-sync`)
+- (`intent-ep-20260827-telegram-bot-interface`) --[GENERATES_REASONING]--> (`reason-ep-20260827-telegram-bot-interface`)
+- (`intent-ep-20260827-telegram-cognitive-hub-spec`) --[GENERATES_REASONING]--> (`reason-ep-20260827-telegram-cognitive-hub-spec`)
+- (`intent-ep-20260827-tree-ranking-translation`) --[GENERATES_REASONING]--> (`reason-ep-20260827-tree-ranking-translation`)
+- (`intent-ep-20260827-tree-structures-evaluation`) --[GENERATES_REASONING]--> (`reason-ep-20260827-tree-structures-evaluation`)
+- (`user-intent-connect-gemini-claude-chatgpt-mcp`) --[GENERATES_REASONING]--> (`ai-reasoning-multi-llm-mcp-skill-distribution`)
 - (`tax-ai-reasoning`) --[GOVERNS]--> (`ai-reasoning-clustering-decision`)
+- (`node-tree-architecture-verdict`) --[GOVERNS_MULTISCALE_RETRIEVAL_OF]--> (`node-knowledge-graph-memory`)
+- (`concept-modular-domain-subgraphs`) --[GOVERNS_PARTITIONING]--> (`domain-medicina-salute`)
+- (`val-eternal-cognitive-continuity`) --[HELD_BY]--> (`person-pierfrancesco`)
 - (`session-continuous-evolution`) --[HOSTED_ON]--> (`repo-github-universal-ai-brain`)
+- (`concept-interhemispheric-inhibition-gating`) --[IMPLEMENTED_BY]--> (`algorithm-selective-hemispheric-activation`)
 - (`aule-studio-app`) --[IMPLEMENTS_LOGIC]--> (`aule-studio-backend-arch`)
 - (`universal-ai-brain`) --[INCORPORATES]--> (`tax-ai-reasoning`)
+- (`node-universal-ai-brain-taxonomy`) --[INCORPORATES_AS_CORE_FEATURE]--> (`node-epistemic-grading-system`)
 - (`universal-ai-brain`) --[INTEGRATES_AUDIT]--> (`graphify-knowledge-engine`)
+- (`skill-universal-brain-installed`) --[INTERFACES_WITH]--> (`node-knowledge-graph-memory`)
+- (`node-mcp-brain-get-tree`) --[INTERROGATES]--> (`node-hierarchical-tree-engine-impl`)
 - (`streaksup-darwin-ipc-protocol`) --[INVALIDATES_CACHE_FOR]--> (`streaksup-swiftdata-arch`)
 - (`identity-cs-researcher`) --[LEAD_PITCHED]--> (`proj-holly-benji-ai`)
 - (`streaksup-i18n-runtime-engine`) --[LOCALIZES]--> (`proj-streaksup-app`)
-- (`person-pierfrancesco`) --[MANDATES]--> (`rule-cloud-persistence`)
-- (`person-pierfrancesco`) --[MASTERS_STACK]--> (`flutter-dart-ecosystem`)
-- (`person-pierfrancesco`) --[MASTERS_STACK]--> (`fastapi-python-stack`)
+- (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
-- (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-continuous-evolution`)
+- (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`)
+- (`node-knowledge-graph-memory`) --[ORGANIZES_CLUSTERS_INTO]--> (`node-hierarchical-dendrogram`)
 - (`user-intent-reasoning-and-chat-memory`) --[ORIGINATED]--> (`tax-ai-reasoning`)
+- (`user-intent-biological-lazy-loading-inhibition`) --[ORIGINATES_PARADIGM]--> (`concept-interhemispheric-inhibition-gating`)
+- (`user-intent-modular-cluster-decentralization`) --[ORIGINATES_RULE]--> (`concept-modular-domain-subgraphs`)
+- (`person-pierfrancesco`) --[PERFORMS_IN]--> (`art-theatre-acting`)
 - (`universal-ai-brain`) --[PERSISTS_INTO]--> (`sqlite-wal-persistence`)
 - (`proj-streaksup-app`) --[PERSISTS_WITH]--> (`streaksup-swiftdata-arch`)
-- (`person-pierfrancesco`) --[PLANNED]--> (`user-intent-telegram-bot-gateway`)
 - (`proj-streaksup-app`) --[POWERED_BY]--> (`streaksup-gamification-engine`)
 - (`universal-ai-brain`) --[POWERED_BY]--> (`fastapi-python-stack`)
-- (`person-pierfrancesco`) --[PREFERS]--> (`rigore-informativo`)
-- (`person-pierfrancesco`) --[PROPOSED]--> (`user-intent-tree-search-enhancement`)
+- (`person-pierfrancesco`) --[PRACTICES]--> (`art-piano-composition`)
+- (`node-knowledge-graph-memory`) --[PRESERVES_TOTAL_TOPOLOGY_IN]--> (`node-multiscale-overlay-pattern`)
+- (`person-pierfrancesco`) --[PRODUCES]--> (`art-creative-writing`)
+- (`node-knowledge-graph-memory`) --[PROJECTS_INTO_LINEAR_DEDUCTION_VIA]--> (`node-mst-conceptual-backbone`)
+- (`user-intent-hierarchical-multi-layer-graph-design`) --[PROPOSES_CONCEPT]--> (`concept-graph-of-graphs-hypergraph`)
+- (`node-hierarchical-tree-engine-impl`) --[PROVIDES_HIERARCHICAL_VIEW_FOR]--> (`node-knowledge-graph-memory`)
+- (`node-prefix-radix-trie`) --[PROVIDES_INSTANT_NODE_ACCESS_TO]--> (`node-knowledge-graph-memory`)
+- (`node-knowledge-graph-memory`) --[PROVIDES_STATE_SPACE_AND_CONSTRAINTS]--> (`node-search-tree-deliberation`)
 - (`ai-reasoning-clustering-decision`) --[RATIONALE_FOR]--> (`feat-progressive-areas`)
 - (`analysis-bst-vs-graph-taxonomy`) --[RECOMMENDS]--> (`idea-hierarchical-weighted-trees`)
+- (`node-commit-965f0a8`) --[RECORDS_ARCHITECTURE_INTENT]--> (`node-telegram-webhook-gateway`)
 - (`lesson-boundaries-clarity`) --[REINFORCES]--> (`val-authenticity`)
-- (`bi-hemispheric-model`) --[RENDERED_IN]--> (`cyber-dark-theme`)
-- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-clean-clustered-ui`)
-- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-reasoning-and-chat-memory`)
 - (`identity-cs-researcher`) --[RESEARCHED]--> (`proj-bioinformatics-icar`)
-- (`person-pierfrancesco`) --[RESEARCHES_AT]--> (`proj-bioinformatics-icar`)
 - (`identity-cs-researcher`) --[RESEARCHING_THESIS]--> (`proj-tesi-busbra-cnr`)
+- (`person-pierfrancesco`) --[ROOTED_IN]--> (`rel-napoli-culture`)
+- (`person-pierfrancesco`) --[STRIVES_FOR]--> (`val-impact-utility`)
 - (`identity-cs-researcher`) --[STUDIED]--> (`coursework-cs-federico2`)
-- (`person-pierfrancesco`) --[STUDIES_AT]--> (`coursework-cs-federico2`)
-- (`cyber-dark-theme`) --[STYLES_COMPONENT]--> (`ui-glass-dark-theme`)
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
 - (`user-intent-zero-cost-graphrag`) --[TRIGGERS]--> (`ai-reasoning-hybrid-search-mcp`)
-- (`cyber-dark-theme`) --[USES_PALETTE]--> (`dual-neon-palette`)
+- (`person-pierfrancesco`) --[UPHOLDS]--> (`val-transparency-loyalty`)
+- (`node-neuro-symbolic-brain`) --[USES_AS_CEREBRAL_CORTEX]--> (`node-knowledge-graph-memory`)
+- (`node-neuro-symbolic-brain`) --[USES_AS_PREFRONTAL_DELIBERATION]--> (`node-search-tree-deliberation`)
 - (`identity-cs-researcher`) --[UTILIZES]--> (`arch-sqlite-wal`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[VALIDATES]--> (`user-intent-provenance-model-tracking`)
+- (`ai-reasoning-shared-cognitive-state-continuity`) --[VALIDATES]--> (`goal-multi-ai-shared-context-persistence`)
+- (`ai-reasoning-multi-llm-mcp-skill-distribution`) --[VALIDATES_IMPLEMENTATION]--> (`skill-universal-brain-installed`)
+- (`person-pierfrancesco`) --[VALUES]--> (`val-independence`)

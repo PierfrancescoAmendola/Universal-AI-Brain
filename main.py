@@ -1212,7 +1212,28 @@ def ingest_memory(payload: IngestPayload):
             primary_label = (n.primary_label or n.category or default_pl).strip().upper()
             category = (n.category or primary_label).strip()
 
-            details_str = json.dumps(n.details or {})
+            # Intelligent normalization of details object
+            details_obj = n.details or {}
+            if not isinstance(details_obj, dict):
+                try:
+                    details_obj = json.loads(details_obj) if isinstance(details_obj, str) else {}
+                except Exception:
+                    details_obj = {"raw": str(details_obj)}
+
+            # Auto-enforce metadata rules on backend level
+            if primary_label == "USER_INTENT":
+                if "user_prompt" not in details_obj or not details_obj["user_prompt"]:
+                    details_obj["user_prompt"] = summary or label
+            elif primary_label in ("AI_REASONING", "METACOGNITION"):
+                if "model" not in details_obj or not details_obj["model"]:
+                    details_obj["model"] = "AI Assistant"
+            elif primary_label == "CONVERSATION_EPISODE":
+                if "participants" not in details_obj or not details_obj["participants"]:
+                    details_obj["participants"] = ["Pierfrancesco Amendola", "AI Assistant"]
+                if "topic" not in details_obj or not details_obj["topic"]:
+                    details_obj["topic"] = label
+
+            details_str = json.dumps(details_obj)
             tags_str = json.dumps([sanitize_and_translate_text(t).strip().lower() for t in (n.tags or []) if t.strip()])
             summary = sanitize_and_translate_text((n.summary or f"Concept {label}").strip())
 
