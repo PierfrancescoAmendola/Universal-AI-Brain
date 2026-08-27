@@ -106,7 +106,7 @@ const RIGHT_COLOR = '#FF007F';
 const CALLOSUM_COLOR = '#A855F7';
 
 const CATEGORY_COLORS = {
-  // Left Hemisphere (Logic, Code, Cognitive Rules, AI Reasoning)
+  // Left Hemisphere (Logic, Code, Cognitive Rules, AI Reasoning, User Intent)
   'ARCHITECTURE': '#00D2FF',
   'DATA_STRUCTURE': '#38bdf8',
   'ALGORITHM': '#0284c7',
@@ -117,8 +117,9 @@ const CATEGORY_COLORS = {
   'MENTAL_MODEL': '#14b8a6',
   'AI_REASONING': '#818cf8',
   'METACOGNITION': '#a78bfa',
+  'USER_INTENT': '#3b82f6',
   
-  // Right Hemisphere (Design, Emotions, Relationships, Philosophy)
+  // Right Hemisphere (Design, Emotions, Relationships, Philosophy, Episodic Chat)
   'DESIGN_TOKEN': '#FF007F',
   'COLOR_PALETTE': '#f43f5e',
   'UI_COMPONENT': '#fb7185',
@@ -128,12 +129,13 @@ const CATEGORY_COLORS = {
   'EMOTIONAL_MEMORY': '#ec4899',
   'LIFE_LESSON': '#f59e0b',
   'RELATIONSHIP': '#f43f5e',
-  'PERSONAL_VALUE': '#8b5cf6'
+  'PERSONAL_VALUE': '#8b5cf6',
+  'CONVERSATION_EPISODE': '#e879f9'
 };
 
 const TAXONOMY = {
-  LEFT: ['ARCHITECTURE', 'DATA_STRUCTURE', 'ALGORITHM', 'DEPENDENCY', 'BUSINESS_LOGIC', 'API_SPEC', 'COGNITIVE_RULE', 'MENTAL_MODEL', 'AI_REASONING', 'METACOGNITION'],
-  RIGHT: ['DESIGN_TOKEN', 'COLOR_PALETTE', 'UI_COMPONENT', 'UX_FLOW', 'BRAND_VOICE', 'CREATIVE_IDEA', 'EMOTIONAL_MEMORY', 'LIFE_LESSON', 'RELATIONSHIP', 'PERSONAL_VALUE']
+  LEFT: ['ARCHITECTURE', 'DATA_STRUCTURE', 'ALGORITHM', 'DEPENDENCY', 'BUSINESS_LOGIC', 'API_SPEC', 'COGNITIVE_RULE', 'MENTAL_MODEL', 'AI_REASONING', 'METACOGNITION', 'USER_INTENT'],
+  RIGHT: ['DESIGN_TOKEN', 'COLOR_PALETTE', 'UI_COMPONENT', 'UX_FLOW', 'BRAND_VOICE', 'CREATIVE_IDEA', 'EMOTIONAL_MEMORY', 'LIFE_LESSON', 'RELATIONSHIP', 'PERSONAL_VALUE', 'CONVERSATION_EPISODE']
 };
 
 function esc(s) {
@@ -742,7 +744,7 @@ function closeAddModal() {
  */
 const AI_SYNC_PROMPT = `Leggi il mio Universal Knowledge Graph all'indirizzo: https://universal-ai-brain.onrender.com/brain.md
 Segui rigorosamente la Direttiva Graphify in cima alla pagina.
-Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST /api/memory/ingest (oppure esegui direttamente il POST se possiedi tool di rete), mappando sia i fatti/decisioni utente sia i tuoi ragionamenti e deduzioni logiche con label AI_REASONING / METACOGNITION.`;
+Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST /api/memory/ingest (oppure esegui direttamente il POST se possiedi tool di rete): mappa le richieste dell'utente (USER_INTENT), i tuoi ragionamenti e deduzioni logiche (AI_REASONING) e raggruppa il tema della chat nell'episodio conversazionale (CONVERSATION_EPISODE).`;
 
 async function copyAIPrompt() {
   try {

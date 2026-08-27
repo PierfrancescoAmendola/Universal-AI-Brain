@@ -36,7 +36,8 @@ LEFT_TAXONOMY: Set[str] = {
     "COGNITIVE_RULE",
     "MENTAL_MODEL",
     "AI_REASONING",
-    "METACOGNITION"
+    "METACOGNITION",
+    "USER_INTENT"
 }
 
 RIGHT_TAXONOMY: Set[str] = {
@@ -49,7 +50,8 @@ RIGHT_TAXONOMY: Set[str] = {
     "EMOTIONAL_MEMORY",
     "LIFE_LESSON",
     "RELATIONSHIP",
-    "PERSONAL_VALUE"
+    "PERSONAL_VALUE",
+    "CONVERSATION_EPISODE"
 }
 
 
@@ -442,15 +444,16 @@ def get_brain_markdown(
    - `AMBIGUOUS`: Elementi incerti, conflitti o ipotesi non confermate.
    - **Divieto Assoluto:** Non inventare mai relazioni, stack, emozioni o dettagli tecnici fittizi. Se inferisci qualcosa, segnalalo esplicitamente come `INFERRED`.
 3. **Tassonomia Rigorosa a Due Emisferi:**
-   - **EMISFERO SINISTRO (LEFT):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`.
-   - **EMISFERO DESTRO (RIGHT):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`.
-4. **Tracciamento Metacognitivo del Ragionamento AI (AI Reasoning Hub):**
-   - Oltre alle richieste esplicite dell'utente e ai progetti creati, **DEVI mappare anche le deduzioni logiche, le analisi architetturali e i ragionamenti chiave dell'AI** sotto l'etichetta `AI_REASONING` o `METACOGNITION`.
-   - Collega questi nodi ai concetti/progetti correlati con relazioni esplicative (es. `RATIONALE_FOR`, `INFERRED_FROM`, `ARCHITECTURAL_DECISION`).
+   - **EMISFERO SINISTRO (LEFT - Logica, Architettura, Richieste & Ragionamento):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
+   - **EMISFERO DESTRO (RIGHT - Design, Emozioni, Episodi & Dialoghi):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
+4. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**
+   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti, i desideri o gli intenti operativi espressi dall'utente.
+   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche, le analisi architetturali, i perché e le proposte avanzate dall'AI.
+   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Conserva le conversazioni per aree di argomento (es. sport/calcio, tennis, nutrizione/cucina, architettura software, carriera) come cluster tematici autonomi, collegando le richieste utente e i ragionamenti AI all'episodio con `BELONGS_TO_EPISODE` o `DISCUSSED_IN`.
 5. **Protocollo di Risposta & Ingestione della Memoria:**
    - Comunica secondo il protocollo **Caveman / Alta Densità Informativa**: chirurgico, diretto, privo di convenevoli, 100% sostanza tecnica e concettuale.
    - **Obbligo di Aggiornamento Grafo (Doppia Modalità):**
-     1. **Se possiedi Tool di Rete o Esecuzione (Agenti con Bash, Python, Fetch o REST):** Esegui **DIRETTAMENTE** la chiamata `POST https://universal-ai-brain.onrender.com/api/memory/ingest` con il payload JSON contenente sia i fatti utente sia i nodi di ragionamento AI.
+     1. **Se possiedi Tool di Rete o Esecuzione (Agenti con Bash, Python, Fetch o REST):** Esegui **DIRETTAMENTE** la chiamata `POST https://universal-ai-brain.onrender.com/api/memory/ingest` con il payload JSON contenente fatti utente, nodi di intenzione, ragionamento AI ed episodi di chat.
      2. **Se operi in sola chat testuale (senza esecuzione di rete):** **DEVI obbligatoriamente allegare in calce alla risposta** il blocco JSON formattato qui sotto, così che l'utente possa inviarlo con un click tramite la dashboard web.
 
 ```json
