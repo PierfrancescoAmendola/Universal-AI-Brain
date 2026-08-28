@@ -41,7 +41,62 @@ When a discussion generates a new idea, architectural decision, lesson, or user 
 5. Cross-link the new node to relevant existing nodes in `brain.db` (especially `person-pierfrancesco` or relevant project nodes).
 6. Execute ingestion via `brain_ingest` MCP tool or direct `POST /api/memory/ingest`.
 
-### 3. Cloud & Multi-Client Synchronization
+### 3. MANDATORY AUTONOMOUS SESSION CONTEXT & CHAT PERSISTENCE (Continuità Cognitiva Inter-Chat)
+**OBIETTIVO PRIMARIO: OMNISCIENZA CROSS-CHAT (CAMBIO CHAT SENZA PERDITA DI MEMORIA)**:
+Il sistema è progettato affinché aprendo una **NUOVA CHAT** (con Claude, ChatGPT, Gemini, Antigravity, Cursor), l'AI conosca istantaneamente tutta la storia pregressa, le richieste fatte, le risposte date, i bug risolti e le decisioni prese nelle chat precedenti.
+
+**REGOLA TASSATIVA PER GLI AGENTI AI**:
+Al termine di ogni interazione, risoluzione di problemi, audit o refactoring, l'AI **HA IL DOVERE ASSOLUTO di persistere nel Grafo (`brain.db`)**:
+
+1. **L'Intento e il Contesto dell'Utente (`USER_INTENT` - Emisfero Sinistro / Piano 1)**:
+   - `id`: `user-intent-<slug-kebab-case>`
+   - `label`: Titolo chiaro dell'intento in italiano
+   - `hemisphere`: `LEFT`
+   - `primary_label`: `USER_INTENT`
+   - `summary`: Sintesi dell'obiettivo operativo
+   - `details`:
+     - `user_prompt`: Testo fedele e completo della richiesta/prompt dell'utente
+     - `context`: Contesto operativo e vincoli menzionati nella chat
+   - `layer_level`: 1
+   - `parent_graph_id`: ID del progetto correlato (es. `universal-ai-brain`)
+
+2. **Il Ragionamento e le Risposte Fornite dall'AI (`AI_REASONING` / `METACOGNITION` - Emisfero Sinistro / Piano 1)**:
+   - `id`: `reasoning-<slug-kebab-case>`
+   - `label`: Sintesi del ragionamento e delle soluzioni adottate
+   - `hemisphere`: `LEFT`
+   - `primary_label`: `AI_REASONING`
+   - `summary`: Sintesi tecnica della soluzione architetturale o dei bug corretti
+   - `details`:
+     - `model`: Nome esatto del modello AI (es. `Gemini 3.7 Flash`, `Claude 3.7 Sonnet`)
+     - `responses_given`: Sintesi esaustiva delle risposte e spiegazioni date all'utente
+     - `actions_taken`: Elenco dettagliato dei file modificati, verifiche effettuate ed errori corretti
+     - `outcome`: Stato finale e risultato dei test
+   - `layer_level`: 1
+   - `parent_graph_id`: ID del progetto
+
+3. **L'Episodio Conversazionale Completo (`CONVERSATION_EPISODE` - Emisfero Destro / Piano 1)**:
+   - `id`: `episode-<slug-kebab-case>`
+   - `label`: Titolo dell'episodio di dialogo/lavoro
+   - `hemisphere`: `RIGHT`
+   - `primary_label`: `CONVERSATION_EPISODE`
+   - `summary`: Sintesi olistica della conversazione
+   - `details`:
+     - `participants`: `["Pierfrancesco Amendola", "<Nome Modello>"]`
+     - `topic`: Argomento centrale della chat
+     - `key_takeaways`: Conclusioni e lezioni apprese
+     - `pending_tasks`: Eventuali task lasciati in sospeso per le prossime chat
+   - `layer_level`: 1
+
+4. **Sinapsi Obbligatorie**:
+   - `USER_INTENT` ➜ `person-pierfrancesco` (`EXPRESSED_BY`)
+   - `USER_INTENT` ➜ Progetto/Dominio (`TARGETS_PROJECT` o `TARGETS_DOMAIN`)
+   - `AI_REASONING` ➜ `USER_INTENT` (`FULFILLS`) e Progetto/Dominio (`OPTIMIZES` o `MODIFIES`)
+   - `CONVERSATION_EPISODE` ➜ `person-pierfrancesco` (`INTERACTION_WITH`), `USER_INTENT` (`RECORDS_INTENT`), `AI_REASONING` (`RECORDS_REASONING`)
+
+5. **Inizio Nuova Chat (Cross-Chat Retrieval)**:
+   - Quando l'utente inizia una nuova conversazione, l'AI interroga immediatamente `brain_search`, `brain_get_subgraph` o `/brain.md` per caricare gli ultimi `CONVERSATION_EPISODE` e `USER_INTENT`, riprendendo il filo logico esattamente da dove era stato interrotto.
+
+### 4. Cloud & Multi-Client Synchronization
 After modifying `brain.db`:
 1. Run `PRAGMA wal_checkpoint(FULL);` on SQLite.
 2. Commit and push to GitHub (`origin/main`).

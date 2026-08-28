@@ -223,6 +223,64 @@ def tool_brain_get_subgraph(node_id: str, depth: int = 1) -> Dict[str, Any]:
         }
 
 
+def sanitize_and_translate_text(text: str) -> str:
+    """Translates common Chinese/Wenyan terms to Italian/English to guarantee pure FTS5 search."""
+    if not text:
+        return text
+    replacements = {
+        "層級譜系樹": "Albero Gerarchico (Hierarchical Tree)",
+        "譜系樹": "Albero Gerarchico",
+        "樹狀結構技術評析": "Valutazione Tecnica Strutture ad Albero",
+        "知識圖譜": "Knowledge Graph",
+        "神經符號": "Neuro-Simbolico",
+        "胼胝體": "Corpo Calloso",
+        "雙半球": "Bi-Emisferico",
+        "半球": "Emisfero",
+        "左半球": "Emisfero Sinistro",
+        "右半球": "Emisfero Destro",
+        "突觸": "Sinapsi",
+        "節點": "Nodo",
+        "路徑": "Percorso",
+        "檢索": "Ricerca FTS",
+        "認知": "Cognitivo",
+        "架構": "Architettura",
+        "意圖": "Intento Utente",
+        "推演": "Deduzione AI",
+        "對話": "Episodio Conversazionale",
+        "通透無礙，極佳之策": "Strategia ottimale approvata",
+        "冠絕群策者": "Migliore Soluzione Eletta",
+        "已全面構建完成": "Completamente rilasciato e verificato"
+    }
+    cleaned = text
+    for k, v in replacements.items():
+        cleaned = cleaned.replace(k, v)
+    return cleaned
+
+
+def determine_node_floor_level(node_id: str, primary_label: str, category: str, degree: int = 0, explicit_level: Optional[int] = None) -> int:
+    """
+    Classifica il piano nel Palazzo Cognitivo:
+    - Piano 0: Attico Macro-Domini & Core Hubs (SOLO Identità person-pierfrancesco e Macro-Domini domain-*)
+    - Piano 1: Progetti & Applicazioni (StreaksUp, AuleStudio, CareTrack, Brain, Episodi, Intenti, Valori)
+    - Piano 2: Moduli, Algoritmi & Dettagli Atomici (Schemi dati, Algoritmi specialistici, Token UI)
+    """
+    if explicit_level is not None and explicit_level in (0, 1, 2):
+        return explicit_level
+    nid = (node_id or "").lower()
+    pl = (primary_label or "").upper()
+    cat = (category or "").lower()
+    
+    # Floor 0: Attico Macro-Domini & Core Hubs (SOLO IDENTITÀ E MACRO-DOMINI)
+    if nid == 'person-pierfrancesco' or nid.startswith('domain-') or cat in ('domain', 'root_domain', 'macro_domain'):
+        return 0
+    # Floor 2: Moduli Atomici, Algoritmi, Token, Schemi (NON progetti)
+    if cat != 'application_project' and not nid.startswith('proj-') and not nid.endswith('-app') and nid not in ('universal-ai-brain', 'aule-studio-app'):
+        if pl in ['ALGORITHM', 'DATA_STRUCTURE', 'DEPENDENCY', 'API_SPEC', 'UI_COMPONENT', 'DESIGN_TOKEN', 'COLOR_PALETTE', 'BUSINESS_LOGIC'] or 'schema' in cat or 'token' in cat or 'dettaglio' in cat:
+            return 2
+    # Floor 1: Progetti, Applicazioni, Episodi, Intenti, Valori, Idee
+    return 1
+
+
 def tool_brain_ingest(nodes: List[Dict[str, Any]], edges: Optional[List[Dict[str, Any]]] = None) -> Dict[str, Any]:
     """Atomically ingest new knowledge nodes and synapses following the Graphify Protocol."""
     import datetime
@@ -234,28 +292,58 @@ def tool_brain_ingest(nodes: List[Dict[str, Any]], edges: Optional[List[Dict[str
     with get_db() as conn:
         cross_links_to_add = []
         for n in nodes:
-            slug = n["id"].strip().lower()
-            label = n.get("label", slug).strip()
+            raw_id = (n.get("id") or n.get("label") or "").strip()
+            if not raw_id:
+                continue
+            slug = sanitize_and_translate_text(raw_id).lower().replace(" ", "-").replace("/", "-")
+            label = sanitize_and_translate_text((n.get("label") or n.get("id") or slug).strip())
             hemisphere = n.get("hemisphere", "LEFT").strip().upper()
-            primary_label = n.get("primary_label", "ARCHITECTURE").strip().upper()
-            category = n.get("category", primary_label).strip()
-            tags_str = json.dumps([t.strip().lower() for t in n.get("tags", []) if t.strip()])
-            summary = n.get("summary", "").strip()
-            details_str = json.dumps(n.get("details", {}))
+            if hemisphere not in ("LEFT", "RIGHT"):
+                hemisphere = "LEFT"
+            default_pl = "ARCHITECTURE" if hemisphere == "LEFT" else "CREATIVE_IDEA"
+            primary_label = (n.get("primary_label") or n.get("category") or default_pl).strip().upper()
+            category = (n.get("category") or primary_label).strip()
+
+            summary = sanitize_and_translate_text((n.get("summary") or f"Concept {label}").strip())
+            tags_str = json.dumps([sanitize_and_translate_text(t).strip().lower() for t in n.get("tags", []) if t.strip()])
+            
+            details_obj = n.get("details") or {}
+            if not isinstance(details_obj, dict):
+                try:
+                    details_obj = json.loads(details_obj) if isinstance(details_obj, str) else {}
+                except Exception:
+                    details_obj = {"raw": str(details_obj)}
+
+            if primary_label == "USER_INTENT":
+                if "user_prompt" not in details_obj or not details_obj["user_prompt"]:
+                    details_obj["user_prompt"] = summary or label
+            elif primary_label in ("AI_REASONING", "METACOGNITION"):
+                if "model" not in details_obj or not details_obj["model"]:
+                    details_obj["model"] = "AI Assistant"
+            elif primary_label == "CONVERSATION_EPISODE":
+                if "participants" not in details_obj or not details_obj["participants"]:
+                    details_obj["participants"] = ["Pierfrancesco Amendola", "AI Assistant"]
+                if "topic" not in details_obj or not details_obj["topic"]:
+                    details_obj["topic"] = label
+
+            details_str = json.dumps(details_obj)
             confidence = n.get("confidence", "EXTRACTED")
+            parent_graph_id = n.get("parent_graph_id", "root") or "root"
+            raw_lvl = n.get("layer_level", None)
+            layer_level = determine_node_floor_level(slug, primary_label, category, explicit_level=raw_lvl)
 
             existing = conn.execute("SELECT created_at FROM nodes WHERE id = ?", (slug,)).fetchone()
             created_at = existing["created_at"] if existing else now
 
             conn.execute("""
                 INSERT OR REPLACE INTO nodes 
-                (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, created_at, updated_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (slug, label, hemisphere, primary_label, category, tags_str, summary, details_str, confidence, created_at, now))
+                (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, parent_graph_id, layer_level, created_at, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (slug, label, hemisphere, primary_label, category, tags_str, summary, details_str, confidence, parent_graph_id, layer_level, created_at, now))
             nodes_upserted += 1
 
             for tgt in n.get("cross_links", []):
-                tgt_slug = tgt.strip().lower()
+                tgt_slug = sanitize_and_translate_text(str(tgt)).strip().lower()
                 if tgt_slug and tgt_slug != slug:
                     cross_links_to_add.append((slug, tgt_slug))
 

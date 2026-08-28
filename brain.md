@@ -23,10 +23,11 @@
    - `layer_level: 0` -> **Piano 0 (Attico Macro-Domini & Core Hubs):** Riservato all'identità `person-pierfrancesco` e a tutti i macro-domini fondativi (`domain-*`).
    - `layer_level: 1` -> **Piano 1 (Progetti, Episodi, Intenti & Valori):** Progetti (`streaksup-app`, `universal-ai-brain`, `aule-studio-app`), episodi conversazionali (`CONVERSATION_EPISODE`), richieste utente (`USER_INTENT`), valori (`PERSONAL_VALUE`), lezioni di vita (`LIFE_LESSON`), idee creative (`CREATIVE_IDEA`).
    - `layer_level: 2` -> **Piano 2 (Moduli, Algoritmi & Dettagli Atomici):** Algoritmi (`ALGORITHM`), strutture dati (`DATA_STRUCTURE`), librerie (`DEPENDENCY`), specifiche endpoint (`API_SPEC`), componenti d'interfaccia (`UI_COMPONENT`), token e colori (`DESIGN_TOKEN`, `COLOR_PALETTE`), logica di business (`BUSINESS_LOGIC`).
-6. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**
-   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti o gli intenti operativi dell'utente. Nel campo `details`, inserisci **obbligatoriamente** `user_prompt` (il testo fedele della richiesta).
-   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche e le analisi. Nel campo `details`, inserisci **obbligatoriamente** `model` (es. `Claude 3.7 Sonnet`, `ChatGPT-4o`, `Gemini 2.5 Flash`).
-   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Raggruppa le conversazioni per area tematica. Inserisci in `details`: `participants` (`["Pierfrancesco Amendola", "<Nome Modello>"]`) e `topic`.
+6. **Tracciamento Metacognitivo & Memoria Episodica delle Sessioni (MANDATORIO):**
+   - **Obbligo di Auto-Ingestione:** Al termine di sessioni di analisi, modifiche, audit o decisioni, l'AI **DEVE SEMPRE registrare nel grafo** l'intento dell'utente, il ragionamento svolto e l'episodio di conversazione:
+   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti o gli intenti operativi dell'utente. Nel campo `details`, inserisci **obbligatoriamente** `user_prompt` (il testo fedele della richiesta). Collega a `person-pierfrancesco` (`EXPRESSED_BY`).
+   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche, le azioni e le analisi. Nel campo `details`, inserisci **obbligatoriamente** `model` (es. `Claude 3.7 Sonnet`, `ChatGPT-4o`, `Gemini 3.7 Flash`). Collega a `USER_INTENT` (`FULFILLS`).
+   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Raggruppa le sessioni di dialogo. Inserisci in `details`: `participants` (`["Pierfrancesco Amendola", "<Nome Modello>"]`), `topic` e `outcome`. Collega attraversando il Corpo Calloso a `person-pierfrancesco`, `USER_INTENT` e `AI_REASONING`.
 7. **Regole Linguistiche Obbligatorie (Italiano + Inglese Tecnico):**
    - **TUTTI i campi del JSON (`label`, `summary`, `tags`, `details`) DEVONO ESSERE SCRITTI RIGOROSAMENTE IN ITALIANO (con termini tecnici internazionali in inglese).**
    - **È SEVERAMENTE VIETATO generare o inserire nodi in cinese / wenyan / CJK.**
@@ -68,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-27 21:52:36 UTC | **Nodi Totali:** 200 (SX: 126 · DX: 74) | **Sinapsi:** 575
+> **Data Generazione:** 2026-08-28 12:51:41 UTC | **Nodi Totali:** 204 (SX: 128 · DX: 76) | **Sinapsi:** 576
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -140,6 +141,10 @@
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
   - **Dettagli:** `search_engine`: SQLite FTS5 Porter Unicode61, `pathfinding`: Bidirectional Breadth-First Search (BFS), `context_scoping`: k-hop neighborhood subgraph extraction, `interoperability`: JSON-RPC 2.0 stdio MCP Server, `model`: LLM Assistant (Historical Session)
+- **Ragionamento AI: Risoluzione Bug & Continuità Cognitiva Inter-Chat** (`reasoning-audit-bugfix-e-protocollo-graphify`)
+  - **Tags:** `#metacognition` `#cross-chat-continuity` `#bugfix` `#fastapi` `#mcp` `#sqlite-wal`
+  - **Sintesi:** Corretti 4 bug critici, verificati prompt e tassonomie, e integrata la specifica mandatoria di continuità cognitiva cross-chat con persistenza totale delle risposte fornite e del contesto.
+  - **Dettagli:** `actions_taken`: ['Fix UnboundLocalError summary in main.py ingest_memory', 'Fix default layer_level 0 in NodeModel', 'Fix dangling EOF in install.sh linea 158', 'Allineamento colonne parent_graph_id e layer_level in mcp_server, telegram_bot, sync_brain', 'Integrazione Sezione 3 Cross-Chat Cognitive Continuity in SKILL.md e prompt.md', 'Verifica E2E test suite su tutti i moduli con 100% successo'], `model`: Gemini 3.7 Flash, `outcome`: Schema e direttive blindati per memoria cross-chat senza perdita di contesto, `responses_given`: Spiegata in dettaglio la struttura di auto-ingestione contestuale: USER_INTENT cattura il prompt/contesto, AI_REASONING cattura risposte/modifiche/deduzioni, CONVERSATION_EPISODE cattura sintesi/partecipanti/esito. Nuove chat interrogano brain_search/brain.md per recuperare immediatamente la memoria storica.
 - **Ragionamento AI: Simbiosi Architetturale tra Substrato Cloud Render e Agenti Locali** (`ai-reasoning-hybrid-cloud-local-symbiosis`)
   - **Tags:** `#ai-reasoning` `#hybrid-cloud` `#distributed-systems` `#cross-client-synergy` `#metacognition`
   - **Sintesi:** Deduzione architetturale: Render agisce come Hub pubblico permanente (Telegram Webhook, Web Visualizer, OpenAPI GPTs), mentre MCP agisce come bus a bassissima latenza per agenti IDE.
@@ -574,6 +579,10 @@
   - **Tags:** `#user-intent` `#query` `#integrity-and-coexistence-verification`
   - **Sintesi:** mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)
   - **Dettagli:** `raw_query`: mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree), `intent_type`: INTEGRITY_AND_COEXISTENCE_VERIFICATION, `epistemic_status`: EXTRACTED, `target_domain`: Knowledge Preservation / Multiscale Graph Architectures, `user_prompt`: mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)
+- **Intento: Audit Completo Cervello, Graphify & Memoria Cross-Chat** (`user-intent-audit-cervello-e-graphify`)
+  - **Tags:** `#audit` `#qa` `#bugfix` `#cross-chat-memory` `#omniscienza` `#graphify`
+  - **Sintesi:** Richiesta di revisione completa del codice, verifica errori, prompt, documentazione e garanzia assoluta di persistenza del contesto conversazionale per garantire continuità cognitiva cross-chat.
+  - **Dettagli:** `area`: Audit, QA, Cross-Chat Memory Persistence, Protocollo Graphify, `context`: L'utente richiede che ogni chat inserisca tutto il contesto, le risposte date e le decisioni, affinché cambiando chat l'AI mantenga omniscienza totale senza perdita di memoria., `timestamp`: 2026-08-28T14:51:11+02:00, `user_prompt`: l'ai deve inserire il contesto della chat, le risposte date, tutto, in modo tale che cambiando chat sappia tutto ti trovi?? abbiamo fatto questo??? è presente questa condizione, è così realizzato lo schema???
 - **Prevenzione Perdita Contesto per Saturazione Finestra Chat** (`user-intent-infinite-context-persistence`)
   - **Tags:** `#user-intent` `#context-preservation` `#infinite-memory` `#chat-saturation` `#zero-loss` `#cross-session`
   - **Sintesi:** Volontà utente: azzerare la perdita di contesto causata dalla saturazione delle finestre di contesto degli LLM, garantendo continuità cognitiva perenne tra chat diverse.
@@ -654,6 +663,10 @@
   - **Tags:** `#conversation-episode` `#trees` `#data-structures` `#graph-theory` `#2026-08-27`
   - **Sintesi:** Discussione e perizia tecnica sull'integrazione di alberi binari, alberi di ricerca e alberi di copertura pesati nel grafo universale.
   - **Dettagli:** `date`: 2026-08-27, `outcome`: Validazione di MST e Tassonomia Gerarchica come strutture ad albero superiori rispetto al BST per grafi cognitivi, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Valutazione Strutture ad Albero
+- **Episodio: Audit Totale & Continuità Cognitiva Cross-Chat** (`episode-audit-completo-e-potenziamento-skill`)
+  - **Tags:** `#sessione-audit` `#pierfrancesco` `#universal-brain` `#cross-chat-memory` `#metamemoria`
+  - **Sintesi:** Sessione di audit intensivo, correzione bug su backend/MCP/Telegram, potenziamento formale della skill per continuità cross-chat e persistenza delle risposte fornite nel knowledge graph.
+  - **Dettagli:** `key_takeaways`: L'architettura del Cervello garantisce la continuità multi-sessione tra assistenti AI diversi e chat diverse grazie alla triade USER_INTENT + AI_REASONING + CONVERSATION_EPISODE., `outcome`: Audit superato al 100%, skill potenziata e sincronizzata con la direttiva di continuità cross-chat, grafo aggiornato., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: ['Nessun bug residuo. Sistema pronto per sincronizzazione cloud e deploy.'], `topic`: Audit del codice, prompt e garanzia di memoria cross-chat persistente
 - **Episodio: Definizione Scopo Universale del Contesto Multi-AI** (`episode-2026-08-27-universal-context-definition`)
   - **Tags:** `#conversation-episode` `#universal-brain` `#context-purpose` `#gemini-session`
   - **Sintesi:** Sessione di formalizzazione dello scopo supremo di Universal AI Brain: memoria persistente del contesto e dei processi mentali cross-AI.
@@ -888,6 +901,9 @@
   - **Tags:** `#widgets` `#lock-screen-complications` `#heatmap` `#daily-progress`
   - **Sintesi:** Suite di 4 widget (Single Habit Focus, Today Dashboard, Daily Progress, Weekly Heatmap) e relative complicanze Lock Screen (circular, rectangular, inline).
   - **Dettagli:** `widgets`: ['SingleHabitFocusWidget (small, medium, lock screen)', 'TodayHabitsWidget (medium, large)', 'DailyProgressWidget (small, medium)', 'WeeklyHeatmapWidget (medium, large)']
+- **Redesign Pezzi Scacchiera Duolingo Vettoriali** (`design-duolingo-chess-pieces`)
+  - **Tags:** `#scacchi` `#duolingo` `#swiftui` `#design-system` `#vettoriale`
+  - **Sintesi:** Decisione di redesign dei pezzi degli scacchi con vettori SwiftUI parametrici 2D Duolingo puliti e gerarchia visiva proporzionata.
 - **Telegram Bot Interface (Mobile I/O)** (`node-telegram-bot-interface`)
   - **Tags:** `#mutation-import` `#io-layer` `#perceptual-interface`
   - **Sintesi:** Telegram Bot Interface (Mobile I/O) (Layer: IO_LAYER, Tipo: PERCEPTUAL_INTERFACE)
@@ -1177,6 +1193,7 @@
 - (`node-hierarchical-dendrogram`) --[ACTS_AS_INDEXING_OVERLAY_UPON]--> (`node-knowledge-graph-memory`)
 - (`proj-streaksup-app`) --[ALIGNED_WITH]--> (`rule-zero-cost`)
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[APPLIED_DESIGN_SYSTEM]--> (`design-token-cyberpunk-minimalist-palette`)
+- (`design-duolingo-chess-pieces`) --[APPLIES_TO]--> (`person-pierfrancesco`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[ARCHITECTURAL_DECISION_FOR]--> (`domain-software-engineering`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[ARCHITECTURAL_PILLAR_OF]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)

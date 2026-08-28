@@ -49,23 +49,27 @@ def sync():
         created_at = n.get("created_at", now)
         updated_at = n.get("updated_at", now)
         confidence = n.get("confidence", "EXTRACTED")
+        parent_graph_id = n.get("parent_graph_id", "root")
+        layer_level = n.get("layer_level", 0)
 
         conn.execute("""
             INSERT OR REPLACE INTO nodes 
-            (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (slug, label, hemi, pl, cat, tags_str, summary, details_str, confidence, created_at, updated_at))
+            (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, parent_graph_id, layer_level, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (slug, label, hemi, pl, cat, tags_str, summary, details_str, confidence, parent_graph_id, layer_level, created_at, updated_at))
         nodes_upserted += 1
 
     for l in links:
         src = l["source"]
         tgt = l["target"]
         rel = l.get("relation", "CONNECTS_TO")
+        edge_conf = l.get("confidence", "EXTRACTED")
+        edge_reason = l.get("reasoning", None)
         conn.execute("""
             INSERT OR REPLACE INTO edges 
-            (source, target, relation, created_at)
-            VALUES (?, ?, ?, ?)
-        """, (src, tgt, rel, now))
+            (source, target, relation, confidence, reasoning, created_at)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (src, tgt, rel, edge_conf, edge_reason, now))
         edges_upserted += 1
 
     conn.commit()

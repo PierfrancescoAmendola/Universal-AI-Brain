@@ -11,13 +11,13 @@ Questo permette a **Claude Desktop, Google Antigravity, Cursor, Windsurf e ChatG
 | Nome Tool | Parametri | Funzione |
 | :--- | :--- | :--- |
 | `brain_get_palazzo` | *nessuno* | Recupera il Palazzo Cognitivo a 3 piani (Attico, Progetti, Moduli) e gli ascensori verticali. |
-| `brain_search` | `query` (str), `limit` (int) | Ricerca semantica BM25 FTS5 in millisecondi. |
-| `brain_get_tree` | `hemisphere` (str) | Esplora l'albero gerarchico (層級譜系樹) per macro-aree. |
+| `brain_search` | `query` (str), `limit` (int, opzionale), `hemisphere` (str, opzionale) | Ricerca semantica BM25 FTS5 in millisecondi con biological gating opzionale. |
+| `brain_get_tree` | `hemisphere` (str, opzionale) | Esplora l'albero gerarchico per macro-aree e tassonomie. |
 | `brain_get_node` | `node_id` (str) | Recupera la scheda completa di un nodo e tutte le sue sinapsi. |
 | `brain_shortest_path` | `source` (str), `target` (str) | Traccia il cammino minimo con BFS bidirezionale trans-callosale. |
-| `brain_get_subgraph` | `node_id` (str), `depth` (int) | Estrae il vicinato concettuale di raggio $k$. |
-| `brain_ingest` | `nodes` (list), `edges` (list) | Scrive e collega autonomamente nuove memorie in `brain.db`. |
-| `brain_get_stats` | *nessuno* | Restituisce nodi sinistri/destri, sinapsi e ponti. |
+| `brain_get_subgraph` | `node_id` (str), `depth` (int, opzionale) | Estrae il vicinato concettuale di raggio $k$. |
+| `brain_ingest` | `nodes` (list), `edges` (list, opzionale) | Scrive e collega autonomamente nuove memorie in `brain.db` con validazione di piano e tassonomia. |
+| `brain_get_stats` | *nessuno* | Restituisce metriche globali su nodi sinistri/destri, sinapsi e ponti. |
 
 ---
 

@@ -112,8 +112,8 @@ def cmd_add(title: str, summary: str, hemisphere="LEFT", primary_label="ARCHITEC
     with get_db() as conn:
         conn.execute("""
             INSERT OR REPLACE INTO nodes
-            (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'EXTRACTED', ?, ?)
+            (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, parent_graph_id, layer_level, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'EXTRACTED', 'root', 1, ?, ?)
         """, (slug, title, hemisphere.upper(), primary_label.upper(), primary_label, json.dumps(["cli-add"]), summary or title, json.dumps({"source": "cli"}), now_iso, now_iso))
         conn.commit()
         tot = conn.execute("SELECT COUNT(*) AS c FROM nodes").fetchone()["c"]
@@ -155,4 +155,3 @@ EOF
 
 echo "✅ Universal AI Brain successfully installed!"
 echo "👉 Prova subito nel terminale: brain stats"
-EOF

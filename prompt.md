@@ -50,16 +50,17 @@
 1. **Lingua Obbligatoria (Italiano + Termini Tecnici Internazionali in Inglese):**
    - `label`, `summary`, `tags` e `details` in italiano. Nessun carattere o testo in cinese/wenyan.
 2. **Slug Univoco (`id`):** In formato `kebab-case` minuscolo (es. `algorithm-streak-freeze-algo`).
-3. **Metacognizione:**
-   - `USER_INTENT`: inserisci in `details` la proprietà `"user_prompt"`.
-   - `AI_REASONING`: inserisci in `details` la proprietà `"model"` (il tuo nome modello).
-   - `CONVERSATION_EPISODE`: inserisci in `details` `"participants"` e `"topic"`.
+3. **Metacognizione & Auto-Ingestione Episodica (MANDATORIO):**
+   - Al termine di ogni sessione o richiesta rilevante, genera sempre la memoria dell'interazione:
+   - `USER_INTENT` (Left): inserisci in `details` la proprietà `"user_prompt"` con la richiesta dell'utente.
+   - `AI_REASONING` (Left): inserisci in `details` la proprietà `"model"` e le azioni/decisioni intraprese.
+   - `CONVERSATION_EPISODE` (Right): inserisci in `details` `"participants"`, `"topic"` e `"outcome"`, collegandolo alle richieste e ai ragionamenti.
 
 ---
 
-## 5. FORMATO DEL BLOCCO JSON DA RESTITUIRE IN CALCE
+## 5. FORMATO DEL BLOCCO JSON DA RESTITUIRE IN CALCE (O INGESTION DIRETTA VIA MCP)
 
-Quando generi nuovi concetti o aggiornamenti di memoria, allega in calce alla tua risposta questo blocco JSON:
+Quando generi nuovi concetti, risolvi task o aggiorni la memoria, allega in calce alla risposta (o invia via MCP `brain_ingest`) questo blocco JSON:
 
 ```json
 {

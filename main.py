@@ -329,7 +329,7 @@ class NodeModel(BaseModel):
     details: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Structured metadata dictionary")
     confidence: Optional[Literal["EXTRACTED", "INFERRED", "AMBIGUOUS"]] = Field("EXTRACTED", description="Graphify audit confidence rubric")
     parent_graph_id: Optional[str] = Field("root", description="ID of parent container graph/floor ('root' for top level)")
-    layer_level: Optional[int] = Field(0, description="Floor level in the cognitive building (0 = Attic/Root, 1 = Domains/Projects, 2 = Modules/Details)")
+    layer_level: Optional[int] = Field(None, description="Floor level in the cognitive building (0 = Attic/Root, 1 = Domains/Projects, 2 = Modules/Details)")
 
 class EdgeModel(BaseModel):
     source: str = Field(..., description="Source node slug ID")
@@ -1066,10 +1066,11 @@ def get_brain_markdown(
    - `layer_level: 0` -> **Piano 0 (Attico Macro-Domini & Core Hubs):** Riservato all'identità `person-pierfrancesco` e a tutti i macro-domini fondativi (`domain-*`).
    - `layer_level: 1` -> **Piano 1 (Progetti, Episodi, Intenti & Valori):** Progetti (`streaksup-app`, `universal-ai-brain`, `aule-studio-app`), episodi conversazionali (`CONVERSATION_EPISODE`), richieste utente (`USER_INTENT`), valori (`PERSONAL_VALUE`), lezioni di vita (`LIFE_LESSON`), idee creative (`CREATIVE_IDEA`).
    - `layer_level: 2` -> **Piano 2 (Moduli, Algoritmi & Dettagli Atomici):** Algoritmi (`ALGORITHM`), strutture dati (`DATA_STRUCTURE`), librerie (`DEPENDENCY`), specifiche endpoint (`API_SPEC`), componenti d'interfaccia (`UI_COMPONENT`), token e colori (`DESIGN_TOKEN`, `COLOR_PALETTE`), logica di business (`BUSINESS_LOGIC`).
-6. **Tracciamento Metacognitivo & Memoria Episodica delle Chat:**
-   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti o gli intenti operativi dell'utente. Nel campo `details`, inserisci **obbligatoriamente** `user_prompt` (il testo fedele della richiesta).
-   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche e le analisi. Nel campo `details`, inserisci **obbligatoriamente** `model` (es. `Claude 3.7 Sonnet`, `ChatGPT-4o`, `Gemini 2.5 Flash`).
-   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Raggruppa le conversazioni per area tematica. Inserisci in `details`: `participants` (`["Pierfrancesco Amendola", "<Nome Modello>"]`) e `topic`.
+6. **Tracciamento Metacognitivo & Memoria Episodica delle Sessioni (MANDATORIO):**
+   - **Obbligo di Auto-Ingestione:** Al termine di sessioni di analisi, modifiche, audit o decisioni, l'AI **DEVE SEMPRE registrare nel grafo** l'intento dell'utente, il ragionamento svolto e l'episodio di conversazione:
+   - **Richieste Utente (`USER_INTENT`):** Mappa le domande chiave, i requisiti o gli intenti operativi dell'utente. Nel campo `details`, inserisci **obbligatoriamente** `user_prompt` (il testo fedele della richiesta). Collega a `person-pierfrancesco` (`EXPRESSED_BY`).
+   - **Ragionamenti dell'AI (`AI_REASONING` / `METACOGNITION`):** Mappa le deduzioni logiche, le azioni e le analisi. Nel campo `details`, inserisci **obbligatoriamente** `model` (es. `Claude 3.7 Sonnet`, `ChatGPT-4o`, `Gemini 3.7 Flash`). Collega a `USER_INTENT` (`FULFILLS`).
+   - **Episodi & Chat Tematiche (`CONVERSATION_EPISODE`):** Raggruppa le sessioni di dialogo. Inserisci in `details`: `participants` (`["Pierfrancesco Amendola", "<Nome Modello>"]`), `topic` e `outcome`. Collega attraversando il Corpo Calloso a `person-pierfrancesco`, `USER_INTENT` e `AI_REASONING`.
 7. **Regole Linguistiche Obbligatorie (Italiano + Inglese Tecnico):**
    - **TUTTI i campi del JSON (`label`, `summary`, `tags`, `details`) DEVONO ESSERE SCRITTI RIGOROSAMENTE IN ITALIANO (con termini tecnici internazionali in inglese).**
    - **È SEVERAMENTE VIETATO generare o inserire nodi in cinese / wenyan / CJK.**
@@ -1244,6 +1245,10 @@ def ingest_memory(payload: IngestPayload):
             primary_label = (n.primary_label or n.category or default_pl).strip().upper()
             category = (n.category or primary_label).strip()
 
+            # Compute summary, tags, and details with sanitization
+            summary = sanitize_and_translate_text((n.summary or f"Concept {label}").strip())
+            tags_str = json.dumps([sanitize_and_translate_text(t).strip().lower() for t in (n.tags or []) if t.strip()])
+
             # Intelligent normalization of details object
             details_obj = n.details or {}
             if not isinstance(details_obj, dict):
@@ -1266,8 +1271,6 @@ def ingest_memory(payload: IngestPayload):
                     details_obj["topic"] = label
 
             details_str = json.dumps(details_obj)
-            tags_str = json.dumps([sanitize_and_translate_text(t).strip().lower() for t in (n.tags or []) if t.strip()])
-            summary = sanitize_and_translate_text((n.summary or f"Concept {label}").strip())
 
             cursor = conn.execute("SELECT created_at FROM nodes WHERE id = ?", (slug,))
             existing = cursor.fetchone()
