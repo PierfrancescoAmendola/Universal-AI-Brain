@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-28 12:51:41 UTC | **Nodi Totali:** 204 (SX: 128 · DX: 76) | **Sinapsi:** 576
+> **Data Generazione:** 2026-08-29 12:45:47 UTC | **Nodi Totali:** 211 (SX: 133 · DX: 78) | **Sinapsi:** 588
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -137,6 +137,10 @@
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render.
   - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'utente valuta l'implementazione di un bot Telegram per interagire con il proprio Knowledge Graph", 'Richiesta di valutazione su utilità, gratuità e difficoltà implementativa'], 'inferred': ["L'integrazione riduce drasticamente l'attrito di inserimento dati (write) e consultazione (read)", "L'architettura Telegram agisce come livello di Input/Output percettivo del cervello artificiale"], 'ambiguous': []}, `architectural_synthesis`: Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render., `model`: LLM Assistant (Historical Session)
+- **Diagnosi Discrepanza Nodi e Protocollo Deploy Render** (`reasoning-diagnosi-discrepanza-deploy-render`)
+  - **Tags:** `#render` `#deploy` `#git-push` `#wal-checkpoint` `#sync`
+  - **Sintesi:** Identificati 4 nodi locali non committati (Royal Gambit Chess / Duolingo Chess). Eseguito WAL checkpoint, aggiornato brain.md e push Git per triggerare auto-deploy Render.
+  - **Dettagli:** `model`: Gemini 3.7 Flash, `responses_given`: Spiegata la causa della discrepanza (i nodi locali creati non erano stati committati e pushati su GitHub da cui Render effettua il build/deploy). Eseguito allineamento e push., `actions_taken`: ['Confronto diff nodi locali vs endpoint Render', 'Identificati 4 nodi locali: design-duolingo-chess-system, user-intent-duolingo-chess-preference, tech-minimax-chess-engine, project-royal-gambit-chess', 'Aggiornato brain.md sincronizzato con DB', 'Eseguito PRAGMA wal_checkpoint(FULL)', 'Git commit e push su origin/main'], `outcome`: Database allineato e auto-deploy Render avviato con successo.
 - **Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€** (`ai-reasoning-hybrid-search-mcp`)
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
@@ -195,6 +199,9 @@
   - **Tags:** `#mutation-import` `#serialization-layer` `#algorithmic-projection`
   - **Sintesi:** Maximum Spanning Tree (Conceptual Backbone) (Layer: SERIALIZATION_LAYER, Tipo: ALGORITHMIC_PROJECTION)
   - **Dettagli:** `id`: node_mst_conceptual_backbone, `label`: Maximum Spanning Tree (Conceptual Backbone), `type`: ALGORITHMIC_PROJECTION, `layer`: SERIALIZATION_LAYER
+- **Motore Scacchi Minimax & Valutazione** (`tech-minimax-chess-engine`)
+  - **Tags:** `#scacchi` `#minimax` `#alpha-beta` `#swift` `#algoritmi`
+  - **Sintesi:** Engine scacchistico nativo Swift con ricerca minimax, alpha-beta pruning, valutazione posizionale, calcolo asincrono dei suggerimenti e supporto 4 livelli bot.
 - **ParticleSimulator 3D** (`proj-particlesimulator`)
   - **Tags:** `#javascript` `#threejs` `#webgl` `#mediapipe` `#gesture-control`
   - **Sintesi:** Motore fisico generativo 3D in tempo reale con controllo tramite gesture della mano via computer vision.
@@ -319,6 +326,9 @@
   - **Tags:** `#mutation-import` `#integration-layer` `#mcp-tool`
   - **Sintesi:** MCP Tool: brain_get_tree (Layer: INTEGRATION_LAYER, Tipo: MCP_TOOL)
   - **Dettagli:** `id`: node_mcp_brain_get_tree, `label`: MCP Tool: brain_get_tree, `type`: MCP_TOOL, `layer`: INTEGRATION_LAYER
+- **Royal Gambit Chess iOS App** (`project-royal-gambit-chess`)
+  - **Tags:** `#ios` `#swift` `#swiftui` `#scacchi` `#minimax` `#duolingo` `#gamification`
+  - **Sintesi:** Applicazione iOS nativa di scacchi per iPhone in Swift/SwiftUI con motore minimax bitboard, stile grafico Duolingo 2D Flat & 3D Tactile, bot con persona (Duo, Oscar, Athena, Magnus), sistema di streak, e Academy interattiva.
 - **SQLite WAL Storage Engine** (`sqlite-wal-persistence`)
   - **Tags:** `#sqlite` `#wal` `#embedded` `#atomic` `#zero-cost` `#persistence`
   - **Sintesi:** Motore di persistenza embedded senza server né costi di licenza, con Write-Ahead Logging per letture e scritture concorrenti sicure.
@@ -511,6 +521,10 @@
   - **Dettagli:** `id`: node_ubiquitous_ingestion, `label`: Ubiquitous Memory Ingestion, `type`: COGNITIVE_CAPABILITY, `layer`: DYNAMIC_PLASTICITY
 
 ### [Macro-Label: `USER_INTENT`]
+- **Allineamento e Diagnosi Discrepanza Nodi Render e Locale** (`user-intent-allineamento-nodi-render`)
+  - **Tags:** `#render` `#sync` `#deploy` `#git` `#discrepanza`
+  - **Sintesi:** Richiesta di spiegazione sulla discrepanza tra 208 nodi locali e 204 su Render e sincronizzazione del database cloud.
+  - **Dettagli:** `user_prompt`: /universal-brain /graphify aggiorna i nodi su render. qui ne 208 su render 204, perchè??, `context`: Discrepanza di 4 nodi tra ambiente locale e istanza Render cloud dovuta a commit pendente.
 - **Intento Utente: Collegare Cervello via MCP e Skill a Claude, Gemini e ChatGPT** (`user-intent-connect-gemini-claude-chatgpt-mcp`)
   - **Tags:** `#user-intent` `#mcp-integration` `#multi-model-sync`
   - **Sintesi:** Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
@@ -583,6 +597,9 @@
   - **Tags:** `#audit` `#qa` `#bugfix` `#cross-chat-memory` `#omniscienza` `#graphify`
   - **Sintesi:** Richiesta di revisione completa del codice, verifica errori, prompt, documentazione e garanzia assoluta di persistenza del contesto conversazionale per garantire continuità cognitiva cross-chat.
   - **Dettagli:** `area`: Audit, QA, Cross-Chat Memory Persistence, Protocollo Graphify, `context`: L'utente richiede che ogni chat inserisca tutto il contesto, le risposte date e le decisioni, affinché cambiando chat l'AI mantenga omniscienza totale senza perdita di memoria., `timestamp`: 2026-08-28T14:51:11+02:00, `user_prompt`: l'ai deve inserire il contesto della chat, le risposte date, tutto, in modo tale che cambiando chat sappia tutto ti trovi?? abbiamo fatto questo??? è presente questa condizione, è così realizzato lo schema???
+- **Preferenze Pierfrancesco Grafica Scacchi Duolingo** (`user-intent-duolingo-chess-preference`)
+  - **Tags:** `#pierfrancesco` `#preferenze` `#duolingo` `#scacchi` `#ui-ux`
+  - **Sintesi:** Pierfrancesco richiede massima fedeltà visiva allo stile Duolingo Chess: scacchiera menta e bianco, pezzi 2D piatti vettoriali con gerarchia scalare, pulsanti 3D tattili e mascotte Duo interattiva.
 - **Prevenzione Perdita Contesto per Saturazione Finestra Chat** (`user-intent-infinite-context-persistence`)
   - **Tags:** `#user-intent` `#context-preservation` `#infinite-memory` `#chat-saturation` `#zero-loss` `#cross-session`
   - **Sintesi:** Volontà utente: azzerare la perdita di contesto causata dalla saturazione delle finestre di contesto degli LLM, garantendo continuità cognitiva perenne tra chat diverse.
@@ -635,6 +652,10 @@
   - **Dettagli:** `flame_gradient`: ['#FFE066', '#FF8C00', '#FF3B30'], `freeze_cyan`: #00C7BE, `success_green`: #34C759, `urgent_red`: #FF3B30, `electric_blue`: #007AFF
 
 ### [Macro-Label: `CONVERSATION_EPISODE`]
+- **Allineamento Nodi Locale vs Render Cloud e Sincronizzazione Deploy** (`episode-allineamento-nodi-render-cloud`)
+  - **Tags:** `#episodio-chat` `#render-sync` `#cloud-deploy` `#pierfrancesco`
+  - **Sintesi:** Sessione di verifica e sincronizzazione dei nodi della memoria tra ambiente locale e istanza Render.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Allineamento nodi e deploy Render per Universal Brain, `key_takeaways`: Render usa il repository Git per il deploy; qualsiasi modifica locale a brain.db richiede commit e push su origin/main per aggiornare il cloud., `pending_tasks`: Verifica del completamento del deploy su Render via endpoint /brain.json.
 - **Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay** (`ep-20260827-hierarchical-overlay-reassurance`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:38:00CEST: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay
@@ -783,6 +804,9 @@
   - **Tags:** `#design-system` `#tokens` `#css` `#dark-mode`
   - **Sintesi:** Design system scuro ad alto contrasto con superfici semitrasparenti e accenti luminosi.
   - **Dettagli:** `bg_base`: #0A0E17, `bg_surface`: #0F172A, `bg_panel`: #121826, `border_subtle`: rgba(255, 255, 255, 0.08), `glass_blur`: 16px
+- **Design System Duolingo Chess** (`design-duolingo-chess-system`)
+  - **Tags:** `#duolingo` `#design-system` `#color-palette` `#3d-buttons` `#vector-art`
+  - **Sintesi:** Design system ispirato a design.duolingo.com e blog.duolingo.com. Palette ufficiale Duolingo, pulsanti 3D estrusi, sagome vettoriali parametriche e mascotte Duo il Gufo.
 - **Design Token: Palette Deep-Tech & Cyberpunk Minimalist** (`design-token-cyberpunk-minimalist-palette`)
   - **Tags:** `#design-system` `#color-palette` `#dark-tech` `#cyberpunk` `#bento-grid`
   - **Sintesi:** Sistema di design tokens e palette colori per l interfaccia utente ispirata a Graphify.com e Caveman.so: Deep Void (#07080c), Neon Cyan (#00D2FF), Cyber Magenta (#FF007F) e Electric Purple (#A855F7).
@@ -1127,6 +1151,7 @@
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-hierarchical-tree-deployment-sync`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`) *(Corpo Calloso)*
 - (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-allineamento-nodi-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`aule-studio-backend-arch`) --[FEEDS_DATA_TO]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
@@ -1136,6 +1161,7 @@
 - (`identity-cs-researcher`) --[HARMONIZES]--> (`creative-multidisciplinary`) *(Corpo Calloso)*
 - (`proj-napolilive`) --[HONORS]--> (`rel-napoli-culture`) *(Corpo Calloso)*
 - (`proj-linkly-qr`) --[IMPLEMENTS]--> (`ux-frictionless`) *(Corpo Calloso)*
+- (`project-royal-gambit-chess`) --[IMPLEMENTS]--> (`design-duolingo-chess-system`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[IMPLEMENTS_UI]--> (`feat-dark-tech-frontend-restyle`) *(Corpo Calloso)*
 - (`proj-alcolsafe`) --[INCORPORATES_UI]--> (`ui-gauge-widget-alcolsafe`) *(Corpo Calloso)*
 - (`user-intent-frontend-professional-restyle`) --[INSPIRED]--> (`feat-dark-tech-frontend-restyle`) *(Corpo Calloso)*
@@ -1145,6 +1171,7 @@
 - (`person-pierfrancesco`) --[MASTERS_STACK]--> (`flutter-dart-ecosystem`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[MASTERS_STACK]--> (`fastapi-python-stack`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-continuous-evolution`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[OWNS]--> (`project-royal-gambit-chess`) *(Corpo Calloso)*
 - (`arch-telegram-webhook-gateway`) --[PART_OF]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`idea-hierarchical-weighted-trees`) --[PART_OF]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[PART_OF_EPISODE]--> (`ep-20260827-graph-taxonomy-classification`) *(Corpo Calloso)*
@@ -1167,6 +1194,8 @@
 - (`aule-studio-app`) --[PROVIDES_FLOW]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
 - (`ai-reasoning-episodic-memory-architecture`) --[REASONED_DURING]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[RECORDED_EPISODE]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
+- (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
+- (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[RENDERED_VIA]--> (`aule-studio-mobile-ui`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[RENDERS_FX]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-clean-clustered-ui`) *(Corpo Calloso)*
@@ -1335,6 +1364,7 @@
 - (`person-pierfrancesco`) --[COLLABORATES_WITH]--> (`rel-antonio-chieppa`)
 - (`goal-multi-ai-shared-context-persistence`) --[COMPLEMENTS]--> (`user-intent-provenance-model-tracking`)
 - (`node-search-tree-deliberation`) --[CONSOLIDATES_DISCOVERED_PATHS_INTO]--> (`node-knowledge-graph-memory`)
+- (`design-duolingo-chess-system`) --[CONTAINS]--> (`design-duolingo-chess-pieces`)
 - (`domain-ai-cognitive-systems`) --[CONTAINS_CONCEPT]--> (`concept-interhemispheric-inhibition-gating`)
 - (`aule-studio-app`) --[CONTAINS_MODULE]--> (`aule-studio-backend-arch`)
 - (`domain-medicina-salute`) --[CONTAINS_MODULE]--> (`medical-onicocriptosi-unghia-incarnita`)
@@ -1442,6 +1472,7 @@
 - (`ai-reasoning-infinite-context-architecture`) --[FORMALIZES]--> (`user-intent-infinite-context-persistence`)
 - (`node-neuro-symbolic-brain`) --[FORMALLY_CLASSIFIED_AS]--> (`node-universal-ai-brain-taxonomy`)
 - (`ai-reasoning-episodic-memory-architecture`) --[FORMULATED_RULE]--> (`rule-episodic-chat-preservation`)
+- (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-taxonomy-classification`)
 - (`intent-ep-20260827-graph-tree-unification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-tree-unification`)
 - (`intent-ep-20260827-hierarchical-overlay-reassurance`) --[GENERATES_REASONING]--> (`reason-ep-20260827-hierarchical-overlay-reassurance`)
@@ -1462,6 +1493,7 @@
 - (`universal-ai-brain`) --[INCORPORATES]--> (`tax-ai-reasoning`)
 - (`node-universal-ai-brain-taxonomy`) --[INCORPORATES_AS_CORE_FEATURE]--> (`node-epistemic-grading-system`)
 - (`universal-ai-brain`) --[INTEGRATES_AUDIT]--> (`graphify-knowledge-engine`)
+- (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`skill-universal-brain-installed`) --[INTERFACES_WITH]--> (`node-knowledge-graph-memory`)
 - (`node-mcp-brain-get-tree`) --[INTERROGATES]--> (`node-hierarchical-tree-engine-impl`)
 - (`streaksup-darwin-ipc-protocol`) --[INVALIDATES_CACHE_FOR]--> (`streaksup-swiftdata-arch`)
@@ -1473,6 +1505,7 @@
 - (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`)
 - (`node-knowledge-graph-memory`) --[ORGANIZES_CLUSTERS_INTO]--> (`node-hierarchical-dendrogram`)
 - (`user-intent-reasoning-and-chat-memory`) --[ORIGINATED]--> (`tax-ai-reasoning`)
@@ -1502,11 +1535,14 @@
 - (`concept-llm-indirect-injection-safeguard`) --[RESOLVES_ISSUE_OF]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[RESPONDS_TO_INTENT]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`person-pierfrancesco`) --[ROOTED_IN]--> (`rel-napoli-culture`)
+- (`project-royal-gambit-chess`) --[SATISFIES]--> (`user-intent-duolingo-chess-preference`)
 - (`person-pierfrancesco`) --[STRIVES_FOR]--> (`val-impact-utility`)
 - (`identity-cs-researcher`) --[STUDIED]--> (`coursework-cs-federico2`)
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
+- (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-zero-cost-graphrag`) --[TRIGGERS]--> (`ai-reasoning-hybrid-search-mcp`)
 - (`person-pierfrancesco`) --[UPHOLDS]--> (`val-transparency-loyalty`)
+- (`project-royal-gambit-chess`) --[USES]--> (`tech-minimax-chess-engine`)
 - (`node-neuro-symbolic-brain`) --[USES_AS_CEREBRAL_CORTEX]--> (`node-knowledge-graph-memory`)
 - (`node-neuro-symbolic-brain`) --[USES_AS_PREFRONTAL_DELIBERATION]--> (`node-search-tree-deliberation`)
 - (`identity-cs-researcher`) --[UTILIZES]--> (`arch-sqlite-wal`)
