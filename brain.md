@@ -1,7 +1,7 @@
 # Universal AI Brain - Connettoma Neurale
 
-- **Nodi:** 271
-- **Sinapsi:** 721
+- **Nodi:** 274
+- **Sinapsi:** 727
 
 ### Analisi Algoritmica: BST vs Spanning Tree & Tassonomia Gerarchica (`analysis-bst-vs-graph-taxonomy`)
 - **Emisfero:** LEFT | **Taxonomy:** AI_REASONING
@@ -62,6 +62,10 @@
 ### Deduzione AI: Rilascio e Sincronizzazione dell'Hierarchical Tree (`reason-ep-20260827-hierarchical-tree-deployment-sync`)
 - **Emisfero:** LEFT | **Taxonomy:** AI_REASONING
 - **Sintesi:** Formalizzata la transizione dell'Universal Knowledge Graph in una piattaforma multiscalare dotata di motore ad albero nativo, interfaccia web interattiva e binding MCP universale.
+
+### Deduzione AI: Risposta Perfetta di OpenJarvis con Connettoma Neurale (`reasoning-verifica-openjarvis-ollama-gpt-cloud`)
+- **Emisfero:** LEFT | **Taxonomy:** AI_REASONING
+- **Sintesi:** OpenJarvis ha interrogato brain.db tramite UniversalBrainTool e generato una risposta completa e accurata sull'identità e architettura di Pierfrancesco.
 
 ### Deduzione AI: Specifiche Tecniche e Mappatura Comandi dell'Hub C (`reason-ep-20260827-telegram-cognitive-hub-spec`)
 - **Emisfero:** LEFT | **Taxonomy:** AI_REASONING
@@ -661,6 +665,10 @@
 - **Emisfero:** LEFT | **Taxonomy:** USER_INTENT
 - **Sintesi:** Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
 
+### Richiesta Utente: Avvio OpenJarvis con Ollama gpt-oss:120b-cloud (`user-intent-avvio-openjarvis-ollama-gpt-cloud`)
+- **Emisfero:** LEFT | **Taxonomy:** USER_INTENT
+- **Sintesi:** Test di esecuzione su OpenJarvis con Ollama gpt-oss:120b-cloud e recupero dal connettoma neurale.
+
 ### Richiesta Utente: Clonazione e Integrazione OpenJarvis Stanford (`user-intent-integrazione-openjarvis-stanford`)
 - **Emisfero:** LEFT | **Taxonomy:** USER_INTENT
 - **Sintesi:** Pierfrancesco richiede di clonare OpenJarvis sul Desktop e connetterlo al proprio Cervello Artificiale sfruttando anche la desktop app.
@@ -772,6 +780,10 @@
 ### Episodio Conversazione: Rilascio JARVIS Voice Assistant su Desktop (`episode-20260829-completamento-rilascio-jarvis-desktop`)
 - **Emisfero:** RIGHT | **Taxonomy:** CONVERSATION_EPISODE
 - **Sintesi:** Creazione completa e test del nuovo assistente vocale JARVIS sul Desktop, con memoria condivisa del Cervello Artificiale.
+
+### Episodio Conversazione: Test Superato OpenJarvis con Ollama (`episode-20260829-test-openjarvis-ollama-successo`)
+- **Emisfero:** RIGHT | **Taxonomy:** CONVERSATION_EPISODE
+- **Sintesi:** Validazione end-to-end completata: OpenJarvis legge il connettoma, esegue inferenza su Ollama e restituisce la descrizione accurata di Pierfrancesco.
 
 ### Episodio Vocale: Jarvis, ricordi quali sono gli emis... (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`)
 - **Emisfero:** RIGHT | **Taxonomy:** CONVERSATION_EPISODE
