@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 13:48:20 UTC | **Nodi Totali:** 241 (SX: 153 · DX: 88) | **Sinapsi:** 653
+> **Data Generazione:** 2026-08-29 14:04:07 UTC | **Nodi Totali:** 245 (SX: 156 · DX: 89) | **Sinapsi:** 661
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -93,6 +93,10 @@
   - **Tags:** `#architecture` `#fsrs` `#web-speech-api` `#sqlite` `#offline-first`
   - **Sintesi:** Proposta di architettura basata su motore Spaced Repetition (FSRS/SM-2), Web Speech API per audio/TTS nativo e integrazione LLM per generazione esercizi e roleplay senza dipendenze esterne bloccanti.
   - **Dettagli:** `core_components`: ['FSRS Engine', 'Local SQLite', 'Web Speech API', 'LLM Contextual Tutor'], `privacy_tier`: Local/Self-hosted, `model`: AI Assistant
+- **Deduzione AI: Architettura JARVIS Voice Agent Zero-Cost con Connettoma MCP** (`reasoning-architettura-jarvis-zero-cost`)
+  - **Tags:** `#architettura` `#jarvis` `#zero-cost` `#mcp` `#voice-pipeline`
+  - **Sintesi:** Validato stack vocale a costo zero: openWakeWord per hotword, Groq/Faster-Whisper per STT rapido, Groq/Gemini Flash per reasoning, Kokoro/Edge-TTS per audio e mcp_server.py per memoria bi-emisferica.
+  - **Dettagli:** `actions_taken`: ['Analisi comparativa repository sukeesh/Jarvis, open-jarvis/OpenJarvis, isair/jarvis', 'Definizione architettura a 5 stadi a costo zero assoluto', 'Mappatura pipeline audio a bassa latenza e integrazione con mcp_server.py'], `model`: Gemini 3.7 Flash, `outcome`: Architettura JARVIS validata, stack 100% free definito ed integrato con Universal AI Brain
 - **Deduzione AI: Architettura a Cluster Tematici Indipendenti** (`ai-reasoning-episodic-memory-architecture`)
   - **Tags:** `#ai-deduction` `#episodic-memory` `#semantic-clustering` `#knowledge-architecture`
   - **Sintesi:** Ragionamento architetturale: creare nodi CONVERSATION_EPISODE autonomi permette di archiviare chat eterogenee senza creare collegamenti artificiali.
@@ -362,6 +366,10 @@
   - **Tags:** `#mutation-import` `#integration-layer` `#mcp-tool`
   - **Sintesi:** MCP Tool: brain_get_tree (Layer: INTEGRATION_LAYER, Tipo: MCP_TOOL)
   - **Dettagli:** `id`: node_mcp_brain_get_tree, `label`: MCP Tool: brain_get_tree, `type`: MCP_TOOL, `layer`: INTEGRATION_LAYER
+- **Progetto: JARVIS Personal AI Voice Assistant** (`proj-jarvis-voice-assistant`)
+  - **Tags:** `#jarvis` `#voice-ai` `#mcp` `#whisper` `#kokoro-tts`
+  - **Sintesi:** Assistente vocale AI continuo in tempo reale a costo zero, integrato con il connettoma SQLite WAL tramite MCP, wake word locale, STT Whisper ultra-rapido e sintesi vocale neurale.
+  - **Dettagli:** `cost_tier`: 0 EUR / 100% Free, `llm_stack`: ['Groq Llama 3.3', 'Gemini 2.5 Flash', 'Ollama Qwen 2.5'], `mcp_integration`: mcp_server.py Universal AI Brain, `stt_engine`: Faster-Whisper / Groq Whisper, `tts_engine`: Kokoro-82M / Edge-TTS, `wake_word`: openWakeWord (Hey Jarvis)
 - **Royal Gambit Chess iOS App** (`project-royal-gambit-chess`)
   - **Tags:** `#ios` `#swift` `#swiftui` `#scacchi` `#minimax` `#duolingo` `#gamification`
   - **Sintesi:** Applicazione iOS nativa di scacchi per iPhone in Swift/SwiftUI con motore minimax bitboard, stile grafico Duolingo 2D Flat & 3D Tactile, bot con persona (Duo, Oscar, Athena, Magnus), sistema di streak, e Academy interattiva.
@@ -683,6 +691,10 @@
   - **Tags:** `#user-request` `#ai-reasoning` `#chat-memory` `#multi-topic`
   - **Sintesi:** Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) in aree separate.
   - **Dettagli:** `user`: Pierfrancesco Amendola, `goal`: Mappare ogni sessione senza forzare connessioni artificiali tra argomenti disomogenei, `user_prompt`: Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) in aree separate.
+- **Richiesta Utente: Progettazione Assistente Vocale JARVIS Personale 100% Gratuito** (`user-intent-creazione-jarvis-voice-assistant`)
+  - **Tags:** `#jarvis` `#voice-assistant` `#zero-cost` `#graphrag` `#openwake-word`
+  - **Sintesi:** Pierfrancesco richiede la progettazione di un assistente vocale continuo JARVIS a costo zero, con wake word, memoria persistente bi-emisferica e visualizzazione a grafo HUD stile Iron Man.
+  - **Dettagli:** `context`: Creazione assistente vocale tipo Iron Man a costo zero (0€), con wake word, LLM gratuiti, TTS neurale, collegato al Persistent Knowledge Graph., `user_prompt`: ho intenzione di creare JARVIS come quello di IronMan... assistente personale vocale, collegato al mio cervello... gratis sia realizzazione che chiamate API
 - **Richiesta Utente: Restyling Professionale e Moderno Frontend** (`user-intent-frontend-professional-restyle`)
   - **Tags:** `#user-request` `#ui-ux` `#professional-look` `#hacker-aesthetic` `#graphify-inspiration`
   - **Sintesi:** Richiesta di rendere l'interfaccia frontend più moderna, pulita e da ingegnere informatico (ispirata a Graphify e Caveman), senza perdere alcuna funzione esistente.
@@ -767,6 +779,10 @@
   - **Tags:** `#chat` `#continuità-cognitiva` `#architettura` `#master-prompt`
   - **Sintesi:** Sessione di allineamento e chiarimento sui meccanismi interni del Cervello Artificiale (SQLite, FTS5, Palazzo Cognitivo, MCP vs Web) e sincronizzazione immediata del Master Prompt per le AI esterne.
   - **Dettagli:** `key_takeaways`: Le AI web usano OpenAPI o Markdown strutturato; il Master Prompt include il Palazzo Cognitivo; ogni sessione viene persistita ed esportata in brain.db e brain.md, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, sincronizzazione completata, `topic`: Architettura Connettoma Neurale e Sincronizzazione Web
+- **Episodio Conversazione: Progettazione JARVIS Voice AI e Integrazione Neurale** (`episode-20260829-progettazione-jarvis-voice-ai`)
+  - **Tags:** `#chat` `#jarvis` `#voice-ai` `#connettoma`
+  - **Sintesi:** Sessione di disamina repository open-source e definizione architetturale completa di JARVIS: assistente vocale continuo a costo zero connesso alla memoria persistente.
+  - **Dettagli:** `key_takeaways`: sukeesh/Jarvis è obsoleto; isair/jarvis è la migliore base di riferimento; stack a costo 0€ confermato con Groq/Gemini + Whisper + Kokoro + MCP., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Sviluppo jarvis_core.py e collegamento audio-MCP, `topic`: Progettazione JARVIS Personal Voice AI a Costo Zero
 - **Episodio: Audit Totale & Continuità Cognitiva Cross-Chat** (`episode-audit-completo-e-potenziamento-skill`)
   - **Tags:** `#sessione-audit` `#pierfrancesco` `#universal-brain` `#cross-chat-memory` `#metamemoria`
   - **Sintesi:** Sessione di audit intensivo, correzione bug su backend/MCP/Telegram, potenziamento formale della skill per continuità cross-chat e persistenza delle risposte fornite nel knowledge graph.
@@ -1290,6 +1306,7 @@
 - (`user-intent-allineamento-nodi-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-creazione-jarvis-voice-assistant`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1337,6 +1354,7 @@
 - (`ai-reasoning-episodic-memory-architecture`) --[REASONED_DURING]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[RECORDED_EPISODE]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_INTENT]--> (`user-intent-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
+- (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_INTENT]--> (`user-intent-creazione-jarvis-voice-assistant`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
@@ -1344,6 +1362,7 @@
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_REASONING]--> (`reasoning-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
+- (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_REASONING]--> (`reasoning-architettura-jarvis-zero-cost`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
@@ -1624,6 +1643,7 @@
 - (`universal-ai-brain`) --[EXPOSES_PROTOCOL]--> (`ai-memory-ingest-spec`)
 - (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`)
 - (`user-intent-provenance-model-tracking`) --[EXTENDS]--> (`ai-memory-ingest-spec`)
+- (`proj-jarvis-voice-assistant`) --[EXTENDS_BRAIN]--> (`universal-ai-brain`)
 - (`concept-graph-of-graphs-hypergraph`) --[EXTENDS_MODULARITY]--> (`concept-modular-domain-subgraphs`)
 - (`repo-github-universal-ai-brain`) --[FEEDS_DEPLOY]--> (`deploy-render-zero-cost`)
 - (`node-ubiquitous-ingestion`) --[FEEDS_REALTIME_DATA_INTO]--> (`node-knowledge-graph-memory`)
@@ -1632,6 +1652,7 @@
 - (`ai-reasoning-episodic-memory-architecture`) --[FORMULATED_RULE]--> (`rule-episodic-chat-preservation`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
+- (`reasoning-architettura-jarvis-zero-cost`) --[FULFILLS]--> (`user-intent-creazione-jarvis-voice-assistant`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[FULFILLS]--> (`user-intent-comando-prompt-copia-rapi-8585`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[FULFILLS]--> (`user-intent-occultamento-pulsanti-mob-9019`)
@@ -1658,6 +1679,7 @@
 - (`node-universal-ai-brain-taxonomy`) --[INCORPORATES_AS_CORE_FEATURE]--> (`node-epistemic-grading-system`)
 - (`universal-ai-brain`) --[INTEGRATES_AUDIT]--> (`graphify-knowledge-engine`)
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-20260829-progettazione-jarvis-voice-ai`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -1677,6 +1699,7 @@
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-analisi-fattibilita-language-app`) --[OPTIMIZES]--> (`reasoning-language-app-architecture`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-architettura-jarvis-zero-cost`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -1721,6 +1744,7 @@
 - (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-creazione-jarvis-voice-assistant`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
