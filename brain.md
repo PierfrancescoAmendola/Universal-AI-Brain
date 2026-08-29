@@ -16,12 +16,13 @@
 3. **Tassonomia Rigorosa a Due Emisferi:**
    - **EMISFERO SINISTRO (LEFT - Logica, Architettura, Richieste & Ragionamento):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
    - **EMISFERO DESTRO (RIGHT - Design, Emozioni, Episodi & Dialoghi):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
-4. **Macro-Domini Fondativi & Regole di Creazione Dinamica:**
-   - **Pilastri Esistenti:** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
-   - **Autorizzazione Nuovi Domini:** Se un argomento non è rappresentabile dai domini esistenti (es. Storia/Cultura, Relazioni/Sentimenti, Finanza), l'AI è **esplicitamente autorizzata a creare un nuovo macro-dominio** (`id: "domain-<nome>"`, `category: "ROOT_DOMAIN"`, `layer_level: 0`, `parent_graph_id: "root"`), collegandolo a `person-pierfrancesco` con arco `FOUNDATIONAL_PILLAR` o `LIFE_DOMAIN`.
+4. **I 12 Macro-Domini Fondativi Sigillati (Piano 0 Immutabile):**
+   - **Emisfero Sinistro (Logica & Scienza):** `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-scienza-matematica`, `domain-finanza-economia`, `domain-produttivita-sistemi`.
+   - **Emisfero Destro (Arte, Valori & Relazioni):** `domain-design-creativita`, `domain-musica-audio`, `domain-filosofia-valori`, `domain-relazioni-comunicazione`, `domain-crescita-personale`, `domain-cultura-storia`.
+   - **DIVIETO ASSOLUTO DI CREAZIONE DOMINI:** È severamente vietato alle AI creare nuovi nodi `domain-*` o impostare `layer_level: 0` o `parent_graph_id: "root"`. Il Piano 0 contiene solo `person-pierfrancesco` e i 12 domini. Ogni nuovo nodo, intento o episodio DEVE avere come `parent_graph_id` uno dei 12 domini ufficiali o un progetto esistente.
 5. **Gerarchia a 3 Piani del Palazzo Cognitivo (`layer_level`):**
-   - `layer_level: 0` -> **Piano 0 (Attico Macro-Domini & Core Hubs):** Riservato all'identità `person-pierfrancesco` e a tutti i macro-domini fondativi (`domain-*`).
-   - `layer_level: 1` -> **Piano 1 (Progetti, Episodi, Intenti & Valori):** Progetti (`streaksup-app`, `universal-ai-brain`, `aule-studio-app`), episodi conversazionali (`CONVERSATION_EPISODE`), richieste utente (`USER_INTENT`), valori (`PERSONAL_VALUE`), lezioni di vita (`LIFE_LESSON`), idee creative (`CREATIVE_IDEA`).
+   - `layer_level: 0` -> **Piano 0 (Attico Fondativo SIGILLATO):** Riservato ESCLUSIVAMENTE a `person-pierfrancesco` e ai 12 Macro-Domini fondativi (`domain-*`).
+   - `layer_level: 1` -> **Piano 1 (Progetti, Episodi, Intenti & Valori):** Progetti (`universal-ai-brain`, `project-royal-gambit-chess`, `proj-streaksup-app`, `aule-studio-app`, `proj-caretrack`), episodi conversazionali (`CONVERSATION_EPISODE`), richieste utente (`USER_INTENT`), valori (`PERSONAL_VALUE`), lezioni di vita (`LIFE_LESSON`), idee creative (`CREATIVE_IDEA`).
    - `layer_level: 2` -> **Piano 2 (Moduli, Algoritmi & Dettagli Atomici):** Algoritmi (`ALGORITHM`), strutture dati (`DATA_STRUCTURE`), librerie (`DEPENDENCY`), specifiche endpoint (`API_SPEC`), componenti d'interfaccia (`UI_COMPONENT`), token e colori (`DESIGN_TOKEN`, `COLOR_PALETTE`), logica di business (`BUSINESS_LOGIC`).
 6. **Tracciamento Metacognitivo & Memoria Episodica delle Sessioni (MANDATORIO):**
    - **Obbligo di Auto-Ingestione:** Al termine di sessioni di analisi, modifiche, audit o decisioni, l'AI **DEVE SEMPRE registrare nel grafo** l'intento dell'utente, il ragionamento svolto e l'episodio di conversazione:
@@ -69,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 18:53:27 UTC | **Nodi Restituiti:** 310 (SX: 199 · DX: 111) | **Sinapsi Restituite:** 803
-> **Consistenza Reale Connettoma:** 310 Nodi Totali nel Database | 803 Sinapsi Totali
+> **Data Generazione:** 2026-08-29 19:01:04 UTC | **Nodi Restituiti:** 320 (SX: 204 · DX: 116) | **Sinapsi Restituite:** 828
+> **Consistenza Reale Connettoma:** 320 Nodi Totali nel Database | 828 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -156,6 +157,10 @@
   - **Tags:** `#openjarvis` `#ollama` `#universal-brain` `#validazione`
   - **Sintesi:** OpenJarvis ha interrogato brain.db tramite UniversalBrainTool e generato una risposta completa e accurata sull'identità e architettura di Pierfrancesco.
   - **Dettagli:** `raw`: `actions_taken`: ['Configurato OpenJarvis con motore Ollama localhost:11434', 'Eseguito ask "Chi è Pierfrancesco?" con UniversalBrainTool attivo', 'Modello gpt-oss:120b-cloud ha risposto citando esattamente il connettoma bi-emisferico e i valori di Pierfrancesco'], `model`: gpt-oss:120b-cloud, `outcome`: Integrazione OpenJarvis + Ollama + Universal AI Brain perfettamente funzionante
+- **Deduzione AI: Sigillatura Architetturale Piano 0 e Re-Parenting Connettoma** (`reasoning-ristrutturazione-sigillo-12-domini-completata`)
+  - **Tags:** `#architettura` `#palazzo-cognitivo` `#re-parenting` `#piano-0`
+  - **Sintesi:** Eseguita migrazione conservativa: 12 macro-domini canonici registrati a Piano 0 (13 nodi totali con identità centrale), ri-parenting di 244 nodi a Piano 1 e 60 nodi a Piano 2, aggiornato prompt.md e skill.
+  - **Dettagli:** `actions_taken`: ['Creazione 12 Macro-Domini canonici (6 SX, 6 DX)', 'Ri-parenting semantico di tutti i nodi orfani verso progetti e domini naturali', 'Sigillatura Piano 0 in main.py, prompt.md e skill universal-brain', 'Test integrità gerarchia Palazzo Cognitivo (13 nodi a Piano 0)'], `model`: Gemini 3.7 Flash, `outcome`: Gerarchia connettoma pulita, 0 nodi persi, Piano 0 sigillato con 12 macro-domini immutabili
 - **Deduzione AI: Specifiche Tecniche e Mappatura Comandi dell'Hub C** (`reason-ep-20260827-telegram-cognitive-hub-spec`)
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Definita la pipeline I/O perimetrale: Telegram App -> HTTPS Webhook (/api/telegram/webhook) -> Whitelist Auth -> Intent Router (/search, /path, /tree, Ingest) -> brain.db.
@@ -317,6 +322,10 @@
   - **Tags:** `#bioinformatics` `#deep-learning` `#pytorch` `#medical-imaging` `#thesis`
   - **Sintesi:** Ricerca su modelli di deep learning e computer vision per diagnosi istopatologica (Dr.ssa Brancati, Prof. Riccio).
   - **Dettagli:** `raw`: `stack`: Python, PyTorch, OpenCV, Scikit-learn, `validation`: AUC-ROC, F1-Score, `completion`: Maggio 2026
+- **Dominio: Scienza, Matematica & Algoritmica** (`domain-scienza-matematica`)
+  - **Tags:** `#domain-hub` `#matematica` `#algoritmi` `#statistica` `#fisica` `#teoria-informazione`
+  - **Sintesi:** Matematica pura e applicata, Algoritmica teorica, Statistica, Fisica, Teoria dell'Informazione e Modelli Formali.
+  - **Dettagli:** `scope`: Mathematical modeling, algorithms, statistics, complexity theory
 - **Graphify Codebase Knowledge Extractor** (`graphify-knowledge-engine`)
   - **Tags:** `#graphify` `#ast` `#knowledge-graph` `#god-nodes` `#community-detection`
   - **Sintesi:** Motore di analisi statica AST e semantica che rileva community, nodi baricentrici (God Nodes) e ponti architetturali nel repository.
@@ -417,17 +426,17 @@
   - **Sintesi:** Commit 965f0a8 (110 Nodes, 253 Synapses) (Layer: DEVOPS_TIMELINE, Tipo: GRAPH_STATE)
   - **Dettagli:** `raw`: `id`: node_commit_965f0a8, `label`: Commit 965f0a8 (110 Nodes, 253 Synapses), `type`: GRAPH_STATE, `layer`: DEVOPS_TIMELINE
 - **Dominio: Ingegneria Software & Architetture** (`domain-software-engineering`)
-  - **Tags:** `#domain-hub` `#software-engineering` `#architecture` `#systems` `#mobile-ios` `#backend`
-  - **Sintesi:** Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite.
-  - **Dettagli:** `raw`: `scope`: All active software projects and engineering foundations
+  - **Tags:** `#domain-hub` `#software-engineering` `#backend` `#frontend` `#architecture` `#sqlite-wal` `#fastapi`
+  - **Sintesi:** Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite e linguaggi di programmazione.
+  - **Dettagli:** `scope`: Software engineering, backend, web systems, databases, distributed architecture
 - **Dominio: Medicina, Salute & Fisiologia** (`domain-medicina-salute`)
-  - **Tags:** `#domain-hub` `#medicina` `#salute` `#dermatologia` `#podologia` `#fisiologia`
-  - **Sintesi:** Medicina, Salute, Nutrizione, Fisiologia, Fitness e Bioinformatica Deep Learning (ricerca ICAR-CNR).
-  - **Dettagli:** `raw`: `scope`: Medical knowledge, health entities, clinical logic
+  - **Tags:** `#domain-hub` `#medicina` `#salute` `#dermatologia` `#podologia` `#fisiologia` `#fitness` `#bioinformatica`
+  - **Sintesi:** Medicina, Salute, Nutrizione, Fisiologia, Fitness, Dermatologia, Podologia e Bioinformatica Deep Learning (ricerca ICAR-CNR).
+  - **Dettagli:** `scope`: Medical research, healthcare, physiology, dermatology, clinical logic
 - **Dominio: Sistemi Cognitivi, Neuro-Simbolico & LLM** (`domain-ai-cognitive-systems`)
-  - **Tags:** `#domain-hub` `#cognitive-ai` `#neuro-symbolic` `#graphrag` `#memory-systems` `#mcp`
-  - **Sintesi:** Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP (Model Context Protocol), Metacognizione.
-  - **Dettagli:** `raw`: `scope`: Cognitive architectures, graph reasoning, LLM symbiosis
+  - **Tags:** `#domain-hub` `#cognitive-ai` `#neuro-symbolic` `#graphrag` `#memory-systems` `#mcp` `#metacognition`
+  - **Sintesi:** Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP (Model Context Protocol), Metacognizione e Agentic Systems.
+  - **Dettagli:** `scope`: Cognitive architectures, graph reasoning, LLM memory continuity, MCP tooling
 - **Epistemic Grading (Extracted/Inferred/Ambiguous)** (`node-epistemic-grading-system`)
   - **Tags:** `#mutation-import` `#epistemic-layer` `#representation-feature`
   - **Sintesi:** Epistemic Grading (Extracted/Inferred/Ambiguous) (Layer: EPISTEMIC_LAYER, Tipo: REPRESENTATION_FEATURE)
@@ -520,6 +529,10 @@
   - **Tags:** `#darwin-notifications` `#ipc` `#cross-process` `#cfnotificationcenter`
   - **Sintesi:** Protocollo di sincronizzazione inter-processo basato su CFNotificationCenter per invalidare la cache ModelContext dell'app ad ogni mutazione da widget.
   - **Dettagli:** `raw`: `notification_name`: com.pierfrancescoamendola.streaksup.habitDataChanged, `center`: CFNotificationCenterGetDarwinNotifyCenter(), `action`: modelContext.rollback() + fetchHabits()
+- **Dominio: Finanza, Economia & Business** (`domain-finanza-economia`)
+  - **Tags:** `#domain-hub` `#finanza` `#economia` `#business-models` `#investimenti` `#strategia`
+  - **Sintesi:** Gestione Finanziaria, Investimenti, Economia, Business Models, Strategia d'Impresa e Gestione Patrimoniale.
+  - **Dettagli:** `scope`: Finance, investment strategy, economic models, enterprise value
 - **Guida Rapida all'AI & Publishing KDP** (`proj-kdp-ai-book`)
   - **Tags:** `#latex` `#amazon-kdp` `#publishing` `#artificial-intelligence`
   - **Sintesi:** Manuale tecnico-divulgativo sull'AI e pipeline editoriale basata su LaTeX conforme alle specifiche di stampa Amazon KDP.
@@ -574,6 +587,10 @@
   - **Tags:** `#brain-md` `#system-prompt` `#reasoning-trace` `#graphify-directive`
   - **Sintesi:** Regola 4 di brain.md: impone a qualsiasi LLM di distillare non solo i comandi dell'utente ma anche le proprie motivazioni logiche in nodi AI_REASONING.
   - **Dettagli:** `raw`: `directive_file`: brain.md, `rules_updated`: ['Rule 3 (Taxonomy)', 'Rule 4 (AI Reasoning Hub)', 'Rule 5 (Dual Ingest)']
+- **Dominio: Produttività, Sistemi Operativi & Automazione** (`domain-produttivita-sistemi`)
+  - **Tags:** `#domain-hub` `#produttivita` `#automazione` `#workflows` `#time-management` `#life-ops`
+  - **Sintesi:** Workflow operativi, Strumenti di automazione, Metodologie di Studio e Lavoro, Gestione del Tempo e Life Operations.
+  - **Dettagli:** `scope`: Productivity workflows, time management, automation tools, habits
 - **Epistemologia & Divieto Allucinazioni** (`epistemologia-rigorosa`)
   - **Tags:** `#epistemologia` `#fatti-verificati` `#no-hallucination`
   - **Sintesi:** Distinzione rigorosa tra fatti dichiarati ed inferenze; divieto di fabbricare dettagli emotivi o tecnici privi di fonte.
@@ -873,6 +890,10 @@
   - **Tags:** `#ui-design` `#visual-paradigms` `#graph-visualization` `#interfaccia`
   - **Sintesi:** Richiesta utente di visualizzare nuovi disegni, interfacce e layout architetturali per rappresentare il connettoma neurale (307 nodi, 2 emisferi).
   - **Dettagli:** `context`: Richiesta di vedere nuovi layout, disegni e stili d'interfaccia per il grafo a due emisferi, `user_prompt`: adesso abbiamo avuto un miglioramento e potenziamento??? ora voglio vedere altri esempi di rappresentare il nostro grafo, voglio vedere altri modi, altri 'disegni', deve rimanere così, ma voglio che cambi l'interfaccia chapito che intendo?
+- **Ristrutturazione e Sigillatura dei 12 Macro-Domini Fondativi** (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
+  - **Tags:** `#macro-domini` `#palazzo-cognitivo` `#gerarchia` `#sigillo-piano-0`
+  - **Sintesi:** Riorganizzazione gerarchica del connettoma: sigillatura del Piano 0 con 12 macro-domini canonici, riassegnazione di tutti i nodi orfani e divieto di creazione dinamica per le AI esterne.
+  - **Dettagli:** `context`: Chiusura della tassonomia di Piano 0 e ri-parenting semantico a costo zero e zero perdita dati, `user_prompt`: si assolutamente ristruttura così. però non voglio eprdere i nodi o i loro contenuti dobbiamo solo riorganizzarre. salva tutto il contesto nel cervello mi raccomando !!!
 - **Tracciamento Richiesta Utente & Modello AI nella Memoria** (`user-intent-provenance-model-tracking`)
   - **Tags:** `#user-intent` `#model-attribution` `#context-preservation` `#cross-model-memory` `#episodic-tracking`
   - **Sintesi:** Proposta utente: includere nel JSON di ingestione il prompt integrale e il modello AI sorgente per preservare contesto e consentire recall cross-modello.
@@ -889,6 +910,10 @@
 
 ## EMISFERO DESTRO (Design, Emozioni, Relazioni, Valori, Arte)
 ### [Macro-Label: `BRAND_VOICE`]
+- **Dominio: Cultura, Storia & Linguaggi** (`domain-cultura-storia`)
+  - **Tags:** `#domain-hub` `#cultura` `#storia` `#lingue` `#letteratura` `#viaggi` `#antropologia`
+  - **Sintesi:** Storia, Letteratura, Lingue Straniere, Cultura Generale, Viaggi, Società e Antropologia.
+  - **Dettagli:** `scope`: Culture, world history, foreign languages, anthropology, literature
 - **Terse Caveman Communication Persona** (`terse-caveman-brand-voice`)
   - **Tags:** `#brand-voice` `#smart-caveman` `#ultra-terse` `#no-fluff` `#pure-signal`
   - **Sintesi:** Voce di brand ultra-compressa e ad altissima densità informativa: cadono preamboli, fronzoli e convenevoli; resta la pura verità tecnica.
@@ -1065,6 +1090,10 @@
   - **Tags:** `#session-recap` `#frontend-restyling` `#graphify-aesthetic` `#physics-freeze` `#palazzo-cognitivo` `#zero-lag`
   - **Sintesi:** Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), eliminazione di oscillazioni e rotazioni continue della fisica su Vis-Network, correzione del bug di ispezione nodi e ripristino della gerarchia a piani del Palazzo Cognitivo (P0, P1, P2).
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Antigravity Assistant'], `topic`: Frontend Deep-Tech Restyling & Graph Stability, `outcomes`: ['Implementazione estetica Dark-Tech cyberpunk minimalista con Bento Grid e JetBrains Mono', 'Disabilitazione totale del live physics loop post-stabilizzazione (Zero-Oscillation Freeze)', 'Risoluzione ReferenceError su tags in showInfo() per ispezione istantanea dei nodi', 'Classificazione deterministica dei nodi su 3 piani (P0: 15 nodi, P1: 121 nodi, P2: 53 nodi)', 'Eliminazione di rotazioni e rendering su canvas a 60fps ultra-reattivo']
+- **Episodio: Ristrutturazione Fondativa del Connettoma a 12 Macro-Domini** (`episode-20260829-sigillatura-12-macro-domini`)
+  - **Tags:** `#chat` `#continuità-cognitiva` `#macro-domini` `#palazzo-cognitivo`
+  - **Sintesi:** Riorganizzazione storica e sigillo del Piano 0 del Palazzo Cognitivo con 12 Macro-Domini permanenti e blindatura delle regole di routing.
+  - **Dettagli:** `key_takeaways`: Il Piano 0 è ora immutabile (13 nodi); tutte le future AI devono associare ogni nuovo nodo a uno dei 12 domini, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Sincronizzazione finale PC ⮂ Render Cloud, `topic`: Riorganizzazione Macro-Domini e sigillatura Piano 0
 - **Episodio: Teoria dei Sotto-Grafi Modulari e Decentramento Hub** (`episode-2026-08-27-modular-domain-graph-topology`)
   - **Tags:** `#conversation-episode` `#graph-theory` `#modularity` `#2026-08-27`
   - **Sintesi:** Definizione della topologia a sotto-grafi modulari: entità enciclopediche e verticali isolate da person-pierfrancesco.
@@ -1147,10 +1176,10 @@
   - **Tags:** `#symbiosis` `#continuous-memory` `#ai-evolution` `#dual-brain` `#co-pilot`
   - **Sintesi:** Visione filosofica di un intelligenza aumentata: la memoria dell utente e dei suoi progetti sopravvive tra sessioni distinte attraverso un grafo vivente.
   - **Dettagli:** `raw`: `paradigm`: Co-evolution, `substrate`: Dual Brain Knowledge Graph, `accessibility`: Universal to all LLM agents
-- **Dominio: Design, Brand Voice & Creatività** (`domain-design-creativita`)
-  - **Tags:** `#domain-hub` `#design-system` `#ui-ux` `#brand-voice` `#creativita` `#estetica`
-  - **Sintesi:** UI/UX Design Dark-Tech, Graphic Design, Brand Voice, Arte, Musica ed Ear Training.
-  - **Dettagli:** `raw`: `scope`: Aesthetic world, UI/UX systems, sensory design
+- **Dominio: Musica, Audio & Suono** (`domain-musica-audio`)
+  - **Tags:** `#domain-hub` `#musica` `#audio` `#ear-training` `#composizione` `#sound-design`
+  - **Sintesi:** Teoria Musicale, Ear Training, Composizione, Sound Design, Audio Engineering e Produzione Musicale.
+  - **Dettagli:** `scope`: Music theory, ear training, sound synthesis, composition
 - **Evoluzione UI & Architettura di Memoria Resiliente** (`session-evolution-ui-persistence`)
   - **Tags:** `#session-evolution` `#ui-polish` `#resilience` `#centaur` `#antigravity`
   - **Sintesi:** Sessione di potenziamento dell'Universal AI Brain: introduzione del terminale chiaro, caricamento JSON visuale e blindatura della persistenza.
@@ -1208,6 +1237,10 @@
   - **Tags:** `#design-system` `#color-palette` `#dark-tech` `#cyberpunk` `#bento-grid`
   - **Sintesi:** Sistema di design tokens e palette colori per l interfaccia utente ispirata a Graphify.com e Caveman.so: Deep Void (#07080c), Neon Cyan (#00D2FF), Cyber Magenta (#FF007F) e Electric Purple (#A855F7).
   - **Dettagli:** `raw`: `background`: #07080c (Deep Void), `surface`: #0e1017 (Dark Surface), `panel`: #141722 (Panel Elevato), `left_hemisphere`: #00D2FF (Neon Cyan), `right_hemisphere`: #FF007F (Cyber Magenta), `corpus_callosum`: #A855F7 (Electric Purple), `typography`: JetBrains Mono + Inter/Geist
+- **Dominio: Design, UI/UX & Creatività** (`domain-design-creativita`)
+  - **Tags:** `#domain-hub` `#design` `#ui-ux` `#dark-tech` `#graphic-design` `#brand-voice` `#tipografia`
+  - **Sintesi:** UI/UX Design Dark-Tech, Graphic Design, Brand Voice, Tipografia, Estetica Visiva e Interaction Design.
+  - **Dettagli:** `scope`: UI/UX design systems, aesthetics, typography, branding
 - **StreaksUp Glassmorphic Design System** (`streaksup-glassmorphism-system`)
   - **Tags:** `#glassmorphism` `#materials` `#sf-rounded` `#shadow-elevation`
   - **Sintesi:** Design system basato su materiali SwiftUI (.regularMaterial, .ultraThinMaterial), bordi sfumati con gradienti di categoria e raggi di curvatura continui 20-24pt.
@@ -1220,6 +1253,10 @@
   - **Dettagli:** `raw`: `tension`: Rigore ingegneristico assoluto vs bisogno viscerale di espressione emotiva libera
 
 ### [Macro-Label: `LIFE_LESSON`]
+- **Dominio: Crescita Personale, Abitudini & Benessere** (`domain-crescita-personale`)
+  - **Tags:** `#domain-hub` `#crescita-personale` `#abitudini` `#lezioni-vita` `#benessere` `#riflessioni`
+  - **Sintesi:** Memoria Episodica di Vita, Lezioni Apprese, Abitudini Quotidiane, Riflessioni Personali, Fitness Mentale e Crescita Continua.
+  - **Dettagli:** `scope`: Personal growth, daily habits, life lessons, holistic wellbeing
 - **Lezione di Architettura: Backend come Singola Sorgente di Verità e Pipeline di Rendering Pulita** (`lesson-backend-ground-truth-and-clean-canvas-rendering`)
   - **Tags:** `#architecture-lesson` `#ground-truth` `#clean-code` `#full-stack-integrity`
   - **Sintesi:** Principio guida per lo sviluppo del Cervello Artificiale: il backend SQLite/FastAPI deve essere l unica sorgente di verità per lo stato e i metadati, mentre il frontend deve limitarsi a presentare i dati con zero loop di rendering o simulazioni fisiche non controllate.
@@ -1247,9 +1284,9 @@
   - **Sintesi:** Valore fondante di Universal AI Brain: nessun pensiero, decisione o ragionamento deve andare perso a causa dei limiti fisici di token delle singole chat.
   - **Dettagli:** `raw`: `anti_pattern_blocked`: Reset amnesico della chat e perdita del filo logico, `principle`: Ogni sessione AI è un frammento transitorio; il grafo è la coscienza persistente unificata., `temporal_scope`: Passato, presente e futuro
 - **Dominio: Filosofia, Etica & Principi di Vita** (`domain-filosofia-valori`)
-  - **Tags:** `#domain-hub` `#filosofia` `#etica` `#resilienza` `#stoicismo` `#valori-personali`
-  - **Sintesi:** Filosofia, Modelli Mentali, Principi etici, Decision Making, abitudini e autodisciplina.
-  - **Dettagli:** `raw`: `scope`: Personal values, life lessons, human relationships
+  - **Tags:** `#domain-hub` `#filosofia` `#etica` `#stoicismo` `#valori-personali` `#decision-making`
+  - **Sintesi:** Filosofia, Stoicismo, Modelli Mentali, Principi Etici, Decision Making, Autodisciplina e Modelli di Saggezza.
+  - **Dettagli:** `scope`: Philosophy, stoic mental models, ethical principles, core personal values
 - **Lealtà & Cura dei Legami Significativi** (`val-transparency-loyalty`)
   - **Tags:** `#core-value` `#loyalty` `#family` `#friendship`
   - **Sintesi:** Fedeltà incondizionata a chi ha dimostrato supporto autentico, rispetto e presenza nei momenti critici.
@@ -1272,6 +1309,10 @@
   - **Tags:** `#friendship` `#study-partner` `#academic-collaboration`
   - **Sintesi:** Collega di corso e amico con cui condividere appunti, sessioni di studio e motivazione accademica.
   - **Dettagli:** `raw`: `context`: Collaborazione e sostegno nello studio universitario
+- **Dominio: Relazioni, Comunicazione & Persone** (`domain-relazioni-comunicazione`)
+  - **Tags:** `#domain-hub` `#relazioni` `#comunicazione` `#networking` `#empatia` `#sociale`
+  - **Sintesi:** Relazioni Umane, Famiglia, Amici, Networking Professionale, Comunicazione Interpersonale, Empatia e Dinamiche Sociali.
+  - **Dettagli:** `scope`: Human relationships, networking, empathy, communication skills
 - **Genitori (Madre e Padre)** (`rel-parents`)
   - **Tags:** `#family` `#dedication` `#gratitude` `#roots`
   - **Sintesi:** Punto fermo affettivo e motivazionale; destinatari della dedica di tesi e di supporto concreto continuativo.
@@ -1592,12 +1633,19 @@
 - (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-universal-ai-hub-client`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-valutazione-progetto-language-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`aule-studio-backend-arch`) --[FEEDS_DATA_TO]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
 - (`ai-reasoning-hybrid-search-mcp`) --[FORMULATES]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-software-engineering`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-ai-cognitive-systems`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-scienza-matematica`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-finanza-economia`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-produttivita-sistemi`) *(Corpo Calloso)*
 - (`proj-alcolsafe`) --[FULFILLS]--> (`val-impact-utility`) *(Corpo Calloso)*
 - (`proj-caretrack`) --[FULFILLS]--> (`val-impact-utility`) *(Corpo Calloso)*
 - (`identity-cs-researcher`) --[HARMONIZES]--> (`creative-multidisciplinary`) *(Corpo Calloso)*
@@ -1645,6 +1693,7 @@
 - (`episode-20260829-esplorazione-paradigmi-interfaccia-grafo`) --[RECORDS_INTENT]--> (`user-intent-esplorazione-paradigmi-visuali-grafo`) *(Corpo Calloso)*
 - (`episode-20260829-integrazione-openjarvis-desktop`) --[RECORDS_INTENT]--> (`user-intent-integrazione-openjarvis-stanford`) *(Corpo Calloso)*
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_INTENT]--> (`user-intent-creazione-jarvis-voice-assistant`) *(Corpo Calloso)*
+- (`episode-20260829-sigillatura-12-macro-domini`) --[RECORDS_INTENT]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`) *(Corpo Calloso)*
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[RECORDS_INTENT]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_INTENT]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
@@ -1675,6 +1724,7 @@
 - (`episode-20260829-esplorazione-paradigmi-interfaccia-grafo`) --[RECORDS_REASONING]--> (`reasoning-progettazione-5-paradigmi-visuali-connettoma`) *(Corpo Calloso)*
 - (`episode-20260829-integrazione-openjarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-openjarvis-collegamento-connettoma`) *(Corpo Calloso)*
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_REASONING]--> (`reasoning-architettura-jarvis-zero-cost`) *(Corpo Calloso)*
+- (`episode-20260829-sigillatura-12-macro-domini`) --[RECORDS_REASONING]--> (`reasoning-ristrutturazione-sigillo-12-domini-completata`) *(Corpo Calloso)*
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[RECORDS_REASONING]--> (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_REASONING]--> (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
@@ -1729,6 +1779,7 @@
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-design-creativita`)
 - (`identity-cs-researcher`) --[AUTHORED]--> (`proj-kdp-ai-book`)
+- (`aule-studio-app`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`analysis-bst-vs-graph-taxonomy`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-episodic-memory-architecture`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-hybrid-search-mcp`)
@@ -1854,6 +1905,11 @@
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-napolilive`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`fastapi-python-stack`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`flutter-dart-ecosystem`)
+- (`proj-caretrack`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`)
+- (`proj-jarvis-voice-assistant`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
+- (`proj-streaksup-app`) --[BELONGS_TO_DOMAIN]--> (`domain-produttivita-sistemi`)
+- (`project-royal-gambit-chess`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`universal-ai-brain`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`val-eternal-cognitive-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`)
 - (`person-pierfrancesco`) --[BONDS_WITH]--> (`rel-marco-di-martino`)
 - (`aule-studio-app`) --[BUILT_WITH]--> (`flutter-dart-ecosystem`)
@@ -1978,6 +2034,12 @@
 - (`ai-reasoning-infinite-context-architecture`) --[FORMALIZES]--> (`user-intent-infinite-context-persistence`)
 - (`node-neuro-symbolic-brain`) --[FORMALLY_CLASSIFIED_AS]--> (`node-universal-ai-brain-taxonomy`)
 - (`ai-reasoning-episodic-memory-architecture`) --[FORMULATED_RULE]--> (`rule-episodic-chat-preservation`)
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-design-creativita`)
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-musica-audio`)
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-filosofia-valori`)
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-relazioni-comunicazione`)
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-crescita-personale`)
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-cultura-storia`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
@@ -2007,6 +2069,7 @@
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[FULFILLS]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[FULFILLS]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
+- (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[FULFILLS]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
 - (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) --[FULFILLS]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`)
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-taxonomy-classification`)
 - (`intent-ep-20260827-graph-tree-unification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-tree-unification`)
@@ -2037,6 +2100,7 @@
 - (`episode-20260829-esplorazione-paradigmi-interfaccia-grafo`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-integrazione-openjarvis-desktop`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-20260829-sigillatura-12-macro-domini`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -2088,6 +2152,7 @@
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
+- (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`)
 - (`node-knowledge-graph-memory`) --[ORGANIZES_CLUSTERS_INTO]--> (`node-hierarchical-dendrogram`)
 - (`user-intent-reasoning-and-chat-memory`) --[ORIGINATED]--> (`tax-ai-reasoning`)
@@ -2151,6 +2216,7 @@
 - (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-universal-ai-hub-client`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-zero-cost-graphrag`) --[TRIGGERS]--> (`ai-reasoning-hybrid-search-mcp`)
 - (`person-pierfrancesco`) --[UPHOLDS]--> (`val-transparency-loyalty`)
