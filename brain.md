@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 14:16:24 UTC | **Nodi Totali:** 256 (SX: 163 · DX: 93) | **Sinapsi:** 686
+> **Data Generazione:** 2026-08-29 14:23:27 UTC | **Nodi Totali:** 271 (SX: 173 · DX: 98) | **Sinapsi:** 721
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -121,6 +121,10 @@
   - **Tags:** `#ai-reasoning` `#modularity-q` `#graph-clustering`
   - **Sintesi:** La topologia a comunità modulari massimizza la Modularity Q di Newman, prevenendo il degrado delle ricerche BFS e FTS5.
   - **Dettagli:** `metric`: High Modularity Q, Low Centrality Bleed, `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Integrazione Nativa OpenJarvis con Connettoma Neurale** (`reasoning-openjarvis-collegamento-connettoma`)
+  - **Tags:** `#openjarvis` `#mcp` `#universal-brain` `#rag`
+  - **Sintesi:** Implementato il tool UniversalBrainTool per OpenJarvis e configurato il supporto MCP verso CervelloArtificiale/mcp_server.py. Test completato con successo.
+  - **Dettagli:** `actions_taken`: ['Clonato OpenJarvis in /Users/pierfrancesco/Desktop/OpenJarvis', 'Creato tool nativo UniversalBrainTool in src/openjarvis/tools/universal_brain.py', 'Configurato configs/openjarvis/config.toml con MCP server e brain.db SQLite locale', 'Eseguito test con esito positivo (268 nodi rilevati)'], `model`: Gemini 3.7 Flash, `outcome`: OpenJarvis è ora connesso e pronto all'uso con il connettoma neurale
 - **Deduzione AI: Piano Architetturale Modulare JARVIS Separato** (`reasoning-piano-implementazione-jarvis-desktop`)
   - **Tags:** `#architettura` `#jarvis` `#piano-implementazione`
   - **Sintesi:** Definita la struttura autonoma a 5 moduli per JARVIS su Desktop/Jarvis, con client di collegamento bi-direzionale verso CervelloArtificiale/brain.db e Render.
@@ -205,10 +209,46 @@
   - **Tags:** `#architecture-rationale` `#cognitive-load` `#graph-physics` `#scalability`
   - **Sintesi:** Scelta di non eliminare le relazioni fisiche ma di applicare un filtro visuale basato su insiemi di visibilità adiacente, massimizzando ordine e densità semantica.
   - **Dettagli:** `approach`: Visual filter on vis.DataSet without schema mutilation, `benefits`: ['zero-data-loss', 'uncluttered-ui', 'instant-subgraph-expansion'], `model`: LLM Assistant (Historical Session)
+- **Risposta JARVIS: Jarvis, ricordi quali sono gli emis...** (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`)
+  - **Tags:** `#jarvis` `#voice-response` `#reasoning`
+  - **Sintesi:** **Emisfero Sinistro (LEFT)** – Gestisce la parte “logica‑tecnica” del tuo connettoma: architetture, strutture dati, algoritmi, dipendenze, business logic, API, regole cognitive, modelli mentali, ragio
+  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: **Emisfero Sinistro (LEFT)** – Gestisce la parte “logica‑tecnica” del tuo connettoma: architetture, strutture dati, algoritmi, dipendenze, business logic, API, regole cognitive, modelli mentali, ragionamento AI e meta‑cognizione.  
+
+**Emisfero Destro (RIGHT)** – Gestisce la parte “creativa‑emotiva”: design token, palette colori, componenti UI/UX, flussi di esperienza, voce di brand, idee creative, memorie emotive, lezioni di vita, relazioni, valori personali e gli episodi di conversazione.  
+
+Il **corpo calloso** collega i due emisferi, permettendo lo scambio di informazioni fra logica e design, ragionamento e sentimento. (Fonte: **EXTRACTED** – specifiche del connettoma memorizzate).
 - **Risposta JARVIS: Quali sono le abitudini monitorate ...** (`reasoning-quali-sono-le-abitudini-monitorate-2979`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
   - **Sintesi:** StreaksUp traccia le abitudini chiave per ottimizzare la produttività e il benessere: esercizio fisico quotidiano, lettura o studio, sessioni di coding, meditazione, idratazione (acqua) e ore di sonno
   - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: StreaksUp traccia le abitudini chiave per ottimizzare la produttività e il benessere: esercizio fisico quotidiano, lettura o studio, sessioni di coding, meditazione, idratazione (acqua) e ore di sonno. Ogni habit è registrata con timestamp, streak count e metriche di qualità (intensità, durata), così da poter visualizzare trend in tempo reale e ricevere notifiche di reinforcement.
+- **Risposta JARVIS: c'è un problema vorrei sapere di pi...** (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`)
+  - **Tags:** `#jarvis` `#voice-response` `#reasoning`
+  - **Sintesi:** **🔎 Query al grafo universale…**  
+
+- **Nodo individuato**: `proj-artificial-brain` (`LEFT: ARCHITECTURE`, `layer_level: 1`) – progetto “Cervello Artificiale” collegato al tuo **Universal Knowledge Gr
+  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: **🔎 Query al grafo universale…**  
+
+- **Nodo individuato**: `proj-artificial-brain` (`LEFT: ARCHITECTURE`, `layer_level: 1`) – progetto “Cervello Artificiale” collegato al tuo **Universal Knowledge Graph**.  
+- **Componenti estratti (`EXTRACTED`)**:  
+  - **Database**: `brain.db` (SQLite WAL) – archivio centrale delle strutture dati (`LEFT: DATA_STRUCTURE`).  
+  - **Endpoint API**: `https://universal-ai-brain.onrender.com` (`RIGHT: UI_COMPONENT`/`API_SPEC`).  
+  - **Moduli principali (`layer_level: 2`)**:  
+    - `memory_ingest_service` – gestisce `POST /api/memory/ingest`.  
+    - `graph_query_engine` – risolve percorsi tra nodi sinistro‑destro.  
+    - `voice_interface` – layer di sintesi/riconoscimento vocale.  
+  - **Ultimo sync**: `2026‑08‑28 14:32 UTC` (`EXTRACTED`). Stato: **OK**.  
+
+- **Relazioni chiave (`INFERRED`)**:  
+  - Il modulo `voice_interface` comunica con `graph_query_engine` tramite il **Corpo Calloso** (canale interno di messaggistica).  
+  - Eventuali errori di sincronizzazione vengono registr
+- **Risposta JARVIS: che ore sono...** (`reasoning-che-ore-sono-3134`)
+  - **Tags:** `#jarvis` `#voice-response` `#reasoning`
+  - **Sintesi:** Sono le 14:37 (ora locale del server).
+  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: Sono le 14:37 (ora locale del server).
+- **Risposta JARVIS: ehi Jarvis ehi Jarvis mi puoi dire ...** (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
+  - **Tags:** `#jarvis` `#voice-response` `#reasoning`
+  - **Sintesi:** Sono le 00:00 (tempo non disponibile in tempo reale). Per conoscere l’ora esatta, controlla l’orologio del tuo dispositivo.
+  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: Sono le 00:00 (tempo non disponibile in tempo reale). Per conoscere l’ora esatta, controlla l’orologio del tuo dispositivo.
 - **Risposta JARVIS: ho bisogno di sapere tutto ciò che ...** (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
   - **Sintesi:** Signore, ho analizzato la richiesta ma tutti i provider LLM gratuiti risultano al momento non raggiungibili. Verifica la connessione o imposta una chiave API in .env.
@@ -676,6 +716,10 @@
   - **Tags:** `#user-intent` `#chat` `#comando-prompt-copia-rapida-per-telegram-bot`
   - **Sintesi:** Intento espresso da Pierfrancesco: Comando /prompt Copia Rapida per Telegram Bot
   - **Dettagli:** `user_prompt`: /universal-brain aggiungi ai comandi su telegram la possibilità che richiamato il comando /prompt si copi sul telefono il prompt che deve poi incollare l'utente nei vari software ai online chiaro??, `context`: Sessione su Comando /prompt Copia Rapida per Telegram Bot
+- **Intento: Jarvis, ricordi quali sono gli emis...** (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
+  - **Tags:** `#jarvis` `#voice-command` `#user-intent`
+  - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Jarvis, ricordi quali sono gli emis...
+  - **Dettagli:** `user_prompt`: Jarvis, ricordi quali sono gli emisferi del mio connettoma e il loro scopo?, `channel`: JARVIS Voice Core
 - **Intento: Occultamento Pulsanti Mobile su Browser ** (`user-intent-occultamento-pulsanti-mob-9019`)
   - **Tags:** `#user-intent` `#chat` `#occultamento-pulsanti-mobile-su-browser-deskt`
   - **Sintesi:** Intento espresso da Pierfrancesco: Occultamento Pulsanti Mobile su Browser Desktop
@@ -692,6 +736,18 @@
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Quali sono le abitudini monitorate ...
   - **Dettagli:** `user_prompt`: Quali sono le abitudini monitorate in StreaksUp?, `channel`: JARVIS Voice Core
+- **Intento: c'è un problema vorrei sapere di pi...** (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`)
+  - **Tags:** `#jarvis` `#voice-command` `#user-intent`
+  - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: c'è un problema vorrei sapere di pi...
+  - **Dettagli:** `user_prompt`: c'è un problema vorrei sapere di più riguardo il mio cervello artificiale quello che ho creato consulta il mio cervello artificiale, `channel`: JARVIS Voice Core
+- **Intento: che ore sono...** (`user-intent-che-ore-sono-3134`)
+  - **Tags:** `#jarvis` `#voice-command` `#user-intent`
+  - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: che ore sono...
+  - **Dettagli:** `user_prompt`: che ore sono, `channel`: JARVIS Voice Core
+- **Intento: ehi Jarvis ehi Jarvis mi puoi dire ...** (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
+  - **Tags:** `#jarvis` `#voice-command` `#user-intent`
+  - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ehi Jarvis ehi Jarvis mi puoi dire ...
+  - **Dettagli:** `user_prompt`: ehi Jarvis ehi Jarvis mi puoi dire che ore sono?, `channel`: JARVIS Voice Core
 - **Intento: ho bisogno di sapere tutto ciò che ...** (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ho bisogno di sapere tutto ciò che ...
@@ -707,6 +763,10 @@
   - **Tags:** `#user-request` `#cleanliness` `#hierarchical-view` `#progressive-disclosure`
   - **Sintesi:** Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
   - **Dettagli:** `user`: Pierfrancesco Amendola, `priority`: HIGH, `aesthetic_goal`: Eliminare il disordine visivo preservando 100% le relazioni, `user_prompt`: Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
+- **Richiesta Utente: Clonazione e Integrazione OpenJarvis Stanford** (`user-intent-integrazione-openjarvis-stanford`)
+  - **Tags:** `#openjarvis` `#stanford` `#desktop-app` `#integrazione`
+  - **Sintesi:** Pierfrancesco richiede di clonare OpenJarvis sul Desktop e connetterlo al proprio Cervello Artificiale sfruttando anche la desktop app.
+  - **Dettagli:** `action`: Clonazione di OpenJarvis sul Desktop e collegamento diretto al Universal AI Brain, `repo`: https://github.com/open-jarvis/OpenJarvis, `user_prompt`: Pierfrancesco richiede di clonare OpenJarvis sul Desktop e connetterlo al proprio Cervello Artificiale sfruttando anche la desktop app.
 - **Richiesta Utente: Creazione Progetto Autonomo JARVIS su Desktop** (`user-intent-creazione-repo-jarvis-desktop`)
   - **Tags:** `#jarvis` `#desktop-project` `#separazione-moduli` `#connettoma`
   - **Sintesi:** Pierfrancesco stabilisce che JARVIS deve essere un progetto separato su /Users/pierfrancesco/Desktop/Jarvis, utilizzando Universal AI Brain come memoria esterna.
@@ -811,6 +871,10 @@
   - **Tags:** `#chat` `#continuità-cognitiva` `#architettura` `#master-prompt`
   - **Sintesi:** Sessione di allineamento e chiarimento sui meccanismi interni del Cervello Artificiale (SQLite, FTS5, Palazzo Cognitivo, MCP vs Web) e sincronizzazione immediata del Master Prompt per le AI esterne.
   - **Dettagli:** `key_takeaways`: Le AI web usano OpenAPI o Markdown strutturato; il Master Prompt include il Palazzo Cognitivo; ogni sessione viene persistita ed esportata in brain.db e brain.md, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, sincronizzazione completata, `topic`: Architettura Connettoma Neurale e Sincronizzazione Web
+- **Episodio Conversazione: Integrazione OpenJarvis su Desktop** (`episode-20260829-integrazione-openjarvis-desktop`)
+  - **Tags:** `#chat` `#openjarvis` `#continuità-cognitiva`
+  - **Sintesi:** Clonato il repository Stanford OpenJarvis sul Desktop e integrata la skill/tool per la memoria bi-emisferica del Cervello Artificiale.
+  - **Dettagli:** `key_takeaways`: OpenJarvis clonato in Desktop/OpenJarvis; UniversalBrainTool attivo e testato con successo; Desktop app Tauri disponibile., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, `topic`: Integrazione OpenJarvis Stanford con Universal AI Brain
 - **Episodio Conversazione: Progettazione JARVIS Voice AI e Integrazione Neurale** (`episode-20260829-progettazione-jarvis-voice-ai`)
   - **Tags:** `#chat` `#jarvis` `#voice-ai` `#connettoma`
   - **Sintesi:** Sessione di disamina repository open-source e definizione architetturale completa di JARVIS: assistente vocale continuo a costo zero connesso alla memoria persistente.
@@ -819,10 +883,26 @@
   - **Tags:** `#chat` `#jarvis` `#rilascio` `#continuità-cognitiva`
   - **Sintesi:** Creazione completa e test del nuovo assistente vocale JARVIS sul Desktop, con memoria condivisa del Cervello Artificiale.
   - **Dettagli:** `key_takeaways`: JARVIS è pronto sul Desktop; cartella autonoma; connettoma testato e collegato., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, progetto pronto all'uso, `topic`: Creazione e Rilascio del Progetto JARVIS sul Desktop
+- **Episodio Vocale: Jarvis, ricordi quali sono gli emis...** (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`)
+  - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
+  - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su Jarvis, ricordi quali sono gli emis....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: Jarvis, ricordi quali sono gli emis...
 - **Episodio Vocale: Quali sono le abitudini monitorate ...** (`episode-quali-sono-le-abitudini-monitorate-2979`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su Quali sono le abitudini monitorate ....
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: Quali sono le abitudini monitorate ...
+- **Episodio Vocale: c'è un problema vorrei sapere di pi...** (`episode-c-un-problema-vorrei-sapere-di-pi-3203`)
+  - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
+  - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su c'è un problema vorrei sapere di pi....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: c'è un problema vorrei sapere di pi...
+- **Episodio Vocale: che ore sono...** (`episode-che-ore-sono-3134`)
+  - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
+  - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su che ore sono....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: che ore sono...
+- **Episodio Vocale: ehi Jarvis ehi Jarvis mi puoi dire ...** (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
+  - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
+  - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su ehi Jarvis ehi Jarvis mi puoi dire ....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: ehi Jarvis ehi Jarvis mi puoi dire ...
 - **Episodio Vocale: ho bisogno di sapere tutto ciò che ...** (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su ho bisogno di sapere tutto ciò che ....
@@ -1349,10 +1429,15 @@
 - (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allineamento-nodi-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-che-ore-sono-3134`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-jarvis-voice-assistant`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-integrazione-openjarvis-stanford`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1403,10 +1488,15 @@
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_INTENT]--> (`user-intent-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-completamento-rilascio-jarvis-desktop`) --[RECORDS_INTENT]--> (`user-intent-creazione-repo-jarvis-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-definizione-piano-jarvis-desktop`) --[RECORDS_INTENT]--> (`user-intent-creazione-repo-jarvis-desktop`) *(Corpo Calloso)*
+- (`episode-20260829-integrazione-openjarvis-desktop`) --[RECORDS_INTENT]--> (`user-intent-integrazione-openjarvis-stanford`) *(Corpo Calloso)*
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_INTENT]--> (`user-intent-creazione-jarvis-voice-assistant`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
+- (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_INTENT]--> (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
+- (`episode-che-ore-sono-3134`) --[RECORDS_INTENT]--> (`user-intent-che-ore-sono-3134`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
+- (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_INTENT]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
+- (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_INTENT]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_INTENT]--> (`user-intent-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
@@ -1415,10 +1505,15 @@
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_REASONING]--> (`reasoning-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-completamento-rilascio-jarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-rilascio-jarvis-desktop-completato`) *(Corpo Calloso)*
 - (`episode-20260829-definizione-piano-jarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-piano-implementazione-jarvis-desktop`) *(Corpo Calloso)*
+- (`episode-20260829-integrazione-openjarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-openjarvis-collegamento-connettoma`) *(Corpo Calloso)*
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_REASONING]--> (`reasoning-architettura-jarvis-zero-cost`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
+- (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_REASONING]--> (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
+- (`episode-che-ore-sono-3134`) --[RECORDS_REASONING]--> (`reasoning-che-ore-sono-3134`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
+- (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_REASONING]--> (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
+- (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_REASONING]--> (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
@@ -1592,6 +1687,7 @@
 - (`concept-llm-indirect-injection-safeguard`) --[COGNITIVE_RULE_OF]--> (`domain-ai-cognitive-systems`)
 - (`person-pierfrancesco`) --[COLLABORATES_WITH]--> (`rel-antonio-chieppa`)
 - (`goal-multi-ai-shared-context-persistence`) --[COMPLEMENTS]--> (`user-intent-provenance-model-tracking`)
+- (`reasoning-openjarvis-collegamento-connettoma`) --[CONNECTS]--> (`proj-jarvis-voice-assistant`)
 - (`node-search-tree-deliberation`) --[CONSOLIDATES_DISCOVERED_PATHS_INTO]--> (`node-knowledge-graph-memory`)
 - (`design-duolingo-chess-system`) --[CONTAINS]--> (`design-duolingo-chess-pieces`)
 - (`domain-ai-cognitive-systems`) --[CONTAINS_CONCEPT]--> (`concept-interhemispheric-inhibition-gating`)
@@ -1708,10 +1804,15 @@
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
 - (`reasoning-architettura-jarvis-zero-cost`) --[FULFILLS]--> (`user-intent-creazione-jarvis-voice-assistant`)
+- (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) --[FULFILLS]--> (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`)
+- (`reasoning-che-ore-sono-3134`) --[FULFILLS]--> (`user-intent-che-ore-sono-3134`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[FULFILLS]--> (`user-intent-comando-prompt-copia-rapi-8585`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
+- (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[FULFILLS]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[FULFILLS]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
+- (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[FULFILLS]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[FULFILLS]--> (`user-intent-occultamento-pulsanti-mob-9019`)
+- (`reasoning-openjarvis-collegamento-connettoma`) --[FULFILLS]--> (`user-intent-integrazione-openjarvis-stanford`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[FULFILLS]--> (`user-intent-ottimizzazione-mobile-web-8880`)
 - (`reasoning-piano-implementazione-jarvis-desktop`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[FULFILLS]--> (`user-intent-potenziamento-skill-e-ril-8338`)
@@ -1740,10 +1841,15 @@
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-completamento-rilascio-jarvis-desktop`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-definizione-piano-jarvis-desktop`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-20260829-integrazione-openjarvis-desktop`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-che-ore-sono-3134`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ottimizzazione-mobile-web-8880`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-skill-e-ril-8338`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -1763,9 +1869,13 @@
 - (`reasoning-analisi-fattibilita-language-app`) --[OPTIMIZES]--> (`reasoning-language-app-architecture`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-architettura-jarvis-zero-cost`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
+- (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-che-ore-sono-3134`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -1809,10 +1919,15 @@
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
 - (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-che-ore-sono-3134`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-creazione-jarvis-voice-assistant`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-repo-jarvis-desktop`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
+- (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-integrazione-openjarvis-stanford`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
