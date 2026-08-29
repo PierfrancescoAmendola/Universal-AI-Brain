@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 13:14:04 UTC | **Nodi Totali:** 233 (SX: 148 · DX: 85) | **Sinapsi:** 634
+> **Data Generazione:** 2026-08-29 13:27:14 UTC | **Nodi Totali:** 236 (SX: 150 · DX: 86) | **Sinapsi:** 641
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -129,6 +129,10 @@
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Tradotto fedelmente il framework di comparazione tecnica e gerarchizzazione delle strutture ad albero.
   - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'Albero Gerarchico a Comunità (Dendrogramma) è eletto come architettura primaria (risparmio token 80%, Semantic Zoom)", 'MST è confermato come dorsale di deduzione logica secondaria', 'Trie/Radix Tree è classificato come ausiliario per autocompletamento O(k)', 'BST è escluso per ridondanza rispetto ai B+Tree nativi di SQLite e incapacità di gestire topologie 2D/3D con cicli'], 'inferred': ['Il modello multi-albero formalizza una pipeline a strati: indicizzazione lessicale (Trie) -> scoping gerarchico (Dendrogramma) -> linearizzazione deduttiva (MST)'], 'ambiguous': []}, `translation_synthesis`: Tradotto fedelmente il framework di comparazione tecnica e gerarchizzazione delle strutture ad albero., `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Trasparenza Architettura Ibrida MCP / OpenAPI / Markdown e Aggiornamento Master Prompt** (`reasoning-architettura-connettoma-web-vs-desktop`)
+  - **Tags:** `#architettura` `#graphrag` `#mcp` `#openapi` `#sincronizzazione`
+  - **Sintesi:** Spiegata la coesistenza reale tra MCP locale (desktop) e OpenAPI/HTTP/Markdown (web). Aggiornato il Master Prompt in static/app.js con le specifiche del Palazzo Cognitivo e sincronizzato il connettoma neurale su Cloud e Desktop.
+  - **Dettagli:** `actions_taken`: ["Spiegazione dell'interrogazione SQLite BM25 e MCP per desktop e OpenAPI/Render per web", 'Perfezionamento del Master Prompt con layer_level, parent_graph_id e details strutturati', 'Aggiornamento di static/app.js', 'Ingestione sessione corrente e push bidirezionale su Git/Render'], `model`: Gemini 3.7 Flash, `outcome`: Master prompt aggiornato, connettoma sincronizzato e sessione registrata con successo
 - **Deduzione AI: Unificazione Architetturale tra Knowledge Graph e** (`reason-ep-20260827-graph-tree-unification`)
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Formalizzata la pipeline: Knowledge Graph -> Spreading Activation -> Local Tree Search (ToT/MCTS) -> Trajectory Evaluation -> Synaptic Consolidation (Graph Ingest).
@@ -663,6 +667,10 @@
   - **Tags:** `#user-request` `#cleanliness` `#hierarchical-view` `#progressive-disclosure`
   - **Sintesi:** Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
   - **Dettagli:** `user`: Pierfrancesco Amendola, `priority`: HIGH, `aesthetic_goal`: Eliminare il disordine visivo preservando 100% le relazioni, `user_prompt`: Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
+- **Richiesta Utente: Funzionamento Architettura Web vs Desktop e Sincronizzazione Master Prompt** (`user-intent-architettura-connettoma-web-vs-desktop`)
+  - **Tags:** `#architettura` `#web-vs-desktop` `#master-prompt` `#sincronizzazione` `#continuità`
+  - **Sintesi:** Pierfrancesco chiede chiarimenti sul funzionamento reale dell'albero gerarchico e palazzo cognitivo su backend, come le AI Web accedono alle info rispetto alle AI desktop, e allineamento del pulsante Copia Prompt con sincronizzazione continua.
+  - **Dettagli:** `context`: Chiarimento architetturale su SQLite FTS5, MCP, OpenAPI Actions, endpoint dinamici su Render e master prompt, `user_prompt`: noi nel nostro progetto abbiamo realizzato tante cose... come sa l'ai sul web che esistono questi sistemi? ... se io ora sul web faccio copia prompt mi esce quello che tu ora hai creato o quello che c'era?? hai sincronizzato?? inoltre stai caricando tutte le risposte e interazioni che stiamo avendo /universal-brain
 - **Richiesta Utente: Memoria dei Ragionamenti AI e delle Chat Eterogenee** (`user-intent-reasoning-and-chat-memory`)
   - **Tags:** `#user-request` `#ai-reasoning` `#chat-memory` `#multi-topic`
   - **Sintesi:** Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) in aree separate.
@@ -743,6 +751,10 @@
   - **Tags:** `#conversation-episode` `#trees` `#data-structures` `#graph-theory` `#2026-08-27`
   - **Sintesi:** Discussione e perizia tecnica sull'integrazione di alberi binari, alberi di ricerca e alberi di copertura pesati nel grafo universale.
   - **Dettagli:** `date`: 2026-08-27, `outcome`: Validazione di MST e Tassonomia Gerarchica come strutture ad albero superiori rispetto al BST per grafi cognitivi, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Valutazione Strutture ad Albero
+- **Episodio Conversazione: Architettura Connettoma Neurale, Web Access e Sincronizzazione Prompt** (`episode-20260829-architettura-connettoma-e-sync-prompt`)
+  - **Tags:** `#chat` `#continuità-cognitiva` `#architettura` `#master-prompt`
+  - **Sintesi:** Sessione di allineamento e chiarimento sui meccanismi interni del Cervello Artificiale (SQLite, FTS5, Palazzo Cognitivo, MCP vs Web) e sincronizzazione immediata del Master Prompt per le AI esterne.
+  - **Dettagli:** `key_takeaways`: Le AI web usano OpenAPI o Markdown strutturato; il Master Prompt include il Palazzo Cognitivo; ogni sessione viene persistita ed esportata in brain.db e brain.md, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, sincronizzazione completata, `topic`: Architettura Connettoma Neurale e Sincronizzazione Web
 - **Episodio: Audit Totale & Continuità Cognitiva Cross-Chat** (`episode-audit-completo-e-potenziamento-skill`)
   - **Tags:** `#sessione-audit` `#pierfrancesco` `#universal-brain` `#cross-chat-memory` `#metamemoria`
   - **Sintesi:** Sessione di audit intensivo, correzione bug su backend/MCP/Telegram, potenziamento formale della skill per continuità cross-chat e persistenza delle risposte fornite nel knowledge graph.
@@ -1248,6 +1260,7 @@
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`) *(Corpo Calloso)*
 - (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allineamento-nodi-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-architettura-connettoma-web-vs-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1295,12 +1308,14 @@
 - (`aule-studio-app`) --[PROVIDES_FLOW]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
 - (`ai-reasoning-episodic-memory-architecture`) --[REASONED_DURING]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[RECORDED_EPISODE]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
+- (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_INTENT]--> (`user-intent-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_INTENT]--> (`user-intent-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
+- (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_REASONING]--> (`reasoning-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
@@ -1584,6 +1599,7 @@
 - (`node-neuro-symbolic-brain`) --[FORMALLY_CLASSIFIED_AS]--> (`node-universal-ai-brain-taxonomy`)
 - (`ai-reasoning-episodic-memory-architecture`) --[FORMULATED_RULE]--> (`rule-episodic-chat-preservation`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
+- (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[FULFILLS]--> (`user-intent-comando-prompt-copia-rapi-8585`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[FULFILLS]--> (`user-intent-occultamento-pulsanti-mob-9019`)
@@ -1609,6 +1625,7 @@
 - (`universal-ai-brain`) --[INCORPORATES]--> (`tax-ai-reasoning`)
 - (`node-universal-ai-brain-taxonomy`) --[INCORPORATES_AS_CORE_FEATURE]--> (`node-epistemic-grading-system`)
 - (`universal-ai-brain`) --[INTEGRATES_AUDIT]--> (`graphify-knowledge-engine`)
+- (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -1627,6 +1644,7 @@
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-analisi-fattibilita-language-app`) --[OPTIMIZES]--> (`reasoning-language-app-architecture`)
+- (`reasoning-architettura-connettoma-web-vs-desktop`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -1669,6 +1687,7 @@
 - (`identity-cs-researcher`) --[STUDIED]--> (`coursework-cs-federico2`)
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
 - (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-architettura-connettoma-web-vs-desktop`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
