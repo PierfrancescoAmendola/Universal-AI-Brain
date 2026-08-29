@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 13:12:56 UTC | **Nodi Totali:** 231 (SX: 147 · DX: 84) | **Sinapsi:** 634
+> **Data Generazione:** 2026-08-29 13:12:59 UTC | **Nodi Totali:** 233 (SX: 148 · DX: 85) | **Sinapsi:** 634
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -377,6 +377,9 @@
   - **Tags:** `#terminal` `#ui` `#monitoring` `#network-inspector` `#fetch-proxy`
   - **Sintesi:** Console/Terminale chiaro in overlay a tutto schermo per tracciare richieste HTTP (POST/GET/DEL), latenza, payload e nodi memorizzati.
   - **Dettagli:** `theme`: Light Slate (#f8fafc), `features`: ['window-controls', 'network-interceptor', 'realtime-feed', 'json-export']
+- **Test Live Upload Verify** (`test-live-upload-verify`)
+  - **Tags:** `#daemon-test`
+  - **Sintesi:** Test di verifica upload automatico demone
 - **Tombola WiFi** (`proj-tombolawifi`)
   - **Tags:** `#websockets` `#nodejs` `#tradition` `#multiplayer`
   - **Sintesi:** Digitalizzazione multiplayer locale della classica Tombola napoletana con Smorfia e broadcast chiamate.
@@ -870,6 +873,10 @@
   - **Tags:** `#music` `#theatre` `#writing` `#centaur-ai`
   - **Sintesi:** Integrazione tra rigore computazionale e sensibilità creativa (pianoforte, teatro Tricca Ballacche, scrittura, modello Centauro).
   - **Dettagli:** `music`: Pianoforte, chitarra, violino, composizione, `theatre`: Attore compagnia Tricca Ballacche, `languages`: Italiano, Inglese (cert. UK), Spagnolo, Francese, Tedesco, Portoghese, `human_ai_vision`: Centaur Model: umana strategia + macchina computazionale
+- **Test Live Download Node** (`test-live-download-node`)
+  - **Tags:** `#daemon-download-test`
+  - **Sintesi:** Test di verifica download automatico da cloud a locale
+  - **Dettagli:** `source`: render-api
 
 ### [Macro-Label: `DESIGN_TOKEN`]
 - **Cyber Slate Dark Aesthetics** (`cyber-slate-space-aesthetic`)
