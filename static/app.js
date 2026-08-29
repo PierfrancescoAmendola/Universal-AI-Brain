@@ -325,6 +325,9 @@ function selectPalazzoFloor(floorOption) {
         network.fit({ animation: false });
       } catch (e) {}
     }
+    if (window.innerWidth <= 900 && typeof switchMobileTab === 'function') {
+      switchMobileTab('graph');
+    }
   }, 50);
 }
 
@@ -1949,7 +1952,31 @@ function setupBackdropClicks() {
   }
 }
 
+/**
+ * Mobile Navigation & Responsive Routing (Exclusive for Mobile Screens <= 900px)
+ */
+function switchMobileTab(tab) {
+  document.body.classList.remove('mob-view-graph', 'mob-view-sidebar', 'mob-view-palazzo');
+  document.body.classList.add('mob-view-' + tab);
+
+  document.querySelectorAll('.mobile-nav-btn').forEach(btn => btn.classList.remove('active'));
+  const activeBtn = document.getElementById('mob-tab-' + tab);
+  if (activeBtn) activeBtn.classList.add('active');
+
+  if (tab === 'graph' && network) {
+    setTimeout(() => {
+      try {
+        network.redraw();
+        network.fit({ animation: { duration: 300, easingFunction: 'easeInOutQuad' } });
+      } catch (e) {}
+    }, 80);
+  }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 900) {
+    switchMobileTab('graph');
+  }
   initNetwork();
   fetchBrainData();
   setupSearch();

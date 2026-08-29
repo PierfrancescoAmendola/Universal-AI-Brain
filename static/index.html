@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Universal AI Brain - Cognitive Knowledge Graph</title>
   
   <!-- Fonts: Inter & JetBrains Mono for elite tech aesthetic -->
@@ -414,6 +414,30 @@
     </div>
   </div>
 
-  <script src="/static/app.js?v=20260827_2325"></script>
+  <!-- Mobile Bottom Navigation Bar (Visible exclusively on mobile screens <= 900px) -->
+  <nav class="mobile-nav-bar" id="mobile-nav-bar">
+    <button class="mobile-nav-btn active" id="mob-tab-graph" onclick="switchMobileTab('graph')">
+      <span class="mob-icon">🌐</span>
+      <span class="mob-label">Grafo</span>
+    </button>
+    <button class="mobile-nav-btn" id="mob-tab-sidebar" onclick="switchMobileTab('sidebar')">
+      <span class="mob-icon">🔍</span>
+      <span class="mob-label">Ispettore</span>
+    </button>
+    <button class="mobile-nav-btn" id="mob-tab-palazzo" onclick="switchMobileTab('palazzo')">
+      <span class="mob-icon">🏢</span>
+      <span class="mob-label">Palazzo</span>
+    </button>
+    <button class="mobile-nav-btn" id="mob-tab-tree" onclick="openTreeModal()">
+      <span class="mob-icon">🌳</span>
+      <span class="mob-label">Albero</span>
+    </button>
+    <button class="mobile-nav-btn" id="mob-tab-term" onclick="toggleTerminal()">
+      <span class="mob-icon">💻</span>
+      <span class="mob-label">Terminale</span>
+    </button>
+  </nav>
+
+  <script src="/static/app.js?v=20260829_1505"></script>
 </body>
 </html>
