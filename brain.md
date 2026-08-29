@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 14:10:04 UTC | **Nodi Totali:** 250 (SX: 159 · DX: 91) | **Sinapsi:** 672
+> **Data Generazione:** 2026-08-29 14:16:24 UTC | **Nodi Totali:** 256 (SX: 163 · DX: 93) | **Sinapsi:** 686
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -205,6 +205,14 @@
   - **Tags:** `#architecture-rationale` `#cognitive-load` `#graph-physics` `#scalability`
   - **Sintesi:** Scelta di non eliminare le relazioni fisiche ma di applicare un filtro visuale basato su insiemi di visibilità adiacente, massimizzando ordine e densità semantica.
   - **Dettagli:** `approach`: Visual filter on vis.DataSet without schema mutilation, `benefits`: ['zero-data-loss', 'uncluttered-ui', 'instant-subgraph-expansion'], `model`: LLM Assistant (Historical Session)
+- **Risposta JARVIS: Quali sono le abitudini monitorate ...** (`reasoning-quali-sono-le-abitudini-monitorate-2979`)
+  - **Tags:** `#jarvis` `#voice-response` `#reasoning`
+  - **Sintesi:** StreaksUp traccia le abitudini chiave per ottimizzare la produttività e il benessere: esercizio fisico quotidiano, lettura o studio, sessioni di coding, meditazione, idratazione (acqua) e ore di sonno
+  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: StreaksUp traccia le abitudini chiave per ottimizzare la produttività e il benessere: esercizio fisico quotidiano, lettura o studio, sessioni di coding, meditazione, idratazione (acqua) e ore di sonno. Ogni habit è registrata con timestamp, streak count e metriche di qualità (intensità, durata), così da poter visualizzare trend in tempo reale e ricevere notifiche di reinforcement.
+- **Risposta JARVIS: ho bisogno di sapere tutto ciò che ...** (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`)
+  - **Tags:** `#jarvis` `#voice-response` `#reasoning`
+  - **Sintesi:** Signore, ho analizzato la richiesta ma tutti i provider LLM gratuiti risultano al momento non raggiungibili. Verifica la connessione o imposta una chiave API in .env.
+  - **Dettagli:** `model`: None, `response_text`: Signore, ho analizzato la richiesta ma tutti i provider LLM gratuiti risultano al momento non raggiungibili. Verifica la connessione o imposta una chiave API in .env.
 - **Tassonomia Metacognitiva & AI Reasoning Hub** (`tax-ai-reasoning`)
   - **Tags:** `#ai-reasoning` `#metacognition` `#chain-of-thought` `#rationale` `#knowledge-graph`
   - **Sintesi:** Area cognitiva dedicata al tracciamento dei ragionamenti, deduzioni analitiche e percorsi logici interni generati dall'AI durante le sessioni.
@@ -680,6 +688,14 @@
   - **Tags:** `#user-intent` `#chat` `#potenziamento-skill-e-rilascio-demone-sincron`
   - **Sintesi:** Intento espresso da Pierfrancesco: Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
   - **Dettagli:** `user_prompt`: /universal-brain procedi con il piano da te implementato, procedi a step, controlla ogni passaggio e prima di andare avanti con il prossimo punto ricontrolla !!, `context`: Sessione su Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
+- **Intento: Quali sono le abitudini monitorate ...** (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
+  - **Tags:** `#jarvis` `#voice-command` `#user-intent`
+  - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Quali sono le abitudini monitorate ...
+  - **Dettagli:** `user_prompt`: Quali sono le abitudini monitorate in StreaksUp?, `channel`: JARVIS Voice Core
+- **Intento: ho bisogno di sapere tutto ciò che ...** (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
+  - **Tags:** `#jarvis` `#voice-command` `#user-intent`
+  - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ho bisogno di sapere tutto ciò che ...
+  - **Dettagli:** `user_prompt`: ho bisogno di sapere tutto ciò che sai sul mio cervello artificiale, `channel`: JARVIS Voice Core
 - **Preferenze Pierfrancesco Grafica Scacchi Duolingo** (`user-intent-duolingo-chess-preference`)
   - **Tags:** `#pierfrancesco` `#preferenze` `#duolingo` `#scacchi` `#ui-ux`
   - **Sintesi:** Pierfrancesco richiede massima fedeltà visiva allo stile Duolingo Chess: scacchiera menta e bianco, pezzi 2D piatti vettoriali con gerarchia scalare, pulsanti 3D tattili e mascotte Duo interattiva.
@@ -803,6 +819,14 @@
   - **Tags:** `#chat` `#jarvis` `#rilascio` `#continuità-cognitiva`
   - **Sintesi:** Creazione completa e test del nuovo assistente vocale JARVIS sul Desktop, con memoria condivisa del Cervello Artificiale.
   - **Dettagli:** `key_takeaways`: JARVIS è pronto sul Desktop; cartella autonoma; connettoma testato e collegato., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, progetto pronto all'uso, `topic`: Creazione e Rilascio del Progetto JARVIS sul Desktop
+- **Episodio Vocale: Quali sono le abitudini monitorate ...** (`episode-quali-sono-le-abitudini-monitorate-2979`)
+  - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
+  - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su Quali sono le abitudini monitorate ....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: Quali sono le abitudini monitorate ...
+- **Episodio Vocale: ho bisogno di sapere tutto ciò che ...** (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`)
+  - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
+  - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su ho bisogno di sapere tutto ciò che ....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'None'], `topic`: ho bisogno di sapere tutto ciò che ...
 - **Episodio: Audit Totale & Continuità Cognitiva Cross-Chat** (`episode-audit-completo-e-potenziamento-skill`)
   - **Tags:** `#sessione-audit` `#pierfrancesco` `#universal-brain` `#cross-chat-memory` `#metamemoria`
   - **Sintesi:** Sessione di audit intensivo, correzione bug su backend/MCP/Telegram, potenziamento formale della skill per continuità cross-chat e persistenza delle risposte fornite nel knowledge graph.
@@ -1328,9 +1352,11 @@
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-jarvis-voice-assistant`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-valutazione-progetto-language-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
@@ -1380,9 +1406,11 @@
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_INTENT]--> (`user-intent-creazione-jarvis-voice-assistant`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
+- (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_INTENT]--> (`user-intent-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
+- (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_REASONING]--> (`reasoning-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-completamento-rilascio-jarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-rilascio-jarvis-desktop-completato`) *(Corpo Calloso)*
@@ -1390,9 +1418,11 @@
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_REASONING]--> (`reasoning-architettura-jarvis-zero-cost`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
+- (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
+- (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_REASONING]--> (`reasoning-analisi-fattibilita-language-app`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[RENDERED_VIA]--> (`aule-studio-mobile-ui`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[RENDERS_FX]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
@@ -1680,10 +1710,12 @@
 - (`reasoning-architettura-jarvis-zero-cost`) --[FULFILLS]--> (`user-intent-creazione-jarvis-voice-assistant`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[FULFILLS]--> (`user-intent-comando-prompt-copia-rapi-8585`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
+- (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[FULFILLS]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[FULFILLS]--> (`user-intent-occultamento-pulsanti-mob-9019`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[FULFILLS]--> (`user-intent-ottimizzazione-mobile-web-8880`)
 - (`reasoning-piano-implementazione-jarvis-desktop`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[FULFILLS]--> (`user-intent-potenziamento-skill-e-ril-8338`)
+- (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[FULFILLS]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-taxonomy-classification`)
 - (`intent-ep-20260827-graph-tree-unification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-tree-unification`)
@@ -1711,9 +1743,11 @@
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ottimizzazione-mobile-web-8880`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-skill-e-ril-8338`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-quali-sono-le-abitudini-monitorate-2979`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-valutazione-language-app-antigravity`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`skill-universal-brain-installed`) --[INTERFACES_WITH]--> (`node-knowledge-graph-memory`)
 - (`node-mcp-brain-get-tree`) --[INTERROGATES]--> (`node-hierarchical-tree-engine-impl`)
@@ -1731,9 +1765,11 @@
 - (`reasoning-architettura-jarvis-zero-cost`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`)
 - (`node-knowledge-graph-memory`) --[ORGANIZES_CLUSTERS_INTO]--> (`node-hierarchical-dendrogram`)
@@ -1776,9 +1812,11 @@
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-creazione-jarvis-voice-assistant`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-repo-jarvis-desktop`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
+- (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-zero-cost-graphrag`) --[TRIGGERS]--> (`ai-reasoning-hybrid-search-mcp`)
 - (`person-pierfrancesco`) --[UPHOLDS]--> (`val-transparency-loyalty`)
 - (`project-royal-gambit-chess`) --[USES]--> (`tech-minimax-chess-engine`)
