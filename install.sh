@@ -30,6 +30,9 @@ import sys, os, json, sqlite3, time, subprocess
 
 BRAIN_DIR = os.path.expanduser("~/Desktop/CervelloArtificiale")
 DB_PATH = os.path.join(BRAIN_DIR, "brain.db")
+PYTHON_BIN = os.path.join(BRAIN_DIR, ".venv", "bin", "python3")
+if not os.path.exists(PYTHON_BIN):
+    PYTHON_BIN = sys.executable
 
 def get_db():
     if not os.path.exists(DB_PATH):
@@ -47,14 +50,14 @@ def cmd_stats():
         edges = conn.execute("SELECT COUNT(*) AS c FROM edges").fetchone()["c"]
         callosum = conn.execute("SELECT COUNT(*) AS c FROM edges WHERE relation = 'CORPUS_CALLOSUM_LINK'").fetchone()["c"]
         print("🧠 UNIVERSAL AI BRAIN - STATISTICHE GLOBALI")
-        print("─" * 45)
-        print(f"• Nodi Totali:              {tot}")
+        print("─" * 50)
+        print(f"• Nodi Totali (Locale):     {tot}")
         print(f"• Emisfero Sinistro (⚡):    {left} nodi")
         print(f"• Emisfero Destro   (🌸):    {right} nodi")
         print(f"• Sinapsi Totali:           {edges}")
         print(f"• Ponti Corpo Calloso:      {callosum}")
-        print("─" * 45)
-        print("🌐 Web: https://universal-ai-brain.onrender.com")
+        print("─" * 50)
+        print("🌐 Web Cloud: https://universal-ai-brain.onrender.com")
 
 def cmd_search(query: str):
     if not query:
@@ -80,7 +83,7 @@ def cmd_search(query: str):
         print(f"🔍 Risultati per '{query}' ({len(nodes)} trovati):\n" + "─" * 60)
         for n in nodes:
             icon = "⚡" if n["hemisphere"] == "LEFT" else "🌸"
-            tags = json.loads(n["tags"]) if n["tags"] else []
+            tags = json.loads(n["tags"]) if n["tags"] and n["tags"].startswith("[") else []
             tags_str = " ".join(f"#{t}" for t in tags[:4])
             print(f"{icon} {n['label']} ({n['id']})\n   📂 [{n['primary_label']}]  {tags_str}\n   📝 {n['summary']}\n")
 
@@ -93,7 +96,7 @@ def cmd_tree(hemisphere=None):
             params.append(hemisphere.upper())
         query += " GROUP BY hemisphere, primary_label ORDER BY hemisphere, c DESC"
         rows = conn.execute(query, params).fetchall()
-        print("🌳 HIERARCHICAL KNOWLEDGE TREE (層級譜系樹)\n" + "─" * 60)
+        print("🌳 HIERARCHICAL KNOWLEDGE TREE\n" + "─" * 60)
         curr_h = None
         for r in rows:
             if r["hemisphere"] != curr_h:
@@ -102,6 +105,40 @@ def cmd_tree(hemisphere=None):
                 print(f"\n{h_name}:")
             print(f"  📂 [{r['primary_label']}] ➜ {r['c']} nodi")
         print("\n🌐 Visualizza albero: https://universal-ai-brain.onrender.com/brain.md?view=tree")
+
+def cmd_sync():
+    sync_script = os.path.join(BRAIN_DIR, "sync_brain.py")
+    subprocess.run([PYTHON_BIN, sync_script], cwd=BRAIN_DIR)
+
+def cmd_record(args):
+    sync_script = os.path.join(BRAIN_DIR, "sync_brain.py")
+    cmd = [PYTHON_BIN, sync_script, "--record"] + args
+    subprocess.run(cmd, cwd=BRAIN_DIR)
+
+def cmd_daemon(action="status"):
+    if action in ("status", "info"):
+        out = subprocess.run(["launchctl", "list"], capture_output=True, text=True)
+        found = False
+        for line in out.stdout.splitlines():
+            if "universalbrain" in line:
+                print(f"🟢 Daemon Status: ATTIVO ({line})")
+                found = True
+        if not found:
+            print("🔴 Daemon Status: NON ATTIVO. Avvialo con: brain daemon start")
+    elif action == "start":
+        subprocess.run([os.path.join(BRAIN_DIR, "install_daemon.sh")])
+    elif action == "stop":
+        subprocess.run([os.path.join(BRAIN_DIR, "uninstall_daemon.sh")])
+    elif action == "restart":
+        subprocess.run([os.path.join(BRAIN_DIR, "install_daemon.sh")])
+    elif action in ("logs", "log"):
+        log_file = os.path.join(BRAIN_DIR, "sync_daemon.log")
+        if os.path.exists(log_file):
+            subprocess.run(["tail", "-n", "30", "-f", log_file])
+        else:
+            print(f"Nessun file di log trovato in {log_file}")
+    else:
+        print("Uso: brain daemon [status|start|stop|restart|logs]")
 
 def cmd_add(title: str, summary: str, hemisphere="LEFT", primary_label="ARCHITECTURE"):
     if not title:
@@ -118,14 +155,28 @@ def cmd_add(title: str, summary: str, hemisphere="LEFT", primary_label="ARCHITEC
         conn.commit()
         tot = conn.execute("SELECT COUNT(*) AS c FROM nodes").fetchone()["c"]
     print(f"✅ Nodo salvato: {title} ({slug}) | Nodi totali: {tot}")
+    # Trigger auto-sync
+    cmd_sync()
 
 def main():
     if len(sys.argv) < 2:
-        print("Uso: brain [search|stats|tree|add|open] <argomenti>")
+        print("🧠 Universal AI Brain CLI")
+        print("Uso:")
+        print("  brain stats                 - Statistiche del connettoma")
+        print("  brain search <query>        - Ricerca GraphRAG FTS5")
+        print("  brain sync                  - Sincronizzazione bidirezionale immediata con Render")
+        print("  brain record --topic ...    - Registrazione veloce sessione di chat")
+        print("  brain daemon [status|logs]  - Gestione del demone in background macOS")
+        print("  brain tree [LEFT|RIGHT]     - Visualizza albero di conoscenza")
+        print("  brain add <titolo> <sintesi>- Aggiungi nuovo nodo")
+        print("  brain open                  - Apri Web Dashboard")
         return
     cmd = sys.argv[1].lower()
     if cmd in ("stats", "-s"): cmd_stats()
     elif cmd in ("search", "find", "s"): cmd_search(" ".join(sys.argv[2:]))
+    elif cmd in ("sync", "pull", "push"): cmd_sync()
+    elif cmd in ("record", "save-session"): cmd_record(sys.argv[2:])
+    elif cmd in ("daemon", "service", "d"): cmd_daemon(sys.argv[2] if len(sys.argv) > 2 else "status")
     elif cmd in ("tree", "t"): cmd_tree(sys.argv[2] if len(sys.argv) > 2 else None)
     elif cmd in ("add", "save", "a"): cmd_add(sys.argv[2] if len(sys.argv) > 2 else "", sys.argv[3] if len(sys.argv) > 3 else "")
     elif cmd in ("open", "web"):
@@ -140,18 +191,14 @@ EOF
 chmod +x "$BIN_DIR/brain"
 
 # 3. Install Skill Files
-echo "🤖 Installing /brain skill in global agent paths..."
+echo "🤖 Installing /universal-brain skill in global agent paths..."
 mkdir -p "$SKILLS_DIR" "$GEMINI_SKILLS_DIR" "$RULES_DIR"
 cp "$REPO_DIR/skills/universal-brain/SKILL.md" "$SKILLS_DIR/SKILL.md"
 cp "$REPO_DIR/skills/universal-brain/SKILL.md" "$GEMINI_SKILLS_DIR/SKILL.md"
 
-# 4. Install Global Rule
-cat << 'EOF' > "$RULES_DIR/universal-brain.md"
-## Universal AI Brain Integration (/universal-brain)
-This workstation is connected to the Universal AI Brain at ~/Desktop/CervelloArtificiale/brain.db.
-- Prior Context: Before designing code or architectures, query the brain with `brain_search` or `brain search <query>`.
-- Knowledge Capture: Ingest new insights using `brain_ingest` with strict taxonomies (USER_INTENT, AI_REASONING, CONVERSATION_EPISODE, ARCHITECTURE).
-EOF
+# 4. Install Background Daemon
+echo "🚀 Configuring Background LaunchAgent Daemon..."
+"$REPO_DIR/install_daemon.sh"
 
-echo "✅ Universal AI Brain successfully installed!"
+echo "✅ Universal AI Brain successfully installed and configured!"
 echo "👉 Prova subito nel terminale: brain stats"

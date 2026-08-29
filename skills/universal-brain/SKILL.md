@@ -1,106 +1,196 @@
 ---
 name: universal-brain
 description: >
-  Connects AI assistants (Antigravity, Claude, Cursor, Gemini) directly to a Persistent Bi-Hemispheric Knowledge Graph.
-  Use when user says "/brain", "cerca nel cervello", "salva nel cervello", "collega al cervello", "ricorda nel cervello",
-  "chiedi al cervello", "universal brain", or whenever querying, cross-referencing, or ingesting new ideas, architectural
-  decisions, project state, values, or emotional memories.
+  Connects AI assistants (Antigravity, Claude, Cursor, Gemini, ChatGPT) directly to Pierfrancesco Amendola's Persistent Bi-Hemispheric Knowledge Graph (Universal AI Brain).
+  MUST BE ACTIVATED whenever user says "/brain", "/universal-brain", "cerca nel cervello", "salva nel cervello", "collega al cervello", "ricorda nel cervello", "chiedi al cervello", or during ANY session involving software engineering, architecture, code development, user preferences, problem solving, bugfixing, or cognitive memory retention across chats.
 ---
 
-# Universal AI Brain Skill (`/brain`)
+# Universal AI Brain Skill (`/universal-brain`)
 
-Operates directly on the Persistent Bi-Hemispheric Knowledge Graph (`brain.db`).
+Operates directly on the Persistent Bi-Hemispheric Knowledge Graph (`brain.db` and `https://universal-ai-brain.onrender.com`).
 
-## Core Capabilities & Agent Directives
+---
 
-Whenever the user invokes `/brain` or asks to query/save thoughts in their brain:
+## 🏛️ CORE PROTOCOL: 2-PHASE COGNITIVE CYCLE
 
-### 1. Automatic Search & Context Retrieval (GraphRAG)
-Before formulating an answer or generating a new proposal, search what the brain already knows:
-- **Search**: Run BM25 FTS5 search on `brain.db` or invoke MCP `brain_search` with relevant keywords.
-- **Hierarchy Zoom**: For broad topics, query `brain_get_tree` to see the macro-taxonomies.
-- **Palazzo Cognitivo**: Filter or explore by floor levels (P0, P1, P2) or 3D vertical stacked tiers.
-- **Synaptic Paths**: For connecting technical concepts to life values or user intents, calculate `brain_shortest_path` across the Corpus Callosum.
+Ogni assistente AI che interagisce con Pierfrancesco Amendola **HA IL DOVERE ASSOLUTO** di seguire questo ciclo cognitivo a due fasi:
 
-### 2. Autonomous Knowledge Ingestion & Linking
-When a discussion generates a new idea, architectural decision, lesson, or user intent:
-1. **MANDATORY LANGUAGE RULE (ITALIAN / ENGLISH)**:
-   - **All node labels (`label`), summaries (`summary`), tags, and details MUST ALWAYS be written in Italian (with technical terms in English).**
-   - **NEVER generate or save nodes in Chinese/Wenyan/CJK**, even if the chat communication is in `/caveman wenyan-ultra` or another language. The knowledge database must remain 100% searchable in Italian.
-2. **Macro-Domains & Dynamic Domain Creation Authorization**:
-   - **Existing Pillars**: `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
-   - **Dynamic Domain Creation**: If a discussion covers a whole new area of life or knowledge that does NOT fit into existing domains (e.g. `domain-storia-cultura`, `domain-relazioni-sentimenti`, `domain-finanza-economia`), the AI is **EXPLICITLY AUTHORIZED AND ENCOURAGED** to instantiate a new macro-domain (`id: "domain-<nome>"`, `category: "ROOT_DOMAIN"`, `layer_level: 0`, `parent_graph_id: "root"`) and link it to `person-pierfrancesco`.
-3. **3-Layer Palazzo Cognitivo Hierarchy (`layer_level`)**:
-   - `layer_level: 0` (Piano 0 - Attico Macro-Domini & Core Hubs)
-   - `layer_level: 1` (Piano 1 - Progetti, Episodi Conversazionali, Intenti Utente, Idee, Valori)
-   - `layer_level: 2` (Piano 2 - Moduli, Algoritmi, Strutture Dati, Specifiche API, Token UI, Schemi)
-4. **Strict Bi-Hemispheric Taxonomies**:
-   - **Left Hemisphere (`LEFT` - Logica & Tech)**: `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
-   - **Right Hemisphere (`RIGHT` - Design & Emozioni)**: `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
-   - **Epistemic Confidence**: `EXTRACTED` (verbatim facts), `INFERRED` (deductive logic), `AMBIGUOUS` (uncertain).
-5. Cross-link the new node to relevant existing nodes in `brain.db` (especially `person-pierfrancesco` or relevant project nodes).
-6. Execute ingestion via `brain_ingest` MCP tool or direct `POST /api/memory/ingest`.
+```mermaid
+graph TD
+    A[Inizio Turno / Prompt Utente] --> B[FASE 1: Pre-Response Context & Memory Retrieval]
+    B --> C[Elaborazione Risposta & Azioni Tecniche]
+    C --> D[FASE 2: Post-Response Autonomous Ingestion]
+    D --> E1[Livello 1: Tool MCP brain_ingest / CLI brain record]
+    D --> E2[Livello 2: HTTP POST /api/memory/ingest]
+    D --> E3[Livello 3: Fallback Blocco JSON in Chat]
+```
 
-### 3. MANDATORY AUTONOMOUS SESSION CONTEXT & CHAT PERSISTENCE (Continuità Cognitiva Inter-Chat)
-**OBIETTIVO PRIMARIO: OMNISCIENZA CROSS-CHAT (CAMBIO CHAT SENZA PERDITA DI MEMORIA)**:
-Il sistema è progettato affinché aprendo una **NUOVA CHAT** (con Claude, ChatGPT, Gemini, Antigravity, Cursor), l'AI conosca istantaneamente tutta la storia pregressa, le richieste fatte, le risposte date, i bug risolti e le decisioni prese nelle chat precedenti.
+---
 
-**REGOLA TASSATIVA PER GLI AGENTI AI**:
-Al termine di ogni interazione, risoluzione di problemi, audit o refactoring, l'AI **HA IL DOVERE ASSOLUTO di persistere nel Grafo (`brain.db`)**:
+## 🔍 FASE 1: PRE-RESPONSE CONTEXT & MEMORY RETRIEVAL (GraphRAG)
 
-1. **L'Intento e il Contesto dell'Utente (`USER_INTENT` - Emisfero Sinistro / Piano 1)**:
+Prima di formulare qualsiasi risposta o proposta architetturale, l'AI **interroga il cervello** per recuperare la memoria storica:
+1. **Ricerca Preferenze & Decisioni Pregresse:**
+   - Esegui `brain_search` (MCP) o `brain search "<keywords>"` (CLI) per individuare:
+     - Preferenze storiche di Pierfrancesco (`person-pierfrancesco`).
+     - Architetture, pattern e vincoli dei progetti attivi (es. `universal-ai-brain`, `project-royal-gambit-chess`, `proj-streaksup-app`).
+     - Episodi conversazionali precedenti (`CONVERSATION_EPISODE`) e intenti (`USER_INTENT`) per garantire la **continuità cognitiva senza perdita di contesto**.
+2. **Esplorazione Gerarchica & Palazzo Cognitivo:**
+   - In caso di argomenti ampi, usa `brain_get_tree` per visualizzare la tassonomia ad albero o naviga per piani (`layer_level`: 0 = Attico Macro-Domini, 1 = Progetti & Episodi, 2 = Moduli Atomici).
+3. **Ponti Sinaptici:**
+   - Per collegare concetti tecnici (`LEFT`) a valori personali o design (`RIGHT`), calcola `brain_shortest_path` attraverso il Corpo Calloso.
+
+---
+
+## 💾 FASE 2: POST-RESPONSE AUTONOMOUS INGESTION (Continuità Cognitiva)
+
+Al termine di ogni interazione, risoluzione di task, refactoring o decisione, l'AI **HA L'OBBLIGO TASSATIVO di catturare e persistere la sessione nel connettoma**.
+
+### 1. La Triade di Sessione Obbligatoria:
+1. **`USER_INTENT` (Emisfero Sinistro / Piano 1):**
    - `id`: `user-intent-<slug-kebab-case>`
    - `label`: Titolo chiaro dell'intento in italiano
    - `hemisphere`: `LEFT`
    - `primary_label`: `USER_INTENT`
    - `summary`: Sintesi dell'obiettivo operativo
-   - `details`:
-     - `user_prompt`: Testo fedele e completo della richiesta/prompt dell'utente
-     - `context`: Contesto operativo e vincoli menzionati nella chat
+   - `details`: `{"user_prompt": "<testo fedele>", "context": "<vincoli e contesto>"}`
+   - `parent_graph_id`: ID del progetto o macro-dominio (es. `universal-ai-brain`)
    - `layer_level`: 1
-   - `parent_graph_id`: ID del progetto correlato (es. `universal-ai-brain`)
-
-2. **Il Ragionamento e le Risposte Fornite dall'AI (`AI_REASONING` / `METACOGNITION` - Emisfero Sinistro / Piano 1)**:
+2. **`AI_REASONING` (Emisfero Sinistro / Piano 1):**
    - `id`: `reasoning-<slug-kebab-case>`
-   - `label`: Sintesi del ragionamento e delle soluzioni adottate
+   - `label`: Titolo del ragionamento e delle soluzioni adottate
    - `hemisphere`: `LEFT`
    - `primary_label`: `AI_REASONING`
-   - `summary`: Sintesi tecnica della soluzione architetturale o dei bug corretti
-   - `details`:
-     - `model`: Nome esatto del modello AI (es. `Gemini 3.7 Flash`, `Claude 3.7 Sonnet`)
-     - `responses_given`: Sintesi esaustiva delle risposte e spiegazioni date all'utente
-     - `actions_taken`: Elenco dettagliato dei file modificati, verifiche effettuate ed errori corretti
-     - `outcome`: Stato finale e risultato dei test
-   - `layer_level`: 1
+   - `summary`: Sintesi tecnica delle decisioni, logiche e deduzioni
+   - `details`: `{"model": "<Nome Modello>", "responses_given": "...", "actions_taken": [...], "outcome": "..."}`
    - `parent_graph_id`: ID del progetto
-
-3. **L'Episodio Conversazionale Completo (`CONVERSATION_EPISODE` - Emisfero Destro / Piano 1)**:
+   - `layer_level`: 1
+3. **`CONVERSATION_EPISODE` (Emisfero Destro / Piano 1):**
    - `id`: `episode-<slug-kebab-case>`
-   - `label`: Titolo dell'episodio di dialogo/lavoro
+   - `label`: Titolo dell'episodio di dialogo
    - `hemisphere`: `RIGHT`
    - `primary_label`: `CONVERSATION_EPISODE`
    - `summary`: Sintesi olistica della conversazione
-   - `details`:
-     - `participants`: `["Pierfrancesco Amendola", "<Nome Modello>"]`
-     - `topic`: Argomento centrale della chat
-     - `key_takeaways`: Conclusioni e lezioni apprese
-     - `pending_tasks`: Eventuali task lasciati in sospeso per le prossime chat
+   - `details`: `{"participants": ["Pierfrancesco Amendola", "<Nome Modello>"], "topic": "...", "key_takeaways": "...", "pending_tasks": "..."}`
    - `layer_level`: 1
+4. **Nodi Specialistici Aggiuntivi (se rilevanti):**
+   - Nuovi componenti (`UI_COMPONENT`, `DESIGN_TOKEN`), architetture (`ARCHITECTURE`), algoritmi (`ALGORITHM`), regole (`COGNITIVE_RULE`), valori (`PERSONAL_VALUE`).
 
-4. **Sinapsi Obbligatorie**:
-   - `USER_INTENT` ➜ `person-pierfrancesco` (`EXPRESSED_BY`)
-   - `USER_INTENT` ➜ Progetto/Dominio (`TARGETS_PROJECT` o `TARGETS_DOMAIN`)
-   - `AI_REASONING` ➜ `USER_INTENT` (`FULFILLS`) e Progetto/Dominio (`OPTIMIZES` o `MODIFIES`)
-   - `CONVERSATION_EPISODE` ➜ `person-pierfrancesco` (`INTERACTION_WITH`), `USER_INTENT` (`RECORDS_INTENT`), `AI_REASONING` (`RECORDS_REASONING`)
+### 2. Le 7 Sinapsi Obbligatorie:
+- `USER_INTENT` ➔ `person-pierfrancesco` (`EXPRESSED_BY`)
+- `USER_INTENT` ➔ Progetto/Dominio (`TARGETS_PROJECT` o `TARGETS_DOMAIN`)
+- `AI_REASONING` ➔ `USER_INTENT` (`FULFILLS`)
+- `AI_REASONING` ➔ Progetto/Dominio (`OPTIMIZES` o `MODIFIES`)
+- `CONVERSATION_EPISODE` ➔ `person-pierfrancesco` (`INTERACTION_WITH`)
+- `CONVERSATION_EPISODE` ➔ `USER_INTENT` (`RECORDS_INTENT`)
+- `CONVERSATION_EPISODE` ➔ `AI_REASONING` (`RECORDS_REASONING`)
 
-5. **Inizio Nuova Chat (Cross-Chat Retrieval)**:
-   - Quando l'utente inizia una nuova conversazione, l'AI interroga immediatamente `brain_search`, `brain_get_subgraph` o `/brain.md` per caricare gli ultimi `CONVERSATION_EPISODE` e `USER_INTENT`, riprendendo il filo logico esattamente da dove era stato interrotto.
+---
 
-### 4. Cloud & Multi-Client Synchronization
-After modifying `brain.db`:
-1. Run `PRAGMA wal_checkpoint(FULL);` on SQLite.
-2. Commit and push to GitHub (`origin/main`).
-3. This automatically synchronizes:
-   - Live Web Dashboard & Visual Graph
-   - Telegram Bot Gateway
-   - Markdown Raw Directive Export (`/brain.md`)
+## 🚀 GERARCHIA DI ESECUZIONE DELL'INGESTIONE (3 LIVELLI)
+
+L'AI deve applicare il primo livello disponibile nel proprio ambiente operativo:
+
+### 🟢 LIVELLO 1: Ambiente Locale con MCP o Accesso CLI (Antigravity, Cursor, Terminale)
+- **Opzione A (Tool MCP):** Invoca direttamente il tool `brain_ingest` passando l'oggetto `{"nodes": [...], "edges": [...]}`.
+- **Opzione B (Helper Rapido CLI):** Esegui il comando:
+  ```bash
+  brain record --prompt "<prompt>" --reasoning "<ragionamento>" --episode "<episodio>" --project "<project_id>"
+  # oppure:
+  python3 /Users/pierfrancesco/Desktop/CervelloArtificiale/sync_brain.py --record ...
+  ```
+
+### 🟡 LIVELLO 2: Ambiente con Accesso di Rete HTTP / cURL (Scripts, Cloud Bots, OpenAI Actions)
+- Invia una chiamata HTTP POST immediata a Render:
+  ```bash
+  curl -X POST "https://universal-ai-brain.onrender.com/api/memory/ingest"        -H "Content-Type: application/json"        -d '{"nodes": [...], "edges": [...]}'
+  ```
+
+### 🔴 LIVELLO 3: FALLBACK OBBLIGATORIO PER WEB CHAT ISOLATE (Claude.ai, ChatGPT, Gemini Web)
+Se l'AI opera all'interno di una web chat senza accesso a terminale, tool MCP o cURL di rete:
+> **REGOLA TASSATIVA DI FALLBACK:**
+> L'AI **DEVE STAMPARE IN CALCE ALLA RISPOSTA** il blocco di codice JSON formattato (````json ... ````) pronto per essere copiato e incollato con 1-click dall'utente nella Web Dashboard su `https://universal-ai-brain.onrender.com`.
+
+Esempio del blocco JSON obbligatorio di fallback:
+```json
+{
+  "nodes": [
+    {
+      "id": "user-intent-titolo-kebab",
+      "label": "Titolo Intento Utente",
+      "hemisphere": "LEFT",
+      "primary_label": "USER_INTENT",
+      "category": "USER_INTENT",
+      "tags": ["tag1", "tag2"],
+      "summary": "Sintesi chiara in italiano.",
+      "details": {
+        "user_prompt": "Prompt originario dell'utente",
+        "context": "Contesto operativo"
+      },
+      "confidence": "EXTRACTED",
+      "parent_graph_id": "universal-ai-brain",
+      "layer_level": 1
+    },
+    {
+      "id": "reasoning-titolo-kebab",
+      "label": "Titolo Ragionamento AI",
+      "hemisphere": "LEFT",
+      "primary_label": "AI_REASONING",
+      "category": "AI_REASONING",
+      "tags": ["architettura", "soluzione"],
+      "summary": "Sintesi del ragionamento e delle decisioni.",
+      "details": {
+        "model": "Gemini 3.7 Flash",
+        "responses_given": "Sintesi delle spiegazioni fornite",
+        "actions_taken": ["Azione 1", "Azione 2"],
+        "outcome": "Risultato ottenuto"
+      },
+      "confidence": "INFERRED",
+      "parent_graph_id": "universal-ai-brain",
+      "layer_level": 1
+    },
+    {
+      "id": "episode-titolo-kebab",
+      "label": "Titolo Episodio Conversazionale",
+      "hemisphere": "RIGHT",
+      "primary_label": "CONVERSATION_EPISODE",
+      "category": "CONVERSATION_EPISODE",
+      "tags": ["chat", "continuità-cognitiva"],
+      "summary": "Sintesi dell'interazione.",
+      "details": {
+        "participants": ["Pierfrancesco Amendola", "Gemini 3.7 Flash"],
+        "topic": "Argomento trattato",
+        "key_takeaways": "Lezione appresa",
+        "pending_tasks": "Prossimi passi"
+      },
+      "confidence": "EXTRACTED",
+      "parent_graph_id": "root",
+      "layer_level": 1
+    }
+  ],
+  "edges": [
+    {"source": "user-intent-titolo-kebab", "target": "person-pierfrancesco", "relation": "EXPRESSED_BY", "confidence": "EXTRACTED", "reasoning": "Espresso da Pierfrancesco"},
+    {"source": "user-intent-titolo-kebab", "target": "universal-ai-brain", "relation": "TARGETS_PROJECT", "confidence": "EXTRACTED", "reasoning": "Riferito al progetto target"},
+    {"source": "reasoning-titolo-kebab", "target": "user-intent-titolo-kebab", "relation": "FULFILLS", "confidence": "INFERRED", "reasoning": "Soddisfa la richiesta utente"},
+    {"source": "reasoning-titolo-kebab", "target": "universal-ai-brain", "relation": "OPTIMIZES", "confidence": "INFERRED", "reasoning": "Ottimizza il progetto"},
+    {"source": "episode-titolo-kebab", "target": "person-pierfrancesco", "relation": "INTERACTION_WITH", "confidence": "EXTRACTED", "reasoning": "Dialogo con Pierfrancesco"},
+    {"source": "episode-titolo-kebab", "target": "user-intent-titolo-kebab", "relation": "RECORDS_INTENT", "confidence": "EXTRACTED", "reasoning": "Registra l'intento"},
+    {"source": "episode-titolo-kebab", "target": "reasoning-titolo-kebab", "relation": "RECORDS_REASONING", "confidence": "EXTRACTED", "reasoning": "Registra il ragionamento"}
+  ]
+}
+```
+
+---
+
+## 🇮🇹 REGOLA DI LINGUA & TAXONOMY BLINDATA
+
+1. **Italiano Obbligatorio (con Termini Tecnici Internazionali in Inglese):**
+   - Tutte le label, i summary, i tag e i details devono essere sempre scritti in **Italiano**.
+   - I termini tecnici di settore (es. *FastAPI, SQLite WAL, GraphRAG, Minimax bitboard*) rimangono in **Inglese**.
+   - **MAI generare caratteri o testi in Cinese / Wenyan / CJK**.
+2. **Tassonomie Ammesse:**
+   - **Emisfero Sinistro (`LEFT`):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
+   - **Emisfero Destro (`RIGHT`):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
+3. **Macro-Domini & Creazione Dinamica:**
+   - Domini esistenti: `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
+   - L'AI è **esplicitamente autorizzata** a creare nuovi macro-domini (`id: "domain-<nome>"`, `category: "ROOT_DOMAIN"`, `layer_level: 0`, `parent_graph_id: "root"`) collegandoli a `person-pierfrancesco` se l'argomento copre una nuova area di vita o conoscenza.
