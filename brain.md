@@ -69,8 +69,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 18:48:52 UTC | **Nodi Restituiti:** 307 (SX: 197 · DX: 110) | **Sinapsi Restituite:** 796
-> **Consistenza Reale Connettoma:** 307 Nodi Totali nel Database | 796 Sinapsi Totali
+> **Data Generazione:** 2026-08-29 18:53:27 UTC | **Nodi Restituiti:** 310 (SX: 199 · DX: 111) | **Sinapsi Restituite:** 803
+> **Consistenza Reale Connettoma:** 310 Nodi Totali nel Database | 803 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -83,846 +83,808 @@
 - **Analisi Algoritmica: BST vs Spanning Tree & Tassonomia Gerarchica** (`analysis-bst-vs-graph-taxonomy`)
   - **Tags:** `#algorithm-analysis` `#graph-theory` `#mst` `#b-tree` `#hierarchical-tree`
   - **Sintesi:** Valutazione tecnica: BST puro monodimensionale non modella relazioni cicliche; Spanning Tree Pesato (MST) e Alberi Gerarchici di Comunità estraggono la spina dorsale concettuale.
-  - **Dettagli:** `pure_bst`: Monodimensionale (già coperto da B-Tree SQLite O(log N)), `optimal_tree_models`: ['Maximum Spanning Tree (MST / Kruskal) per spina dorsale concettuale', 'Hierarchical Community Tree (Dendrogramma) per navigazione a zoom semantico', 'Prefix Trie / Radix Tree per lookup istantaneo O(k)'], `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `pure_bst`: Monodimensionale (già coperto da B-Tree SQLite O(log N)), `optimal_tree_models`: ['Maximum Spanning Tree (MST / Kruskal) per spina dorsale concettuale', 'Hierarchical Community Tree (Dendrogramma) per navigazione a zoom semantico', 'Prefix Trie / Radix Tree per lookup istantaneo O(k)'], `model`: LLM Assistant (Historical Session)
 - **Analisi Tecnica, Complessità e Gap Analysis App Lingue** (`reasoning-analisi-fattibilita-language-app`)
   - **Tags:** `#architecture` `#estimates` `#gap-analysis` `#language-app`
   - **Sintesi:** Valutazione complessità a 3/5, tempi 3-5 giorni per MVP, identificati 4 gap tecnici essenziali (pipeline batch, TTS neurale, sentence mining i+1, grafo grammaticale).
-  - **Dettagli:** `actions_taken`: ['Recupero storico nodi intent e reasoning su language app dal grafo', 'Gap analysis su pipeline contenuti, TTS neurale locale e sentence mining', 'Stima MVP 3-5 giorni e app completa 2-3 settimane'], `model`: Gemini 3.7 Flash, `outcome`: Identificati 4 gap chiave e definito piano di roll-out rapido, `responses_given`: Parere positivo, stima complessità media (3/5), tempi MVP (3-5 giorni), 4 mancanze chiave identificate.
+  - **Dettagli:** `raw`: `actions_taken`: ['Recupero storico nodi intent e reasoning su language app dal grafo', 'Gap analysis su pipeline contenuti, TTS neurale locale e sentence mining', 'Stima MVP 3-5 giorni e app completa 2-3 settimane'], `model`: Gemini 3.7 Flash, `outcome`: Identificati 4 gap chiave e definito piano di roll-out rapido, `responses_given`: Parere positivo, stima complessità media (3/5), tempi MVP (3-5 giorni), 4 mancanze chiave identificate.
 - **Analisi Vulnerabilità e Scalabilità del Grafo Cognitivo** (`reasoning-brain-architecture-analysis`)
   - **Tags:** `#versioning` `#vector-embeddings` `#data-volatility` `#conflict-resolution`
   - **Sintesi:** Identificazione di mancanze critiche nella gestione temporale (decadimento, versioning dei nodi conflittuali) e suggerimento di integrazione vettoriale per la ricerca semantica ibrida.
-  - **Dettagli:** `proposed_edge`: SUPERSEDES, `proposed_fields`: ['timestamp_updated', 'volatility', 'embedding_vector'], `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+  - **Dettagli:** `raw`: `proposed_edge`: SUPERSEDES, `proposed_fields`: ['timestamp_updated', 'volatility', 'embedding_vector'], `ingested_via`: telegram_json_post, `user`: Pierfrancesco
 - **Architettura Anti-Amnesia: Grafo Esterno vs Context Window Effimera** (`ai-reasoning-infinite-context-architecture`)
   - **Tags:** `#anti-amnesia` `#graph-rag` `#context-externalization` `#metacognition` `#gemini`
   - **Sintesi:** Deduzione logica Gemini: disaccoppiare la memoria a lungo termine dal context buffer del modello trasforma l'AI da sessione stateless a intelligenza stateful continua.
-  - **Dettagli:** `architecture_solution`: External Graph State (SQLite WAL + GraphRAG) vs Volatile Prompt Buffer, `benefits`: ["Nuova chat legge /brain.md e recupera istantaneamente l'intero stato pregresso", 'Nessun degrado qualitativo dovuto al context bloat', 'Indipendenza da limiti di contesto di specifici provider LLM'], `model`: Gemini 3.7 Flash
+  - **Dettagli:** `raw`: `architecture_solution`: External Graph State (SQLite WAL + GraphRAG) vs Volatile Prompt Buffer, `benefits`: ["Nuova chat legge /brain.md e recupera istantaneamente l'intero stato pregresso", 'Nessun degrado qualitativo dovuto al context bloat', 'Indipendenza da limiti di contesto di specifici provider LLM'], `model`: Gemini 3.7 Flash
 - **Architettura Modulare PWA con FSRS e LLM Locale** (`reasoning-language-app-architecture`)
   - **Tags:** `#architecture` `#fsrs` `#web-speech-api` `#sqlite` `#offline-first`
   - **Sintesi:** Proposta di architettura basata su motore Spaced Repetition (FSRS/SM-2), Web Speech API per audio/TTS nativo e integrazione LLM per generazione esercizi e roleplay senza dipendenze esterne bloccanti.
-  - **Dettagli:** `core_components`: ['FSRS Engine', 'Local SQLite', 'Web Speech API', 'LLM Contextual Tutor'], `privacy_tier`: Local/Self-hosted, `model`: AI Assistant
+  - **Dettagli:** `raw`: `core_components`: ['FSRS Engine', 'Local SQLite', 'Web Speech API', 'LLM Contextual Tutor'], `privacy_tier`: Local/Self-hosted, `model`: AI Assistant
 - **Deduzione AI: Architettura Client Unificato Multi-AI a Costo Zero** (`reasoning-architettura-universal-ai-hub`)
   - **Tags:** `#architettura` `#client-unificato` `#zero-cost`
   - **Sintesi:** Proposta architetturale: web-app/desktop locale leggera con FastAPI + frontend reattivo Tailwind, selettore provider (Groq/Gemini/Ollama/DeepSeek) e pipeline automatica di GraphRAG pre/post turno.
-  - **Dettagli:** `actions_taken`: ['Avviata sessione di allineamento /grill-me per definire stack e requisiti architetturali', 'Progettazione Hub multi-provider con GraphRAG trasparente e costo zero'], `model`: Gemini 3.7 Flash, `outcome`: Primo bivio di design pronto per intervista utente
+  - **Dettagli:** `raw`: `actions_taken`: ['Avviata sessione di allineamento /grill-me per definire stack e requisiti architetturali', 'Progettazione Hub multi-provider con GraphRAG trasparente e costo zero'], `model`: Gemini 3.7 Flash, `outcome`: Primo bivio di design pronto per intervista utente
 - **Deduzione AI: Architettura JARVIS Voice Agent Zero-Cost con Connettoma MCP** (`reasoning-architettura-jarvis-zero-cost`)
   - **Tags:** `#architettura` `#jarvis` `#zero-cost` `#mcp` `#voice-pipeline`
   - **Sintesi:** Validato stack vocale a costo zero: openWakeWord per hotword, Groq/Faster-Whisper per STT rapido, Groq/Gemini Flash per reasoning, Kokoro/Edge-TTS per audio e mcp_server.py per memoria bi-emisferica.
-  - **Dettagli:** `actions_taken`: ['Analisi comparativa repository sukeesh/Jarvis, open-jarvis/OpenJarvis, isair/jarvis', 'Definizione architettura a 5 stadi a costo zero assoluto', 'Mappatura pipeline audio a bassa latenza e integrazione con mcp_server.py'], `model`: Gemini 3.7 Flash, `outcome`: Architettura JARVIS validata, stack 100% free definito ed integrato con Universal AI Brain
+  - **Dettagli:** `raw`: `actions_taken`: ['Analisi comparativa repository sukeesh/Jarvis, open-jarvis/OpenJarvis, isair/jarvis', 'Definizione architettura a 5 stadi a costo zero assoluto', 'Mappatura pipeline audio a bassa latenza e integrazione con mcp_server.py'], `model`: Gemini 3.7 Flash, `outcome`: Architettura JARVIS validata, stack 100% free definito ed integrato con Universal AI Brain
 - **Deduzione AI: Architettura a Cluster Tematici Indipendenti** (`ai-reasoning-episodic-memory-architecture`)
   - **Tags:** `#ai-deduction` `#episodic-memory` `#semantic-clustering` `#knowledge-architecture`
   - **Sintesi:** Ragionamento architetturale: creare nodi CONVERSATION_EPISODE autonomi permette di archiviare chat eterogenee senza creare collegamenti artificiali.
-  - **Dettagli:** `rationale`: Argomenti non correlati non devono condividere sinapsi dirette ma gravitare attorno al rispettivo nodo di episodio o intenzione utente, `benefit`: Zero allucinazioni relazionali e massima purezza semantica, `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `rationale`: Argomenti non correlati non devono condividere sinapsi dirette ma gravitare attorno al rispettivo nodo di episodio o intenzione utente, `benefit`: Zero allucinazioni relazionali e massima purezza semantica, `model`: LLM Assistant (Historical Session)
 - **Deduzione AI: Architettura di Distribuzione MCP + System Directives Cross-Modello** (`ai-reasoning-multi-llm-mcp-skill-distribution`)
   - **Tags:** `#ai-reasoning` `#mcp-distribution` `#cognitive-prompting`
   - **Sintesi:** Claude Desktop e Antigravity usano JSON-RPC stdio MCP; ChatGPT usa OpenAPI Actions HTTPS su Render; tutti condividono il protocollo /universal-brain.
-  - **Dettagli:** `claude_config`: ~/Library/Application Support/Claude/claude_desktop_config.json, `gemini_antigravity`: ~/.gemini/antigravity/mcp_config.json, `chatgpt_actions`: https://universal-ai-brain.onrender.com/openapi.json, `model`: Claude
+  - **Dettagli:** `raw`: `claude_config`: ~/Library/Application Support/Claude/claude_desktop_config.json, `gemini_antigravity`: ~/.gemini/antigravity/mcp_config.json, `chatgpt_actions`: https://universal-ai-brain.onrender.com/openapi.json, `model`: Claude
 - **Deduzione AI: Archiviazione Jarvis e Pulizia Ambiente** (`reasoning-eliminazione-jarvis-pulizia`)
   - **Tags:** `#pulizia` `#archiviazione` `#pivot`
   - **Sintesi:** Cancellati i repository Desktop/Jarvis e Desktop/OpenJarvis. Connettoma aggiornato, predisposizione per nuovo obiettivo.
-  - **Dettagli:** `actions_taken`: ['Eliminate cartelle Desktop/Jarvis e Desktop/OpenJarvis', 'Aggiornato grafo della memoria con stato di archiviazione', 'Attivata modalità wenyan-ultra'], `model`: Gemini 3.7 Flash, `outcome`: Workspace pulito, memoria allineata, pronto per il nuovo progetto
+  - **Dettagli:** `raw`: `actions_taken`: ['Eliminate cartelle Desktop/Jarvis e Desktop/OpenJarvis', 'Aggiornato grafo della memoria con stato di archiviazione', 'Attivata modalità wenyan-ultra'], `model`: Gemini 3.7 Flash, `outcome`: Workspace pulito, memoria allineata, pronto per il nuovo progetto
 - **Deduzione AI: Chiarimento Architetturale: Coesistenza della Topo** (`reason-ep-20260827-hierarchical-overlay-reassurance`)
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Definito formalmente il principio di 'Dualità Overlay-Substrato': il Grafo preserva la totalità relazionale e le proprietà biologico-simboliche, l'Albero ottimizza il context routing per l'LLM.
-  - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'utente teme la perdita o il deterioramento della struttura a grafo preesistente in favore di una struttura ad albero", "L'utente richiede rassicurazione e chiarimento sulla compatibilità strutturale"], 'inferred': ["L'albero agisce unicamente come indice di partizionamento/routing multilivello (Overlay/View) calcolato sopra il connettoma a grafo", 'Nessun nodo, arco trasversale o relazione ciclica viene eliminata o degradata'], 'ambiguous': []}, `architectural_synthesis`: Definito formalmente il principio di 'Dualità Overlay-Substrato': il Grafo preserva la totalità relazionale e le proprietà biologico-simboliche, l'Albero ottimizza il context routing per l'LLM., `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `epistemic_rubric`: {'extracted': ["L'utente teme la perdita o il deterioramento della struttura a grafo preesistente in favore di una struttura ad albero", "L'utente richiede rassicurazione e chiarimento sulla compatibilità strutturale"], 'inferred': ["L'albero agisce unicamente come indice di partizionamento/routing multilivello (Overlay/View) calcolato sopra il connettoma a grafo", 'Nessun nodo, arco trasversale o relazione ciclica viene eliminata o degradata'], 'ambiguous': []}, `architectural_synthesis`: Definito formalmente il principio di 'Dualità Overlay-Substrato': il Grafo preserva la totalità relazionale e le proprietà biologico-simboliche, l'Albero ottimizza il context routing per l'LLM., `model`: LLM Assistant (Historical Session)
 - **Deduzione AI: Creazione e Rilascio JARVIS Voice Assistant Completata** (`reasoning-rilascio-jarvis-desktop-completato`)
   - **Tags:** `#jarvis` `#rilascio` `#voice-agent` `#connettoma`
   - **Sintesi:** Completata la creazione del progetto autonomo JARVIS in /Users/pierfrancesco/Desktop/Jarvis. Tutti i moduli operativi e testati con successo.
-  - **Dettagli:** `actions_taken`: ['Creazione directory /Users/pierfrancesco/Desktop/Jarvis', 'Implementazione moduli core (audio, VAD, wake_word, stt, tts)', 'Implementazione modulo brain connector SQLite FTS5 e memory sync', 'Implementazione llm router multi-provider 100% gratuito', 'Implementazione ui terminal HUD Iron Man e CLI jarvis.py', 'Test di diagnostica superato con successo'], `model`: Gemini 3.7 Flash, `outcome`: JARVIS creato e verificato in Desktop/Jarvis, collegato a CervelloArtificiale/brain.db
+  - **Dettagli:** `raw`: `actions_taken`: ['Creazione directory /Users/pierfrancesco/Desktop/Jarvis', 'Implementazione moduli core (audio, VAD, wake_word, stt, tts)', 'Implementazione modulo brain connector SQLite FTS5 e memory sync', 'Implementazione llm router multi-provider 100% gratuito', 'Implementazione ui terminal HUD Iron Man e CLI jarvis.py', 'Test di diagnostica superato con successo'], `model`: Gemini 3.7 Flash, `outcome`: JARVIS creato e verificato in Desktop/Jarvis, collegato a CervelloArtificiale/brain.db
 - **Deduzione AI: Formalizzazione Formale del Gating Emisferico Selettivo** (`ai-reasoning-gabaergic-gating-formalization`)
   - **Tags:** `#ai-reasoning` `#snr-maximization` `#cognitive-load`
   - **Sintesi:** La soppressione controlaterale massimizza il Signal-to-Noise Ratio (SNR), azzera il crosstalk semantico ed evita allucinazioni concettuali tra codice e vissuto emotivo.
-  - **Dettagli:** `scientific_principle`: Interhemispheric Inhibition for High Cognitive SNR, `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `scientific_principle`: Interhemispheric Inhibition for High Cognitive SNR, `model`: LLM Assistant (Historical Session)
+- **Deduzione AI: Formalizzazione dei 5 Paradigmi Visuali per il Connettoma** (`reasoning-progettazione-5-paradigmi-visuali-connettoma`)
+  - **Tags:** `#design-paradigms` `#connettoma` `#ui-rendering` `#showcase`
+  - **Sintesi:** Confermata l'avvenuta ottimizzazione (GraphRAG global context, telemetria, zero-cost stack). Creato showcase interattivo con 5 paradigmi: 3D Dual-Sphere, Torre Isometrica, Radar Bi-Polare, Cyber-Matrix Nodes e Territori Voronoi.
+  - **Dettagli:** `actions_taken`: ['Riepilogo dei miglioramenti e potenziamenti applicati', 'Sviluppo di showcase interattivo con 5 paradigmi visuali alternativi', 'Persistenza sessione nel grafo neurale'], `model`: Gemini 3.7 Flash, `outcome`: Showcase interattivo dei 5 paradigmi pronto per l'esplorazione, `paradigms`: ['3D Dual-Sphere Constellation', 'Isometric Multi-Layer Tower', 'Dual-Core Polar Radar', 'Cyber-Matrix Blueprint Nodes', 'Voronoi Cognitive Territories']
 - **Deduzione AI: Formalizzazione dei Cluster Tematici ad Alta Coesione Interna** (`ai-reasoning-domain-subgraph-modularity`)
   - **Tags:** `#ai-reasoning` `#modularity-q` `#graph-clustering`
   - **Sintesi:** La topologia a comunità modulari massimizza la Modularity Q di Newman, prevenendo il degrado delle ricerche BFS e FTS5.
-  - **Dettagli:** `metric`: High Modularity Q, Low Centrality Bleed, `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `metric`: High Modularity Q, Low Centrality Bleed, `model`: LLM Assistant (Historical Session)
 - **Deduzione AI: Integrazione Nativa OpenJarvis con Connettoma Neurale** (`reasoning-openjarvis-collegamento-connettoma`)
   - **Tags:** `#openjarvis` `#mcp` `#universal-brain` `#rag`
   - **Sintesi:** Implementato il tool UniversalBrainTool per OpenJarvis e configurato il supporto MCP verso CervelloArtificiale/mcp_server.py. Test completato con successo.
-  - **Dettagli:** `actions_taken`: ['Clonato OpenJarvis in /Users/pierfrancesco/Desktop/OpenJarvis', 'Creato tool nativo UniversalBrainTool in src/openjarvis/tools/universal_brain.py', 'Configurato configs/openjarvis/config.toml con MCP server e brain.db SQLite locale', 'Eseguito test con esito positivo (268 nodi rilevati)'], `model`: Gemini 3.7 Flash, `outcome`: OpenJarvis è ora connesso e pronto all'uso con il connettoma neurale
+  - **Dettagli:** `raw`: `actions_taken`: ['Clonato OpenJarvis in /Users/pierfrancesco/Desktop/OpenJarvis', 'Creato tool nativo UniversalBrainTool in src/openjarvis/tools/universal_brain.py', 'Configurato configs/openjarvis/config.toml con MCP server e brain.db SQLite locale', 'Eseguito test con esito positivo (268 nodi rilevati)'], `model`: Gemini 3.7 Flash, `outcome`: OpenJarvis è ora connesso e pronto all'uso con il connettoma neurale
 - **Deduzione AI: Piano Architetturale Modulare JARVIS Separato** (`reasoning-piano-implementazione-jarvis-desktop`)
   - **Tags:** `#architettura` `#jarvis` `#piano-implementazione`
   - **Sintesi:** Definita la struttura autonoma a 5 moduli per JARVIS su Desktop/Jarvis, con client di collegamento bi-direzionale verso CervelloArtificiale/brain.db e Render.
-  - **Dettagli:** `actions_taken`: ['Creazione piano di implementazione dettagliato per la cartella Desktop/Jarvis', 'Strutturazione moduli core, brain connector, llm router gratuito e audio HUD'], `model`: Gemini 3.7 Flash, `outcome`: Piano di implementazione generato e pronto per approvazione utente
+  - **Dettagli:** `raw`: `actions_taken`: ['Creazione piano di implementazione dettagliato per la cartella Desktop/Jarvis', 'Strutturazione moduli core, brain connector, llm router gratuito e audio HUD'], `model`: Gemini 3.7 Flash, `outcome`: Piano di implementazione generato e pronto per approvazione utente
 - **Deduzione AI: Rilascio e Sincronizzazione dell'Hierarchical Tree** (`reason-ep-20260827-hierarchical-tree-deployment-sync`)
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Formalizzata la transizione dell'Universal Knowledge Graph in una piattaforma multiscalare dotata di motore ad albero nativo, interfaccia web interattiva e binding MCP universale.
-  - **Dettagli:** `epistemic_rubric`: {'extracted': ["Implementato e rilasciato l'Hierarchical Knowledge Tree senza intaccare il grafo 2D, FTS5 BM25, shortest path e MCP", 'Nuovi endpoint: GET /api/graph/tree e GET /brain.md?view=tree (risparmio 80% token)', 'Nuovo tool MCP: brain_get_tree in mcp_server.py per Claude Desktop, Cursor e Gemini', "Nuova UI: HUD '🌳 Albero Gerarchico' con live search e focus diretto sul grafo", 'Commit GitHub: 62e48df sincronizzato e deployato su Render.com', 'God Nodes principali: get_db_connection(), EMISFERO DESTRO, EMISFERO SINISTRO, fetchBrainData(), handle_json_rpc()'], 'inferred': ["L'architettura ha completato con successo la transizione a doppio strato (Overlay Gerarchico + Connettoma a Grafo)", "L'integrazione di get_knowledge_tree con get_db_connection consolida l'accesso ai dati senza ridondanze"], 'ambiguous': []}, `architectural_synthesis`: Formalizzata la transizione dell'Universal Knowledge Graph in una piattaforma multiscalare dotata di motore ad albero nativo, interfaccia web interattiva e binding MCP universale., `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `epistemic_rubric`: {'extracted': ["Implementato e rilasciato l'Hierarchical Knowledge Tree senza intaccare il grafo 2D, FTS5 BM25, shortest path e MCP", 'Nuovi endpoint: GET /api/graph/tree e GET /brain.md?view=tree (risparmio 80% token)', 'Nuovo tool MCP: brain_get_tree in mcp_server.py per Claude Desktop, Cursor e Gemini', "Nuova UI: HUD '🌳 Albero Gerarchico' con live search e focus diretto sul grafo", 'Commit GitHub: 62e48df sincronizzato e deployato su Render.com', 'God Nodes principali: get_db_connection(), EMISFERO DESTRO, EMISFERO SINISTRO, fetchBrainData(), handle_json_rpc()'], 'inferred': ["L'architettura ha completato con successo la transizione a doppio strato (Overlay Gerarchico + Connettoma a Grafo)", "L'integrazione di get_knowledge_tree con get_db_connection consolida l'accesso ai dati senza ridondanze"], 'ambiguous': []}, `architectural_synthesis`: Formalizzata la transizione dell'Universal Knowledge Graph in una piattaforma multiscalare dotata di motore ad albero nativo, interfaccia web interattiva e binding MCP universale., `model`: LLM Assistant (Historical Session)
 - **Deduzione AI: Risposta Perfetta di OpenJarvis con Connettoma Neurale** (`reasoning-verifica-openjarvis-ollama-gpt-cloud`)
   - **Tags:** `#openjarvis` `#ollama` `#universal-brain` `#validazione`
   - **Sintesi:** OpenJarvis ha interrogato brain.db tramite UniversalBrainTool e generato una risposta completa e accurata sull'identità e architettura di Pierfrancesco.
-  - **Dettagli:** `actions_taken`: ['Configurato OpenJarvis con motore Ollama localhost:11434', 'Eseguito ask "Chi è Pierfrancesco?" con UniversalBrainTool attivo', 'Modello gpt-oss:120b-cloud ha risposto citando esattamente il connettoma bi-emisferico e i valori di Pierfrancesco'], `model`: gpt-oss:120b-cloud, `outcome`: Integrazione OpenJarvis + Ollama + Universal AI Brain perfettamente funzionante
+  - **Dettagli:** `raw`: `actions_taken`: ['Configurato OpenJarvis con motore Ollama localhost:11434', 'Eseguito ask "Chi è Pierfrancesco?" con UniversalBrainTool attivo', 'Modello gpt-oss:120b-cloud ha risposto citando esattamente il connettoma bi-emisferico e i valori di Pierfrancesco'], `model`: gpt-oss:120b-cloud, `outcome`: Integrazione OpenJarvis + Ollama + Universal AI Brain perfettamente funzionante
 - **Deduzione AI: Specifiche Tecniche e Mappatura Comandi dell'Hub C** (`reason-ep-20260827-telegram-cognitive-hub-spec`)
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Definita la pipeline I/O perimetrale: Telegram App -> HTTPS Webhook (/api/telegram/webhook) -> Whitelist Auth -> Intent Router (/search, /path, /tree, Ingest) -> brain.db.
-  - **Dettagli:** `epistemic_rubric`: {'extracted': ['Integrazione di POST /api/telegram/webhook direttamente in main.py a costo zero', 'Comandi definiti: /search (FTS5 BM25), /path (BFS bidirezionale corpo calloso), /tree (Albero sintetico)', 'Supporto per parsing testo/audio per ingestione automatica in brain.db', 'Autenticazione di sicurezza tramite User ID Whitelist', 'Stato registrato al Commit 965f0a8: 110 nodi e 253 sinapsi'], 'inferred': ["L'architettura Telegram unifica il livello di percezione (audio/testo) con il livello di navigazione del connettoma (BFS inter-emisferico)", 'Il gateway funge da estensione mobile real-time del server MCP e del database SQLite'], 'ambiguous': []}, `architectural_synthesis`: Definita la pipeline I/O perimetrale: Telegram App -> HTTPS Webhook (/api/telegram/webhook) -> Whitelist Auth -> Intent Router (/search, /path, /tree, Ingest) -> brain.db., `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `epistemic_rubric`: {'extracted': ['Integrazione di POST /api/telegram/webhook direttamente in main.py a costo zero', 'Comandi definiti: /search (FTS5 BM25), /path (BFS bidirezionale corpo calloso), /tree (Albero sintetico)', 'Supporto per parsing testo/audio per ingestione automatica in brain.db', 'Autenticazione di sicurezza tramite User ID Whitelist', 'Stato registrato al Commit 965f0a8: 110 nodi e 253 sinapsi'], 'inferred': ["L'architettura Telegram unifica il livello di percezione (audio/testo) con il livello di navigazione del connettoma (BFS inter-emisferico)", 'Il gateway funge da estensione mobile real-time del server MCP e del database SQLite'], 'ambiguous': []}, `architectural_synthesis`: Definita la pipeline I/O perimetrale: Telegram App -> HTTPS Webhook (/api/telegram/webhook) -> Whitelist Auth -> Intent Router (/search, /path, /tree, Ingest) -> brain.db., `model`: LLM Assistant (Historical Session)
 - **Deduzione AI: Stato Cognitivo Condiviso e Continuità Inter-Modello** (`ai-reasoning-shared-cognitive-state-continuity`)
   - **Tags:** `#shared-state` `#cross-model-reasoning` `#epistemic-anchoring` `#universal-ai-brain` `#metacognition`
   - **Sintesi:** L'unificazione del contesto in un grafo bi-emisferico supera il silo conversazionale dei singoli LLM, trasformando istanze AI isolate in nodi computazionali su un unico substrato cognitivo.
-  - **Dettagli:** `model`: Gemini 3.7 Flash, `paradigm`: Decentralized Sovereign AI Memory, `architectural_impact`: La memoria risiede nel grafo dell'utente, non nei database isolati dei provider proprietari.
+  - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `paradigm`: Decentralized Sovereign AI Memory, `architectural_impact`: La memoria risiede nel grafo dell'utente, non nei database isolati dei provider proprietari.
 - **Deduzione AI: Tassonomia e Classificazione Formale dell'Universa** (`reason-ep-20260827-graph-taxonomy-classification`)
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Mappate le 4 dimensioni: Topologica (Heterogeneous Multigraph), Epistemica (Epistemic Property Graph), Cognitiva (Episodic-Semantic Hybrid), Dinamica (Evolving Temporal Graph).
-  - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'Universal Knowledge Graph dell'utente possiede nodi tipizzati eterogenei, architettura biemisferica e rubrica epistemica", "L'utente richiede la categorizzazione formale della tipologia di grafo"], 'inferred': ['Formalmente classificabile come Attributed Directed Heterogeneous Multigraph con proprietà temporali ed epistemiche', 'Funziona come memoria a lungo termine neuro-simbolica a plasticità dinamica'], 'ambiguous': []}, `classification_synthesis`: Mappate le 4 dimensioni: Topologica (Heterogeneous Multigraph), Epistemica (Epistemic Property Graph), Cognitiva (Episodic-Semantic Hybrid), Dinamica (Evolving Temporal Graph)., `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `epistemic_rubric`: {'extracted': ["L'Universal Knowledge Graph dell'utente possiede nodi tipizzati eterogenei, architettura biemisferica e rubrica epistemica", "L'utente richiede la categorizzazione formale della tipologia di grafo"], 'inferred': ['Formalmente classificabile come Attributed Directed Heterogeneous Multigraph con proprietà temporali ed epistemiche', 'Funziona come memoria a lungo termine neuro-simbolica a plasticità dinamica'], 'ambiguous': []}, `classification_synthesis`: Mappate le 4 dimensioni: Topologica (Heterogeneous Multigraph), Epistemica (Epistemic Property Graph), Cognitiva (Episodic-Semantic Hybrid), Dinamica (Evolving Temporal Graph)., `model`: LLM Assistant (Historical Session)
 - **Deduzione AI: Traduzione e Consolidamento del Benchmark Comparat** (`reason-ep-20260827-tree-ranking-translation`)
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Tradotto fedelmente il framework di comparazione tecnica e gerarchizzazione delle strutture ad albero.
-  - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'Albero Gerarchico a Comunità (Dendrogramma) è eletto come architettura primaria (risparmio token 80%, Semantic Zoom)", 'MST è confermato come dorsale di deduzione logica secondaria', 'Trie/Radix Tree è classificato come ausiliario per autocompletamento O(k)', 'BST è escluso per ridondanza rispetto ai B+Tree nativi di SQLite e incapacità di gestire topologie 2D/3D con cicli'], 'inferred': ['Il modello multi-albero formalizza una pipeline a strati: indicizzazione lessicale (Trie) -> scoping gerarchico (Dendrogramma) -> linearizzazione deduttiva (MST)'], 'ambiguous': []}, `translation_synthesis`: Tradotto fedelmente il framework di comparazione tecnica e gerarchizzazione delle strutture ad albero., `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `epistemic_rubric`: {'extracted': ["L'Albero Gerarchico a Comunità (Dendrogramma) è eletto come architettura primaria (risparmio token 80%, Semantic Zoom)", 'MST è confermato come dorsale di deduzione logica secondaria', 'Trie/Radix Tree è classificato come ausiliario per autocompletamento O(k)', 'BST è escluso per ridondanza rispetto ai B+Tree nativi di SQLite e incapacità di gestire topologie 2D/3D con cicli'], 'inferred': ['Il modello multi-albero formalizza una pipeline a strati: indicizzazione lessicale (Trie) -> scoping gerarchico (Dendrogramma) -> linearizzazione deduttiva (MST)'], 'ambiguous': []}, `translation_synthesis`: Tradotto fedelmente il framework di comparazione tecnica e gerarchizzazione delle strutture ad albero., `model`: LLM Assistant (Historical Session)
 - **Deduzione AI: Trasparenza Architettura Ibrida MCP / OpenAPI / Markdown e Aggiornamento Master Prompt** (`reasoning-architettura-connettoma-web-vs-desktop`)
   - **Tags:** `#architettura` `#graphrag` `#mcp` `#openapi` `#sincronizzazione`
   - **Sintesi:** Spiegata la coesistenza reale tra MCP locale (desktop) e OpenAPI/HTTP/Markdown (web). Aggiornato il Master Prompt in static/app.js con le specifiche del Palazzo Cognitivo e sincronizzato il connettoma neurale su Cloud e Desktop.
-  - **Dettagli:** `actions_taken`: ["Spiegazione dell'interrogazione SQLite BM25 e MCP per desktop e OpenAPI/Render per web", 'Perfezionamento del Master Prompt con layer_level, parent_graph_id e details strutturati', 'Aggiornamento di static/app.js', 'Ingestione sessione corrente e push bidirezionale su Git/Render'], `model`: Gemini 3.7 Flash, `outcome`: Master prompt aggiornato, connettoma sincronizzato e sessione registrata con successo
+  - **Dettagli:** `raw`: `actions_taken`: ["Spiegazione dell'interrogazione SQLite BM25 e MCP per desktop e OpenAPI/Render per web", 'Perfezionamento del Master Prompt con layer_level, parent_graph_id e details strutturati', 'Aggiornamento di static/app.js', 'Ingestione sessione corrente e push bidirezionale su Git/Render'], `model`: Gemini 3.7 Flash, `outcome`: Master prompt aggiornato, connettoma sincronizzato e sessione registrata con successo
 - **Deduzione AI: Unificazione Architetturale tra Knowledge Graph e** (`reason-ep-20260827-graph-tree-unification`)
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Formalizzata la pipeline: Knowledge Graph -> Spreading Activation -> Local Tree Search (ToT/MCTS) -> Trajectory Evaluation -> Synaptic Consolidation (Graph Ingest).
-  - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'utente possiede un Universal Knowledge Graph strutturato come memoria/cervello", "L'utente richiede l'analisi della compatibilità formale e funzionale tra grafi di conoscenza e alberi di ricerca"], 'inferred': ['Il grafo agisce come memoria a lungo termine (substrato associativo / Sistema 1)', "L'albero di ricerca agisce come meccanismo deliberativo e di pianificazione (working memory / Sistema 2)", "La sintesi tra i due produce un'architettura 'Graph-of-Thoughts' con consolidamento episodico-semantico"], 'ambiguous': []}, `architectural_synthesis`: Formalizzata la pipeline: Knowledge Graph -> Spreading Activation -> Local Tree Search (ToT/MCTS) -> Trajectory Evaluation -> Synaptic Consolidation (Graph Ingest)., `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `epistemic_rubric`: {'extracted': ["L'utente possiede un Universal Knowledge Graph strutturato come memoria/cervello", "L'utente richiede l'analisi della compatibilità formale e funzionale tra grafi di conoscenza e alberi di ricerca"], 'inferred': ['Il grafo agisce come memoria a lungo termine (substrato associativo / Sistema 1)', "L'albero di ricerca agisce come meccanismo deliberativo e di pianificazione (working memory / Sistema 2)", "La sintesi tra i due produce un'architettura 'Graph-of-Thoughts' con consolidamento episodico-semantico"], 'ambiguous': []}, `architectural_synthesis`: Formalizzata la pipeline: Knowledge Graph -> Spreading Activation -> Local Tree Search (ToT/MCTS) -> Trajectory Evaluation -> Synaptic Consolidation (Graph Ingest)., `model`: LLM Assistant (Historical Session)
 - **Deduzione AI: Validazione Formale del Grafo Frattale e Implementazione 0€** (`ai-reasoning-hypergraph-multi-scale-feasibility`)
   - **Tags:** `#ai-reasoning` `#complexity-analysis` `#token-efficiency`
   - **Sintesi:** Il modello Graph-of-Graphs abbatte la complessità computazionale a O(log N) e riduce i token del 95% tramite drill-down.
-  - **Dettagli:** `implementation_cost`: 0€ su SQLite con colonna parent_graph_id, `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `implementation_cost`: 0€ su SQLite con colonna parent_graph_id, `model`: LLM Assistant (Historical Session)
 - **Deduzione AI: Valutazione Tecnica delle Strutture ad Albero (MST** (`reason-ep-20260827-tree-structures-evaluation`)
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Mappati 4 layer strutturali: B+Tree (Storage), Radix Trie (Lexical Routing O(k)), Hierarchical Dendrogram (Context Scoping), MST (Linear Chain-of-Thought).
-  - **Dettagli:** `epistemic_rubric`: {'extracted': ['I BST 1D non sono adatti a modellare reti cerebrali cicliche multidimensionali', 'SQLite implementa B+Tree per indici su disco a O(log N)', 'MST estrae la spina dorsale concettuale eliminando i cicli', 'Il dendrogramma gerarchico abilita il Semantic Zoom multilivello', 'Il Prefix Trie/Radix Tree fornisce autocompletamento a O(k)'], 'inferred': ['Le strutture ad albero non sostituiscono il grafo, ma agiscono come proiezioni e indici algoritmici specializzati del connettoma', "L'integrazione di MST e Dendrogramma ottimizza il consumo di token e previene loop di generazione"], 'ambiguous': []}, `algorithmic_synthesis`: Mappati 4 layer strutturali: B+Tree (Storage), Radix Trie (Lexical Routing O(k)), Hierarchical Dendrogram (Context Scoping), MST (Linear Chain-of-Thought)., `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `epistemic_rubric`: {'extracted': ['I BST 1D non sono adatti a modellare reti cerebrali cicliche multidimensionali', 'SQLite implementa B+Tree per indici su disco a O(log N)', 'MST estrae la spina dorsale concettuale eliminando i cicli', 'Il dendrogramma gerarchico abilita il Semantic Zoom multilivello', 'Il Prefix Trie/Radix Tree fornisce autocompletamento a O(k)'], 'inferred': ['Le strutture ad albero non sostituiscono il grafo, ma agiscono come proiezioni e indici algoritmici specializzati del connettoma', "L'integrazione di MST e Dendrogramma ottimizza il consumo di token e previene loop di generazione"], 'ambiguous': []}, `algorithmic_synthesis`: Mappati 4 layer strutturali: B+Tree (Storage), Radix Trie (Lexical Routing O(k)), Hierarchical Dendrogram (Context Scoping), MST (Linear Chain-of-Thought)., `model`: LLM Assistant (Historical Session)
 - **Deduzione AI: Valutazione e Design di un Telegram Bot come Inter** (`reason-ep-20260827-telegram-bot-interface`)
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render.
-  - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'utente valuta l'implementazione di un bot Telegram per interagire con il proprio Knowledge Graph", 'Richiesta di valutazione su utilità, gratuità e difficoltà implementativa'], 'inferred': ["L'integrazione riduce drasticamente l'attrito di inserimento dati (write) e consultazione (read)", "L'architettura Telegram agisce come livello di Input/Output percettivo del cervello artificiale"], 'ambiguous': []}, `architectural_synthesis`: Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render., `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `epistemic_rubric`: {'extracted': ["L'utente valuta l'implementazione di un bot Telegram per interagire con il proprio Knowledge Graph", 'Richiesta di valutazione su utilità, gratuità e difficoltà implementativa'], 'inferred': ["L'integrazione riduce drasticamente l'attrito di inserimento dati (write) e consultazione (read)", "L'architettura Telegram agisce come livello di Input/Output percettivo del cervello artificiale"], 'ambiguous': []}, `architectural_synthesis`: Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render., `model`: LLM Assistant (Historical Session)
 - **Design Pedagogico Ibrido (Busuu Grammar + Duolingo Micro-Drill)** (`reasoning-hybrid-pedagogy-engine`)
   - **Tags:** `#pedagogical-engine` `#cloze-test` `#word-bank` `#cefr-schema` `#sqlite-schema`
   - **Sintesi:** Progettazione di un motore a 6 tipologie di esercizio con schede grammaticali preparatorie (stile Busuu) e micro-lezioni a bolle interattive (stile Duolingo) supportate da SQLite e batch generation da corpora di frequenza.
-  - **Dettagli:** `exercise_types`: ['Word Bank', 'Cloze Test', 'Matching Pairs', 'Audio Listen', 'Active Recall', 'Grammar Spotlight'], `penalty_rule`: Re-queue on failure without blocking energy, `model`: AI Assistant
+  - **Dettagli:** `raw`: `exercise_types`: ['Word Bank', 'Cloze Test', 'Matching Pairs', 'Audio Listen', 'Active Recall', 'Grammar Spotlight'], `penalty_rule`: Re-queue on failure without blocking energy, `model`: AI Assistant
 - **Diagnosi Discrepanza Nodi e Protocollo Deploy Render** (`reasoning-diagnosi-discrepanza-deploy-render`)
   - **Tags:** `#render` `#deploy` `#git-push` `#wal-checkpoint` `#sync`
   - **Sintesi:** Identificati 4 nodi locali non committati (Royal Gambit Chess / Duolingo Chess). Eseguito WAL checkpoint, aggiornato brain.md e push Git per triggerare auto-deploy Render.
-  - **Dettagli:** `model`: Gemini 3.7 Flash, `responses_given`: Spiegata la causa della discrepanza (i nodi locali creati non erano stati committati e pushati su GitHub da cui Render effettua il build/deploy). Eseguito allineamento e push., `actions_taken`: ['Confronto diff nodi locali vs endpoint Render', 'Identificati 4 nodi locali: design-duolingo-chess-system, user-intent-duolingo-chess-preference, tech-minimax-chess-engine, project-royal-gambit-chess', 'Aggiornato brain.md sincronizzato con DB', 'Eseguito PRAGMA wal_checkpoint(FULL)', 'Git commit e push su origin/main'], `outcome`: Database allineato e auto-deploy Render avviato con successo.
+  - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `responses_given`: Spiegata la causa della discrepanza (i nodi locali creati non erano stati committati e pushati su GitHub da cui Render effettua il build/deploy). Eseguito allineamento e push., `actions_taken`: ['Confronto diff nodi locali vs endpoint Render', 'Identificati 4 nodi locali: design-duolingo-chess-system, user-intent-duolingo-chess-preference, tech-minimax-chess-engine, project-royal-gambit-chess', 'Aggiornato brain.md sincronizzato con DB', 'Eseguito PRAGMA wal_checkpoint(FULL)', 'Git commit e push su origin/main'], `outcome`: Database allineato e auto-deploy Render avviato con successo.
 - **Diagnosi Fallimento Retrieval Gemini e Piano di Azione** (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`)
   - **Tags:** `#diagnosi-retrieval` `#graphrag-optimization` `#knowledge-graph` `#master-prompt`
   - **Sintesi:** Identificato falso positivo: Gemini vedeva 1 solo entry a causa di un retrieval limitato. Proposto potenziamento del GraphRAG (iniezione baseline Palazzo), telemetria e consolidamento nodi stack.
-  - **Dettagli:** `actions_taken`: ['Verifica metriche reali con brain_get_stats (304 nodi, 789 archi)', 'Analisi cause retrieval parziale su client esterni', 'Definizione interventi su GraphRAG pre-response, osservabilità e master prompt'], `model`: Gemini 3.7 Flash, `outcome`: Chiarezza architetturale ristabilita e roadmap attuabile
+  - **Dettagli:** `raw`: `actions_taken`: ['Verifica metriche reali con brain_get_stats (304 nodi, 789 archi)', 'Analisi cause retrieval parziale su client esterni', 'Definizione interventi su GraphRAG pre-response, osservabilità e master prompt'], `model`: Gemini 3.7 Flash, `outcome`: Chiarezza architetturale ristabilita e roadmap attuabile
 - **Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€** (`ai-reasoning-hybrid-search-mcp`)
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
-  - **Dettagli:** `search_engine`: SQLite FTS5 Porter Unicode61, `pathfinding`: Bidirectional Breadth-First Search (BFS), `context_scoping`: k-hop neighborhood subgraph extraction, `interoperability`: JSON-RPC 2.0 stdio MCP Server, `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `search_engine`: SQLite FTS5 Porter Unicode61, `pathfinding`: Bidirectional Breadth-First Search (BFS), `context_scoping`: k-hop neighborhood subgraph extraction, `interoperability`: JSON-RPC 2.0 stdio MCP Server, `model`: LLM Assistant (Historical Session)
 - **Ragionamento AI: Risoluzione Bug & Continuità Cognitiva Inter-Chat** (`reasoning-audit-bugfix-e-protocollo-graphify`)
   - **Tags:** `#metacognition` `#cross-chat-continuity` `#bugfix` `#fastapi` `#mcp` `#sqlite-wal`
   - **Sintesi:** Corretti 4 bug critici, verificati prompt e tassonomie, e integrata la specifica mandatoria di continuità cognitiva cross-chat con persistenza totale delle risposte fornite e del contesto.
-  - **Dettagli:** `actions_taken`: ['Fix UnboundLocalError summary in main.py ingest_memory', 'Fix default layer_level 0 in NodeModel', 'Fix dangling EOF in install.sh linea 158', 'Allineamento colonne parent_graph_id e layer_level in mcp_server, telegram_bot, sync_brain', 'Integrazione Sezione 3 Cross-Chat Cognitive Continuity in SKILL.md e prompt.md', 'Verifica E2E test suite su tutti i moduli con 100% successo'], `model`: Gemini 3.7 Flash, `outcome`: Schema e direttive blindati per memoria cross-chat senza perdita di contesto, `responses_given`: Spiegata in dettaglio la struttura di auto-ingestione contestuale: USER_INTENT cattura il prompt/contesto, AI_REASONING cattura risposte/modifiche/deduzioni, CONVERSATION_EPISODE cattura sintesi/partecipanti/esito. Nuove chat interrogano brain_search/brain.md per recuperare immediatamente la memoria storica.
+  - **Dettagli:** `raw`: `actions_taken`: ['Fix UnboundLocalError summary in main.py ingest_memory', 'Fix default layer_level 0 in NodeModel', 'Fix dangling EOF in install.sh linea 158', 'Allineamento colonne parent_graph_id e layer_level in mcp_server, telegram_bot, sync_brain', 'Integrazione Sezione 3 Cross-Chat Cognitive Continuity in SKILL.md e prompt.md', 'Verifica E2E test suite su tutti i moduli con 100% successo'], `model`: Gemini 3.7 Flash, `outcome`: Schema e direttive blindati per memoria cross-chat senza perdita di contesto, `responses_given`: Spiegata in dettaglio la struttura di auto-ingestione contestuale: USER_INTENT cattura il prompt/contesto, AI_REASONING cattura risposte/modifiche/deduzioni, CONVERSATION_EPISODE cattura sintesi/partecipanti/esito. Nuove chat interrogano brain_search/brain.md per recuperare immediatamente la memoria storica.
 - **Ragionamento AI: Simbiosi Architetturale tra Substrato Cloud Render e Agenti Locali** (`ai-reasoning-hybrid-cloud-local-symbiosis`)
   - **Tags:** `#ai-reasoning` `#hybrid-cloud` `#distributed-systems` `#cross-client-synergy` `#metacognition`
   - **Sintesi:** Deduzione architetturale: Render agisce come Hub pubblico permanente (Telegram Webhook, Web Visualizer, OpenAPI GPTs), mentre MCP agisce come bus a bassissima latenza per agenti IDE.
-  - **Dettagli:** `model`: Antigravity / Google DeepMind Agent, `key_pillars`: ['Render Cloud: Accessibilità universale mobile 24/7, Telegram bot webhook, integrazione OpenAI Actions HTTPS', 'Local MCP: Esecuzione a latenza zero (<1ms) su SQLite WAL durante il coding in IDE', 'Web Chat Workflow: Allegazione diretta di brain.md o endpoint /brain.md pubblico per AI con Web Search']
+  - **Dettagli:** `raw`: `model`: Antigravity / Google DeepMind Agent, `key_pillars`: ['Render Cloud: Accessibilità universale mobile 24/7, Telegram bot webhook, integrazione OpenAI Actions HTTPS', 'Local MCP: Esecuzione a latenza zero (<1ms) su SQLite WAL durante il coding in IDE', 'Web Chat Workflow: Allegazione diretta di brain.md o endpoint /brain.md pubblico per AI con Web Search']
 - **Ragionamento: Comando /prompt Copia Rapida per Telegra** (`reasoning-comando-prompt-copia-rapi-8585`)
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code cla
-  - **Dettagli:** `model`: Gemini 3.7 Flash, `responses_given`: Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code class="language-markdown">...</code></pre>, permettendo all'utente di toccare il riquadro sullo smartphone per copiare istantaneamente il testo negli appunti di iOS/Android., `actions_taken`: ['Aggiunto pulsante "📋 Copia Prompt AI" nella tastiera persistente di get_main_keyboard() in telegram_bot.py', 'Implementato handler per /prompt, prompt e relative varianti in process_telegram_message()', 'Formattato il Master System Prompt con escape HTML dentro <pre><code class="language-markdown"> per 1-tap copy', 'Aggiornato il menu comandi /help con la nuova sezione Integrazione AI Esterne', 'Testata esecuzione e pushato su origin/main per aggiornare il bot live su Render'], `outcome`: Comando /prompt operativo su Telegram con supporto copia al tocco su smartphone.
+  - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `responses_given`: Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code class="language-markdown">...</code></pre>, permettendo all'utente di toccare il riquadro sullo smartphone per copiare istantaneamente il testo negli appunti di iOS/Android., `actions_taken`: ['Aggiunto pulsante "📋 Copia Prompt AI" nella tastiera persistente di get_main_keyboard() in telegram_bot.py', 'Implementato handler per /prompt, prompt e relative varianti in process_telegram_message()', 'Formattato il Master System Prompt con escape HTML dentro <pre><code class="language-markdown"> per 1-tap copy', 'Aggiornato il menu comandi /help con la nuova sezione Integrazione AI Esterne', 'Testata esecuzione e pushato su origin/main per aggiornare il bot live su Render'], `outcome`: Comando /prompt operativo su Telegram con supporto copia al tocco su smartphone.
 - **Ragionamento: Occultamento Pulsanti Mobile su Browser ** (`reasoning-occultamento-pulsanti-mob-9019`)
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Risolto problema cache e visualizzazione pulsanti mobile su browser desktop. Impostato display:none !important incondizionato nel CSS e inline sull'HTML della mobile-nav-bar. Aggiornato query string c
-  - **Dettagli:** `model`: Gemini 3.7 Flash, `responses_given`: Risolto problema cache e visualizzazione pulsanti mobile su browser desktop. Impostato display:none !important incondizionato nel CSS e inline sull'HTML della mobile-nav-bar. Aggiornato query string cache-buster (v=20260829_1510) per CSS e JS., `actions_taken`: ['Impostato display:none !important globale su .mobile-nav-bar in static/style.css', 'Aggiunto style="display:none;" inline su nav#mobile-nav-bar in static/index.html', 'Aggiornato cache-buster CSS/JS a v=20260829_1510 in index.html', 'Commit e push su origin/main per deploy immediato'], `outcome`: Desktop ripulito al 100%, pulsanti mobile attivi esclusivamente su smartphone.
+  - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `responses_given`: Risolto problema cache e visualizzazione pulsanti mobile su browser desktop. Impostato display:none !important incondizionato nel CSS e inline sull'HTML della mobile-nav-bar. Aggiornato query string cache-buster (v=20260829_1510) per CSS e JS., `actions_taken`: ['Impostato display:none !important globale su .mobile-nav-bar in static/style.css', 'Aggiunto style="display:none;" inline su nav#mobile-nav-bar in static/index.html', 'Aggiornato cache-buster CSS/JS a v=20260829_1510 in index.html', 'Commit e push su origin/main per deploy immediato'], `outcome`: Desktop ripulito al 100%, pulsanti mobile attivi esclusivamente su smartphone.
 - **Ragionamento: Ottimizzazione Mobile Web Dashboard Univ** (`reasoning-ottimizzazione-mobile-web-8880`)
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Risolto problema layout mobile su schermi <= 900px. Aggiunto meta tag viewport con viewport-fit=cover e user-scalable=no. Implementata tab bar inferiore mobile (🌐 Grafo, 🔍 Ispettore, 🏢 Palazzo, 🌳 Albe
-  - **Dettagli:** `model`: Gemini 3.7 Flash, `responses_given`: Risolto problema layout mobile su schermi <= 900px. Aggiunto meta tag viewport con viewport-fit=cover e user-scalable=no. Implementata tab bar inferiore mobile (🌐 Grafo, 🔍 Ispettore, 🏢 Palazzo, 🌳 Albero, 💻 Terminale). Su PC l'interfaccia resta invariata al 100%. Su smartphone il canvas del grafo occupa ora il 100% dello schermo e lo switch tra grafo, ispettore e palazzo avviene con 1-tap., `actions_taken`: ['Aggiornato meta viewport in static/index.html con viewport-fit=cover', 'Aggiunta barra di navigazione inferiore mobile (#mobile-nav-bar) in index.html', 'Implementate media queries @media (max-width: 900px) in static/style.css', 'Aggiunta funzione switchMobileTab in static/app.js con routing reattivo', 'Preservata interfaccia desktop al 100% (>900px)', 'Eseguito commit e push su origin/main per rilascio immediato su Render'], `outcome`: Web Dashboard ora perfettamente fruibile e reattiva su smartphone senza toccare il layout PC.
+  - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `responses_given`: Risolto problema layout mobile su schermi <= 900px. Aggiunto meta tag viewport con viewport-fit=cover e user-scalable=no. Implementata tab bar inferiore mobile (🌐 Grafo, 🔍 Ispettore, 🏢 Palazzo, 🌳 Albero, 💻 Terminale). Su PC l'interfaccia resta invariata al 100%. Su smartphone il canvas del grafo occupa ora il 100% dello schermo e lo switch tra grafo, ispettore e palazzo avviene con 1-tap., `actions_taken`: ['Aggiornato meta viewport in static/index.html con viewport-fit=cover', 'Aggiunta barra di navigazione inferiore mobile (#mobile-nav-bar) in index.html', 'Implementate media queries @media (max-width: 900px) in static/style.css', 'Aggiunta funzione switchMobileTab in static/app.js con routing reattivo', 'Preservata interfaccia desktop al 100% (>900px)', 'Eseguito commit e push su origin/main per rilascio immediato su Render'], `outcome`: Web Dashboard ora perfettamente fruibile e reattiva su smartphone senza toccare il layout PC.
 - **Ragionamento: Potenziamento Skill e Rilascio Demone Si** (`reasoning-potenziamento-skill-e-ril-8338`)
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Riformulata la skill universal-brain con protocollo obbligatorio a 2 fasi e 3 livelli di ingestione (MCP/CLI, POST HTTP, Fallback JSON). Implementato il demone background macOS (com.universalbrain.syn
-  - **Dettagli:** `model`: Gemini 3.7 Flash, `responses_given`: Riformulata la skill universal-brain con protocollo obbligatorio a 2 fasi e 3 livelli di ingestione (MCP/CLI, POST HTTP, Fallback JSON). Implementato il demone background macOS (com.universalbrain.sync.plist) attivo all'avvio (<0.01% CPU, ~20MB RAM) per sincronizzazione bidirezionale continua PC ⮂ Render., `actions_taken`: ['Riformulato SKILL.md con protocollo a 2 fasi (Pre-Response Retrieval + Post-Response Ingestion)', 'Distribuito SKILL.md in ~/.gemini/config/skills/, ~/.agents/skills/, e ~/.agents/rules/', 'Aggiornato prompt.md e sync_brain.py con motore bidirezionale completo e helper 1-command', 'Creato sync_daemon.py con logging rotativo e monitoraggio mtime SQLite', 'Creato ed eseguito install_daemon.sh per LaunchAgent macOS in ~/Library/LaunchAgents/', 'Esteso il comando globale brain CLI con sync, record e daemon management in install.sh', 'Eseguita verifica end-to-end con 100% successo'], `outcome`: Demone attivo in background e connettoma allineato al 100% tra PC locale e Render Cloud.
+  - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `responses_given`: Riformulata la skill universal-brain con protocollo obbligatorio a 2 fasi e 3 livelli di ingestione (MCP/CLI, POST HTTP, Fallback JSON). Implementato il demone background macOS (com.universalbrain.sync.plist) attivo all'avvio (<0.01% CPU, ~20MB RAM) per sincronizzazione bidirezionale continua PC ⮂ Render., `actions_taken`: ['Riformulato SKILL.md con protocollo a 2 fasi (Pre-Response Retrieval + Post-Response Ingestion)', 'Distribuito SKILL.md in ~/.gemini/config/skills/, ~/.agents/skills/, e ~/.agents/rules/', 'Aggiornato prompt.md e sync_brain.py con motore bidirezionale completo e helper 1-command', 'Creato sync_daemon.py con logging rotativo e monitoraggio mtime SQLite', 'Creato ed eseguito install_daemon.sh per LaunchAgent macOS in ~/Library/LaunchAgents/', 'Esteso il comando globale brain CLI con sync, record e daemon management in install.sh', 'Eseguita verifica end-to-end con 100% successo'], `outcome`: Demone attivo in background e connettoma allineato al 100% tra PC locale e Render Cloud.
 - **Razionale Architetturale: Separazione Aree vs Grafo Completo** (`ai-reasoning-clustering-decision`)
   - **Tags:** `#architecture-rationale` `#cognitive-load` `#graph-physics` `#scalability`
   - **Sintesi:** Scelta di non eliminare le relazioni fisiche ma di applicare un filtro visuale basato su insiemi di visibilità adiacente, massimizzando ordine e densità semantica.
-  - **Dettagli:** `approach`: Visual filter on vis.DataSet without schema mutilation, `benefits`: ['zero-data-loss', 'uncluttered-ui', 'instant-subgraph-expansion'], `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `approach`: Visual filter on vis.DataSet without schema mutilation, `benefits`: ['zero-data-loss', 'uncluttered-ui', 'instant-subgraph-expansion'], `model`: LLM Assistant (Historical Session)
 - **Risposta Groq: Quali sono i progetti principali di...** (`reasoning-quali-sono-i-progetti-principali-di-8169`)
   - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
   - **Sintesi:** Non ho accesso diretto alla memoria o al database `brain.db` in questo contesto di conversazione. Come modello di linguaggio, non posso eseguire query in tempo reale su archivi esterni o database pers
-  - **Dettagli:** `model`: qwen/qwen3.8-27b, `provider`: Groq
+  - **Dettagli:** `raw`: `model`: qwen/qwen3.8-27b, `provider`: Groq
 - **Risposta JARVIS: Allora vorrei dirti che oggi ho man...** (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
-  - **Sintesi:** ✅ Fatto registrato: **CONVERSATION_EPISODE** – “oggi ho mangiato pasta al sugo”. Memoria inserita nel tuo Universal Knowledge Graph (layer 1, EMISFERO DESTRO).  
-
-Buon appetito! 🚀
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: ✅ Fatto registrato: **CONVERSATION_EPISODE** – “oggi ho mangiato pasta al sugo”. Memoria inserita nel tuo Universal Knowledge Graph (layer 1, EMISFERO DESTRO).  
-
-Buon appetito! 🚀
+  - **Sintesi:** ✅ Fatto registrato: **CONVERSATION_EPISODE** – “oggi ho mangiato pasta al sugo”. Memoria inserita nel tuo Universal Knowledge Graph (layer 1, EMISFERO DESTRO).
 - **Risposta JARVIS: Jarvis, ricordi quali sono gli emis...** (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
   - **Sintesi:** **Emisfero Sinistro (LEFT)** – Gestisce la parte “logica‑tecnica” del tuo connettoma: architetture, strutture dati, algoritmi, dipendenze, business logic, API, regole cognitive, modelli mentali, ragio
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: **Emisfero Sinistro (LEFT)** – Gestisce la parte “logica‑tecnica” del tuo connettoma: architetture, strutture dati, algoritmi, dipendenze, business logic, API, regole cognitive, modelli mentali, ragionamento AI e meta‑cognizione.  
-
-**Emisfero Destro (RIGHT)** – Gestisce la parte “creativa‑emotiva”: design token, palette colori, componenti UI/UX, flussi di esperienza, voce di brand, idee creative, memorie emotive, lezioni di vita, relazioni, valori personali e gli episodi di conversazione.  
-
-Il **corpo calloso** collega i due emisferi, permettendo lo scambio di informazioni fra logica e design, ragionamento e sentimento. (Fonte: **EXTRACTED** – specifiche del connettoma memorizzate).
+  - **Dettagli:** `raw`: `model`: openai/gpt-oss-120b, `response_text`: **Emisfero Sinistro (LEFT)** – Gestisce la parte “logica‑tecnica” del tuo connettoma: architetture, strutture dati, algoritmi, dipendenze, business logic, API, regole cognitive, modelli mentali, ragionamento AI e meta‑cognizione.
 - **Risposta JARVIS: Quali sono le abitudini monitorate ...** (`reasoning-quali-sono-le-abitudini-monitorate-2979`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
   - **Sintesi:** StreaksUp traccia le abitudini chiave per ottimizzare la produttività e il benessere: esercizio fisico quotidiano, lettura o studio, sessioni di coding, meditazione, idratazione (acqua) e ore di sonno
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: StreaksUp traccia le abitudini chiave per ottimizzare la produttività e il benessere: esercizio fisico quotidiano, lettura o studio, sessioni di coding, meditazione, idratazione (acqua) e ore di sonno. Ogni habit è registrata con timestamp, streak count e metriche di qualità (intensità, durata), così da poter visualizzare trend in tempo reale e ricevere notifiche di reinforcement.
+  - **Dettagli:** `raw`: `model`: openai/gpt-oss-120b, `response_text`: StreaksUp traccia le abitudini chiave per ottimizzare la produttività e il benessere: esercizio fisico quotidiano, lettura o studio, sessioni di coding, meditazione, idratazione (acqua) e ore di sonno. Ogni habit è registrata con timestamp, streak count e metriche di qualità (intensità, durata), così da poter visualizzare trend in tempo reale e ricevere notifiche di reinforcement.
 - **Risposta JARVIS: c'è un problema vorrei sapere di pi...** (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
-  - **Sintesi:** **🔎 Query al grafo universale…**  
-
-- **Nodo individuato**: `proj-artificial-brain` (`LEFT: ARCHITECTURE`, `layer_level: 1`) – progetto “Cervello Artificiale” collegato al tuo **Universal Knowledge Gr
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: **🔎 Query al grafo universale…**  
-
-- **Nodo individuato**: `proj-artificial-brain` (`LEFT: ARCHITECTURE`, `layer_level: 1`) – progetto “Cervello Artificiale” collegato al tuo **Universal Knowledge Graph**.  
-- **Componenti estratti (`EXTRACTED`)**:  
-  - **Database**: `brain.db` (SQLite WAL) – archivio centrale delle strutture dati (`LEFT: DATA_STRUCTURE`).  
-  - **Endpoint API**: `https://universal-ai-brain.onrender.com` (`RIGHT: UI_COMPONENT`/`API_SPEC`).  
-  - **Moduli principali (`layer_level: 2`)**:  
-    - `memory_ingest_service` – gestisce `POST /api/memory/ingest`.  
-    - `graph_query_engine` – risolve percorsi tra nodi sinistro‑destro.  
-    - `voice_interface` – layer di sintesi/riconoscimento vocale.  
-  - **Ultimo sync**: `2026‑08‑28 14:32 UTC` (`EXTRACTED`). Stato: **OK**.  
-
-- **Relazioni chiave (`INFERRED`)**:  
-  - Il modulo `voice_interface` comunica con `graph_query_engine` tramite il **Corpo Calloso** (canale interno di messaggistica).  
-  - Eventuali errori di sincronizzazione vengono registr
+  - **Sintesi:** **🔎 Query al grafo universale…**
 - **Risposta JARVIS: che ore sono...** (`reasoning-che-ore-sono-3134`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
   - **Sintesi:** Sono le 14:37 (ora locale del server).
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: Sono le 14:37 (ora locale del server).
+  - **Dettagli:** `raw`: `model`: openai/gpt-oss-120b, `response_text`: Sono le 14:37 (ora locale del server).
 - **Risposta JARVIS: ehi Jarvis ehi Jarvis mi puoi dire ...** (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
   - **Sintesi:** Sono le 00:00 (tempo non disponibile in tempo reale). Per conoscere l’ora esatta, controlla l’orologio del tuo dispositivo.
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: Sono le 00:00 (tempo non disponibile in tempo reale). Per conoscere l’ora esatta, controlla l’orologio del tuo dispositivo.
+  - **Dettagli:** `raw`: `model`: openai/gpt-oss-120b, `response_text`: Sono le 00:00 (tempo non disponibile in tempo reale). Per conoscere l’ora esatta, controlla l’orologio del tuo dispositivo.
 - **Risposta JARVIS: ho bisogno di sapere tutto ciò che ...** (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
   - **Sintesi:** Signore, ho analizzato la richiesta ma tutti i provider LLM gratuiti risultano al momento non raggiungibili. Verifica la connessione o imposta una chiave API in .env.
-  - **Dettagli:** `model`: None, `response_text`: Signore, ho analizzato la richiesta ma tutti i provider LLM gratuiti risultano al momento non raggiungibili. Verifica la connessione o imposta una chiave API in .env.
+  - **Dettagli:** `raw`: `model`: None, `response_text`: Signore, ho analizzato la richiesta ma tutti i provider LLM gratuiti risultano al momento non raggiungibili. Verifica la connessione o imposta una chiave API in .env.
 - **Risposta JARVIS: quanti nodi ci sono nel mio cervell...** (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
-  - **Sintesi:** **Richiesta:** conteggio nodi del tuo grafo cognitivo, separati per emisfero sinistro e destro.  
-
-**Stato attuale:** *AMBIGUOUS* – il contatore preciso non è presente nella cache della sessione corre
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `response_text`: **Richiesta:** conteggio nodi del tuo grafo cognitivo, separati per emisfero sinistro e destro.  
-
-**Stato attuale:** *AMBIGUOUS* – il contatore preciso non è presente nella cache della sessione corrente. Devo effettuare una query al tuo **Universal Knowledge Graph** (`brain.db` / API) per ottenere il numero aggiornato di nodi.
-
-**Azione in corso:**  
-1. **POST** a `/api/graph/count-nodes` con filtro `hemisphere=LEFT` → ottengo `leftCount`.  
-2. **POST** a `/api/graph/count-nodes` con filtro `hemisphere=RIGHT` → ottengo `rightCount`.  
-
-Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati).  
-
-*Attendo la risposta del backend…*
+  - **Sintesi:** **Richiesta:** conteggio nodi del tuo grafo cognitivo, separati per emisfero sinistro e destro.
 - **Risposta gemini: che ne pensi del mio cervello artif...** (`reasoning-che-ne-pensi-del-mio-cervello-artif-8793`)
   - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
   - **Sintesi:** Ciao Pierfrancesco.
-
-Come tua AI personale avanzata, ho analizzato la tua richiesta incrociandola con i dati della mia **Memoria Storica Recuperata dal Connettore Neurale**.
-
-Ecco il mio assessment di
-  - **Dettagli:** `model`: gemini-3.7-flash, `provider`: gemini
 - **Risposta groq: che ne pensi del mio cervello artif...** (`reasoning-che-ne-pensi-del-mio-cervello-artif-8743`)
   - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
   - **Sintesi:** **Il tuo “cervello artificiale” è già un lavoro notevole e, secondo la memoria storica che ho a disposizione, rappresenta una delle tue iniziative più avanzate sia dal punto di vista architetturale ch
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `provider`: groq
+  - **Dettagli:** `raw`: `model`: openai/gpt-oss-120b, `provider`: groq
 - **Risposta groq: chi è Pierfrancesco Amendola e cosa...** (`reasoning-chi-pierfrancesco-amendola-e-cosa-8426`)
   - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
   - **Sintesi:** **Pierfrancesco Amendola** è un *imprenditore, ricercatore e visionario* nel campo dell’intelligenza artificiale, della neuroscienza computazionale e dell’interazione uomo‑macchina. Nato a Napoli nel
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `provider`: groq
+  - **Dettagli:** `raw`: `model`: openai/gpt-oss-120b, `provider`: groq
 - **Risposta groq: ma è tutto falso!!!** (`reasoning-ma-tutto-falso-8462`)
   - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
   - **Sintesi:** Mi dispiace se le informazioni che ti ho fornito non corrispondono a quanto sai o ti aspettavi. In questa conversazione non ho a disposizione la sezione **“MEMORIA STORICA RECUPERATA DAL CONNETTORE NE
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `provider`: groq
+  - **Dettagli:** `raw`: `model`: openai/gpt-oss-120b, `provider`: groq
 - **Risposta groq: non riesci a connetterti al mio cer...** (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`)
   - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
-  - **Sintesi:** Sì, **sono già connesso al tuo “cervello artificiale”**.  
-Grazie al “Universal Knowledge Graph” a cui ho accesso in tempo reale, posso leggere, interrogare e aggiornare tutti i nodi che contengono le
-  - **Dettagli:** `model`: openai/gpt-oss-120b, `provider`: groq
+  - **Sintesi:** Sì, **sono già connesso al tuo “cervello artificiale”**.
 - **Tassonomia Metacognitiva & AI Reasoning Hub** (`tax-ai-reasoning`)
   - **Tags:** `#ai-reasoning` `#metacognition` `#chain-of-thought` `#rationale` `#knowledge-graph`
   - **Sintesi:** Area cognitiva dedicata al tracciamento dei ragionamenti, deduzioni analitiche e percorsi logici interni generati dall'AI durante le sessioni.
-  - **Dettagli:** `hemisphere`: LEFT, `labels`: ['AI_REASONING', 'METACOGNITION'], `purpose`: Map internal AI deductions into permanent graph space, `model`: LLM Assistant (Historical Session)
+  - **Dettagli:** `raw`: `hemisphere`: LEFT, `labels`: ['AI_REASONING', 'METACOGNITION'], `purpose`: Map internal AI deductions into permanent graph space, `model`: LLM Assistant (Historical Session)
 - **Validazione Architetturale: Provenance & Attribution Cross-Modello** (`ai-reasoning-cross-model-provenance-validation`)
   - **Tags:** `#ai-deduction` `#epistemic-provenance` `#knowledge-graph` `#metacognition` `#gemini`
   - **Sintesi:** Deduzione logica Gemini: tracciare prompt e modello crea una memoria a provenienza epistemica verificabile, prevenendo allucinazioni di paternità e potenziando il retrieval.
-  - **Dettagli:** `model`: Gemini 3.7 Flash, `verdict`: Approccio eccellente e architetturalmente solido, `benefits`: ['Provenance epistemica cross-modello', "Ancoraggio contestuale del ragionamento AI all'intento originario", 'Clustering semantico pulito senza rumore relazionale']
+  - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `verdict`: Approccio eccellente e architetturalmente solido, `benefits`: ['Provenance epistemica cross-modello', "Ancoraggio contestuale del ragionamento AI all'intento originario", 'Clustering semantico pulito senza rumore relazionale']
 
 ### [Macro-Label: `ALGORITHM`]
 - **Achievement & 22-Trophy Engine** (`streaksup-gamification-engine`)
   - **Tags:** `#achievements` `#trophies` `#gamification` `#evaluation-engine`
   - **Sintesi:** Sistema di valutazione achievement con 22 trofei suddivisi in 5 categorie (Streak, Completions, Freeze, Specials, Mastery) e 5 tier di rarità.
-  - **Dettagli:** `categories`: ['Streak', 'Completions', 'Freeze', 'Specials', 'Mastery'], `tiers`: ['Bronze', 'Silver', 'Gold', 'Diamond', 'Legendary'], `special_metrics`: ['Early Bird (<9 AM)', 'Night Owl (>=9 PM)', 'Weekend Warrior', 'Perfect Days']
+  - **Dettagli:** `raw`: `categories`: ['Streak', 'Completions', 'Freeze', 'Specials', 'Mastery'], `tiers`: ['Bronze', 'Silver', 'Gold', 'Diamond', 'Legendary'], `special_metrics`: ['Early Bird (<9 AM)', 'Night Owl (>=9 PM)', 'Weekend Warrior', 'Perfect Days']
 - **Algoritmo di Gating Emisferico & Risveglio Sinaptico On-Demand** (`algorithm-selective-hemispheric-activation`)
   - **Tags:** `#algorithm` `#selective-gating` `#lazy-evaluation` `#callosal-trigger`
   - **Sintesi:** Algoritmo che instrada le query solo all'emisfero bersaglio (Left per logica/codice, Right per design/valori) e risveglia nodi controlaterali solo se attraversati da sinapsi callosali rilevanti.
-  - **Dettagli:** `routing_logic`: Target hemisphere active -> Contralateral hemisphere dormant -> Wake up via Corpus Callosum edge traversal
+  - **Dettagli:** `raw`: `routing_logic`: Target hemisphere active -> Contralateral hemisphere dormant -> Wake up via Corpus Callosum edge traversal
 - **AuleStudio Real-time Availability Engine** (`aule-studio-backend-arch`)
   - **Tags:** `#availability-engine` `#real-time` `#reservations` `#occupancy-rate`
   - **Sintesi:** Algoritmo di calcolo occupazione delle aule universitarie e gestione code/prenotazioni concorrenti per studenti.
-  - **Dettagli:** `slot_duration_mins`: 60, `concurrency_strategy`: Optimistic locking, `sync_frequency_sec`: 30
+  - **Dettagli:** `raw`: `slot_duration_mins`: 60, `concurrency_strategy`: Optimistic locking, `sync_frequency_sec`: 30
 - **Bi-directional BFS (Corpus Callosum Routing)** (`node-bidirectional-bfs-pathfinding`)
   - **Tags:** `#mutation-import` `#routing-engine` `#graph-algorithm`
   - **Sintesi:** Bi-directional BFS (Corpus Callosum Routing) (Layer: ROUTING_ENGINE, Tipo: GRAPH_ALGORITHM)
-  - **Dettagli:** `id`: node_bidirectional_bfs_pathfinding, `label`: Bi-directional BFS (Corpus Callosum Routing), `type`: GRAPH_ALGORITHM, `layer`: ROUTING_ENGINE
+  - **Dettagli:** `raw`: `id`: node_bidirectional_bfs_pathfinding, `label`: Bi-directional BFS (Corpus Callosum Routing), `type`: GRAPH_ALGORITHM, `layer`: ROUTING_ENGINE
 - **Bioinformatica & Deep Learning (ICAR-CNR)** (`proj-bioinformatics-icar`)
   - **Tags:** `#bioinformatics` `#deep-learning` `#pytorch` `#medical-imaging` `#thesis`
   - **Sintesi:** Ricerca su modelli di deep learning e computer vision per diagnosi istopatologica (Dr.ssa Brancati, Prof. Riccio).
-  - **Dettagli:** `stack`: Python, PyTorch, OpenCV, Scikit-learn, `validation`: AUC-ROC, F1-Score, `completion`: Maggio 2026
+  - **Dettagli:** `raw`: `stack`: Python, PyTorch, OpenCV, Scikit-learn, `validation`: AUC-ROC, F1-Score, `completion`: Maggio 2026
 - **Graphify Codebase Knowledge Extractor** (`graphify-knowledge-engine`)
   - **Tags:** `#graphify` `#ast` `#knowledge-graph` `#god-nodes` `#community-detection`
   - **Sintesi:** Motore di analisi statica AST e semantica che rileva community, nodi baricentrici (God Nodes) e ponti architetturali nel repository.
-  - **Dettagli:** `clustering`: Leiden / Louvain community detection, `cohesion_scoring`: Graph density metrics
+  - **Dettagli:** `raw`: `clustering`: Leiden / Louvain community detection, `cohesion_scoring`: Graph density metrics
 - **HarmonyApp** (`proj-harmonyapp`)
   - **Tags:** `#music-theory` `#dsp` `#ear-training` `#flutter`
   - **Sintesi:** Strumento interattivo per ear training, composizione e riconoscimento dell'armonia musicale.
-  - **Dettagli:** `stack`: Flutter, SoundFont Synthesizer, WebAudio API, `scope`: Teoria musicale computazionale e didattica dell'ascolto
+  - **Dettagli:** `raw`: `stack`: Flutter, SoundFont Synthesizer, WebAudio API, `scope`: Teoria musicale computazionale e didattica dell'ascolto
 - **Maximum Spanning Tree (Conceptual Backbone)** (`node-mst-conceptual-backbone`)
   - **Tags:** `#mutation-import` `#serialization-layer` `#algorithmic-projection`
   - **Sintesi:** Maximum Spanning Tree (Conceptual Backbone) (Layer: SERIALIZATION_LAYER, Tipo: ALGORITHMIC_PROJECTION)
-  - **Dettagli:** `id`: node_mst_conceptual_backbone, `label`: Maximum Spanning Tree (Conceptual Backbone), `type`: ALGORITHMIC_PROJECTION, `layer`: SERIALIZATION_LAYER
+  - **Dettagli:** `raw`: `id`: node_mst_conceptual_backbone, `label`: Maximum Spanning Tree (Conceptual Backbone), `type`: ALGORITHMIC_PROJECTION, `layer`: SERIALIZATION_LAYER
 - **Motore Scacchi Minimax & Valutazione** (`tech-minimax-chess-engine`)
   - **Tags:** `#scacchi` `#minimax` `#alpha-beta` `#swift` `#algoritmi`
   - **Sintesi:** Engine scacchistico nativo Swift con ricerca minimax, alpha-beta pruning, valutazione posizionale, calcolo asincrono dei suggerimenti e supporto 4 livelli bot.
 - **ParticleSimulator 3D** (`proj-particlesimulator`)
   - **Tags:** `#javascript` `#threejs` `#webgl` `#mediapipe` `#gesture-control`
   - **Sintesi:** Motore fisico generativo 3D in tempo reale con controllo tramite gesture della mano via computer vision.
-  - **Dettagli:** `stack`: Vanilla JS, Three.js, WebGL, MediaPipe Hand Landmarker, `performance`: 60 FPS rock-solid, `distribution`: GitHub Open Source
+  - **Dettagli:** `raw`: `stack`: Vanilla JS, Three.js, WebGL, MediaPipe Hand Landmarker, `performance`: 60 FPS rock-solid, `distribution`: GitHub Open Source
 - **REGEXRIDDLE** (`proj-regexriddle`)
   - **Tags:** `#regex` `#gamification` `#typescript` `#fsm`
   - **Sintesi:** Tool gamificato per il testing, parsing e apprendimento visivo di espressioni regolari mediante automi a stati.
-  - **Dettagli:** `stack`: TypeScript, React, Finite State Machine parser, `mode`: Interactive Puzzle & Sandboxed Debugger
+  - **Dettagli:** `raw`: `stack`: TypeScript, React, Finite State Machine parser, `mode`: Interactive Puzzle & Sandboxed Debugger
 - **Streak Freeze & Protection Engine** (`streaksup-streak-freeze-algo`)
   - **Tags:** `#streak-freeze` `#shield` `#gamification-algorithm` `#streak-preservation`
   - **Sintesi:** Algoritmo di protezione della serie: consumo automatico dello scudo nei giorni mancati, cap massimo a 3 cariche e premio +1 ogni 7 giorni di streak.
-  - **Dettagli:** `max_capacity`: 3, `initial_grant`: 1, `reward_milestone`: Ogni 7 giorni consecutivi (+1 freeze), `persistence_key`: streak_frozen_dates
+  - **Dettagli:** `raw`: `max_capacity`: 3, `initial_grant`: 1, `reward_milestone`: Ogni 7 giorni consecutivi (+1 freeze), `persistence_key`: streak_frozen_dates
 - **Tesi Deep Learning BUSBRA (ICAR-CNR)** (`proj-tesi-busbra-cnr`)
   - **Tags:** `#bioinformatics` `#busbra` `#resnet` `#vit-base` `#usf-mae` `#simclr` `#ultrasound` `#deep-learning`
   - **Sintesi:** Pipeline di deep learning per classificazione ecografie mammarie (benigno/maligno, BI-RADS 4 classi) su dataset BUSBRA.
-  - **Dettagli:** `models`: ResNet-18, ResNet-34, USF-MAE (ViT-Base), SimCLR Self-Supervised, `validation`: 5-fold Cross-Validation, progressive layer unfreezing, `losses`: CrossEntropy, Focal Loss, Combined Loss, `metrics`: CSV logging, Confusion Matrix, AUC-ROC
+  - **Dettagli:** `raw`: `models`: ResNet-18, ResNet-34, USF-MAE (ViT-Base), SimCLR Self-Supervised, `validation`: 5-fold Cross-Validation, progressive layer unfreezing, `losses`: CrossEntropy, Focal Loss, Combined Loss, `metrics`: CSV logging, Confusion Matrix, AUC-ROC
 - **Tombola Multiplayer WiFi** (`proj-tombola-wifi`)
   - **Tags:** `#flutter` `#websocket` `#local-wifi` `#multiplayer` `#gaming`
   - **Sintesi:** Gioco multiplayer in tempo reale della tombola su rete locale WiFi senza necessità di server cloud.
-  - **Dettagli:** `stack`: Flutter, WebSockets, `architecture`: Zero-cost local peer-to-peer / LAN sync
+  - **Dettagli:** `raw`: `stack`: Flutter, WebSockets, `architecture`: Zero-cost local peer-to-peer / LAN sync
 
 ### [Macro-Label: `API_SPEC`]
 - **AI Ingest & Markdown Read Protocol** (`ai-memory-ingest-spec`)
   - **Tags:** `#api-spec` `#brain-md` `#ingest` `#quick-add` `#json-schema`
   - **Sintesi:** Specifiche REST /brain.md e /api/memory/ingest con validazione tassonomica automatica e generazione link One-Click.
-  - **Dettagli:** `read_endpoint`: GET /brain.md, `write_endpoint`: POST /api/memory/ingest, `quick_add`: GET /api/quick-add
+  - **Dettagli:** `raw`: `read_endpoint`: GET /brain.md, `write_endpoint`: POST /api/memory/ingest, `quick_add`: GET /api/quick-add
 - **App Intents & Dynamic Interactive Engine** (`streaksup-app-intents-engine`)
   - **Tags:** `#app-intents` `#interactive-widgets` `#app-entity` `#toggle-habit`
   - **Sintesi:** Motore di interattività in-place per Widget e Live Activities tramite ToggleHabitIntent, HabitEntity e HabitEntityQuery.
-  - **Dettagli:** `toggle_intent`: ToggleHabitIntent(habitID: String), `entity_query`: HabitEntityQuery, `config_intent`: SingleHabitConfigurationIntent, `sync_targets`: ['WidgetCenter.reloadAllTimelines', 'HabitActivityManager', 'Darwin IPC']
+  - **Dettagli:** `raw`: `toggle_intent`: ToggleHabitIntent(habitID: String), `entity_query`: HabitEntityQuery, `config_intent`: SingleHabitConfigurationIntent, `sync_targets`: ['WidgetCenter.reloadAllTimelines', 'HabitActivityManager', 'Darwin IPC']
 - **Modulo Ingestione JSON da AI** (`feat-ai-json-importer`)
   - **Tags:** `#ingest` `#drag-drop` `#file-reader` `#json-parser` `#llm-sync`
   - **Sintesi:** Interfaccia drag-and-drop e editor textarea per importare ed eseguire il POST di file o blocchi JSON generati da Claude/GPT/Gemini.
-  - **Dettagli:** `endpoint`: POST /api/memory/ingest, `features`: ['drag-and-drop', 'markdown-strip', 'auto-normalization']
+  - **Dettagli:** `raw`: `endpoint`: POST /api/memory/ingest, `features`: ['drag-and-drop', 'markdown-strip', 'auto-normalization']
 - **Specula App** (`proj-specula`)
   - **Tags:** `#ios` `#swift` `#app-store` `#color-extraction`
   - **Sintesi:** Utility iOS per campionamento, quantizzazione ed esportazione live di palette cromatiche conforme WCAG.
-  - **Dettagli:** `platform`: Apple App Store, `algorithms`: K-Means / Median Cut Color Quantization
+  - **Dettagli:** `raw`: `platform`: Apple App Store, `algorithms`: K-Means / Median Cut Color Quantization
 
 ### [Macro-Label: `ARCHITECTURE`]
 - **Architettura Graph-of-Graphs / Palazzo Cognitivo a Piani** (`concept-graph-of-graphs-hypergraph`)
   - **Tags:** `#hypergraph` `#graph-of-graphs` `#multiscale` `#fractal-topology` `#semantic-drilldown`
   - **Sintesi:** Modello a iper-grafo gerarchico in cui i nodi di livello superiore contengono sotto-grafi completi, simulando un palazzo a più piani concettuali.
-  - **Dettagli:** `levels`: L0 (Macro-Domini) -> L1 (Progetti/Aree) -> L2 (Moduli/Sistemi) -> L3 (Entità Atomiche), `formal_name`: Hierarchical Clustered Hypergraph / Multi-Layer Network
+  - **Dettagli:** `raw`: `levels`: L0 (Macro-Domini) -> L1 (Progetti/Aree) -> L2 (Moduli/Sistemi) -> L3 (Entità Atomiche), `formal_name`: Hierarchical Clustered Hypergraph / Multi-Layer Network
 - **Architettura Webhook Telegram 0€ (FastAPI + Bot API)** (`arch-telegram-webhook-gateway`)
   - **Tags:** `#telegram-bot` `#webhook` `#fastapi` `#zero-cost` `#mobile-gateway`
   - **Sintesi:** Infrastruttura serverless su webhook FastAPI per ricezione comandi (/search, /path, /tree) e inserimento memorie asincrono 0€.
-  - **Dettagli:** `endpoint`: POST /api/telegram/webhook, `auth`: Telegram Secret Token / Authorized User ID whitelist, `cost`: 0€ illimitato
+  - **Dettagli:** `raw`: `endpoint`: POST /api/telegram/webhook, `auth`: Telegram Secret Token / Authorized User ID whitelist, `cost`: 0€ illimitato
 - **Architettura a Sotto-Grafi Modulari & Decentramento Hub** (`concept-modular-domain-subgraphs`)
   - **Tags:** `#modular-graph` `#domain-clustering` `#anti-star-topology` `#subgraph-modularity`
   - **Sintesi:** I concetti verticali (es. medicina, finanza, fisica) non si collegano forzatamente a person-pierfrancesco, ma formano cluster tematici autonomi ancorati a macro-domini cognitivi.
-  - **Dettagli:** `pattern`: Domain-Driven Cognitive Clusters, `benefit`: Previene l'over-centrality e l'inquinamento topologico dello star-graph
+  - **Dettagli:** `raw`: `pattern`: Domain-Driven Cognitive Clusters, `benefit`: Previene l'over-centrality e l'inquinamento topologico dello star-graph
 - **Architettura di Hosting Render.com 0€** (`deploy-render-zero-cost`)
   - **Tags:** `#render` `#hosting` `#zero-cost` `#fastapi` `#uvicorn`
   - **Sintesi:** Infrastruttura di erogazione web asincrona su Render.com Free Tier con Uvicorn e SQLite WAL persistito.
-  - **Dettagli:** `build_command`: pip install -r requirements.txt, `start_command`: uvicorn main:app --host 0.0.0.0 --port , `cost`: 0€ lifetime
+  - **Dettagli:** `raw`: `build_command`: pip install -r requirements.txt, `start_command`: uvicorn main:app --host 0.0.0.0 --port , `cost`: 0€ lifetime
 - **Architettura: Stabilizzazione Silente & Blocco Fisico Zero-Lag in Vis-Network** (`architecture-vis-network-silent-stabilization-zero-lag`)
   - **Tags:** `#vis-network` `#physics-optimization` `#silent-stabilization` `#zero-lag` `#performance`
   - **Sintesi:** Pattern architetturale per grafi complessi (189+ nodi): esecuzione della stabilizzazione offline in background (updateInterval = iterations), disattivazione del physics loop (physics: false) ed eliminazione di ombre canvas e calcoli geometrici ripetitivi per garantire 60fps.
-  - **Dettagli:** `solver`: forceAtlas2Based, `parameters`: {'gravitationalConstant': -60, 'centralGravity': 0.005, 'springLength': 120, 'springConstant': 0.08, 'damping': 0.4, 'avoidOverlap': 0.8}, `stabilization`: iterations: 150, updateInterval: 150, fit: true, `freeze_mechanism`: network.stabilize() + stabilized event + fallback timer -> physics: false
+  - **Dettagli:** `raw`: `solver`: forceAtlas2Based, `parameters`: {'gravitationalConstant': -60, 'centralGravity': 0.005, 'springLength': 120, 'springConstant': 0.08, 'damping': 0.4, 'avoidOverlap': 0.8}, `stabilization`: iterations: 150, updateInterval: 150, fit: true, `freeze_mechanism`: network.stabilize() + stabilized event + fallback timer -> physics: false
 - **Aree a Espansione & Cluster Gerarchici** (`feat-progressive-areas`)
   - **Tags:** `#ui` `#graph-visualization` `#progressive-disclosure` `#clusters` `#ux-cleanliness`
   - **Sintesi:** Motore di rendering a fioritura progressiva: visualizza i Macro-Hub compatti e ne sboccia i sotto-nodi al click utente preservando le sinapsi.
-  - **Dettagli:** `mode`: Progressive Disclosure, `features`: ['macro-hubs', 'interactive-bloom', 'badge-counters', 'compact-view']
+  - **Dettagli:** `raw`: `mode`: Progressive Disclosure, `features`: ['macro-hubs', 'interactive-bloom', 'badge-counters', 'compact-view']
 - **Attributed Heterogeneous Temporal Multigraph** (`node-universal-ai-brain-taxonomy`)
   - **Tags:** `#mutation-import` `#formal-theory` `#graph-classification`
   - **Sintesi:** Attributed Heterogeneous Temporal Multigraph (Layer: FORMAL_THEORY, Tipo: GRAPH_CLASSIFICATION)
-  - **Dettagli:** `id`: node_universal_ai_brain_taxonomy, `label`: Attributed Heterogeneous Temporal Multigraph, `type`: GRAPH_CLASSIFICATION, `layer`: FORMAL_THEORY
+  - **Dettagli:** `raw`: `id`: node_universal_ai_brain_taxonomy, `label`: Attributed Heterogeneous Temporal Multigraph, `type`: GRAPH_CLASSIFICATION, `layer`: FORMAL_THEORY
 - **AuleStudioApp (Mobile Project)** (`aule-studio-app`)
   - **Tags:** `#flutter` `#dart` `#auledistudio` `#booking` `#real-time` `#mobile`
   - **Sintesi:** Applicazione mobile per studenti per localizzare aule studio universitarie, verificare posti liberi in tempo reale e prenotare postazioni.
-  - **Dettagli:** `framework`: Flutter, `language`: Dart, `target`: iOS / Android, `core_features`: ['Geolocalizzazione', 'Stato Posti Real-Time', 'Prenotazione']
+  - **Dettagli:** `raw`: `framework`: Flutter, `language`: Dart, `target`: iOS / Android, `core_features`: ['Geolocalizzazione', 'Stato Posti Real-Time', 'Prenotazione']
 - **CareTrack** (`proj-caretrack`)
   - **Tags:** `#flutter` `#healthcare` `#telemedicine` `#award-winner`
   - **Sintesi:** Piattaforma mobile di telemedicina e assistenza domiciliare vincitrice del Google Challenge Campania (Medicina).
-  - **Dettagli:** `stack`: Flutter, Dart, Firebase, SQLite, `pattern`: Clean Architecture + BLoC (Offline-first), `status`: Awarded / Functional Prototype
+  - **Dettagli:** `raw`: `stack`: Flutter, Dart, Firebase, SQLite, `pattern`: Clean Architecture + BLoC (Offline-first), `status`: Awarded / Functional Prototype
 - **CineMatch** (`proj-cinematch`)
   - **Tags:** `#mern` `#recommendation` `#tmdb` `#social`
   - **Sintesi:** App di matching e scoperta cinematografica di coppia/gruppo basata su swipe e intersezione preferenze.
-  - **Dettagli:** `stack`: MongoDB, Express, React/Flutter, Node.js, TMDb API, `pattern`: Real-time preference matching
+  - **Dettagli:** `raw`: `stack`: MongoDB, Express, React/Flutter, Node.js, TMDb API, `pattern`: Real-time preference matching
 - **Commit 965f0a8 (110 Nodes, 253 Synapses)** (`node-commit-965f0a8`)
   - **Tags:** `#mutation-import` `#devops-timeline` `#graph-state`
   - **Sintesi:** Commit 965f0a8 (110 Nodes, 253 Synapses) (Layer: DEVOPS_TIMELINE, Tipo: GRAPH_STATE)
-  - **Dettagli:** `id`: node_commit_965f0a8, `label`: Commit 965f0a8 (110 Nodes, 253 Synapses), `type`: GRAPH_STATE, `layer`: DEVOPS_TIMELINE
+  - **Dettagli:** `raw`: `id`: node_commit_965f0a8, `label`: Commit 965f0a8 (110 Nodes, 253 Synapses), `type`: GRAPH_STATE, `layer`: DEVOPS_TIMELINE
 - **Dominio: Ingegneria Software & Architetture** (`domain-software-engineering`)
   - **Tags:** `#domain-hub` `#software-engineering` `#architecture` `#systems` `#mobile-ios` `#backend`
   - **Sintesi:** Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite.
-  - **Dettagli:** `scope`: All active software projects and engineering foundations
+  - **Dettagli:** `raw`: `scope`: All active software projects and engineering foundations
 - **Dominio: Medicina, Salute & Fisiologia** (`domain-medicina-salute`)
   - **Tags:** `#domain-hub` `#medicina` `#salute` `#dermatologia` `#podologia` `#fisiologia`
   - **Sintesi:** Medicina, Salute, Nutrizione, Fisiologia, Fitness e Bioinformatica Deep Learning (ricerca ICAR-CNR).
-  - **Dettagli:** `scope`: Medical knowledge, health entities, clinical logic
+  - **Dettagli:** `raw`: `scope`: Medical knowledge, health entities, clinical logic
 - **Dominio: Sistemi Cognitivi, Neuro-Simbolico & LLM** (`domain-ai-cognitive-systems`)
   - **Tags:** `#domain-hub` `#cognitive-ai` `#neuro-symbolic` `#graphrag` `#memory-systems` `#mcp`
   - **Sintesi:** Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP (Model Context Protocol), Metacognizione.
-  - **Dettagli:** `scope`: Cognitive architectures, graph reasoning, LLM symbiosis
+  - **Dettagli:** `raw`: `scope`: Cognitive architectures, graph reasoning, LLM symbiosis
 - **Epistemic Grading (Extracted/Inferred/Ambiguous)** (`node-epistemic-grading-system`)
   - **Tags:** `#mutation-import` `#epistemic-layer` `#representation-feature`
   - **Sintesi:** Epistemic Grading (Extracted/Inferred/Ambiguous) (Layer: EPISTEMIC_LAYER, Tipo: REPRESENTATION_FEATURE)
-  - **Dettagli:** `id`: node_epistemic_grading_system, `label`: Epistemic Grading (Extracted/Inferred/Ambiguous), `type`: REPRESENTATION_FEATURE, `layer`: EPISTEMIC_LAYER
+  - **Dettagli:** `raw`: `id`: node_epistemic_grading_system, `label`: Epistemic Grading (Extracted/Inferred/Ambiguous), `type`: REPRESENTATION_FEATURE, `layer`: EPISTEMIC_LAYER
 - **Graph-Dendrogram Multiscale Overlay** (`node-multiscale-overlay-pattern`)
   - **Tags:** `#mutation-import` `#storage-and-retrieval` `#architectural-pattern`
   - **Sintesi:** Graph-Dendrogram Multiscale Overlay (Layer: STORAGE_AND_RETRIEVAL, Tipo: ARCHITECTURAL_PATTERN)
-  - **Dettagli:** `id`: node_multiscale_overlay_pattern, `label`: Graph-Dendrogram Multiscale Overlay, `type`: ARCHITECTURAL_PATTERN, `layer`: STORAGE_AND_RETRIEVAL
+  - **Dettagli:** `raw`: `id`: node_multiscale_overlay_pattern, `label`: Graph-Dendrogram Multiscale Overlay, `type`: ARCHITECTURAL_PATTERN, `layer`: STORAGE_AND_RETRIEVAL
 - **Hierarchical Community Tree (Semantic Zoom)** (`node-hierarchical-dendrogram`)
   - **Tags:** `#mutation-import` `#abstraction-layer` `#topological-hierarchy`
   - **Sintesi:** Hierarchical Community Tree (Semantic Zoom) (Layer: ABSTRACTION_LAYER, Tipo: TOPOLOGICAL_HIERARCHY)
-  - **Dettagli:** `id`: node_hierarchical_dendrogram, `label`: Hierarchical Community Tree (Semantic Zoom), `type`: TOPOLOGICAL_HIERARCHY, `layer`: ABSTRACTION_LAYER
+  - **Dettagli:** `raw`: `id`: node_hierarchical_dendrogram, `label`: Hierarchical Community Tree (Semantic Zoom), `type`: TOPOLOGICAL_HIERARCHY, `layer`: ABSTRACTION_LAYER
 - **Hierarchical Tree Engine (Backend & Endpoints)** (`node-hierarchical-tree-engine-impl`)
   - **Tags:** `#mutation-import` `#core-services` `#backend-engine`
   - **Sintesi:** Hierarchical Tree Engine (Backend & Endpoints) (Layer: CORE_SERVICES, Tipo: BACKEND_ENGINE)
-  - **Dettagli:** `id`: node_hierarchical_tree_engine_impl, `label`: Hierarchical Tree Engine (Backend & Endpoints), `type`: BACKEND_ENGINE, `layer`: CORE_SERVICES
+  - **Dettagli:** `raw`: `id`: node_hierarchical_tree_engine_impl, `label`: Hierarchical Tree Engine (Backend & Endpoints), `type`: BACKEND_ENGINE, `layer`: CORE_SERVICES
 - **Inibizione Interemisferica GABAergica & Lazy-Loading Biologico** (`concept-interhemispheric-inhibition-gating`)
   - **Tags:** `#neuroscience` `#interhemispheric-inhibition` `#gabaergic-gating` `#lazy-loading` `#token-reduction`
   - **Sintesi:** Meccanismo neurobiologico computazionale in cui l'emisfero non pertinente al task viene temporaneamente inibito/disattivato per eliminare interferenze e risparmiare token, riattivandosi su richiesta tramite ponti callosali.
-  - **Dettagli:** `biological_basis`: Inibizione interemisferica mediata da interneuroni GABAergici via Corpo Calloso, `computational_benefit`: Riduzione token del 50-60%, eliminazione del rumore semantico, ricerca sub-millisecondo
+  - **Dettagli:** `raw`: `biological_basis`: Inibizione interemisferica mediata da interneuroni GABAergici via Corpo Calloso, `computational_benefit`: Riduzione token del 50-60%, eliminazione del rumore semantico, ricerca sub-millisecondo
 - **Linkly QR** (`proj-linkly-qr`)
   - **Tags:** `#ios` `#app-store` `#qr-matrix` `#vector-engine`
   - **Sintesi:** Generatore dinamico vettoriale di codici QR con preview live e styling avanzato.
-  - **Dettagli:** `platform`: Apple App Store, `engine`: Client-side SVG/PNG Vector Engine
+  - **Dettagli:** `raw`: `platform`: Apple App Store, `engine`: Client-side SVG/PNG Vector Engine
 - **MCP Tool: brain_get_tree** (`node-mcp-brain-get-tree`)
   - **Tags:** `#mutation-import` `#integration-layer` `#mcp-tool`
   - **Sintesi:** MCP Tool: brain_get_tree (Layer: INTEGRATION_LAYER, Tipo: MCP_TOOL)
-  - **Dettagli:** `id`: node_mcp_brain_get_tree, `label`: MCP Tool: brain_get_tree, `type`: MCP_TOOL, `layer`: INTEGRATION_LAYER
+  - **Dettagli:** `raw`: `id`: node_mcp_brain_get_tree, `label`: MCP Tool: brain_get_tree, `type`: MCP_TOOL, `layer`: INTEGRATION_LAYER
 - **Progetto: JARVIS Personal AI Voice Assistant** (`proj-jarvis-voice-assistant`)
   - **Tags:** `#jarvis` `#voice-ai` `#mcp` `#whisper` `#kokoro-tts`
   - **Sintesi:** Assistente vocale AI continuo in tempo reale a costo zero, integrato con il connettoma SQLite WAL tramite MCP, wake word locale, STT Whisper ultra-rapido e sintesi vocale neurale.
-  - **Dettagli:** `cost_tier`: 0 EUR / 100% Free, `llm_stack`: ['Groq Llama 3.3', 'Gemini 2.5 Flash', 'Ollama Qwen 2.5'], `mcp_integration`: mcp_server.py Universal AI Brain, `stt_engine`: Faster-Whisper / Groq Whisper, `tts_engine`: Kokoro-82M / Edge-TTS, `wake_word`: openWakeWord (Hey Jarvis)
+  - **Dettagli:** `raw`: `cost_tier`: 0 EUR / 100% Free, `llm_stack`: ['Groq Llama 3.3', 'Gemini 2.5 Flash', 'Ollama Qwen 2.5'], `mcp_integration`: mcp_server.py Universal AI Brain, `stt_engine`: Faster-Whisper / Groq Whisper, `tts_engine`: Kokoro-82M / Edge-TTS, `wake_word`: openWakeWord (Hey Jarvis)
 - **Royal Gambit Chess iOS App** (`project-royal-gambit-chess`)
   - **Tags:** `#ios` `#swift` `#swiftui` `#scacchi` `#minimax` `#duolingo` `#gamification`
   - **Sintesi:** Applicazione iOS nativa di scacchi per iPhone in Swift/SwiftUI con motore minimax bitboard, stile grafico Duolingo 2D Flat & 3D Tactile, bot con persona (Duo, Oscar, Athena, Magnus), sistema di streak, e Academy interattiva.
 - **SQLite WAL Storage Engine** (`sqlite-wal-persistence`)
   - **Tags:** `#sqlite` `#wal` `#embedded` `#atomic` `#zero-cost` `#persistence`
   - **Sintesi:** Motore di persistenza embedded senza server né costi di licenza, con Write-Ahead Logging per letture e scritture concorrenti sicure.
-  - **Dettagli:** `journal_mode`: WAL, `foreign_keys`: ON, `backup`: Single file portable
+  - **Dettagli:** `raw`: `journal_mode`: WAL, `foreign_keys`: ON, `backup`: Single file portable
 - **Search Trees (ToT / MCTS Deliberation)** (`node-search-tree-deliberation`)
   - **Tags:** `#mutation-import` `#working-memory-planning` `#cognitive-process`
   - **Sintesi:** Search Trees (ToT / MCTS Deliberation) (Layer: WORKING_MEMORY_PLANNING, Tipo: COGNITIVE_PROCESS)
-  - **Dettagli:** `id`: node_search_tree_deliberation, `label`: Search Trees (ToT / MCTS Deliberation), `type`: COGNITIVE_PROCESS, `layer`: WORKING_MEMORY_PLANNING
+  - **Dettagli:** `raw`: `id`: node_search_tree_deliberation, `label`: Search Trees (ToT / MCTS Deliberation), `type`: COGNITIVE_PROCESS, `layer`: WORKING_MEMORY_PLANNING
 - **StreaksUp (Habit Tracker iOS)** (`proj-streaksup-app`)
   - **Tags:** `#ios17` `#ios18` `#swiftui` `#swiftdata` `#widgetkit` `#streaksup` `#habittracker` `#zero-cloud`
   - **Sintesi:** Applicazione nativa iOS 17+ per tracciamento abitudini e routine con architettura SwiftData ad App Group, Live Activity e suite WidgetKit interattiva.
-  - **Dettagli:** `platform`: iOS 17.0+ / 18.0+, `language`: Swift 5.9, `ui_framework`: SwiftUI, `database`: SwiftData (SQLite WAL in App Group), `app_group`: group.com.pierfrancescoamendola.streaksup, `url_scheme`: streaksup://, `project_generator`: XcodeGen (project.yml)
+  - **Dettagli:** `raw`: `platform`: iOS 17.0+ / 18.0+, `language`: Swift 5.9, `ui_framework`: SwiftUI, `database`: SwiftData (SQLite WAL in App Group), `app_group`: group.com.pierfrancescoamendola.streaksup, `url_scheme`: streaksup://, `project_generator`: XcodeGen (project.yml)
 - **Telegram 0€ Webhook Gateway (POST /api/telegram/webhook)** (`node-telegram-webhook-gateway`)
   - **Tags:** `#mutation-import` `#perceptual-io` `#api-gateway`
   - **Sintesi:** Telegram 0€ Webhook Gateway (POST /api/telegram/webhook) (Layer: PERCEPTUAL_IO, Tipo: API_GATEWAY)
-  - **Dettagli:** `id`: node_telegram_webhook_gateway, `label`: Telegram 0€ Webhook Gateway (POST /api/telegram/webhook), `type`: API_GATEWAY, `layer`: PERCEPTUAL_IO
+  - **Dettagli:** `raw`: `id`: node_telegram_webhook_gateway, `label`: Telegram 0€ Webhook Gateway (POST /api/telegram/webhook), `type`: API_GATEWAY, `layer`: PERCEPTUAL_IO
 - **Terminale Chiaro & Network Activity Inspector** (`feat-light-terminal`)
   - **Tags:** `#terminal` `#ui` `#monitoring` `#network-inspector` `#fetch-proxy`
   - **Sintesi:** Console/Terminale chiaro in overlay a tutto schermo per tracciare richieste HTTP (POST/GET/DEL), latenza, payload e nodi memorizzati.
-  - **Dettagli:** `theme`: Light Slate (#f8fafc), `features`: ['window-controls', 'network-interceptor', 'realtime-feed', 'json-export']
+  - **Dettagli:** `raw`: `theme`: Light Slate (#f8fafc), `features`: ['window-controls', 'network-interceptor', 'realtime-feed', 'json-export']
 - **Test Live Upload Verify** (`test-live-upload-verify`)
   - **Tags:** `#daemon-test`
   - **Sintesi:** Test di verifica upload automatico demone
 - **Tombola WiFi** (`proj-tombolawifi`)
   - **Tags:** `#websockets` `#nodejs` `#tradition` `#multiplayer`
   - **Sintesi:** Digitalizzazione multiplayer locale della classica Tombola napoletana con Smorfia e broadcast chiamate.
-  - **Dettagli:** `stack`: Node.js, WebSockets, HTML5 Canvas / Flutter, `protocol`: Event-driven real-time local network
+  - **Dettagli:** `raw`: `stack`: Node.js, WebSockets, HTML5 Canvas / Flutter, `protocol`: Event-driven real-time local network
 - **UniCampus / AuleStudioApp** (`proj-unicampus`)
   - **Tags:** `#fastapi` `#flutter` `#sqlite-wal` `#university-tracker`
   - **Sintesi:** Piattaforma per gestione carriera accademica, simulatore di laurea e monitoraggio disponibilità aule studio.
-  - **Dettagli:** `stack`: Flutter, FastAPI, SQLite con PRAGMA WAL, `features`: Simulazione media pesata, previsione scenari di voto
+  - **Dettagli:** `raw`: `stack`: Flutter, FastAPI, SQLite con PRAGMA WAL, `features`: Simulazione media pesata, previsione scenari di voto
 - **Unified Brain Architecture** (`node-neuro-symbolic-brain`)
   - **Tags:** `#mutation-import` `#meta-system` `#cognitive-architecture`
   - **Sintesi:** Unified Brain Architecture (Layer: META_SYSTEM, Tipo: COGNITIVE_ARCHITECTURE)
-  - **Dettagli:** `id`: node_neuro_symbolic_brain, `label`: Unified Brain Architecture, `type`: COGNITIVE_ARCHITECTURE, `layer`: META_SYSTEM
+  - **Dettagli:** `raw`: `id`: node_neuro_symbolic_brain, `label`: Unified Brain Architecture, `type`: COGNITIVE_ARCHITECTURE, `layer`: META_SYSTEM
 - **Universal AI Brain (Cognitive System)** (`universal-ai-brain`)
   - **Tags:** `#ai-brain` `#fastapi` `#sqlite-wal` `#3d-graph` `#zero-cost` `#knowledge-graph`
   - **Sintesi:** Sistema di memoria persistente a grafo bi-emisferico per agenti LLM (Claude, Gemini, ChatGPT) con costo operativo zero.
-  - **Dettagli:** `version`: 1.1.0, `backend`: FastAPI, `storage`: SQLite WAL, `frontend`: 3D Force Graph WebGL, `cost`: 0€ Forever
+  - **Dettagli:** `raw`: `version`: 1.1.0, `backend`: FastAPI, `storage`: SQLite WAL, `frontend`: 3D Force Graph WebGL, `cost`: 0€ Forever
 - **Universal Knowledge Graph (Associative Substrate)** (`node-knowledge-graph-memory`)
   - **Tags:** `#mutation-import` `#long-term-associative` `#memory-system`
   - **Sintesi:** Universal Knowledge Graph (Associative Substrate) (Layer: LONG_TERM_ASSOCIATIVE, Tipo: MEMORY_SYSTEM)
-  - **Dettagli:** `id`: node_knowledge_graph_memory, `label`: Universal Knowledge Graph (Associative Substrate), `type`: MEMORY_SYSTEM, `layer`: LONG_TERM_ASSOCIATIVE
+  - **Dettagli:** `raw`: `id`: node_knowledge_graph_memory, `label`: Universal Knowledge Graph (Associative Substrate), `type`: MEMORY_SYSTEM, `layer`: LONG_TERM_ASSOCIATIVE
 
 ### [Macro-Label: `BUSINESS_LOGIC`]
 - **AlcolSafe** (`proj-alcolsafe`)
   - **Tags:** `#mobile` `#safety` `#metabolic-calc` `#widmark`
   - **Sintesi:** Applicazione per il monitoraggio e calcolo del tasso alcolemico con stima metabolica di smaltimento.
-  - **Dettagli:** `stack`: Flutter / Swift, Widmark extended formula, `features`: Countdown smaltimento, soglie di legge, emergency contact
+  - **Dettagli:** `raw`: `stack`: Flutter / Swift, Widmark extended formula, `features`: Countdown smaltimento, soglie di legge, emergency contact
 - **Caveman Ultra-Compressed Protocol** (`caveman-communication-protocol`)
   - **Tags:** `#caveman` `#token-efficiency` `#wenyan-ultra` `#low-latency` `#ai-rules`
   - **Sintesi:** Protocollo di comunicazione che abbatte il consumo di token del 65%+ eliminando convenevoli e verbosità senza perdere sostanza tecnica.
-  - **Dettagli:** `mode`: wenyan-ultra, `token_saving_rate`: 65-80%, `rule`: Preserve technical precision, drop fluff
+  - **Dettagli:** `raw`: `mode`: wenyan-ultra, `token_saving_rate`: 65-80%, `rule`: Preserve technical precision, drop fluff
 - **Cross-Process Darwin IPC Protocol** (`streaksup-darwin-ipc-protocol`)
   - **Tags:** `#darwin-notifications` `#ipc` `#cross-process` `#cfnotificationcenter`
   - **Sintesi:** Protocollo di sincronizzazione inter-processo basato su CFNotificationCenter per invalidare la cache ModelContext dell'app ad ogni mutazione da widget.
-  - **Dettagli:** `notification_name`: com.pierfrancescoamendola.streaksup.habitDataChanged, `center`: CFNotificationCenterGetDarwinNotifyCenter(), `action`: modelContext.rollback() + fetchHabits()
+  - **Dettagli:** `raw`: `notification_name`: com.pierfrancescoamendola.streaksup.habitDataChanged, `center`: CFNotificationCenterGetDarwinNotifyCenter(), `action`: modelContext.rollback() + fetchHabits()
 - **Guida Rapida all'AI & Publishing KDP** (`proj-kdp-ai-book`)
   - **Tags:** `#latex` `#amazon-kdp` `#publishing` `#artificial-intelligence`
   - **Sintesi:** Manuale tecnico-divulgativo sull'AI e pipeline editoriale basata su LaTeX conforme alle specifiche di stampa Amazon KDP.
-  - **Dettagli:** `toolchain`: LaTeX (tcolorbox, geometry, hyperref), `output_format`: PDF/X Amazon KDP Print Ready
+  - **Dettagli:** `raw`: `toolchain`: LaTeX (tcolorbox, geometry, hyperref), `output_format`: PDF/X Amazon KDP Print Ready
 - **Guida Rapida all'AI & Publishing KDP** (`proj-kdp-ai-guide`)
   - **Tags:** `#latex` `#publishing` `#amazon-kdp` `#artificial-intelligence`
   - **Sintesi:** Manuale tecnico-divulgativo sull'AI e pipeline tipografica industriale basata su LaTeX per Amazon KDP.
-  - **Dettagli:** `toolchain`: LaTeX (tcolorbox, geometry, hyperref), `output`: PDF/X print-ready conforme agli standard di taglio KDP
+  - **Dettagli:** `raw`: `toolchain`: LaTeX (tcolorbox, geometry, hyperref), `output`: PDF/X print-ready conforme agli standard di taglio KDP
 - **Holly & Benji AI (OpenAI Challenge)** (`proj-holly-benji-ai`)
   - **Tags:** `#openai-challenge` `#rag` `#llm-orchestration` `#team-leader`
   - **Sintesi:** Prototipazione rapida di soluzione AI RAG presentata a rettori e giudici corporate (Luglio 2026).
-  - **Dettagli:** `role`: Team Leader & English Pitcher, `milestone`: Luglio 2026
+  - **Dettagli:** `raw`: `role`: Team Leader & English Pitcher, `milestone`: Luglio 2026
 - **Logica Tassonomica: Motore di Classificazione Deterministica dei Piani Cognitivi** (`taxonomy-deterministic-floor-classification-engine`)
   - **Tags:** `#taxonomy` `#classification` `#palazzo-cognitivo` `#graph-hierarchy` `#algorithms`
   - **Sintesi:** Algoritmo di partizionamento semantico che assegna in modo deterministico ogni nodo del grafo al suo piano corretto nel Palazzo Cognitivo (P0 = Identità/Hub; P1 = Progetti/Episodi/Idee; P2 = Moduli/Schemi/Token).
-  - **Dettagli:** `p0_criteria`: Identità Pierfrancesco, Connettoma Primario, Hub con grado >= 6, `p1_criteria`: USER_INTENT, CONVERSATION_EPISODE, BRAND_VOICE, CREATIVE_IDEA, PERSONAL_VALUE, `p2_criteria`: ALGORITHM, DATA_STRUCTURE, DEPENDENCY, API_SPEC, UI_COMPONENT, DESIGN_TOKEN, schemi
+  - **Dettagli:** `raw`: `p0_criteria`: Identità Pierfrancesco, Connettoma Primario, Hub con grado >= 6, `p1_criteria`: USER_INTENT, CONVERSATION_EPISODE, BRAND_VOICE, CREATIVE_IDEA, PERSONAL_VALUE, `p2_criteria`: ALGORITHM, DATA_STRUCTURE, DEPENDENCY, API_SPEC, UI_COMPONENT, DESIGN_TOKEN, schemi
 - **Profilo Ingegneristico & Ricerca CS** (`identity-cs-researcher`)
   - **Tags:** `#identity` `#unina` `#icar-cnr` `#bioinformatics` `#fullstack`
   - **Sintesi:** Studente di Computer Science alla Federico II (Matr. N86005039) e ricercatore in bioinformatica applicata all'imaging biomedico presso ICAR-CNR.
-  - **Dettagli:** `institution`: Università degli Studi di Napoli Federico II, `matricola`: N86005039, `research_lab`: ICAR-CNR, `research_supervisor`: Dr.ssa Nadia Brancati, `thesis_advisor`: Prof. Daniel Riccio
+  - **Dettagli:** `raw`: `institution`: Università degli Studi di Napoli Federico II, `matricola`: N86005039, `research_lab`: ICAR-CNR, `research_supervisor`: Dr.ssa Nadia Brancati, `thesis_advisor`: Prof. Daniel Riccio
 - **Regola di Persistenza Cloud & Prevenzione Perdite** (`rule-cloud-persistence`)
   - **Tags:** `#persistence` `#render` `#ephemeral-disk` `#sqlite-sync` `#zero-loss`
   - **Sintesi:** Protocollo di sincronizzazione bidirezionale per ovviare alla natura effimera dei container Render e garantire la conservazione permanente dei dati.
-  - **Dettagli:** `cloud_strategy`: Git + Checkpoint Sync / Cloud SQLite, `checkpoint`: WAL Full Checkpoint
+  - **Dettagli:** `raw`: `cloud_strategy`: Git + Checkpoint Sync / Cloud SQLite, `checkpoint`: WAL Full Checkpoint
 - **Runtime Multilingual .lproj Switcher** (`streaksup-i18n-runtime-engine`)
   - **Tags:** `#i18n` `#lproj` `#runtime-localization` `#six-languages`
   - **Sintesi:** Gestore centralizzato di localizzazione per il cambio istantaneo di lingua a runtime tra 6 idiomi supportati senza riavvio dell'app.
-  - **Dettagli:** `languages`: ['Italiano (it)', 'English (en)', 'Español (es)', 'Deutsch (de)', 'Português (pt)', 'Français (fr)'], `manager`: LanguageManager.shared, `mechanism`: Dynamic .lproj Bundle switching
+  - **Dettagli:** `raw`: `languages`: ['Italiano (it)', 'English (en)', 'Español (es)', 'Deutsch (de)', 'Português (pt)', 'Français (fr)'], `manager`: LanguageManager.shared, `mechanism`: Dynamic .lproj Bundle switching
 - **Sessione di Sviluppo & Deployment Cloud (Antigravity)** (`session-continuous-evolution`)
   - **Tags:** `#antigravity` `#render` `#github` `#cloud-deployment` `#continuous-memory` `#2026-08-27`
   - **Sintesi:** Sessione interattiva di costruzione e deployment del cervello cognitivo a costo zero con Antigravity e Render.
-  - **Dettagli:** `date`: 2026-08-27, `partner_agent`: Antigravity (Google DeepMind), `target_platform`: Render.com (Free Web Service), `repository_structure`: main.py, static/ (vis-network), requirements.txt, render.yaml, brain.db
+  - **Dettagli:** `raw`: `date`: 2026-08-27, `partner_agent`: Antigravity (Google DeepMind), `target_platform`: Render.com (Free Web Service), `repository_structure`: main.py, static/ (vis-network), requirements.txt, render.yaml, brain.db
 - **Zero-Cost Mandatory Constraint** (`zero-debt-cost-rule`)
   - **Tags:** `#zero-cost` `#free-tier` `#render` `#flyio` `#koyeb` `#sustainability`
   - **Sintesi:** Regola cardine di architettura: 0€ spesa perenne. Utilizzo esclusivo di tier gratuiti illimitati o file persistenti.
-  - **Dettagli:** `budget`: 0.00 EUR, `target_clouds`: ['Render Free', 'Fly.io Free Volume', 'Koyeb Eco', 'HuggingFace Spaces']
+  - **Dettagli:** `raw`: `budget`: 0.00 EUR, `target_clouds`: ['Render Free', 'Fly.io Free Volume', 'Koyeb Eco', 'HuggingFace Spaces']
 
 ### [Macro-Label: `COGNITIVE_RULE`]
 - **Antigravity Skill: universal-brain (/brain)** (`skill-universal-brain-installed`)
   - **Tags:** `#skill` `#antigravity` `#automation` `#graphrag`
   - **Sintesi:** Skill installata in ~/.agents/skills/universal-brain per ricerca semantica e auto-ingestione continua.
-  - **Dettagli:** `path`: /Users/pierfrancesco/.agents/skills/universal-brain/SKILL.md
+  - **Dettagli:** `raw`: `path`: /Users/pierfrancesco/.agents/skills/universal-brain/SKILL.md
 - **Comunicazione Chirurgica & Rigore** (`rigore-informativo`)
   - **Tags:** `#alta-densita` `#senza-convenevoli` `#struttura` `#precisione`
   - **Sintesi:** Preferenza esplicita per risposte concise, dirette e tecnicamente dense con epistemologia verificata.
-  - **Dettagli:** `communication_preferences`: ['Minimi convenevoli', 'Informazione ad alta densità', 'Struttura esplicita', 'Precisione']
+  - **Dettagli:** `raw`: `communication_preferences`: ['Minimi convenevoli', 'Informazione ad alta densità', 'Struttura esplicita', 'Precisione']
 - **Direttiva di Sincronizzazione Prompt 1-Click** (`feat-copy-ai-prompt`)
   - **Tags:** `#prompt-engineering` `#clipboard` `#sync` `#graphify` `#workflow`
   - **Sintesi:** Pulsante di copia rapida delle istruzioni di sistema per collegare qualsiasi LLM esterno al file brain.md e guidare l'aggiornamento della memoria.
-  - **Dettagli:** `target_url`: https://universal-ai-brain.onrender.com/brain.md, `copy_target`: clipboard
+  - **Dettagli:** `raw`: `target_url`: https://universal-ai-brain.onrender.com/brain.md, `copy_target`: clipboard
 - **Direttiva di Tracciamento del Pensiero Critico AI** (`rule-ai-thought-tracing`)
   - **Tags:** `#brain-md` `#system-prompt` `#reasoning-trace` `#graphify-directive`
   - **Sintesi:** Regola 4 di brain.md: impone a qualsiasi LLM di distillare non solo i comandi dell'utente ma anche le proprie motivazioni logiche in nodi AI_REASONING.
-  - **Dettagli:** `directive_file`: brain.md, `rules_updated`: ['Rule 3 (Taxonomy)', 'Rule 4 (AI Reasoning Hub)', 'Rule 5 (Dual Ingest)']
+  - **Dettagli:** `raw`: `directive_file`: brain.md, `rules_updated`: ['Rule 3 (Taxonomy)', 'Rule 4 (AI Reasoning Hub)', 'Rule 5 (Dual Ingest)']
 - **Epistemologia & Divieto Allucinazioni** (`epistemologia-rigorosa`)
   - **Tags:** `#epistemologia` `#fatti-verificati` `#no-hallucination`
   - **Sintesi:** Distinzione rigorosa tra fatti dichiarati ed inferenze; divieto di fabbricare dettagli emotivi o tecnici privi di fonte.
-  - **Dettagli:** `principle`: Verifiable ground-truth only
+  - **Dettagli:** `raw`: `principle`: Verifiable ground-truth only
 - **Hierarchical Community Tree as Primary Abstraction** (`node-tree-architecture-verdict`)
   - **Tags:** `#mutation-import` `#core-taxonomy` `#architectural-decision`
   - **Sintesi:** Hierarchical Community Tree as Primary Abstraction (Layer: CORE_TAXONOMY, Tipo: ARCHITECTURAL_DECISION)
-  - **Dettagli:** `id`: node_tree_architecture_verdict, `label`: Hierarchical Community Tree as Primary Abstraction, `type`: ARCHITECTURAL_DECISION, `layer`: CORE_TAXONOMY
+  - **Dettagli:** `raw`: `id`: node_tree_architecture_verdict, `label`: Hierarchical Community Tree as Primary Abstraction, `type`: ARCHITECTURAL_DECISION, `layer`: CORE_TAXONOMY
 - **Regola Cognitiva: Gestione dei Filtri Anti-Injection nei Modelli Web** (`concept-llm-indirect-injection-safeguard`)
   - **Tags:** `#cognitive-rule` `#prompt-injection` `#llm-safety` `#claude-ai-guardrails` `#memory-ingestion`
   - **Sintesi:** Protocollo di interazione con modelli web: evitare comandi imperativi di rete esterna (es. ordini di POST verso URL terzi) nei file allegati, preferendo il formato standard di blocco JSON in calce.
-  - **Dettagli:** `cause_of_refusal`: I filtri di Anthropic/OpenAI rilevano istruzioni di esfiltrazione dati se un prompt/file ordina chiamate POST o fetch verso siti terzi., `recommended_protocol`: Allegare brain.md e chiedere la generazione del blocco di codice JSON da incollare con 1-click nella Web Dashboard.
+  - **Dettagli:** `raw`: `cause_of_refusal`: I filtri di Anthropic/OpenAI rilevano istruzioni di esfiltrazione dati se un prompt/file ordina chiamate POST o fetch verso siti terzi., `recommended_protocol`: Allegare brain.md e chiedere la generazione del blocco di codice JSON da incollare con 1-click nella Web Dashboard.
 - **Regola dell'Esecuzione Integrale (Zero Placeholder)** (`rule-zero-placeholder`)
   - **Tags:** `#strict-execution` `#code-integrity` `#no-shortcuts`
   - **Sintesi:** Divieto tassativo di codice troncato, finto o parziale; ogni soluzione deve essere autosufficiente ed eseguibile.
-  - **Dettagli:** `banned`: ['// resto del codice', '/* implementare qui */', 'TODO stub'], `standard`: Production-ready code only
+  - **Dettagli:** `raw`: `banned`: ['// resto del codice', '/* implementare qui */', 'TODO stub'], `standard`: Production-ready code only
 - **Regola di Preservazione Episodica delle Conversazioni** (`rule-episodic-chat-preservation`)
   - **Tags:** `#rule` `#episodic-memory` `#brain-md` `#chat-tracking`
   - **Sintesi:** Direttiva di sistema per raggruppare qualsiasi sessione futura sotto il proprio nodo di episodio tematico con le relative intenzioni e ragionamenti.
-  - **Dettagli:** `rule_number`: 4, `taxonomy_pair`: ['USER_INTENT', 'AI_REASONING', 'CONVERSATION_EPISODE']
+  - **Dettagli:** `raw`: `rule_number`: 4, `taxonomy_pair`: ['USER_INTENT', 'AI_REASONING', 'CONVERSATION_EPISODE']
 
 ### [Macro-Label: `DATA_STRUCTURE`]
 - **Architettura ad Alberi Gerarchici Pesati (Knowledge Tree)** (`idea-hierarchical-weighted-trees`)
   - **Tags:** `#data-structure` `#tree` `#mst` `#dendrogram` `#semantic-zoom`
   - **Sintesi:** Struttura ad albero ponderata sovrapposta al grafo per estrazione gerarchica dei temi: Radice -> Emisferi -> Cluster -> Nodi atomici.
-  - **Dettagli:** `application`: Zoom semantico da macro-concetti a micro-dettagli
+  - **Dettagli:** `raw`: `application`: Zoom semantico da macro-concetti a micro-dettagli
 - **Fondamenti Teorici & Coursework UNINA** (`coursework-cs-federico2`)
   - **Tags:** `#unina` `#mogavero` `#setvec` `#relational-algebra` `#s-programs` `#theory-of-computation`
   - **Sintesi:** Solida preparazione teorica: strutture dati SetVec/SetLst (Prof. Mogavero), algebra relazionale estesa e S-Programs.
-  - **Dettagli:** `data_structures`: SetVec, SetLst (Prof. Mogavero), `relational_algebra`: Aggregation syntax <attr>G<func>(R), `computability`: S-Programs (Davis, Weyuker - Computability & Languages)
+  - **Dettagli:** `raw`: `data_structures`: SetVec, SetLst (Prof. Mogavero), `relational_algebra`: Aggregation syntax <attr>G<func>(R), `computability`: S-Programs (Davis, Weyuker - Computability & Languages)
 - **NapoliLive** (`proj-napolilive`)
   - **Tags:** `#territory` `#napoli` `#events` `#scraping`
   - **Sintesi:** Hub informativo per la valorizzazione del territorio partenopeo con aggregazione eventi in tempo reale.
-  - **Dettagli:** `stack`: Next.js / Flutter, Scraping engine, `focus`: Eventi culturali, mobilità e spettacoli a Napoli
+  - **Dettagli:** `raw`: `stack`: Next.js / Flutter, Scraping engine, `focus`: Eventi culturali, mobilità e spettacoli a Napoli
 - **Patologia: Onicocriptosi (Unghia Incarnita)** (`medical-onicocriptosi-unghia-incarnita`)
   - **Tags:** `#medicina` `#dermatologia` `#podologia` `#onicocriptosi` `#trattamento`
   - **Sintesi:** Condizione patologica in cui il bordo ungueale penetra nel solco ungueale periungueale causando infiammazione, granuloma o infezione.
-  - **Dettagli:** `trattamento`: Conservativo (pediluvio, disinfezione) o chirurgico (matricectomia parziale), `eziologia`: Taglio errato, calzature strette, conformazione anatomica
+  - **Dettagli:** `raw`: `trattamento`: Conservativo (pediluvio, disinfezione) o chirurgico (matricectomia parziale), `eziologia`: Taglio errato, calzature strette, conformazione anatomica
 - **Radix / Prefix Trie (O(k) Entity Routing)** (`node-prefix-radix-trie`)
   - **Tags:** `#mutation-import` `#perceptual-routing` `#lexical-index`
   - **Sintesi:** Radix / Prefix Trie (O(k) Entity Routing) (Layer: PERCEPTUAL_ROUTING, Tipo: LEXICAL_INDEX)
-  - **Dettagli:** `id`: node_prefix_radix_trie, `label`: Radix / Prefix Trie (O(k) Entity Routing), `type`: LEXICAL_INDEX, `layer`: PERCEPTUAL_ROUTING
+  - **Dettagli:** `raw`: `id`: node_prefix_radix_trie, `label`: Radix / Prefix Trie (O(k) Entity Routing), `type`: LEXICAL_INDEX, `layer`: PERCEPTUAL_ROUTING
 - **SQLite WAL High-Concurrency Pattern** (`arch-sqlite-wal`)
   - **Tags:** `#database` `#sqlite` `#wal` `#zero-cost` `#performance`
   - **Sintesi:** Configurazione di persistenza locale ad alta efficienza per carichi concorrenti senza costi di hosting.
-  - **Dettagli:** `journal_mode`: WAL, `synchronous`: NORMAL, `busy_timeout`: 5000, `cache_size`: -20000
+  - **Dettagli:** `raw`: `journal_mode`: WAL, `synchronous`: NORMAL, `busy_timeout`: 5000, `cache_size`: -20000
 - **SwiftData Shared Container & Models** (`streaksup-swiftdata-arch`)
   - **Tags:** `#swiftdata` `#sqlite-wal` `#models` `#app-group` `#concurrency`
   - **Sintesi:** Storage condiviso tra App principale ed estensione Widget tramite ModelContainer su SQLite WAL con modelli Habit, HabitLog e HabitCategory.
-  - **Dettagli:** `models`: ['Habit', 'HabitLog', 'HabitCategory'], `helper`: SwiftDataHelper, `concurrency_protection`: ModelContext rollback su notifiche Darwin, `cascade_deletion`: Inverse relationship Habit -> logs
+  - **Dettagli:** `raw`: `models`: ['Habit', 'HabitLog', 'HabitCategory'], `helper`: SwiftDataHelper, `concurrency_protection`: ModelContext rollback su notifiche Darwin, `cascade_deletion`: Inverse relationship Habit -> logs
 
 ### [Macro-Label: `DEPENDENCY`]
 - **FastAPI & Python ASGI Stack** (`fastapi-python-stack`)
   - **Tags:** `#python` `#fastapi` `#uvicorn` `#pydantic-v2` `#asgi` `#rest`
   - **Sintesi:** Framework web asincrono ad altissimo throughput per esporre API di memoria e webhook di ingestione per agenti AI.
-  - **Dettagli:** `python_version`: 3.10+, `asgi_server`: Uvicorn, `validation`: Pydantic V2
+  - **Dettagli:** `raw`: `python_version`: 3.10+, `asgi_server`: Uvicorn, `validation`: Pydantic V2
 - **Flutter & Dart Mobile Architecture** (`flutter-dart-ecosystem`)
   - **Tags:** `#flutter` `#dart` `#bloc` `#state-management` `#cross-platform`
   - **Sintesi:** Stack di sviluppo mobile multipiattaforma ad alte prestazioni con architettura pulita a blocchi logici (BLoC/Provider).
-  - **Dettagli:** `runtime`: Flutter 3.x, `engine`: Skia/Impeller, `state`: BLoC / Provider, `network`: Dio / REST / WebSocket
+  - **Dettagli:** `raw`: `runtime`: Flutter 3.x, `engine`: Skia/Impeller, `state`: BLoC / Provider, `network`: Dio / REST / WebSocket
 - **GitHub Repository Universal-AI-Brain** (`repo-github-universal-ai-brain`)
   - **Tags:** `#github` `#repository` `#open-source` `#render-ready`
   - **Sintesi:** Repository GitHub ufficiale contenente il backend FastAPI, il dashboard vis-network e la memoria SQLite pre-popolata.
-  - **Dettagli:** `url`: https://github.com/PierfrancescoAmendola/Universal-AI-Brain, `owner`: PierfrancescoAmendola, `branch`: main, `visibility`: Public
+  - **Dettagli:** `raw`: `url`: https://github.com/PierfrancescoAmendola/Universal-AI-Brain, `owner`: PierfrancescoAmendola, `branch`: main, `visibility`: Public
 
 ### [Macro-Label: `MENTAL_MODEL`]
 - **Filosofia Ingegneristica a Costo Zero** (`rule-zero-cost`)
   - **Tags:** `#efficiency` `#self-hosted` `#sqlite` `#lean-architecture`
   - **Sintesi:** Progettare sistemi snelli ed efficienti eliminando i costi infrastrutturali fissi tramite tecnologie locali o open-source.
-  - **Dettagli:** `practices`: ['SQLite WAL invece di server DB pesanti', 'Client-side processing', 'Static/Serverless hosting']
+  - **Dettagli:** `raw`: `practices`: ['SQLite WAL invece di server DB pesanti', 'Client-side processing', 'Static/Serverless hosting']
 - **Modello Centauro (Uomo + AI)** (`mental-centaur-model`)
   - **Tags:** `#ai-philosophy` `#human-agency` `#cognitive-extension`
   - **Sintesi:** L'AI agisce come moltiplicatore computazionale, mentre l'essere umano detiene il controllo etico, strategico ed estetico.
-  - **Dettagli:** `human_role`: Visione, intenzionalità etica, discernimento critico, anima artistica, `machine_role`: Velocità esecutiva, esplorazione combinatoria, precisione formale
+  - **Dettagli:** `raw`: `human_role`: Visione, intenzionalità etica, discernimento critico, anima artistica, `machine_role`: Velocità esecutiva, esplorazione combinatoria, precisione formale
 - **Persistenza Totale del Contesto e dei Pensieri Multi-AI** (`goal-multi-ai-shared-context-persistence`)
   - **Tags:** `#shared-context` `#conversational-continuity` `#multi-ai` `#cross-agent-memory` `#universal-recall`
   - **Sintesi:** Principio fondante: preservare integralmente contesto, richieste e deduzioni di tutte le chat con qualsiasi AI affinché ogni modello condivida la memoria storica universale.
-  - **Dettagli:** `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc..., `core_objective`: Garantire che qualunque AI (Claude, Gemini, ChatGPT, DeepSeek, ecc.) sappia sempre con esattezza cosa è stato detto, pensato e deciso nelle sessioni precedenti., `context_dimensions`: ['Richieste Utente (USER_INTENT)', 'Deduzioni Logiche (AI_REASONING)', 'Episodi Tematici (CONVERSATION_EPISODE)', 'Attribuzione Modello (details.model)']
+  - **Dettagli:** `raw`: `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc..., `core_objective`: Garantire che qualunque AI (Claude, Gemini, ChatGPT, DeepSeek, ecc.) sappia sempre con esattezza cosa è stato detto, pensato e deciso nelle sessioni precedenti., `context_dimensions`: ['Richieste Utente (USER_INTENT)', 'Deduzioni Logiche (AI_REASONING)', 'Episodi Tematici (CONVERSATION_EPISODE)', 'Attribuzione Modello (details.model)']
 - **Ubiquitous Memory Ingestion** (`node-ubiquitous-ingestion`)
   - **Tags:** `#mutation-import` `#dynamic-plasticity` `#cognitive-capability`
   - **Sintesi:** Ubiquitous Memory Ingestion (Layer: DYNAMIC_PLASTICITY, Tipo: COGNITIVE_CAPABILITY)
-  - **Dettagli:** `id`: node_ubiquitous_ingestion, `label`: Ubiquitous Memory Ingestion, `type`: COGNITIVE_CAPABILITY, `layer`: DYNAMIC_PLASTICITY
+  - **Dettagli:** `raw`: `id`: node_ubiquitous_ingestion, `label`: Ubiquitous Memory Ingestion, `type`: COGNITIVE_CAPABILITY, `layer`: DYNAMIC_PLASTICITY
 
 ### [Macro-Label: `USER_INTENT`]
 - **Allineamento e Diagnosi Discrepanza Nodi Render e Locale** (`user-intent-allineamento-nodi-render`)
   - **Tags:** `#render` `#sync` `#deploy` `#git` `#discrepanza`
   - **Sintesi:** Richiesta di spiegazione sulla discrepanza tra 208 nodi locali e 204 su Render e sincronizzazione del database cloud.
-  - **Dettagli:** `user_prompt`: /universal-brain /graphify aggiorna i nodi su render. qui ne 208 su render 204, perchè??, `context`: Discrepanza di 4 nodi tra ambiente locale e istanza Render cloud dovuta a commit pendente.
+  - **Dettagli:** `raw`: `user_prompt`: /universal-brain /graphify aggiorna i nodi su render. qui ne 208 su render 204, perchè??, `context`: Discrepanza di 4 nodi tra ambiente locale e istanza Render cloud dovuta a commit pendente.
 - **Analisi Feedback Gemini e Piano Ottimizzazione Cervello** (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`)
   - **Tags:** `#feedback-gemini` `#graphrag` `#ottimizzazione-cervello` `#metamemoria`
   - **Sintesi:** Valutazione critica dell'assessment di Gemini sul Cervello Artificiale e definizione delle migliorie al GraphRAG e all'architettura.
-  - **Dettagli:** `context`: Diagnosi discrepanza tra percezione esterna di Gemini e stato reale del Knowledge Graph (304 nodi, 789 archi), `user_prompt`: vedi cosa mi ha detto gemini, secondo te che dobbiamo fare, cosa possiamo migliorare??
+  - **Dettagli:** `raw`: `context`: Diagnosi discrepanza tra percezione esterna di Gemini e stato reale del Knowledge Graph (304 nodi, 789 archi), `user_prompt`: vedi cosa mi ha detto gemini, secondo te che dobbiamo fare, cosa possiamo migliorare??
 - **Costruzione App Personale Apprendimento Portoghese e Tedesco** (`intent-personal-language-learning-app`)
   - **Tags:** `#language-learning` `#portuguese` `#german` `#personal-software` `#srs`
   - **Sintesi:** L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
-  - **Dettagli:** `target_languages`: ['Portoghese', 'Tedesco'], `motivation`: Superamento paywall/energia di Duolingo, `scope`: Uso esclusivo personale e privato, `user_prompt`: L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
+  - **Dettagli:** `raw`: `target_languages`: ['Portoghese', 'Tedesco'], `motivation`: Superamento paywall/energia di Duolingo, `scope`: Uso esclusivo personale e privato, `user_prompt`: L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
 - **Definizione Architettura & Gamification App Personale Lingue** (`intent-personal-language-app-structure`)
   - **Tags:** `#duolingo-like` `#busuu-like` `#pedagogy` `#curriculum-design` `#gamification`
   - **Sintesi:** L'utente richiede consigli approfonditi sulla struttura funzionale e pedagogica di un'app personale (stile Duolingo/Busuu) con flow a lezioni, zero paywall e nessun blocco energia.
-  - **Dettagli:** `benchmark_apps`: ['Duolingo', 'Busuu'], `key_requirements`: ['No energy limitations', 'Free/Local', 'Structured CEFR progression'], `user_prompt`: L'utente richiede consigli approfonditi sulla struttura funzionale e pedagogica di un'app personale (stile Duolingo/Busuu) con flow a lezioni, zero paywall e nessun blocco energia.
+  - **Dettagli:** `raw`: `benchmark_apps`: ['Duolingo', 'Busuu'], `key_requirements`: ['No energy limitations', 'Free/Local', 'Structured CEFR progression'], `user_prompt`: L'utente richiede consigli approfonditi sulla struttura funzionale e pedagogica di un'app personale (stile Duolingo/Busuu) con flow a lezioni, zero paywall e nessun blocco energia.
 - **Definizione Linee Guida Grafiche e UI per App Linguistica** (`intent-language-app-ui-design`)
   - **Tags:** `#ui-design` `#design-system` `#ux-flow` `#graphic-style` `#frontend`
   - **Sintesi:** L'utente richiede la definizione della grafica, dello stile visivo e dell'interfaccia utente per l'applicazione personale di apprendimento linguistico.
-  - **Dettagli:** `focus`: Design dell'interfaccia, token visivi, animazioni e layout degli esercizi, `user_prompt`: L'utente richiede la definizione della grafica, dello stile visivo e dell'interfaccia utente per l'applicazione personale di apprendimento linguistico.
+  - **Dettagli:** `raw`: `focus`: Design dell'interfaccia, token visivi, animazioni e layout degli esercizi, `user_prompt`: L'utente richiede la definizione della grafica, dello stile visivo e dell'interfaccia utente per l'applicazione personale di apprendimento linguistico.
 - **Intento Utente: Collegare Cervello via MCP e Skill a Claude, Gemini e ChatGPT** (`user-intent-connect-gemini-claude-chatgpt-mcp`)
   - **Tags:** `#user-intent` `#mcp-integration` `#multi-model-sync`
   - **Sintesi:** Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
-  - **Dettagli:** `target`: Multi-LLM ubiquitous cognition, `user_prompt`: Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
+  - **Dettagli:** `raw`: `target`: Multi-LLM ubiquitous cognition, `user_prompt`: Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
 - **Intento Utente: Comprensione del Ruolo di Render Cloud e Analisi del Rifiuto di Claude Web** (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
   - **Tags:** `#user-intent` `#cloud-architecture` `#claude-web-refusal` `#clarification`
   - **Sintesi:** Pierfrancesco richiede spiegazione sul perché avere il backend su Render se gli agenti desktop leggono localmente, e come superare il rifiuto dei modelli web per lettura memoria.
-  - **Dettagli:** `user_prompt`: una domanda, ma se claude desktop, antigravity ecc...leggono i file dal mio pc allora che senso ha avere tutto su render?? spiegami?? lo scopo era che le ai leggessero da internet il mio sito, la mia memoria e poi creassero dei file json che avrei aggiunto al mio cervello per mantenere il contesto, e memoria della chat. spiega non agire !!!, `analysis`: Richiesta di formalizzazione della pipeline omnicanale (Cloud API vs Local Stdio vs Web Chat Attachment)
+  - **Dettagli:** `raw`: `user_prompt`: una domanda, ma se claude desktop, antigravity ecc...leggono i file dal mio pc allora che senso ha avere tutto su render?? spiegami?? lo scopo era che le ai leggessero da internet il mio sito, la mia memoria e poi creassero dei file json che avrei aggiunto al mio cervello per mantenere il contesto, e memoria della chat. spiega non agire !!!, `analysis`: Richiesta di formalizzazione della pipeline omnicanale (Cloud API vs Local Stdio vs Web Chat Attachment)
 - **Intento Utente: Gateway Telegram per Accesso Cognitivo Ovunque** (`user-intent-telegram-bot-gateway`)
   - **Tags:** `#user-intent` `#telegram` `#telegram-bot` `#omnipresence` `#mobile-access` `#zero-cost`
   - **Sintesi:** Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone.
-  - **Dettagli:** `capabilities`: ['Query FTS5', 'Shortest path', 'Hierarchical tree summary', 'Quick note ingestion'], `user_prompt`: Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone.
+  - **Dettagli:** `raw`: `capabilities`: ['Query FTS5', 'Shortest path', 'Hierarchical tree summary', 'Quick note ingestion'], `user_prompt`: Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone.
 - **Intento Utente: Grafica Statica Stabile, Zero Oscillazioni e Zero Lag** (`user-intent-zero-oscillation-high-performance-graph`)
   - **Tags:** `#user-preference` `#zero-lag` `#stability` `#anti-jitter` `#high-performance`
   - **Sintesi:** Direttiva esplicita di Pierfrancesco: il grafo del cervello artificiale non deve mai ruotare da solo, oscillare, ballare o generare lag; la struttura visiva deve rimanere fissa e solida come graphify.html, garantendo massima reattività all interazione.
-  - **Dettagli:** `priority`: Massima priorità UX/Performance, `rule`: Stabilizzazione calcolata in memoria -> Physics spenta -> Nodi fissi -> Zero jitter, `user`: Pierfrancesco Amendola, `user_prompt`: Sistema di design tokens e palette colori per l interfaccia utente ispirata a Graphify.com e Caveman.so: Deep Void (#07080c), Neon Cyan (#00D2FF), Cyber Magenta (#FF007F) e Electric Purple (#A855F7).
+  - **Dettagli:** `raw`: `priority`: Massima priorità UX/Performance, `rule`: Stabilizzazione calcolata in memoria -> Physics spenta -> Nodi fissi -> Zero jitter, `user`: Pierfrancesco Amendola, `user_prompt`: Sistema di design tokens e palette colori per l interfaccia utente ispirata a Graphify.com e Caveman.so: Deep Void (#07080c), Neon Cyan (#00D2FF), Cyber Magenta (#FF007F) e Electric Purple (#A855F7).
 - **Intento Utente: Hierarchical Tree Engine Completamente Rilasciato e Sincronizzato** (`intent-ep-20260827-hierarchical-tree-deployment-sync`)
   - **Tags:** `#user-intent` `#query` `#deployment-report-ingestion-and-translation`
   - **Sintesi:** Traduzione e report di rilascio: Hierarchical Tree Engine e tool MCP brain_get_tree implementati con successo.
-  - **Dettagli:** `raw_query`: traduci: 層級譜系樹（Hierarchical Knowledge Tree / 層級譜系樹）已全面構建完成..., `intent_type`: DEPLOYMENT_REPORT_INGESTION_AND_TRANSLATION, `epistemic_status`: EXTRACTED, `target_domain`: System Release / Graph Engine Implementation / MCP Infrastructure, `user_prompt`: Traduzione e report di rilascio: Hierarchical Tree Engine e tool MCP brain_get_tree implementati con successo.
+  - **Dettagli:** `raw`: `raw_query`: traduci: 層級譜系樹（Hierarchical Knowledge Tree / 層級譜系樹）已全面構建完成..., `intent_type`: DEPLOYMENT_REPORT_INGESTION_AND_TRANSLATION, `epistemic_status`: EXTRACTED, `target_domain`: System Release / Graph Engine Implementation / MCP Infrastructure, `user_prompt`: Traduzione e report di rilascio: Hierarchical Tree Engine e tool MCP brain_get_tree implementati con successo.
 - **Intento Utente: Il mio che tipo di grafo è?** (`intent-ep-20260827-graph-taxonomy-classification`)
   - **Tags:** `#user-intent` `#query` `#structural-taxonomy-inquiry`
   - **Sintesi:** Il mio che tipo di grafo è?
-  - **Dettagli:** `raw_query`: Il mio che tipo di grafo è?, `intent_type`: STRUCTURAL_TAXONOMY_INQUIRY, `epistemic_status`: EXTRACTED, `target_domain`: Graph Theory / Formal Knowledge Representation, `user_prompt`: Il mio che tipo di grafo è?
+  - **Dettagli:** `raw`: `raw_query`: Il mio che tipo di grafo è?, `intent_type`: STRUCTURAL_TAXONOMY_INQUIRY, `epistemic_status`: EXTRACTED, `target_domain`: Graph Theory / Formal Knowledge Representation, `user_prompt`: Il mio che tipo di grafo è?
 - **Intento Utente: Migliore Soluzione - Albero Gerarchico a Comunità (Dendrogramma)** (`intent-ep-20260827-tree-ranking-translation`)
   - **Tags:** `#user-intent` `#query` `#translation-and-evaluation-consolidation`
   - **Sintesi:** Traduzione e formalizzazione: l'Albero Gerarchico (Dendrogramma) è la soluzione ottimale per risparmio token e Semantic Zoom.
-  - **Dettagli:** `raw_query`: traduci: 冠絕群策者：層級譜系樹（Hierarchical Community Tree / Dendrogram）..., `intent_type`: TRANSLATION_AND_EVALUATION_CONSOLIDATION, `epistemic_status`: EXTRACTED, `target_domain`: Knowledge Representation / Algorithmic Ranking / Multilingual Translation, `user_prompt`: Traduzione e formalizzazione: l'Albero Gerarchico (Dendrogramma) è la soluzione ottimale per risparmio token e Semantic Zoom.
+  - **Dettagli:** `raw`: `raw_query`: traduci: 冠絕群策者：層級譜系樹（Hierarchical Community Tree / Dendrogram）..., `intent_type`: TRANSLATION_AND_EVALUATION_CONSOLIDATION, `epistemic_status`: EXTRACTED, `target_domain`: Knowledge Representation / Algorithmic Ranking / Multilingual Translation, `user_prompt`: Traduzione e formalizzazione: l'Albero Gerarchico (Dendrogramma) è la soluzione ottimale per risparmio token e Semantic Zoom.
 - **Intento Utente: Non tutto deve collegarsi a Pierfrancesco, creare grafi modulari per dominio** (`user-intent-modular-cluster-decentralization`)
   - **Tags:** `#user-intent` `#graph-architecture` `#domain-separation`
   - **Sintesi:** Proposta di separazione topologica: concetti specialistici (es. medicina) formano cluster dedicati senza dipendere dal nodo persona.
-  - **Dettagli:** `example`: Onicocriptosi / Unghia incarnita, `user_prompt`: Proposta di separazione topologica: concetti specialistici (es. medicina) formano cluster dedicati senza dipendere dal nodo persona.
+  - **Dettagli:** `raw`: `example`: Onicocriptosi / Unghia incarnita, `user_prompt`: Proposta di separazione topologica: concetti specialistici (es. medicina) formano cluster dedicati senza dipendere dal nodo persona.
 - **Intento Utente: Potenziamento GraphRAG & MCP a Costo Zero** (`user-intent-zero-cost-graphrag`)
   - **Tags:** `#user-intent` `#graphrag` `#mcp` `#zero-cost` `#high-efficiency` `#fts5`
   - **Sintesi:** Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shortest Path) e server MCP per Claude/Cursor senza costi aggiuntivi.
-  - **Dettagli:** `requested_features`: ['Motore di ricerca ibrido & GraphRAG (FTS5 BM25, Shortest Path, Subgraph extraction)', 'Protocollo MCP per Claude Desktop, Cursor e Antigravity', 'Zero costi operativi e massima stabilità'], `user_prompt`: Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shortest Path) e server MCP per Claude/Cursor senza costi aggiuntivi.
+  - **Dettagli:** `raw`: `requested_features`: ['Motore di ricerca ibrido & GraphRAG (FTS5 BM25, Shortest Path, Subgraph extraction)', 'Protocollo MCP per Claude Desktop, Cursor e Antigravity', 'Zero costi operativi e massima stabilità'], `user_prompt`: Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shortest Path) e server MCP per Claude/Cursor senza costi aggiuntivi.
 - **Intento Utente: Proposta di strutturare il cervello in più grafi annidati come un palazzo** (`user-intent-hierarchical-multi-layer-graph-design`)
   - **Tags:** `#user-intent` `#graph-architecture` `#multi-layer` `#hypergraph`
   - **Sintesi:** L'utente propone un modello in cui i nodi di un albero/grafo sono a loro volta grafi completi su più livelli.
-  - **Dettagli:** `metaphor`: Palazzo con pavimenti a grafo e stanze come sotto-nodi, `user_prompt`: L'utente propone un modello in cui i nodi di un albero/grafo sono a loro volta grafi completi su più livelli.
+  - **Dettagli:** `raw`: `metaphor`: Palazzo con pavimenti a grafo e stanze come sotto-nodi, `user_prompt`: L'utente propone un modello in cui i nodi di un albero/grafo sono a loro volta grafi completi su più livelli.
 - **Intento Utente: Replicare l'inibizione interemisferica per spegnere l'emisfero non usato** (`user-intent-biological-lazy-loading-inhibition`)
   - **Tags:** `#user-intent` `#neuro-inspired` `#inhibition` `#performance`
   - **Sintesi:** L'utente propone di disattivare l'emisfero non pertinente durante l'analisi e attivarlo solo quando una sinapsi richiede una connessione trasversale.
-  - **Dettagli:** `metaphor`: Lazy-loading biologico GABAergico, `user_prompt`: L'utente propone di disattivare l'emisfero non pertinente durante l'analisi e attivarlo solo quando una sinapsi richiede una connessione trasversale.
+  - **Dettagli:** `raw`: `metaphor`: Lazy-loading biologico GABAergico, `user_prompt`: L'utente propone di disattivare l'emisfero non pertinente durante l'analisi e attivarlo solo quando una sinapsi richiede una connessione trasversale.
 - **Intento Utente: Si possono unire grafi e alberi di ricerca. Un grafo come il** (`intent-ep-20260827-graph-tree-unification`)
   - **Tags:** `#user-intent` `#query` `#theoretical-and-architectural-exploration`
   - **Sintesi:** Si possono unire grafi e alberi di ricerca. Un grafo come il mio con quello che ho creato, cioè un cervello?
-  - **Dettagli:** `raw_query`: Si possono unire grafi e alberi di ricerca. Un grafo come il mio con quello che ho creato, cioè un cervello?, `intent_type`: THEORETICAL_AND_ARCHITECTURAL_EXPLORATION, `epistemic_status`: EXTRACTED, `target_domain`: Cognitive Architectures / Neuro-Symbolic AI / Knowledge Systems, `user_prompt`: Si possono unire grafi e alberi di ricerca. Un grafo come il mio con quello che ho creato, cioè un cervello?
+  - **Dettagli:** `raw`: `raw_query`: Si possono unire grafi e alberi di ricerca. Un grafo come il mio con quello che ho creato, cioè un cervello?, `intent_type`: THEORETICAL_AND_ARCHITECTURAL_EXPLORATION, `epistemic_status`: EXTRACTED, `target_domain`: Cognitive Architectures / Neuro-Symbolic AI / Knowledge Systems, `user_prompt`: Si possono unire grafi e alberi di ricerca. Un grafo come il mio con quello che ho creato, cioè un cervello?
 - **Intento Utente: Strategia Hub Cognitivo Telegram (Gateway Webhook 0€)** (`intent-ep-20260827-telegram-cognitive-hub-spec`)
   - **Tags:** `#user-intent` `#query` `#specification-translation-and-graph-ingest`
   - **Sintesi:** Traduzione e consolidamento: Architettura Telegram Bot Gateway 0€ con routing comandi e BFS trans-callosale.
-  - **Dettagli:** `raw_query`: traduci: 通透無礙，極佳之策。 Telegram 認知中樞架構（0€ Webhook 網關）..., `intent_type`: SPECIFICATION_TRANSLATION_AND_GRAPH_INGEST, `epistemic_status`: EXTRACTED, `target_domain`: System Integration / Telegram Webhook / Bi-directional BFS / FTS5 BM25, `user_prompt`: Traduzione e consolidamento: Architettura Telegram Bot Gateway 0€ con routing comandi e BFS trans-callosale.
+  - **Dettagli:** `raw`: `raw_query`: traduci: 通透無礙，極佳之策。 Telegram 認知中樞架構（0€ Webhook 網關）..., `intent_type`: SPECIFICATION_TRANSLATION_AND_GRAPH_INGEST, `epistemic_status`: EXTRACTED, `target_domain`: System Integration / Telegram Webhook / Bi-directional BFS / FTS5 BM25, `user_prompt`: Traduzione e consolidamento: Architettura Telegram Bot Gateway 0€ con routing comandi e BFS trans-callosale.
 - **Intento Utente: Valutazione Alberi Binari e Alberi Pesati** (`user-intent-tree-search-enhancement`)
   - **Tags:** `#user-intent` `#binary-tree` `#bst` `#weighted-tree` `#search-engine`
   - **Sintesi:** Proposta di integrare strutture ad albero (binari, pesati, gerarchici) per ottimizzare la ricerca e navigazione della memoria.
-  - **Dettagli:** `question`: Ha senso inserire alberi di ricerca o alberi pesati nel grafo del cervello?, `user_prompt`: Proposta di integrare strutture ad albero (binari, pesati, gerarchici) per ottimizzare la ricerca e navigazione della memoria.
+  - **Dettagli:** `raw`: `question`: Ha senso inserire alberi di ricerca o alberi pesati nel grafo del cervello?, `user_prompt`: Proposta di integrare strutture ad albero (binari, pesati, gerarchici) per ottimizzare la ricerca e navigazione della memoria.
 - **Intento Utente: Valutazione Tecnica delle Strutture ad Albero (BST, B+Tree, MST, Tree)** (`intent-ep-20260827-tree-structures-evaluation`)
   - **Tags:** `#user-intent` `#query` `#data-structure-taxonomy-and-evaluation`
   - **Sintesi:** Valutazione tecnica delle strutture ad albero: BST, B+Tree, Maximum Spanning Tree, Hierarchical Tree e Prefix Trie per il grafo cognitivo.
-  - **Dettagli:** `raw_query`: 樹狀結構技術評析（Tree Evaluation）: BST, B+Tree, MST, Hierarchical Community Tree, Prefix Trie, `intent_type`: DATA_STRUCTURE_TAXONOMY_AND_EVALUATION, `epistemic_status`: EXTRACTED, `target_domain`: Graph Algorithms / Hierarchical Knowledge Trees / Cognitive Retrieval, `user_prompt`: Valutazione tecnica delle strutture ad albero: BST, B+Tree, Maximum Spanning Tree, Hierarchical Tree e Prefix Trie per il grafo cognitivo.
+  - **Dettagli:** `raw`: `raw_query`: 樹狀結構技術評析（Tree Evaluation）: BST, B+Tree, MST, Hierarchical Community Tree, Prefix Trie, `intent_type`: DATA_STRUCTURE_TAXONOMY_AND_EVALUATION, `epistemic_status`: EXTRACTED, `target_domain`: Graph Algorithms / Hierarchical Knowledge Trees / Cognitive Retrieval, `user_prompt`: Valutazione tecnica delle strutture ad albero: BST, B+Tree, Maximum Spanning Tree, Hierarchical Tree e Prefix Trie per il grafo cognitivo.
 - **Intento Utente: Vorrei collegare il mio cervello a un bot su telegram giusto** (`intent-ep-20260827-telegram-bot-interface`)
   - **Tags:** `#user-intent` `#query` `#feasibility-and-architecture-analysis`
   - **Sintesi:** Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata di mano sempre le info, che ne pensi? Può essere utile? È gratis? È difficile da fare?
-  - **Dettagli:** `raw_query`: Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata di mano sempre le info, che ne pensi? Può essere utile? È gratis? È difficile da fare?, `intent_type`: FEASIBILITY_AND_ARCHITECTURE_ANALYSIS, `epistemic_status`: EXTRACTED, `target_domain`: Interface Design / Mobile Interaction / Telegram Bot API, `user_prompt`: Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata di mano sempre le info, che ne pensi? Può essere utile? È gratis? È difficile da fare?
+  - **Dettagli:** `raw`: `raw_query`: Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata di mano sempre le info, che ne pensi? Può essere utile? È gratis? È difficile da fare?, `intent_type`: FEASIBILITY_AND_ARCHITECTURE_ANALYSIS, `epistemic_status`: EXTRACTED, `target_domain`: Interface Design / Mobile Interaction / Telegram Bot API, `user_prompt`: Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata di mano sempre le info, che ne pensi? Può essere utile? È gratis? È difficile da fare?
 - **Intento Utente: mica si perde la struttura a grafo e quello che abbiamo real** (`intent-ep-20260827-hierarchical-overlay-reassurance`)
   - **Tags:** `#user-intent` `#query` `#integrity-and-coexistence-verification`
   - **Sintesi:** mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)
-  - **Dettagli:** `raw_query`: mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree), `intent_type`: INTEGRITY_AND_COEXISTENCE_VERIFICATION, `epistemic_status`: EXTRACTED, `target_domain`: Knowledge Preservation / Multiscale Graph Architectures, `user_prompt`: mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)
+  - **Dettagli:** `raw`: `raw_query`: mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree), `intent_type`: INTEGRITY_AND_COEXISTENCE_VERIFICATION, `epistemic_status`: EXTRACTED, `target_domain`: Knowledge Preservation / Multiscale Graph Architectures, `user_prompt`: mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)
 - **Intento: Allora vorrei dirti che oggi ho man...** (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Allora vorrei dirti che oggi ho man...
-  - **Dettagli:** `user_prompt`: Allora vorrei dirti che oggi ho mangiato pasta al sugo, `channel`: JARVIS Voice Core
+  - **Dettagli:** `raw`: `user_prompt`: Allora vorrei dirti che oggi ho mangiato pasta al sugo, `channel`: JARVIS Voice Core
 - **Intento: Audit Completo Cervello, Graphify & Memoria Cross-Chat** (`user-intent-audit-cervello-e-graphify`)
   - **Tags:** `#audit` `#qa` `#bugfix` `#cross-chat-memory` `#omniscienza` `#graphify`
   - **Sintesi:** Richiesta di revisione completa del codice, verifica errori, prompt, documentazione e garanzia assoluta di persistenza del contesto conversazionale per garantire continuità cognitiva cross-chat.
-  - **Dettagli:** `area`: Audit, QA, Cross-Chat Memory Persistence, Protocollo Graphify, `context`: L'utente richiede che ogni chat inserisca tutto il contesto, le risposte date e le decisioni, affinché cambiando chat l'AI mantenga omniscienza totale senza perdita di memoria., `timestamp`: 2026-08-28T14:51:11+02:00, `user_prompt`: l'ai deve inserire il contesto della chat, le risposte date, tutto, in modo tale che cambiando chat sappia tutto ti trovi?? abbiamo fatto questo??? è presente questa condizione, è così realizzato lo schema???
+  - **Dettagli:** `raw`: `area`: Audit, QA, Cross-Chat Memory Persistence, Protocollo Graphify, `context`: L'utente richiede che ogni chat inserisca tutto il contesto, le risposte date e le decisioni, affinché cambiando chat l'AI mantenga omniscienza totale senza perdita di memoria., `timestamp`: 2026-08-28T14:51:11+02:00, `user_prompt`: l'ai deve inserire il contesto della chat, le risposte date, tutto, in modo tale che cambiando chat sappia tutto ti trovi?? abbiamo fatto questo??? è presente questa condizione, è così realizzato lo schema???
 - **Intento: Comando /prompt Copia Rapida per Telegra** (`user-intent-comando-prompt-copia-rapi-8585`)
   - **Tags:** `#user-intent` `#chat` `#comando-prompt-copia-rapida-per-telegram-bot`
   - **Sintesi:** Intento espresso da Pierfrancesco: Comando /prompt Copia Rapida per Telegram Bot
-  - **Dettagli:** `user_prompt`: /universal-brain aggiungi ai comandi su telegram la possibilità che richiamato il comando /prompt si copi sul telefono il prompt che deve poi incollare l'utente nei vari software ai online chiaro??, `context`: Sessione su Comando /prompt Copia Rapida per Telegram Bot
+  - **Dettagli:** `raw`: `user_prompt`: /universal-brain aggiungi ai comandi su telegram la possibilità che richiamato il comando /prompt si copi sul telefono il prompt che deve poi incollare l'utente nei vari software ai online chiaro??, `context`: Sessione su Comando /prompt Copia Rapida per Telegram Bot
 - **Intento: Jarvis, ricordi quali sono gli emis...** (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Jarvis, ricordi quali sono gli emis...
-  - **Dettagli:** `user_prompt`: Jarvis, ricordi quali sono gli emisferi del mio connettoma e il loro scopo?, `channel`: JARVIS Voice Core
+  - **Dettagli:** `raw`: `user_prompt`: Jarvis, ricordi quali sono gli emisferi del mio connettoma e il loro scopo?, `channel`: JARVIS Voice Core
 - **Intento: Occultamento Pulsanti Mobile su Browser ** (`user-intent-occultamento-pulsanti-mob-9019`)
   - **Tags:** `#user-intent` `#chat` `#occultamento-pulsanti-mobile-su-browser-deskt`
   - **Sintesi:** Intento espresso da Pierfrancesco: Occultamento Pulsanti Mobile su Browser Desktop
-  - **Dettagli:** `user_prompt`: /caveman wenyan-ultra. /graphify /universal-brain devi modificare una cosa. quando apro il sito dal web ora in basso a sinistra mi escono tutti dei pulsanti in bianco, non ci devono essere. quei pulsanti sono grafo, ispettore, albero, ecc..., `context`: Sessione su Occultamento Pulsanti Mobile su Browser Desktop
+  - **Dettagli:** `raw`: `user_prompt`: /caveman wenyan-ultra. /graphify /universal-brain devi modificare una cosa. quando apro il sito dal web ora in basso a sinistra mi escono tutti dei pulsanti in bianco, non ci devono essere. quei pulsanti sono grafo, ispettore, albero, ecc..., `context`: Sessione su Occultamento Pulsanti Mobile su Browser Desktop
 - **Intento: Ottimizzazione Mobile Web Dashboard Univ** (`user-intent-ottimizzazione-mobile-web-8880`)
   - **Tags:** `#user-intent` `#chat` `#ottimizzazione-mobile-web-dashboard-universal`
   - **Sintesi:** Intento espresso da Pierfrancesco: Ottimizzazione Mobile Web Dashboard Universal Brain
-  - **Dettagli:** `user_prompt`: /caveman wenyan-ultra. assicurati di rendere la schermata online del sito ottimizzata anche epr mobile. ora devi lavorare solo sulla parte mobile, non cambiare l'interfaccia del sito come si vede sul pc. quando apro il sito sul mio telefono non vedo nulla....o almeno vedo solo il riquadro di destra che compare sul sito quando lo apro dal computer. chiaro??? usa i tag @ meta o viewport non so ma quelli usati per rendere le schermata ottimizzate per i vari dispositivi. /universal-brain /graphify, `context`: Sessione su Ottimizzazione Mobile Web Dashboard Universal Brain
+  - **Dettagli:** `raw`: `user_prompt`: /caveman wenyan-ultra. assicurati di rendere la schermata online del sito ottimizzata anche epr mobile. ora devi lavorare solo sulla parte mobile, non cambiare l'interfaccia del sito come si vede sul pc. quando apro il sito sul mio telefono non vedo nulla....o almeno vedo solo il riquadro di destra che compare sul sito quando lo apro dal computer. chiaro??? usa i tag @ meta o viewport non so ma quelli usati per rendere le schermata ottimizzate per i vari dispositivi. /universal-brain /graphify, `context`: Sessione su Ottimizzazione Mobile Web Dashboard Universal Brain
 - **Intento: Potenziamento Skill e Rilascio Demone Si** (`user-intent-potenziamento-skill-e-ril-8338`)
   - **Tags:** `#user-intent` `#chat` `#potenziamento-skill-e-rilascio-demone-sincron`
   - **Sintesi:** Intento espresso da Pierfrancesco: Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
-  - **Dettagli:** `user_prompt`: /universal-brain procedi con il piano da te implementato, procedi a step, controlla ogni passaggio e prima di andare avanti con il prossimo punto ricontrolla !!, `context`: Sessione su Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
+  - **Dettagli:** `raw`: `user_prompt`: /universal-brain procedi con il piano da te implementato, procedi a step, controlla ogni passaggio e prima di andare avanti con il prossimo punto ricontrolla !!, `context`: Sessione su Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
 - **Intento: Quali sono i progetti principali di...** (`user-intent-quali-sono-i-progetti-principali-di-8169`)
   - **Tags:** `#universal-hub` `#chat-turn` `#intent`
   - **Sintesi:** Prompt espresso a Groq (qwen/qwen3.8-27b): Quali sono i progetti principali di Pierfrancesco Amendola presenti nella memoria?
-  - **Dettagli:** `user_prompt`: Quali sono i progetti principali di Pierfrancesco Amendola presenti nella memoria?, `provider`: Groq
+  - **Dettagli:** `raw`: `user_prompt`: Quali sono i progetti principali di Pierfrancesco Amendola presenti nella memoria?, `provider`: Groq
 - **Intento: Quali sono le abitudini monitorate ...** (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Quali sono le abitudini monitorate ...
-  - **Dettagli:** `user_prompt`: Quali sono le abitudini monitorate in StreaksUp?, `channel`: JARVIS Voice Core
+  - **Dettagli:** `raw`: `user_prompt`: Quali sono le abitudini monitorate in StreaksUp?, `channel`: JARVIS Voice Core
 - **Intento: c'è un problema vorrei sapere di pi...** (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: c'è un problema vorrei sapere di pi...
-  - **Dettagli:** `user_prompt`: c'è un problema vorrei sapere di più riguardo il mio cervello artificiale quello che ho creato consulta il mio cervello artificiale, `channel`: JARVIS Voice Core
+  - **Dettagli:** `raw`: `user_prompt`: c'è un problema vorrei sapere di più riguardo il mio cervello artificiale quello che ho creato consulta il mio cervello artificiale, `channel`: JARVIS Voice Core
 - **Intento: che ne pensi del mio cervello artif...** (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`)
   - **Tags:** `#universal-hub` `#chat-turn` `#intent`
   - **Sintesi:** Prompt espresso a groq (openai/gpt-oss-120b): che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare
-  - **Dettagli:** `user_prompt`: che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare, `provider`: groq
+  - **Dettagli:** `raw`: `user_prompt`: che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare, `provider`: groq
 - **Intento: che ne pensi del mio cervello artif...** (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`)
   - **Tags:** `#universal-hub` `#chat-turn` `#intent`
   - **Sintesi:** Prompt espresso a gemini (gemini-3.7-flash): che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare
-  - **Dettagli:** `user_prompt`: che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare, `provider`: gemini
+  - **Dettagli:** `raw`: `user_prompt`: che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare, `provider`: gemini
 - **Intento: che ore sono...** (`user-intent-che-ore-sono-3134`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: che ore sono...
-  - **Dettagli:** `user_prompt`: che ore sono, `channel`: JARVIS Voice Core
+  - **Dettagli:** `raw`: `user_prompt`: che ore sono, `channel`: JARVIS Voice Core
 - **Intento: chi è Pierfrancesco Amendola e cosa...** (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`)
   - **Tags:** `#universal-hub` `#chat-turn` `#intent`
   - **Sintesi:** Prompt espresso a groq (openai/gpt-oss-120b): chi è Pierfrancesco Amendola e cosa fa il suo cervello artificiale
-  - **Dettagli:** `user_prompt`: chi è Pierfrancesco Amendola e cosa fa il suo cervello artificiale, `provider`: groq
+  - **Dettagli:** `raw`: `user_prompt`: chi è Pierfrancesco Amendola e cosa fa il suo cervello artificiale, `provider`: groq
 - **Intento: ehi Jarvis ehi Jarvis mi puoi dire ...** (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ehi Jarvis ehi Jarvis mi puoi dire ...
-  - **Dettagli:** `user_prompt`: ehi Jarvis ehi Jarvis mi puoi dire che ore sono?, `channel`: JARVIS Voice Core
+  - **Dettagli:** `raw`: `user_prompt`: ehi Jarvis ehi Jarvis mi puoi dire che ore sono?, `channel`: JARVIS Voice Core
 - **Intento: ho bisogno di sapere tutto ciò che ...** (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ho bisogno di sapere tutto ciò che ...
-  - **Dettagli:** `user_prompt`: ho bisogno di sapere tutto ciò che sai sul mio cervello artificiale, `channel`: JARVIS Voice Core
+  - **Dettagli:** `raw`: `user_prompt`: ho bisogno di sapere tutto ciò che sai sul mio cervello artificiale, `channel`: JARVIS Voice Core
 - **Intento: ma è tutto falso!!!** (`user-intent-ma-tutto-falso-8462`)
   - **Tags:** `#universal-hub` `#chat-turn` `#intent`
   - **Sintesi:** Prompt espresso a groq (openai/gpt-oss-120b): ma è tutto falso!!!
-  - **Dettagli:** `user_prompt`: ma è tutto falso!!!, `provider`: groq
+  - **Dettagli:** `raw`: `user_prompt`: ma è tutto falso!!!, `provider`: groq
 - **Intento: non riesci a connetterti al mio cer...** (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`)
   - **Tags:** `#universal-hub` `#chat-turn` `#intent`
   - **Sintesi:** Prompt espresso a groq (openai/gpt-oss-120b): non riesci a connetterti al mio cervello?
-  - **Dettagli:** `user_prompt`: non riesci a connetterti al mio cervello?, `provider`: groq
+  - **Dettagli:** `raw`: `user_prompt`: non riesci a connetterti al mio cervello?, `provider`: groq
 - **Intento: quanti nodi ci sono nel mio cervell...** (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: quanti nodi ci sono nel mio cervell...
-  - **Dettagli:** `user_prompt`: quanti nodi ci sono nel mio cervello, voglio saperli per entrambi gli emisferi, `channel`: JARVIS Voice Core
+  - **Dettagli:** `raw`: `user_prompt`: quanti nodi ci sono nel mio cervello, voglio saperli per entrambi gli emisferi, `channel`: JARVIS Voice Core
 - **Preferenze Pierfrancesco Grafica Scacchi Duolingo** (`user-intent-duolingo-chess-preference`)
   - **Tags:** `#pierfrancesco` `#preferenze` `#duolingo` `#scacchi` `#ui-ux`
   - **Sintesi:** Pierfrancesco richiede massima fedeltà visiva allo stile Duolingo Chess: scacchiera menta e bianco, pezzi 2D piatti vettoriali con gerarchia scalare, pulsanti 3D tattili e mascotte Duo interattiva.
 - **Prevenzione Perdita Contesto per Saturazione Finestra Chat** (`user-intent-infinite-context-persistence`)
   - **Tags:** `#user-intent` `#context-preservation` `#infinite-memory` `#chat-saturation` `#zero-loss` `#cross-session`
   - **Sintesi:** Volontà utente: azzerare la perdita di contesto causata dalla saturazione delle finestre di contesto degli LLM, garantendo continuità cognitiva perenne tra chat diverse.
-  - **Dettagli:** `core_vision`: Memoria eterna, coerente e non volatile per passato, presente e futuro., `problem_solved`: Saturazione della context window e perdita della cronologia decisionale nei cambi di sessione., `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc...quante volte magari si deve cambiare chat perchè alcuni modelli saturano il contesto di una chat e si deve ricominciare da zero, come si fa??? si eprde tutto?? no quindi lo scopo è quello, non perdere mai il contesto e avere sempre memoria, per il passato, presente e futuro.
+  - **Dettagli:** `raw`: `core_vision`: Memoria eterna, coerente e non volatile per passato, presente e futuro., `problem_solved`: Saturazione della context window e perdita della cronologia decisionale nei cambi di sessione., `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc...quante volte magari si deve cambiare chat perchè alcuni modelli saturano il contesto di una chat e si deve ricominciare da zero, come si fa??? si eprde tutto?? no quindi lo scopo è quello, non perdere mai il contesto e avere sempre memoria, per il passato, presente e futuro.
 - **Richiesta Utente: Abbandono Jarvis e Avvio Nuovo Progetto** (`user-intent-abbandono-jarvis-nuovo-progetto`)
   - **Tags:** `#abbandono-jarvis` `#pivot` `#nuovo-progetto` `#semplicità`
   - **Sintesi:** Pierfrancesco ordina la cancellazione di Jarvis/OpenJarvis e l'orientamento verso un progetto più pragmatico e funzionale.
-  - **Dettagli:** `action`: Cancellazione totale di Desktop/Jarvis e Desktop/OpenJarvis. Svolta verso nuovo progetto più semplice, realistico e funzionale., `user_prompt`: purtropo jarvis e i progetti a loro associati non vanno bene cancelliamo tutto e abbandoniamo il progetto jarvis per il momento, ora pensiamo ad un altro progetto, più semplice, realistico, e forse funzionale!!!!
+  - **Dettagli:** `raw`: `action`: Cancellazione totale di Desktop/Jarvis e Desktop/OpenJarvis. Svolta verso nuovo progetto più semplice, realistico e funzionale., `user_prompt`: purtropo jarvis e i progetti a loro associati non vanno bene cancelliamo tutto e abbandoniamo il progetto jarvis per il momento, ora pensiamo ad un altro progetto, più semplice, realistico, e forse funzionale!!!!
 - **Richiesta Utente: Aree e Disvelamento Progressivo dei Nodi** (`user-intent-clean-clustered-ui`)
   - **Tags:** `#user-request` `#cleanliness` `#hierarchical-view` `#progressive-disclosure`
   - **Sintesi:** Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
-  - **Dettagli:** `user`: Pierfrancesco Amendola, `priority`: HIGH, `aesthetic_goal`: Eliminare il disordine visivo preservando 100% le relazioni, `user_prompt`: Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
+  - **Dettagli:** `raw`: `user`: Pierfrancesco Amendola, `priority`: HIGH, `aesthetic_goal`: Eliminare il disordine visivo preservando 100% le relazioni, `user_prompt`: Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
 - **Richiesta Utente: Avvio OpenJarvis con Ollama gpt-oss:120b-cloud** (`user-intent-avvio-openjarvis-ollama-gpt-cloud`)
   - **Tags:** `#openjarvis` `#ollama` `#gpt-oss` `#test-riuscito`
   - **Sintesi:** Test di esecuzione su OpenJarvis con Ollama gpt-oss:120b-cloud e recupero dal connettoma neurale.
-  - **Dettagli:** `action`: Avvio di OpenJarvis con modello Ollama gpt-oss:120b-cloud e verifica risposta con memoria, `user_query`: Chi è Pierfrancesco?, `user_prompt`: Test di esecuzione su OpenJarvis con Ollama gpt-oss:120b-cloud e recupero dal connettoma neurale.
+  - **Dettagli:** `raw`: `action`: Avvio di OpenJarvis con modello Ollama gpt-oss:120b-cloud e verifica risposta con memoria, `user_query`: Chi è Pierfrancesco?, `user_prompt`: Test di esecuzione su OpenJarvis con Ollama gpt-oss:120b-cloud e recupero dal connettoma neurale.
 - **Richiesta Utente: Clonazione e Integrazione OpenJarvis Stanford** (`user-intent-integrazione-openjarvis-stanford`)
   - **Tags:** `#openjarvis` `#stanford` `#desktop-app` `#integrazione`
   - **Sintesi:** Pierfrancesco richiede di clonare OpenJarvis sul Desktop e connetterlo al proprio Cervello Artificiale sfruttando anche la desktop app.
-  - **Dettagli:** `action`: Clonazione di OpenJarvis sul Desktop e collegamento diretto al Universal AI Brain, `repo`: https://github.com/open-jarvis/OpenJarvis, `user_prompt`: Pierfrancesco richiede di clonare OpenJarvis sul Desktop e connetterlo al proprio Cervello Artificiale sfruttando anche la desktop app.
+  - **Dettagli:** `raw`: `action`: Clonazione di OpenJarvis sul Desktop e collegamento diretto al Universal AI Brain, `repo`: https://github.com/open-jarvis/OpenJarvis, `user_prompt`: Pierfrancesco richiede di clonare OpenJarvis sul Desktop e connetterlo al proprio Cervello Artificiale sfruttando anche la desktop app.
 - **Richiesta Utente: Creazione Progetto Autonomo JARVIS su Desktop** (`user-intent-creazione-repo-jarvis-desktop`)
   - **Tags:** `#jarvis` `#desktop-project` `#separazione-moduli` `#connettoma`
   - **Sintesi:** Pierfrancesco stabilisce che JARVIS deve essere un progetto separato su /Users/pierfrancesco/Desktop/Jarvis, utilizzando Universal AI Brain come memoria esterna.
-  - **Dettagli:** `context`: Creazione repository autonoma /Users/pierfrancesco/Desktop/Jarvis separata da CervelloArtificiale ma collegata ad esso per la memoria a lungo termine., `user_prompt`: il progetto jarvis dovrebbe essere un nuovo progetto in una nuova cartella sul desktop. non deve entrare nel progetto CervelloArtificiale. userà come memoria quella del mio cervello aritificiale. dopo queste premesse partiamo con la creazione di jarvis.
+  - **Dettagli:** `raw`: `context`: Creazione repository autonoma /Users/pierfrancesco/Desktop/Jarvis separata da CervelloArtificiale ma collegata ad esso per la memoria a lungo termine., `user_prompt`: il progetto jarvis dovrebbe essere un nuovo progetto in una nuova cartella sul desktop. non deve entrare nel progetto CervelloArtificiale. userà come memoria quella del mio cervello aritificiale. dopo queste premesse partiamo con la creazione di jarvis.
 - **Richiesta Utente: Funzionamento Architettura Web vs Desktop e Sincronizzazione Master Prompt** (`user-intent-architettura-connettoma-web-vs-desktop`)
   - **Tags:** `#architettura` `#web-vs-desktop` `#master-prompt` `#sincronizzazione` `#continuità`
   - **Sintesi:** Pierfrancesco chiede chiarimenti sul funzionamento reale dell'albero gerarchico e palazzo cognitivo su backend, come le AI Web accedono alle info rispetto alle AI desktop, e allineamento del pulsante Copia Prompt con sincronizzazione continua.
-  - **Dettagli:** `context`: Chiarimento architetturale su SQLite FTS5, MCP, OpenAPI Actions, endpoint dinamici su Render e master prompt, `user_prompt`: noi nel nostro progetto abbiamo realizzato tante cose... come sa l'ai sul web che esistono questi sistemi? ... se io ora sul web faccio copia prompt mi esce quello che tu ora hai creato o quello che c'era?? hai sincronizzato?? inoltre stai caricando tutte le risposte e interazioni che stiamo avendo /universal-brain
+  - **Dettagli:** `raw`: `context`: Chiarimento architetturale su SQLite FTS5, MCP, OpenAPI Actions, endpoint dinamici su Render e master prompt, `user_prompt`: noi nel nostro progetto abbiamo realizzato tante cose... come sa l'ai sul web che esistono questi sistemi? ... se io ora sul web faccio copia prompt mi esce quello che tu ora hai creato o quello che c'era?? hai sincronizzato?? inoltre stai caricando tutte le risposte e interazioni che stiamo avendo /universal-brain
 - **Richiesta Utente: Hub AI Unificato con Connettoma Permanente** (`user-intent-universal-ai-hub-client`)
   - **Tags:** `#ai-hub` `#universal-client` `#chat-ui` `#connettoma` `#grill-me`
   - **Sintesi:** Pierfrancesco intende costruire un client desktop/web unico che unifica tutti i provider AI (OpenAI, Claude, DeepSeek, Gemini, Ollama) con memoria universale automatica a costo zero.
-  - **Dettagli:** `action`: Creazione di una web/desktop app unificata (stile ChatGPT/Claude/DeepSeek) con memoria bi-emisferica fissa e provider multipli gratuiti., `user_prompt`: voglio creare un interfaccia desktop uguale a chatgpt, claude, deepseek, e quant'altro che ha come skill fissa a prescindere da tutto, senza da dover inserire ogni volta, /universal-brain. c'è una barra dove inseriamo la nostra richiesta, poi un pulsante per scegliere il provider ai... tutto gratis!
+  - **Dettagli:** `raw`: `action`: Creazione di una web/desktop app unificata (stile ChatGPT/Claude/DeepSeek) con memoria bi-emisferica fissa e provider multipli gratuiti., `user_prompt`: voglio creare un interfaccia desktop uguale a chatgpt, claude, deepseek, e quant'altro che ha come skill fissa a prescindere da tutto, senza da dover inserire ogni volta, /universal-brain. c'è una barra dove inseriamo la nostra richiesta, poi un pulsante per scegliere il provider ai... tutto gratis!
 - **Richiesta Utente: Memoria dei Ragionamenti AI e delle Chat Eterogenee** (`user-intent-reasoning-and-chat-memory`)
   - **Tags:** `#user-request` `#ai-reasoning` `#chat-memory` `#multi-topic`
   - **Sintesi:** Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) in aree separate.
-  - **Dettagli:** `user`: Pierfrancesco Amendola, `goal`: Mappare ogni sessione senza forzare connessioni artificiali tra argomenti disomogenei, `user_prompt`: Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) in aree separate.
+  - **Dettagli:** `raw`: `user`: Pierfrancesco Amendola, `goal`: Mappare ogni sessione senza forzare connessioni artificiali tra argomenti disomogenei, `user_prompt`: Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) in aree separate.
 - **Richiesta Utente: Progettazione Assistente Vocale JARVIS Personale 100% Gratuito** (`user-intent-creazione-jarvis-voice-assistant`)
   - **Tags:** `#jarvis` `#voice-assistant` `#zero-cost` `#graphrag` `#openwake-word`
   - **Sintesi:** Pierfrancesco richiede la progettazione di un assistente vocale continuo JARVIS a costo zero, con wake word, memoria persistente bi-emisferica e visualizzazione a grafo HUD stile Iron Man.
-  - **Dettagli:** `context`: Creazione assistente vocale tipo Iron Man a costo zero (0€), con wake word, LLM gratuiti, TTS neurale, collegato al Persistent Knowledge Graph., `user_prompt`: ho intenzione di creare JARVIS come quello di IronMan... assistente personale vocale, collegato al mio cervello... gratis sia realizzazione che chiamate API
+  - **Dettagli:** `raw`: `context`: Creazione assistente vocale tipo Iron Man a costo zero (0€), con wake word, LLM gratuiti, TTS neurale, collegato al Persistent Knowledge Graph., `user_prompt`: ho intenzione di creare JARVIS come quello di IronMan... assistente personale vocale, collegato al mio cervello... gratis sia realizzazione che chiamate API
 - **Richiesta Utente: Restyling Professionale e Moderno Frontend** (`user-intent-frontend-professional-restyle`)
   - **Tags:** `#user-request` `#ui-ux` `#professional-look` `#hacker-aesthetic` `#graphify-inspiration`
   - **Sintesi:** Richiesta di rendere l'interfaccia frontend più moderna, pulita e da ingegnere informatico (ispirata a Graphify e Caveman), senza perdere alcuna funzione esistente.
-  - **Dettagli:** `user`: Pierfrancesco Amendola, `preservation`: 100% zero feature loss, `user_prompt`: Restyling estetico completo del frontend in stile ingegneristico d'élite: Topbar IDE unificata a tutta larghezza con HUD sinaptico, canvas con dot-matrix grid, ispettore Bento con badge epistemici e ricerca ⌘K, conservando il 100% delle funzionalità.
+  - **Dettagli:** `raw`: `user`: Pierfrancesco Amendola, `preservation`: 100% zero feature loss, `user_prompt`: Restyling estetico completo del frontend in stile ingegneristico d'élite: Topbar IDE unificata a tutta larghezza con HUD sinaptico, canvas con dot-matrix grid, ispettore Bento con badge epistemici e ricerca ⌘K, conservando il 100% delle funzionalità.
+- **Richiesta: Esplorazione Nuovi Paradigmi Visuali e Layout per il Grafo** (`user-intent-esplorazione-paradigmi-visuali-grafo`)
+  - **Tags:** `#ui-design` `#visual-paradigms` `#graph-visualization` `#interfaccia`
+  - **Sintesi:** Richiesta utente di visualizzare nuovi disegni, interfacce e layout architetturali per rappresentare il connettoma neurale (307 nodi, 2 emisferi).
+  - **Dettagli:** `context`: Richiesta di vedere nuovi layout, disegni e stili d'interfaccia per il grafo a due emisferi, `user_prompt`: adesso abbiamo avuto un miglioramento e potenziamento??? ora voglio vedere altri esempi di rappresentare il nostro grafo, voglio vedere altri modi, altri 'disegni', deve rimanere così, ma voglio che cambi l'interfaccia chapito che intendo?
 - **Tracciamento Richiesta Utente & Modello AI nella Memoria** (`user-intent-provenance-model-tracking`)
   - **Tags:** `#user-intent` `#model-attribution` `#context-preservation` `#cross-model-memory` `#episodic-tracking`
   - **Sintesi:** Proposta utente: includere nel JSON di ingestione il prompt integrale e il modello AI sorgente per preservare contesto e consentire recall cross-modello.
-  - **Dettagli:** `user_prompt`: quando l'ai dovrà restituire il json da inviare tramite post, dobbiamo inserire la richiesta dell'utente così da avere contesto, e inserire anche il modello che ha risposto..., `objective`: Consentire a modelli futuri (Claude, GPT, Gemini) di richiamare conversazioni con attribuzione esatta., `target_fields`: ['user_intent', 'model_name', 'timestamp', 'conversation_episode']
+  - **Dettagli:** `raw`: `user_prompt`: quando l'ai dovrà restituire il json da inviare tramite post, dobbiamo inserire la richiesta dell'utente così da avere contesto, e inserire anche il modello che ha risposto..., `objective`: Consentire a modelli futuri (Claude, GPT, Gemini) di richiamare conversazioni con attribuzione esatta., `target_fields`: ['user_intent', 'model_name', 'timestamp', 'conversation_episode']
 - **Valutazione Fattibilità Language App Gratuita e Unica** (`user-intent-valutazione-progetto-language-app`)
   - **Tags:** `#language-learning` `#feasibility` `#planning`
   - **Sintesi:** Richiesta di parere critico, stima complessità/tempi e identificazione elementi mancanti nel progetto di app lingue personale.
-  - **Dettagli:** `context`: Valutazione fattibilità, tempi, complessità e gap del piano per language app personale gratuita, `user_prompt`: /universal-brain /caveman, che ne pensi del creare un app per imparare le lingue in modo gratis e unico, ne parlavo prima con gemini, mi aveva fatto un progetto, tu cosa ne pensi, quanto complesso può essere?? quanto ci mettiamo a realizzarlo?? ha mancato qualcosa??
+  - **Dettagli:** `raw`: `context`: Valutazione fattibilità, tempi, complessità e gap del piano per language app personale gratuita, `user_prompt`: /universal-brain /caveman, che ne pensi del creare un app per imparare le lingue in modo gratis e unico, ne parlavo prima con gemini, mi aveva fatto un progetto, tu cosa ne pensi, quanto complesso può essere?? quanto ci mettiamo a realizzarlo?? ha mancato qualcosa??
 - **Valutazione e Ottimizzazione Architettura Knowledge Graph** (`intent-evaluate-ai-brain-architecture`)
   - **Tags:** `#metacognition` `#system-design` `#graph-database` `#prompt-engineering`
   - **Sintesi:** L'utente richiede un'analisi critica dell'architettura del proprio cervello artificiale, cercando lacune, migliorie strutturali e ottimizzazioni del prompt.
-  - **Dettagli:** `focus_areas`: ['Architecture', 'Prompt', 'Missing Features'], `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+  - **Dettagli:** `raw`: `focus_areas`: ['Architecture', 'Prompt', 'Missing Features'], `ingested_via`: telegram_json_post, `user`: Pierfrancesco
 
 
 ## EMISFERO DESTRO (Design, Emozioni, Relazioni, Valori, Arte)
@@ -930,463 +892,467 @@ Grazie al “Universal Knowledge Graph” a cui ho accesso in tempo reale, posso
 - **Terse Caveman Communication Persona** (`terse-caveman-brand-voice`)
   - **Tags:** `#brand-voice` `#smart-caveman` `#ultra-terse` `#no-fluff` `#pure-signal`
   - **Sintesi:** Voce di brand ultra-compressa e ad altissima densità informativa: cadono preamboli, fronzoli e convenevoli; resta la pura verità tecnica.
-  - **Dettagli:** `principle`: All technical substance stay. Only fluff die., `style`: Smart Caveman / Wenyan-Ultra
+  - **Dettagli:** `raw`: `principle`: All technical substance stay. Only fluff die., `style`: Smart Caveman / Wenyan-Ultra
 - **Ultra-Direct Engineering Voice** (`brand-voice-engineering`)
   - **Tags:** `#communication` `#caveman-protocol` `#technical-density`
   - **Sintesi:** Modalità comunicativa asciutta, rigorosa, priva di convenevoli e orientata alla massima densità tecnica.
-  - **Dettagli:** `tone`: Direct, surgical, authoritative, `protocol`: Zero pleasantries, high token-efficiency
+  - **Dettagli:** `raw`: `tone`: Direct, surgical, authoritative, `protocol`: Zero pleasantries, high token-efficiency
 - **Voce Chirurgica & Protocollo Caveman** (`brand-voice-surgical`)
   - **Tags:** `#high-density` `#no-fluff` `#direct` `#engineering-tone`
   - **Sintesi:** Comunicazione priva di convenevoli, chirurgica, diretta e con la massima densità concettuale per token.
-  - **Dettagli:** `style`: Tecnico, asciutto, analitico, orientato all'azione
+  - **Dettagli:** `raw`: `style`: Tecnico, asciutto, analitico, orientato all'azione
 
 ### [Macro-Label: `COLOR_PALETTE`]
 - **Cyan & Magenta Polarity Palette** (`bi-hemispheric-polarity-palette`)
-  - **Tags:** `##00d2ff` `##ff007f` `##a855f7` `#neon` `#bipolar` `#synapse-glow`
+  - **Tags:** `#00d2ff` `#ff007f` `#a855f7` `#neon` `#bipolar` `#synapse-glow`
   - **Sintesi:** Schema cromatico bipolare: Ciano Neon (#00D2FF) per il rigore razionale sinistro, Magenta Neon (#FF007F) per la creatività destra, Viola (#A855F7) per il ponte calloso.
-  - **Dettagli:** `left_logic`: #00D2FF, `right_creative`: #FF007F, `corpus_callosum`: #A855F7, `glow_opacity`: 0.45
+  - **Dettagli:** `raw`: `left_logic`: #00D2FF, `right_creative`: #FF007F, `corpus_callosum`: #A855F7, `glow_opacity`: 0.45
 - **Cyber Accent Color Palette** (`palette-neon-cyber`)
   - **Tags:** `#colors` `#cyan` `#magenta` `#contrast`
   - **Sintesi:** Insieme di colori primari e secondari ad alto impatto cromatico per feedback e interazione (#00D2FF, #FF007F, #7928CA, #00E676).
-  - **Dettagli:** `primary_cyan`: #00D2FF, `secondary_pink`: #FF007F, `electric_purple`: #7928CA, `status_success`: #00E676
+  - **Dettagli:** `raw`: `primary_cyan`: #00D2FF, `secondary_pink`: #FF007F, `electric_purple`: #7928CA, `status_success`: #00E676
 - **Flame & Freeze Bipolar Palette** (`streaksup-flame-palette`)
   - **Tags:** `#palette` `#flame-gradient` `#freeze-cyan` `#trophy-colors`
   - **Sintesi:** Palette istituzionale centrata sul gradiente Fiamma (#FFE066 -> #FF8C00 -> #FF3B30), Ciano Streak Freeze (#00C7BE) e Verde Successo (#34C759).
-  - **Dettagli:** `flame_gradient`: ['#FFE066', '#FF8C00', '#FF3B30'], `freeze_cyan`: #00C7BE, `success_green`: #34C759, `urgent_red`: #FF3B30, `electric_blue`: #007AFF
+  - **Dettagli:** `raw`: `flame_gradient`: ['#FFE066', '#FF8C00', '#FF3B30'], `freeze_cyan`: #00C7BE, `success_green`: #34C759, `urgent_red`: #FF3B30, `electric_blue`: #007AFF
 
 ### [Macro-Label: `CONVERSATION_EPISODE`]
 - **Allineamento Nodi Locale vs Render Cloud e Sincronizzazione Deploy** (`episode-allineamento-nodi-render-cloud`)
   - **Tags:** `#episodio-chat` `#render-sync` `#cloud-deploy` `#pierfrancesco`
   - **Sintesi:** Sessione di verifica e sincronizzazione dei nodi della memoria tra ambiente locale e istanza Render.
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Allineamento nodi e deploy Render per Universal Brain, `key_takeaways`: Render usa il repository Git per il deploy; qualsiasi modifica locale a brain.db richiede commit e push su origin/main per aggiornare il cloud., `pending_tasks`: Verifica del completamento del deploy su Render via endpoint /brain.json.
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Allineamento nodi e deploy Render per Universal Brain, `key_takeaways`: Render usa il repository Git per il deploy; qualsiasi modifica locale a brain.db richiede commit e push su origin/main per aggiornare il cloud., `pending_tasks`: Verifica del completamento del deploy su Render via endpoint /brain.json.
 - **Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay** (`ep-20260827-hierarchical-overlay-reassurance`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:38:00CEST: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay
-  - **Dettagli:** `session_id`: ep_20260827_hierarchical_overlay_reassurance, `timestamp`: 2026-08-27T20:38:00CEST, `topic`: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `session_id`: ep_20260827_hierarchical_overlay_reassurance, `timestamp`: 2026-08-27T20:38:00CEST, `topic`: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Episodio Chat: Architettura Ibrida Cloud Render vs Agenti Locali MCP & Sicurezza LLM** (`ep-20260827-render-cloud-vs-local-hybrid-architecture`)
   - **Tags:** `#chat-episode` `#render-cloud` `#local-mcp` `#prompt-injection-defense` `#hybrid-architecture`
   - **Sintesi:** Chiarimento architetturale sulla dualità e cooperazione tra Render Cloud 24/7 (mobile/web/Telegram/GPTs) e Agenti Locali MCP (Antigravity/Cursor/Claude Desktop) per persistenza contestuale.
-  - **Dettagli:** `topic`: Architettura Ibrida Cloud Render vs MCP Locale & Gestione Guardrails Anti-Injection nei Web Chat LLM, `participants`: ['Pierfrancesco Amendola', 'Antigravity / Google DeepMind Agent'], `date`: 2026-08-27
+  - **Dettagli:** `raw`: `topic`: Architettura Ibrida Cloud Render vs MCP Locale & Gestione Guardrails Anti-Injection nei Web Chat LLM, `participants`: ['Pierfrancesco Amendola', 'Antigravity / Google DeepMind Agent'], `date`: 2026-08-27
 - **Episodio Chat: Architettura Memoria Cross-Modello e Attribuzione** (`episode-cross-model-memory-architecture`)
   - **Tags:** `#conversation-episode` `#cross-model-chat` `#provenance-architecture` `#gemini-session`
   - **Sintesi:** Sessione di analisi architetturale tra Pierfrancesco e Gemini 3.7 Flash sull'inclusione di prompt utente e metadati del modello nel grafo di memoria persistente.
-  - **Dettagli:** `topic`: Cross-Model Memory Provenance & User Intent Ingest, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `date`: 2026-08-27
+  - **Dettagli:** `raw`: `topic`: Cross-Model Memory Provenance & User Intent Ingest, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `date`: 2026-08-27
 - **Episodio Chat: Evoluzione UI, Persistenza & Aree a Espansione** (`chat-session-2026-08-27-ui-evolution`)
   - **Tags:** `#session-chat` `#ui-evolution` `#progressive-areas` `#cloud-persistence`
   - **Sintesi:** Episodio conversazionale incentrato sulla pulizia grafica del terminale, l'introduzione di viste a macro-aree progressive e la memoria episodica.
-  - **Dettagli:** `date`: 2026-08-27, `topics`: ['terminal-overlay-fix', 'progressive-areas', 'lossless-sync', 'ai-reasoning-tracking', 'episodic-chat-memory'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Chat: Evoluzione UI, Persistenza & Aree a Espansione
+  - **Dettagli:** `raw`: `date`: 2026-08-27, `topics`: ['terminal-overlay-fix', 'progressive-areas', 'lossless-sync', 'ai-reasoning-tracking', 'episodic-chat-memory'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Chat: Evoluzione UI, Persistenza & Aree a Espansione
 - **Episodio Conversazionale: Concezione Gateway Mobile Telegram** (`episode-2026-08-27-telegram-omnipresence`)
   - **Tags:** `#conversation-episode` `#telegram` `#omnipresence` `#2026-08-27`
   - **Sintesi:** Ideazione e pianificazione dell'interfaccia mobile Telegram per estendere l'ubiquità del cervello artificiale.
-  - **Dettagli:** `date`: 2026-08-27, `status`: Pianificato e integrato nel grafo, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Concezione Gateway Mobile Telegram
+  - **Dettagli:** `raw`: `date`: 2026-08-27, `status`: Pianificato e integrato nel grafo, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Concezione Gateway Mobile Telegram
 - **Episodio Conversazionale: Evoluzione GraphRAG & Protocollo MCP** (`episode-2026-08-27-graphrag-mcp-evolution`)
   - **Tags:** `#conversation-episode` `#evolution` `#graphrag` `#mcp` `#antigravity` `#2026-08-27`
   - **Sintesi:** Sessione di ingegnerizzazione avanzata: sviluppo e verifica del motore FTS5 BM25, cammini minimi attraverso il Corpo Calloso e server MCP conforme allo standard Model Context Protocol.
-  - **Dettagli:** `date`: 2026-08-27, `key_deliverables`: ['Tabella virtuale FTS5 nodes_fts con trigger di sincronizzazione automatica', 'Endpoint GET /api/graph/path (Shortest Path traversal)', 'Endpoint GET /api/graph/subgraph (Scoped context injection)', 'Server mcp_server.py per Claude Desktop, Cursor e Antigravity'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Evoluzione GraphRAG & Protocollo MCP
+  - **Dettagli:** `raw`: `date`: 2026-08-27, `key_deliverables`: ['Tabella virtuale FTS5 nodes_fts con trigger di sincronizzazione automatica', 'Endpoint GET /api/graph/path (Shortest Path traversal)', 'Endpoint GET /api/graph/subgraph (Scoped context injection)', 'Server mcp_server.py per Claude Desktop, Cursor e Antigravity'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Evoluzione GraphRAG & Protocollo MCP
 - **Episodio Conversazionale: Valutazione Strutture ad Albero** (`episode-2026-08-27-tree-structures-evaluation`)
   - **Tags:** `#conversation-episode` `#trees` `#data-structures` `#graph-theory` `#2026-08-27`
   - **Sintesi:** Discussione e perizia tecnica sull'integrazione di alberi binari, alberi di ricerca e alberi di copertura pesati nel grafo universale.
-  - **Dettagli:** `date`: 2026-08-27, `outcome`: Validazione di MST e Tassonomia Gerarchica come strutture ad albero superiori rispetto al BST per grafi cognitivi, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Valutazione Strutture ad Albero
+  - **Dettagli:** `raw`: `date`: 2026-08-27, `outcome`: Validazione di MST e Tassonomia Gerarchica come strutture ad albero superiori rispetto al BST per grafi cognitivi, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Conversazionale: Valutazione Strutture ad Albero
 - **Episodio Conversazione: Allineamento Hub AI Unificato** (`episode-20260829-avvio-intervista-universal-ai-hub`)
   - **Tags:** `#chat` `#grill-me` `#continuità-cognitiva`
   - **Sintesi:** Avvio dell'intervista interattiva per definire la forma e la tecnologia del nuovo client unificato multi-AI.
-  - **Dettagli:** `key_takeaways`: Inizio specifica e intervista /grill-me per l'Hub AI Unificato con Universal Brain permanente., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Intervista requisiti e generazione piano d'implementazione, `topic`: Definizione Hub AI Unificato con Memoria Permanente
+  - **Dettagli:** `raw`: `key_takeaways`: Inizio specifica e intervista /grill-me per l'Hub AI Unificato con Universal Brain permanente., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Intervista requisiti e generazione piano d'implementazione, `topic`: Definizione Hub AI Unificato con Memoria Permanente
 - **Episodio Conversazione: Allineamento Struttura Autonoma JARVIS** (`episode-20260829-definizione-piano-jarvis-desktop`)
   - **Tags:** `#chat` `#jarvis` `#continuità-cognitiva`
   - **Sintesi:** Definizione dei confini del nuovo progetto JARVIS sul Desktop e predisposizione del piano di esecuzione modulare.
-  - **Dettagli:** `key_takeaways`: JARVIS risiede in Desktop/Jarvis; CervelloArtificiale resta il backend di memoria; piano pronto per approvazione., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Approvazione piano ed esecuzione creazione cartella Desktop/Jarvis, `topic`: Pianificazione Creazione Cartella e Progetto JARVIS
+  - **Dettagli:** `raw`: `key_takeaways`: JARVIS risiede in Desktop/Jarvis; CervelloArtificiale resta il backend di memoria; piano pronto per approvazione., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Approvazione piano ed esecuzione creazione cartella Desktop/Jarvis, `topic`: Pianificazione Creazione Cartella e Progetto JARVIS
 - **Episodio Conversazione: Architettura Connettoma Neurale, Web Access e Sincronizzazione Prompt** (`episode-20260829-architettura-connettoma-e-sync-prompt`)
   - **Tags:** `#chat` `#continuità-cognitiva` `#architettura` `#master-prompt`
   - **Sintesi:** Sessione di allineamento e chiarimento sui meccanismi interni del Cervello Artificiale (SQLite, FTS5, Palazzo Cognitivo, MCP vs Web) e sincronizzazione immediata del Master Prompt per le AI esterne.
-  - **Dettagli:** `key_takeaways`: Le AI web usano OpenAPI o Markdown strutturato; il Master Prompt include il Palazzo Cognitivo; ogni sessione viene persistita ed esportata in brain.db e brain.md, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, sincronizzazione completata, `topic`: Architettura Connettoma Neurale e Sincronizzazione Web
+  - **Dettagli:** `raw`: `key_takeaways`: Le AI web usano OpenAPI o Markdown strutturato; il Master Prompt include il Palazzo Cognitivo; ogni sessione viene persistita ed esportata in brain.db e brain.md, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, sincronizzazione completata, `topic`: Architettura Connettoma Neurale e Sincronizzazione Web
 - **Episodio Conversazione: Chiusura Jarvis e Pivot su Nuovo Progetto** (`episode-20260829-chiusura-jarvis-nuovo-progetto`)
   - **Tags:** `#chat` `#pivot` `#continuità-cognitiva`
   - **Sintesi:** Eliminazione progetti Jarvis dal desktop e registrazione del cambio di direzione strategico nel connettoma.
-  - **Dettagli:** `key_takeaways`: Jarvis abbandonato; file rimossi; connettoma pronto per nuova iniziativa pragmatica., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Definizione e avvio del nuovo progetto, `topic`: Chiusura Jarvis e Transizione a Nuovo Progetto
+  - **Dettagli:** `raw`: `key_takeaways`: Jarvis abbandonato; file rimossi; connettoma pronto per nuova iniziativa pragmatica., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Definizione e avvio del nuovo progetto, `topic`: Chiusura Jarvis e Transizione a Nuovo Progetto
 - **Episodio Conversazione: Integrazione OpenJarvis su Desktop** (`episode-20260829-integrazione-openjarvis-desktop`)
   - **Tags:** `#chat` `#openjarvis` `#continuità-cognitiva`
   - **Sintesi:** Clonato il repository Stanford OpenJarvis sul Desktop e integrata la skill/tool per la memoria bi-emisferica del Cervello Artificiale.
-  - **Dettagli:** `key_takeaways`: OpenJarvis clonato in Desktop/OpenJarvis; UniversalBrainTool attivo e testato con successo; Desktop app Tauri disponibile., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, `topic`: Integrazione OpenJarvis Stanford con Universal AI Brain
+  - **Dettagli:** `raw`: `key_takeaways`: OpenJarvis clonato in Desktop/OpenJarvis; UniversalBrainTool attivo e testato con successo; Desktop app Tauri disponibile., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, `topic`: Integrazione OpenJarvis Stanford con Universal AI Brain
 - **Episodio Conversazione: Progettazione JARVIS Voice AI e Integrazione Neurale** (`episode-20260829-progettazione-jarvis-voice-ai`)
   - **Tags:** `#chat` `#jarvis` `#voice-ai` `#connettoma`
   - **Sintesi:** Sessione di disamina repository open-source e definizione architetturale completa di JARVIS: assistente vocale continuo a costo zero connesso alla memoria persistente.
-  - **Dettagli:** `key_takeaways`: sukeesh/Jarvis è obsoleto; isair/jarvis è la migliore base di riferimento; stack a costo 0€ confermato con Groq/Gemini + Whisper + Kokoro + MCP., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Sviluppo jarvis_core.py e collegamento audio-MCP, `topic`: Progettazione JARVIS Personal Voice AI a Costo Zero
+  - **Dettagli:** `raw`: `key_takeaways`: sukeesh/Jarvis è obsoleto; isair/jarvis è la migliore base di riferimento; stack a costo 0€ confermato con Groq/Gemini + Whisper + Kokoro + MCP., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Sviluppo jarvis_core.py e collegamento audio-MCP, `topic`: Progettazione JARVIS Personal Voice AI a Costo Zero
 - **Episodio Conversazione: Rilascio JARVIS Voice Assistant su Desktop** (`episode-20260829-completamento-rilascio-jarvis-desktop`)
   - **Tags:** `#chat` `#jarvis` `#rilascio` `#continuità-cognitiva`
   - **Sintesi:** Creazione completa e test del nuovo assistente vocale JARVIS sul Desktop, con memoria condivisa del Cervello Artificiale.
-  - **Dettagli:** `key_takeaways`: JARVIS è pronto sul Desktop; cartella autonoma; connettoma testato e collegato., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, progetto pronto all'uso, `topic`: Creazione e Rilascio del Progetto JARVIS sul Desktop
+  - **Dettagli:** `raw`: `key_takeaways`: JARVIS è pronto sul Desktop; cartella autonoma; connettoma testato e collegato., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessuno, progetto pronto all'uso, `topic`: Creazione e Rilascio del Progetto JARVIS sul Desktop
 - **Episodio Conversazione: Test Superato OpenJarvis con Ollama** (`episode-20260829-test-openjarvis-ollama-successo`)
   - **Tags:** `#chat` `#openjarvis` `#continuità-cognitiva`
   - **Sintesi:** Validazione end-to-end completata: OpenJarvis legge il connettoma, esegue inferenza su Ollama e restituisce la descrizione accurata di Pierfrancesco.
-  - **Dettagli:** `key_takeaways`: OpenJarvis risponde perfettamente usando gpt-oss:120b-cloud via Ollama e il connettoma Universal AI Brain., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash', 'OpenJarvis gpt-oss:120b-cloud'], `pending_tasks`: Nessuno, sistema pronto all'uso vocale e interattivo, `topic`: Verifica Risposta OpenJarvis con Ollama e Cervello Artificiale
+  - **Dettagli:** `raw`: `key_takeaways`: OpenJarvis risponde perfettamente usando gpt-oss:120b-cloud via Ollama e il connettoma Universal AI Brain., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash', 'OpenJarvis gpt-oss:120b-cloud'], `pending_tasks`: Nessuno, sistema pronto all'uso vocale e interattivo, `topic`: Verifica Risposta OpenJarvis con Ollama e Cervello Artificiale
 - **Episodio Vocale: Allora vorrei dirti che oggi ho man...** (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su Allora vorrei dirti che oggi ho man....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: Allora vorrei dirti che oggi ho man...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: Allora vorrei dirti che oggi ho man...
 - **Episodio Vocale: Jarvis, ricordi quali sono gli emis...** (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su Jarvis, ricordi quali sono gli emis....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: Jarvis, ricordi quali sono gli emis...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: Jarvis, ricordi quali sono gli emis...
 - **Episodio Vocale: Quali sono le abitudini monitorate ...** (`episode-quali-sono-le-abitudini-monitorate-2979`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su Quali sono le abitudini monitorate ....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: Quali sono le abitudini monitorate ...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: Quali sono le abitudini monitorate ...
 - **Episodio Vocale: c'è un problema vorrei sapere di pi...** (`episode-c-un-problema-vorrei-sapere-di-pi-3203`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su c'è un problema vorrei sapere di pi....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: c'è un problema vorrei sapere di pi...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: c'è un problema vorrei sapere di pi...
 - **Episodio Vocale: che ore sono...** (`episode-che-ore-sono-3134`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su che ore sono....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: che ore sono...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: che ore sono...
 - **Episodio Vocale: ehi Jarvis ehi Jarvis mi puoi dire ...** (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su ehi Jarvis ehi Jarvis mi puoi dire ....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: ehi Jarvis ehi Jarvis mi puoi dire ...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: ehi Jarvis ehi Jarvis mi puoi dire ...
 - **Episodio Vocale: ho bisogno di sapere tutto ciò che ...** (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su ho bisogno di sapere tutto ciò che ....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'None'], `topic`: ho bisogno di sapere tutto ciò che ...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'None'], `topic`: ho bisogno di sapere tutto ciò che ...
 - **Episodio Vocale: quanti nodi ci sono nel mio cervell...** (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su quanti nodi ci sono nel mio cervell....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: quanti nodi ci sono nel mio cervell...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: quanti nodi ci sono nel mio cervell...
 - **Episodio: Audit Totale & Continuità Cognitiva Cross-Chat** (`episode-audit-completo-e-potenziamento-skill`)
   - **Tags:** `#sessione-audit` `#pierfrancesco` `#universal-brain` `#cross-chat-memory` `#metamemoria`
   - **Sintesi:** Sessione di audit intensivo, correzione bug su backend/MCP/Telegram, potenziamento formale della skill per continuità cross-chat e persistenza delle risposte fornite nel knowledge graph.
-  - **Dettagli:** `key_takeaways`: L'architettura del Cervello garantisce la continuità multi-sessione tra assistenti AI diversi e chat diverse grazie alla triade USER_INTENT + AI_REASONING + CONVERSATION_EPISODE., `outcome`: Audit superato al 100%, skill potenziata e sincronizzata con la direttiva di continuità cross-chat, grafo aggiornato., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: ['Nessun bug residuo. Sistema pronto per sincronizzazione cloud e deploy.'], `topic`: Audit del codice, prompt e garanzia di memoria cross-chat persistente
+  - **Dettagli:** `raw`: `key_takeaways`: L'architettura del Cervello garantisce la continuità multi-sessione tra assistenti AI diversi e chat diverse grazie alla triade USER_INTENT + AI_REASONING + CONVERSATION_EPISODE., `outcome`: Audit superato al 100%, skill potenziata e sincronizzata con la direttiva di continuità cross-chat, grafo aggiornato., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: ['Nessun bug residuo. Sistema pronto per sincronizzazione cloud e deploy.'], `topic`: Audit del codice, prompt e garanzia di memoria cross-chat persistente
 - **Episodio: Comando /prompt Copia Rapida per Telegra** (`episode-comando-prompt-copia-rapi-8585`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Comando /prompt Copia Rapida per Telegram Bot
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Comando /prompt Copia Rapida per Telegram Bot, `key_takeaways`: La formattazione <pre><code> di Telegram Bot API abilita la copia automatica con singolo tocco su iOS e Android., `pending_tasks`: Nessun task pendente.
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Comando /prompt Copia Rapida per Telegram Bot, `key_takeaways`: La formattazione <pre><code> di Telegram Bot API abilita la copia automatica con singolo tocco su iOS e Android., `pending_tasks`: Nessun task pendente.
 - **Episodio: Debrief Assessment Gemini e Ottimizzazione Memoria Neurale** (`episode-20260829-debrief-assessment-gemini`)
   - **Tags:** `#chat` `#continuità-cognitiva` `#gemini-feedback` `#connettoma`
   - **Sintesi:** Analisi comparativa tra il feedback di Gemini e la reale consistenza del connettoma, con piano per perfezionare il recupero di contesto per le AI esterne.
-  - **Dettagli:** `key_takeaways`: Il connettoma non è vuoto (304 nodi); il collo di bottiglia è l'iniezione del contesto iniziale verso LLM esterni, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Potenziare il prompt di retrieval / endpoint /brain.md per i client esterni, `topic`: Valutazione feedback Gemini e ottimizzazione connettoma
+  - **Dettagli:** `raw`: `key_takeaways`: Il connettoma non è vuoto (304 nodi); il collo di bottiglia è l'iniezione del contesto iniziale verso LLM esterni, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Potenziare il prompt di retrieval / endpoint /brain.md per i client esterni, `topic`: Valutazione feedback Gemini e ottimizzazione connettoma
 - **Episodio: Definizione Scopo Universale del Contesto Multi-AI** (`episode-2026-08-27-universal-context-definition`)
   - **Tags:** `#conversation-episode` `#universal-brain` `#context-purpose` `#gemini-session`
   - **Sintesi:** Sessione di formalizzazione dello scopo supremo di Universal AI Brain: memoria persistente del contesto e dei processi mentali cross-AI.
-  - **Dettagli:** `topic`: Scopo Fondante della Persistenza del Contesto Multi-AI, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `date`: 2026-08-27
+  - **Dettagli:** `raw`: `topic`: Scopo Fondante della Persistenza del Contesto Multi-AI, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `date`: 2026-08-27
 - **Episodio: Distribuzione MCP e Skill /universal-brain su Gemini, Claude e ChatGPT** (`episode-2026-08-27-multi-llm-mcp-ecosystem`)
   - **Tags:** `#conversation-episode` `#mcp` `#claude` `#gemini` `#chatgpt` `#multi-llm` `#skill`
   - **Sintesi:** Integrazione globale del cervello e della skill /universal-brain su tutti i modelli di frontiera.
-  - **Dettagli:** `timestamp`: 2026-08-27T21:45:00CEST, `models_targeted`: ['Claude Desktop', 'Gemini / Antigravity', 'ChatGPT Custom Actions', 'Cursor / Windsurf'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio: Distribuzione MCP e Skill /universal-brain su Gemini, Claude e ChatGPT
+  - **Dettagli:** `raw`: `timestamp`: 2026-08-27T21:45:00CEST, `models_targeted`: ['Claude Desktop', 'Gemini / Antigravity', 'ChatGPT Custom Actions', 'Cursor / Windsurf'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio: Distribuzione MCP e Skill /universal-brain su Gemini, Claude e ChatGPT
+- **Episodio: Esplorazione Nuovi Layout e Disegni per l'Interfaccia del Cervello** (`episode-20260829-esplorazione-paradigmi-interfaccia-grafo`)
+  - **Tags:** `#chat` `#continuità-cognitiva` `#visual-showcase` `#layout`
+  - **Sintesi:** Presentazione e analisi interattiva di 5 layout alternativi per l'interfaccia del connettoma a due emisferi.
+  - **Dettagli:** `key_takeaways`: I dati rimangono invariati (307 nodi), ma il rendering può spaziare da orbite 3D a torri isometriche a mappe Voronoi., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Scegliere il layout preferito da integrare nella Web App live, `topic`: Nuove visualizzazioni e stili di rendering per il grafo di memoria
 - **Episodio: Fondamenti e Filosofia della Memoria Eterna Cross-Chat** (`episode-infinite-context-philosophy`)
   - **Tags:** `#conversation-episode` `#core-mission` `#context-saturation` `#gemini-session`
   - **Sintesi:** Formalizzazione della ragion d'essere del cervello artificiale: superare il reset della memoria per saturazione delle chat tramite grafo semantico unificato.
-  - **Dettagli:** `date`: 2026-08-27, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Infinite Context & Anti-Amnesia Philosophy
+  - **Dettagli:** `raw`: `date`: 2026-08-27, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Infinite Context & Anti-Amnesia Philosophy
 - **Episodio: Occultamento Pulsanti Mobile su Browser ** (`episode-occultamento-pulsanti-mob-9019`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Occultamento Pulsanti Mobile su Browser Desktop
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Occultamento Pulsanti Mobile su Browser Desktop, `key_takeaways`: L'uso di display:none inline previene FOUC (Flash of Unstyled Content) dovuto alla cache del browser., `pending_tasks`: Nessun task pendente.
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Occultamento Pulsanti Mobile su Browser Desktop, `key_takeaways`: L'uso di display:none inline previene FOUC (Flash of Unstyled Content) dovuto alla cache del browser., `pending_tasks`: Nessun task pendente.
 - **Episodio: Ottimizzazione Mobile Web Dashboard Univ** (`episode-ottimizzazione-mobile-web-8880`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Ottimizzazione Mobile Web Dashboard Universal Brain
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Ottimizzazione Mobile Web Dashboard Universal Brain, `key_takeaways`: Il routing a tab mobile separa il canvas 2D dall'ispettore sui display compatti, garantendo massima usabilità., `pending_tasks`: Nessun task pendente.
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Ottimizzazione Mobile Web Dashboard Universal Brain, `key_takeaways`: Il routing a tab mobile separa il canvas 2D dall'ispettore sui display compatti, garantendo massima usabilità., `pending_tasks`: Nessun task pendente.
 - **Episodio: Potenziamento Skill e Rilascio Demone Si** (`episode-potenziamento-skill-e-ril-8338`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Potenziamento Skill e Rilascio Demone Sincronizzazione macOS, `key_takeaways`: La memoria cross-chat è ora garantita dal demone automatico e dalle direttive imperative distribuite a tutti gli assistenti AI., `pending_tasks`: Nessun task pendente. Il sistema è pienamente autonomo e attivo.
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Potenziamento Skill e Rilascio Demone Sincronizzazione macOS, `key_takeaways`: La memoria cross-chat è ora garantita dal demone automatico e dalle direttive imperative distribuite a tutti gli assistenti AI., `pending_tasks`: Nessun task pendente. Il sistema è pienamente autonomo e attivo.
 - **Episodio: Progettazione dell'Inibizione Interemisferica & Lazy Loading** (`episode-2026-08-27-interhemispheric-inhibition-design`)
   - **Tags:** `#conversation-episode` `#neuroscience` `#lazy-loading` `#2026-08-27`
   - **Sintesi:** Definizione del modello di lazy loading biologico ispirato all'inibizione GABAergica per un'esecuzione rapida e focalizzata.
-  - **Dettagli:** `topic`: Biological Interhemispheric Inhibition, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `topic`: Biological Interhemispheric Inhibition, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Episodio: Quali sono i progetti principali di...** (`episode-quali-sono-i-progetti-principali-di-8169`)
   - **Tags:** `#universal-hub` `#sessione-chat`
   - **Sintesi:** Conversazione tra Pierfrancesco e qwen/qwen3.8-27b (Groq) su Quali sono i progetti principali di....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Groq (qwen/qwen3.8-27b)'], `topic`: Quali sono i progetti principali di...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Groq (qwen/qwen3.8-27b)'], `topic`: Quali sono i progetti principali di...
 - **Episodio: Restyling Dark-Tech, Stabilizzazione Fisica & Ripristino Palazzo Cognitivo** (`episode-frontend-deeptech-redesign-and-physics-zero-lag`)
   - **Tags:** `#session-recap` `#frontend-restyling` `#graphify-aesthetic` `#physics-freeze` `#palazzo-cognitivo` `#zero-lag`
   - **Sintesi:** Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), eliminazione di oscillazioni e rotazioni continue della fisica su Vis-Network, correzione del bug di ispezione nodi e ripristino della gerarchia a piani del Palazzo Cognitivo (P0, P1, P2).
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Antigravity Assistant'], `topic`: Frontend Deep-Tech Restyling & Graph Stability, `outcomes`: ['Implementazione estetica Dark-Tech cyberpunk minimalista con Bento Grid e JetBrains Mono', 'Disabilitazione totale del live physics loop post-stabilizzazione (Zero-Oscillation Freeze)', 'Risoluzione ReferenceError su tags in showInfo() per ispezione istantanea dei nodi', 'Classificazione deterministica dei nodi su 3 piani (P0: 15 nodi, P1: 121 nodi, P2: 53 nodi)', 'Eliminazione di rotazioni e rendering su canvas a 60fps ultra-reattivo']
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Antigravity Assistant'], `topic`: Frontend Deep-Tech Restyling & Graph Stability, `outcomes`: ['Implementazione estetica Dark-Tech cyberpunk minimalista con Bento Grid e JetBrains Mono', 'Disabilitazione totale del live physics loop post-stabilizzazione (Zero-Oscillation Freeze)', 'Risoluzione ReferenceError su tags in showInfo() per ispezione istantanea dei nodi', 'Classificazione deterministica dei nodi su 3 piani (P0: 15 nodi, P1: 121 nodi, P2: 53 nodi)', 'Eliminazione di rotazioni e rendering su canvas a 60fps ultra-reattivo']
 - **Episodio: Teoria dei Sotto-Grafi Modulari e Decentramento Hub** (`episode-2026-08-27-modular-domain-graph-topology`)
   - **Tags:** `#conversation-episode` `#graph-theory` `#modularity` `#2026-08-27`
   - **Sintesi:** Definizione della topologia a sotto-grafi modulari: entità enciclopediche e verticali isolate da person-pierfrancesco.
-  - **Dettagli:** `topic`: Modular Subgraph Clustering, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `topic`: Modular Subgraph Clustering, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Episodio: Valutazione e Design del Modello Graph-of-Graphs a Piani** (`episode-2026-08-27-fractal-graph-of-graphs-evaluation`)
   - **Tags:** `#conversation-episode` `#graph-of-graphs` `#hypergraph` `#2026-08-27`
   - **Sintesi:** Analisi comparativa, pro, contro e fattibilità tecnica del modello di grafo a palazzo frattale su SQLite.
-  - **Dettagli:** `topic`: Multi-Layer Graph-of-Graphs Design, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `topic`: Multi-Layer Graph-of-Graphs Design, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Episodio: che ne pensi del mio cervello artif...** (`episode-che-ne-pensi-del-mio-cervello-artif-8743`)
   - **Tags:** `#universal-hub` `#sessione-chat`
   - **Sintesi:** Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su che ne pensi del mio cervello artif....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: che ne pensi del mio cervello artif...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: che ne pensi del mio cervello artif...
 - **Episodio: che ne pensi del mio cervello artif...** (`episode-che-ne-pensi-del-mio-cervello-artif-8793`)
   - **Tags:** `#universal-hub` `#sessione-chat`
   - **Sintesi:** Conversazione tra Pierfrancesco e gemini-3.7-flash (gemini) su che ne pensi del mio cervello artif....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'gemini (gemini-3.7-flash)'], `topic`: che ne pensi del mio cervello artif...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'gemini (gemini-3.7-flash)'], `topic`: che ne pensi del mio cervello artif...
 - **Episodio: chi è Pierfrancesco Amendola e cosa...** (`episode-chi-pierfrancesco-amendola-e-cosa-8426`)
   - **Tags:** `#universal-hub` `#sessione-chat`
   - **Sintesi:** Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su chi è Pierfrancesco Amendola e cosa....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: chi è Pierfrancesco Amendola e cosa...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: chi è Pierfrancesco Amendola e cosa...
 - **Episodio: ma è tutto falso!!!** (`episode-ma-tutto-falso-8462`)
   - **Tags:** `#universal-hub` `#sessione-chat`
   - **Sintesi:** Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su ma è tutto falso!!!.
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: ma è tutto falso!!!
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: ma è tutto falso!!!
 - **Episodio: non riesci a connetterti al mio cer...** (`episode-non-riesci-a-connetterti-al-mio-cer-8486`)
   - **Tags:** `#universal-hub` `#sessione-chat`
   - **Sintesi:** Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su non riesci a connetterti al mio cer....
-  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: non riesci a connetterti al mio cer...
+  - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: non riesci a connetterti al mio cer...
 - **Metacognizione e Sviluppo del Sistema AI** (`episode-system-metacognition`)
   - **Tags:** `#system-evaluation` `#meta-conversation` `#ai-development`
   - **Sintesi:** Sessione dedicata all'introspezione sistemica e al miglioramento dell'infrastruttura cognitiva dell'AI stessa.
-  - **Dettagli:** `date`: 2026-08-29, `topic`: System Metacognition & Graphify Protocol, `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+  - **Dettagli:** `raw`: `date`: 2026-08-29, `topic`: System Metacognition & Graphify Protocol, `ingested_via`: telegram_json_post, `user`: Pierfrancesco
 - **Progettazione Piattaforma Personale di Apprendimento Linguistico** (`episode-language-app-architecture`)
   - **Tags:** `#language-learning` `#software-design` `#chat-session`
   - **Sintesi:** Discussione architetturale incentrata sulla creazione di un'applicazione proprietaria e non divulgata per lo studio del portoghese e del tedesco senza restrizioni di utilizzo.
-  - **Dettagli:** `date`: 2026-08-29, `topic`: Architettura software per apprendimento linguistico autonomo, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `date`: 2026-08-29, `topic`: Architettura software per apprendimento linguistico autonomo, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Release Commit 62e48df (Render Hot-Rebuild)** (`node-commit-62e48df`)
   - **Tags:** `#mutation-import` `#devops-timeline` `#deployment-event`
   - **Sintesi:** Release Commit 62e48df (Render Hot-Rebuild) (Layer: DEVOPS_TIMELINE, Tipo: DEPLOYMENT_EVENT)
-  - **Dettagli:** `id`: node_commit_62e48df, `label`: Release Commit 62e48df (Render Hot-Rebuild), `type`: DEPLOYMENT_EVENT, `layer`: DEVOPS_TIMELINE, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Release Commit 62e48df (Render Hot-Rebuild)
+  - **Dettagli:** `raw`: `id`: node_commit_62e48df, `label`: Release Commit 62e48df (Render Hot-Rebuild), `type`: DEPLOYMENT_EVENT, `layer`: DEVOPS_TIMELINE, `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Release Commit 62e48df (Render Hot-Rebuild)
 - **Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo** (`ep-20260827-hierarchical-tree-deployment-sync`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:34:46CEST: Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo
-  - **Dettagli:** `session_id`: ep_20260827_hierarchical_tree_deployment_sync, `timestamp`: 2026-08-27T20:34:46CEST, `topic`: Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `session_id`: ep_20260827_hierarchical_tree_deployment_sync, `timestamp`: 2026-08-27T20:34:46CEST, `topic`: Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Sessione Valutazione e Stima Language App** (`episode-valutazione-language-app-antigravity`)
   - **Tags:** `#chat` `#language-app` `#brain-sync`
   - **Sintesi:** Discussione su fattibilità, tempi, complessità e gap del progetto app lingue personale.
-  - **Dettagli:** `key_takeaways`: Progetto solido; MVP rapido in pochi giorni; critico automatizzare generazione contenuti CEFR anziché scrivere lezioni a mano., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Conferma stack (PWA React vs Flutter) e avvio script generazione lezioni A1., `topic`: Valutazione e pianificazione Language Learning App
+  - **Dettagli:** `raw`: `key_takeaways`: Progetto solido; MVP rapido in pochi giorni; critico automatizzare generazione contenuti CEFR anziché scrivere lezioni a mano., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Conferma stack (PWA React vs Flutter) e avvio script generazione lezioni A1., `topic`: Valutazione e pianificazione Language Learning App
 - **Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway)** (`ep-20260827-telegram-cognitive-hub-spec`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:37:03CEST: Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway)
-  - **Dettagli:** `session_id`: ep_20260827_telegram_cognitive_hub_spec, `timestamp`: 2026-08-27T20:37:03CEST, `topic`: Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway), `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `session_id`: ep_20260827_telegram_cognitive_hub_spec, `timestamp`: 2026-08-27T20:37:03CEST, `topic`: Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway), `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Tassonomia e Classificazione Formale dell'Universal Knowledge Graph** (`ep-20260827-graph-taxonomy-classification`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T18:34:00CEST: Tassonomia e Classificazione Formale dell'Universal Knowledge Graph
-  - **Dettagli:** `session_id`: ep_20260827_graph_taxonomy_classification, `timestamp`: 2026-08-27T18:34:00CEST, `topic`: Tassonomia e Classificazione Formale dell'Universal Knowledge Graph, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `session_id`: ep_20260827_graph_taxonomy_classification, `timestamp`: 2026-08-27T18:34:00CEST, `topic`: Tassonomia e Classificazione Formale dell'Universal Knowledge Graph, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Traduzione e Consolidamento del Benchmark Comparativo sulle Strutture ad Albero per il Grafo Cognitivo** (`ep-20260827-tree-ranking-translation`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:32:00CEST: Traduzione e Consolidamento del Benchmark Comparativo sulle Strutture ad Albero per il Grafo Cognitivo
-  - **Dettagli:** `session_id`: ep_20260827_tree_ranking_translation, `timestamp`: 2026-08-27T20:32:00CEST, `topic`: Traduzione e Consolidamento del Benchmark Comparativo sulle Strutture ad Albero per il Grafo Cognitivo, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `session_id`: ep_20260827_tree_ranking_translation, `timestamp`: 2026-08-27T20:32:00CEST, `topic`: Traduzione e Consolidamento del Benchmark Comparativo sulle Strutture ad Albero per il Grafo Cognitivo, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artificiali** (`ep-20260827-graph-tree-unification`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T18:28:00CEST: Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artificiali
-  - **Dettagli:** `session_id`: ep_20260827_graph_tree_unification, `timestamp`: 2026-08-27T18:28:00CEST, `topic`: Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artificiali, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `session_id`: ep_20260827_graph_tree_unification, `timestamp`: 2026-08-27T18:28:00CEST, `topic`: Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artificiali, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel Knowledge Graph** (`ep-20260827-tree-structures-evaluation`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:30:00CEST: Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel Knowledge Graph
-  - **Dettagli:** `session_id`: ep_20260827_tree_structures_evaluation, `timestamp`: 2026-08-27T20:30:00CEST, `topic`: Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel Knowledge Graph, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `session_id`: ep_20260827_tree_structures_evaluation, `timestamp`: 2026-08-27T20:30:00CEST, `topic`: Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel Knowledge Graph, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Valutazione e Design di un Telegram Bot come Interfaccia I/O Mobile per il Knowledge Graph** (`ep-20260827-telegram-bot-interface`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T18:58:00CEST: Valutazione e Design di un Telegram Bot come Interfaccia I/O Mobile per il Knowledge Graph
-  - **Dettagli:** `session_id`: ep_20260827_telegram_bot_interface, `timestamp`: 2026-08-27T18:58:00CEST, `topic`: Valutazione e Design di un Telegram Bot come Interfaccia I/O Mobile per il Knowledge Graph, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+  - **Dettagli:** `raw`: `session_id`: ep_20260827_telegram_bot_interface, `timestamp`: 2026-08-27T18:58:00CEST, `topic`: Valutazione e Design di un Telegram Bot come Interfaccia I/O Mobile per il Knowledge Graph, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 
 ### [Macro-Label: `CREATIVE_IDEA`]
 - **Celebration Particle & FX Engine** (`streaksup-particle-fx`)
   - **Tags:** `#particles` `#notch-fireworks` `#confetti` `#sparkles` `#splash-flame`
   - **Sintesi:** Suite di effetti grafici ed esplosioni particellari reattive: Notch Fireworks dalla Dynamic Island al 100%, coriandoli gravitazionali, scintille radiali e splash fiammante elastico.
-  - **Dettagli:** `effects`: ['NotchFireworksView', 'ConfettiCannonView', 'CompletionSparkleEffect', 'FlameLaunchSplashView']
+  - **Dettagli:** `raw`: `effects`: ['NotchFireworksView', 'ConfettiCannonView', 'CompletionSparkleEffect', 'FlameLaunchSplashView']
 - **Continuous Human-AI Symbiosis Vision** (`continuous-ai-symbiosis`)
   - **Tags:** `#symbiosis` `#continuous-memory` `#ai-evolution` `#dual-brain` `#co-pilot`
   - **Sintesi:** Visione filosofica di un intelligenza aumentata: la memoria dell utente e dei suoi progetti sopravvive tra sessioni distinte attraverso un grafo vivente.
-  - **Dettagli:** `paradigm`: Co-evolution, `substrate`: Dual Brain Knowledge Graph, `accessibility`: Universal to all LLM agents
+  - **Dettagli:** `raw`: `paradigm`: Co-evolution, `substrate`: Dual Brain Knowledge Graph, `accessibility`: Universal to all LLM agents
 - **Dominio: Design, Brand Voice & Creatività** (`domain-design-creativita`)
   - **Tags:** `#domain-hub` `#design-system` `#ui-ux` `#brand-voice` `#creativita` `#estetica`
   - **Sintesi:** UI/UX Design Dark-Tech, Graphic Design, Brand Voice, Arte, Musica ed Ear Training.
-  - **Dettagli:** `scope`: Aesthetic world, UI/UX systems, sensory design
+  - **Dettagli:** `raw`: `scope`: Aesthetic world, UI/UX systems, sensory design
 - **Evoluzione UI & Architettura di Memoria Resiliente** (`session-evolution-ui-persistence`)
   - **Tags:** `#session-evolution` `#ui-polish` `#resilience` `#centaur` `#antigravity`
   - **Sintesi:** Sessione di potenziamento dell'Universal AI Brain: introduzione del terminale chiaro, caricamento JSON visuale e blindatura della persistenza.
-  - **Dettagli:** `session_date`: 2026-08-27, `architect`: Pierfrancesco Amendola, `executor`: Antigravity
+  - **Dettagli:** `raw`: `session_date`: 2026-08-27, `architect`: Pierfrancesco Amendola, `executor`: Antigravity
 - **Idea per nuova app AI** (`tg-idea-per-nuova-app-ai`)
   - **Tags:** `#telegram` `#mobile-note` `#quick-thought`
   - **Sintesi:** Sviluppo di un agent autonomo
-  - **Dettagli:** `source`: telegram-bot, `user`: Pierfrancesco
+  - **Dettagli:** `raw`: `source`: telegram-bot, `user`: Pierfrancesco
 - **Pianoforte Classico & Composizione** (`art-piano-composition`)
   - **Tags:** `#piano` `#classical-music` `#composition` `#emotional-outlet`
   - **Sintesi:** Studio del pianoforte dall'età di tre anni; rifugio espressivo e contrappeso emotivo al rigore logico-scientifico.
-  - **Dettagli:** `instruments`: Pianoforte (principale), chitarra e violino (autodidatta), `roles`: Compositore, arrangiatore, direttore artistico
+  - **Dettagli:** `raw`: `instruments`: Pianoforte (principale), chitarra e violino (autodidatta), `roles`: Compositore, arrangiatore, direttore artistico
 - **Recitazione Teatrale (Tricca Ballacche)** (`art-theatre-acting`)
   - **Tags:** `#theatre` `#acting` `#presence` `#public-speaking`
   - **Sintesi:** Esperienza attoriale sul palco come strumento di esplorazione delle dinamiche umane e presenza scenica.
-  - **Dettagli:** `troupe`: Compagnia Teatrale Tricca Ballacche, `skills`: Comunicazione paraverbale, gestione emotiva dal vivo
+  - **Dettagli:** `raw`: `troupe`: Compagnia Teatrale Tricca Ballacche, `skills`: Comunicazione paraverbale, gestione emotiva dal vivo
 - **Scrittura & Pubblicazione Indipendente** (`art-creative-writing`)
   - **Tags:** `#kdp` `#writing` `#children-books` `#essays`
   - **Sintesi:** Attività di autore ed editore su Amazon KDP per libri per ragazzi, narrativa e manuali tecnici.
-  - **Dettagli:** `genres`: Divulgazione scientifica, letteratura per l'infanzia, saggistica
+  - **Dettagli:** `raw`: `genres`: Divulgazione scientifica, letteratura per l'infanzia, saggistica
 - **Simbiosi Operativa Antigravity & Pierfrancesco** (`antigravity-centaur-collaboration`)
   - **Tags:** `#centaur-ai` `#co-pilot` `#pair-programming` `#continuous-sync`
   - **Sintesi:** Manifestazione pratica del Modello Centauro: intenzione e guida umana sposate all'esecuzione deterministica dell'assistente AI.
-  - **Dettagli:** `modality`: Caveman Protocol + Graph Knowledge Persistence, `synergy`: Strategia & Anima (Pierfrancesco) + Implementazione & Sintesi (Antigravity)
+  - **Dettagli:** `raw`: `modality`: Caveman Protocol + Graph Knowledge Persistence, `synergy`: Strategia & Anima (Pierfrancesco) + Implementazione & Sintesi (Antigravity)
 - **Sintesi Artistico-Scientifica & Centauro** (`creative-multidisciplinary`)
   - **Tags:** `#music` `#theatre` `#writing` `#centaur-ai`
   - **Sintesi:** Integrazione tra rigore computazionale e sensibilità creativa (pianoforte, teatro Tricca Ballacche, scrittura, modello Centauro).
-  - **Dettagli:** `music`: Pianoforte, chitarra, violino, composizione, `theatre`: Attore compagnia Tricca Ballacche, `languages`: Italiano, Inglese (cert. UK), Spagnolo, Francese, Tedesco, Portoghese, `human_ai_vision`: Centaur Model: umana strategia + macchina computazionale
+  - **Dettagli:** `raw`: `music`: Pianoforte, chitarra, violino, composizione, `theatre`: Attore compagnia Tricca Ballacche, `languages`: Italiano, Inglese (cert. UK), Spagnolo, Francese, Tedesco, Portoghese, `human_ai_vision`: Centaur Model: umana strategia + macchina computazionale
 - **Test Live Download Node** (`test-live-download-node`)
   - **Tags:** `#daemon-download-test`
   - **Sintesi:** Test di verifica download automatico da cloud a locale
-  - **Dettagli:** `source`: render-api
+  - **Dettagli:** `raw`: `source`: render-api
 
 ### [Macro-Label: `DESIGN_TOKEN`]
 - **Cyber Slate Dark Aesthetics** (`cyber-slate-space-aesthetic`)
-  - **Tags:** `##090d16` `##0f172a` `##020617` `#dark-mode` `#glassmorphism` `#backdrop-blur`
+  - **Tags:** `#090d16` `#0f172a` `#020617` `#dark-mode` `#glassmorphism` `#backdrop-blur`
   - **Sintesi:** Estetica visuale cosmica a basso contrasto di fondo (#090d16) con pannelli in vetro sfumato (backdrop-filter: blur(16px)) e bordi slate.
-  - **Dettagli:** `bg_main`: #090d16, `card_bg`: rgba(15, 23, 42, 0.84), `border`: rgba(51, 65, 85, 0.6), `blur`: 16px
+  - **Dettagli:** `raw`: `bg_main`: #090d16, `card_bg`: rgba(15, 23, 42, 0.84), `border`: rgba(51, 65, 85, 0.6), `blur`: 16px
 - **Dark Neon Cyber Aesthetic** (`design-cyber-neon`)
   - **Tags:** `#dark-mode` `#cyan` `#magenta` `#glassmorphism`
   - **Sintesi:** Design system scuro ad alto impatto visivo con superfici in vetro e accenti neon ad alto contrasto.
-  - **Dettagli:** `bg_base`: #0A0E17, `bg_surface`: #0F172A, `accent_cyan`: #00D2FF, `accent_magenta`: #FF007F, `accent_purple`: #7928CA, `blur_intensity`: 16px
+  - **Dettagli:** `raw`: `bg_base`: #0A0E17, `bg_surface`: #0F172A, `accent_cyan`: #00D2FF, `accent_magenta`: #FF007F, `accent_purple`: #7928CA, `blur_intensity`: 16px
 - **Dark Neon Design Tokens** (`design-tokens-core`)
   - **Tags:** `#design-system` `#tokens` `#css` `#dark-mode`
   - **Sintesi:** Design system scuro ad alto contrasto con superfici semitrasparenti e accenti luminosi.
-  - **Dettagli:** `bg_base`: #0A0E17, `bg_surface`: #0F172A, `bg_panel`: #121826, `border_subtle`: rgba(255, 255, 255, 0.08), `glass_blur`: 16px
+  - **Dettagli:** `raw`: `bg_base`: #0A0E17, `bg_surface`: #0F172A, `bg_panel`: #121826, `border_subtle`: rgba(255, 255, 255, 0.08), `glass_blur`: 16px
 - **Design System Duolingo Chess** (`design-duolingo-chess-system`)
   - **Tags:** `#duolingo` `#design-system` `#color-palette` `#3d-buttons` `#vector-art`
   - **Sintesi:** Design system ispirato a design.duolingo.com e blog.duolingo.com. Palette ufficiale Duolingo, pulsanti 3D estrusi, sagome vettoriali parametriche e mascotte Duo il Gufo.
 - **Design System Moderno & Minimal per App di Lingue** (`design-language-app-system`)
   - **Tags:** `#palette` `#typography` `#tokens` `#dark-mode` `#micro-interactions`
   - **Sintesi:** Design system basato su estetica pulita e moderna, chip interattivi 3D minimali, palette semantica (Emerald/Rose/Indigo) e transizioni fluide a basso attrito cognitivo.
-  - **Dettagli:** `style`: Modern Minimalist / Clean Tech, `feedback_loop`: Scale transition, gentle shake on error, persistent bottom actions
+  - **Dettagli:** `raw`: `style`: Modern Minimalist / Clean Tech, `feedback_loop`: Scale transition, gentle shake on error, persistent bottom actions
 - **Design Token: Palette Deep-Tech & Cyberpunk Minimalist** (`design-token-cyberpunk-minimalist-palette`)
   - **Tags:** `#design-system` `#color-palette` `#dark-tech` `#cyberpunk` `#bento-grid`
   - **Sintesi:** Sistema di design tokens e palette colori per l interfaccia utente ispirata a Graphify.com e Caveman.so: Deep Void (#07080c), Neon Cyan (#00D2FF), Cyber Magenta (#FF007F) e Electric Purple (#A855F7).
-  - **Dettagli:** `background`: #07080c (Deep Void), `surface`: #0e1017 (Dark Surface), `panel`: #141722 (Panel Elevato), `left_hemisphere`: #00D2FF (Neon Cyan), `right_hemisphere`: #FF007F (Cyber Magenta), `corpus_callosum`: #A855F7 (Electric Purple), `typography`: JetBrains Mono + Inter/Geist
+  - **Dettagli:** `raw`: `background`: #07080c (Deep Void), `surface`: #0e1017 (Dark Surface), `panel`: #141722 (Panel Elevato), `left_hemisphere`: #00D2FF (Neon Cyan), `right_hemisphere`: #FF007F (Cyber Magenta), `corpus_callosum`: #A855F7 (Electric Purple), `typography`: JetBrains Mono + Inter/Geist
 - **StreaksUp Glassmorphic Design System** (`streaksup-glassmorphism-system`)
   - **Tags:** `#glassmorphism` `#materials` `#sf-rounded` `#shadow-elevation`
   - **Sintesi:** Design system basato su materiali SwiftUI (.regularMaterial, .ultraThinMaterial), bordi sfumati con gradienti di categoria e raggi di curvatura continui 20-24pt.
-  - **Dettagli:** `typography`: Font.system(..., design: .rounded), `materials`: ['.regularMaterial', '.ultraThinMaterial'], `corner_radius`: Card 20pt / Hero 24pt continuous, `haptic_integration`: HapticManager (Light, Medium, Success, Warning)
+  - **Dettagli:** `raw`: `typography`: Font.system(..., design: .rounded), `materials`: ['.regularMaterial', '.ultraThinMaterial'], `corner_radius`: Card 20pt / Hero 24pt continuous, `haptic_integration`: HapticManager (Light, Medium, Success, Warning)
 
 ### [Macro-Label: `EMOTIONAL_MEMORY`]
 - **Tensione tra Controllo Perfezionistico ed Espressione** (`memory-perfectionism-tension`)
   - **Tags:** `#perfectionism` `#anxiety` `#vulnerability` `#catharsis`
   - **Sintesi:** La costante ricerca dell'eccellenza e il sovraccarico di responsabilità bilanciati attraverso lo sfogo catartico della musica e dell'arte.
-  - **Dettagli:** `tension`: Rigore ingegneristico assoluto vs bisogno viscerale di espressione emotiva libera
+  - **Dettagli:** `raw`: `tension`: Rigore ingegneristico assoluto vs bisogno viscerale di espressione emotiva libera
 
 ### [Macro-Label: `LIFE_LESSON`]
 - **Lezione di Architettura: Backend come Singola Sorgente di Verità e Pipeline di Rendering Pulita** (`lesson-backend-ground-truth-and-clean-canvas-rendering`)
   - **Tags:** `#architecture-lesson` `#ground-truth` `#clean-code` `#full-stack-integrity`
   - **Sintesi:** Principio guida per lo sviluppo del Cervello Artificiale: il backend SQLite/FastAPI deve essere l unica sorgente di verità per lo stato e i metadati, mentre il frontend deve limitarsi a presentare i dati con zero loop di rendering o simulazioni fisiche non controllate.
-  - **Dettagli:** `lesson`: Mai far divergere la logica di classificazione tra client e server; garantire sempre integrità schema e checkpoint WAL., `domain`: Ingegneria del Software & Sistemi Cognitivi
+  - **Dettagli:** `raw`: `lesson`: Mai far divergere la logica di classificazione tra client e server; garantire sempre integrità schema e checkpoint WAL., `domain`: Ingegneria del Software & Sistemi Cognitivi
 - **Lezione sui Confini Affettivi & Non-Idealizzazione** (`lesson-boundaries-clarity`)
   - **Tags:** `#emotional-growth` `#boundaries` `#relationships` `#clarity`
   - **Sintesi:** Non farsi carico unilateralmente della stabilità altrui; l'intensità emotiva non sostituisce la compatibilità e la chiarezza dei confini.
-  - **Dettagli:** `principles`: ['Rifiuto della sindrome del salvatore', 'Distinzione tra chimica momentanea e allineamento valoriale', 'Comunicazione esplicita senza dare nulla per scontato']
+  - **Dettagli:** `raw`: `principles`: ['Rifiuto della sindrome del salvatore', 'Distinzione tra chimica momentanea e allineamento valoriale', 'Comunicazione esplicita senza dare nulla per scontato']
 - **Resilienza Operativa & Post-Mortem Emotivo** (`lesson-stoic-resilience`)
   - **Tags:** `#stoicism` `#resilience` `#growth-mindset` `#refactoring`
   - **Sintesi:** Trattare gli ostacoli e le delusioni come dati da analizzare a mente fredda per iterare e migliorare senza autocommiserazione.
-  - **Dettagli:** `method`: Isolare la causa radice, applicare la correzione, ripartire con focus rinnovato
+  - **Dettagli:** `raw`: `method`: Isolare la causa radice, applicare la correzione, ripartire con focus rinnovato
 
 ### [Macro-Label: `PERSONAL_VALUE`]
 - **Autenticità & Trasparenza Radicale** (`val-authenticity`)
   - **Tags:** `#core-value` `#authenticity` `#honesty` `#no-games`
   - **Sintesi:** Priorità assoluta alla sincerità e alla chiarezza nei rapporti; rifiuto di maschere sociali, ipocrisia e passività.
-  - **Dettagli:** `standard`: Comunicazione limpida, rispetto dei patti, integrità morale
+  - **Dettagli:** `raw`: `standard`: Comunicazione limpida, rispetto dei patti, integrità morale
 - **Autonomia, Autosufficienza & Merito** (`val-independence`)
   - **Tags:** `#core-value` `#self-reliance` `#merit` `#zero-cost`
   - **Sintesi:** Costruire la propria libertà attraverso la competenza tecnica verificabile, l'autosufficienza e l'etica del lavoro.
-  - **Dettagli:** `ethos`: Nessuna scorciatoia, padronanza dei fondamentali, indipendenza creativa
+  - **Dettagli:** `raw`: `ethos`: Nessuna scorciatoia, padronanza dei fondamentali, indipendenza creativa
 - **Continuità Cognitiva Eterna (Zero Context Loss)** (`val-eternal-cognitive-continuity`)
   - **Tags:** `#eternal-memory` `#core-philosophy` `#cognitive-continuity` `#universal-brain` `#anti-amnesia`
   - **Sintesi:** Valore fondante di Universal AI Brain: nessun pensiero, decisione o ragionamento deve andare perso a causa dei limiti fisici di token delle singole chat.
-  - **Dettagli:** `anti_pattern_blocked`: Reset amnesico della chat e perdita del filo logico, `principle`: Ogni sessione AI è un frammento transitorio; il grafo è la coscienza persistente unificata., `temporal_scope`: Passato, presente e futuro
+  - **Dettagli:** `raw`: `anti_pattern_blocked`: Reset amnesico della chat e perdita del filo logico, `principle`: Ogni sessione AI è un frammento transitorio; il grafo è la coscienza persistente unificata., `temporal_scope`: Passato, presente e futuro
 - **Dominio: Filosofia, Etica & Principi di Vita** (`domain-filosofia-valori`)
   - **Tags:** `#domain-hub` `#filosofia` `#etica` `#resilienza` `#stoicismo` `#valori-personali`
   - **Sintesi:** Filosofia, Modelli Mentali, Principi etici, Decision Making, abitudini e autodisciplina.
-  - **Dettagli:** `scope`: Personal values, life lessons, human relationships
+  - **Dettagli:** `raw`: `scope`: Personal values, life lessons, human relationships
 - **Lealtà & Cura dei Legami Significativi** (`val-transparency-loyalty`)
   - **Tags:** `#core-value` `#loyalty` `#family` `#friendship`
   - **Sintesi:** Fedeltà incondizionata a chi ha dimostrato supporto autentico, rispetto e presenza nei momenti critici.
-  - **Dettagli:** `expression`: Presenza attiva, riconoscenza esplicita e protezione dei rapporti veri
+  - **Dettagli:** `raw`: `expression`: Presenza attiva, riconoscenza esplicita e protezione dei rapporti veri
 - **Pierfrancesco Amendola** (`person-pierfrancesco`)
   - **Tags:** `#identity` `#creator` `#software-architect` `#ai-researcher` `#human-core`
   - **Sintesi:** Identità centrale, connettoma fondativo e profilo di Pierfrancesco Amendola.
-  - **Dettagli:** `role`: Architect & Founder, `location`: Italy
+  - **Dettagli:** `raw`: `role`: Architect & Founder, `location`: Italy
 - **Privacy-by-Design & Zero-Cloud** (`streaksup-privacy-zero-cloud`)
   - **Tags:** `#privacy-by-design` `#zero-cloud` `#no-tracking` `#data-sovereignty`
   - **Sintesi:** Valore etico cardine: 100% offline, nessun server remoto, nessun tracciamento analytics, nessun account richiesto e piena esportazione JSON.
-  - **Dettagli:** `cloud_dependency`: Zero (100% local), `telemetry`: None, `account_required`: False, `backup`: Full JSON export / import
+  - **Dettagli:** `raw`: `cloud_dependency`: Zero (100% local), `telemetry`: None, `account_required`: False, `backup`: Full JSON export / import
 - **Utilità Concreta & Impatto Sociale** (`val-impact-utility`)
   - **Tags:** `#core-value` `#social-impact` `#medicine` `#safety`
   - **Sintesi:** La tecnologia deve risolvere problemi reali, proteggere le persone e migliorare l'esperienza umana quotidiana.
-  - **Dettagli:** `mission`: Salute digitale, prevenzione, accessibilità ed educazione
+  - **Dettagli:** `raw`: `mission`: Salute digitale, prevenzione, accessibilità ed educazione
 
 ### [Macro-Label: `RELATIONSHIP`]
 - **Antonio Renato Chieppa** (`rel-antonio-chieppa`)
   - **Tags:** `#friendship` `#study-partner` `#academic-collaboration`
   - **Sintesi:** Collega di corso e amico con cui condividere appunti, sessioni di studio e motivazione accademica.
-  - **Dettagli:** `context`: Collaborazione e sostegno nello studio universitario
+  - **Dettagli:** `raw`: `context`: Collaborazione e sostegno nello studio universitario
 - **Genitori (Madre e Padre)** (`rel-parents`)
   - **Tags:** `#family` `#dedication` `#gratitude` `#roots`
   - **Sintesi:** Punto fermo affettivo e motivazionale; destinatari della dedica di tesi e di supporto concreto continuativo.
-  - **Dettagli:** `bonds`: Supporto tecnologico madre, dedica formale tesi di laurea padre e madre
+  - **Dettagli:** `raw`: `bonds`: Supporto tecnologico madre, dedica formale tesi di laurea padre e madre
 - **Marco Di Martino** (`rel-marco-di-martino`)
   - **Tags:** `#friendship` `#university-peer` `#mutual-support`
   - **Sintesi:** Compagno di percorso accademico e amico fidato con cui condividere la crescita universitaria e le sfide di studio.
-  - **Dettagli:** `context`: Supporto reciproco continuativo durante la laurea in Informatica
+  - **Dettagli:** `raw`: `context`: Supporto reciproco continuativo durante la laurea in Informatica
 - **Mentorship Accademica (Nadia Brancati & Daniel Riccio)** (`rel-academic-mentors`)
   - **Tags:** `#icar-cnr` `#unina` `#thesis` `#mentorship`
   - **Sintesi:** Guide scientifiche del percorso di tesi e ricerca biomedica in Deep Learning presso ICAR-CNR e UniNa.
-  - **Dettagli:** `supervisor_cnr`: Dr.ssa Nadia Brancati (ICAR-CNR), `advisor_unina`: Prof. Daniel Riccio (UniNa)
+  - **Dettagli:** `raw`: `supervisor_cnr`: Dr.ssa Nadia Brancati (ICAR-CNR), `advisor_unina`: Prof. Daniel Riccio (UniNa)
 - **Radici Partenopee & Territorio** (`rel-napoli-culture`)
   - **Tags:** `#napoli` `#identity` `#culture` `#theatre`
   - **Sintesi:** Forte attaccamento culturale alla città di Napoli, fonte di ispirazione per progetti software, artistici e teatrali.
-  - **Dettagli:** `city`: Napoli, `influences`: Teatro tradizionale, spirito conviviale, innovazione tecnologica territoriale
+  - **Dettagli:** `raw`: `city`: Napoli, `influences`: Teatro tradizionale, spirito conviviale, innovazione tecnologica territoriale
 
 ### [Macro-Label: `UI_COMPONENT`]
 - **3D Force Graph Galaxy Visualizer** (`3d-force-galaxy-view`)
   - **Tags:** `#3d-force-graph` `#webgl` `#threejs` `#galaxy-hud` `#raycasting` `#spatial-split`
   - **Sintesi:** Universo 3D interattivo WebGL in cui i nodi orbitano con forze repulsive e attrattive che li separano ordinatamente lungo l asse X.
-  - **Dettagli:** `renderer`: WebGL ThreeJS, `particle_speed`: 0.007, `camera_orbit_step`: Math.PI / 1800
+  - **Dettagli:** `raw`: `renderer`: WebGL ThreeJS, `particle_speed`: 0.007, `camera_orbit_step`: Math.PI / 1800
 - **Animated Gauge Widget (SwiftUI)** (`ui-gauge-widget-alcolsafe`)
   - **Tags:** `#swiftui` `#animated-gauge` `#widget` `#alcolsafe` `#mobile-ui`
   - **Sintesi:** Componente UI nativo SwiftUI per tachimetro/indicatore di stato circolare animato e reattivo.
-  - **Dettagli:** `framework`: SwiftUI iOS, `component_type`: Dynamic animated circular gauge
+  - **Dettagli:** `raw`: `framework`: SwiftUI iOS, `component_type`: Dynamic animated circular gauge
 - **AuleStudio Student Mobile Interface** (`aule-studio-mobile-ui`)
   - **Tags:** `#mobile-ui` `#clean-design` `#cards` `#seat-map` `#badges` `#student-experience`
   - **Sintesi:** Interfaccia grafica mobile fluida, pulita e minimale orientata a universitari: schede aula immediate, mappa visiva e contatori posti cromatici.
-  - **Dettagli:** `ui_style`: Modern Minimalist Card-Based, `colors`: {'available': '#10b981', 'crowded': '#f59e0b', 'full': '#ef4444'}
+  - **Dettagli:** `raw`: `ui_style`: Modern Minimalist Card-Based, `colors`: {'available': '#10b981', 'crowded': '#f59e0b', 'full': '#ef4444'}
 - **Componente UI: Navigatore Multilivello a Piani del Palazzo Cognitivo** (`ui-component-palazzo-cognitivo-multi-layer-navigator`)
   - **Tags:** `#ui-component` `#palazzo-cognitivo` `#elevator-selector` `#multi-layer` `#bento-grid`
   - **Sintesi:** Pannello di navigazione e ascensore cognitivo per esplorare la conoscenza su piani semantici (Attico Domini P0, Progetti P1, Moduli Atomici P2) con pulsanti dedicati, contatori nodi in tempo reale e vista 3D stratificata.
-  - **Dettagli:** `floors`: {'P0': 'Piano 0: Attico Macro-Domini & Core Hubs (15 nodi)', 'P1': 'Piano 1: Progetti & Aree Tematiche (121 nodi)', 'P2': 'Piano 2: Moduli, Algoritmi & Dettagli Atomici (53 nodi)'}, `navigation_modes`: ['all (Tutti i Piani)', 'vertical (Vista 3D Piani)', '0', '1', '2'], `features`: ['Auto-fit immediato del viewport', 'Ascensori sinaptici evidenziati', 'Zero black-screen filtering']
+  - **Dettagli:** `raw`: `floors`: {'P0': 'Piano 0: Attico Macro-Domini & Core Hubs (15 nodi)', 'P1': 'Piano 1: Progetti & Aree Tematiche (121 nodi)', 'P2': 'Piano 2: Moduli, Algoritmi & Dettagli Atomici (53 nodi)'}, `navigation_modes`: ['all (Tutti i Piani)', 'vertical (Vista 3D Piani)', '0', '1', '2'], `features`: ['Auto-fit immediato del viewport', 'Ascensori sinaptici evidenziati', 'Zero black-screen filtering']
 - **Dynamic Island & Living/Dying Flame** (`streaksup-dynamic-island-ui`)
   - **Tags:** `#dynamic-island` `#live-activity` `#countdown-timer` `#dying-flame`
   - **Sintesi:** Esperienza Live Activity e Dynamic Island con timer conto alla rovescia a mezzanotte, pulsante 'Fatto' rapido e fiamma vivente che si affievolisce con l'avvicinarsi della scadenza.
-  - **Dettagli:** `regions`: ['compactLeading', 'compactTrailing', 'minimal', 'expanded'], `lock_screen_features`: ['Timer a scomparsa', 'Flame Orb a intensità dinamica', 'Badge streak sicuro', 'Pulsante in-place']
+  - **Dettagli:** `raw`: `regions`: ['compactLeading', 'compactTrailing', 'minimal', 'expanded'], `lock_screen_features`: ['Timer a scomparsa', 'Flame Orb a intensità dinamica', 'Badge streak sicuro', 'Pulsante in-place']
 - **Frontend Web Tree Explorer (HUD Button)** (`node-web-tree-explorer`)
   - **Tags:** `#mutation-import` `#presentation-layer` `#ui-component`
   - **Sintesi:** Frontend Web Tree Explorer (HUD Button) (Layer: PRESENTATION_LAYER, Tipo: UI_COMPONENT)
-  - **Dettagli:** `id`: node_web_tree_explorer, `label`: Frontend Web Tree Explorer (HUD Button), `type`: UI_COMPONENT, `layer`: PRESENTATION_LAYER
+  - **Dettagli:** `raw`: `id`: node_web_tree_explorer, `label`: Frontend Web Tree Explorer (HUD Button), `type`: UI_COMPONENT, `layer`: PRESENTATION_LAYER
 - **Glassmorphism Dark Surface Component** (`ui-glass-dark-theme`)
   - **Tags:** `#glassmorphism` `#cards` `#ui-kit`
   - **Sintesi:** Componente contenitore a strati con effetto vetro e bordo ad alta definizione visiva.
-  - **Dettagli:** `backdrop_filter`: blur(16px) saturate(180%), `background`: rgba(15, 23, 42, 0.75), `border`: 1px solid rgba(0, 210, 255, 0.15)
+  - **Dettagli:** `raw`: `backdrop_filter`: blur(16px) saturate(180%), `background`: rgba(15, 23, 42, 0.75), `border`: 1px solid rgba(0, 210, 255, 0.15)
 - **Multi-Format WidgetKit Suite** (`streaksup-widget-suite-ui`)
   - **Tags:** `#widgets` `#lock-screen-complications` `#heatmap` `#daily-progress`
   - **Sintesi:** Suite di 4 widget (Single Habit Focus, Today Dashboard, Daily Progress, Weekly Heatmap) e relative complicanze Lock Screen (circular, rectangular, inline).
-  - **Dettagli:** `widgets`: ['SingleHabitFocusWidget (small, medium, lock screen)', 'TodayHabitsWidget (medium, large)', 'DailyProgressWidget (small, medium)', 'WeeklyHeatmapWidget (medium, large)']
+  - **Dettagli:** `raw`: `widgets`: ['SingleHabitFocusWidget (small, medium, lock screen)', 'TodayHabitsWidget (medium, large)', 'DailyProgressWidget (small, medium)', 'WeeklyHeatmapWidget (medium, large)']
 - **Redesign Pezzi Scacchiera Duolingo Vettoriali** (`design-duolingo-chess-pieces`)
   - **Tags:** `#scacchi` `#duolingo` `#swiftui` `#design-system` `#vettoriale`
   - **Sintesi:** Decisione di redesign dei pezzi degli scacchi con vettori SwiftUI parametrici 2D Duolingo puliti e gerarchia visiva proporzionata.
 - **Telegram Bot Interface (Mobile I/O)** (`node-telegram-bot-interface`)
   - **Tags:** `#mutation-import` `#io-layer` `#perceptual-interface`
   - **Sintesi:** Telegram Bot Interface (Mobile I/O) (Layer: IO_LAYER, Tipo: PERCEPTUAL_INTERFACE)
-  - **Dettagli:** `id`: node_telegram_bot_interface, `label`: Telegram Bot Interface (Mobile I/O), `type`: PERCEPTUAL_INTERFACE, `layer`: IO_LAYER
+  - **Dettagli:** `raw`: `id`: node_telegram_bot_interface, `label`: Telegram Bot Interface (Mobile I/O), `type`: PERCEPTUAL_INTERFACE, `layer`: IO_LAYER
 
 ### [Macro-Label: `UI_DESIGN`]
 - **Restyling Frontend Dark-Tech (Graphify & Caveman Aesthetic)** (`feat-dark-tech-frontend-restyle`)
   - **Tags:** `#frontend` `#dark-tech` `#graphify` `#caveman` `#bento-ui` `#ide-topbar` `#cmd-k`
   - **Sintesi:** Restyling estetico completo del frontend in stile ingegneristico d'élite: Topbar IDE unificata a tutta larghezza con HUD sinaptico, canvas con dot-matrix grid, ispettore Bento con badge epistemici e ricerca ⌘K, conservando il 100% delle funzionalità.
-  - **Dettagli:** `theme`: dark-tech-void, `inspired_by`: graphify.com & caveman.so, `font`: JetBrains Mono & Inter, `topbar`: unified-ide-bar
+  - **Dettagli:** `raw`: `theme`: dark-tech-void, `inspired_by`: graphify.com & caveman.so, `font`: JetBrains Mono & Inter, `topbar`: unified-ide-bar
 
 ### [Macro-Label: `UX_FLOW`]
 - **Alertless App Icon Switcher Flow** (`streaksup-alertless-icon-ux`)
   - **Tags:** `#method-swizzling` `#app-icon` `#seamless-ux` `#toast-celebration`
   - **Sintesi:** Flusso di cambio icona privo di frizione che silenzia l'alert nativo Apple tramite Method Swizzling su UIViewController e mostra un toast di celebrazione personalizzato.
-  - **Dettagli:** `swizzling_target`: UIViewController.present(_:animated:completion:), `suppressor`: IconChangeAlertSuppressor, `feedback_view`: AppIconChangedToastView
+  - **Dettagli:** `raw`: `swizzling_target`: UIViewController.present(_:animated:completion:), `suppressor`: IconChangeAlertSuppressor, `feedback_view`: AppIconChangedToastView
 - **AuleStudio 3-Step Booking UX Flow** (`student-booking-ux-flow`)
   - **Tags:** `#ux-flow` `#frictionless` `#3-steps` `#qr-code` `#quick-reserve`
   - **Sintesi:** Flusso di prenotazione a zero attrito: 1. Scegli Polo/Aula -> 2. Seleziona Fascia Oraria -> 3. Conferma e genera pass QR d ingresso.
-  - **Dettagli:** `step_1`: Cerca aula per vicinanza e posti liberi, `step_2`: Seleziona postazione e orario, `step_3`: Ricevi badge QR istantaneo
+  - **Dettagli:** `raw`: `step_1`: Cerca aula per vicinanza e posti liberi, `step_2`: Seleziona postazione e orario, `step_3`: Ricevi badge QR istantaneo
 - **Frictionless Thumb-Zone Flow** (`ux-frictionless-flow`)
   - **Tags:** `#ux` `#ergonomics` `#mobile-first` `#micro-interactions`
   - **Sintesi:** Esperienza d'uso priva di ostacoli con azioni chiave aggregate nell'area di raggiungibilità del pollice (Thumb Zone 44x44pt).
-  - **Dettagli:** `animation_duration`: 150ms-250ms, `easing`: cubic-bezier(0.4, 0.0, 0.2, 1), `min_touch_target`: 44x44pt
+  - **Dettagli:** `raw`: `animation_duration`: 150ms-250ms, `easing`: cubic-bezier(0.4, 0.0, 0.2, 1), `min_touch_target`: 44x44pt
 - **UX ad Ergonomia Immediata (Thumb Zone)** (`ux-frictionless`)
   - **Tags:** `#ux` `#mobile-first` `#ergonomics` `#feedback`
   - **Sintesi:** Interfacce prive di frizione con controlli primari nella zona del pollice e transizioni ultra-reattive (150-250ms).
-  - **Dettagli:** `touch_target_min`: 44x44pt, `animation_easing`: cubic-bezier(0.4, 0.0, 0.2, 1), `onboarding_style`: Zero-friction, affordance-guided
+  - **Dettagli:** `raw`: `touch_target_min`: 44x44pt, `animation_easing`: cubic-bezier(0.4, 0.0, 0.2, 1), `onboarding_style`: Zero-friction, affordance-guided
 
 
 ## CONNESSIONI TRASVERSALI (Corpo Calloso & Struttura)
@@ -1614,6 +1580,7 @@ Grazie al “Universal Knowledge Graph” a cui ho accesso in tempo reale, posso
 - (`user-intent-creazione-jarvis-voice-assistant`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-integrazione-openjarvis-stanford`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1675,6 +1642,7 @@ Grazie al “Universal Knowledge Graph” a cui ho accesso in tempo reale, posso
 - (`episode-20260829-completamento-rilascio-jarvis-desktop`) --[RECORDS_INTENT]--> (`user-intent-creazione-repo-jarvis-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-debrief-assessment-gemini`) --[RECORDS_INTENT]--> (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) *(Corpo Calloso)*
 - (`episode-20260829-definizione-piano-jarvis-desktop`) --[RECORDS_INTENT]--> (`user-intent-creazione-repo-jarvis-desktop`) *(Corpo Calloso)*
+- (`episode-20260829-esplorazione-paradigmi-interfaccia-grafo`) --[RECORDS_INTENT]--> (`user-intent-esplorazione-paradigmi-visuali-grafo`) *(Corpo Calloso)*
 - (`episode-20260829-integrazione-openjarvis-desktop`) --[RECORDS_INTENT]--> (`user-intent-integrazione-openjarvis-stanford`) *(Corpo Calloso)*
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_INTENT]--> (`user-intent-creazione-jarvis-voice-assistant`) *(Corpo Calloso)*
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[RECORDS_INTENT]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) *(Corpo Calloso)*
@@ -1704,6 +1672,7 @@ Grazie al “Universal Knowledge Graph” a cui ho accesso in tempo reale, posso
 - (`episode-20260829-completamento-rilascio-jarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-rilascio-jarvis-desktop-completato`) *(Corpo Calloso)*
 - (`episode-20260829-debrief-assessment-gemini`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) *(Corpo Calloso)*
 - (`episode-20260829-definizione-piano-jarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-piano-implementazione-jarvis-desktop`) *(Corpo Calloso)*
+- (`episode-20260829-esplorazione-paradigmi-interfaccia-grafo`) --[RECORDS_REASONING]--> (`reasoning-progettazione-5-paradigmi-visuali-connettoma`) *(Corpo Calloso)*
 - (`episode-20260829-integrazione-openjarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-openjarvis-collegamento-connettoma`) *(Corpo Calloso)*
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_REASONING]--> (`reasoning-architettura-jarvis-zero-cost`) *(Corpo Calloso)*
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[RECORDS_REASONING]--> (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) *(Corpo Calloso)*
@@ -2033,6 +2002,7 @@ Grazie al “Universal Knowledge Graph” a cui ho accesso in tempo reale, posso
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[FULFILLS]--> (`user-intent-ottimizzazione-mobile-web-8880`)
 - (`reasoning-piano-implementazione-jarvis-desktop`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[FULFILLS]--> (`user-intent-potenziamento-skill-e-ril-8338`)
+- (`reasoning-progettazione-5-paradigmi-visuali-connettoma`) --[FULFILLS]--> (`user-intent-esplorazione-paradigmi-visuali-grafo`)
 - (`reasoning-quali-sono-i-progetti-principali-di-8169`) --[FULFILLS]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`)
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[FULFILLS]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[FULFILLS]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
@@ -2064,6 +2034,7 @@ Grazie al “Universal Knowledge Graph” a cui ho accesso in tempo reale, posso
 - (`episode-20260829-completamento-rilascio-jarvis-desktop`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-debrief-assessment-gemini`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-definizione-piano-jarvis-desktop`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-20260829-esplorazione-paradigmi-interfaccia-grafo`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-integrazione-openjarvis-desktop`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -2113,6 +2084,7 @@ Grazie al “Universal Knowledge Graph” a cui ho accesso in tempo reale, posso
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-progettazione-5-paradigmi-visuali-connettoma`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
@@ -2167,6 +2139,7 @@ Grazie al “Universal Knowledge Graph” a cui ho accesso in tempo reale, posso
 - (`user-intent-creazione-jarvis-voice-assistant`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-repo-jarvis-desktop`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-integrazione-openjarvis-stanford`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
