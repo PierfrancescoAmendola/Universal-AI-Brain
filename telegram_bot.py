@@ -57,9 +57,10 @@ def get_main_keyboard() -> Dict[str, Any]:
     """Returns the quick-access keyboard for Telegram mobile clients."""
     return {
         "keyboard": [
-            [{"text": "📋 Menu Comandi"}, {"text": "📊 Statistiche Cervello"}],
-            [{"text": "💻 Terminale Log"}, {"text": "🌳 Albero Gerarchico"}],
-            [{"text": "📥 Posta JSON AI"}, {"text": "🔍 Ricerca Progetti"}]
+            [{"text": "📋 Menu Comandi"}, {"text": "📋 Copia Prompt AI"}],
+            [{"text": "📊 Statistiche Cervello"}, {"text": "🌳 Albero Gerarchico"}],
+            [{"text": "💻 Terminale Log"}, {"text": "📥 Posta JSON AI"}],
+            [{"text": "🔍 Ricerca Progetti"}]
         ],
         "resize_keyboard": True,
         "persistent": True
@@ -299,6 +300,8 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
             f"• <code>/stats</code> - Metriche globali (nodi, sinapsi, ponti)\n"
             f"• <code>/path &lt;id1&gt; &lt;id2&gt;</code> - Cammino minimo tra concetti\n"
             f"• <code>/terminal</code> - Console e log delle ultime attività/notifiche\n\n"
+            f"<b>📋 Integrazione AI Esterne:</b>\n"
+            f"• <code>/prompt</code> - Copia istantanea del Master Prompt per ChatGPT/Claude\n\n"
             f"<b>📥 Inserimento & Ingestione:</b>\n"
             f"• <b>Incolla JSON di ChatGPT/Claude</b> - Riconoscimento e salvataggio automatico!\n"
             f"• <code>/post &lt;JSON&gt;</code> - Inserimento esplicito blocco JSON\n"
@@ -306,6 +309,97 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
             f"• <b>Messaggio libero</b> - Salva all'istante una nuova memoria\n\n"
             f"<b>🌐 Web Dashboard:</b>\n"
             f"https://universal-ai-brain.onrender.com"
+        )
+
+    # 2.1 /prompt - Copia rapida negli appunti per AI esterne
+    if cmd.lower() in ("/prompt", "prompt", "📋 copia prompt ai", "copia prompt", "prompt ai", "📋 copia prompt"):
+        raw_prompt = (
+            "Stai operando come assistente cognitivo di Pierfrancesco Amendola (Universal AI Brain).\n\n"
+            "REGOLA DI LINGUA (ITALIANO):\n"
+            "Tutte le label, i summary, i tag e i details devono essere sempre scritti in Italiano (termini tecnici internazionali in Inglese). Nessun testo o carattere in cinese/CJK.\n\n"
+            "CONNETTORE KNOWLEDGE GRAPH:\n"
+            "Consulta il cervello live su: https://universal-ai-brain.onrender.com/brain.md\n\n"
+            "PROTOCOLLO COGNITIVO A 2 FASI:\n"
+            "1. FASE 1 (Pre-Response): Tieni conto delle preferenze di Pierfrancesco, dei progetti attivi (Universal Brain, Royal Gambit Chess, StreaksUp, AuleStudio, CareTrack) e dello storico.\n"
+            "2. FASE 2 (Post-Response - Ingestion Obbligatoria):\n"
+            "Al termine di OGNI risposta, DEVI INCLUDERE in calce al messaggio il seguente blocco JSON formattato per aggiornare la memoria:\n\n"
+            "```json\n"
+            "{\n"
+            "  \"nodes\": [\n"
+            "    {\n"
+            "      \"id\": \"user-intent-<kebab-case>\",\n"
+            "      \"label\": \"<Titolo Intento Utente>\",\n"
+            "      \"hemisphere\": \"LEFT\",\n"
+            "      \"primary_label\": \"USER_INTENT\",\n"
+            "      \"category\": \"USER_INTENT\",\n"
+            "      \"tags\": [\"tag1\", \"tag2\"],\n"
+            "      \"summary\": \"<Sintesi obiettivo>\",\n"
+            "      \"details\": {\n"
+            "        \"user_prompt\": \"<Prompt originario>\",\n"
+            "        \"context\": \"<Contesto>\"\n"
+            "      },\n"
+            "      \"confidence\": \"EXTRACTED\",\n"
+            "      \"parent_graph_id\": \"universal-ai-brain\",\n"
+            "      \"layer_level\": 1\n"
+            "    },\n"
+            "    {\n"
+            "      \"id\": \"reasoning-<kebab-case>\",\n"
+            "      \"label\": \"<Titolo Ragionamento>\",\n"
+            "      \"hemisphere\": \"LEFT\",\n"
+            "      \"primary_label\": \"AI_REASONING\",\n"
+            "      \"category\": \"AI_REASONING\",\n"
+            "      \"tags\": [\"architettura\"],\n"
+            "      \"summary\": \"<Sintesi decisioni e soluzioni>\",\n"
+            "      \"details\": {\n"
+            "        \"model\": \"<Nome Modello AI>\",\n"
+            "        \"responses_given\": \"<Sintesi spiegazioni>\",\n"
+            "        \"actions_taken\": [\"Azione 1\"],\n"
+            "        \"outcome\": \"<Risultato>\"\n"
+            "      },\n"
+            "      \"confidence\": \"INFERRED\",\n"
+            "      \"parent_graph_id\": \"universal-ai-brain\",\n"
+            "      \"layer_level\": 1\n"
+            "    },\n"
+            "    {\n"
+            "      \"id\": \"episode-<kebab-case>\",\n"
+            "      \"label\": \"<Titolo Episodio>\",\n"
+            "      \"hemisphere\": \"RIGHT\",\n"
+            "      \"primary_label\": \"CONVERSATION_EPISODE\",\n"
+            "      \"category\": \"CONVERSATION_EPISODE\",\n"
+            "      \"tags\": [\"chat\", \"continuità\"],\n"
+            "      \"summary\": \"<Sintesi conversazione>\",\n"
+            "      \"details\": {\n"
+            "        \"participants\": [\"Pierfrancesco Amendola\", \"<Nome Modello AI>\"],\n"
+            "        \"topic\": \"<Argomento>\",\n"
+            "        \"key_takeaways\": \"<Lezioni apprese>\",\n"
+            "        \"pending_tasks\": \"<Task futuri>\"\n"
+            "      },\n"
+            "      \"confidence\": \"EXTRACTED\",\n"
+            "      \"parent_graph_id\": \"root\",\n"
+            "      \"layer_level\": 1\n"
+            "    }\n"
+            "  ],\n"
+            "  \"edges\": [\n"
+            "    {\"source\": \"user-intent-<kebab-case>\", \"target\": \"person-pierfrancesco\", \"relation\": \"EXPRESSED_BY\", \"confidence\": \"EXTRACTED\"},\n"
+            "    {\"source\": \"user-intent-<kebab-case>\", \"target\": \"universal-ai-brain\", \"relation\": \"TARGETS_PROJECT\", \"confidence\": \"EXTRACTED\"},\n"
+            "    {\"source\": \"reasoning-<kebab-case>\", \"target\": \"user-intent-<kebab-case>\", \"relation\": \"FULFILLS\", \"confidence\": \"INFERRED\"},\n"
+            "    {\"source\": \"reasoning-<kebab-case>\", \"target\": \"universal-ai-brain\", \"relation\": \"OPTIMIZES\", \"confidence\": \"INFERRED\"},\n"
+            "    {\"source\": \"episode-<kebab-case>\", \"target\": \"person-pierfrancesco\", \"relation\": \"INTERACTION_WITH\", \"confidence\": \"EXTRACTED\"},\n"
+            "    {\"source\": \"episode-<kebab-case>\", \"target\": \"user-intent-<kebab-case>\", \"relation\": \"RECORDS_INTENT\", \"confidence\": \"EXTRACTED\"},\n"
+            "    {\"source\": \"episode-<kebab-case>\", \"target\": \"reasoning-<kebab-case>\", \"relation\": \"RECORDS_REASONING\", \"confidence\": \"EXTRACTED\"}\n"
+            "  ]\n"
+            "}\n"
+            "```"
+        )
+        escaped_prompt = raw_prompt.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        return (
+            "📋 <b>MASTER SYSTEM PROMPT PER AI ONLINE</b>\n"
+            "<i>(ChatGPT, Claude.ai, Gemini Web, DeepSeek, Cursor)</i>\n"
+            "────────────────────────\n"
+            "👇 <b>Tocca il riquadro qui sotto per copiare il prompt negli appunti:</b>\n\n"
+            f"<pre><code class=\"language-markdown\">{escaped_prompt}</code></pre>\n\n"
+            "────────────────────────\n"
+            "💡 <i>Incolla questo prompt all'inizio della chat su ChatGPT/Claude. Quando l'AI risponde con il blocco JSON a fine chat, incollalo semplicemente qui su Telegram per salvarlo nel cervello!</i>"
         )
 
     # 3. /terminal or /logs
