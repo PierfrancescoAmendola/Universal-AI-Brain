@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 12:46:51 UTC | **Nodi Totali:** 214 (SX: 135 · DX: 79) | **Sinapsi:** 595
+> **Data Generazione:** 2026-08-29 12:57:45 UTC | **Nodi Totali:** 216 (SX: 137 · DX: 79) | **Sinapsi:** 599
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -141,6 +141,10 @@
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render.
   - **Dettagli:** `epistemic_rubric`: {'extracted': ["L'utente valuta l'implementazione di un bot Telegram per interagire con il proprio Knowledge Graph", 'Richiesta di valutazione su utilità, gratuità e difficoltà implementativa'], 'inferred': ["L'integrazione riduce drasticamente l'attrito di inserimento dati (write) e consultazione (read)", "L'architettura Telegram agisce come livello di Input/Output percettivo del cervello artificiale"], 'ambiguous': []}, `architectural_synthesis`: Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render., `model`: LLM Assistant (Historical Session)
+- **Design Pedagogico Ibrido (Busuu Grammar + Duolingo Micro-Drill)** (`reasoning-hybrid-pedagogy-engine`)
+  - **Tags:** `#pedagogical-engine` `#cloze-test` `#word-bank` `#cefr-schema` `#sqlite-schema`
+  - **Sintesi:** Progettazione di un motore a 6 tipologie di esercizio con schede grammaticali preparatorie (stile Busuu) e micro-lezioni a bolle interattive (stile Duolingo) supportate da SQLite e batch generation da corpora di frequenza.
+  - **Dettagli:** `exercise_types`: ['Word Bank', 'Cloze Test', 'Matching Pairs', 'Audio Listen', 'Active Recall', 'Grammar Spotlight'], `penalty_rule`: Re-queue on failure without blocking energy, `model`: AI Assistant
 - **Diagnosi Discrepanza Nodi e Protocollo Deploy Render** (`reasoning-diagnosi-discrepanza-deploy-render`)
   - **Tags:** `#render` `#deploy` `#git-push` `#wal-checkpoint` `#sync`
   - **Sintesi:** Identificati 4 nodi locali non committati (Royal Gambit Chess / Duolingo Chess). Eseguito WAL checkpoint, aggiornato brain.md e push Git per triggerare auto-deploy Render.
@@ -533,6 +537,10 @@
   - **Tags:** `#language-learning` `#portuguese` `#german` `#personal-software` `#srs`
   - **Sintesi:** L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
   - **Dettagli:** `target_languages`: ['Portoghese', 'Tedesco'], `motivation`: Superamento paywall/energia di Duolingo, `scope`: Uso esclusivo personale e privato, `user_prompt`: L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
+- **Definizione Architettura & Gamification App Personale Lingue** (`intent-personal-language-app-structure`)
+  - **Tags:** `#duolingo-like` `#busuu-like` `#pedagogy` `#curriculum-design` `#gamification`
+  - **Sintesi:** L'utente richiede consigli approfonditi sulla struttura funzionale e pedagogica di un'app personale (stile Duolingo/Busuu) con flow a lezioni, zero paywall e nessun blocco energia.
+  - **Dettagli:** `benchmark_apps`: ['Duolingo', 'Busuu'], `key_requirements`: ['No energy limitations', 'Free/Local', 'Structured CEFR progression'], `user_prompt`: L'utente richiede consigli approfonditi sulla struttura funzionale e pedagogica di un'app personale (stile Duolingo/Busuu) con flow a lezioni, zero paywall e nessun blocco energia.
 - **Intento Utente: Collegare Cervello via MCP e Skill a Claude, Gemini e ChatGPT** (`user-intent-connect-gemini-claude-chatgpt-mcp`)
   - **Tags:** `#user-intent` `#mcp-integration` `#multi-model-sync`
   - **Sintesi:** Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
@@ -1011,6 +1019,7 @@
 - (`concept-llm-indirect-injection-safeguard`) --[BELONGS_TO_EPISODE]--> (`ep-20260827-render-cloud-vs-local-hybrid-architecture`) *(Corpo Calloso)*
 - (`goal-multi-ai-shared-context-persistence`) --[BELONGS_TO_EPISODE]--> (`episode-2026-08-27-universal-context-definition`) *(Corpo Calloso)*
 - (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[BELONGS_TO_EPISODE]--> (`ep-20260827-render-cloud-vs-local-hybrid-architecture`) *(Corpo Calloso)*
+- (`intent-personal-language-app-structure`) --[BELONGS_TO_EPISODE]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`intent-personal-language-learning-app`) --[BELONGS_TO_EPISODE]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`reasoning-language-app-architecture`) --[BELONGS_TO_EPISODE]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
@@ -1068,6 +1077,7 @@
 - (`goal-multi-ai-shared-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`idea-hierarchical-weighted-trees`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`identity-cs-researcher`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-engineering`) *(Corpo Calloso)*
+- (`intent-personal-language-app-structure`) --[CORPUS_CALLOSUM_LINK]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`intent-personal-language-learning-app`) --[CORPUS_CALLOSUM_LINK]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`lesson-stoic-resilience`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
 - (`memory-perfectionism-tension`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
@@ -1088,6 +1098,7 @@
 - (`proj-streaksup-app`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
 - (`proj-tombolawifi`) --[CORPUS_CALLOSUM_LINK]--> (`rel-napoli-culture`) *(Corpo Calloso)*
+- (`reasoning-hybrid-pedagogy-engine`) --[CORPUS_CALLOSUM_LINK]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`reasoning-language-app-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`rel-napoli-culture`) --[CORPUS_CALLOSUM_LINK]--> (`proj-napolilive`) *(Corpo Calloso)*
 - (`rel-napoli-culture`) --[CORPUS_CALLOSUM_LINK]--> (`proj-tombolawifi`) *(Corpo Calloso)*
@@ -1554,6 +1565,7 @@
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[RESPONDS_TO_INTENT]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`person-pierfrancesco`) --[ROOTED_IN]--> (`rel-napoli-culture`)
 - (`project-royal-gambit-chess`) --[SATISFIES]--> (`user-intent-duolingo-chess-preference`)
+- (`reasoning-hybrid-pedagogy-engine`) --[SOLVES]--> (`intent-personal-language-app-structure`)
 - (`reasoning-language-app-architecture`) --[SOLVES]--> (`intent-personal-language-learning-app`)
 - (`person-pierfrancesco`) --[STRIVES_FOR]--> (`val-impact-utility`)
 - (`identity-cs-researcher`) --[STUDIED]--> (`coursework-cs-federico2`)
