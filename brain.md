@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 13:08:01 UTC | **Nodi Totali:** 228 (SX: 145 · DX: 83) | **Sinapsi:** 627
+> **Data Generazione:** 2026-08-29 13:10:19 UTC | **Nodi Totali:** 231 (SX: 147 · DX: 84) | **Sinapsi:** 634
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -169,6 +169,10 @@
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code cla
   - **Dettagli:** `model`: Gemini 3.7 Flash, `responses_given`: Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code class="language-markdown">...</code></pre>, permettendo all'utente di toccare il riquadro sullo smartphone per copiare istantaneamente il testo negli appunti di iOS/Android., `actions_taken`: ['Aggiunto pulsante "📋 Copia Prompt AI" nella tastiera persistente di get_main_keyboard() in telegram_bot.py', 'Implementato handler per /prompt, prompt e relative varianti in process_telegram_message()', 'Formattato il Master System Prompt con escape HTML dentro <pre><code class="language-markdown"> per 1-tap copy', 'Aggiornato il menu comandi /help con la nuova sezione Integrazione AI Esterne', 'Testata esecuzione e pushato su origin/main per aggiornare il bot live su Render'], `outcome`: Comando /prompt operativo su Telegram con supporto copia al tocco su smartphone.
+- **Ragionamento: Occultamento Pulsanti Mobile su Browser ** (`reasoning-occultamento-pulsanti-mob-9019`)
+  - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
+  - **Sintesi:** Risolto problema cache e visualizzazione pulsanti mobile su browser desktop. Impostato display:none !important incondizionato nel CSS e inline sull'HTML della mobile-nav-bar. Aggiornato query string c
+  - **Dettagli:** `model`: Gemini 3.7 Flash, `responses_given`: Risolto problema cache e visualizzazione pulsanti mobile su browser desktop. Impostato display:none !important incondizionato nel CSS e inline sull'HTML della mobile-nav-bar. Aggiornato query string cache-buster (v=20260829_1510) per CSS e JS., `actions_taken`: ['Impostato display:none !important globale su .mobile-nav-bar in static/style.css', 'Aggiunto style="display:none;" inline su nav#mobile-nav-bar in static/index.html', 'Aggiornato cache-buster CSS/JS a v=20260829_1510 in index.html', 'Commit e push su origin/main per deploy immediato'], `outcome`: Desktop ripulito al 100%, pulsanti mobile attivi esclusivamente su smartphone.
 - **Ragionamento: Ottimizzazione Mobile Web Dashboard Univ** (`reasoning-ottimizzazione-mobile-web-8880`)
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Risolto problema layout mobile su schermi <= 900px. Aggiunto meta tag viewport con viewport-fit=cover e user-scalable=no. Implementata tab bar inferiore mobile (🌐 Grafo, 🔍 Ispettore, 🏢 Palazzo, 🌳 Albe
@@ -633,6 +637,10 @@
   - **Tags:** `#user-intent` `#chat` `#comando-prompt-copia-rapida-per-telegram-bot`
   - **Sintesi:** Intento espresso da Pierfrancesco: Comando /prompt Copia Rapida per Telegram Bot
   - **Dettagli:** `user_prompt`: /universal-brain aggiungi ai comandi su telegram la possibilità che richiamato il comando /prompt si copi sul telefono il prompt che deve poi incollare l'utente nei vari software ai online chiaro??, `context`: Sessione su Comando /prompt Copia Rapida per Telegram Bot
+- **Intento: Occultamento Pulsanti Mobile su Browser ** (`user-intent-occultamento-pulsanti-mob-9019`)
+  - **Tags:** `#user-intent` `#chat` `#occultamento-pulsanti-mobile-su-browser-deskt`
+  - **Sintesi:** Intento espresso da Pierfrancesco: Occultamento Pulsanti Mobile su Browser Desktop
+  - **Dettagli:** `user_prompt`: /caveman wenyan-ultra. /graphify /universal-brain devi modificare una cosa. quando apro il sito dal web ora in basso a sinistra mi escono tutti dei pulsanti in bianco, non ci devono essere. quei pulsanti sono grafo, ispettore, albero, ecc..., `context`: Sessione su Occultamento Pulsanti Mobile su Browser Desktop
 - **Intento: Ottimizzazione Mobile Web Dashboard Univ** (`user-intent-ottimizzazione-mobile-web-8880`)
   - **Tags:** `#user-intent` `#chat` `#ottimizzazione-mobile-web-dashboard-universal`
   - **Sintesi:** Intento espresso da Pierfrancesco: Ottimizzazione Mobile Web Dashboard Universal Brain
@@ -752,6 +760,10 @@
   - **Tags:** `#conversation-episode` `#core-mission` `#context-saturation` `#gemini-session`
   - **Sintesi:** Formalizzazione della ragion d'essere del cervello artificiale: superare il reset della memoria per saturazione delle chat tramite grafo semantico unificato.
   - **Dettagli:** `date`: 2026-08-27, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Infinite Context & Anti-Amnesia Philosophy
+- **Episodio: Occultamento Pulsanti Mobile su Browser ** (`episode-occultamento-pulsanti-mob-9019`)
+  - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
+  - **Sintesi:** Episodio di dialogo e lavoro su Occultamento Pulsanti Mobile su Browser Desktop
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Occultamento Pulsanti Mobile su Browser Desktop, `key_takeaways`: L'uso di display:none inline previene FOUC (Flash of Unstyled Content) dovuto alla cache del browser., `pending_tasks`: Nessun task pendente.
 - **Episodio: Ottimizzazione Mobile Web Dashboard Univ** (`episode-ottimizzazione-mobile-web-8880`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Ottimizzazione Mobile Web Dashboard Universal Brain
@@ -1230,6 +1242,7 @@
 - (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allineamento-nodi-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-valutazione-progetto-language-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1277,11 +1290,13 @@
 - (`universal-ai-brain`) --[RECORDED_EPISODE]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
+- (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_INTENT]--> (`user-intent-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
+- (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_REASONING]--> (`reasoning-analisi-fattibilita-language-app`) *(Corpo Calloso)*
@@ -1564,6 +1579,7 @@
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[FULFILLS]--> (`user-intent-comando-prompt-copia-rapi-8585`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
+- (`reasoning-occultamento-pulsanti-mob-9019`) --[FULFILLS]--> (`user-intent-occultamento-pulsanti-mob-9019`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[FULFILLS]--> (`user-intent-ottimizzazione-mobile-web-8880`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[FULFILLS]--> (`user-intent-potenziamento-skill-e-ril-8338`)
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-taxonomy-classification`)
@@ -1588,6 +1604,7 @@
 - (`universal-ai-brain`) --[INTEGRATES_AUDIT]--> (`graphify-knowledge-engine`)
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ottimizzazione-mobile-web-8880`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-skill-e-ril-8338`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-valutazione-language-app-antigravity`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -1605,6 +1622,7 @@
 - (`reasoning-analisi-fattibilita-language-app`) --[OPTIMIZES]--> (`reasoning-language-app-architecture`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`)
@@ -1645,6 +1663,7 @@
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
 - (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-occultamento-pulsanti-mob-9019`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-zero-cost-graphrag`) --[TRIGGERS]--> (`ai-reasoning-hybrid-search-mcp`)
