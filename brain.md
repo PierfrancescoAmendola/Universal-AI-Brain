@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 19:37:35 UTC | **Nodi Restituiti:** 323 (SX: 206 · DX: 117) | **Sinapsi Restituite:** 835
-> **Consistenza Reale Connettoma:** 323 Nodi Totali nel Database | 835 Sinapsi Totali
+> **Data Generazione:** 2026-08-29 19:47:55 UTC | **Nodi Restituiti:** 326 (SX: 208 · DX: 118) | **Sinapsi Restituite:** 842
+> **Consistenza Reale Connettoma:** 326 Nodi Totali nel Database | 842 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -229,6 +229,10 @@
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code cla
   - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `responses_given`: Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code class="language-markdown">...</code></pre>, permettendo all'utente di toccare il riquadro sullo smartphone per copiare istantaneamente il testo negli appunti di iOS/Android., `actions_taken`: ['Aggiunto pulsante "📋 Copia Prompt AI" nella tastiera persistente di get_main_keyboard() in telegram_bot.py', 'Implementato handler per /prompt, prompt e relative varianti in process_telegram_message()', 'Formattato il Master System Prompt con escape HTML dentro <pre><code class="language-markdown"> per 1-tap copy', 'Aggiornato il menu comandi /help con la nuova sezione Integrazione AI Esterne', 'Testata esecuzione e pushato su origin/main per aggiornare il bot live su Render'], `outcome`: Comando /prompt operativo su Telegram con supporto copia al tocco su smartphone.
+- **Ragionamento: Nuove rappresentazioni visuali del conne** (`reasoning-nuove-rappresentazioni-vi-2874`)
+  - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
+  - **Sintesi:** Recuperata la preferenza per un grafo stabile e privo di oscillazioni; creato un secondo artefatto interattivo con cinque viste deterministiche: due sfere, palazzo, matrice, radar bi-polare e territor
+  - **Dettagli:** `model`: AI Assistant, `responses_given`: Recuperata la preferenza per un grafo stabile e privo di oscillazioni; creato un secondo artefatto interattivo con cinque viste deterministiche: due sfere, palazzo, matrice, radar bi-polare e territori Voronoi., `actions_taken`: ['Elaborazione e risposta al prompt'], `outcome`: Completato con successo
 - **Ragionamento: Occultamento Pulsanti Mobile su Browser ** (`reasoning-occultamento-pulsanti-mob-9019`)
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Risolto problema cache e visualizzazione pulsanti mobile su browser desktop. Impostato display:none !important incondizionato nel CSS e inline sull'HTML della mobile-nav-bar. Aggiornato query string c
@@ -787,6 +791,10 @@
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Jarvis, ricordi quali sono gli emis...
   - **Dettagli:** `raw`: `user_prompt`: Jarvis, ricordi quali sono gli emisferi del mio connettoma e il loro scopo?, `channel`: JARVIS Voice Core
+- **Intento: Nuove rappresentazioni visuali del conne** (`user-intent-nuove-rappresentazioni-vi-2874`)
+  - **Tags:** `#user-intent` `#chat` `#nuove-rappresentazioni-visuali-del-connettoma`
+  - **Sintesi:** Intento espresso da Pierfrancesco: Nuove rappresentazioni visuali del connettoma
+  - **Dettagli:** `user_prompt`: Mostrami altre rappresentazioni per vedere il grafo., `context`: Sessione su Nuove rappresentazioni visuali del connettoma
 - **Intento: Occultamento Pulsanti Mobile su Browser ** (`user-intent-occultamento-pulsanti-mob-9019`)
   - **Tags:** `#user-intent` `#chat` `#occultamento-pulsanti-mobile-su-browser-deskt`
   - **Sintesi:** Intento espresso da Pierfrancesco: Occultamento Pulsanti Mobile su Browser Desktop
@@ -1078,6 +1086,10 @@
   - **Tags:** `#conversation-episode` `#core-mission` `#context-saturation` `#gemini-session`
   - **Sintesi:** Formalizzazione della ragion d'essere del cervello artificiale: superare il reset della memoria per saturazione delle chat tramite grafo semantico unificato.
   - **Dettagli:** `raw`: `date`: 2026-08-27, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Infinite Context & Anti-Amnesia Philosophy
+- **Episodio: Nuove rappresentazioni visuali del conne** (`episode-nuove-rappresentazioni-vi-2874`)
+  - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
+  - **Sintesi:** Episodio di dialogo e lavoro su Nuove rappresentazioni visuali del connettoma
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Nuove rappresentazioni visuali del connettoma, `key_takeaways`: Risoluzione e decisioni per Nuove rappresentazioni visuali del connettoma, `pending_tasks`: Nessun task pendente
 - **Episodio: Occultamento Pulsanti Mobile su Browser ** (`episode-occultamento-pulsanti-mob-9019`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Occultamento Pulsanti Mobile su Browser Desktop
@@ -1640,6 +1652,7 @@
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ma-tutto-falso-8462`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-nuove-rappresentazioni-vi-2874`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1722,6 +1735,7 @@
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_INTENT]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_INTENT]--> (`user-intent-ma-tutto-falso-8462`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_INTENT]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
+- (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_INTENT]--> (`user-intent-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_INTENT]--> (`user-intent-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
@@ -1754,6 +1768,7 @@
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_REASONING]--> (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_REASONING]--> (`reasoning-ma-tutto-falso-8462`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_REASONING]--> (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
+- (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_REASONING]--> (`reasoning-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
@@ -2075,6 +2090,7 @@
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[FULFILLS]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
 - (`reasoning-ma-tutto-falso-8462`) --[FULFILLS]--> (`user-intent-ma-tutto-falso-8462`)
 - (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) --[FULFILLS]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`)
+- (`reasoning-nuove-rappresentazioni-vi-2874`) --[FULFILLS]--> (`user-intent-nuove-rappresentazioni-vi-2874`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[FULFILLS]--> (`user-intent-occultamento-pulsanti-mob-9019`)
 - (`reasoning-openjarvis-collegamento-connettoma`) --[FULFILLS]--> (`user-intent-integrazione-openjarvis-stanford`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[FULFILLS]--> (`user-intent-ottimizzazione-mobile-web-8880`)
@@ -2132,6 +2148,7 @@
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ma-tutto-falso-8462`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-nuove-rappresentazioni-vi-2874`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ottimizzazione-mobile-web-8880`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-skill-e-ril-8338`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -2163,6 +2180,7 @@
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-nuove-rappresentazioni-vi-2874`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -2229,6 +2247,7 @@
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ma-tutto-falso-8462`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-nuove-rappresentazioni-vi-2874`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
