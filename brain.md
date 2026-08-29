@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 12:45:47 UTC | **Nodi Totali:** 211 (SX: 133 · DX: 78) | **Sinapsi:** 588
+> **Data Generazione:** 2026-08-29 12:46:51 UTC | **Nodi Totali:** 214 (SX: 135 · DX: 79) | **Sinapsi:** 595
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -81,6 +81,10 @@
   - **Tags:** `#anti-amnesia` `#graph-rag` `#context-externalization` `#metacognition` `#gemini`
   - **Sintesi:** Deduzione logica Gemini: disaccoppiare la memoria a lungo termine dal context buffer del modello trasforma l'AI da sessione stateless a intelligenza stateful continua.
   - **Dettagli:** `architecture_solution`: External Graph State (SQLite WAL + GraphRAG) vs Volatile Prompt Buffer, `benefits`: ["Nuova chat legge /brain.md e recupera istantaneamente l'intero stato pregresso", 'Nessun degrado qualitativo dovuto al context bloat', 'Indipendenza da limiti di contesto di specifici provider LLM'], `model`: Gemini 3.7 Flash
+- **Architettura Modulare PWA con FSRS e LLM Locale** (`reasoning-language-app-architecture`)
+  - **Tags:** `#architecture` `#fsrs` `#web-speech-api` `#sqlite` `#offline-first`
+  - **Sintesi:** Proposta di architettura basata su motore Spaced Repetition (FSRS/SM-2), Web Speech API per audio/TTS nativo e integrazione LLM per generazione esercizi e roleplay senza dipendenze esterne bloccanti.
+  - **Dettagli:** `core_components`: ['FSRS Engine', 'Local SQLite', 'Web Speech API', 'LLM Contextual Tutor'], `privacy_tier`: Local/Self-hosted, `model`: AI Assistant
 - **Deduzione AI: Architettura a Cluster Tematici Indipendenti** (`ai-reasoning-episodic-memory-architecture`)
   - **Tags:** `#ai-deduction` `#episodic-memory` `#semantic-clustering` `#knowledge-architecture`
   - **Sintesi:** Ragionamento architetturale: creare nodi CONVERSATION_EPISODE autonomi permette di archiviare chat eterogenee senza creare collegamenti artificiali.
@@ -525,6 +529,10 @@
   - **Tags:** `#render` `#sync` `#deploy` `#git` `#discrepanza`
   - **Sintesi:** Richiesta di spiegazione sulla discrepanza tra 208 nodi locali e 204 su Render e sincronizzazione del database cloud.
   - **Dettagli:** `user_prompt`: /universal-brain /graphify aggiorna i nodi su render. qui ne 208 su render 204, perchè??, `context`: Discrepanza di 4 nodi tra ambiente locale e istanza Render cloud dovuta a commit pendente.
+- **Costruzione App Personale Apprendimento Portoghese e Tedesco** (`intent-personal-language-learning-app`)
+  - **Tags:** `#language-learning` `#portuguese` `#german` `#personal-software` `#srs`
+  - **Sintesi:** L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
+  - **Dettagli:** `target_languages`: ['Portoghese', 'Tedesco'], `motivation`: Superamento paywall/energia di Duolingo, `scope`: Uso esclusivo personale e privato, `user_prompt`: L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
 - **Intento Utente: Collegare Cervello via MCP e Skill a Claude, Gemini e ChatGPT** (`user-intent-connect-gemini-claude-chatgpt-mcp`)
   - **Tags:** `#user-intent` `#mcp-integration` `#multi-model-sync`
   - **Sintesi:** Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
@@ -716,6 +724,10 @@
   - **Tags:** `#conversation-episode` `#graph-of-graphs` `#hypergraph` `#2026-08-27`
   - **Sintesi:** Analisi comparativa, pro, contro e fattibilità tecnica del modello di grafo a palazzo frattale su SQLite.
   - **Dettagli:** `topic`: Multi-Layer Graph-of-Graphs Design, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Progettazione Piattaforma Personale di Apprendimento Linguistico** (`episode-language-app-architecture`)
+  - **Tags:** `#language-learning` `#software-design` `#chat-session`
+  - **Sintesi:** Discussione architetturale incentrata sulla creazione di un'applicazione proprietaria e non divulgata per lo studio del portoghese e del tedesco senza restrizioni di utilizzo.
+  - **Dettagli:** `date`: 2026-08-29, `topic`: Architettura software per apprendimento linguistico autonomo, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 - **Release Commit 62e48df (Render Hot-Rebuild)** (`node-commit-62e48df`)
   - **Tags:** `#mutation-import` `#devops-timeline` `#deployment-event`
   - **Sintesi:** Release Commit 62e48df (Render Hot-Rebuild) (Layer: DEVOPS_TIMELINE, Tipo: DEPLOYMENT_EVENT)
@@ -999,6 +1011,8 @@
 - (`concept-llm-indirect-injection-safeguard`) --[BELONGS_TO_EPISODE]--> (`ep-20260827-render-cloud-vs-local-hybrid-architecture`) *(Corpo Calloso)*
 - (`goal-multi-ai-shared-context-persistence`) --[BELONGS_TO_EPISODE]--> (`episode-2026-08-27-universal-context-definition`) *(Corpo Calloso)*
 - (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[BELONGS_TO_EPISODE]--> (`ep-20260827-render-cloud-vs-local-hybrid-architecture`) *(Corpo Calloso)*
+- (`intent-personal-language-learning-app`) --[BELONGS_TO_EPISODE]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
+- (`reasoning-language-app-architecture`) --[BELONGS_TO_EPISODE]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
 - (`user-intent-provenance-model-tracking`) --[BELONGS_TO_EPISODE]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
 - (`proj-harmonyapp`) --[BRIDGES_TO]--> (`art-piano-composition`) *(Corpo Calloso)*
@@ -1045,6 +1059,8 @@
 - (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-cross-model-provenance-validation`) *(Corpo Calloso)*
 - (`episode-infinite-context-philosophy`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-infinite-context-persistence`) *(Corpo Calloso)*
 - (`episode-infinite-context-philosophy`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-infinite-context-architecture`) *(Corpo Calloso)*
+- (`episode-language-app-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`intent-personal-language-learning-app`) *(Corpo Calloso)*
+- (`episode-language-app-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`reasoning-language-app-architecture`) *(Corpo Calloso)*
 - (`feat-ai-json-importer`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`feat-copy-ai-prompt`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`feat-light-terminal`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1052,6 +1068,7 @@
 - (`goal-multi-ai-shared-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`idea-hierarchical-weighted-trees`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`identity-cs-researcher`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-engineering`) *(Corpo Calloso)*
+- (`intent-personal-language-learning-app`) --[CORPUS_CALLOSUM_LINK]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`lesson-stoic-resilience`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
 - (`memory-perfectionism-tension`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
 - (`mental-centaur-model`) --[CORPUS_CALLOSUM_LINK]--> (`art-creative-writing`) *(Corpo Calloso)*
@@ -1071,6 +1088,7 @@
 - (`proj-streaksup-app`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
 - (`proj-tombolawifi`) --[CORPUS_CALLOSUM_LINK]--> (`rel-napoli-culture`) *(Corpo Calloso)*
+- (`reasoning-language-app-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`rel-napoli-culture`) --[CORPUS_CALLOSUM_LINK]--> (`proj-napolilive`) *(Corpo Calloso)*
 - (`rel-napoli-culture`) --[CORPUS_CALLOSUM_LINK]--> (`proj-tombolawifi`) *(Corpo Calloso)*
 - (`rigore-informativo`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1536,6 +1554,7 @@
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[RESPONDS_TO_INTENT]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`person-pierfrancesco`) --[ROOTED_IN]--> (`rel-napoli-culture`)
 - (`project-royal-gambit-chess`) --[SATISFIES]--> (`user-intent-duolingo-chess-preference`)
+- (`reasoning-language-app-architecture`) --[SOLVES]--> (`intent-personal-language-learning-app`)
 - (`person-pierfrancesco`) --[STRIVES_FOR]--> (`val-impact-utility`)
 - (`identity-cs-researcher`) --[STUDIED]--> (`coursework-cs-federico2`)
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
