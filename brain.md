@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 13:10:19 UTC | **Nodi Totali:** 231 (SX: 147 · DX: 84) | **Sinapsi:** 634
+> **Data Generazione:** 2026-08-29 13:11:22 UTC | **Nodi Totali:** 232 (SX: 148 · DX: 84) | **Sinapsi:** 634
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -377,6 +377,9 @@
   - **Tags:** `#terminal` `#ui` `#monitoring` `#network-inspector` `#fetch-proxy`
   - **Sintesi:** Console/Terminale chiaro in overlay a tutto schermo per tracciare richieste HTTP (POST/GET/DEL), latenza, payload e nodi memorizzati.
   - **Dettagli:** `theme`: Light Slate (#f8fafc), `features`: ['window-controls', 'network-interceptor', 'realtime-feed', 'json-export']
+- **Test Live Upload Verify** (`test-live-upload-verify`)
+  - **Tags:** `#daemon-test`
+  - **Sintesi:** Test di verifica upload automatico demone
 - **Tombola WiFi** (`proj-tombolawifi`)
   - **Tags:** `#websockets` `#nodejs` `#tradition` `#multiplayer`
   - **Sintesi:** Digitalizzazione multiplayer locale della classica Tombola napoletana con Smorfia e broadcast chiamate.
