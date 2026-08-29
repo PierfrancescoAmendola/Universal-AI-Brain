@@ -1774,11 +1774,9 @@ body {
    Desktop layout (> 900px) remains 100% pure and untouched.
    ========================================================================== */
 
-/* Hidden on desktop */
-@media (min-width: 901px) {
-  .mobile-nav-bar {
-    display: none !important;
-  }
+/* Completely hidden on desktop / PC */
+.mobile-nav-bar {
+  display: none !important;
 }
 
 /* Exclusive Mobile & Tablet Optimizations (<= 900px) */
