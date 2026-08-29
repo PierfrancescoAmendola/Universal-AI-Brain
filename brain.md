@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 12:58:58 UTC | **Nodi Totali:** 219 (SX: 139 · DX: 80) | **Sinapsi:** 606
+> **Data Generazione:** 2026-08-29 13:03:05 UTC | **Nodi Totali:** 222 (SX: 141 · DX: 81) | **Sinapsi:** 613
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -161,6 +161,10 @@
   - **Tags:** `#ai-reasoning` `#hybrid-cloud` `#distributed-systems` `#cross-client-synergy` `#metacognition`
   - **Sintesi:** Deduzione architetturale: Render agisce come Hub pubblico permanente (Telegram Webhook, Web Visualizer, OpenAPI GPTs), mentre MCP agisce come bus a bassissima latenza per agenti IDE.
   - **Dettagli:** `model`: Antigravity / Google DeepMind Agent, `key_pillars`: ['Render Cloud: Accessibilità universale mobile 24/7, Telegram bot webhook, integrazione OpenAI Actions HTTPS', 'Local MCP: Esecuzione a latenza zero (<1ms) su SQLite WAL durante il coding in IDE', 'Web Chat Workflow: Allegazione diretta di brain.md o endpoint /brain.md pubblico per AI con Web Search']
+- **Ragionamento: Comando /prompt Copia Rapida per Telegra** (`reasoning-comando-prompt-copia-rapi-8585`)
+  - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
+  - **Sintesi:** Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code cla
+  - **Dettagli:** `model`: Gemini 3.7 Flash, `responses_given`: Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code class="language-markdown">...</code></pre>, permettendo all'utente di toccare il riquadro sullo smartphone per copiare istantaneamente il testo negli appunti di iOS/Android., `actions_taken`: ['Aggiunto pulsante "📋 Copia Prompt AI" nella tastiera persistente di get_main_keyboard() in telegram_bot.py', 'Implementato handler per /prompt, prompt e relative varianti in process_telegram_message()', 'Formattato il Master System Prompt con escape HTML dentro <pre><code class="language-markdown"> per 1-tap copy', 'Aggiornato il menu comandi /help con la nuova sezione Integrazione AI Esterne', 'Testata esecuzione e pushato su origin/main per aggiornare il bot live su Render'], `outcome`: Comando /prompt operativo su Telegram con supporto copia al tocco su smartphone.
 - **Ragionamento: Potenziamento Skill e Rilascio Demone Si** (`reasoning-potenziamento-skill-e-ril-8338`)
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Riformulata la skill universal-brain con protocollo obbligatorio a 2 fasi e 3 livelli di ingestione (MCP/CLI, POST HTTP, Fallback JSON). Implementato il demone background macOS (com.universalbrain.syn
@@ -617,6 +621,10 @@
   - **Tags:** `#audit` `#qa` `#bugfix` `#cross-chat-memory` `#omniscienza` `#graphify`
   - **Sintesi:** Richiesta di revisione completa del codice, verifica errori, prompt, documentazione e garanzia assoluta di persistenza del contesto conversazionale per garantire continuità cognitiva cross-chat.
   - **Dettagli:** `area`: Audit, QA, Cross-Chat Memory Persistence, Protocollo Graphify, `context`: L'utente richiede che ogni chat inserisca tutto il contesto, le risposte date e le decisioni, affinché cambiando chat l'AI mantenga omniscienza totale senza perdita di memoria., `timestamp`: 2026-08-28T14:51:11+02:00, `user_prompt`: l'ai deve inserire il contesto della chat, le risposte date, tutto, in modo tale che cambiando chat sappia tutto ti trovi?? abbiamo fatto questo??? è presente questa condizione, è così realizzato lo schema???
+- **Intento: Comando /prompt Copia Rapida per Telegra** (`user-intent-comando-prompt-copia-rapi-8585`)
+  - **Tags:** `#user-intent` `#chat` `#comando-prompt-copia-rapida-per-telegram-bot`
+  - **Sintesi:** Intento espresso da Pierfrancesco: Comando /prompt Copia Rapida per Telegram Bot
+  - **Dettagli:** `user_prompt`: /universal-brain aggiungi ai comandi su telegram la possibilità che richiamato il comando /prompt si copi sul telefono il prompt che deve poi incollare l'utente nei vari software ai online chiaro??, `context`: Sessione su Comando /prompt Copia Rapida per Telegram Bot
 - **Intento: Potenziamento Skill e Rilascio Demone Si** (`user-intent-potenziamento-skill-e-ril-8338`)
   - **Tags:** `#user-intent` `#chat` `#potenziamento-skill-e-rilascio-demone-sincron`
   - **Sintesi:** Intento espresso da Pierfrancesco: Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
@@ -712,6 +720,10 @@
   - **Tags:** `#sessione-audit` `#pierfrancesco` `#universal-brain` `#cross-chat-memory` `#metamemoria`
   - **Sintesi:** Sessione di audit intensivo, correzione bug su backend/MCP/Telegram, potenziamento formale della skill per continuità cross-chat e persistenza delle risposte fornite nel knowledge graph.
   - **Dettagli:** `key_takeaways`: L'architettura del Cervello garantisce la continuità multi-sessione tra assistenti AI diversi e chat diverse grazie alla triade USER_INTENT + AI_REASONING + CONVERSATION_EPISODE., `outcome`: Audit superato al 100%, skill potenziata e sincronizzata con la direttiva di continuità cross-chat, grafo aggiornato., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: ['Nessun bug residuo. Sistema pronto per sincronizzazione cloud e deploy.'], `topic`: Audit del codice, prompt e garanzia di memoria cross-chat persistente
+- **Episodio: Comando /prompt Copia Rapida per Telegra** (`episode-comando-prompt-copia-rapi-8585`)
+  - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
+  - **Sintesi:** Episodio di dialogo e lavoro su Comando /prompt Copia Rapida per Telegram Bot
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Comando /prompt Copia Rapida per Telegram Bot, `key_takeaways`: La formattazione <pre><code> di Telegram Bot API abilita la copia automatica con singolo tocco su iOS e Android., `pending_tasks`: Nessun task pendente.
 - **Episodio: Definizione Scopo Universale del Contesto Multi-AI** (`episode-2026-08-27-universal-context-definition`)
   - **Tags:** `#conversation-episode` `#universal-brain` `#context-purpose` `#gemini-session`
   - **Sintesi:** Sessione di formalizzazione dello scopo supremo di Universal AI Brain: memoria persistente del contesto e dei processi mentali cross-AI.
@@ -1193,6 +1205,7 @@
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`) *(Corpo Calloso)*
 - (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allineamento-nodi-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
@@ -1237,8 +1250,10 @@
 - (`ai-reasoning-episodic-memory-architecture`) --[REASONED_DURING]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[RECORDED_EPISODE]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
+- (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
+- (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[RENDERED_VIA]--> (`aule-studio-mobile-ui`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[RENDERS_FX]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
@@ -1516,6 +1531,7 @@
 - (`ai-reasoning-infinite-context-architecture`) --[FORMALIZES]--> (`user-intent-infinite-context-persistence`)
 - (`node-neuro-symbolic-brain`) --[FORMALLY_CLASSIFIED_AS]--> (`node-universal-ai-brain-taxonomy`)
 - (`ai-reasoning-episodic-memory-architecture`) --[FORMULATED_RULE]--> (`rule-episodic-chat-preservation`)
+- (`reasoning-comando-prompt-copia-rapi-8585`) --[FULFILLS]--> (`user-intent-comando-prompt-copia-rapi-8585`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[FULFILLS]--> (`user-intent-potenziamento-skill-e-ril-8338`)
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-taxonomy-classification`)
@@ -1539,6 +1555,7 @@
 - (`node-universal-ai-brain-taxonomy`) --[INCORPORATES_AS_CORE_FEATURE]--> (`node-epistemic-grading-system`)
 - (`universal-ai-brain`) --[INTEGRATES_AUDIT]--> (`graphify-knowledge-engine`)
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-skill-e-ril-8338`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`skill-universal-brain-installed`) --[INTERFACES_WITH]--> (`node-knowledge-graph-memory`)
 - (`node-mcp-brain-get-tree`) --[INTERROGATES]--> (`node-hierarchical-tree-engine-impl`)
@@ -1551,6 +1568,7 @@
 - (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-comando-prompt-copia-rapi-8585`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`)
@@ -1589,6 +1607,7 @@
 - (`identity-cs-researcher`) --[STUDIED]--> (`coursework-cs-federico2`)
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
 - (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-zero-cost-graphrag`) --[TRIGGERS]--> (`ai-reasoning-hybrid-search-mcp`)
 - (`person-pierfrancesco`) --[UPHOLDS]--> (`val-transparency-loyalty`)
