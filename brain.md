@@ -69,7 +69,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 13:03:05 UTC | **Nodi Totali:** 222 (SX: 141 · DX: 81) | **Sinapsi:** 613
+> **Data Generazione:** 2026-08-29 13:04:13 UTC | **Nodi Totali:** 222 (SX: 141 · DX: 81) | **Sinapsi:** 613
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
