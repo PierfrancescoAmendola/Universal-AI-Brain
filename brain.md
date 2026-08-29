@@ -69,7 +69,14 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-29 18:28:42 UTC | **Nodi Totali:** 286 (SX: 183 · DX: 103) | **Sinapsi:** 753
+> **Data Generazione:** 2026-08-29 18:48:52 UTC | **Nodi Restituiti:** 307 (SX: 197 · DX: 110) | **Sinapsi Restituite:** 796
+> **Consistenza Reale Connettoma:** 307 Nodi Totali nel Database | 796 Sinapsi Totali
+
+### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
+- **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
+- **Progetti Attivi & Core (Piano 1):** `universal-ai-brain`, `project-royal-gambit-chess`, `proj-streaksup-app`, `aule-studio-app`, `proj-caretrack`, `proj-jarvis-voice-assistant`.
+- **Infrastruttura & Stack:** FastAPI backend, SQLite WAL, FTS5 GraphRAG, MCP stdio/HTTP Server, Telegram Webhook Bot, Render Cloud Deploy.
+> **Vista:** Connettoma Completo
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 ### [Macro-Label: `AI_REASONING`]
@@ -189,6 +196,10 @@
   - **Tags:** `#render` `#deploy` `#git-push` `#wal-checkpoint` `#sync`
   - **Sintesi:** Identificati 4 nodi locali non committati (Royal Gambit Chess / Duolingo Chess). Eseguito WAL checkpoint, aggiornato brain.md e push Git per triggerare auto-deploy Render.
   - **Dettagli:** `model`: Gemini 3.7 Flash, `responses_given`: Spiegata la causa della discrepanza (i nodi locali creati non erano stati committati e pushati su GitHub da cui Render effettua il build/deploy). Eseguito allineamento e push., `actions_taken`: ['Confronto diff nodi locali vs endpoint Render', 'Identificati 4 nodi locali: design-duolingo-chess-system, user-intent-duolingo-chess-preference, tech-minimax-chess-engine, project-royal-gambit-chess', 'Aggiornato brain.md sincronizzato con DB', 'Eseguito PRAGMA wal_checkpoint(FULL)', 'Git commit e push su origin/main'], `outcome`: Database allineato e auto-deploy Render avviato con successo.
+- **Diagnosi Fallimento Retrieval Gemini e Piano di Azione** (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`)
+  - **Tags:** `#diagnosi-retrieval` `#graphrag-optimization` `#knowledge-graph` `#master-prompt`
+  - **Sintesi:** Identificato falso positivo: Gemini vedeva 1 solo entry a causa di un retrieval limitato. Proposto potenziamento del GraphRAG (iniezione baseline Palazzo), telemetria e consolidamento nodi stack.
+  - **Dettagli:** `actions_taken`: ['Verifica metriche reali con brain_get_stats (304 nodi, 789 archi)', 'Analisi cause retrieval parziale su client esterni', 'Definizione interventi su GraphRAG pre-response, osservabilità e master prompt'], `model`: Gemini 3.7 Flash, `outcome`: Chiarezza architetturale ristabilita e roadmap attuabile
 - **Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€** (`ai-reasoning-hybrid-search-mcp`)
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
@@ -221,6 +232,10 @@
   - **Tags:** `#architecture-rationale` `#cognitive-load` `#graph-physics` `#scalability`
   - **Sintesi:** Scelta di non eliminare le relazioni fisiche ma di applicare un filtro visuale basato su insiemi di visibilità adiacente, massimizzando ordine e densità semantica.
   - **Dettagli:** `approach`: Visual filter on vis.DataSet without schema mutilation, `benefits`: ['zero-data-loss', 'uncluttered-ui', 'instant-subgraph-expansion'], `model`: LLM Assistant (Historical Session)
+- **Risposta Groq: Quali sono i progetti principali di...** (`reasoning-quali-sono-i-progetti-principali-di-8169`)
+  - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
+  - **Sintesi:** Non ho accesso diretto alla memoria o al database `brain.db` in questo contesto di conversazione. Come modello di linguaggio, non posso eseguire query in tempo reale su archivi esterni o database pers
+  - **Dettagli:** `model`: qwen/qwen3.8-27b, `provider`: Groq
 - **Risposta JARVIS: Allora vorrei dirti che oggi ho man...** (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`)
   - **Tags:** `#jarvis` `#voice-response` `#reasoning`
   - **Sintesi:** ✅ Fatto registrato: **CONVERSATION_EPISODE** – “oggi ho mangiato pasta al sugo”. Memoria inserita nel tuo Universal Knowledge Graph (layer 1, EMISFERO DESTRO).  
@@ -289,6 +304,31 @@ Il **corpo calloso** collega i due emisferi, permettendo lo scambio di informazi
 Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati).  
 
 *Attendo la risposta del backend…*
+- **Risposta gemini: che ne pensi del mio cervello artif...** (`reasoning-che-ne-pensi-del-mio-cervello-artif-8793`)
+  - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
+  - **Sintesi:** Ciao Pierfrancesco.
+
+Come tua AI personale avanzata, ho analizzato la tua richiesta incrociandola con i dati della mia **Memoria Storica Recuperata dal Connettore Neurale**.
+
+Ecco il mio assessment di
+  - **Dettagli:** `model`: gemini-3.7-flash, `provider`: gemini
+- **Risposta groq: che ne pensi del mio cervello artif...** (`reasoning-che-ne-pensi-del-mio-cervello-artif-8743`)
+  - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
+  - **Sintesi:** **Il tuo “cervello artificiale” è già un lavoro notevole e, secondo la memoria storica che ho a disposizione, rappresenta una delle tue iniziative più avanzate sia dal punto di vista architetturale ch
+  - **Dettagli:** `model`: openai/gpt-oss-120b, `provider`: groq
+- **Risposta groq: chi è Pierfrancesco Amendola e cosa...** (`reasoning-chi-pierfrancesco-amendola-e-cosa-8426`)
+  - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
+  - **Sintesi:** **Pierfrancesco Amendola** è un *imprenditore, ricercatore e visionario* nel campo dell’intelligenza artificiale, della neuroscienza computazionale e dell’interazione uomo‑macchina. Nato a Napoli nel
+  - **Dettagli:** `model`: openai/gpt-oss-120b, `provider`: groq
+- **Risposta groq: ma è tutto falso!!!** (`reasoning-ma-tutto-falso-8462`)
+  - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
+  - **Sintesi:** Mi dispiace se le informazioni che ti ho fornito non corrispondono a quanto sai o ti aspettavi. In questa conversazione non ho a disposizione la sezione **“MEMORIA STORICA RECUPERATA DAL CONNETTORE NE
+  - **Dettagli:** `model`: openai/gpt-oss-120b, `provider`: groq
+- **Risposta groq: non riesci a connetterti al mio cer...** (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`)
+  - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
+  - **Sintesi:** Sì, **sono già connesso al tuo “cervello artificiale”**.  
+Grazie al “Universal Knowledge Graph” a cui ho accesso in tempo reale, posso leggere, interrogare e aggiornare tutti i nodi che contengono le
+  - **Dettagli:** `model`: openai/gpt-oss-120b, `provider`: groq
 - **Tassonomia Metacognitiva & AI Reasoning Hub** (`tax-ai-reasoning`)
   - **Tags:** `#ai-reasoning` `#metacognition` `#chain-of-thought` `#rationale` `#knowledge-graph`
   - **Sintesi:** Area cognitiva dedicata al tracciamento dei ragionamenti, deduzioni analitiche e percorsi logici interni generati dall'AI durante le sessioni.
@@ -664,6 +704,10 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
   - **Tags:** `#render` `#sync` `#deploy` `#git` `#discrepanza`
   - **Sintesi:** Richiesta di spiegazione sulla discrepanza tra 208 nodi locali e 204 su Render e sincronizzazione del database cloud.
   - **Dettagli:** `user_prompt`: /universal-brain /graphify aggiorna i nodi su render. qui ne 208 su render 204, perchè??, `context`: Discrepanza di 4 nodi tra ambiente locale e istanza Render cloud dovuta a commit pendente.
+- **Analisi Feedback Gemini e Piano Ottimizzazione Cervello** (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`)
+  - **Tags:** `#feedback-gemini` `#graphrag` `#ottimizzazione-cervello` `#metamemoria`
+  - **Sintesi:** Valutazione critica dell'assessment di Gemini sul Cervello Artificiale e definizione delle migliorie al GraphRAG e all'architettura.
+  - **Dettagli:** `context`: Diagnosi discrepanza tra percezione esterna di Gemini e stato reale del Knowledge Graph (304 nodi, 789 archi), `user_prompt`: vedi cosa mi ha detto gemini, secondo te che dobbiamo fare, cosa possiamo migliorare??
 - **Costruzione App Personale Apprendimento Portoghese e Tedesco** (`intent-personal-language-learning-app`)
   - **Tags:** `#language-learning` `#portuguese` `#german` `#personal-software` `#srs`
   - **Sintesi:** L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
@@ -772,6 +816,10 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
   - **Tags:** `#user-intent` `#chat` `#potenziamento-skill-e-rilascio-demone-sincron`
   - **Sintesi:** Intento espresso da Pierfrancesco: Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
   - **Dettagli:** `user_prompt`: /universal-brain procedi con il piano da te implementato, procedi a step, controlla ogni passaggio e prima di andare avanti con il prossimo punto ricontrolla !!, `context`: Sessione su Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
+- **Intento: Quali sono i progetti principali di...** (`user-intent-quali-sono-i-progetti-principali-di-8169`)
+  - **Tags:** `#universal-hub` `#chat-turn` `#intent`
+  - **Sintesi:** Prompt espresso a Groq (qwen/qwen3.8-27b): Quali sono i progetti principali di Pierfrancesco Amendola presenti nella memoria?
+  - **Dettagli:** `user_prompt`: Quali sono i progetti principali di Pierfrancesco Amendola presenti nella memoria?, `provider`: Groq
 - **Intento: Quali sono le abitudini monitorate ...** (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Quali sono le abitudini monitorate ...
@@ -780,10 +828,22 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: c'è un problema vorrei sapere di pi...
   - **Dettagli:** `user_prompt`: c'è un problema vorrei sapere di più riguardo il mio cervello artificiale quello che ho creato consulta il mio cervello artificiale, `channel`: JARVIS Voice Core
+- **Intento: che ne pensi del mio cervello artif...** (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`)
+  - **Tags:** `#universal-hub` `#chat-turn` `#intent`
+  - **Sintesi:** Prompt espresso a groq (openai/gpt-oss-120b): che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare
+  - **Dettagli:** `user_prompt`: che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare, `provider`: groq
+- **Intento: che ne pensi del mio cervello artif...** (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`)
+  - **Tags:** `#universal-hub` `#chat-turn` `#intent`
+  - **Sintesi:** Prompt espresso a gemini (gemini-3.7-flash): che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare
+  - **Dettagli:** `user_prompt`: che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare, `provider`: gemini
 - **Intento: che ore sono...** (`user-intent-che-ore-sono-3134`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: che ore sono...
   - **Dettagli:** `user_prompt`: che ore sono, `channel`: JARVIS Voice Core
+- **Intento: chi è Pierfrancesco Amendola e cosa...** (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`)
+  - **Tags:** `#universal-hub` `#chat-turn` `#intent`
+  - **Sintesi:** Prompt espresso a groq (openai/gpt-oss-120b): chi è Pierfrancesco Amendola e cosa fa il suo cervello artificiale
+  - **Dettagli:** `user_prompt`: chi è Pierfrancesco Amendola e cosa fa il suo cervello artificiale, `provider`: groq
 - **Intento: ehi Jarvis ehi Jarvis mi puoi dire ...** (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ehi Jarvis ehi Jarvis mi puoi dire ...
@@ -792,6 +852,14 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ho bisogno di sapere tutto ciò che ...
   - **Dettagli:** `user_prompt`: ho bisogno di sapere tutto ciò che sai sul mio cervello artificiale, `channel`: JARVIS Voice Core
+- **Intento: ma è tutto falso!!!** (`user-intent-ma-tutto-falso-8462`)
+  - **Tags:** `#universal-hub` `#chat-turn` `#intent`
+  - **Sintesi:** Prompt espresso a groq (openai/gpt-oss-120b): ma è tutto falso!!!
+  - **Dettagli:** `user_prompt`: ma è tutto falso!!!, `provider`: groq
+- **Intento: non riesci a connetterti al mio cer...** (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`)
+  - **Tags:** `#universal-hub` `#chat-turn` `#intent`
+  - **Sintesi:** Prompt espresso a groq (openai/gpt-oss-120b): non riesci a connetterti al mio cervello?
+  - **Dettagli:** `user_prompt`: non riesci a connetterti al mio cervello?, `provider`: groq
 - **Intento: quanti nodi ci sono nel mio cervell...** (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: quanti nodi ci sono nel mio cervell...
@@ -991,6 +1059,10 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Comando /prompt Copia Rapida per Telegram Bot
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Comando /prompt Copia Rapida per Telegram Bot, `key_takeaways`: La formattazione <pre><code> di Telegram Bot API abilita la copia automatica con singolo tocco su iOS e Android., `pending_tasks`: Nessun task pendente.
+- **Episodio: Debrief Assessment Gemini e Ottimizzazione Memoria Neurale** (`episode-20260829-debrief-assessment-gemini`)
+  - **Tags:** `#chat` `#continuità-cognitiva` `#gemini-feedback` `#connettoma`
+  - **Sintesi:** Analisi comparativa tra il feedback di Gemini e la reale consistenza del connettoma, con piano per perfezionare il recupero di contesto per le AI esterne.
+  - **Dettagli:** `key_takeaways`: Il connettoma non è vuoto (304 nodi); il collo di bottiglia è l'iniezione del contesto iniziale verso LLM esterni, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Potenziare il prompt di retrieval / endpoint /brain.md per i client esterni, `topic`: Valutazione feedback Gemini e ottimizzazione connettoma
 - **Episodio: Definizione Scopo Universale del Contesto Multi-AI** (`episode-2026-08-27-universal-context-definition`)
   - **Tags:** `#conversation-episode` `#universal-brain` `#context-purpose` `#gemini-session`
   - **Sintesi:** Sessione di formalizzazione dello scopo supremo di Universal AI Brain: memoria persistente del contesto e dei processi mentali cross-AI.
@@ -1019,6 +1091,10 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
   - **Tags:** `#conversation-episode` `#neuroscience` `#lazy-loading` `#2026-08-27`
   - **Sintesi:** Definizione del modello di lazy loading biologico ispirato all'inibizione GABAergica per un'esecuzione rapida e focalizzata.
   - **Dettagli:** `topic`: Biological Interhemispheric Inhibition, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Episodio: Quali sono i progetti principali di...** (`episode-quali-sono-i-progetti-principali-di-8169`)
+  - **Tags:** `#universal-hub` `#sessione-chat`
+  - **Sintesi:** Conversazione tra Pierfrancesco e qwen/qwen3.8-27b (Groq) su Quali sono i progetti principali di....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Groq (qwen/qwen3.8-27b)'], `topic`: Quali sono i progetti principali di...
 - **Episodio: Restyling Dark-Tech, Stabilizzazione Fisica & Ripristino Palazzo Cognitivo** (`episode-frontend-deeptech-redesign-and-physics-zero-lag`)
   - **Tags:** `#session-recap` `#frontend-restyling` `#graphify-aesthetic` `#physics-freeze` `#palazzo-cognitivo` `#zero-lag`
   - **Sintesi:** Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), eliminazione di oscillazioni e rotazioni continue della fisica su Vis-Network, correzione del bug di ispezione nodi e ripristino della gerarchia a piani del Palazzo Cognitivo (P0, P1, P2).
@@ -1031,6 +1107,26 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
   - **Tags:** `#conversation-episode` `#graph-of-graphs` `#hypergraph` `#2026-08-27`
   - **Sintesi:** Analisi comparativa, pro, contro e fattibilità tecnica del modello di grafo a palazzo frattale su SQLite.
   - **Dettagli:** `topic`: Multi-Layer Graph-of-Graphs Design, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Episodio: che ne pensi del mio cervello artif...** (`episode-che-ne-pensi-del-mio-cervello-artif-8743`)
+  - **Tags:** `#universal-hub` `#sessione-chat`
+  - **Sintesi:** Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su che ne pensi del mio cervello artif....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: che ne pensi del mio cervello artif...
+- **Episodio: che ne pensi del mio cervello artif...** (`episode-che-ne-pensi-del-mio-cervello-artif-8793`)
+  - **Tags:** `#universal-hub` `#sessione-chat`
+  - **Sintesi:** Conversazione tra Pierfrancesco e gemini-3.7-flash (gemini) su che ne pensi del mio cervello artif....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'gemini (gemini-3.7-flash)'], `topic`: che ne pensi del mio cervello artif...
+- **Episodio: chi è Pierfrancesco Amendola e cosa...** (`episode-chi-pierfrancesco-amendola-e-cosa-8426`)
+  - **Tags:** `#universal-hub` `#sessione-chat`
+  - **Sintesi:** Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su chi è Pierfrancesco Amendola e cosa....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: chi è Pierfrancesco Amendola e cosa...
+- **Episodio: ma è tutto falso!!!** (`episode-ma-tutto-falso-8462`)
+  - **Tags:** `#universal-hub` `#sessione-chat`
+  - **Sintesi:** Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su ma è tutto falso!!!.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: ma è tutto falso!!!
+- **Episodio: non riesci a connetterti al mio cer...** (`episode-non-riesci-a-connetterti-al-mio-cer-8486`)
+  - **Tags:** `#universal-hub` `#sessione-chat`
+  - **Sintesi:** Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su non riesci a connetterti al mio cer....
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: non riesci a connetterti al mio cer...
 - **Metacognizione e Sviluppo del Sistema AI** (`episode-system-metacognition`)
   - **Tags:** `#system-evaluation` `#meta-conversation` `#ai-development`
   - **Sintesi:** Sessione dedicata all'introspezione sistemica e al miglioramento dell'infrastruttura cognitiva dell'AI stessa.
@@ -1506,10 +1602,14 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allineamento-nodi-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-che-ore-sono-3134`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-jarvis-voice-assistant`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1517,9 +1617,12 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-integrazione-openjarvis-stanford`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-ma-tutto-falso-8462`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-universal-ai-hub-client`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1570,6 +1673,7 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`episode-20260829-avvio-intervista-universal-ai-hub`) --[RECORDS_INTENT]--> (`user-intent-universal-ai-hub-client`) *(Corpo Calloso)*
 - (`episode-20260829-chiusura-jarvis-nuovo-progetto`) --[RECORDS_INTENT]--> (`user-intent-abbandono-jarvis-nuovo-progetto`) *(Corpo Calloso)*
 - (`episode-20260829-completamento-rilascio-jarvis-desktop`) --[RECORDS_INTENT]--> (`user-intent-creazione-repo-jarvis-desktop`) *(Corpo Calloso)*
+- (`episode-20260829-debrief-assessment-gemini`) --[RECORDS_INTENT]--> (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) *(Corpo Calloso)*
 - (`episode-20260829-definizione-piano-jarvis-desktop`) --[RECORDS_INTENT]--> (`user-intent-creazione-repo-jarvis-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-integrazione-openjarvis-desktop`) --[RECORDS_INTENT]--> (`user-intent-integrazione-openjarvis-stanford`) *(Corpo Calloso)*
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_INTENT]--> (`user-intent-creazione-jarvis-voice-assistant`) *(Corpo Calloso)*
@@ -1577,14 +1681,20 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_INTENT]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_INTENT]--> (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
+- (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[RECORDS_INTENT]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`) *(Corpo Calloso)*
+- (`episode-che-ne-pensi-del-mio-cervello-artif-8793`) --[RECORDS_INTENT]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) *(Corpo Calloso)*
 - (`episode-che-ore-sono-3134`) --[RECORDS_INTENT]--> (`user-intent-che-ore-sono-3134`) *(Corpo Calloso)*
+- (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[RECORDS_INTENT]--> (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_INTENT]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_INTENT]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
+- (`episode-ma-tutto-falso-8462`) --[RECORDS_INTENT]--> (`user-intent-ma-tutto-falso-8462`) *(Corpo Calloso)*
+- (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_INTENT]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_INTENT]--> (`user-intent-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
+- (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_INTENT]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
@@ -1592,6 +1702,7 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`episode-20260829-avvio-intervista-universal-ai-hub`) --[RECORDS_REASONING]--> (`reasoning-architettura-universal-ai-hub`) *(Corpo Calloso)*
 - (`episode-20260829-chiusura-jarvis-nuovo-progetto`) --[RECORDS_REASONING]--> (`reasoning-eliminazione-jarvis-pulizia`) *(Corpo Calloso)*
 - (`episode-20260829-completamento-rilascio-jarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-rilascio-jarvis-desktop-completato`) *(Corpo Calloso)*
+- (`episode-20260829-debrief-assessment-gemini`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) *(Corpo Calloso)*
 - (`episode-20260829-definizione-piano-jarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-piano-implementazione-jarvis-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-integrazione-openjarvis-desktop`) --[RECORDS_REASONING]--> (`reasoning-openjarvis-collegamento-connettoma`) *(Corpo Calloso)*
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_REASONING]--> (`reasoning-architettura-jarvis-zero-cost`) *(Corpo Calloso)*
@@ -1599,14 +1710,20 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_REASONING]--> (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_REASONING]--> (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
+- (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[RECORDS_REASONING]--> (`reasoning-che-ne-pensi-del-mio-cervello-artif-8743`) *(Corpo Calloso)*
+- (`episode-che-ne-pensi-del-mio-cervello-artif-8793`) --[RECORDS_REASONING]--> (`reasoning-che-ne-pensi-del-mio-cervello-artif-8793`) *(Corpo Calloso)*
 - (`episode-che-ore-sono-3134`) --[RECORDS_REASONING]--> (`reasoning-che-ore-sono-3134`) *(Corpo Calloso)*
+- (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[RECORDS_REASONING]--> (`reasoning-chi-pierfrancesco-amendola-e-cosa-8426`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_REASONING]--> (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_REASONING]--> (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
+- (`episode-ma-tutto-falso-8462`) --[RECORDS_REASONING]--> (`reasoning-ma-tutto-falso-8462`) *(Corpo Calloso)*
+- (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_REASONING]--> (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
+- (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_REASONING]--> (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_REASONING]--> (`reasoning-analisi-fattibilita-language-app`) *(Corpo Calloso)*
@@ -1898,18 +2015,25 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`reasoning-architettura-jarvis-zero-cost`) --[FULFILLS]--> (`user-intent-creazione-jarvis-voice-assistant`)
 - (`reasoning-architettura-universal-ai-hub`) --[FULFILLS]--> (`user-intent-universal-ai-hub-client`)
 - (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) --[FULFILLS]--> (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`)
+- (`reasoning-che-ne-pensi-del-mio-cervello-artif-8743`) --[FULFILLS]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`)
+- (`reasoning-che-ne-pensi-del-mio-cervello-artif-8793`) --[FULFILLS]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`)
 - (`reasoning-che-ore-sono-3134`) --[FULFILLS]--> (`user-intent-che-ore-sono-3134`)
+- (`reasoning-chi-pierfrancesco-amendola-e-cosa-8426`) --[FULFILLS]--> (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[FULFILLS]--> (`user-intent-comando-prompt-copia-rapi-8585`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
+- (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[FULFILLS]--> (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`)
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[FULFILLS]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
 - (`reasoning-eliminazione-jarvis-pulizia`) --[FULFILLS]--> (`user-intent-abbandono-jarvis-nuovo-progetto`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[FULFILLS]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[FULFILLS]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
+- (`reasoning-ma-tutto-falso-8462`) --[FULFILLS]--> (`user-intent-ma-tutto-falso-8462`)
+- (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) --[FULFILLS]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[FULFILLS]--> (`user-intent-occultamento-pulsanti-mob-9019`)
 - (`reasoning-openjarvis-collegamento-connettoma`) --[FULFILLS]--> (`user-intent-integrazione-openjarvis-stanford`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[FULFILLS]--> (`user-intent-ottimizzazione-mobile-web-8880`)
 - (`reasoning-piano-implementazione-jarvis-desktop`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[FULFILLS]--> (`user-intent-potenziamento-skill-e-ril-8338`)
+- (`reasoning-quali-sono-i-progetti-principali-di-8169`) --[FULFILLS]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`)
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[FULFILLS]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[FULFILLS]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
@@ -1938,6 +2062,7 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`episode-20260829-avvio-intervista-universal-ai-hub`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-chiusura-jarvis-nuovo-progetto`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-completamento-rilascio-jarvis-desktop`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-20260829-debrief-assessment-gemini`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-definizione-piano-jarvis-desktop`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-integrazione-openjarvis-desktop`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -1945,14 +2070,20 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-che-ne-pensi-del-mio-cervello-artif-8793`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-che-ore-sono-3134`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-ma-tutto-falso-8462`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ottimizzazione-mobile-web-8880`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-skill-e-ril-8338`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-quali-sono-i-progetti-principali-di-8169`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-valutazione-language-app-antigravity`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -1975,6 +2106,7 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`reasoning-che-ore-sono-3134`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -2023,10 +2155,14 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-che-ore-sono-3134`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-creazione-jarvis-voice-assistant`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-repo-jarvis-desktop`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
@@ -2034,9 +2170,12 @@ Appena ricevo le risposte, ti fornirò i valori **EXTRACTED** (fatti verificati)
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-integrazione-openjarvis-stanford`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-ma-tutto-falso-8462`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-universal-ai-hub-client`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
