@@ -26,6 +26,53 @@ logger = logging.getLogger("optimized_brain_db")
 
 DEFAULT_DB_PATH = os.getenv("BRAIN_DB_PATH", "brain.db")
 
+DOMAIN_ALIASES: Dict[str, str] = {
+    "domain-business": "domain-finanza-economia",
+    "domain-finanza": "domain-finanza-economia",
+    "domain-economia": "domain-finanza-economia",
+    "domain-finance": "domain-finanza-economia",
+    "domain-economy": "domain-finanza-economia",
+    "domain-monetizzazione": "domain-finanza-economia",
+    "domain-software": "domain-software-engineering",
+    "domain-engineering": "domain-software-engineering",
+    "domain-coding": "domain-software-engineering",
+    "domain-dev": "domain-software-engineering",
+    "domain-backend": "domain-software-engineering",
+    "domain-ai": "domain-ai-cognitive-systems",
+    "domain-cognitive": "domain-ai-cognitive-systems",
+    "domain-llm": "domain-ai-cognitive-systems",
+    "domain-ml": "domain-ai-cognitive-systems",
+    "domain-medicina": "domain-medicina-salute",
+    "domain-salute": "domain-medicina-salute",
+    "domain-health": "domain-medicina-salute",
+    "domain-fitness": "domain-medicina-salute",
+    "domain-scienza": "domain-scienza-matematica",
+    "domain-matematica": "domain-scienza-matematica",
+    "domain-science": "domain-scienza-matematica",
+    "domain-math": "domain-scienza-matematica",
+    "domain-produttivita": "domain-produttivita-sistemi",
+    "domain-productivity": "domain-produttivita-sistemi",
+    "domain-sistemi": "domain-produttivita-sistemi",
+    "domain-automazione": "domain-produttivita-sistemi",
+    "domain-design": "domain-design-creativita",
+    "domain-creativita": "domain-design-creativita",
+    "domain-ui-ux": "domain-design-creativita",
+    "domain-ui": "domain-design-creativita",
+    "domain-ux": "domain-design-creativita",
+    "domain-musica": "domain-musica-audio",
+    "domain-audio": "domain-musica-audio",
+    "domain-filosofia": "domain-filosofia-valori",
+    "domain-valori": "domain-filosofia-valori",
+    "domain-philosophy": "domain-filosofia-valori",
+    "domain-relazioni": "domain-relazioni-comunicazione",
+    "domain-comunicazione": "domain-relazioni-comunicazione",
+    "domain-crescita": "domain-crescita-personale",
+    "domain-life-lessons": "domain-crescita-personale",
+    "domain-cultura": "domain-cultura-storia",
+    "domain-storia": "domain-cultura-storia",
+    "domain-history": "domain-cultura-storia"
+}
+
 
 class OptimizedBrainDB:
     """Gestione database ottimizzata con cache in memoria, indici avanzati e CTE ricorsive."""
@@ -452,6 +499,12 @@ class OptimizedBrainDB:
                     """, node_tuples)
                     nodes_upserted = len(node_tuples)
                 
+                # Raccolta di tutti i nodi esistenti + appena inseriti per validazione archi
+                cursor.execute("SELECT id FROM nodes")
+                existing_node_ids = {r[0] for r in cursor.fetchall()}
+                for nt in node_tuples:
+                    existing_node_ids.add(nt[0])
+
                 # Accoda cross_links espliciti + estratti
                 all_cross = list(cross_links or []) + extracted_cross_links
                 if all_cross:
@@ -459,10 +512,12 @@ class OptimizedBrainDB:
                     for s, t in all_cross:
                         s_slug = s.strip().lower()
                         t_slug = t.strip().lower()
-                        cross_tuples.append((
-                            s_slug, t_slug, "CORPUS_CALLOSUM_LINK", "EXTRACTED",
-                            "Cross-hemisphere bridge", now
-                        ))
+                        t_norm = DOMAIN_ALIASES.get(t_slug, t_slug)
+                        if s_slug in existing_node_ids and t_norm in existing_node_ids:
+                            cross_tuples.append((
+                                s_slug, t_norm, "CORPUS_CALLOSUM_LINK", "EXTRACTED",
+                                "Cross-hemisphere bridge", now
+                            ))
                     if cross_tuples:
                         cursor.executemany("""
                             INSERT OR REPLACE INTO edges
@@ -471,14 +526,28 @@ class OptimizedBrainDB:
                         """, cross_tuples)
                         cross_links_upserted = len(cross_tuples)
             
-            # 2. Inserimento massivo Archi
+            # 2. Inserimento massivo Archi con protezione Foreign Keys
             if edges:
+                if "existing_node_ids" not in locals():
+                    cursor.execute("SELECT id FROM nodes")
+                    existing_node_ids = {r[0] for r in cursor.fetchall()}
+
                 edge_tuples = []
                 for e in edges:
                     src = str(e.get("source", "")).strip().lower()
                     tgt = str(e.get("target", "")).strip().lower()
                     if not src or not tgt:
                         continue
+
+                    # Risoluzione automatica degli alias dei domini
+                    src = DOMAIN_ALIASES.get(src, src)
+                    tgt = DOMAIN_ALIASES.get(tgt, tgt)
+
+                    # Salta archi con nodi orfani
+                    if src not in existing_node_ids or tgt not in existing_node_ids:
+                        logger.warning(f"Salto arco con nodo non esistente: {src} -> {tgt}")
+                        continue
+
                     rel = (e.get("relation") or "CONNECTS_TO").strip().upper().replace(" ", "_")
                     conf = e.get("confidence", "EXTRACTED") or "EXTRACTED"
                     reason = e.get("reasoning")

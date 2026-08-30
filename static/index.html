@@ -278,10 +278,10 @@
 
       <!-- Dropzone for File Upload -->
       <div class="dropzone" id="json-dropzone" onclick="document.getElementById('json-file-input').click()">
-        <input type="file" id="json-file-input" accept=".json,application/json" style="display:none;" onchange="handleJsonFileSelect(event)">
+        <input type="file" id="json-file-input" accept=".json,application/json" multiple style="display:none;" onchange="handleJsonFileSelect(event)">
         <div class="dropzone-icon">📁</div>
         <div class="dropzone-text">
-          <strong>Clicca per scegliere un file .json</strong> oppure trascinalo qui
+          <strong>Clicca per scegliere uno o più file .json</strong> oppure trascinali qui
         </div>
         <div id="json-file-name" class="dropzone-filename"></div>
       </div>

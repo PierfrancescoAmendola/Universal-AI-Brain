@@ -56,6 +56,65 @@ RIGHT_TAXONOMY: Set[str] = {
     "CONVERSATION_EPISODE"
 }
 
+DOMAIN_ALIASES: Dict[str, str] = {
+    # Finanza / Business / Economia / Monetizzazione
+    "domain-business": "domain-finanza-economia",
+    "domain-finanza": "domain-finanza-economia",
+    "domain-economia": "domain-finanza-economia",
+    "domain-finance": "domain-finanza-economia",
+    "domain-economy": "domain-finanza-economia",
+    "domain-monetizzazione": "domain-finanza-economia",
+    # Software Engineering
+    "domain-software": "domain-software-engineering",
+    "domain-engineering": "domain-software-engineering",
+    "domain-coding": "domain-software-engineering",
+    "domain-dev": "domain-software-engineering",
+    "domain-backend": "domain-software-engineering",
+    # AI & Cognitive Systems
+    "domain-ai": "domain-ai-cognitive-systems",
+    "domain-cognitive": "domain-ai-cognitive-systems",
+    "domain-llm": "domain-ai-cognitive-systems",
+    "domain-ml": "domain-ai-cognitive-systems",
+    # Medicina & Salute
+    "domain-medicina": "domain-medicina-salute",
+    "domain-salute": "domain-medicina-salute",
+    "domain-health": "domain-medicina-salute",
+    "domain-fitness": "domain-medicina-salute",
+    # Scienza & Matematica
+    "domain-scienza": "domain-scienza-matematica",
+    "domain-matematica": "domain-scienza-matematica",
+    "domain-science": "domain-scienza-matematica",
+    "domain-math": "domain-scienza-matematica",
+    # Produttività & Sistemi
+    "domain-produttivita": "domain-produttivita-sistemi",
+    "domain-productivity": "domain-produttivita-sistemi",
+    "domain-sistemi": "domain-produttivita-sistemi",
+    "domain-automazione": "domain-produttivita-sistemi",
+    # Design & Creatività
+    "domain-design": "domain-design-creativita",
+    "domain-creativita": "domain-design-creativita",
+    "domain-ui-ux": "domain-design-creativita",
+    "domain-ui": "domain-design-creativita",
+    "domain-ux": "domain-design-creativita",
+    # Musica & Audio
+    "domain-musica": "domain-musica-audio",
+    "domain-audio": "domain-musica-audio",
+    # Filosofia & Valori
+    "domain-filosofia": "domain-filosofia-valori",
+    "domain-valori": "domain-filosofia-valori",
+    "domain-philosophy": "domain-filosofia-valori",
+    # Relazioni & Comunicazione
+    "domain-relazioni": "domain-relazioni-comunicazione",
+    "domain-comunicazione": "domain-relazioni-comunicazione",
+    # Crescita Personale
+    "domain-crescita": "domain-crescita-personale",
+    "domain-life-lessons": "domain-crescita-personale",
+    # Cultura & Storia
+    "domain-cultura": "domain-cultura-storia",
+    "domain-storia": "domain-cultura-storia",
+    "domain-history": "domain-cultura-storia"
+}
+
 
 # -----------------------------------------------------------------------------
 # Database Setup & Migration
@@ -1230,19 +1289,29 @@ def ingest_memory(payload: IngestPayload):
             """, node_tuples)
             nodes_upserted = len(node_tuples)
 
+        # Validazione e raccolta di tutti i nodi esistenti + appena creati
+        existing_node_ids = {r[0] for r in conn.execute("SELECT id FROM nodes").fetchall()}
+        for nt in node_tuples:
+            existing_node_ids.add(nt[0])
+
         # 2. Insert Corpus Callosum Cross Links in batch
         if cross_links_to_add:
-            cross_tuples = [
-                (slug, tgt, "CORPUS_CALLOSUM_LINK", "EXTRACTED", "Cross-hemisphere bridge", now)
-                for slug, tgt in cross_links_to_add
-            ]
-            conn.executemany("""
-                INSERT OR REPLACE INTO edges (source, target, relation, confidence, reasoning, created_at)
-                VALUES (?, ?, ?, ?, ?, ?)
-            """, cross_tuples)
-            edges_upserted += len(cross_tuples)
+            cross_tuples = []
+            for slug, tgt in cross_links_to_add:
+                tgt_norm = DOMAIN_ALIASES.get(tgt, tgt)
+                if slug in existing_node_ids and tgt_norm in existing_node_ids:
+                    cross_tuples.append((
+                        slug, tgt_norm, "CORPUS_CALLOSUM_LINK", "EXTRACTED", "Cross-hemisphere bridge", now
+                    ))
 
-        # 3. Upsert Explicit Edges and Links in batch
+            if cross_tuples:
+                conn.executemany("""
+                    INSERT OR REPLACE INTO edges (source, target, relation, confidence, reasoning, created_at)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, cross_tuples)
+                edges_upserted += len(cross_tuples)
+
+        # 3. Upsert Explicit Edges and Links in batch with alias resolution and foreign key protection
         all_edges = list(payload.edges or []) + list(payload.links or [])
         if all_edges:
             edge_tuples = []
@@ -1251,6 +1320,15 @@ def ingest_memory(payload: IngestPayload):
                 tgt = e.target.strip().lower()
                 if not src or not tgt:
                     continue
+
+                # Risoluzione automatica degli alias dei domini
+                src = DOMAIN_ALIASES.get(src, src)
+                tgt = DOMAIN_ALIASES.get(tgt, tgt)
+
+                # Prevenzione violazione Foreign Key
+                if src not in existing_node_ids or tgt not in existing_node_ids:
+                    continue
+
                 rel = (e.relation or "CONNECTS_TO").strip().upper().replace(" ", "_")
                 edge_conf = getattr(e, "confidence", "EXTRACTED") or "EXTRACTED"
                 edge_reason = getattr(e, "reasoning", None)

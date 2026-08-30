@@ -1196,28 +1196,41 @@ function closeUploadModal() {
 }
 
 function handleJsonFileSelect(event) {
-  const file = event.target.files && event.target.files[0];
-  if (!file) return;
-  readJsonFile(file);
+  const files = event.target.files;
+  if (!files || files.length === 0) return;
+  readJsonFiles(Array.from(files));
 }
 
-function readJsonFile(file) {
+function readJsonFiles(files) {
+  if (!files || files.length === 0) return;
   const fileNameEl = document.getElementById('json-file-name');
-  if (fileNameEl) fileNameEl.textContent = `File caricato: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
-
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    const content = e.target.result;
-    const pasteInput = document.getElementById('json-paste-input');
-    if (pasteInput) {
-      pasteInput.value = content;
-      validateAndPreviewJson(content);
+  if (fileNameEl) {
+    if (files.length === 1) {
+      fileNameEl.textContent = `File caricato: ${files[0].name} (${(files[0].size / 1024).toFixed(1)} KB)`;
+    } else {
+      fileNameEl.textContent = `${files.length} file selezionati`;
     }
-  };
-  reader.onerror = () => {
-    alert("Errore nella lettura del file.");
-  };
-  reader.readAsText(file);
+  }
+
+  const pasteInput = document.getElementById('json-paste-input');
+  const readPromises = files.map(file => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => resolve(e.target.result);
+      reader.onerror = () => reject(new Error(`Errore nella lettura del file ${file.name}`));
+      reader.readAsText(file);
+    });
+  });
+
+  Promise.all(readPromises).then(contents => {
+    const combined = contents.join('\n\n');
+    if (pasteInput) {
+      pasteInput.value = combined;
+      validateAndPreviewJson(combined);
+    }
+  }).catch(err => {
+    alert(err.message);
+  });
 }
 
 function setupDropzone() {
@@ -1244,7 +1257,7 @@ function setupDropzone() {
     const dt = e.dataTransfer;
     const files = dt.files;
     if (files && files.length > 0) {
-      readJsonFile(files[0]);
+      readJsonFiles(Array.from(files));
     }
   }, false);
 }
@@ -1260,29 +1273,82 @@ function parseFlexibleJson(raw) {
   const cleaned = cleanJsonString(raw);
   if (!cleaned) return null;
 
-  const parsed = JSON.parse(cleaned);
-
   let nodes = [];
   let edges = [];
 
-  if (Array.isArray(parsed)) {
-    // Array of nodes
-    nodes = parsed;
-  } else if (typeof parsed === 'object' && parsed !== null) {
-    if (Array.isArray(parsed.nodes)) {
-      nodes = parsed.nodes;
-    } else if (parsed.id || parsed.label) {
-      nodes = [parsed];
+  // 1. Prova prima il parsing standard di un singolo JSON
+  try {
+    const parsed = JSON.parse(cleaned);
+    if (Array.isArray(parsed)) {
+      nodes = parsed;
+    } else if (typeof parsed === 'object' && parsed !== null) {
+      if (Array.isArray(parsed.nodes)) nodes = parsed.nodes;
+      else if (parsed.id || parsed.label) nodes = [parsed];
+
+      if (Array.isArray(parsed.edges)) edges = parsed.edges;
+      else if (Array.isArray(parsed.links)) edges = parsed.links;
+    }
+    return { nodes, edges, raw: parsed };
+  } catch (singleErr) {
+    // 2. Se fallisce, estrai blocchi JSON multipli concatenati
+    let depth = 0;
+    let inString = false;
+    let escape = false;
+    let startIndex = -1;
+    const blocks = [];
+
+    for (let i = 0; i < cleaned.length; i++) {
+      const char = cleaned[i];
+      if (escape) {
+        escape = false;
+        continue;
+      }
+      if (char === '\\') {
+        escape = true;
+        continue;
+      }
+      if (char === '"') {
+        inString = !inString;
+        continue;
+      }
+      if (!inString) {
+        if (char === '{') {
+          if (depth === 0) startIndex = i;
+          depth++;
+        } else if (char === '}') {
+          depth--;
+          if (depth === 0 && startIndex !== -1) {
+            blocks.push(cleaned.substring(startIndex, i + 1));
+            startIndex = -1;
+          }
+        }
+      }
     }
 
-    if (Array.isArray(parsed.edges)) {
-      edges = parsed.edges;
-    } else if (Array.isArray(parsed.links)) {
-      edges = parsed.links;
+    let foundAny = false;
+    if (blocks.length > 0) {
+      blocks.forEach(blockStr => {
+        try {
+          const parsed = JSON.parse(blockStr);
+          if (Array.isArray(parsed.nodes)) {
+            nodes.push(...parsed.nodes);
+            foundAny = true;
+          } else if (parsed.id || parsed.label) {
+            nodes.push(parsed);
+            foundAny = true;
+          }
+          if (Array.isArray(parsed.edges)) edges.push(...parsed.edges);
+          else if (Array.isArray(parsed.links)) edges.push(...parsed.links);
+        } catch (e) {}
+      });
     }
+
+    if (foundAny) {
+      return { nodes, edges, raw: { nodes, edges } };
+    }
+
+    throw singleErr;
   }
-
-  return { nodes, edges, raw: parsed };
 }
 
 function updateJsonPreviewBadge(nodesCount, edgesCount, isValid, errorMsg = '') {
