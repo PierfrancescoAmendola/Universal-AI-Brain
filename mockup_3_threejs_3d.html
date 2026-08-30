@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 3: Grafo 3D con Three.js + Force Graph</title>
+  <script src="https://unpkg.com/3d-force-graph"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #07080c;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      color: #f8fafc;
+    }
+    
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: rgba(10, 12, 18, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+      gap: 16px;
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .brand-logo { font-size: 18px; }
+    .brand-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    
+    .stats {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(14, 16, 23, 0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .dot { width: 6px; height: 6px; border-radius: 50%; }
+    .dot-left { background: #00D2FF; box-shadow: 0 0 6px #00D2FF; }
+    .dot-right { background: #FF007F; box-shadow: 0 0 6px #FF007F; }
+    .dot-callosum { background: #A855F7; box-shadow: 0 0 6px #A855F7; }
+    
+    #graph-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 50;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+    }
+    
+    .btn {
+      background: rgba(14, 16, 23, 0.9);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #94a3b8;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: left;
+      white-space: nowrap;
+    }
+    
+    .btn:hover {
+      background: rgba(20, 23, 34, 0.95);
+      color: #fff;
+      border-color: rgba(255,255,255,0.2);
+    }
+    
+    .btn.active {
+      background: rgba(0, 210, 255, 0.15);
+      border-color: rgba(0, 210, 255, 0.4);
+      color: #fff;
+    }
+    
+    .tooltip {
+      position: absolute;
+      background: rgba(14, 16, 23, 0.95);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 11px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      max-width: 300px;
+      z-index: 1000;
+    }
+    
+    .legend {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(14, 16, 23, 0.92);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 12px;
+      z-index: 50;
+      max-width: 220px;
+    }
+    
+    .legend-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 10px;
+    }
+    
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    .info-panel {
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background: rgba(14, 16, 23, 0.95);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 12px;
+      z-index: 50;
+      width: 280px;
+      max-height: 300px;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .info-panel.visible {
+      display: block;
+    }
+    
+    .info-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    
+    .info-meta {
+      font-size: 10px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    
+    .info-summary {
+      font-size: 11px;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="brand">
+      <span class="brand-logo">🧠</span>
+      <span class="brand-name">MOCKUP 3: GRAFO 3D INTERATTIVO (Three.js)</span>
+    </div>
+    <div class="stats">
+      <div class="stat-pill">
+        <span class="dot dot-left"></span>
+        <span>SX</span>
+        <strong id="count-left">0</strong>
+      </div>
+      <div class="stat-pill">
+        <span class="dot dot-right"></span>
+        <span>DX</span>
+        <strong id="count-right">0</strong>
+      </div>
+      <div class="stat-pill">
+        <span class="dot dot-callosum"></span>
+        <span>Ponti</span>
+        <strong id="count-callosum">0</strong>
+      </div>
+    </div>
+  </div>
+  
+  <div id="graph-container"></div>
+  <div class="tooltip" id="tooltip"></div>
+  
+  <div class="legend">
+    <div class="legend-title">Categorie Cognitive</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #00D2FF;"></div>Architecture</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #0284c7;"></div>Algorithm</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #38bdf8;"></div>Data Structure</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #FF007F;"></div>Design Token</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #fb7185;"></div>UI Component</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #8b5cf6;"></div>Personal Value</div>
+  </div>
+  
+  <div class="info-panel" id="info-panel">
+    <div class="info-title" id="info-title"></div>
+    <div class="info-meta" id="info-meta"></div>
+    <div class="info-summary" id="info-summary"></div>
+  </div>
+  
+  <div class="controls">
+    <button class="btn active" onclick="setView('3d')">🎯 Vista 3D</button>
+    <button class="btn" onclick="setView('2d')">📐 Vista 2D (XY)</button>
+    <button class="btn" onclick="setView('top')">🔭 Vista dall'Alto</button>
+    <button class="btn" onclick="toggleAutoRotate()">🔄 Auto-Rotate: <span id="rotate-status">ON</span></button>
+    <button class="btn" onclick="toggleLinks()">🔗 Toggle Links: <span id="links-status">ON</span></button>
+    <button class="btn" onclick="setCharge(-10)">Forza: Leggera</button>
+    <button class="btn" onclick="setCharge(-50)">Forza: Media</button>
+    <button class="btn" onclick="setCharge(-100)">Forza: Forte</button>
+    <button class="btn" onclick="focusOnNode('core')">🎯 Focus: Core</button>
+    <button class="btn" onclick="resetCamera()">📷 Reset Camera</button>
+  </div>
+
+  <script>
+    // Dati mock per testing - struttura cognitiva realistica
+    const categories = ['ARCHITECTURE', 'ALGORITHM', 'DATA_STRUCTURE', 'DESIGN_TOKEN', 'UI_COMPONENT', 'PERSONAL_VALUE'];
+    const hemispheres = ['LEFT', 'RIGHT'];
+    const labels = {
+      LEFT: ['Tech Stack', 'Framework', 'Libreria', 'Pattern', 'Protocollo'],
+      RIGHT: ['Concept', 'Principio', 'Valore', 'Ispirazione', 'Emozione']
+    };
+
+    // Genera nodi gerarchici
+    const nodes = [];
+    const links = [];
+
+    // Nodo core centrale
+    nodes.push({
+      id: 'core',
+      label: 'Pierfrancesco',
+      hemisphere: 'BOTH',
+      primary_label: 'ROOT',
+      val: 25,
+      x: 0, y: 0, z: 0
+    });
+
+    // Domini principali (5 domini)
+    const domains = [
+      { id: 'domain-se', name: 'Software Engineering', hemi: 'LEFT' },
+      { id: 'domain-ai', name: 'AI Cognitive Systems', hemi: 'LEFT' },
+      { id: 'domain-design', name: 'Design & Creatività', hemi: 'RIGHT' },
+      { id: 'domain-phil', name: 'Filosofia & Valori', hemi: 'RIGHT' },
+      { id: 'domain-med', name: 'Medicina & Salute', hemi: 'LEFT' }
+    ];
+
+    domains.forEach((domain, i) => {
+      const angle = (i / domains.length) * Math.PI * 2;
+      const radius = 150;
+      nodes.push({
+        id: domain.id,
+        label: domain.name,
+        hemisphere: domain.hemi,
+        primary_label: 'DOMAIN',
+        val: 18,
+        x: Math.cos(angle) * radius,
+        y: Math.sin(angle) * radius,
+        z: (Math.random() - 0.5) * 50
+      });
+      
+      links.push({ source: 'core', target: domain.id, strength: 0.8 });
+
+      // Progetti per ogni dominio (3-5 progetti)
+      const numProjects = 3 + Math.floor(Math.random() * 3);
+      for (let j = 0; j < numProjects; j++) {
+        const projId = `${domain.id}-proj-${j}`;
+        const projAngle = angle + (j / numProjects) * 0.5 - 0.25;
+        const projRadius = radius + 80 + Math.random() * 40;
+        
+        nodes.push({
+          id: projId,
+          label: `Progetto ${String.fromCharCode(65+j)}`,
+          hemisphere: domain.hemi,
+          primary_label: categories[Math.floor(Math.random() * categories.length)],
+          val: 12,
+          x: Math.cos(projAngle) * projRadius,
+          y: Math.sin(projAngle) * projRadius,
+          z: (Math.random() - 0.5) * 80
+        });
+        
+        links.push({ source: domain.id, target: projId, strength: 0.6 });
+
+        // Moduli per ogni progetto (2-4 moduli)
+        const numModules = 2 + Math.floor(Math.random() * 3);
+        for (let k = 0; k < numModules; k++) {
+          const modId = `${projId}-mod-${k}`;
+          const modAngle = projAngle + (k / numModules) * 0.3 - 0.15;
+          const modRadius = projRadius + 40 + Math.random() * 30;
+          
+          nodes.push({
+            id: modId,
+            label: `Modulo ${k+1}`,
+            hemisphere: domain.hemi,
+            primary_label: categories[Math.floor(Math.random() * categories.length)],
+            val: 8,
+            x: Math.cos(modAngle) * modRadius,
+            y: Math.sin(modAngle) * modRadius,
+            z: (Math.random() - 0.5) * 60
+          });
+          
+          links.push({ source: projId, target: modId, strength: 0.4 });
+        }
+      }
+    });
+
+    // Aggiungi alcuni ponti inter-emisferici
+    const leftNodes = nodes.filter(n => n.hemisphere === 'LEFT' && n.id.includes('proj'));
+    const rightNodes = nodes.filter(n => n.hemisphere === 'RIGHT' && n.id.includes('proj'));
+    
+    for (let i = 0; i < Math.min(8, leftNodes.length, rightNodes.length); i++) {
+      const leftNode = leftNodes[Math.floor(Math.random() * leftNodes.length)];
+      const rightNode = rightNodes[Math.floor(Math.random() * rightNodes.length)];
+      
+      if (leftNode && rightNode && leftNode.id !== rightNode.id) {
+        links.push({
+          source: leftNode.id,
+          target: rightNode.id,
+          strength: 0.3,
+          isCallosum: true
+        });
+      }
+    }
+
+    // Colori
+    const colors = {
+      BOTH: '#00D2FF',
+      LEFT: '#00D2FF',
+      RIGHT: '#FF007F',
+      ARCHITECTURE: '#00D2FF',
+      ALGORITHM: '#0284c7',
+      DATA_STRUCTURE: '#38bdf8',
+      DESIGN_TOKEN: '#FF007F',
+      UI_COMPONENT: '#fb7185',
+      PERSONAL_VALUE: '#8b5cf6',
+      DOMAIN: '#A855F7',
+      ROOT: '#ffffff'
+    };
+
+    let showLinksVar = true;
+    let chargeStrength = -30;
+    let autoRotate = true;
+
+    // Inizializza grafo 3D
+    const Graph = ForceGraph3D()
+      .document(document.getElementById('graph-container'))
+      .graphData({ nodes, links })
+      .nodeLabel(node => `${node.label}\n${node.primary_label}\n${node.hemisphere === 'LEFT' ? 'Sinistro' : node.hemisphere === 'RIGHT' ? 'Destro' : 'Entrambi'}`)
+      .nodeColor(node => colors[node.primary_label] || colors[node.hemisphere] || '#64748b')
+      .nodeVal(node => node.val)
+      .nodeOpacity(0.85)
+      .linkColor(link => link.isCallosum ? '#A855F7' : '#475569')
+      .linkWidth(link => link.isCallosum ? 1.5 : 1)
+      .linkOpacity(link => link.isCallosum ? 0.7 : 0.3)
+      .linkDirectionalParticles(link => link.isCallosum ? 2 : 0)
+      .linkDirectionalParticleSpeed(0.005)
+      .linkDirectionalParticleColor(link => link.isCallosum ? '#A855F7' : '#fff')
+      .backgroundColor('#07080c')
+      .showNavInfo(false)
+      .d3Force('charge', d3.forceManyBody().strength(chargeStrength))
+      .d3Force('collide', d3.forceCollide().radius(node => node.val + 2))
+      .onNodeClick(node => {
+        // Focus on node
+        const distance = 120;
+        const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+        
+        Graph.cameraPosition(
+          { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio },
+          node,
+          2000
+        );
+        
+        // Show info panel
+        showInfoPanel(node);
+        
+        // Highlight neighbors
+        const neighborIds = new Set();
+        links.forEach(link => {
+          if (link.source.id === node.id) neighborIds.add(link.target.id);
+          if (link.target.id === node.id) neighborIds.add(link.source.id);
+        });
+        
+        Graph.nodeColor(n => neighborIds.has(n.id) ? '#ffffff' : (colors[n.primary_label] || colors[n.hemisphere]));
+        Graph.nodeVal(n => neighborIds.has(n.id) ? n.val * 1.3 : n.val);
+      })
+      .onNodeHover(node => {
+        document.getElementById('graph-container').style.cursor = node ? 'pointer' : 'default';
+      });
+
+    // Auto rotate
+    Graph.controls().autoRotate = autoRotate;
+    Graph.controls().autoRotateSpeed = 0.5;
+
+    // Update stats
+    function updateStats() {
+      const leftCount = nodes.filter(n => n.hemisphere === 'LEFT').length;
+      const rightCount = nodes.filter(n => n.hemisphere === 'RIGHT').length;
+      const callosumCount = links.filter(l => l.isCallosum).length;
+      
+      document.getElementById('count-left').textContent = leftCount;
+      document.getElementById('count-right').textContent = rightCount;
+      document.getElementById('count-callosum').textContent = callosumCount;
+    }
+
+    function setView(view) {
+      const distance = 400;
+      
+      if (view === '3d') {
+        Graph.cameraPosition({ x: distance, y: distance, z: distance }, { x: 0, y: 0, z: 0 }, 2000);
+      } else if (view === '2d') {
+        Graph.cameraPosition({ x: 0, y: 0, z: distance }, { x: 0, y: 0, z: 0 }, 2000);
+      } else if (view === 'top') {
+        Graph.cameraPosition({ x: 0, y: distance, z: 0 }, { x: 0, y: 0, z: 0 }, 2000);
+      }
+      
+      document.querySelectorAll('.controls .btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i < 3 && ((i === 0 && view === '3d') || (i === 1 && view === '2d') || (i === 2 && view === 'top')));
+      });
+    }
+
+    function toggleAutoRotate() {
+      autoRotate = !autoRotate;
+      Graph.controls().autoRotate = autoRotate;
+      document.getElementById('rotate-status').textContent = autoRotate ? 'ON' : 'OFF';
+    }
+
+    function toggleLinks() {
+      showLinksVar = !showLinksVar;
+      Graph.linkVisibility(showLinksVar);
+      document.getElementById('links-status').textContent = showLinksVar ? 'ON' : 'OFF';
+    }
+
+    function setCharge(strength) {
+      chargeStrength = strength;
+      Graph.d3Force('charge', d3.forceManyBody().strength(strength));
+      Graph.d3ReheatSimulation();
+    }
+
+    function focusOnNode(nodeId) {
+      const node = nodes.find(n => n.id === nodeId);
+      if (node) {
+        Graph.cameraPosition(
+          { x: node.x * 2, y: node.y * 2, z: node.z * 2 },
+          node,
+          2000
+        );
+        showInfoPanel(node);
+      }
+    }
+
+    function resetCamera() {
+      Graph.cameraPosition({ x: 400, y: 400, z: 400 }, { x: 0, y: 0, z: 0 }, 2000);
+      hideInfoPanel();
+    }
+
+    function showInfoPanel(node) {
+      const panel = document.getElementById('info-panel');
+      document.getElementById('info-title').textContent = node.label;
+      document.getElementById('info-meta').textContent = `${node.primary_label} • ${node.hemisphere === 'LEFT' ? 'Emisfero Sinistro' : node.hemisphere === 'RIGHT' ? 'Emisfero Destro' : 'Entrambi'}`;
+      document.getElementById('info-summary').textContent = `Nodo cognitivo con ${node.val} unità di importanza. Questo nodo rappresenta un concetto chiave nella struttura della conoscenza.`;
+      panel.classList.add('visible');
+    }
+
+    function hideInfoPanel() {
+      document.getElementById('info-panel').classList.remove('visible');
+    }
+
+    // Init
+    updateStats();
+    setTimeout(() => setView('3d'), 100);
+  </script>
+</body>
+</html>

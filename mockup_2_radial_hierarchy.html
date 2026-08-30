@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 2: Grafo Radiale Gerarchico</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #07080c;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      color: #f8fafc;
+    }
+    
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: rgba(10, 12, 18, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+      gap: 16px;
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .brand-logo { font-size: 18px; }
+    .brand-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    
+    #graph-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 50;
+    }
+    
+    .btn {
+      background: rgba(14, 16, 23, 0.9);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #94a3b8;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: left;
+    }
+    
+    .btn:hover {
+      background: rgba(20, 23, 34, 0.95);
+      color: #fff;
+      border-color: rgba(255,255,255,0.2);
+    }
+    
+    .btn.active {
+      background: rgba(0, 210, 255, 0.15);
+      border-color: rgba(0, 210, 255, 0.4);
+      color: #fff;
+    }
+    
+    .tooltip {
+      position: absolute;
+      background: rgba(14, 16, 23, 0.95);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 11px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      max-width: 280px;
+      z-index: 1000;
+    }
+    
+    .node circle {
+      stroke: #fff;
+      stroke-width: 1.5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .node circle:hover {
+      stroke-width: 3px;
+      filter: drop-shadow(0 0 8px currentColor);
+    }
+    
+    .link {
+      fill: none;
+      stroke-opacity: 0.3;
+      stroke-linecap: round;
+    }
+    
+    .node-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      fill: #f8fafc;
+      pointer-events: none;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+    }
+    
+    .legend {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(14, 16, 23, 0.92);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 12px;
+      z-index: 50;
+      max-width: 200px;
+    }
+    
+    .legend-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 10px;
+    }
+    
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="brand">
+      <span class="brand-logo">🧠</span>
+      <span class="brand-name">MOCKUP 2: GRAFO RADIALE GERARCHICO</span>
+    </div>
+  </div>
+  
+  <div id="graph-container"></div>
+  <div class="tooltip" id="tooltip"></div>
+  
+  <div class="legend">
+    <div class="legend-title">Livelli Cognitivi</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #00D2FF;"></div>Core (Tu)</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #38bdf8;"></div>Domini</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #0284c7;"></div>Progetti</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #FF007F;"></div>Moduli SX</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #fb7185;"></div>Moduli DX</div>
+  </div>
+  
+  <div class="controls">
+    <button class="btn active" onclick="setDepth(2)">Mostra 2 Livelli</button>
+    <button class="btn" onclick="setDepth(3)">Mostra 3 Livelli</button>
+    <button class="btn" onclick="setDepth(4)">Mostra Tutto</button>
+    <button class="btn" onclick="toggleLinks()">🔗 Toggle Links</button>
+    <button class="btn" onclick="resetZoom()">🎯 Reset Zoom</button>
+  </div>
+
+  <script>
+    // Dati gerarchici mock - struttura ad albero cognitivo
+    const mockHierarchy = {
+      name: "Pierfrancesco",
+      id: "core",
+      hemisphere: "BOTH",
+      children: [
+        {
+          name: "Software Engineering",
+          id: "domain-se",
+          hemisphere: "LEFT",
+          children: Array.from({ length: 4 }, (_, i) => ({
+            name: `Progetto ${String.fromCharCode(65+i)}`,
+            id: `proj-${i}`,
+            hemisphere: "LEFT",
+            children: Array.from({ length: 3 + Math.floor(Math.random() * 3) }, (_, j) => ({
+              name: `Modulo ${j+1}`,
+              id: `mod-${i}-${j}`,
+              hemisphere: "LEFT",
+              primary_label: ['ARCHITECTURE', 'ALGORITHM', 'DATA_STRUCTURE'][Math.floor(Math.random() * 3)]
+            }))
+          }))
+        },
+        {
+          name: "AI Cognitive Systems",
+          id: "domain-ai",
+          hemisphere: "LEFT",
+          children: Array.from({ length: 3 }, (_, i) => ({
+            name: `Ricerca ${String.fromCharCode(65+i)}`,
+            id: `research-${i}`,
+            hemisphere: "LEFT",
+            children: Array.from({ length: 2 + Math.floor(Math.random() * 2) }, (_, j) => ({
+              name: `Algoritmo ${j+1}`,
+              id: `algo-${i}-${j}`,
+              hemisphere: "LEFT",
+              primary_label: ['AI_REASONING', 'COGNITIVE_RULE', 'METACOGNITION'][Math.floor(Math.random() * 3)]
+            }))
+          }))
+        },
+        {
+          name: "Design & Creatività",
+          id: "domain-design",
+          hemisphere: "RIGHT",
+          children: Array.from({ length: 4 }, (_, i) => ({
+            name: `Area Creativa ${String.fromCharCode(65+i)}`,
+            id: `creative-${i}`,
+            hemisphere: "RIGHT",
+            children: Array.from({ length: 2 + Math.floor(Math.random() * 3) }, (_, j) => ({
+              name: `Elemento ${j+1}`,
+              id: `elem-${i}-${j}`,
+              hemisphere: "RIGHT",
+              primary_label: ['DESIGN_TOKEN', 'UI_COMPONENT', 'UX_FLOW', 'COLOR_PALETTE'][Math.floor(Math.random() * 4)]
+            }))
+          }))
+        },
+        {
+          name: "Filosofia & Valori",
+          id: "domain-phil",
+          hemisphere: "RIGHT",
+          children: Array.from({ length: 3 }, (_, i) => ({
+            name: `Concetto ${String.fromCharCode(65+i)}`,
+            id: `phil-${i}`,
+            hemisphere: "RIGHT",
+            children: Array.from({ length: 2 + Math.floor(Math.random() * 2) }, (_, j) => ({
+              name: `Principio ${j+1}`,
+              id: `princ-${i}-${j}`,
+              hemisphere: "RIGHT",
+              primary_label: ['PERSONAL_VALUE', 'LIFE_LESSON', 'EMOTIONAL_MEMORY'][Math.floor(Math.random() * 3)]
+            }))
+          }))
+        },
+        {
+          name: "Medicina & Salute",
+          id: "domain-med",
+          hemisphere: "LEFT",
+          children: Array.from({ length: 3 }, (_, i) => ({
+            name: `Area ${String.fromCharCode(65+i)}`,
+            id: `med-${i}`,
+            hemisphere: "LEFT",
+            children: Array.from({ length: 2 + Math.floor(Math.random() * 2) }, (_, j) => ({
+              name: `Studio ${j+1}`,
+              id: `study-${i}-${j}`,
+              hemisphere: "LEFT",
+              primary_label: ['BUSINESS_LOGIC', 'MENTAL_MODEL', 'USER_INTENT'][Math.floor(Math.random() * 3)]
+            }))
+          }))
+        }
+      ]
+    };
+
+    const colors = {
+      BOTH: '#00D2FF',
+      LEFT: '#38bdf8',
+      RIGHT: '#fb7185',
+      ARCHITECTURE: '#00D2FF',
+      ALGORITHM: '#0284c7',
+      DATA_STRUCTURE: '#0ea5e9',
+      AI_REASONING: '#818cf8',
+      COGNITIVE_RULE: '#10b981',
+      METACOGNITION: '#a78bfa',
+      DESIGN_TOKEN: '#FF007F',
+      UI_COMPONENT: '#f43f5e',
+      UX_FLOW: '#e11d48',
+      COLOR_PALETTE: '#fb7185',
+      PERSONAL_VALUE: '#8b5cf6',
+      LIFE_LESSON: '#f59e0b',
+      EMOTIONAL_MEMORY: '#ec4899',
+      BUSINESS_LOGIC: '#4E79A7',
+      MENTAL_MODEL: '#14b8a6',
+      USER_INTENT: '#3b82f6'
+    };
+
+    let maxDepth = 3;
+    let showLinks = true;
+
+    const width = window.innerWidth;
+    const height = window.innerHeight - 48;
+    const radius = Math.min(width, height) / 2 - 60;
+
+    const svg = d3.select('#graph-container')
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .call(d3.zoom().on('zoom', (e) => {
+        g.attr('transform', e.transform);
+      }))
+      .append('g');
+
+    const g = svg.append('g');
+
+    function renderTree() {
+      g.selectAll('*').remove();
+
+      // Crea gerarchia
+      const root = d3.hierarchy(mockHierarchy)
+        .sum(d => 1)
+        .sort((a, b) => b.value - a.value);
+
+      // Filtra per profondità
+      const filteredRoot = root.copy();
+      filteredRoot.descendants().forEach((d, i) => {
+        if (d.depth > maxDepth) {
+          d.children = null;
+        }
+      });
+
+      // Layout radiale
+      const treeLayout = d3.tree()
+        .size([2 * Math.PI, radius])
+        .separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth);
+
+      treeLayout(filteredRoot);
+
+      const centerX = width / 2;
+      const centerY = (height - 48) / 2;
+
+      // Links
+      if (showLinks) {
+        const links = g.selectAll('.link')
+          .data(filteredRoot.links())
+          .join('path')
+          .attr('class', 'link')
+          .attr('d', d3.linkRadial()
+            .angle(d => d.x)
+            .radius(d => d.y))
+          .attr('stroke', d => colors[d.target.data.hemisphere] || '#475569')
+          .attr('stroke-width', d => Math.max(0.5, 2 - d.target.depth * 0.5));
+      }
+
+      // Nodes
+      const nodes = g.selectAll('.node')
+        .data(filteredRoot.descendants())
+        .join('g')
+        .attr('class', 'node')
+        .attr('transform', d => `
+          translate(${centerX + Math.sin(d.x) * d.y},${centerY + -Math.cos(d.x) * d.y})
+          rotate(${d.x * 180 / Math.PI - 90})
+        `)
+        .on('click', (e, d) => {
+          if (d.children) {
+            setDepth(maxDepth >= d.depth + 1 ? d.depth : maxDepth);
+          }
+        })
+        .on('mouseover', (e, d) => showTooltip(e, d))
+        .on('mouseout', hideTooltip);
+
+      // Cerchi nodi
+      nodes.append('circle')
+        .attr('r', d => Math.max(4, 12 - d.depth * 2))
+        .attr('fill', d => colors[d.data.primary_label] || colors[d.data.hemisphere] || '#64748b')
+        .attr('opacity', d => d.depth === 0 ? 1 : 0.85);
+
+      // Labels (solo per alcuni livelli)
+      nodes.filter(d => d.depth <= 2)
+        .append('text')
+        .attr('class', 'node-label')
+        .attr('dy', d => d.depth < 2 ? '-15' : '15')
+        .attr('text-anchor', d => d.x < Math.PI === !d.children ? 'end' : 'start')
+        .text(d => d.data.name)
+        .clone(true).lower()
+        .attr('stroke', '#07080c')
+        .attr('stroke-width', 3)
+        .attr('stroke-linejoin', 'round');
+    }
+
+    function setDepth(depth) {
+      maxDepth = depth;
+      document.querySelectorAll('.controls .btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i < 3 && ((i === 0 && depth === 2) || (i === 1 && depth === 3) || (i === 2 && depth === 4)));
+      });
+      renderTree();
+    }
+
+    function toggleLinks() {
+      showLinks = !showLinks;
+      renderTree();
+    }
+
+    function resetZoom() {
+      svg.transition().duration(750).call(
+        d3.zoom().transform,
+        d3.zoomIdentity
+      );
+    }
+
+    function showTooltip(e, d) {
+      const tooltip = document.getElementById('tooltip');
+      const color = colors[d.data.primary_label] || colors[d.data.hemisphere] || '#64748b';
+      tooltip.innerHTML = `
+        <strong style="color: ${color}">${d.data.name}</strong><br>
+        <span style="color: #94a3b8">Profondità: ${d.depth}</span><br>
+        ${d.data.primary_label ? `<span style="color: ${color}">${d.data.primary_label}</span>` : ''}
+        ${d.children ? `<br><span style="color: #10b981">${d.children.length} figli</span>` : ''}
+      `;
+      tooltip.style.left = (e.pageX + 10) + 'px';
+      tooltip.style.top = (e.pageY - 10) + 'px';
+      tooltip.style.opacity = 1;
+    }
+
+    function hideTooltip() {
+      document.getElementById('tooltip').style.opacity = 0;
+    }
+
+    // Init
+    renderTree();
+
+    // Resize handler
+    window.addEventListener('resize', () => {
+      svg.attr('width', window.innerWidth).attr('height', window.innerHeight - 48);
+      renderTree();
+    });
+  </script>
+</body>
+</html>

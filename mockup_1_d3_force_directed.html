@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 1: Force-Directed Graph con D3.js + WebGL</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #07080c;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      color: #f8fafc;
+    }
+    
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: rgba(10, 12, 18, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      z-index: 100;
+      gap: 16px;
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .brand-logo { font-size: 18px; }
+    .brand-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    
+    .stats {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(14, 16, 23, 0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .dot { width: 6px; height: 6px; border-radius: 50%; }
+    .dot-left { background: #00D2FF; box-shadow: 0 0 6px #00D2FF; }
+    .dot-right { background: #FF007F; box-shadow: 0 0 6px #FF007F; }
+    
+    #graph-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    
+    .node-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      fill: #f8fafc;
+      pointer-events: none;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+    
+    .link { stroke-opacity: 0.4; }
+    
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 8px;
+      z-index: 50;
+    }
+    
+    .btn {
+      background: rgba(14, 16, 23, 0.9);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #94a3b8;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    
+    .btn:hover {
+      background: rgba(20, 23, 34, 0.95);
+      color: #fff;
+      border-color: rgba(255,255,255,0.2);
+    }
+    
+    .btn.active {
+      background: rgba(0, 210, 255, 0.15);
+      border-color: rgba(0, 210, 255, 0.4);
+      color: #fff;
+    }
+    
+    .tooltip {
+      position: absolute;
+      background: rgba(14, 16, 23, 0.95);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 11px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      max-width: 250px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="brand">
+      <span class="brand-logo">🧠</span>
+      <span class="brand-name">MOCKUP 1: D3.JS FORCE-DIRECTED</span>
+    </div>
+    <div class="stats">
+      <div class="stat-pill">
+        <span class="dot dot-left"></span>
+        <span>SX</span>
+        <strong id="count-left">0</strong>
+      </div>
+      <div class="stat-pill">
+        <span class="dot dot-right"></span>
+        <span>DX</span>
+        <strong id="count-right">0</strong>
+      </div>
+    </div>
+  </div>
+  
+  <div id="graph-container"></div>
+  <div class="tooltip" id="tooltip"></div>
+  
+  <div class="controls">
+    <button class="btn active" onclick="setCharge(-300)">Forza: Leggera</button>
+    <button class="btn" onclick="setCharge(-800)">Forza: Media</button>
+    <button class="btn" onclick="setCharge(-1500)">Forza: Forte</button>
+    <button class="btn" onclick="restart()">🔄 Restart</button>
+  </div>
+
+  <script>
+    // Dati mock per testing
+    const mockData = {
+      nodes: Array.from({ length: 80 }, (_, i) => ({
+        id: `node-${i}`,
+        label: i < 5 ? `Macro Area ${i}` : `Nodo ${i}`,
+        hemisphere: i % 2 === 0 ? 'LEFT' : 'RIGHT',
+        primary_label: ['ARCHITECTURE', 'DESIGN_TOKEN', 'ALGORITHM', 'UI_COMPONENT', 'DATA_STRUCTURE'][i % 5],
+        size: i < 5 ? 20 : 8 + Math.random() * 10
+      })),
+      links: Array.from({ length: 120 }, (_, i) => ({
+        source: `node-${Math.floor(Math.random() * 80)}`,
+        target: `node-${Math.floor(Math.random() * 80)}`,
+        strength: Math.random() * 0.5 + 0.3
+      }))
+    };
+
+    // Colori per emispero e categoria
+    const colors = {
+      LEFT: '#00D2FF',
+      RIGHT: '#FF007F',
+      ARCHITECTURE: '#00D2FF',
+      DESIGN_TOKEN: '#FF007F',
+      ALGORITHM: '#0284c7',
+      UI_COMPONENT: '#fb7185',
+      DATA_STRUCTURE: '#38bdf8'
+    };
+
+    const width = window.innerWidth;
+    const height = window.innerHeight - 48;
+
+    const svg = d3.select('#graph-container')
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .call(d3.zoom().on('zoom', (e) => {
+        g.attr('transform', e.transform);
+      }));
+
+    const g = svg.append('g');
+
+    let simulation = null;
+    let chargeStrength = -300;
+
+    function initSimulation() {
+      if (simulation) simulation.stop();
+
+      simulation = d3.forceSimulation(mockData.nodes)
+        .force('charge', d3.forceManyBody().strength(chargeStrength))
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('collide', d3.forceCollide().radius(d => d.size + 2).iterations(2))
+        .force('link', d3.forceLink(mockData.links)
+          .id(d => d.id)
+          .distance(100)
+          .strength(d => d.strength))
+        .force('x', d3.forceX(width / 2).strength(0.05))
+        .force('y', d3.forceY(height / 2).strength(0.05));
+
+      renderGraph();
+    }
+
+    function renderGraph() {
+      // Links
+      const links = g.selectAll('.link')
+        .data(mockData.links, d => `${d.source.id || d.source}-${d.target.id || d.target}`)
+        .join('line')
+        .attr('class', 'link')
+        .attr('stroke', '#475569')
+        .attr('stroke-width', d => Math.sqrt(d.strength) * 1.5);
+
+      // Nodes
+      const nodes = g.selectAll('.node')
+        .data(mockData.nodes, d => d.id)
+        .join('g')
+        .attr('class', 'node')
+        .call(d3.drag()
+          .on('start', dragstarted)
+          .on('drag', dragged)
+          .on('end', dragended));
+
+      // Node circles
+      nodes.selectAll('circle')
+        .data(d => [d])
+        .join('circle')
+        .attr('r', d => d.size)
+        .attr('fill', d => colors[d.primary_label] || colors[d.hemisphere])
+        .attr('stroke', '#fff')
+        .attr('stroke-width', 1.5)
+        .attr('opacity', 0.9)
+        .on('mouseover', (e, d) => showTooltip(e, d))
+        .on('mouseout', hideTooltip);
+
+      // Node labels (solo per nodi grandi)
+      nodes.selectAll('text')
+        .data(d => d.size > 12 ? [d] : [])
+        .join('text')
+        .attr('class', 'node-label')
+        .attr('dy', d => d.size + 12)
+        .attr('text-anchor', 'middle')
+        .text(d => d.label);
+
+      // Update positions on tick
+      simulation.on('tick', () => {
+        links
+          .attr('x1', d => d.source.x)
+          .attr('y1', d => d.source.y)
+          .attr('x2', d => d.target.x)
+          .attr('y2', d => d.target.y);
+
+        nodes.attr('transform', d => `translate(${d.x},${d.y})`);
+      });
+
+      // Update stats
+      const leftCount = mockData.nodes.filter(n => n.hemisphere === 'LEFT').length;
+      const rightCount = mockData.nodes.filter(n => n.hemisphere === 'RIGHT').length;
+      document.getElementById('count-left').textContent = leftCount;
+      document.getElementById('count-right').textContent = rightCount;
+    }
+
+    function setCharge(strength) {
+      chargeStrength = strength;
+      document.querySelectorAll('.controls .btn').forEach((btn, i) => {
+        btn.classList.toggle('active', 
+          (strength === -300 && i === 0) ||
+          (strength === -800 && i === 1) ||
+          (strength === -1500 && i === 2)
+        );
+      });
+      restart();
+    }
+
+    function restart() {
+      initSimulation();
+    }
+
+    function showTooltip(e, d) {
+      const tooltip = document.getElementById('tooltip');
+      tooltip.innerHTML = `
+        <strong style="color: ${colors[d.primary_label]}">${d.label}</strong><br>
+        <span style="color: #94a3b8">${d.primary_label}</span><br>
+        <span style="color: ${colors[d.hemisphere]}">${d.hemisphere === 'LEFT' ? 'Sinistro' : 'Destro'}</span>
+      `;
+      tooltip.style.left = (e.pageX + 10) + 'px';
+      tooltip.style.top = (e.pageY - 10) + 'px';
+      tooltip.style.opacity = 1;
+    }
+
+    function hideTooltip() {
+      document.getElementById('tooltip').style.opacity = 0;
+    }
+
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+
+    // Init
+    initSimulation();
+
+    // Resize handler
+    window.addEventListener('resize', () => {
+      const newWidth = window.innerWidth;
+      const newHeight = window.innerHeight - 48;
+      svg.attr('width', newWidth).attr('height', newHeight);
+      simulation.force('center', d3.forceCenter(newWidth / 2, newHeight / 2));
+    });
+  </script>
+</body>
+</html>
