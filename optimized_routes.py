@@ -5,7 +5,7 @@ con integrazione del database ottimizzato.
 """
 
 from fastapi import APIRouter, HTTPException, BackgroundTasks
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
 import logging
 
@@ -46,9 +46,23 @@ class EdgeInput(BaseModel):
     weight: float = 1.0
 
 
+class CrossLinkInput(BaseModel):
+    """Modello per ponti callosali tra emisferi."""
+    left_node: str
+    right_node: str
+
+
 class IngestRequest(BaseModel):
     nodes: List[NodeInput]
     edges: List[EdgeInput]
+    cross_links: Optional[List[CrossLinkInput]] = None
+
+
+class CrossLinkInput(BaseModel):
+    """Modello per ponti callosali tra emisferi."""
+    left_node: str
+    right_node: str
+    cross_links: Optional[List[CrossLinkInput]] = None
 
 
 @router.get("/api/graph/stats")
@@ -73,22 +87,22 @@ def get_graph_stats():
 def ingest_memory(request: IngestRequest, background_tasks: BackgroundTasks):
     """
     Endpoint SINCRONO per bulk ingest con executemany.
-    Usa INSERT OR REPLACE per idempotenza.
-    Invalida cache automaticamente dopo scrittura.
+    Supporta cross_links per ponti callosali (CORPUS_CALLOSUM_LINK).
+    Compatibile con Graphify Protocol.
     """
     try:
         nodes_dict = [n.dict() for n in request.nodes]
         edges_dict = [e.dict() for e in request.edges]
-        
-        nodes_count, edges_count = db.bulk_ingest(nodes_dict, edges_dict)
-        
+        cross_links_dict = None
+        if request.cross_links:
+            cross_links_dict = [cl.dict() for cl in request.cross_links]
+
+        result = db.bulk_ingest(nodes_dict, edges_dict, cross_links_dict)
+
         return {
             "success": True,
-            "message": f"Inseriti {nodes_count} nodi e {edges_count} archi",
-            "data": {
-                "nodes_inserted": nodes_count,
-                "edges_inserted": edges_count
-            }
+            "message": f"Inseriti {result[\'nodes_inserted\']} nodi, {result[\'edges_inserted\']} archi, {result.get(\'cross_links_inserted\', 0)} cross-link",
+            "data": result
         }
     except Exception as e:
         logger.error(f"Errore ingest: {e}")

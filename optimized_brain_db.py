@@ -8,6 +8,8 @@ Implementa:
 5. LRU Cache per query frequenti
 """
 
+import time
+import re
 import sqlite3
 import logging
 from typing import List, Dict, Any, Optional, Tuple, Set
@@ -186,51 +188,98 @@ class OptimizedBrainDB:
         
         return None
     
-    def bulk_ingest(self, nodes: List[Dict], edges: List[Dict]) -> Tuple[int, int]:
+    def bulk_ingest(self, nodes: List[Dict], edges: List[Dict], cross_links: Optional[List[Dict]] = None) -> Dict[str, int]:
         """
         Inserimento massivo con executemany (5-10x più veloce).
         Gestisce duplicati con INSERT OR REPLACE.
+        Include: tags, sanitizzazione, auto-popolo details, cross_links callosali.
         """
         import json
+        start_time = time.time()
+        
         nodes_inserted = 0
         edges_inserted = 0
+        cross_links_inserted = 0
+        
+        # === SANITIZZAZIONE E NORMALIZZAZIONE (come main.py) ===
+        def sanitize_text(text: str) -> str:
+            if not text:
+                return text
+            # Rimuovi caratteri CJK residui
+            text = re.sub(r'[\u4e00-\u9fff]', '', text)
+            # Traduci automaticamente alcune parole chiave
+            translations = {
+                'thought': 'pensiero',
+                'memory': 'memoria',
+                'concept': 'concetto'
+            }
+            for en, it in translations.items():
+                if en in text.lower():
+                    text = text.replace(en, it)
+            return text
         
         with self.get_cursor() as cursor:
-            # Bulk insert nodi
+            # === PREPARAZIONE NODI CON TAGS COMPLETI ===
             if nodes:
-                node_data = [
-                    (
-                        n["id"], n["label"], n.get("hemisphere", "LEFT"),
-                        n.get("primary_label", "CONCEPT"), n.get("category", "GENERAL"),
-                        n.get("layer_level", 2), n.get("summary", ""),
-                        json.dumps(n.get("details", {})),  # Serializza dict in JSON
-                        datetime.now().isoformat(),  # created_at
-                        datetime.now().isoformat(),  # updated_at
-                        n.get("confidence", "EXTRACTED"),
-                        n.get("parent_graph_id", "root")
-                    )
-                    for n in nodes
-                ]
+                node_data = []
+                for n in nodes:
+                    node_id = n["id"]
+                    label = sanitize_text(n.get("label", node_id))
+                    hemisphere = n.get("hemisphere", "LEFT")
+                    primary_label = n.get("primary_label", "CONCEPT")
+                    category = n.get("category", primary_label)
+                    layer_level = n.get("layer_level", 2)
+                    summary = sanitize_text(n.get("summary", ""))
+                    
+                    # Gestione tags: da lista a stringa JSON
+                    tags = n.get('tags', [])
+                    if isinstance(tags, list):
+                        tags_json = json.dumps(tags)
+                    else:
+                        tags_json = tags  # Già stringa JSON
+                    
+                    # Auto-popola details se mancano campi obbligatori per tipi cognitivi
+                    details = n.get('details', {})
+                    if primary_label == 'USER_INTENT' and 'user_prompt' not in details:
+                        details['user_prompt'] = summary
+                    elif primary_label == 'AI_REASONING' and 'model' not in details:
+                        details['model'] = 'Unknown'
+                    elif primary_label == 'CONVERSATION_EPISODE':
+                        if 'participants' not in details:
+                            details['participants'] = ['Pierfrancesco Amendola', 'AI Assistant']
+                        if 'topic' not in details:
+                            details['topic'] = summary
+                    
+                    details_json = json.dumps(details)
+                    created_at = n.get('created_at', datetime.now().isoformat())
+                    updated_at = n.get('updated_at', datetime.now().isoformat())
+                    confidence = n.get('confidence', 'EXTRACTED')
+                    parent_graph_id = n.get('parent_graph_id', 'root')
+                    
+                    node_data.append((
+                        node_id, label, hemisphere, primary_label, category,
+                        layer_level, summary, tags_json, details_json,
+                        created_at, updated_at, confidence, parent_graph_id
+                    ))
                 
                 cursor.executemany("""
-                    INSERT OR REPLACE INTO nodes 
-                    (id, label, hemisphere, primary_label, category, layer_level, 
-                     summary, details, created_at, updated_at, confidence, parent_graph_id)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    INSERT OR REPLACE INTO nodes
+                    (id, label, hemisphere, primary_label, category, layer_level,
+                     summary, tags, details, created_at, updated_at, confidence, parent_graph_id)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, node_data)
                 nodes_inserted = len(node_data)
             
-            # Bulk insert archi
+            # === PREPARAZIONE ARCHI ===
             if edges:
-                edge_data = [
-                    (
+                edge_data = []
+                for e in edges:
+                    edge_data.append((
                         e["source"], e["target"], e.get("relation", "RELATED_TO"),
                         datetime.now().isoformat(),
                         e.get("confidence", "EXTRACTED"),
                         ""  # reasoning vuoto di default
-                    )
-                    for e in edges
-                ]
+                    ))
                 
                 cursor.executemany("""
                     INSERT OR REPLACE INTO edges
@@ -238,13 +287,37 @@ class OptimizedBrainDB:
                     VALUES (?, ?, ?, ?, ?, ?)
                 """, edge_data)
                 edges_inserted = len(edge_data)
+            
+            # === GESTIONE CROSS_LINKS (Ponti Callosali) ===
+            if cross_links:
+                for link in cross_links:
+                    left_node = link.get('left_node')
+                    right_node = link.get('right_node')
+                    if left_node and right_node:
+                        cursor.execute("""
+                            INSERT OR REPLACE INTO edges
+                            (source, target, relation, created_at, confidence, reasoning)
+                            VALUES (?, ?, ?, ?, ?, ?)
+                        """, (
+                            left_node, right_node, 'CORPUS_CALLOSUM_LINK',
+                            datetime.now().isoformat(), 'INFERRED', ''
+                        ))
+                        cross_links_inserted += 1
         
         # Invalida cache dopo scrittura
         self._cache_dirty = True
         
-        logger.info(f"✅ Bulk ingest: {nodes_inserted} nodi, {edges_inserted} archi")
-        return nodes_inserted, edges_inserted
-    
+        elapsed = time.time() - start_time
+        logger.info(f"✅ Bulk ingest: {nodes_inserted} nodi, {edges_inserted} archi, {cross_links_inserted} cross-link in {elapsed:.4f}s")
+        
+        return {
+            "nodes_inserted": nodes_inserted,
+            "edges_inserted": edges_inserted,
+            "cross_links_inserted": cross_links_inserted,
+            "elapsed_seconds": round(elapsed, 4),
+            "status": "success"
+        }
+
     @lru_cache(maxsize=128)
     def get_node_by_id_cached(self, node_id: str) -> Optional[Dict]:
         """Cache LRU per lookup nodi frequenti."""
