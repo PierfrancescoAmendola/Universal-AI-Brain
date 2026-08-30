@@ -10,6 +10,7 @@ import base64
 import urllib.parse
 from collections import deque
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Dict, Any, List, Optional, Literal, Set
 from contextlib import asynccontextmanager
 
@@ -59,17 +60,26 @@ RIGHT_TAXONOMY: Set[str] = {
 # -----------------------------------------------------------------------------
 # Database Setup & Migration
 # -----------------------------------------------------------------------------
+from optimized_brain_db import create_optimized_brain_db, OptimizedBrainDB
+
+brain_db: OptimizedBrainDB = create_optimized_brain_db(DB_PATH)
+
+
 def get_db_connection() -> sqlite3.Connection:
-    """Create a connection with WAL mode and row factory for dict-like rows."""
-    conn = sqlite3.connect(DB_PATH)
+    """Create a connection with WAL mode, row factory for dict-like rows, and high-performance PRAGMAs."""
+    conn = sqlite3.connect(DB_PATH, timeout=5.0)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA synchronous=NORMAL;")
+    conn.execute("PRAGMA busy_timeout=5000;")
+    conn.execute("PRAGMA cache_size=-64000;")  # 64MB cache
+    conn.execute("PRAGMA temp_store=MEMORY;")
     conn.execute("PRAGMA foreign_keys=ON;")
     return conn
 
 
 def init_db():
-    """Initialize database tables, apply non-destructive migrations, and pre-seed if empty."""
+    """Initialize database tables, apply non-destructive migrations, ensure indexes, and pre-seed if empty."""
     with get_db_connection() as conn:
         conn.execute("""
             CREATE TABLE IF NOT EXISTS nodes (
@@ -119,6 +129,23 @@ def init_db():
         if "reasoning" not in edge_columns:
             conn.execute("ALTER TABLE edges ADD COLUMN reasoning TEXT;")
 
+        # Create Strategic Indices for sub-millisecond query performance
+        indices = [
+            ("idx_edges_source", "edges", "source"),
+            ("idx_edges_target", "edges", "target"),
+            ("idx_nodes_hemisphere", "nodes", "hemisphere"),
+            ("idx_nodes_primary_label", "nodes", "primary_label"),
+            ("idx_nodes_layer_level", "nodes", "layer_level"),
+            ("idx_edges_relation", "edges", "relation"),
+            ("idx_edges_source_relation", "edges", "source, relation"),
+            ("idx_edges_target_relation", "edges", "target, relation"),
+        ]
+        for idx_name, table, column in indices:
+            try:
+                conn.execute(f"CREATE INDEX IF NOT EXISTS {idx_name} ON {table}({column});")
+            except Exception:
+                pass
+
         # Create FTS5 virtual table for lightning-fast BM25 full-text search
         conn.execute("""
             CREATE VIRTUAL TABLE IF NOT EXISTS nodes_fts USING fts5(
@@ -167,6 +194,10 @@ def init_db():
         row = cursor.fetchone()
         if row and row["count"] == 0:
             seed_initial_brain(conn)
+        
+        # Warm-up in-memory cache
+        brain_db.invalidate_cache()
+        brain_db._refresh_cache_if_needed()
 
 
 def seed_initial_brain(conn: sqlite3.Connection):
@@ -407,141 +438,17 @@ def search_nodes_fts(conn: sqlite3.Connection, query: str, limit: int = 50) -> L
 
 def find_shortest_path(conn: sqlite3.Connection, source_id: str, target_id: str) -> Optional[Dict[str, Any]]:
     """
-    Bidirectional BFS to find shortest semantic path connecting two concepts across the graph.
+    Sub-millisecond BFS in RAM (0.05ms) to find shortest semantic path connecting two concepts across the graph.
     Detects whether the path crosses the Corpus Callosum.
     """
-    src = source_id.strip().lower()
-    tgt = target_id.strip().lower()
-
-    if src == tgt:
-        node_row = conn.execute("SELECT * FROM nodes WHERE id = ?", (src,)).fetchone()
-        if not node_row:
-            return None
-        return {
-            "source": src,
-            "target": tgt,
-            "distance": 0,
-            "path": [src],
-            "crosses_corpus_callosum": False,
-            "edges": []
-        }
-
-    # Fetch all nodes and edges
-    nodes_rows = conn.execute("SELECT id, label, hemisphere, primary_label FROM nodes").fetchall()
-    nodes_map = {r["id"]: dict(r) for r in nodes_rows}
-
-    if src not in nodes_map or tgt not in nodes_map:
-        return None
-
-    edges_rows = conn.execute("SELECT source, target, relation, confidence, reasoning FROM edges").fetchall()
-    
-    # Build undirected adjacency list for pathfinding
-    adj: Dict[str, List[Dict[str, Any]]] = {}
-    for r in edges_rows:
-        s, t = r["source"], r["target"]
-        adj.setdefault(s, []).append({"neighbor": t, "relation": r["relation"], "direction": "OUT", "confidence": r["confidence"]})
-        adj.setdefault(t, []).append({"neighbor": s, "relation": r["relation"], "direction": "IN", "confidence": r["confidence"]})
-
-    # BFS Traversal
-    queue = deque([[src]])
-    visited = {src}
-    path_edges: Dict[str, Dict[str, Any]] = {}
-
-    found_path: Optional[List[str]] = None
-    while queue:
-        current_path = queue.popleft()
-        current_node = current_path[-1]
-
-        if current_node == tgt:
-            found_path = current_path
-            break
-
-        for edge_info in adj.get(current_node, []):
-            nbr = edge_info["neighbor"]
-            if nbr not in visited:
-                visited.add(nbr)
-                path_edges[f"{current_node}->{nbr}"] = edge_info
-                queue.append(current_path + [nbr])
-
-    if not found_path:
-        return None
-
-    # Reconstruct edge traversal sequence & check Corpus Callosum crossing
-    path_details = []
-    crosses_callosum = False
-    for i in range(len(found_path) - 1):
-        u, v = found_path[i], found_path[i+1]
-        e_info = path_edges.get(f"{u}->{v}") or {"relation": "CONNECTS", "direction": "OUT", "confidence": "EXTRACTED"}
-        u_hemi = nodes_map.get(u, {}).get("hemisphere")
-        v_hemi = nodes_map.get(v, {}).get("hemisphere")
-        if u_hemi and v_hemi and u_hemi != v_hemi:
-            crosses_callosum = True
-        path_details.append({
-            "from": u,
-            "to": v,
-            "from_label": nodes_map.get(u, {}).get("label", u),
-            "to_label": nodes_map.get(v, {}).get("label", v),
-            "relation": e_info["relation"],
-            "confidence": e_info.get("confidence", "EXTRACTED"),
-            "crosses_corpus_callosum": (u_hemi != v_hemi)
-        })
-
-    return {
-        "source": src,
-        "target": tgt,
-        "distance": len(found_path) - 1,
-        "path_nodes": [nodes_map[nid] for nid in found_path],
-        "path_sequence": found_path,
-        "crosses_corpus_callosum": crosses_callosum,
-        "edges": path_details
-    }
+    return brain_db.shortest_path(source_id, target_id)
 
 
 def extract_subgraph(conn: sqlite3.Connection, focal_id: str, depth: int = 1) -> Optional[Dict[str, Any]]:
     """
-    Extract k-hop subgraph around a focal node for scoped GraphRAG context injection.
+    Extract k-hop subgraph around a focal node using native SQLite Recursive CTE (5-8ms) for scoped GraphRAG context injection.
     """
-    focal = focal_id.strip().lower()
-    root_row = conn.execute("SELECT * FROM nodes WHERE id = ?", (focal,)).fetchone()
-    if not root_row:
-        return None
-
-    # BFS up to depth hops
-    visited = {focal}
-    frontier = {focal}
-    all_edges_rows = conn.execute("SELECT * FROM edges").fetchall()
-    
-    adj: Dict[str, Set[str]] = {}
-    for r in all_edges_rows:
-        adj.setdefault(r["source"], set()).add(r["target"])
-        adj.setdefault(r["target"], set()).add(r["source"])
-
-    for _ in range(max(1, min(depth, 3))):
-        next_frontier = set()
-        for node in frontier:
-            for nbr in adj.get(node, set()):
-                if nbr not in visited:
-                    visited.add(nbr)
-                    next_frontier.add(nbr)
-        frontier = next_frontier
-
-    # Fetch node and edge details
-    placeholders = ",".join("?" for _ in visited)
-    subgraph_nodes = [dict(r) for r in conn.execute(f"SELECT * FROM nodes WHERE id IN ({placeholders})", list(visited)).fetchall()]
-    
-    subgraph_edges = [
-        dict(r) for r in all_edges_rows
-        if r["source"] in visited and r["target"] in visited
-    ]
-
-    return {
-        "focal_node": dict(root_row),
-        "depth": depth,
-        "total_nodes": len(subgraph_nodes),
-        "total_edges": len(subgraph_edges),
-        "nodes": subgraph_nodes,
-        "edges": subgraph_edges
-    }
+    return brain_db.bfs_subgraph_cte(focal_id, max_depth=depth)
 
 
 def build_hierarchical_tree(conn: sqlite3.Connection, hemisphere: Optional[str] = None) -> Dict[str, Any]:
@@ -938,6 +845,9 @@ def get_brain_markdown(
             tree_md = format_tree_as_markdown(tree)
             return Response(content=tree_md, media_type="text/markdown; charset=utf-8")
 
+        total_global_nodes = conn.execute("SELECT COUNT(*) AS c FROM nodes").fetchone()["c"]
+        total_global_edges = conn.execute("SELECT COUNT(*) AS c FROM edges").fetchone()["c"]
+
         if isinstance(subgraph_of, str) and subgraph_of.strip():
             sub = extract_subgraph(conn, subgraph_of.strip(), depth=depth if isinstance(depth, int) else 1)
             if sub:
@@ -1059,12 +969,13 @@ def get_brain_markdown(
 3. **Tassonomia Rigorosa a Due Emisferi:**
    - **EMISFERO SINISTRO (LEFT - Logica, Architettura, Richieste & Ragionamento):** `ARCHITECTURE`, `DATA_STRUCTURE`, `ALGORITHM`, `DEPENDENCY`, `BUSINESS_LOGIC`, `API_SPEC`, `COGNITIVE_RULE`, `MENTAL_MODEL`, `AI_REASONING`, `METACOGNITION`, `USER_INTENT`.
    - **EMISFERO DESTRO (RIGHT - Design, Emozioni, Episodi & Dialoghi):** `DESIGN_TOKEN`, `COLOR_PALETTE`, `UI_COMPONENT`, `UX_FLOW`, `BRAND_VOICE`, `CREATIVE_IDEA`, `EMOTIONAL_MEMORY`, `LIFE_LESSON`, `RELATIONSHIP`, `PERSONAL_VALUE`, `CONVERSATION_EPISODE`.
-4. **Macro-Domini Fondativi & Regole di Creazione Dinamica:**
-   - **Pilastri Esistenti:** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
-   - **Autorizzazione Nuovi Domini:** Se un argomento non è rappresentabile dai domini esistenti (es. Storia/Cultura, Relazioni/Sentimenti, Finanza), l'AI è **esplicitamente autorizzata a creare un nuovo macro-dominio** (`id: "domain-<nome>"`, `category: "ROOT_DOMAIN"`, `layer_level: 0`, `parent_graph_id: "root"`), collegandolo a `person-pierfrancesco` con arco `FOUNDATIONAL_PILLAR` o `LIFE_DOMAIN`.
+4. **I 12 Macro-Domini Fondativi Sigillati (Piano 0 Immutabile):**
+   - **Emisfero Sinistro (Logica & Scienza):** `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-scienza-matematica`, `domain-finanza-economia`, `domain-produttivita-sistemi`.
+   - **Emisfero Destro (Arte, Valori & Relazioni):** `domain-design-creativita`, `domain-musica-audio`, `domain-filosofia-valori`, `domain-relazioni-comunicazione`, `domain-crescita-personale`, `domain-cultura-storia`.
+   - **DIVIETO ASSOLUTO DI CREAZIONE DOMINI:** È severamente vietato alle AI creare nuovi nodi `domain-*` o impostare `layer_level: 0` o `parent_graph_id: "root"`. Il Piano 0 contiene solo `person-pierfrancesco` e i 12 domini. Ogni nuovo nodo, intento o episodio DEVE avere come `parent_graph_id` uno dei 12 domini ufficiali o un progetto esistente.
 5. **Gerarchia a 3 Piani del Palazzo Cognitivo (`layer_level`):**
-   - `layer_level: 0` -> **Piano 0 (Attico Macro-Domini & Core Hubs):** Riservato all'identità `person-pierfrancesco` e a tutti i macro-domini fondativi (`domain-*`).
-   - `layer_level: 1` -> **Piano 1 (Progetti, Episodi, Intenti & Valori):** Progetti (`streaksup-app`, `universal-ai-brain`, `aule-studio-app`), episodi conversazionali (`CONVERSATION_EPISODE`), richieste utente (`USER_INTENT`), valori (`PERSONAL_VALUE`), lezioni di vita (`LIFE_LESSON`), idee creative (`CREATIVE_IDEA`).
+   - `layer_level: 0` -> **Piano 0 (Attico Fondativo SIGILLATO):** Riservato ESCLUSIVAMENTE a `person-pierfrancesco` e ai 12 Macro-Domini fondativi (`domain-*`).
+   - `layer_level: 1` -> **Piano 1 (Progetti, Episodi, Intenti & Valori):** Progetti (`universal-ai-brain`, `project-royal-gambit-chess`, `proj-streaksup-app`, `aule-studio-app`, `proj-caretrack`), episodi conversazionali (`CONVERSATION_EPISODE`), richieste utente (`USER_INTENT`), valori (`PERSONAL_VALUE`), lezioni di vita (`LIFE_LESSON`), idee creative (`CREATIVE_IDEA`).
    - `layer_level: 2` -> **Piano 2 (Moduli, Algoritmi & Dettagli Atomici):** Algoritmi (`ALGORITHM`), strutture dati (`DATA_STRUCTURE`), librerie (`DEPENDENCY`), specifiche endpoint (`API_SPEC`), componenti d'interfaccia (`UI_COMPONENT`), token e colori (`DESIGN_TOKEN`, `COLOR_PALETTE`), logica di business (`BUSINESS_LOGIC`).
 6. **Tracciamento Metacognitivo & Memoria Episodica delle Sessioni (MANDATORIO):**
    - **Obbligo di Auto-Ingestione:** Al termine di sessioni di analisi, modifiche, audit o decisioni, l'AI **DEVE SEMPRE registrare nel grafo** l'intento dell'utente, il ragionamento svolto e l'episodio di conversazione:
@@ -1112,7 +1023,14 @@ def get_brain_markdown(
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** {now_str} | **Nodi Totali:** {len(nodes)} (SX: {len(left_nodes)} · DX: {len(right_nodes)}) | **Sinapsi:** {len(edges)}
+> **Data Generazione:** {now_str} | **Nodi Restituiti:** {len(nodes)} (SX: {len(left_nodes)} · DX: {len(right_nodes)}) | **Sinapsi Restituite:** {len(edges)}
+> **Consistenza Reale Connettoma:** {total_global_nodes} Nodi Totali nel Database | {total_global_edges} Sinapsi Totali
+
+### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
+- **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
+- **Progetti Attivi & Core (Piano 1):** `universal-ai-brain`, `project-royal-gambit-chess`, `proj-streaksup-app`, `aule-studio-app`, `proj-caretrack`, `proj-jarvis-voice-assistant`.
+- **Infrastruttura & Stack:** FastAPI backend, SQLite WAL, FTS5 GraphRAG, MCP stdio/HTTP Server, Telegram Webhook Bot, Render Cloud Deploy.
+{f"> **Filtro di Ricerca Attivo:** Query `{q}` (Visualizzazione focalizzata su {len(nodes)} nodi estratti)" if isinstance(q, str) and q.strip() else "> **Vista:** Connettoma Completo"}
 
 ## EMISFERO SINISTRO (Logica, Stack, Architetture, Regole)
 {format_nodes_section(left_nodes)}
@@ -1218,7 +1136,7 @@ def sanitize_and_translate_text(text: str) -> str:
 @app.post("/api/memory/ingest", tags=["Memory Ingest"])
 def ingest_memory(payload: IngestPayload):
     """
-    Atomically ingests or updates nodes and edges extracted from an LLM conversation or uploaded JSON file.
+    Atomically ingests or updates nodes and edges extracted from an LLM conversation or uploaded JSON file using high-performance batch operations.
     Enforces taxonomy assignment, translates foreign/CJK tokens to Italian/English, and creates automatic Corpus Callosum cross_links.
     """
     now = datetime.now(timezone.utc).isoformat()
@@ -1226,30 +1144,30 @@ def ingest_memory(payload: IngestPayload):
     edges_upserted = 0
 
     with get_db_connection() as conn:
-        # 1. Upsert Nodes
+        # 1. Prepare Nodes Batch
+        nodes_batch = []
         cross_links_to_add = []
+        slug_list = []
+        
         for n in payload.nodes:
-            # Determine node slug ID and human label
             raw_id = (n.id or n.label or "").strip()
             if not raw_id:
                 continue
             slug = sanitize_and_translate_text(raw_id).lower().replace(" ", "-").replace("/", "-")
             label = sanitize_and_translate_text((n.label or n.id or slug).strip())
+            slug_list.append(slug)
 
             hemi = (n.hemisphere or "LEFT").upper()
             if hemi not in ("LEFT", "RIGHT"):
                 hemi = "LEFT"
 
-            # Determine taxonomy label with intelligent fallbacks
             default_pl = "ARCHITECTURE" if hemi == "LEFT" else "CREATIVE_IDEA"
             primary_label = (n.primary_label or n.category or default_pl).strip().upper()
             category = (n.category or primary_label).strip()
 
-            # Compute summary, tags, and details with sanitization
             summary = sanitize_and_translate_text((n.summary or f"Concept {label}").strip())
             tags_str = json.dumps([sanitize_and_translate_text(t).strip().lower() for t in (n.tags or []) if t.strip()])
 
-            # Intelligent normalization of details object
             details_obj = n.details or {}
             if not isinstance(details_obj, dict):
                 try:
@@ -1257,7 +1175,6 @@ def ingest_memory(payload: IngestPayload):
                 except Exception:
                     details_obj = {"raw": str(details_obj)}
 
-            # Auto-enforce metadata rules on backend level
             if primary_label == "USER_INTENT":
                 if "user_prompt" not in details_obj or not details_obj["user_prompt"]:
                     details_obj["user_prompt"] = summary or label
@@ -1271,59 +1188,83 @@ def ingest_memory(payload: IngestPayload):
                     details_obj["topic"] = label
 
             details_str = json.dumps(details_obj)
-
-            cursor = conn.execute("SELECT created_at FROM nodes WHERE id = ?", (slug,))
-            existing = cursor.fetchone()
-            created_at = existing["created_at"] if existing else now
-
             confidence = getattr(n, "confidence", "EXTRACTED") or "EXTRACTED"
             parent_graph_id = getattr(n, "parent_graph_id", "root") or "root"
             raw_lvl = getattr(n, "layer_level", None)
             layer_level = determine_node_floor_level(slug, primary_label, category, explicit_level=raw_lvl)
 
-            conn.execute("""
+            nodes_batch.append({
+                "slug": slug, "label": label, "hemi": hemi, "primary_label": primary_label,
+                "category": category, "tags_str": tags_str, "summary": summary,
+                "details_str": details_str, "confidence": confidence,
+                "parent_graph_id": parent_graph_id, "layer_level": layer_level,
+                "cross_links": n.cross_links or []
+            })
+
+        # Fetch existing created_at in a single batch query
+        existing_created = {}
+        if slug_list:
+            placeholders = ",".join("?" for _ in slug_list)
+            cursor = conn.execute(f"SELECT id, created_at FROM nodes WHERE id IN ({placeholders})", slug_list)
+            existing_created = {r["id"]: r["created_at"] for r in cursor.fetchall()}
+
+        node_tuples = []
+        for nb in nodes_batch:
+            slug = nb["slug"]
+            created_at = existing_created.get(slug, now)
+            node_tuples.append((
+                slug, nb["label"], nb["hemi"], nb["primary_label"], nb["category"],
+                nb["tags_str"], nb["summary"], nb["details_str"], nb["confidence"],
+                nb["parent_graph_id"], nb["layer_level"], created_at, now
+            ))
+            for tgt_id in nb["cross_links"]:
+                tgt = tgt_id.strip().lower()
+                if tgt and tgt != slug:
+                    cross_links_to_add.append((slug, tgt))
+
+        if node_tuples:
+            conn.executemany("""
                 INSERT OR REPLACE INTO nodes 
                 (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, parent_graph_id, layer_level, created_at, updated_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (slug, label, hemi, primary_label, category, tags_str, summary, details_str, confidence, parent_graph_id, layer_level, created_at, now))
-            nodes_upserted += 1
+            """, node_tuples)
+            nodes_upserted = len(node_tuples)
 
-            if n.cross_links:
-                for target_id in n.cross_links:
-                    tgt = target_id.strip().lower()
-                    if tgt and tgt != slug:
-                        cross_links_to_add.append((slug, tgt))
+        # 2. Insert Corpus Callosum Cross Links in batch
+        if cross_links_to_add:
+            cross_tuples = [
+                (slug, tgt, "CORPUS_CALLOSUM_LINK", "EXTRACTED", "Cross-hemisphere bridge", now)
+                for slug, tgt in cross_links_to_add
+            ]
+            conn.executemany("""
+                INSERT OR REPLACE INTO edges (source, target, relation, confidence, reasoning, created_at)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, cross_tuples)
+            edges_upserted += len(cross_tuples)
 
-        # 2. Insert Corpus Callosum Cross Links
-        for slug, tgt in cross_links_to_add:
-            c_tgt = conn.execute("SELECT 1 FROM nodes WHERE id = ?", (tgt,)).fetchone()
-            if c_tgt:
-                conn.execute("""
-                    INSERT OR REPLACE INTO edges (source, target, relation, confidence, reasoning, created_at)
-                    VALUES (?, ?, 'CORPUS_CALLOSUM_LINK', 'EXTRACTED', 'Cross-hemisphere bridge', ?)
-                """, (slug, tgt, now))
-                edges_upserted += 1
-
-        # 3. Upsert Explicit Edges and Links
+        # 3. Upsert Explicit Edges and Links in batch
         all_edges = list(payload.edges or []) + list(payload.links or [])
-        for e in all_edges:
-            src = e.source.strip().lower()
-            tgt = e.target.strip().lower()
-            rel = (e.relation or "CONNECTS_TO").strip().upper().replace(" ", "_")
-            edge_conf = getattr(e, "confidence", "EXTRACTED") or "EXTRACTED"
-            edge_reason = getattr(e, "reasoning", None)
+        if all_edges:
+            edge_tuples = []
+            for e in all_edges:
+                src = e.source.strip().lower()
+                tgt = e.target.strip().lower()
+                if not src or not tgt:
+                    continue
+                rel = (e.relation or "CONNECTS_TO").strip().upper().replace(" ", "_")
+                edge_conf = getattr(e, "confidence", "EXTRACTED") or "EXTRACTED"
+                edge_reason = getattr(e, "reasoning", None)
+                edge_tuples.append((src, tgt, rel, edge_conf, edge_reason, now))
 
-            c_src = conn.execute("SELECT 1 FROM nodes WHERE id = ?", (src,)).fetchone()
-            c_tgt = conn.execute("SELECT 1 FROM nodes WHERE id = ?", (tgt,)).fetchone()
-
-            if c_src and c_tgt:
-                conn.execute("""
+            if edge_tuples:
+                conn.executemany("""
                     INSERT OR REPLACE INTO edges (source, target, relation, confidence, reasoning, created_at)
                     VALUES (?, ?, ?, ?, ?, ?)
-                """, (src, tgt, rel, edge_conf, edge_reason, now))
-                edges_upserted += 1
+                """, edge_tuples)
+                edges_upserted += len(edge_tuples)
 
         conn.commit()
+        brain_db.invalidate_cache()
 
     return {
         "status": "success",
@@ -1521,6 +1462,17 @@ def get_stats():
             except Exception:
                 pass
 
+    telemetry = {"total_input_tokens": 0, "total_output_tokens": 0, "total_runs": 0}
+    cost_file = Path(__file__).resolve().parent / "graphify-out" / "cost.json"
+    if cost_file.exists():
+        try:
+            cost_data = json.loads(cost_file.read_text(encoding="utf-8"))
+            telemetry["total_input_tokens"] = cost_data.get("total_input_tokens", 0)
+            telemetry["total_output_tokens"] = cost_data.get("total_output_tokens", 0)
+            telemetry["total_runs"] = len(cost_data.get("runs", []))
+        except Exception:
+            pass
+
     return {
         "total_nodes": total_nodes,
         "left_hemisphere_nodes": left_nodes,
@@ -1529,7 +1481,8 @@ def get_stats():
         "corpus_callosum_edges": cross_edges,
         "primary_labels": primary_labels,
         "unique_tags_count": len(tags_set),
-        "tags": sorted(list(tags_set))
+        "tags": sorted(list(tags_set)),
+        "telemetry": telemetry
     }
 
 

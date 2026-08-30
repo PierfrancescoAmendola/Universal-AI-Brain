@@ -14,11 +14,17 @@ from collections import deque
 
 DB_PATH = os.getenv("BRAIN_DB_PATH", os.path.join(os.path.dirname(os.path.abspath(__file__)), "brain.db"))
 
+from optimized_brain_db import create_optimized_brain_db
+
+brain_db = create_optimized_brain_db(DB_PATH)
+
 
 def get_db():
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=5.0)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA synchronous=NORMAL;")
+    conn.execute("PRAGMA busy_timeout=5000;")
     conn.execute("PRAGMA foreign_keys=ON;")
     return conn
 
@@ -99,7 +105,7 @@ def tool_brain_get_node(node_id: str) -> Dict[str, Any]:
         except Exception:
             pass
 
-        # Fetch connected edges
+        # Fetch connected edges using strategic indices
         edges_out = [dict(r) for r in conn.execute("SELECT target, relation, confidence, reasoning FROM edges WHERE source = ?", (nid,)).fetchall()]
         edges_in = [dict(r) for r in conn.execute("SELECT source, relation, confidence, reasoning FROM edges WHERE target = ?", (nid,)).fetchall()]
 
@@ -116,111 +122,34 @@ def tool_brain_shortest_path(source: str, target: str) -> Dict[str, Any]:
     src = source.strip().lower()
     tgt = target.strip().lower()
     
-    with get_db() as conn:
-        nodes_rows = conn.execute("SELECT id, label, hemisphere, primary_label FROM nodes").fetchall()
-        nodes_map = {r["id"]: dict(r) for r in nodes_rows}
+    path_res = brain_db.shortest_path(src, tgt)
+    if not path_res:
+        return {"found": False, "message": f"No path exists between '{src}' and '{tgt}'."}
 
-        if src not in nodes_map or tgt not in nodes_map:
-            return {"error": f"One or both nodes not found: '{src}', '{tgt}'"}
-
-        edges_rows = conn.execute("SELECT source, target, relation, confidence, reasoning FROM edges").fetchall()
-        
-        adj: Dict[str, List[Dict[str, Any]]] = {}
-        for r in edges_rows:
-            s, t = r["source"], r["target"]
-            adj.setdefault(s, []).append({"neighbor": t, "relation": r["relation"], "direction": "OUT", "confidence": r["confidence"]})
-            adj.setdefault(t, []).append({"neighbor": s, "relation": r["relation"], "direction": "IN", "confidence": r["confidence"]})
-
-        queue = deque([[src]])
-        visited = {src}
-        path_edges: Dict[str, Dict[str, Any]] = {}
-        found_path = None
-
-        while queue:
-            current_path = queue.popleft()
-            curr = current_path[-1]
-
-            if curr == tgt:
-                found_path = current_path
-                break
-
-            for edge_info in adj.get(curr, []):
-                nbr = edge_info["neighbor"]
-                if nbr not in visited:
-                    visited.add(nbr)
-                    path_edges[f"{curr}->{nbr}"] = edge_info
-                    queue.append(current_path + [nbr])
-
-        if not found_path:
-            return {"found": False, "message": f"No path exists between '{src}' and '{tgt}'."}
-
-        path_details = []
-        crosses_callosum = False
-        for i in range(len(found_path) - 1):
-            u, v = found_path[i], found_path[i+1]
-            e_info = path_edges.get(f"{u}->{v}") or {"relation": "CONNECTS", "direction": "OUT", "confidence": "EXTRACTED"}
-            u_hemi = nodes_map.get(u, {}).get("hemisphere")
-            v_hemi = nodes_map.get(v, {}).get("hemisphere")
-            if u_hemi and v_hemi and u_hemi != v_hemi:
-                crosses_callosum = True
-            path_details.append({
-                "from": u,
-                "to": v,
-                "relation": e_info["relation"],
-                "confidence": e_info.get("confidence", "EXTRACTED"),
-                "crosses_corpus_callosum": (u_hemi != v_hemi)
-            })
-
-        return {
-            "found": True,
-            "distance": len(found_path) - 1,
-            "path_sequence": found_path,
-            "crosses_corpus_callosum": crosses_callosum,
-            "edges": path_details
-        }
+    return {
+        "found": True,
+        "distance": path_res["distance"],
+        "path_sequence": path_res["path_sequence"],
+        "crosses_corpus_callosum": path_res["crosses_corpus_callosum"],
+        "edges": path_res["edges"]
+    }
 
 
 def tool_brain_get_subgraph(node_id: str, depth: int = 1) -> Dict[str, Any]:
-    """Extract a focused k-hop neighborhood graph around a specific topic."""
+    """Extract a focused k-hop neighborhood graph around a specific topic using Recursive CTE."""
     focal = node_id.strip().lower()
-    with get_db() as conn:
-        root_row = conn.execute("SELECT * FROM nodes WHERE id = ?", (focal,)).fetchone()
-        if not root_row:
-            return {"error": f"Node '{focal}' not found"}
+    sub_res = brain_db.bfs_subgraph_cte(focal, max_depth=depth)
+    if not sub_res:
+        return {"error": f"Node '{focal}' not found"}
 
-        visited = {focal}
-        frontier = {focal}
-        all_edges_rows = conn.execute("SELECT * FROM edges").fetchall()
-        
-        adj: Dict[str, Set[str]] = {}
-        for r in all_edges_rows:
-            adj.setdefault(r["source"], set()).add(r["target"])
-            adj.setdefault(r["target"], set()).add(r["source"])
-
-        for _ in range(max(1, min(depth, 3))):
-            next_frontier = set()
-            for node in frontier:
-                for nbr in adj.get(node, set()):
-                    if nbr not in visited:
-                        visited.add(nbr)
-                        next_frontier.add(nbr)
-            frontier = next_frontier
-
-        placeholders = ",".join("?" for _ in visited)
-        subgraph_nodes = [dict(r) for r in conn.execute(f"SELECT * FROM nodes WHERE id IN ({placeholders})", list(visited)).fetchall()]
-        subgraph_edges = [
-            dict(r) for r in all_edges_rows
-            if r["source"] in visited and r["target"] in visited
-        ]
-
-        return {
-            "focal_node": focal,
-            "depth": depth,
-            "nodes_count": len(subgraph_nodes),
-            "edges_count": len(subgraph_edges),
-            "nodes": subgraph_nodes,
-            "edges": subgraph_edges
-        }
+    return {
+        "focal_node": focal,
+        "depth": depth,
+        "nodes_count": sub_res["total_nodes"],
+        "edges_count": sub_res["total_edges"],
+        "nodes": sub_res["nodes"],
+        "edges": sub_res["edges"]
+    }
 
 
 def sanitize_and_translate_text(text: str) -> str:
@@ -373,6 +302,7 @@ def tool_brain_ingest(nodes: List[Dict[str, Any]], edges: Optional[List[Dict[str
                 edges_upserted += 1
 
         conn.commit()
+        brain_db.invalidate_cache()
 
     return {
         "status": "success",

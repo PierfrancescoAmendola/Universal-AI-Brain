@@ -24,9 +24,11 @@ BRAIN_MD = os.path.join(LOCAL_DIR, "brain.md")
 
 
 def get_local_connection() -> sqlite3.Connection:
-    conn = sqlite3.connect(LOCAL_DB)
+    conn = sqlite3.connect(LOCAL_DB, timeout=5.0)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA synchronous=NORMAL;")
+    conn.execute("PRAGMA busy_timeout=5000;")
     conn.execute("PRAGMA foreign_keys=ON;")
     return conn
 
@@ -147,40 +149,48 @@ def sync_bidirectional(verbose: bool = True) -> Dict[str, Any]:
 
     changes_made = False
 
-    # 2. Inserimento locale dei nodi scaricati da Render (Pull)
+    # 2. Inserimento locale dei nodi scaricati da Render (Pull) con batch executemany
     if only_in_render_nodes or only_in_render_edges:
         now = datetime.now(timezone.utc).isoformat()
         with get_local_connection() as conn:
-            for n in only_in_render_nodes:
-                tags_str = json.dumps(n.get("tags", [])) if isinstance(n.get("tags"), list) else n.get("tags", "[]")
-                details_str = json.dumps(n.get("details", {})) if isinstance(n.get("details"), dict) else str(n.get("details", "{}"))
-                conn.execute("""
+            if only_in_render_nodes:
+                node_tuples = []
+                for n in only_in_render_nodes:
+                    tags_str = json.dumps(n.get("tags", [])) if isinstance(n.get("tags"), list) else n.get("tags", "[]")
+                    details_str = json.dumps(n.get("details", {})) if isinstance(n.get("details"), dict) else str(n.get("details", "{}"))
+                    node_tuples.append((
+                        n["id"], n["label"], n.get("hemisphere", "LEFT"),
+                        n.get("primary_label", n.get("category", "ARCHITECTURE")),
+                        n.get("category", "ARCHITECTURE"),
+                        tags_str, n.get("summary", ""), details_str,
+                        n.get("confidence", "EXTRACTED"),
+                        n.get("parent_graph_id", "root"),
+                        n.get("layer_level", 1),
+                        n.get("created_at", now),
+                        n.get("updated_at", now)
+                    ))
+                conn.executemany("""
                     INSERT OR REPLACE INTO nodes 
                     (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, parent_graph_id, layer_level, created_at, updated_at)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """, (
-                    n["id"], n["label"], n.get("hemisphere", "LEFT"),
-                    n.get("primary_label", n.get("category", "ARCHITECTURE")),
-                    n.get("category", "ARCHITECTURE"),
-                    tags_str, n.get("summary", ""), details_str,
-                    n.get("confidence", "EXTRACTED"),
-                    n.get("parent_graph_id", "root"),
-                    n.get("layer_level", 1),
-                    n.get("created_at", now),
-                    n.get("updated_at", now)
-                ))
+                """, node_tuples)
 
-            for e in only_in_render_edges:
-                conn.execute("""
+            if only_in_render_edges:
+                edge_tuples = [
+                    (
+                        e["source"], e["target"], e.get("relation", "CONNECTS_TO"),
+                        e.get("confidence", "EXTRACTED"),
+                        e.get("reasoning"),
+                        e.get("created_at", now)
+                    )
+                    for e in only_in_render_edges
+                ]
+                conn.executemany("""
                     INSERT OR REPLACE INTO edges 
                     (source, target, relation, confidence, reasoning, created_at)
                     VALUES (?, ?, ?, ?, ?, ?)
-                """, (
-                    e["source"], e["target"], e.get("relation", "CONNECTS_TO"),
-                    e.get("confidence", "EXTRACTED"),
-                    e.get("reasoning"),
-                    e.get("created_at", now)
-                ))
+                """, edge_tuples)
+            
             conn.commit()
             conn.execute("PRAGMA wal_checkpoint(TRUNCATE);")
         changes_made = True

@@ -1,12 +1,13 @@
-```gitignore
 # Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Database
-*.db
+# SQLite WAL and temp files (keep brain.db tracked for sync)
+*.db-shm
+*.db-wal
+backups/
 
 # Environment
 .env
@@ -16,8 +17,9 @@ __pycache__/
 # Logs
 *.log
 
-# Temporary files
+# Scratch & temporary files
+scratch/
 *.tmp
 *.temp
 *~
-```
+.DS_Store
