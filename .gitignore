@@ -1,15 +1,23 @@
-```
-# Database backups
-backups/
+```gitignore
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
-# SQLite database files
+# Database
 *.db
 
-# Temporary files
-*.tmp
-
-# Environment files
+# Environment
 .env
 .env.local
 *.env.*
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*~
 ```
