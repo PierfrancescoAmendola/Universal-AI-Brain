@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-30 12:56:09 UTC | **Nodi Restituiti:** 329 (SX: 210 · DX: 119) | **Sinapsi Restituite:** 848
-> **Consistenza Reale Connettoma:** 329 Nodi Totali nel Database | 848 Sinapsi Totali
+> **Data Generazione:** 2026-08-30 14:38:57 UTC | **Nodi Restituiti:** 335 (SX: 214 · DX: 121) | **Sinapsi Restituite:** 860
+> **Consistenza Reale Connettoma:** 335 Nodi Totali nel Database | 860 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -85,6 +85,10 @@
   - **Tags:** `#algorithm-analysis` `#graph-theory` `#mst` `#b-tree` `#hierarchical-tree`
   - **Sintesi:** Valutazione tecnica: BST puro monodimensionale non modella relazioni cicliche; Spanning Tree Pesato (MST) e Alberi Gerarchici di Comunità estraggono la spina dorsale concettuale.
   - **Dettagli:** `raw`: `pure_bst`: Monodimensionale (già coperto da B-Tree SQLite O(log N)), `optimal_tree_models`: ['Maximum Spanning Tree (MST / Kruskal) per spina dorsale concettuale', 'Hierarchical Community Tree (Dendrogramma) per navigazione a zoom semantico', 'Prefix Trie / Radix Tree per lookup istantaneo O(k)'], `model`: LLM Assistant (Historical Session)
+- **Analisi Saturazione e Approccio Programmatico** (`ai-reasoning-market-analysis-automation`)
+  - **Tags:** `#analisi-mercato` `#automazione` `#python` `#youtube-algorithm` `#coppa`
+  - **Sintesi:** Analisi tecnica ed economica: evidenziata l'elevata saturazione, le restrizioni COPPA per i contenuti per bambini con crollo dell'RPM (0.01-0.05€ per 1k views) e il costo nascosto dei SaaS. Suggerita alternativa ingegneristica (pipeline Python + FFmpeg).
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ['Identificazione del tool citato (Hugging Face / tool generativi video terzi).', 'Calcolo metrico del volume visualizzazioni necessario (5M - 25M views/mese per 100-500€).', 'Analisi impatto policy COPPA su demonetizzazione e disattivazione annunci mirati.', 'Proposta di pipeline headless (Python, TTS locale/API, FFmpeg) a costo zero reale.'], `outcome`: Sconsigliato l'uso manuale di tool a pagamento; proposta automazione software proprietaria come unica alternativa sostenibile.
 - **Analisi Tecnica, Complessità e Gap Analysis App Lingue** (`reasoning-analisi-fattibilita-language-app`)
   - **Tags:** `#architecture` `#estimates` `#gap-analysis` `#language-app`
   - **Sintesi:** Valutazione complessità a 3/5, tempi 3-5 giorni per MVP, identificati 4 gap tecnici essenziali (pipeline batch, TTS neurale, sentence mining i+1, grafo grammaticale).
@@ -304,6 +308,10 @@
 - **Risposta groq: non riesci a connetterti al mio cer...** (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`)
   - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
   - **Sintesi:** Sì, **sono già connesso al tuo “cervello artificiale”**.
+- **Strategia Micro-Business e Servizi B2B Leggeri** (`ai-reasoning-alternative-monetization-strategies`)
+  - **Tags:** `#analisi-strategica` `#micro-saas` `#automazione-b2b` `#asset-digitali` `#editoria-tecnica`
+  - **Sintesi:** Strutturazione di quattro canali scalabili a costo zero (Automazioni B2B, Micro-SaaS/App Freemium, Boilerplate di codice, Editoria tecnica KDP/Gumroad) con stime di conversione unitarie per raggiungere il target 100-500€/mese.
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ['Mappatura delle competenze tecniche su modelli B2B e B2C a basso rischio.', 'Definizione dei 4 pilastri: Automazioni/Agenti per PMI, Micro-App su abbonamento, Vendita Boilerplate/Template, Editoria tecnica specializzata.', "Calcolo del volume di vendita necessario per ciascun canale per raggiungere l'obiettivo prefissato.", "Realizzazione della matrice comparativa di ritorno economico e barriera all'ingresso."], `outcome`: Presentazione di alternative concrete orientate alla creazione di valore diretto e asset riutilizzabili.
 - **Tassonomia Metacognitiva & AI Reasoning Hub** (`tax-ai-reasoning`)
   - **Tags:** `#ai-reasoning` `#metacognition` `#chain-of-thought` `#rationale` `#knowledge-graph`
   - **Sintesi:** Area cognitiva dedicata al tracciamento dei ragionamenti, deduzioni analitiche e percorsi logici interni generati dall'AI durante le sessioni.
@@ -870,6 +878,10 @@
   - **Tags:** `#user-intent` `#context-preservation` `#infinite-memory` `#chat-saturation` `#zero-loss` `#cross-session`
   - **Sintesi:** Volontà utente: azzerare la perdita di contesto causata dalla saturazione delle finestre di contesto degli LLM, garantendo continuità cognitiva perenne tra chat diverse.
   - **Dettagli:** `raw`: `core_vision`: Memoria eterna, coerente e non volatile per passato, presente e futuro., `problem_solved`: Saturazione della context window e perdita della cronologia decisionale nei cambi di sessione., `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc...quante volte magari si deve cambiare chat perchè alcuni modelli saturano il contesto di una chat e si deve ricominciare da zero, come si fa??? si eprde tutto?? no quindi lo scopo è quello, non perdere mai il contesto e avere sempre memoria, per il passato, presente e futuro.
+- **Richiesta Metodi Alternativi di Guadagno** (`user-intent-alternative-income-generation`)
+  - **Tags:** `#monetizzazione` `#side-hustle` `#business-models` `#proposte-alternative`
+  - **Sintesi:** L'utente richiede la formulazione di strategie alternative e concrete per generare tra 100 e 500 euro/mese a costo zero iniziale.
+  - **Dettagli:** `user_prompt`: allora propronimi un altro metodo perfavore, `context`: Transizione da modelli basati sulla viralità passiva a modelli ad alto valore aggiunto basati su sviluppo software e asset digitali.
 - **Richiesta Utente: Abbandono Jarvis e Avvio Nuovo Progetto** (`user-intent-abbandono-jarvis-nuovo-progetto`)
   - **Tags:** `#abbandono-jarvis` `#pivot` `#nuovo-progetto` `#semplicità`
   - **Sintesi:** Pierfrancesco ordina la cancellazione di Jarvis/OpenJarvis e l'orientamento verso un progetto più pragmatico e funzionale.
@@ -926,6 +938,10 @@
   - **Tags:** `#language-learning` `#feasibility` `#planning`
   - **Sintesi:** Richiesta di parere critico, stima complessità/tempi e identificazione elementi mancanti nel progetto di app lingue personale.
   - **Dettagli:** `raw`: `context`: Valutazione fattibilità, tempi, complessità e gap del piano per language app personale gratuita, `user_prompt`: /universal-brain /caveman, che ne pensi del creare un app per imparare le lingue in modo gratis e unico, ne parlavo prima con gemini, mi aveva fatto un progetto, tu cosa ne pensi, quanto complesso può essere?? quanto ci mettiamo a realizzarlo?? ha mancato qualcosa??
+- **Valutazione Monetizzazione YT Shorts AI** (`user-intent-ai-shorts-evaluation`)
+  - **Tags:** `#monetizzazione` `#youtube` `#ai-video` `#side-hustle`
+  - **Sintesi:** L'utente richiede un'analisi di fattibilità per generare 100-500 euro/mese creando YouTube Shorts per bambini generati tramite AI su piattaforme freemium/terze.
+  - **Dettagli:** `user_prompt`: mi hanno consigliato per guadagnare soldi un metodo con l'ai però non so se sia fattibile o meno. dicono che è a costo zero all'inizio poi se voglio diventare più esperto, migliore e avere più possibilità bisogna pagare. si tratta di fare i video shorts su yt tramite huggsfield o altre piattaforme così, e caricarli su yt. come argomento loro dicono i video per bambini perchè sono quelli che vanno più virali ecc...tu cosa ne pensi, effettivamente quanto è saturo il mercato?? riuscirò a fare qualche cosa di soldi?? non chiedo migliaia di euro a me basterebbero anche dai 100 ai 500 euro al mese. fammi sapere, `context`: Valutazione critica di un modello di business virale, saturazione del mercato video AI per bambini, policy COPPA e calcolo metriche RPM reali.
 - **Valutazione e Ottimizzazione Architettura Knowledge Graph** (`intent-evaluate-ai-brain-architecture`)
   - **Tags:** `#metacognition` `#system-design` `#graph-database` `#prompt-engineering`
   - **Sintesi:** L'utente richiede un'analisi critica dell'architettura del proprio cervello artificiale, cercando lacune, migliorie strutturali e ottimizzazioni del prompt.
@@ -1170,6 +1186,10 @@
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:34:46CEST: Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo
   - **Dettagli:** `raw`: `session_id`: ep_20260827_hierarchical_tree_deployment_sync, `timestamp`: 2026-08-27T20:34:46CEST, `topic`: Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Sessione Alternative di Guadagno Digitale** (`episode-alternative-monetization-brainstorming`)
+  - **Tags:** `#chat` `#strategia` `#side-business` `#idee-monetizzazione`
+  - **Sintesi:** Definizione di quattro percorsi operativi di guadagno a costo zero per raggiungere il target di 100-500€ mensili.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Strategie pratiche di monetizzazione alternativa: Automazioni B2B, Micro-SaaS, Boilerplate ed Editoria Tecnica., `key_takeaways`: Le automazioni per attività locali permettono monetizzazione immediata; micro-app e asset digitali garantiscono rendita scalabile nel tempo.
 - **Sessione Ottimizzazione Backend e Audit Sicurezza** (`episode-backend-optimization-session`)
   - **Tags:** `#chat` `#sviluppo` `#collaborazione-ai` `#sicurezza-dati`
   - **Sintesi:** Sessione collaborativa multi-modello (Qwen + Gemini) per ottimizzare il Universal Knowledge Graph. Enfasi sulla sicurezza dei dati (backup), correzione bug critici e raggiungimento di performance estreme (pathfinding 0.05ms).
@@ -1194,6 +1214,10 @@
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T18:28:00CEST: Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artificiali
   - **Dettagli:** `raw`: `session_id`: ep_20260827_graph_tree_unification, `timestamp`: 2026-08-27T18:28:00CEST, `topic`: Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artificiali, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Valutazione Business Model YouTube Shorts AI** (`episode-yt-shorts-business-model`)
+  - **Tags:** `#chat` `#consulenza` `#business` `#ai-creators` `#youtube`
+  - **Sintesi:** Analisi critica della proposta di monetizzazione tramite canali YouTube Shorts per bambini generati con AI.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Saturazione di mercato, RPM Shorts, vincoli normativi COPPA e approccio ingegneristico., `key_takeaways`: Il modello 'guru' è insostenibile per via di RPM minimi e restrizioni sui minori. Se approcciato, richiede sviluppo di pipeline proprietarie a costo zero.
 - **Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel Knowledge Graph** (`ep-20260827-tree-structures-evaluation`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:30:00CEST: Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel Knowledge Graph
@@ -1643,8 +1667,10 @@
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`) *(Corpo Calloso)*
 - (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-ai-shorts-evaluation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allineamento-nodi-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-alternative-income-generation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-audit-critico-e-mockup-fr-2255`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1736,6 +1762,7 @@
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[RECORDS_INTENT]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_INTENT]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
+- (`episode-alternative-monetization-brainstorming`) --[RECORDS_INTENT]--> (`user-intent-alternative-income-generation`) *(Corpo Calloso)*
 - (`episode-audit-critico-e-mockup-fr-2255`) --[RECORDS_INTENT]--> (`user-intent-audit-critico-e-mockup-fr-2255`) *(Corpo Calloso)*
 - (`episode-backend-optimization-session`) --[RECORDS_INTENT]--> (`user-intent-backend-optimization-hybrid`) *(Corpo Calloso)*
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_INTENT]--> (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
@@ -1757,6 +1784,7 @@
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_INTENT]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
+- (`episode-yt-shorts-business-model`) --[RECORDS_INTENT]--> (`user-intent-ai-shorts-evaluation`) *(Corpo Calloso)*
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_REASONING]--> (`reasoning-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-avvio-intervista-universal-ai-hub`) --[RECORDS_REASONING]--> (`reasoning-architettura-universal-ai-hub`) *(Corpo Calloso)*
 - (`episode-20260829-chiusura-jarvis-nuovo-progetto`) --[RECORDS_REASONING]--> (`reasoning-eliminazione-jarvis-pulizia`) *(Corpo Calloso)*
@@ -1770,6 +1798,7 @@
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[RECORDS_REASONING]--> (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_REASONING]--> (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
+- (`episode-alternative-monetization-brainstorming`) --[RECORDS_REASONING]--> (`ai-reasoning-alternative-monetization-strategies`) *(Corpo Calloso)*
 - (`episode-audit-critico-e-mockup-fr-2255`) --[RECORDS_REASONING]--> (`reasoning-audit-critico-e-mockup-fr-2255`) *(Corpo Calloso)*
 - (`episode-backend-optimization-session`) --[RECORDS_REASONING]--> (`reasoning-backend-audit-and-fix`) *(Corpo Calloso)*
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_REASONING]--> (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
@@ -1791,6 +1820,7 @@
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_REASONING]--> (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_REASONING]--> (`reasoning-analisi-fattibilita-language-app`) *(Corpo Calloso)*
+- (`episode-yt-shorts-business-model`) --[RECORDS_REASONING]--> (`ai-reasoning-market-analysis-automation`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[RENDERED_VIA]--> (`aule-studio-mobile-ui`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[RENDERS_FX]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-clean-clustered-ui`) *(Corpo Calloso)*
@@ -2085,6 +2115,8 @@
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-relazioni-comunicazione`)
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-crescita-personale`)
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-cultura-storia`)
+- (`ai-reasoning-alternative-monetization-strategies`) --[FULFILLS]--> (`user-intent-alternative-income-generation`)
+- (`ai-reasoning-market-analysis-automation`) --[FULFILLS]--> (`user-intent-ai-shorts-evaluation`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
@@ -2152,6 +2184,7 @@
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-alternative-monetization-brainstorming`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-audit-critico-e-mockup-fr-2255`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-backend-optimization-session`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -2173,6 +2206,7 @@
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-valutazione-language-app-antigravity`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-yt-shorts-business-model`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`skill-universal-brain-installed`) --[INTERFACES_WITH]--> (`node-knowledge-graph-memory`)
 - (`node-mcp-brain-get-tree`) --[INTERROGATES]--> (`node-hierarchical-tree-engine-impl`)
 - (`streaksup-darwin-ipc-protocol`) --[INVALIDATES_CACHE_FOR]--> (`streaksup-swiftdata-arch`)
@@ -2243,8 +2277,10 @@
 - (`identity-cs-researcher`) --[STUDIED]--> (`coursework-cs-federico2`)
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
+- (`user-intent-ai-shorts-evaluation`) --[TARGETS_PROJECT]--> (`domain-finanza-economia`)
 - (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-alternative-income-generation`) --[TARGETS_PROJECT]--> (`domain-finanza-economia`)
 - (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-audit-critico-e-mockup-fr-2255`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
