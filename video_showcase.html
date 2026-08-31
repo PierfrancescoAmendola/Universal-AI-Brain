@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal AI Brain - Video Showcase & Generator (60s)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;500;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --panel-bg: rgba(13, 17, 23, 0.85);
+      --cyan-neon: #00D2FF;
+      --magenta-neon: #FF007F;
+      --purple-neon: #A855F7;
+      --gold-neon: #FBBF24;
+      --green-neon: #10B981;
+      --border-glow: rgba(0, 210, 255, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 20%, #111827 0%, #07090e 80%, #030407 100%);
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    .top-bar {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding: 12px 20px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      font-size: 26px;
+      animation: pulse 2s infinite;
+    }
+
+    .brand-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #00D2FF 0%, #A855F7 50%, #FF007F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: #94a3b8;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .player-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 210, 255, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.12);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .player-wrapper.portrait {
+      max-width: 460px;
+      aspect-ratio: 9 / 16;
+    }
+
+    #video-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: pointer;
+    }
+
+    .overlay-hud {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+    }
+
+    .hud-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .hud-badge {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 210, 255, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-family: 'Fira Code', monospace;
+      font-size: 11px;
+      color: var(--cyan-neon);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rec-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+      animation: blink 1s infinite;
+    }
+
+    .hud-scene-tag {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 0, 127, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      color: var(--magenta-neon);
+      font-weight: 700;
+    }
+
+    .hud-subtitles {
+      background: rgba(10, 14, 23, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      padding: 14px 22px;
+      text-align: center;
+      max-width: 90%;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transform: translateY(0);
+      transition: all 0.2s ease;
+    }
+
+    .subtitle-text {
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 600;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .subtitle-highlight {
+      color: var(--cyan-neon);
+      font-weight: 800;
+    }
+
+    .center-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(0, 210, 255, 0.9), rgba(255, 0, 127, 0.9));
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 40px rgba(0, 210, 255, 0.6);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 10;
+    }
+
+    .center-play-btn:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 0 60px rgba(255, 0, 127, 0.8);
+    }
+
+    .center-play-btn svg {
+      width: 36px;
+      height: 36px;
+      fill: #fff;
+      margin-left: 4px;
+    }
+
+    .center-play-btn.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+
+    .controls-dock {
+      width: 100%;
+      max-width: 1100px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 16px 24px;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .timeline-container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .time-display {
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      color: #94a3b8;
+      min-width: 85px;
+    }
+
+    .progress-bar-wrap {
+      flex: 1;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--cyan-neon), var(--purple-neon), var(--magenta-neon));
+      border-radius: 6px;
+      position: relative;
+      transition: width 0.05s linear;
+    }
+
+    .scene-markers {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .scene-marker {
+      width: 2px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .control-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f1f5f9;
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--cyan-neon);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #00D2FF 0%, #0070f3 100%);
+      color: #050b14;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 4px 18px rgba(0, 210, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+      box-shadow: 0 6px 24px rgba(0, 210, 255, 0.55);
+      color: #000;
+    }
+
+    .btn-export {
+      background: linear-gradient(135deg, #FF007F 0%, #9333ea 100%);
+      color: #fff;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 4px 18px rgba(255, 0, 127, 0.35);
+    }
+
+    .btn-export:hover {
+      background: linear-gradient(135deg, #fb7185 0%, #a855f7 100%);
+      box-shadow: 0 6px 24px rgba(255, 0, 127, 0.55);
+    }
+
+    .btn.active {
+      background: rgba(0, 210, 255, 0.2);
+      border-color: var(--cyan-neon);
+      color: var(--cyan-neon);
+    }
+
+    .scene-pills {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .scene-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      color: #94a3b8;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+
+    .scene-pill:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .scene-pill.active {
+      background: rgba(0, 210, 255, 0.15);
+      border-color: var(--cyan-neon);
+      color: var(--cyan-neon);
+      font-weight: 700;
+    }
+
+    .post-kit-card {
+      width: 100%;
+      max-width: 1100px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 24px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .kit-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .kit-title {
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .post-textarea {
+      width: 100%;
+      height: 160px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 14px;
+      color: #e2e8f0;
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(0,210,255,0.4)); }
+      50% { transform: scale(1.1); filter: drop-shadow(0 0 16px rgba(255,0,127,0.8)); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: rgba(16, 185, 129, 0.95);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="brand">
+      <div class="brand-icon">🧠</div>
+      <div>
+        <div class="brand-title">UNIVERSAL AI BRAIN • VIDEO SHOWCASE</div>
+        <div class="brand-subtitle">Pierfrancesco Amendola · Persistent Bi-Hemispheric Knowledge Graph</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="btn" id="btn-ratio" title="Cambia formato video 16:9 / 9:16">📱 Formato: <span id="ratio-label">16:9</span></button>
+      <button class="btn btn-export" id="btn-record">🎥 Registra & Scarica MP4/WebM</button>
+    </div>
+  </div>
+
+  <div class="player-wrapper" id="player-container">
+    <canvas id="video-canvas" width="1920" height="1080"></canvas>
+    
+    <div class="overlay-hud">
+      <div class="hud-top">
+        <div class="hud-badge">
+          <div class="rec-dot"></div>
+          <span id="recording-status">LIVE PREVIEW</span>
+        </div>
+        <div class="hud-scene-tag" id="hud-scene-name">SCENA 1 • INTRODUZIONE</div>
+      </div>
+
+      <div class="hud-subtitles" id="subtitles-box">
+        <div class="subtitle-text" id="subtitle-content">
+          Ecco il <span class="subtitle-highlight">Universal AI Brain</span>: la memoria cognitiva persistente a 0€ per tutte le AI.
+        </div>
+      </div>
+    </div>
+
+    <div class="center-play-btn" id="center-play-btn">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+
+  <div class="controls-dock">
+    <div class="timeline-container">
+      <div class="time-display" id="time-display">00:00 / 01:00</div>
+      <div class="progress-bar-wrap" id="progress-wrap">
+        <div class="progress-fill" id="progress-fill"></div>
+        <div class="scene-markers">
+          <div class="scene-marker" style="left: 0%;"></div>
+          <div class="scene-marker" style="left: 16.66%;"></div>
+          <div class="scene-marker" style="left: 33.33%;"></div>
+          <div class="scene-marker" style="left: 50%;"></div>
+          <div class="scene-marker" style="left: 66.66%;"></div>
+          <div class="scene-marker" style="left: 83.33%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-pills">
+      <div class="scene-pill active" data-scene="0">1. Il Cervello (0-10s)</div>
+      <div class="scene-pill" data-scene="1">2. Bi-Emisferico (10-20s)</div>
+      <div class="scene-pill" data-scene="2">3. Palazzo Cognitivo (20-30s)</div>
+      <div class="scene-pill" data-scene="3">4. MCP Multi-Agent (30-40s)</div>
+      <div class="scene-pill" data-scene="4">5. Telegram & Cloud (40-50s)</div>
+      <div class="scene-pill" data-scene="5">6. Open Source (50-60s)</div>
+    </div>
+
+    <div class="control-row">
+      <div class="btn-group">
+        <button class="btn btn-primary" id="btn-play-pause">▶ Play</button>
+        <button class="btn" id="btn-restart">↺ Riavvia</button>
+        <button class="btn active" id="btn-synth-music">🎵 Musica Synth</button>
+        <button class="btn active" id="btn-voiceover">🗣️ Voce Guida (IT)</button>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn" id="btn-fullscreen">⛶ Schermo Intero</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-kit-card">
+    <div class="kit-header">
+      <div class="kit-title">
+        <span>🚀 Kit Post per Social Media (LinkedIn / Twitter / GitHub)</span>
+      </div>
+      <button class="btn btn-primary" id="btn-copy-post">📋 Copia Testo Post</button>
+    </div>
+    <textarea class="post-textarea" id="post-text" readonly>
+🧠 Ho creato il mio Cervello Artificiale Bi-Emisferico e Persistente: Universal AI Brain!
+
+Spesso le AI dimenticano tutto tra una sessione e l'altra. Per questo ho progettato una memoria cognitiva a lungo termine che collega Claude, Antigravity, Gemini e Cursor in un unico connettoma persistente.
+
+✨ Punti di forza:
+⚡ Modello Bi-Emisferico: Logica & Architettura (Sinistro) ↔ Creatività, Design & Valori (Destro) collegati dal Corpo Calloso.
+🏢 Palazzo Cognitivo 3D: Navigazione a 3 livelli frattali (Macro-Domini ➜ Progetti ➜ Moduli Atomici) con GraphRAG BM25 (<1ms).
+🔌 Server MCP Nativo & Skill Globale /brain per richiamare o salvare memorie in tempo reale.
+📱 Gateway Telegram: interrogabile ovunque via smartphone con bot vocale & testuale.
+💎 Architettura 100% Zero-Cost (0,00€ per sempre) su FastAPI, SQLite WAL e Render.com.
+
+Guardate il video anteprima di 1 minuto! 👇
+Progetto Open-Source su GitHub: https://github.com/PierfrancescoAmendola/Universal-AI-Brain
+
+#AI #KnowledgeGraph #MCP #ArtificialIntelligence #Claude #Gemini #OpenSource #FullStack #Python
+    </textarea>
+  </div>
+
+  <div class="toast" id="toast">Copiato negli appunti!</div>
+
+  <script>
+    const assets = {
+      hero: new Image(),
+      palazzo: new Image(),
+      mcp: new Image(),
+      telegram: new Image()
+    };
+    assets.hero.src = 'static/video_assets/brain_hero_3d.jpg';
+    assets.palazzo.src = 'static/video_assets/palazzo_cognitivo.jpg';
+    assets.mcp.src = 'static/video_assets/mcp_terminal_agent.jpg';
+    assets.telegram.src = 'static/video_assets/telegram_mobile_gateway.jpg';
+
+    const DURATION = 60.0;
+    let currentTime = 0;
+    let isPlaying = false;
+    let isRecording = false;
+    let lastFrameTime = performance.now();
+    let mediaRecorder = null;
+    let recordedChunks = [];
+    let isPortrait = false;
+    let synthMusicEnabled = true;
+    let voiceoverEnabled = true;
+
+    const canvas = document.getElementById('video-canvas');
+    const ctx = canvas.getContext('2d');
+
+    const btnPlayPause = document.getElementById('btn-play-pause');
+    const btnRestart = document.getElementById('btn-restart');
+    const btnRecord = document.getElementById('btn-record');
+    const btnRatio = document.getElementById('btn-ratio');
+    const ratioLabel = document.getElementById('ratio-label');
+    const btnSynthMusic = document.getElementById('btn-synth-music');
+    const btnVoiceover = document.getElementById('btn-voiceover');
+    const btnFullscreen = document.getElementById('btn-fullscreen');
+    const btnCopyPost = document.getElementById('btn-copy-post');
+    const centerPlayBtn = document.getElementById('center-play-btn');
+    const progressFill = document.getElementById('progress-fill');
+    const progressWrap = document.getElementById('progress-wrap');
+    const timeDisplay = document.getElementById('time-display');
+    const hudSceneName = document.getElementById('hud-scene-name');
+    const subtitleContent = document.getElementById('subtitle-content');
+    const scenePills = document.querySelectorAll('.scene-pill');
+    const playerContainer = document.getElementById('player-container');
+    const recordingStatus = document.getElementById('recording-status');
+    const toast = document.getElementById('toast');
+
+    const SCENES = [
+      {
+        id: 0,
+        start: 0,
+        end: 10,
+        name: 'SCENA 1 • VISIONE & CONNETTI-TUTTO',
+        title: 'UNIVERSAL AI BRAIN',
+        subtitle: 'La Memoria Cognitiva Persistente a 0,00€ per Tutte le AI',
+        caption: 'Ecco il Universal AI Brain: il connettoma bi-emisferico che unisce Claude, Gemini, Antigravity e Cursor.',
+        voiceText: 'Benvenuti nel Universal AI Brain. La memoria cognitiva persistente e bi-emisferica progettata per dare continuità eterna a tutte le intelligenze artificiali.',
+        image: assets.hero,
+        badge: 'PERSISTENT KNOWLEDGE GRAPH'
+      },
+      {
+        id: 1,
+        start: 10,
+        end: 20,
+        name: 'SCENA 2 • ARCHITETTURA BI-EMISFERICA',
+        title: 'DOPPIO EMISFERO & CORPO CALLOSO',
+        subtitle: 'Emisfero Sinistro (Logica & Tech) ↔ Emisfero Destro (Creatività & Valori)',
+        caption: 'A sinistra: Architetture, Codice e Regole. A destra: Design, Emozioni ed Episodi. Uniti dal Corpo Calloso.',
+        voiceText: 'Due emisferi sinergici: a sinistra architetture e logiche computazionali, a destra design, creatività ed episodi conversazionali, collegati dal ponte del corpo calloso.',
+        image: assets.hero,
+        badge: '350+ NODI • 887+ SINAPSI'
+      },
+      {
+        id: 2,
+        start: 20,
+        end: 30,
+        name: 'SCENA 3 • PALAZZO COGNITIVO 3D',
+        title: 'PALAZZO COGNITIVO & GRAPHRAG',
+        subtitle: '3 Piani Frattali: Attico Domini ➜ Progetti ➜ Moduli Atomici',
+        caption: 'Navigazione gerarchica istantanea con ricerca ibrida BM25 in meno di 1 millisecondo.',
+        voiceText: 'Il Palazzo Cognitivo organizza la conoscenza su tre piani verticali: macro domini nell attico, progetti al centro e moduli atomici alla base, interrogabili in tempo zero.',
+        image: assets.palazzo,
+        badge: 'SEMANTIC ZOOM & BFS'
+      },
+      {
+        id: 3,
+        start: 30,
+        end: 40,
+        name: 'SCENA 4 • MODEL CONTEXT PROTOCOL (MCP)',
+        title: 'PROTOCOLLO MULTI-AGENTE NATIVO',
+        subtitle: 'FastAPI · JSON-RPC 2.0 · brain_search · brain_ingest',
+        caption: 'Integrazione nativa con Antigravity, Claude Desktop e Cursor tramite 7 tool MCP dedicati.',
+        voiceText: 'Grazie al server MCP nativo e al ciclo cognitivo a due fasi, ogni assistente recupera il contesto prima di rispondere e salva automaticamente i nuovi apprendimenti.',
+        image: assets.mcp,
+        badge: 'MODEL CONTEXT PROTOCOL'
+      },
+      {
+        id: 4,
+        start: 40,
+        end: 50,
+        name: 'SCENA 5 • TELEGRAM BOT & 0€ CLOUD',
+        title: 'ACCESSO MOBILE & ZERO-COST',
+        subtitle: '@pier_brain_ai_bot · SQLite WAL · Render.com Cloud',
+        caption: 'Cattura note vocali e interroga il cervello ovunque da smartphone con zero costi di infrastruttura.',
+        voiceText: 'Accessibile ovunque via Telegram con il bot serverless per consultare grafi e inviare note vocali all istante, con un infrastruttura attiva a costo zero per sempre.',
+        image: assets.telegram,
+        badge: 'COSTO: 0,00€ PER SEMPRE'
+      },
+      {
+        id: 5,
+        start: 50,
+        end: 60,
+        name: 'SCENA 6 • OPEN SOURCE & CONCLUSIONE',
+        title: 'UNIVERSAL AI BRAIN SUL TUO PC',
+        subtitle: 'Installa in 1-Click con ./install.sh o usa la skill /universal-brain',
+        caption: 'Unisciti al futuro dei sistemi cognitivi. Codice e documentazione completi disponibili su GitHub!',
+        voiceText: 'Universal AI Brain è completamente open-source. Provalo oggi stesso su GitHub con il comando brain e porta la memoria infinita nei tuoi workflow di sviluppo.',
+        image: assets.hero,
+        badge: 'GITHUB: OPEN SOURCE MIT'
+      }
+    ];
+
+    let audioCtx = null;
+    let synthInterval = null;
+    let isSynthRunning = false;
+    let audioDestination = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        audioDestination = audioCtx.createMediaStreamDestination();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playNote(freq, type, duration, time, gainLevel = 0.1) {
+      if (!audioCtx || !synthMusicEnabled) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, time);
+
+        gain.gain.setValueAtTime(gainLevel, time);
+        gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        if (audioDestination) gain.connect(audioDestination);
+
+        osc.start(time);
+        osc.stop(time + duration);
+      } catch(e) {}
+    }
+
+    function playKick(time) {
+      if (!audioCtx || !synthMusicEnabled) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.frequency.setValueAtTime(140, time);
+        osc.frequency.exponentialRampToValueAtTime(30, time + 0.12);
+        gain.gain.setValueAtTime(0.3, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + 0.15);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        if (audioDestination) gain.connect(audioDestination);
+
+        osc.start(time);
+        osc.stop(time + 0.15);
+      } catch(e) {}
+    }
+
+    function playHiHat(time) {
+      if (!audioCtx || !synthMusicEnabled) return;
+      try {
+        const bufferSize = audioCtx.sampleRate * 0.04;
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.3));
+        }
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'highpass';
+        filter.frequency.value = 7000;
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.08, time);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+        if (audioDestination) gain.connect(audioDestination);
+
+        noise.start(time);
+      } catch(e) {}
+    }
+
+    let synthStep = 0;
+    function startMusicEngine() {
+      if (isSynthRunning) return;
+      isSynthRunning = true;
+      initAudio();
+
+      const bpm = 120;
+      const stepDuration = 60 / bpm / 2;
+
+      synthInterval = setInterval(() => {
+        if (!isPlaying || !synthMusicEnabled) return;
+        const now = audioCtx.currentTime;
+
+        if (synthStep % 4 === 0) playKick(now);
+        if (synthStep % 2 === 1) playHiHat(now);
+
+        const scale = [146.83, 174.61, 196.00, 220.00, 261.63, 293.66, 349.23, 392.00, 440.00];
+        const noteIndex = (synthStep * 3) % scale.length;
+        const freq = scale[noteIndex];
+
+        playNote(freq, 'sawtooth', 0.18, now, 0.04);
+        if (synthStep % 8 === 0) {
+          playNote(freq / 2, 'sine', 0.6, now, 0.12);
+        }
+
+        synthStep++;
+      }, (stepDuration * 1000));
+    }
+
+    function stopMusicEngine() {
+      if (synthInterval) {
+        clearInterval(synthInterval);
+        synthInterval = null;
+      }
+      isSynthRunning = false;
+    }
+
+    let lastSpokenScene = -1;
+    function triggerVoiceoverForScene(sceneIndex) {
+      if (!voiceoverEnabled || !('speechSynthesis' in window)) return;
+      if (lastSpokenScene === sceneIndex) return;
+
+      window.speechSynthesis.cancel();
+      lastSpokenScene = sceneIndex;
+
+      const scene = SCENES[sceneIndex];
+      if (!scene || !scene.voiceText) return;
+
+      const utter = new SpeechSynthesisUtterance(scene.voiceText);
+      utter.lang = 'it-IT';
+      utter.rate = 1.08;
+      utter.pitch = 1.0;
+
+      const voices = window.speechSynthesis.getVoices();
+      const itVoice = voices.find(v => v.lang.startsWith('it') || v.name.includes('Italian') || v.name.includes('Alice') || v.name.includes('Cosimo'));
+      if (itVoice) utter.voice = itVoice;
+
+      window.speechSynthesis.speak(utter);
+    }
+
+    const particles = [];
+    for (let i = 0; i < 90; i++) {
+      particles.push({
+        x: Math.random() * 1920,
+        y: Math.random() * 1080,
+        radius: Math.random() * 2.5 + 1,
+        vx: (Math.random() - 0.5) * 1.2,
+        vy: (Math.random() - 0.5) * 1.2,
+        color: Math.random() > 0.5 ? '#00D2FF' : '#FF007F',
+        alpha: Math.random() * 0.7 + 0.3
+      });
+    }
+
+    function renderFrame(time) {
+      const w = canvas.width;
+      const h = canvas.height;
+
+      const sceneIndex = Math.min(Math.floor(time / 10), SCENES.length - 1);
+      const scene = SCENES[sceneIndex];
+      const sceneProgress = (time - scene.start) / (scene.end - scene.start);
+
+      if (isPlaying && lastSpokenScene !== sceneIndex) {
+        triggerVoiceoverForScene(sceneIndex);
+      }
+
+      hudSceneName.textContent = scene.name;
+      subtitleContent.innerHTML = scene.caption.replace(
+        /(Universal AI Brain|Corpo Calloso|Palazzo Cognitivo|BM25|MCP|Telegram|Zero-Cost|0,00€|350\+ Nodi|GitHub)/g,
+        '<span class="subtitle-highlight">$1</span>'
+      );
+
+      scenePills.forEach((pill, idx) => {
+        pill.classList.toggle('active', idx === sceneIndex);
+      });
+
+      ctx.fillStyle = '#06080d';
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(0, 210, 255, 0.05)';
+      ctx.lineWidth = 1;
+      const gridSize = 60;
+      const offset = (time * 25) % gridSize;
+      for (let x = 0; x < w; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        ctx.stroke();
+      }
+      for (let y = offset; y < h; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      ctx.save();
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha * (0.6 + 0.4 * Math.sin(time * 3 + i));
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        for (let j = i + 1; j < particles.length; j += 4) {
+          const p2 = particles[j];
+          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (dist < 120) {
+            ctx.strokeStyle = p.color;
+            ctx.globalAlpha = (1 - dist / 120) * 0.18;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        }
+      }
+      ctx.restore();
+
+      const img = scene.image;
+      if (img.complete && img.naturalWidth > 0) {
+        ctx.save();
+        const zoom = 1.0 + sceneProgress * 0.08;
+        const panX = Math.sin(sceneProgress * Math.PI) * 25;
+        const panY = Math.cos(sceneProgress * Math.PI) * 15;
+
+        const cardW = w * 0.58;
+        const cardH = h * 0.68;
+        const cardX = w * 0.38 + panX;
+        const cardY = (h - cardH) / 2 + panY;
+
+        ctx.shadowColor = sceneIndex % 2 === 0 ? 'rgba(0, 210, 255, 0.4)' : 'rgba(255, 0, 127, 0.4)';
+        ctx.shadowBlur = 40;
+        ctx.strokeStyle = sceneIndex % 2 === 0 ? '#00D2FF' : '#FF007F';
+        ctx.lineWidth = 3;
+
+        ctx.beginPath();
+        ctx.roundRect(cardX, cardY, cardW, cardH, 24);
+        ctx.stroke();
+        ctx.clip();
+
+        const targetImgW = cardW * zoom;
+        const targetImgH = cardH * zoom;
+        const imgX = cardX - (targetImgW - cardW) / 2;
+        const imgY = cardY - (targetImgH - cardH) / 2;
+
+        ctx.drawImage(img, imgX, imgY, targetImgW, targetImgH);
+
+        const grad = ctx.createLinearGradient(cardX, cardY, cardX, cardY + cardH);
+        grad.addColorStop(0, 'rgba(6, 8, 13, 0.1)');
+        grad.addColorStop(1, 'rgba(6, 8, 13, 0.75)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(cardX, cardY, cardW, cardH);
+
+        ctx.restore();
+      }
+
+      ctx.save();
+      const leftX = 90;
+      const topY = 180;
+
+      ctx.fillStyle = 'rgba(0, 210, 255, 0.15)';
+      ctx.strokeStyle = '#00D2FF';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.roundRect(leftX, topY - 50, 290, 36, 18);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#00D2FF';
+      ctx.font = '700 13px "Fira Code"';
+      ctx.fillText('⚡ ' + scene.badge, leftX + 16, topY - 27);
+
+      ctx.shadowColor = '#00D2FF';
+      ctx.shadowBlur = 20;
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = '900 46px "Space Grotesk"';
+      ctx.fillText(scene.title, leftX, topY + 25);
+
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '600 20px "Plus Jakarta Sans"';
+      const subLines = wrapText(ctx, scene.subtitle, 580);
+      subLines.forEach((line, idx) => {
+        ctx.fillText(line, leftX, topY + 70 + (idx * 30));
+      });
+
+      const boxY = topY + 160;
+      ctx.fillStyle = 'rgba(13, 17, 23, 0.9)';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.roundRect(leftX, boxY, 560, 280, 16);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#ef4444';
+      ctx.beginPath(); ctx.arc(leftX + 24, boxY + 22, 6, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#f59e0b';
+      ctx.beginPath(); ctx.arc(leftX + 42, boxY + 22, 6, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#10b981';
+      ctx.beginPath(); ctx.arc(leftX + 60, boxY + 22, 6, 0, Math.PI * 2); ctx.fill();
+
+      ctx.fillStyle = '#64748b';
+      ctx.font = '12px "Fira Code"';
+      ctx.fillText('terminal@pier-brain: ~/' + (sceneIndex === 3 ? 'mcp_server.py' : 'universal_brain.py'), leftX + 85, boxY + 26);
+
+      const terminalSnippets = [
+        [
+          '// Persistent Bi-Hemispheric Connectome Core',
+          'const brain = new UniversalAIBrain({',
+          '  database: "brain.db", // SQLite WAL + FTS5',
+          '  hemispheres: ["LEFT_TECH", "RIGHT_CREATIVE"],',
+          '  corpus_callosum: true, // Synaptic Bridge',
+          '  latency: "< 1ms", cost: "0.00€ / Month"',
+          '});'
+        ],
+        [
+          '// Emisfero Sinistro (Ciano #00D2FF) & Destro (#FF007F)',
+          'LEFT:  [ARCHITECTURE, ALGORITHM, DATA_STRUCT, RULES]',
+          'RIGHT: [DESIGN_TOKEN, UI_COMPONENT, VALUES, EPISODES]',
+          'synapse = bridge.corpo_calloso.connect({',
+          '  source: "code-pattern-bfs",',
+          '  target: "value-clean-architecture"',
+          '});'
+        ],
+        [
+          '// Palazzo Cognitivo 3D: 3-Floor Fractal Architecture',
+          'Floor 0: ROOT_DOMAINS (Macro Conoscenza & Attico)',
+          'Floor 1: PROJECTS & REASONING (Episodi Conversazionali)',
+          'Floor 2: ATOMIC_MODULES (Nodi & Token di Sistema)',
+          'search_result = brain.search_bm25("GraphRAG", limit=5);'
+        ],
+        [
+          '# Model Context Protocol (MCP) Multi-Agent Server',
+          '@app.post("/mcp/brain_search")',
+          'async def brain_search(query: str):',
+          '    return await db.fts5_search(query)',
+          '',
+          '# Tools: brain_search, brain_ingest, brain_get_tree'
+        ],
+        [
+          '# Telegram Bot Gateway & 0€ Render Deploy',
+          '@bot.message_handler(commands=["cerca", "stats"])',
+          'async def handle_telegram_query(message):',
+          '    stats = await brain.get_bi_hemisphere_stats()',
+          '    await message.reply_text(f"🧠 Connettoma: {stats.nodes} nodi")',
+          '# Deployed on Render.com · HTTPS Free · 100% Zero-Cost'
+        ],
+        [
+          '// Open Source su GitHub!',
+          '$ git clone https://github.com/PierfrancescoAmendola/Universal-AI-Brain',
+          '$ ./install.sh',
+          '$ brain stats',
+          '✨ 350 Nodi, 887 Sinapsi, 147 Ponti Callosi.',
+          'Pronto per potenziare il tuo secondo cervello!'
+        ]
+      ];
+
+      const snippet = terminalSnippets[sceneIndex];
+      const maxLinesToType = Math.min(snippet.length, Math.floor(sceneProgress * snippet.length * 1.5) + 1);
+
+      snippet.slice(0, maxLinesToType).forEach((codeLine, lineIdx) => {
+        ctx.fillStyle = codeLine.startsWith('//') || codeLine.startsWith('#') ? '#64748b' :
+                         codeLine.includes('LEFT') ? '#00D2FF' :
+                         codeLine.includes('RIGHT') ? '#FF007F' :
+                         codeLine.includes('brain') || codeLine.includes('const') ? '#A855F7' : '#e2e8f0';
+        ctx.fillText(codeLine, leftX + 24, boxY + 65 + (lineIdx * 28));
+      });
+
+      if (Math.sin(time * 8) > 0) {
+        ctx.fillStyle = '#00D2FF';
+        ctx.fillRect(leftX + 24 + ctx.measureText(snippet[Math.min(maxLinesToType - 1, snippet.length - 1)] || '').width + 6, boxY + 53 + (Math.min(maxLinesToType - 1, snippet.length - 1) * 28), 8, 15);
+      }
+
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(13, 17, 23, 0.8)';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.roundRect(w - 280, 40, 220, 90, 12);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '11px "Fira Code"';
+      ctx.fillText('CONNECTOME TELEMETRY', w - 262, 62);
+
+      ctx.fillStyle = '#00D2FF';
+      ctx.fillText('● NODES: 350 (224L / 126R)', w - 262, 82);
+      ctx.fillStyle = '#FF007F';
+      ctx.fillText('● SYNAPSES: 887 EDGES', w - 262, 100);
+      ctx.fillStyle = '#A855F7';
+      ctx.fillText('● CALLOSUM BRIDGES: 147', w - 262, 118);
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.font = '700 13px "Space Grotesk"';
+      ctx.fillText('🧠 UNIVERSAL AI BRAIN • PIERFRANCESCO AMENDOLA', 90, h - 50);
+      ctx.restore();
+    }
+
+    function wrapText(context, text, maxWidth) {
+      const words = text.split(' ');
+      const lines = [];
+      let currentLine = words[0];
+
+      for (let i = 1; i < words.length; i++) {
+        const word = words[i];
+        const width = context.measureText(currentLine + ' ' + word).width;
+        if (width < maxWidth) {
+          currentLine += ' ' + word;
+        } else {
+          lines.push(currentLine);
+          currentLine = word;
+        }
+      }
+      lines.push(currentLine);
+      return lines;
+    }
+
+    function animate(timestamp) {
+      const delta = (timestamp - lastFrameTime) / 1000;
+      lastFrameTime = timestamp;
+
+      if (isPlaying) {
+        currentTime += delta;
+        if (currentTime >= DURATION) {
+          currentTime = DURATION;
+          pause();
+          if (isRecording) stopRecording();
+        }
+      }
+
+      const progressRatio = currentTime / DURATION;
+      progressFill.style.width = (progressRatio * 100) + '%';
+      timeDisplay.textContent = formatTime(currentTime) + ' / ' + formatTime(DURATION);
+
+      renderFrame(currentTime);
+      requestAnimationFrame(animate);
+    }
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    }
+
+    function play() {
+      if (currentTime >= DURATION) currentTime = 0;
+      isPlaying = true;
+      btnPlayPause.textContent = '❚❚ Pausa';
+      centerPlayBtn.classList.add('hidden');
+      startMusicEngine();
+      lastFrameTime = performance.now();
+    }
+
+    function pause() {
+      isPlaying = false;
+      btnPlayPause.textContent = '▶ Play';
+      centerPlayBtn.classList.remove('hidden');
+      stopMusicEngine();
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      lastSpokenScene = -1;
+    }
+
+    function togglePlay() {
+      if (isPlaying) pause();
+      else play();
+    }
+
+    function restart() {
+      currentTime = 0;
+      lastSpokenScene = -1;
+      play();
+    }
+
+    btnPlayPause.addEventListener('click', togglePlay);
+    centerPlayBtn.addEventListener('click', togglePlay);
+    canvas.addEventListener('click', togglePlay);
+    btnRestart.addEventListener('click', restart);
+
+    progressWrap.addEventListener('click', (e) => {
+      const rect = progressWrap.getBoundingClientRect();
+      const clickRatio = (e.clientX - rect.left) / rect.width;
+      currentTime = Math.max(0, Math.min(DURATION, clickRatio * DURATION));
+      lastSpokenScene = -1;
+      renderFrame(currentTime);
+    });
+
+    scenePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const sceneId = parseInt(pill.dataset.scene);
+        currentTime = SCENES[sceneId].start;
+        lastSpokenScene = -1;
+        renderFrame(currentTime);
+        if (!isPlaying) play();
+      });
+    });
+
+    btnSynthMusic.addEventListener('click', () => {
+      synthMusicEnabled = !synthMusicEnabled;
+      btnSynthMusic.classList.toggle('active', synthMusicEnabled);
+    });
+
+    btnVoiceover.addEventListener('click', () => {
+      voiceoverEnabled = !voiceoverEnabled;
+      btnVoiceover.classList.toggle('active', voiceoverEnabled);
+      if (!voiceoverEnabled && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    });
+
+    btnRatio.addEventListener('click', () => {
+      isPortrait = !isPortrait;
+      if (isPortrait) {
+        playerContainer.classList.add('portrait');
+        canvas.width = 1080;
+        canvas.height = 1920;
+        ratioLabel.textContent = '9:16 (Reels/TikTok)';
+      } else {
+        playerContainer.classList.remove('portrait');
+        canvas.width = 1920;
+        canvas.height = 1080;
+        ratioLabel.textContent = '16:9 (Landscape)';
+      }
+      renderFrame(currentTime);
+    });
+
+    btnFullscreen.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        playerContainer.requestFullscreen().catch(err => alert(err.message));
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    btnCopyPost.addEventListener('click', () => {
+      const postText = document.getElementById('post-text');
+      postText.select();
+      navigator.clipboard.writeText(postText.value).then(() => {
+        toast.textContent = '✨ Testo del post copiato negli appunti!';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+      });
+    });
+
+    btnRecord.addEventListener('click', () => {
+      if (isRecording) {
+        stopRecording();
+      } else {
+        startRecording();
+      }
+    });
+
+    function startRecording() {
+      initAudio();
+      isRecording = true;
+      recordedChunks = [];
+      btnRecord.textContent = '⏹ Ferma Registrazione';
+      btnRecord.style.background = '#ef4444';
+      recordingStatus.textContent = 'REC ● 60 FPS RECORDING...';
+
+      const canvasStream = canvas.captureStream(60);
+      let combinedStream = canvasStream;
+      if (audioDestination && audioDestination.stream.getAudioTracks().length > 0) {
+        const audioTrack = audioDestination.stream.getAudioTracks()[0];
+        combinedStream = new MediaStream([
+          ...canvasStream.getVideoTracks(),
+          audioTrack
+        ]);
+      }
+
+      const mimeTypes = [
+        'video/mp4;codecs=avc1',
+        'video/mp4',
+        'video/webm;codecs=vp9,opus',
+        'video/webm;codecs=vp8,opus',
+        'video/webm'
+      ];
+      let selectedMime = mimeTypes.find(type => MediaRecorder.isTypeSupported(type)) || 'video/webm';
+
+      mediaRecorder = new MediaRecorder(combinedStream, {
+        mimeType: selectedMime,
+        videoBitsPerSecond: 12000000
+      });
+
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) {
+          recordedChunks.push(e.data);
+        }
+      };
+
+      mediaRecorder.onstop = () => {
+        const blob = new Blob(recordedChunks, { type: selectedMime });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        const ext = selectedMime.includes('mp4') ? 'mp4' : 'webm';
+        a.download = `Universal_AI_Brain_Showcase_60s.${ext}`;
+        a.href = url;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        isRecording = false;
+        btnRecord.textContent = '🎥 Registra & Scarica MP4/WebM';
+        btnRecord.style.background = '';
+        recordingStatus.textContent = 'LIVE PREVIEW';
+
+        toast.textContent = `🎉 Video esportato con successo (.${ext})!`;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4000);
+      };
+
+      currentTime = 0;
+      lastSpokenScene = -1;
+      play();
+      mediaRecorder.start();
+    }
+
+    function stopRecording() {
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        togglePlay();
+      } else if (e.code === 'KeyR') {
+        restart();
+      } else if (e.code === 'KeyF') {
+        btnFullscreen.click();
+      }
+    });
+
+    requestAnimationFrame(animate);
+  </script>
+</body>
+</html>

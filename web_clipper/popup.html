@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal AI Brain - Web Clipper</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="clipper-container">
+    <!-- Header -->
+    <header class="clipper-header">
+      <div class="logo-area">
+        <span class="brain-glow">🧠</span>
+        <div>
+          <h1>UNIVERSAL BRAIN</h1>
+          <p class="subtitle">Web Knowledge Clipper</p>
+        </div>
+      </div>
+      <div class="endpoint-badge" id="endpointToggle" title="Clicca per alternare Cloud / Locale">
+        <span class="dot online"></span>
+        <span id="endpointLabel">Cloud</span>
+      </div>
+    </header>
+
+    <!-- Content Form -->
+    <form id="clipForm">
+      <!-- Title -->
+      <div class="form-group">
+        <label for="clipTitle">Titolo Nodo</label>
+        <input type="text" id="clipTitle" required placeholder="Titolo dell'articolo o risorsa..." autocomplete="off">
+      </div>
+
+      <!-- URL & Source -->
+      <div class="form-group">
+        <label for="clipUrl">URL Sorgente</label>
+        <input type="url" id="clipUrl" readonly placeholder="https://...">
+      </div>
+
+      <!-- Bi-Hemispheric Selector -->
+      <div class="form-group">
+        <label>Emisfero Cognitivo</label>
+        <div class="hemisphere-selector">
+          <label class="hemi-btn left-btn active">
+            <input type="radio" name="hemisphere" value="LEFT" checked>
+            <span>⚡ SINISTRO (Logica & Tech)</span>
+          </label>
+          <label class="hemi-btn right-btn">
+            <input type="radio" name="hemisphere" value="RIGHT">
+            <span>🌸 DESTRO (Design & Valori)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Macro-Domain Dropdown -->
+      <div class="form-group">
+        <label for="clipDomain">Macro-Dominio Fondativo</label>
+        <select id="clipDomain">
+          <optgroup label="⚡ Emisfero Sinistro (Scienza & Sistemi)">
+            <option value="domain-software-engineering" selected>💻 Ingegneria Software & Architetture</option>
+            <option value="domain-ai-cognitive-systems">🧠 Sistemi Cognitivi & LLM</option>
+            <option value="domain-scienza-matematica">🔬 Scienza & Matematica</option>
+            <option value="domain-finanza-economia">📈 Finanza & Economia</option>
+            <option value="domain-medicina-salute">🩺 Medicina & Salute</option>
+            <option value="domain-produttivita-sistemi">⚙️ Produttività & Automazioni</option>
+          </optgroup>
+          <optgroup label="🌸 Emisfero Destro (Umanità & Design)">
+            <option value="domain-design-creativita">🎨 Design, UI & Creatività</option>
+            <option value="domain-filosofia-valori">🏛️ Filosofia, Valori & Etica</option>
+            <option value="domain-crescita-personale">🌱 Crescita Personale & Mindset</option>
+            <option value="domain-relazioni-comunicazione">🤝 Relazioni & Comunicazione</option>
+            <option value="domain-musica-audio">🎵 Musica & Audio</option>
+            <option value="domain-cultura-storia">📚 Cultura & Storia</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- Primary Label -->
+      <div class="form-group">
+        <label for="clipTaxonomy">Tipo Tassonomico (Primary Label)</label>
+        <select id="clipTaxonomy">
+          <option value="ARCHITECTURE">ARCHITECTURE (Architettura)</option>
+          <option value="ALGORITHM">ALGORITHM (Algoritmo)</option>
+          <option value="API_SPEC">API_SPEC (Specifiche API)</option>
+          <option value="COGNITIVE_RULE">COGNITIVE_RULE (Regola Cognitiva)</option>
+          <option value="BUSINESS_LOGIC">BUSINESS_LOGIC (Logica di Business)</option>
+          <option value="CREATIVE_IDEA">CREATIVE_IDEA (Idea Creativa)</option>
+          <option value="DESIGN_TOKEN">DESIGN_TOKEN (Token di Design)</option>
+          <option value="PERSONAL_VALUE">PERSONAL_VALUE (Valore / Principio)</option>
+          <option value="LIFE_LESSON">LIFE_LESSON (Lezione di Vita)</option>
+        </select>
+      </div>
+
+      <!-- Summary / Content -->
+      <div class="form-group">
+        <label for="clipSummary">Sintesi / Contenuto Evidenziato</label>
+        <textarea id="clipSummary" rows="4" placeholder="Sintesi dei punti chiave, passaggi salienti o citazioni..."></textarea>
+      </div>
+
+      <!-- Action Button -->
+      <button type="submit" id="saveBtn" class="primary-btn">
+        <span class="btn-text">💾 Salva nel Connettoma</span>
+        <span class="btn-loader" style="display: none;">⚡ Ingestione in corso...</span>
+      </button>
+
+      <!-- Status Feedback -->
+      <div id="statusMessage" class="status-box" style="display: none;"></div>
+    </form>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

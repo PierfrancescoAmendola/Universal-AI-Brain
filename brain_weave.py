@@ -17,20 +17,26 @@ import re
 import json
 import sqlite3
 import hashlib
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from typing import Dict, Any, List, Optional, Set, Tuple
 
 DEFAULT_DB_PATH = os.getenv("BRAIN_DB_PATH", os.path.join(os.path.dirname(os.path.abspath(__file__)), "brain.db"))
 
 
-def get_db_connection(db_path: str = DEFAULT_DB_PATH) -> sqlite3.Connection:
+@contextmanager
+def get_db_connection(db_path: str = DEFAULT_DB_PATH):
     conn = sqlite3.connect(db_path, timeout=5.0)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=WAL;")
     conn.execute("PRAGMA synchronous=NORMAL;")
     conn.execute("PRAGMA busy_timeout=5000;")
     conn.execute("PRAGMA foreign_keys=ON;")
-    return conn
+    try:
+        yield conn
+    finally:
+        conn.close()
+
 
 
 def get_orphan_nodes(max_degree: int = 2, limit: int = 25, db_path: str = DEFAULT_DB_PATH) -> List[Dict[str, Any]]:

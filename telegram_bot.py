@@ -53,18 +53,63 @@ def send_telegram_message(chat_id: int, text: str, parse_mode: str = "HTML", rep
         return False
 
 
+LAST_CHAT_ID_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "last_chat_id.txt")
+
+
+def save_last_chat_id(chat_id: int):
+    """Salva l'ultimo chat_id attivo per le notifiche proattive."""
+    try:
+        with open(LAST_CHAT_ID_FILE, "w", encoding="utf-8") as f:
+            f.write(str(chat_id))
+    except Exception:
+        pass
+
+
+def get_stored_chat_id() -> Optional[int]:
+    """Recupera il chat_id salvato o da variabile d'ambiente."""
+    env_id = os.getenv("TELEGRAM_CHAT_ID")
+    if env_id and env_id.strip().isdigit():
+        return int(env_id.strip())
+    if os.path.exists(LAST_CHAT_ID_FILE):
+        try:
+            with open(LAST_CHAT_ID_FILE, "r", encoding="utf-8") as f:
+                val = f.read().strip()
+                if val.isdigit() or (val.startswith("-") and val[1:].isdigit()):
+                    return int(val)
+        except Exception:
+            pass
+    return None
+
+
+def broadcast_morning_pulse(chat_id: Optional[int] = None) -> bool:
+    """Invia il Daily Brain Pulse mattutino all'utente."""
+    target_id = chat_id or get_stored_chat_id()
+    if not target_id:
+        print("[Telegram Pulse] Nessun chat_id registrato per l'invio del Morning Pulse.", file=sys.stderr)
+        return False
+    try:
+        from brain_resurface import get_daily_resurface_packet, format_telegram_morning_pulse
+        packet = get_daily_resurface_packet()
+        pulse_text = format_telegram_morning_pulse(packet)
+        return send_telegram_message(target_id, pulse_text, reply_markup=get_main_keyboard())
+    except Exception as e:
+        print(f"[Telegram Pulse Error] Errore invio briefing: {e}", file=sys.stderr)
+        return False
+
+
 def get_main_keyboard() -> Dict[str, Any]:
     """Returns the quick-access keyboard for Telegram mobile clients."""
     return {
         "keyboard": [
             [{"text": "📋 Menu Comandi"}, {"text": "📋 Copia Prompt AI"}],
-            [{"text": "📊 Statistiche Cervello"}, {"text": "🌳 Albero Gerarchico"}],
-            [{"text": "💻 Terminale Log"}, {"text": "📥 Posta JSON AI"}],
-            [{"text": "🔍 Ricerca Progetti"}]
+            [{"text": "🌅 Daily Pulse"}, {"text": "📊 Statistiche Cervello"}],
+            [{"text": "🌳 Albero Gerarchico"}, {"text": "💻 Terminale Log"}],
+            [{"text": "📥 Posta JSON AI"}, {"text": "🔍 Ricerca Progetti"}]
         ],
         "resize_keyboard": True,
         "persistent": True
     }
+
 
 
 def sanitize_and_translate_text(text: str) -> str:
@@ -288,12 +333,22 @@ def parse_and_ingest_json_payload(raw_text: str, user_name: str) -> Optional[str
 
 def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
     """Process incoming command, JSON payload, or natural language thought."""
+    save_last_chat_id(chat_id)
     cmd = text.strip()
 
     # 1. Check if the message is a JSON payload from AI or /post /ingest
     json_response = parse_and_ingest_json_payload(cmd, user_name)
     if json_response:
         return json_response
+
+    # 1.1 /pulse, /resurface, "🌅 Daily Pulse"
+    if cmd.lower() in ("/pulse", "/resurface", "pulse", "resurface", "🌅 daily pulse", "daily pulse"):
+        try:
+            from brain_resurface import get_daily_resurface_packet, format_telegram_morning_pulse
+            packet = get_daily_resurface_packet()
+            return format_telegram_morning_pulse(packet)
+        except Exception as e:
+            return f"❌ Errore durante il calcolo del Daily Pulse: {e}"
 
     # 2. /start, /help, /menu
     if cmd in ("/start", "/help", "/menu", "help", "menu", "📋 Menu Comandi"):

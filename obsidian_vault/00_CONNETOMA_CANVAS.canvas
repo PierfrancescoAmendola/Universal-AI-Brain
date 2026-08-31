@@ -1,0 +1,4236 @@
+{
+  "nodes": [
+    {
+      "id": "person-pierfrancesco",
+      "type": "text",
+      "text": "### 🌸 Pierfrancesco Amendola\n`PERSONAL_VALUE` · `P0`\n\n> Identità centrale, connettoma fondativo e profilo di Pierfrancesco Amendola.",
+      "x": 150,
+      "y": 0,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "domain-ai-cognitive-systems",
+      "type": "text",
+      "text": "### ⚡ Dominio: Sistemi Cognitivi, Neuro-Simbolico & LLM\n`ARCHITECTURE` · `P0`\n\n> Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP (Model Context Protocol), Metacognizione e Agentic Systems.",
+      "x": -150,
+      "y": 0,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "domain-software-engineering",
+      "type": "text",
+      "text": "### ⚡ Dominio: Ingegneria Software & Architetture\n`ARCHITECTURE` · `P0`\n\n> Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite e linguaggi di programmazione.",
+      "x": -150,
+      "y": 170,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "domain-scienza-matematica",
+      "type": "text",
+      "text": "### ⚡ Dominio: Scienza, Matematica & Algoritmica\n`ALGORITHM` · `P0`\n\n> Matematica pura e applicata, Algoritmica teorica, Statistica, Fisica, Teoria dell'Informazione e Modelli Formali.",
+      "x": -150,
+      "y": 340,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "domain-filosofia-valori",
+      "type": "text",
+      "text": "### 🌸 Dominio: Filosofia, Etica & Principi di Vita\n`PERSONAL_VALUE` · `P0`\n\n> Filosofia, Stoicismo, Modelli Mentali, Principi Etici, Decision Making, Autodisciplina e Modelli di Saggezza.",
+      "x": 150,
+      "y": 170,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "domain-medicina-salute",
+      "type": "text",
+      "text": "### ⚡ Dominio: Medicina, Salute & Fisiologia\n`ARCHITECTURE` · `P0`\n\n> Medicina, Salute, Nutrizione, Fisiologia, Fitness, Dermatologia, Podologia e Bioinformatica Deep Learning (ricerca ICAR-CNR).",
+      "x": -150,
+      "y": 510,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "domain-design-creativita",
+      "type": "text",
+      "text": "### 🌸 Dominio: Design, UI/UX & Creatività\n`DESIGN_TOKEN` · `P0`\n\n> UI/UX Design Dark-Tech, Graphic Design, Brand Voice, Tipografia, Estetica Visiva e Interaction Design.",
+      "x": 150,
+      "y": 340,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "domain-produttivita-sistemi",
+      "type": "text",
+      "text": "### ⚡ Dominio: Produttività, Sistemi Operativi & Automazione\n`COGNITIVE_RULE` · `P0`\n\n> Workflow operativi, Strumenti di automazione, Metodologie di Studio e Lavoro, Gestione del Tempo e Life Operations.",
+      "x": -150,
+      "y": 680,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "domain-relazioni-comunicazione",
+      "type": "text",
+      "text": "### 🌸 Dominio: Relazioni, Comunicazione & Persone\n`RELATIONSHIP` · `P0`\n\n> Relazioni Umane, Famiglia, Amici, Networking Professionale, Comunicazione Interpersonale, Empatia e Dinamiche Sociali.",
+      "x": 150,
+      "y": 510,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "domain-finanza-economia",
+      "type": "text",
+      "text": "### ⚡ Dominio: Finanza, Economia & Business\n`BUSINESS_LOGIC` · `P0`\n\n> Gestione Finanziaria, Investimenti, Economia, Business Models, Strategia d'Impresa e Gestione Patrimoniale.",
+      "x": -150,
+      "y": 850,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "domain-crescita-personale",
+      "type": "text",
+      "text": "### 🌸 Dominio: Crescita Personale, Abitudini & Benessere\n`LIFE_LESSON` · `P0`\n\n> Memoria Episodica di Vita, Lezioni Apprese, Abitudini Quotidiane, Riflessioni Personali, Fitness Mentale e Crescita Continua.",
+      "x": 150,
+      "y": 680,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "domain-musica-audio",
+      "type": "text",
+      "text": "### 🌸 Dominio: Musica, Audio & Suono\n`CREATIVE_IDEA` · `P0`\n\n> Teoria Musicale, Ear Training, Composizione, Sound Design, Audio Engineering e Produzione Musicale.",
+      "x": 150,
+      "y": 850,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "domain-cultura-storia",
+      "type": "text",
+      "text": "### 🌸 Dominio: Cultura, Storia & Linguaggi\n`BRAND_VOICE` · `P0`\n\n> Storia, Letteratura, Lingue Straniere, Cultura Generale, Viaggi, Società e Antropologia.",
+      "x": 150,
+      "y": 1020,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "universal-ai-brain",
+      "type": "text",
+      "text": "### ⚡ Universal AI Brain (Cognitive System)\n`ARCHITECTURE` · `P1`\n\n> Sistema di memoria persistente a grafo bi-emisferico per agenti LLM (Claude, Gemini, ChatGPT) con costo operativo zero.",
+      "x": -450,
+      "y": 1020,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "proj-streaksup-app",
+      "type": "text",
+      "text": "### ⚡ StreaksUp (Habit Tracker iOS)\n`ARCHITECTURE` · `P1`\n\n> Applicazione nativa iOS 17+ per tracciamento abitudini e routine con architettura SwiftData ad App Group, Live Activity e suite WidgetKit in",
+      "x": -450,
+      "y": 1190,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "node-knowledge-graph-memory",
+      "type": "text",
+      "text": "### ⚡ Universal Knowledge Graph (Associative Substrate)\n`ARCHITECTURE` · `P1`\n\n> Universal Knowledge Graph (Associative Substrate) (Layer: LONG_TERM_ASSOCIATIVE, Tipo: MEMORY_SYSTEM)",
+      "x": -450,
+      "y": 1360,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "episode-language-app-architecture",
+      "type": "text",
+      "text": "### 🌸 Progettazione Piattaforma Personale di Apprendimento Linguistico\n`CONVERSATION_EPISODE` · `P1`\n\n> Discussione architetturale incentrata sulla creazione di un'applicazione proprietaria e non divulgata per lo studio del portoghese e del ted",
+      "x": 450,
+      "y": 1190,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "rule-zero-cost",
+      "type": "text",
+      "text": "### ⚡ Filosofia Ingegneristica a Costo Zero\n`MENTAL_MODEL` · `P1`\n\n> Progettare sistemi snelli ed efficienti eliminando i costi infrastrutturali fissi tramite tecnologie locali o open-source.",
+      "x": -450,
+      "y": 1530,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "mental-centaur-model",
+      "type": "text",
+      "text": "### ⚡ Modello Centauro (Uomo + AI)\n`MENTAL_MODEL` · `P1`\n\n> L'AI agisce come moltiplicatore computazionale, mentre l'essere umano detiene il controllo etico, strategico ed estetico.",
+      "x": -450,
+      "y": 1700,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "aule-studio-app",
+      "type": "text",
+      "text": "### ⚡ AuleStudioApp (Mobile Project)\n`ARCHITECTURE` · `P1`\n\n> Applicazione mobile per studenti per localizzare aule studio universitarie, verificare posti liberi in tempo reale e prenotare postazioni.",
+      "x": -450,
+      "y": 1870,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "art-piano-composition",
+      "type": "text",
+      "text": "### 🌸 Pianoforte Classico & Composizione\n`CREATIVE_IDEA` · `P1`\n\n> Studio del pianoforte dall'età di tre anni; rifugio espressivo e contrappeso emotivo al rigore logico-scientifico.",
+      "x": 450,
+      "y": 1360,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "rule-zero-placeholder",
+      "type": "text",
+      "text": "### ⚡ Regola dell'Esecuzione Integrale (Zero Placeholder)\n`COGNITIVE_RULE` · `P1`\n\n> Divieto tassativo di codice troncato, finto o parziale; ogni soluzione deve essere autosufficiente ed eseguibile.",
+      "x": -450,
+      "y": 2040,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "rel-napoli-culture",
+      "type": "text",
+      "text": "### 🌸 Radici Partenopee & Territorio\n`RELATIONSHIP` · `P1`\n\n> Forte attaccamento culturale alla città di Napoli, fonte di ispirazione per progetti software, artistici e teatrali.",
+      "x": 450,
+      "y": 1530,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "proj-cervelloartificiale",
+      "type": "text",
+      "text": "### ⚡ Cervello Artificiale\n`PROJECT` · `P1`\n\n> > **Persistent Bi-Hemispheric Knowledge Graph, Hierarchical Tree Engine, Dual-Ring Cloud Persistence & MCP Server for Autonomous Multi-Agent",
+      "x": -450,
+      "y": 2210,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "proj-jarvis-voice-assistant",
+      "type": "text",
+      "text": "### ⚡ Progetto: JARVIS Personal AI Voice Assistant\n`ARCHITECTURE` · `P1`\n\n> Assistente vocale AI continuo in tempo reale a costo zero, integrato con il connettoma SQLite WAL tramite MCP, wake word locale, STT Whisper",
+      "x": -450,
+      "y": 2380,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "goal-multi-ai-shared-context-persistence",
+      "type": "text",
+      "text": "### ⚡ Persistenza Totale del Contesto e dei Pensieri Multi-AI\n`MENTAL_MODEL` · `P1`\n\n> Principio fondante: preservare integralmente contesto, richieste e deduzioni di tutte le chat con qualsiasi AI affinché ogni modello condivi",
+      "x": -450,
+      "y": 2550,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "brand-voice-surgical",
+      "type": "text",
+      "text": "### 🌸 Voce Chirurgica & Protocollo Caveman\n`BRAND_VOICE` · `P1`\n\n> Comunicazione priva di convenevoli, chirurgica, diretta e con la massima densità concettuale per token.",
+      "x": 450,
+      "y": 1700,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "val-impact-utility",
+      "type": "text",
+      "text": "### 🌸 Utilità Concreta & Impatto Sociale\n`PERSONAL_VALUE` · `P1`\n\n> La tecnologia deve risolvere problemi reali, proteggere le persone e migliorare l'esperienza umana quotidiana.",
+      "x": 450,
+      "y": 1870,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "ai-reasoning-infinite-context-architecture",
+      "type": "text",
+      "text": "### ⚡ Architettura Anti-Amnesia: Grafo Esterno vs Context Window Effimera\n`AI_REASONING` · `P1`\n\n> Deduzione logica Gemini: disaccoppiare la memoria a lungo termine dal context buffer del modello trasforma l'AI da sessione stateless a inte",
+      "x": -450,
+      "y": 2720,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "reason-ep-20260827-hierarchical-tree-deployment-sync",
+      "type": "text",
+      "text": "### ⚡ Deduzione AI: Rilascio e Sincronizzazione dell'Hierarchical Tree\n`AI_REASONING` · `P1`\n\n> Formalizzata la transizione dell'Universal Knowledge Graph in una piattaforma multiscalare dotata di motore ad albero nativo, interfaccia we",
+      "x": -450,
+      "y": 2890,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "proj-caretrack",
+      "type": "text",
+      "text": "### ⚡ CareTrack\n`ARCHITECTURE` · `P1`\n\n> Piattaforma mobile di telemedicina e assistenza domiciliare vincitrice del Google Challenge Campania (Medicina).",
+      "x": -450,
+      "y": 3060,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "node-hierarchical-tree-engine-impl",
+      "type": "text",
+      "text": "### ⚡ Hierarchical Tree Engine (Backend & Endpoints)\n`ARCHITECTURE` · `P1`\n\n> Hierarchical Tree Engine (Backend & Endpoints) (Layer: CORE_SERVICES, Tipo: BACKEND_ENGINE)",
+      "x": -450,
+      "y": 3230,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-infinite-context-persistence",
+      "type": "text",
+      "text": "### ⚡ Prevenzione Perdita Contesto per Saturazione Finestra Chat\n`USER_INTENT` · `P1`\n\n> Volontà utente: azzerare la perdita di contesto causata dalla saturazione delle finestre di contesto degli LLM, garantendo continuità cognit",
+      "x": -450,
+      "y": 3400,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-provenance-model-tracking",
+      "type": "text",
+      "text": "### ⚡ Tracciamento Richiesta Utente & Modello AI nella Memoria\n`USER_INTENT` · `P1`\n\n> Proposta utente: includere nel JSON di ingestione il prompt integrale e il modello AI sorgente per preservare contesto e consentire recall c",
+      "x": -450,
+      "y": 3570,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "episode-cross-model-memory-architecture",
+      "type": "text",
+      "text": "### 🌸 Episodio Chat: Architettura Memoria Cross-Modello e Attribuzione\n`CONVERSATION_EPISODE` · `P1`\n\n> Sessione di analisi architetturale tra Pierfrancesco e Gemini 3.7 Flash sull'inclusione di prompt utente e metadati del modello nel grafo di",
+      "x": 450,
+      "y": 2040,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "episode-2026-08-27-graphrag-mcp-evolution",
+      "type": "text",
+      "text": "### 🌸 Episodio Conversazionale: Evoluzione GraphRAG & Protocollo MCP\n`CONVERSATION_EPISODE` · `P1`\n\n> Sessione di ingegnerizzazione avanzata: sviluppo e verifica del motore FTS5 BM25, cammini minimi attraverso il Corpo Calloso e server MCP co",
+      "x": 450,
+      "y": 2210,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "episode-infinite-context-philosophy",
+      "type": "text",
+      "text": "### 🌸 Episodio: Fondamenti e Filosofia della Memoria Eterna Cross-Chat\n`CONVERSATION_EPISODE` · `P1`\n\n> Formalizzazione della ragion d'essere del cervello artificiale: superare il reset della memoria per saturazione delle chat tramite grafo sem",
+      "x": 450,
+      "y": 2380,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "val-authenticity",
+      "type": "text",
+      "text": "### 🌸 Autenticità & Trasparenza Radicale\n`PERSONAL_VALUE` · `P1`\n\n> Priorità assoluta alla sincerità e alla chiarezza nei rapporti; rifiuto di maschere sociali, ipocrisia e passività.",
+      "x": 450,
+      "y": 2550,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "val-eternal-cognitive-continuity",
+      "type": "text",
+      "text": "### 🌸 Continuità Cognitiva Eterna (Zero Context Loss)\n`PERSONAL_VALUE` · `P1`\n\n> Valore fondante di Universal AI Brain: nessun pensiero, decisione o ragionamento deve andare perso a causa dei limiti fisici di token delle ",
+      "x": 450,
+      "y": 2720,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "reason-ep-20260827-telegram-cognitive-hub-spec",
+      "type": "text",
+      "text": "### ⚡ Deduzione AI: Specifiche Tecniche e Mappatura Comandi dell'Hub C\n`AI_REASONING` · `P1`\n\n> Definita la pipeline I/O perimetrale: Telegram App -> HTTPS Webhook (/api/telegram/webhook) -> Whitelist Auth -> Intent Router (/search, /pa",
+      "x": -450,
+      "y": 3740,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "reason-ep-20260827-graph-tree-unification",
+      "type": "text",
+      "text": "### ⚡ Deduzione AI: Unificazione Architetturale tra Knowledge Graph e\n`AI_REASONING` · `P1`\n\n> Formalizzata la pipeline: Knowledge Graph -> Spreading Activation -> Local Tree Search (ToT/MCTS) -> Trajectory Evaluation -> Synaptic Conso",
+      "x": -450,
+      "y": 3910,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "reason-ep-20260827-tree-structures-evaluation",
+      "type": "text",
+      "text": "### ⚡ Deduzione AI: Valutazione Tecnica delle Strutture ad Albero (MST\n`AI_REASONING` · `P1`\n\n> Mappati 4 layer strutturali: B+Tree (Storage), Radix Trie (Lexical Routing O(k)), Hierarchical Dendrogram (Context Scoping), MST (Linear Cha",
+      "x": -450,
+      "y": 4080,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "ai-reasoning-hybrid-cloud-local-symbiosis",
+      "type": "text",
+      "text": "### ⚡ Ragionamento AI: Simbiosi Architetturale tra Substrato Cloud Render e Agenti Locali\n`AI_REASONING` · `P1`\n\n> Deduzione architetturale: Render agisce come Hub pubblico permanente (Telegram Webhook, Web Visualizer, OpenAPI GPTs), mentre MCP agisce com",
+      "x": -450,
+      "y": 4250,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "tax-ai-reasoning",
+      "type": "text",
+      "text": "### ⚡ Tassonomia Metacognitiva & AI Reasoning Hub\n`AI_REASONING` · `P1`\n\n> Area cognitiva dedicata al tracciamento dei ragionamenti, deduzioni analitiche e percorsi logici interni generati dall'AI durante le session",
+      "x": -450,
+      "y": 4420,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "ai-reasoning-cross-model-provenance-validation",
+      "type": "text",
+      "text": "### ⚡ Validazione Architetturale: Provenance & Attribution Cross-Modello\n`AI_REASONING` · `P1`\n\n> Deduzione logica Gemini: tracciare prompt e modello crea una memoria a provenienza epistemica verificabile, prevenendo allucinazioni di pate",
+      "x": -450,
+      "y": 4590,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-creazione-repo-jarvis-desktop",
+      "type": "text",
+      "text": "### ⚡ Richiesta Utente: Creazione Progetto Autonomo JARVIS su Desktop\n`USER_INTENT` · `P1`\n\n> Pierfrancesco stabilisce che JARVIS deve essere un progetto separato su /Users/pierfrancesco/Desktop/Jarvis, utilizzando Universal AI Brain ",
+      "x": -450,
+      "y": 4760,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "episode-2026-08-27-tree-structures-evaluation",
+      "type": "text",
+      "text": "### 🌸 Episodio Conversazionale: Valutazione Strutture ad Albero\n`CONVERSATION_EPISODE` · `P1`\n\n> Discussione e perizia tecnica sull'integrazione di alberi binari, alberi di ricerca e alberi di copertura pesati nel grafo universale.",
+      "x": 450,
+      "y": 2890,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "episode-2026-08-27-universal-context-definition",
+      "type": "text",
+      "text": "### 🌸 Episodio: Definizione Scopo Universale del Contesto Multi-AI\n`CONVERSATION_EPISODE` · `P1`\n\n> Sessione di formalizzazione dello scopo supremo di Universal AI Brain: memoria persistente del contesto e dei processi mentali cross-AI.",
+      "x": 450,
+      "y": 3060,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "val-transparency-loyalty",
+      "type": "text",
+      "text": "### 🌸 Lealtà & Cura dei Legami Significativi\n`PERSONAL_VALUE` · `P1`\n\n> Fedeltà incondizionata a chi ha dimostrato supporto autentico, rispetto e presenza nei momenti critici.",
+      "x": 450,
+      "y": 3230,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "streaksup-privacy-zero-cloud",
+      "type": "text",
+      "text": "### 🌸 Privacy-by-Design & Zero-Cloud\n`PERSONAL_VALUE` · `P1`\n\n> Valore etico cardine: 100% offline, nessun server remoto, nessun tracciamento analytics, nessun account richiesto e piena esportazione JSON.",
+      "x": 450,
+      "y": 3400,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "rel-parents",
+      "type": "text",
+      "text": "### 🌸 Genitori (Madre e Padre)\n`RELATIONSHIP` · `P1`\n\n> Punto fermo affettivo e motivazionale; destinatari della dedica di tesi e di supporto concreto continuativo.",
+      "x": 450,
+      "y": 3570,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "ux-frictionless",
+      "type": "text",
+      "text": "### 🌸 UX ad Ergonomia Immediata (Thumb Zone)\n`UX_FLOW` · `P1`\n\n> Interfacce prive di frizione con controlli primari nella zona del pollice e transizioni ultra-reattive (150-250ms).",
+      "x": 450,
+      "y": 3740,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "analysis-bst-vs-graph-taxonomy",
+      "type": "text",
+      "text": "### ⚡ Analisi Algoritmica: BST vs Spanning Tree & Tassonomia Gerarchica\n`AI_REASONING` · `P1`\n\n> Valutazione tecnica: BST puro monodimensionale non modella relazioni cicliche; Spanning Tree Pesato (MST) e Alberi Gerarchici di Comunità es",
+      "x": -450,
+      "y": 4930,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "reasoning-language-app-architecture",
+      "type": "text",
+      "text": "### ⚡ Architettura Modulare PWA con FSRS e LLM Locale\n`AI_REASONING` · `P1`\n\n> Proposta di architettura basata su motore Spaced Repetition (FSRS/SM-2), Web Speech API per audio/TTS nativo e integrazione LLM per generazi",
+      "x": -450,
+      "y": 5100,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "reason-ep-20260827-graph-taxonomy-classification",
+      "type": "text",
+      "text": "### ⚡ Deduzione AI: Tassonomia e Classificazione Formale dell'Universa\n`AI_REASONING` · `P1`\n\n> Mappate le 4 dimensioni: Topologica (Heterogeneous Multigraph), Epistemica (Epistemic Property Graph), Cognitiva (Episodic-Semantic Hybrid),",
+      "x": -450,
+      "y": 5270,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "reason-ep-20260827-telegram-bot-interface",
+      "type": "text",
+      "text": "### ⚡ Deduzione AI: Valutazione e Design di un Telegram Bot come Inter\n`AI_REASONING` · `P1`\n\n> Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render.",
+      "x": -450,
+      "y": 5440,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "ai-reasoning-hybrid-search-mcp",
+      "type": "text",
+      "text": "### ⚡ Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€\n`AI_REASONING` · `P1`\n\n> Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso se",
+      "x": -450,
+      "y": 5610,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "deploy-render-zero-cost",
+      "type": "text",
+      "text": "### ⚡ Architettura di Hosting Render.com 0€\n`ARCHITECTURE` · `P1`\n\n> Infrastruttura di erogazione web asincrona su Render.com Free Tier con Uvicorn e SQLite WAL persistito.",
+      "x": -450,
+      "y": 5780,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "feat-progressive-areas",
+      "type": "text",
+      "text": "### ⚡ Aree a Espansione & Cluster Gerarchici\n`ARCHITECTURE` · `P1`\n\n> Motore di rendering a fioritura progressiva: visualizza i Macro-Hub compatti e ne sboccia i sotto-nodi al click utente preservando le sinaps",
+      "x": -450,
+      "y": 5950,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "node-hierarchical-dendrogram",
+      "type": "text",
+      "text": "### ⚡ Hierarchical Community Tree (Semantic Zoom)\n`ARCHITECTURE` · `P1`\n\n> Hierarchical Community Tree (Semantic Zoom) (Layer: ABSTRACTION_LAYER, Tipo: TOPOLOGICAL_HIERARCHY)",
+      "x": -450,
+      "y": 6120,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "proj-linkly-qr",
+      "type": "text",
+      "text": "### ⚡ Linkly QR\n`ARCHITECTURE` · `P1`\n\n> Generatore dinamico vettoriale di codici QR con preview live e styling avanzato.",
+      "x": -450,
+      "y": 6290,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "project-royal-gambit-chess",
+      "type": "text",
+      "text": "### ⚡ Royal Gambit Chess iOS App\n`ARCHITECTURE` · `P1`\n\n> Applicazione iOS nativa di scacchi per iPhone in Swift/SwiftUI con motore minimax bitboard, stile grafico Duolingo 2D Flat & 3D Tactile, bot",
+      "x": -450,
+      "y": 6460,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "node-search-tree-deliberation",
+      "type": "text",
+      "text": "### ⚡ Search Trees (ToT / MCTS Deliberation)\n`ARCHITECTURE` · `P1`\n\n> Search Trees (ToT / MCTS Deliberation) (Layer: WORKING_MEMORY_PLANNING, Tipo: COGNITIVE_PROCESS)",
+      "x": -450,
+      "y": 6630,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "node-telegram-webhook-gateway",
+      "type": "text",
+      "text": "### ⚡ Telegram 0€ Webhook Gateway (POST /api/telegram/webhook)\n`ARCHITECTURE` · `P1`\n\n> Telegram 0€ Webhook Gateway (POST /api/telegram/webhook) (Layer: PERCEPTUAL_IO, Tipo: API_GATEWAY)",
+      "x": -450,
+      "y": 6800,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "proj-tombolawifi",
+      "type": "text",
+      "text": "### ⚡ Tombola WiFi\n`ARCHITECTURE` · `P1`\n\n> Digitalizzazione multiplayer locale della classica Tombola napoletana con Smorfia e broadcast chiamate.",
+      "x": -450,
+      "y": 6970,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "node-neuro-symbolic-brain",
+      "type": "text",
+      "text": "### ⚡ Unified Brain Architecture\n`ARCHITECTURE` · `P1`\n\n> Unified Brain Architecture (Layer: META_SYSTEM, Tipo: COGNITIVE_ARCHITECTURE)",
+      "x": -450,
+      "y": 7140,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "rigore-informativo",
+      "type": "text",
+      "text": "### ⚡ Comunicazione Chirurgica & Rigore\n`COGNITIVE_RULE` · `P1`\n\n> Preferenza esplicita per risposte concise, dirette e tecnicamente dense con epistemologia verificata.",
+      "x": -450,
+      "y": 7310,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "concept-llm-indirect-injection-safeguard",
+      "type": "text",
+      "text": "### ⚡ Regola Cognitiva: Gestione dei Filtri Anti-Injection nei Modelli Web\n`COGNITIVE_RULE` · `P1`\n\n> Protocollo di interazione con modelli web: evitare comandi imperativi di rete esterna (es. ordini di POST verso URL terzi) nei file allegati",
+      "x": -450,
+      "y": 7480,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-personal-language-learning-app",
+      "type": "text",
+      "text": "### ⚡ Costruzione App Personale Apprendimento Portoghese e Tedesco\n`USER_INTENT` · `P1`\n\n> L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le ",
+      "x": -450,
+      "y": 7650,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-language-app-ui-design",
+      "type": "text",
+      "text": "### ⚡ Definizione Linee Guida Grafiche e UI per App Linguistica\n`USER_INTENT` · `P1`\n\n> L'utente richiede la definizione della grafica, dello stile visivo e dell'interfaccia utente per l'applicazione personale di apprendimento l",
+      "x": -450,
+      "y": 7820,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-telegram-bot-gateway",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Gateway Telegram per Accesso Cognitivo Ovunque\n`USER_INTENT` · `P1`\n\n> Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone",
+      "x": -450,
+      "y": 7990,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-zero-cost-graphrag",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Potenziamento GraphRAG & MCP a Costo Zero\n`USER_INTENT` · `P1`\n\n> Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shortest Path) e server MCP per Claude/Cursor senza costi aggiun",
+      "x": -450,
+      "y": 8160,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-tree-search-enhancement",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Valutazione Alberi Binari e Alberi Pesati\n`USER_INTENT` · `P1`\n\n> Proposta di integrare strutture ad albero (binari, pesati, gerarchici) per ottimizzare la ricerca e navigazione della memoria.",
+      "x": -450,
+      "y": 8330,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-evaluate-ai-brain-architecture",
+      "type": "text",
+      "text": "### ⚡ Valutazione e Ottimizzazione Architettura Knowledge Graph\n`USER_INTENT` · `P1`\n\n> L'utente richiede un'analisi critica dell'architettura del proprio cervello artificiale, cercando lacune, migliorie strutturali e ottimizzaz",
+      "x": -450,
+      "y": 8500,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "chat-session-2026-08-27-ui-evolution",
+      "type": "text",
+      "text": "### 🌸 Episodio Chat: Evoluzione UI, Persistenza & Aree a Espansione\n`CONVERSATION_EPISODE` · `P1`\n\n> Episodio conversazionale incentrato sulla pulizia grafica del terminale, l'introduzione di viste a macro-aree progressive e la memoria episo",
+      "x": 450,
+      "y": 3910,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "episode-2026-08-27-telegram-omnipresence",
+      "type": "text",
+      "text": "### 🌸 Episodio Conversazionale: Concezione Gateway Mobile Telegram\n`CONVERSATION_EPISODE` · `P1`\n\n> Ideazione e pianificazione dell'interfaccia mobile Telegram per estendere l'ubiquità del cervello artificiale.",
+      "x": 450,
+      "y": 4080,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "episode-frontend-deeptech-redesign-and-physics-zero-lag",
+      "type": "text",
+      "text": "### 🌸 Episodio: Restyling Dark-Tech, Stabilizzazione Fisica & Ripristino Palazzo Cognitivo\n`CONVERSATION_EPISODE` · `P1`\n\n> Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), eliminazione di oscillazioni e rotazioni continue della fisic",
+      "x": 450,
+      "y": 4250,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "streaksup-particle-fx",
+      "type": "text",
+      "text": "### 🌸 Celebration Particle & FX Engine\n`CREATIVE_IDEA` · `P1`\n\n> Suite di effetti grafici ed esplosioni particellari reattive: Notch Fireworks dalla Dynamic Island al 100%, coriandoli gravitazionali, scint",
+      "x": 450,
+      "y": 4420,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "art-creative-writing",
+      "type": "text",
+      "text": "### 🌸 Scrittura & Pubblicazione Indipendente\n`CREATIVE_IDEA` · `P1`\n\n> Attività di autore ed editore su Amazon KDP per libri per ragazzi, narrativa e manuali tecnici.",
+      "x": 450,
+      "y": 4590,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "antigravity-centaur-collaboration",
+      "type": "text",
+      "text": "### 🌸 Simbiosi Operativa Antigravity & Pierfrancesco\n`CREATIVE_IDEA` · `P1`\n\n> Manifestazione pratica del Modello Centauro: intenzione e guida umana sposate all'esecuzione deterministica dell'assistente AI.",
+      "x": 450,
+      "y": 4760,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "creative-multidisciplinary",
+      "type": "text",
+      "text": "### 🌸 Sintesi Artistico-Scientifica & Centauro\n`CREATIVE_IDEA` · `P1`\n\n> Integrazione tra rigore computazionale e sensibilità creativa (pianoforte, teatro Tricca Ballacche, scrittura, modello Centauro).",
+      "x": 450,
+      "y": 4930,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "memory-perfectionism-tension",
+      "type": "text",
+      "text": "### 🌸 Tensione tra Controllo Perfezionistico ed Espressione\n`EMOTIONAL_MEMORY` · `P1`\n\n> La costante ricerca dell'eccellenza e il sovraccarico di responsabilità bilanciati attraverso lo sfogo catartico della musica e dell'arte.",
+      "x": 450,
+      "y": 5100,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "rel-marco-di-martino",
+      "type": "text",
+      "text": "### 🌸 Marco Di Martino\n`RELATIONSHIP` · `P1`\n\n> Compagno di percorso accademico e amico fidato con cui condividere la crescita universitaria e le sfide di studio.",
+      "x": 450,
+      "y": 5270,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "reason-ep-20260827-hierarchical-overlay-reassurance",
+      "type": "text",
+      "text": "### ⚡ Deduzione AI: Chiarimento Architetturale: Coesistenza della Topo\n`AI_REASONING` · `P1`\n\n> Definito formalmente il principio di 'Dualità Overlay-Substrato': il Grafo preserva la totalità relazionale e le proprietà biologico-simboli",
+      "x": -450,
+      "y": 8670,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "ai-reasoning-shared-cognitive-state-continuity",
+      "type": "text",
+      "text": "### ⚡ Deduzione AI: Stato Cognitivo Condiviso e Continuità Inter-Modello\n`AI_REASONING` · `P1`\n\n> L'unificazione del contesto in un grafo bi-emisferico supera il silo conversazionale dei singoli LLM, trasformando istanze AI isolate in nod",
+      "x": -450,
+      "y": 8840,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "reason-ep-20260827-tree-ranking-translation",
+      "type": "text",
+      "text": "### ⚡ Deduzione AI: Traduzione e Consolidamento del Benchmark Comparat\n`AI_REASONING` · `P1`\n\n> Tradotto fedelmente il framework di comparazione tecnica e gerarchizzazione delle strutture ad albero.",
+      "x": -450,
+      "y": 9010,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "concept-graph-of-graphs-hypergraph",
+      "type": "text",
+      "text": "### ⚡ Architettura Graph-of-Graphs / Palazzo Cognitivo a Piani\n`ARCHITECTURE` · `P1`\n\n> Modello a iper-grafo gerarchico in cui i nodi di livello superiore contengono sotto-grafi completi, simulando un palazzo a più piani concett",
+      "x": -450,
+      "y": 9180,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "arch-telegram-webhook-gateway",
+      "type": "text",
+      "text": "### ⚡ Architettura Webhook Telegram 0€ (FastAPI + Bot API)\n`ARCHITECTURE` · `P1`\n\n> Infrastruttura serverless su webhook FastAPI per ricezione comandi (/search, /path, /tree) e inserimento memorie asincrono 0€.",
+      "x": -450,
+      "y": 9350,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "concept-modular-domain-subgraphs",
+      "type": "text",
+      "text": "### ⚡ Architettura a Sotto-Grafi Modulari & Decentramento Hub\n`ARCHITECTURE` · `P1`\n\n> I concetti verticali (es. medicina, finanza, fisica) non si collegano forzatamente a person-pierfrancesco, ma formano cluster tematici auton",
+      "x": -450,
+      "y": 9520,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "node-universal-ai-brain-taxonomy",
+      "type": "text",
+      "text": "### ⚡ Attributed Heterogeneous Temporal Multigraph\n`ARCHITECTURE` · `P1`\n\n> Attributed Heterogeneous Temporal Multigraph (Layer: FORMAL_THEORY, Tipo: GRAPH_CLASSIFICATION)",
+      "x": -450,
+      "y": 9690,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "concept-interhemispheric-inhibition-gating",
+      "type": "text",
+      "text": "### ⚡ Inibizione Interemisferica GABAergica & Lazy-Loading Biologico\n`ARCHITECTURE` · `P1`\n\n> Meccanismo neurobiologico computazionale in cui l'emisfero non pertinente al task viene temporaneamente inibito/disattivato per eliminare in",
+      "x": -450,
+      "y": 9860,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "node-tree-architecture-verdict",
+      "type": "text",
+      "text": "### ⚡ Hierarchical Community Tree as Primary Abstraction\n`COGNITIVE_RULE` · `P1`\n\n> Hierarchical Community Tree as Primary Abstraction (Layer: CORE_TAXONOMY, Tipo: ARCHITECTURAL_DECISION)",
+      "x": -450,
+      "y": 10030,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "node-ubiquitous-ingestion",
+      "type": "text",
+      "text": "### ⚡ Ubiquitous Memory Ingestion\n`MENTAL_MODEL` · `P1`\n\n> Ubiquitous Memory Ingestion (Layer: DYNAMIC_PLASTICITY, Tipo: COGNITIVE_CAPABILITY)",
+      "x": -450,
+      "y": 10200,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-allineamento-nodi-render",
+      "type": "text",
+      "text": "### ⚡ Allineamento e Diagnosi Discrepanza Nodi Render e Locale\n`USER_INTENT` · `P1`\n\n> Richiesta di spiegazione sulla discrepanza tra 208 nodi locali e 204 su Render e sincronizzazione del database cloud.",
+      "x": -450,
+      "y": 10370,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-analisi-feedback-gemini-ottimizzazione-cervello",
+      "type": "text",
+      "text": "### ⚡ Analisi Feedback Gemini e Piano Ottimizzazione Cervello\n`USER_INTENT` · `P1`\n\n> Valutazione critica dell'assessment di Gemini sul Cervello Artificiale e definizione delle migliorie al GraphRAG e all'architettura.",
+      "x": -450,
+      "y": 10540,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-connect-gemini-claude-chatgpt-mcp",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Collegare Cervello via MCP e Skill a Claude, Gemini e ChatGPT\n`USER_INTENT` · `P1`\n\n> Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.",
+      "x": -450,
+      "y": 10710,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-clarify-render-cloud-utility-and-llm-web-refusal",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Comprensione del Ruolo di Render Cloud e Analisi del Rifiuto di Claude Web\n`USER_INTENT` · `P1`\n\n> Pierfrancesco richiede spiegazione sul perché avere il backend su Render se gli agenti desktop leggono localmente, e come superare il rifiut",
+      "x": -450,
+      "y": 10880,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-ep-20260827-hierarchical-tree-deployment-sync",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Hierarchical Tree Engine Completamente Rilasciato e Sincronizzato\n`USER_INTENT` · `P1`\n\n> Traduzione e report di rilascio: Hierarchical Tree Engine e tool MCP brain_get_tree implementati con successo.",
+      "x": -450,
+      "y": 11050,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-ep-20260827-graph-taxonomy-classification",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Il mio che tipo di grafo è?\n`USER_INTENT` · `P1`\n\n> Il mio che tipo di grafo è?",
+      "x": -450,
+      "y": 11220,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-ep-20260827-tree-ranking-translation",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Migliore Soluzione - Albero Gerarchico a Comunità (Dendrogramma)\n`USER_INTENT` · `P1`\n\n> Traduzione e formalizzazione: l'Albero Gerarchico (Dendrogramma) è la soluzione ottimale per risparmio token e Semantic Zoom.",
+      "x": -450,
+      "y": 11390,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-ep-20260827-graph-tree-unification",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Si possono unire grafi e alberi di ricerca. Un grafo come il\n`USER_INTENT` · `P1`\n\n> Si possono unire grafi e alberi di ricerca. Un grafo come il mio con quello che ho creato, cioè un cervello?",
+      "x": -450,
+      "y": 11560,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-ep-20260827-telegram-cognitive-hub-spec",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Strategia Hub Cognitivo Telegram (Gateway Webhook 0€)\n`USER_INTENT` · `P1`\n\n> Traduzione e consolidamento: Architettura Telegram Bot Gateway 0€ con routing comandi e BFS trans-callosale.",
+      "x": -450,
+      "y": 11730,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-ep-20260827-tree-structures-evaluation",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Valutazione Tecnica delle Strutture ad Albero (BST, B+Tree, MST, Tree)\n`USER_INTENT` · `P1`\n\n> Valutazione tecnica delle strutture ad albero: BST, B+Tree, Maximum Spanning Tree, Hierarchical Tree e Prefix Trie per il grafo cognitivo.",
+      "x": -450,
+      "y": 11900,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-ep-20260827-telegram-bot-interface",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: Vorrei collegare il mio cervello a un bot su telegram giusto\n`USER_INTENT` · `P1`\n\n> Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata di mano sempre le info, che ne pensi? Può essere utile? È g",
+      "x": -450,
+      "y": 12070,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "intent-ep-20260827-hierarchical-overlay-reassurance",
+      "type": "text",
+      "text": "### ⚡ Intento Utente: mica si perde la struttura a grafo e quello che abbiamo real\n`USER_INTENT` · `P1`\n\n> mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)",
+      "x": -450,
+      "y": 12240,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690",
+      "type": "text",
+      "text": "### ⚡ Intento: Allora vorrei dirti che oggi ho man...\n`USER_INTENT` · `P1`\n\n> Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Allora vorrei dirti che oggi ho man...",
+      "x": -450,
+      "y": 12410,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-comando-prompt-copia-rapi-8585",
+      "type": "text",
+      "text": "### ⚡ Intento: Comando /prompt Copia Rapida per Telegra\n`USER_INTENT` · `P1`\n\n> Intento espresso da Pierfrancesco: Comando /prompt Copia Rapida per Telegram Bot",
+      "x": -450,
+      "y": 12580,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-jarvis-ricordi-quali-sono-gli-emis-3117",
+      "type": "text",
+      "text": "### ⚡ Intento: Jarvis, ricordi quali sono gli emis...\n`USER_INTENT` · `P1`\n\n> Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Jarvis, ricordi quali sono gli emis...",
+      "x": -450,
+      "y": 12750,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-occultamento-pulsanti-mob-9019",
+      "type": "text",
+      "text": "### ⚡ Intento: Occultamento Pulsanti Mobile su Browser \n`USER_INTENT` · `P1`\n\n> Intento espresso da Pierfrancesco: Occultamento Pulsanti Mobile su Browser Desktop",
+      "x": -450,
+      "y": 12920,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-ottimizzazione-mobile-web-8880",
+      "type": "text",
+      "text": "### ⚡ Intento: Ottimizzazione Mobile Web Dashboard Univ\n`USER_INTENT` · `P1`\n\n> Intento espresso da Pierfrancesco: Ottimizzazione Mobile Web Dashboard Universal Brain",
+      "x": -450,
+      "y": 13090,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-potenziamento-skill-e-ril-8338",
+      "type": "text",
+      "text": "### ⚡ Intento: Potenziamento Skill e Rilascio Demone Si\n`USER_INTENT` · `P1`\n\n> Intento espresso da Pierfrancesco: Potenziamento Skill e Rilascio Demone Sincronizzazione macOS",
+      "x": -450,
+      "y": 13260,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-quali-sono-i-progetti-principali-di-8169",
+      "type": "text",
+      "text": "### ⚡ Intento: Quali sono i progetti principali di...\n`USER_INTENT` · `P1`\n\n> Prompt espresso a Groq (qwen/qwen3.8-27b): Quali sono i progetti principali di Pierfrancesco Amendola presenti nella memoria?",
+      "x": -450,
+      "y": 13430,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-quali-sono-le-abitudini-monitorate-2979",
+      "type": "text",
+      "text": "### ⚡ Intento: Quali sono le abitudini monitorate ...\n`USER_INTENT` · `P1`\n\n> Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Quali sono le abitudini monitorate ...",
+      "x": -450,
+      "y": 13600,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-c-un-problema-vorrei-sapere-di-pi-3203",
+      "type": "text",
+      "text": "### ⚡ Intento: c'è un problema vorrei sapere di pi...\n`USER_INTENT` · `P1`\n\n> Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: c'è un problema vorrei sapere di pi...",
+      "x": -450,
+      "y": 13770,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-che-ne-pensi-del-mio-cervello-artif-8743",
+      "type": "text",
+      "text": "### ⚡ Intento: che ne pensi del mio cervello artif...\n`USER_INTENT` · `P1`\n\n> Prompt espresso a groq (openai/gpt-oss-120b): che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare",
+      "x": -450,
+      "y": 13940,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-che-ne-pensi-del-mio-cervello-artif-8793",
+      "type": "text",
+      "text": "### ⚡ Intento: che ne pensi del mio cervello artif...\n`USER_INTENT` · `P1`\n\n> Prompt espresso a gemini (gemini-3.7-flash): che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare",
+      "x": -450,
+      "y": 14110,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-che-ore-sono-3134",
+      "type": "text",
+      "text": "### ⚡ Intento: che ore sono...\n`USER_INTENT` · `P1`\n\n> Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: che ore sono...",
+      "x": -450,
+      "y": 14280,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-chi-pierfrancesco-amendola-e-cosa-8426",
+      "type": "text",
+      "text": "### ⚡ Intento: chi è Pierfrancesco Amendola e cosa...\n`USER_INTENT` · `P1`\n\n> Prompt espresso a groq (openai/gpt-oss-120b): chi è Pierfrancesco Amendola e cosa fa il suo cervello artificiale",
+      "x": -450,
+      "y": 14450,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176",
+      "type": "text",
+      "text": "### ⚡ Intento: ehi Jarvis ehi Jarvis mi puoi dire ...\n`USER_INTENT` · `P1`\n\n> Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ehi Jarvis ehi Jarvis mi puoi dire ...",
+      "x": -450,
+      "y": 14620,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753",
+      "type": "text",
+      "text": "### ⚡ Intento: ho bisogno di sapere tutto ciò che ...\n`USER_INTENT` · `P1`\n\n> Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ho bisogno di sapere tutto ciò che ...",
+      "x": -450,
+      "y": 14790,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-ma-tutto-falso-8462",
+      "type": "text",
+      "text": "### ⚡ Intento: ma è tutto falso!!!\n`USER_INTENT` · `P1`\n\n> Prompt espresso a groq (openai/gpt-oss-120b): ma è tutto falso!!!",
+      "x": -450,
+      "y": 14960,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-non-riesci-a-connetterti-al-mio-cer-8486",
+      "type": "text",
+      "text": "### ⚡ Intento: non riesci a connetterti al mio cer...\n`USER_INTENT` · `P1`\n\n> Prompt espresso a groq (openai/gpt-oss-120b): non riesci a connetterti al mio cervello?",
+      "x": -450,
+      "y": 15130,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794",
+      "type": "text",
+      "text": "### ⚡ Intento: quanti nodi ci sono nel mio cervell...\n`USER_INTENT` · `P1`\n\n> Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: quanti nodi ci sono nel mio cervell...",
+      "x": -450,
+      "y": 15300,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-abbandono-jarvis-nuovo-progetto",
+      "type": "text",
+      "text": "### ⚡ Richiesta Utente: Abbandono Jarvis e Avvio Nuovo Progetto\n`USER_INTENT` · `P1`\n\n> Pierfrancesco ordina la cancellazione di Jarvis/OpenJarvis e l'orientamento verso un progetto più pragmatico e funzionale.",
+      "x": -450,
+      "y": 15470,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-clean-clustered-ui",
+      "type": "text",
+      "text": "### ⚡ Richiesta Utente: Aree e Disvelamento Progressivo dei Nodi\n`USER_INTENT` · `P1`\n\n> Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle c",
+      "x": -450,
+      "y": 15640,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-avvio-openjarvis-ollama-gpt-cloud",
+      "type": "text",
+      "text": "### ⚡ Richiesta Utente: Avvio OpenJarvis con Ollama gpt-oss:120b-cloud\n`USER_INTENT` · `P1`\n\n> Test di esecuzione su OpenJarvis con Ollama gpt-oss:120b-cloud e recupero dal connettoma neurale.",
+      "x": -450,
+      "y": 15810,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-integrazione-openjarvis-stanford",
+      "type": "text",
+      "text": "### ⚡ Richiesta Utente: Clonazione e Integrazione OpenJarvis Stanford\n`USER_INTENT` · `P1`\n\n> Pierfrancesco richiede di clonare OpenJarvis sul Desktop e connetterlo al proprio Cervello Artificiale sfruttando anche la desktop app.",
+      "x": -450,
+      "y": 15980,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-architettura-connettoma-web-vs-desktop",
+      "type": "text",
+      "text": "### ⚡ Richiesta Utente: Funzionamento Architettura Web vs Desktop e Sincronizzazione Master Prompt\n`USER_INTENT` · `P1`\n\n> Pierfrancesco chiede chiarimenti sul funzionamento reale dell'albero gerarchico e palazzo cognitivo su backend, come le AI Web accedono alle",
+      "x": -450,
+      "y": 16150,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-universal-ai-hub-client",
+      "type": "text",
+      "text": "### ⚡ Richiesta Utente: Hub AI Unificato con Connettoma Permanente\n`USER_INTENT` · `P1`\n\n> Pierfrancesco intende costruire un client desktop/web unico che unifica tutti i provider AI (OpenAI, Claude, DeepSeek, Gemini, Ollama) con m",
+      "x": -450,
+      "y": 16320,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-reasoning-and-chat-memory",
+      "type": "text",
+      "text": "### ⚡ Richiesta Utente: Memoria dei Ragionamenti AI e delle Chat Eterogenee\n`USER_INTENT` · `P1`\n\n> Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. sport, cucina, codice) i",
+      "x": -450,
+      "y": 16490,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-creazione-jarvis-voice-assistant",
+      "type": "text",
+      "text": "### ⚡ Richiesta Utente: Progettazione Assistente Vocale JARVIS Personale 100% Gratuito\n`USER_INTENT` · `P1`\n\n> Pierfrancesco richiede la progettazione di un assistente vocale continuo JARVIS a costo zero, con wake word, memoria persistente bi-emisferi",
+      "x": -450,
+      "y": 16660,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-valutazione-progetto-language-app",
+      "type": "text",
+      "text": "### ⚡ Valutazione Fattibilità Language App Gratuita e Unica\n`USER_INTENT` · `P1`\n\n> Richiesta di parere critico, stima complessità/tempi e identificazione elementi mancanti nel progetto di app lingue personale.",
+      "x": -450,
+      "y": 16830,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "brand-voice-engineering",
+      "type": "text",
+      "text": "### 🌸 Ultra-Direct Engineering Voice\n`BRAND_VOICE` · `P1`\n\n> Modalità comunicativa asciutta, rigorosa, priva di convenevoli e orientata alla massima densità tecnica.",
+      "x": 450,
+      "y": 5440,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "ep-20260827-render-cloud-vs-local-hybrid-architecture",
+      "type": "text",
+      "text": "### 🌸 Episodio Chat: Architettura Ibrida Cloud Render vs Agenti Locali MCP & Sicurezza LLM\n`CONVERSATION_EPISODE` · `P1`\n\n> Chiarimento architetturale sulla dualità e cooperazione tra Render Cloud 24/7 (mobile/web/Telegram/GPTs) e Agenti Locali MCP (Antigravity/Cu",
+      "x": 450,
+      "y": 5610,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "episode-system-metacognition",
+      "type": "text",
+      "text": "### 🌸 Metacognizione e Sviluppo del Sistema AI\n`CONVERSATION_EPISODE` · `P1`\n\n> Sessione dedicata all'introspezione sistemica e al miglioramento dell'infrastruttura cognitiva dell'AI stessa.",
+      "x": 450,
+      "y": 5780,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "art-theatre-acting",
+      "type": "text",
+      "text": "### 🌸 Recitazione Teatrale (Tricca Ballacche)\n`CREATIVE_IDEA` · `P1`\n\n> Esperienza attoriale sul palco come strumento di esplorazione delle dinamiche umane e presenza scenica.",
+      "x": 450,
+      "y": 5950,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "lesson-boundaries-clarity",
+      "type": "text",
+      "text": "### 🌸 Lezione sui Confini Affettivi & Non-Idealizzazione\n`LIFE_LESSON` · `P1`\n\n> Non farsi carico unilateralmente della stabilità altrui; l'intensità emotiva non sostituisce la compatibilità e la chiarezza dei confini.",
+      "x": 450,
+      "y": 6120,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "lesson-stoic-resilience",
+      "type": "text",
+      "text": "### 🌸 Resilienza Operativa & Post-Mortem Emotivo\n`LIFE_LESSON` · `P1`\n\n> Trattare gli ostacoli e le delusioni come dati da analizzare a mente fredda per iterare e migliorare senza autocommiserazione.",
+      "x": 450,
+      "y": 6290,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "val-independence",
+      "type": "text",
+      "text": "### 🌸 Autonomia, Autosufficienza & Merito\n`PERSONAL_VALUE` · `P1`\n\n> Costruire la propria libertà attraverso la competenza tecnica verificabile, l'autosufficienza e l'etica del lavoro.",
+      "x": 450,
+      "y": 6460,
+      "width": 300,
+      "height": 140,
+      "color": "1"
+    },
+    {
+      "id": "user-intent-esplorazione-paradigmi-visuali-grafo",
+      "type": "text",
+      "text": "### ⚡ Richiesta: Esplorazione Nuovi Paradigmi Visuali e Layout per il Grafo\n`USER_INTENT` · `P1`\n\n> Richiesta utente di visualizzare nuovi disegni, interfacce e layout architetturali per rappresentare il connettoma neurale (307 nodi, 2 emis",
+      "x": -450,
+      "y": 17000,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-ristrutturazione-sigillo-12-macro-domini",
+      "type": "text",
+      "text": "### ⚡ Ristrutturazione e Sigillatura dei 12 Macro-Domini Fondativi\n`USER_INTENT` · `P1`\n\n> Riorganizzazione gerarchica del connettoma: sigillatura del Piano 0 con 12 macro-domini canonici, riassegnazione di tutti i nodi orfani e di",
+      "x": -450,
+      "y": 17170,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-audit-critico-e-mockup-fr-2255",
+      "type": "text",
+      "text": "### ⚡ Intento: Audit critico e mockup frontend del Univ\n`USER_INTENT` · `P1`\n\n> Intento espresso da Pierfrancesco: Audit critico e mockup frontend del Universal AI Brain",
+      "x": -450,
+      "y": 17340,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-nuove-rappresentazioni-vi-2874",
+      "type": "text",
+      "text": "### ⚡ Intento: Nuove rappresentazioni visuali del conne\n`USER_INTENT` · `P1`\n\n> Intento espresso da Pierfrancesco: Nuove rappresentazioni visuali del connettoma",
+      "x": -450,
+      "y": 17510,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-backend-optimization-hybrid",
+      "type": "text",
+      "text": "### ⚡ Ottimizzazione Backend Ibrida con Backup\n`USER_INTENT` · `P1`\n\n> Richiesta di applicare ottimizzazioni backend (indici, cache, CTE) con approccio ibrido e backup preventivo, senza perdere dati o funzionali",
+      "x": -450,
+      "y": 17680,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-alternative-income-generation",
+      "type": "text",
+      "text": "### ⚡ Richiesta Metodi Alternativi di Guadagno\n`USER_INTENT` · `P1`\n\n> L'utente richiede la formulazione di strategie alternative e concrete per generare tra 100 e 500 euro/mese a costo zero iniziale.",
+      "x": -450,
+      "y": 17850,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-ai-shorts-evaluation",
+      "type": "text",
+      "text": "### ⚡ Valutazione Monetizzazione YT Shorts AI\n`USER_INTENT` · `P1`\n\n> L'utente richiede un'analisi di fattibilità per generare 100-500 euro/mese creando YouTube Shorts per bambini generati tramite AI su piattaf",
+      "x": -450,
+      "y": 18020,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-fix-daemon-render-persistence",
+      "type": "text",
+      "text": "### ⚡ Intento: Fix Demone Sync e Persistenza Render\n`USER_INTENT` · `P1`\n\n> Risolvere il malfunzionamento del demone di sync, prevenire lo spegnimento di Render e garantire persistenza continua dei 347 nodi.",
+      "x": -450,
+      "y": 18190,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-cloud-git-auto-push",
+      "type": "text",
+      "text": "### ⚡ Intento: Cloud-Side Git Auto-Push da Render\n`USER_INTENT` · `P1`\n\n> Eseguire git push automatico direttamente dal cloud ad ogni post/ingestione su Render.",
+      "x": -450,
+      "y": 18360,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-verify-github-token-render",
+      "type": "text",
+      "text": "### ⚡ Intento: Verifica GITHUB_TOKEN su Render\n`USER_INTENT` · `P1`\n\n> Verificare l'attivazione e il funzionamento del token GitHub su Render per auto-push cloud.",
+      "x": -450,
+      "y": 18530,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    },
+    {
+      "id": "user-intent-creazione-video-showcase-universal-brain",
+      "type": "text",
+      "text": "### ⚡ Richiesta Creazione Video Showcase 60s Universal Brain\n`USER_INTENT` · `P1`\n\n> Richiesta di Pierfrancesco di creare un video tutorial / anteprima di 1 minuto con screenshot, pezzi di codice e spiegazione del Cervello Ar",
+      "x": -450,
+      "y": 18700,
+      "width": 300,
+      "height": 140,
+      "color": "4"
+    }
+  ],
+  "edges": [
+    {
+      "id": "da8cb1b85e",
+      "fromNode": "ai-reasoning-cross-model-provenance-validation",
+      "toNode": "episode-cross-model-memory-architecture",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "2ddb83dc9b",
+      "fromNode": "ai-reasoning-cross-model-provenance-validation",
+      "toNode": "episode-cross-model-memory-architecture",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "bcbe69efd2",
+      "fromNode": "ai-reasoning-cross-model-provenance-validation",
+      "toNode": "universal-ai-brain",
+      "label": "OPTIMIZES",
+      "color": "3"
+    },
+    {
+      "id": "f4225ed287",
+      "fromNode": "ai-reasoning-cross-model-provenance-validation",
+      "toNode": "user-intent-provenance-model-tracking",
+      "label": "VALIDATES",
+      "color": "3"
+    },
+    {
+      "id": "ceafbf537f",
+      "fromNode": "ai-reasoning-hybrid-cloud-local-symbiosis",
+      "toNode": "domain-ai-cognitive-systems",
+      "label": "EXPANDS_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "1f40682237",
+      "fromNode": "ai-reasoning-hybrid-cloud-local-symbiosis",
+      "toNode": "domain-software-engineering",
+      "label": "ARCHITECTURAL_DECISION_FOR",
+      "color": "3"
+    },
+    {
+      "id": "0448d12bd5",
+      "fromNode": "ai-reasoning-hybrid-cloud-local-symbiosis",
+      "toNode": "ep-20260827-render-cloud-vs-local-hybrid-architecture",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "c5dd8b8f24",
+      "fromNode": "ai-reasoning-hybrid-cloud-local-symbiosis",
+      "toNode": "intent-clarify-render-cloud-utility-and-llm-web-refusal",
+      "label": "RESPONDS_TO_INTENT",
+      "color": "3"
+    },
+    {
+      "id": "4dde231c79",
+      "fromNode": "ai-reasoning-hybrid-cloud-local-symbiosis",
+      "toNode": "universal-ai-brain",
+      "label": "ARCHITECTURAL_PILLAR_OF",
+      "color": "3"
+    },
+    {
+      "id": "dd6bcd4030",
+      "fromNode": "ai-reasoning-hybrid-search-mcp",
+      "toNode": "episode-2026-08-27-graphrag-mcp-evolution",
+      "label": "FORMULATES",
+      "color": "3"
+    },
+    {
+      "id": "6f7e5142d8",
+      "fromNode": "ai-reasoning-hybrid-search-mcp",
+      "toNode": "mental-centaur-model",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "ce2f394140",
+      "fromNode": "ai-reasoning-hybrid-search-mcp",
+      "toNode": "rule-zero-cost",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "2d1125d373",
+      "fromNode": "ai-reasoning-infinite-context-architecture",
+      "toNode": "episode-infinite-context-philosophy",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "018a380719",
+      "fromNode": "ai-reasoning-infinite-context-architecture",
+      "toNode": "episode-infinite-context-philosophy",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "d17fffa9e0",
+      "fromNode": "ai-reasoning-infinite-context-architecture",
+      "toNode": "universal-ai-brain",
+      "label": "DEFINES_CORE_PURPOSE_OF",
+      "color": "3"
+    },
+    {
+      "id": "0344b503f5",
+      "fromNode": "ai-reasoning-infinite-context-architecture",
+      "toNode": "user-intent-infinite-context-persistence",
+      "label": "FORMALIZES",
+      "color": "3"
+    },
+    {
+      "id": "912e9612dc",
+      "fromNode": "ai-reasoning-infinite-context-architecture",
+      "toNode": "val-eternal-cognitive-continuity",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "76d3d70841",
+      "fromNode": "ai-reasoning-shared-cognitive-state-continuity",
+      "toNode": "episode-2026-08-27-universal-context-definition",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "55bb222148",
+      "fromNode": "ai-reasoning-shared-cognitive-state-continuity",
+      "toNode": "episode-2026-08-27-universal-context-definition",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "1140373c48",
+      "fromNode": "ai-reasoning-shared-cognitive-state-continuity",
+      "toNode": "goal-multi-ai-shared-context-persistence",
+      "label": "VALIDATES",
+      "color": "3"
+    },
+    {
+      "id": "6d408396ea",
+      "fromNode": "analysis-bst-vs-graph-taxonomy",
+      "toNode": "mental-centaur-model",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "e98d2404a0",
+      "fromNode": "analysis-bst-vs-graph-taxonomy",
+      "toNode": "rule-zero-cost",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "87d71a172e",
+      "fromNode": "antigravity-centaur-collaboration",
+      "toNode": "brand-voice-surgical",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "3c3385bb15",
+      "fromNode": "antigravity-centaur-collaboration",
+      "toNode": "mental-centaur-model",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "753875ebdb",
+      "fromNode": "antigravity-centaur-collaboration",
+      "toNode": "mental-centaur-model",
+      "label": "VALIDATES_EMPIRICALLY",
+      "color": "3"
+    },
+    {
+      "id": "f56c125741",
+      "fromNode": "arch-telegram-webhook-gateway",
+      "toNode": "episode-2026-08-27-telegram-omnipresence",
+      "label": "PART_OF",
+      "color": "3"
+    },
+    {
+      "id": "2fef82319e",
+      "fromNode": "arch-telegram-webhook-gateway",
+      "toNode": "rule-zero-cost",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "b313bad252",
+      "fromNode": "art-piano-composition",
+      "toNode": "memory-perfectionism-tension",
+      "label": "CHANNELS_AND_HEALS",
+      "color": "3"
+    },
+    {
+      "id": "7442fdb71e",
+      "fromNode": "art-piano-composition",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "8133eb8535",
+      "fromNode": "art-theatre-acting",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "8076d99b88",
+      "fromNode": "aule-studio-app",
+      "toNode": "domain-software-engineering",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "018da722b0",
+      "fromNode": "brand-voice-surgical",
+      "toNode": "rule-zero-placeholder",
+      "label": "COMPLEMENTS",
+      "color": "3"
+    },
+    {
+      "id": "e95b6366c6",
+      "fromNode": "brand-voice-surgical",
+      "toNode": "rule-zero-placeholder",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "a799dd8f5a",
+      "fromNode": "concept-graph-of-graphs-hypergraph",
+      "toNode": "concept-modular-domain-subgraphs",
+      "label": "EXTENDS_MODULARITY",
+      "color": "3"
+    },
+    {
+      "id": "fef4551df9",
+      "fromNode": "concept-interhemispheric-inhibition-gating",
+      "toNode": "domain-filosofia-valori",
+      "label": "CROSS_CALLOSAL_INHIBITION",
+      "color": "3"
+    },
+    {
+      "id": "b1dc4a433d",
+      "fromNode": "concept-llm-indirect-injection-safeguard",
+      "toNode": "ai-reasoning-hybrid-cloud-local-symbiosis",
+      "label": "PREVENTS_FALSE_POSITIVES_IN",
+      "color": "3"
+    },
+    {
+      "id": "457dda8b52",
+      "fromNode": "concept-llm-indirect-injection-safeguard",
+      "toNode": "domain-ai-cognitive-systems",
+      "label": "COGNITIVE_RULE_OF",
+      "color": "3"
+    },
+    {
+      "id": "660005dd82",
+      "fromNode": "concept-llm-indirect-injection-safeguard",
+      "toNode": "ep-20260827-render-cloud-vs-local-hybrid-architecture",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "7f24ffbdf1",
+      "fromNode": "concept-llm-indirect-injection-safeguard",
+      "toNode": "intent-clarify-render-cloud-utility-and-llm-web-refusal",
+      "label": "RESOLVES_ISSUE_OF",
+      "color": "3"
+    },
+    {
+      "id": "5e51b85dfb",
+      "fromNode": "concept-llm-indirect-injection-safeguard",
+      "toNode": "universal-ai-brain",
+      "label": "GOVERNS_INGESTION_FOR",
+      "color": "3"
+    },
+    {
+      "id": "79430ac952",
+      "fromNode": "concept-modular-domain-subgraphs",
+      "toNode": "domain-medicina-salute",
+      "label": "GOVERNS_PARTITIONING",
+      "color": "3"
+    },
+    {
+      "id": "80d5408991",
+      "fromNode": "deploy-render-zero-cost",
+      "toNode": "rule-zero-cost",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "7e9f102bdd",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "ai-reasoning-cross-model-provenance-validation",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "a99918528c",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "ai-reasoning-hybrid-search-mcp",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "3d05471409",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "analysis-bst-vs-graph-taxonomy",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "77ff74e5d1",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "arch-telegram-webhook-gateway",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "52ad1b2752",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "chat-session-2026-08-27-ui-evolution",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "1a106e232e",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "concept-graph-of-graphs-hypergraph",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "939b2d2dfb",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "concept-interhemispheric-inhibition-gating",
+      "label": "CONTAINS_CONCEPT",
+      "color": "3"
+    },
+    {
+      "id": "b6a56f9720",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "concept-modular-domain-subgraphs",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "d4c7412ae0",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "deploy-render-zero-cost",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "06ad57ccc6",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "episode-2026-08-27-graphrag-mcp-evolution",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "ef5214540a",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "episode-2026-08-27-telegram-omnipresence",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "853f6c5257",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "episode-2026-08-27-tree-structures-evaluation",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "a06a012426",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "episode-cross-model-memory-architecture",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "0155cffd87",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "feat-progressive-areas",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "e00ce9d675",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "intent-ep-20260827-graph-taxonomy-classification",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "88841423cd",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "intent-ep-20260827-graph-tree-unification",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "b3e15d297c",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "intent-ep-20260827-hierarchical-overlay-reassurance",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "190f9d3f41",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "intent-ep-20260827-hierarchical-tree-deployment-sync",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "d2b7fd9372",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "intent-ep-20260827-telegram-bot-interface",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "bdf6f62400",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "intent-ep-20260827-telegram-cognitive-hub-spec",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "f2678b7266",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "intent-ep-20260827-tree-ranking-translation",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "ff6f05369d",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "intent-ep-20260827-tree-structures-evaluation",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "a5babfd660",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "mental-centaur-model",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "de6d167380",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "node-hierarchical-dendrogram",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "1ea8fee9bb",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "node-hierarchical-tree-engine-impl",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "e8e3af061a",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "node-knowledge-graph-memory",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "63de5239be",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "node-neuro-symbolic-brain",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "154e909c9c",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "node-search-tree-deliberation",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "a49fb0cad3",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "node-telegram-webhook-gateway",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "4897458739",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "node-tree-architecture-verdict",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "b558386fbf",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "node-ubiquitous-ingestion",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "ff02ef65e6",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "node-universal-ai-brain-taxonomy",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "1ea8dfb689",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "proj-linkly-qr",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "91efe4b8c3",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "proj-tombolawifi",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "dd6be2795f",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "reason-ep-20260827-graph-taxonomy-classification",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "cf30ecfa67",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "reason-ep-20260827-graph-tree-unification",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "30c5d39d51",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "reason-ep-20260827-hierarchical-overlay-reassurance",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "9a2cd3b410",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "reason-ep-20260827-hierarchical-tree-deployment-sync",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "f41b2d864c",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "reason-ep-20260827-telegram-bot-interface",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "94d9d8149d",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "reason-ep-20260827-telegram-cognitive-hub-spec",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "67b7aa4934",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "reason-ep-20260827-tree-ranking-translation",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "2a12bed60a",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "reason-ep-20260827-tree-structures-evaluation",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "9d4f2e3aaa",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "rigore-informativo",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "8f761f1177",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "rule-zero-cost",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "4afd66c5a4",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "rule-zero-placeholder",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "aae033b484",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "tax-ai-reasoning",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "b363dfd947",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "universal-ai-brain",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "029d892025",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "user-intent-clean-clustered-ui",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "b5ac6bc332",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "user-intent-connect-gemini-claude-chatgpt-mcp",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "52fbb65eae",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "user-intent-provenance-model-tracking",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "42b464b107",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "user-intent-reasoning-and-chat-memory",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "37c9a22fa7",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "user-intent-telegram-bot-gateway",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "da7aa748c3",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "user-intent-tree-search-enhancement",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "c9b1587d67",
+      "fromNode": "domain-ai-cognitive-systems",
+      "toNode": "user-intent-zero-cost-graphrag",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "b7783507f5",
+      "fromNode": "domain-design-creativita",
+      "toNode": "art-piano-composition",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "46ccce92da",
+      "fromNode": "domain-design-creativita",
+      "toNode": "brand-voice-engineering",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "8970648387",
+      "fromNode": "domain-design-creativita",
+      "toNode": "brand-voice-surgical",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "ccecfabdbd",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "antigravity-centaur-collaboration",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "865cb58857",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "art-creative-writing",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "d158c407b9",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "art-theatre-acting",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "7dc833e91a",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "creative-multidisciplinary",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "5b0f4467fb",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "lesson-boundaries-clarity",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "f882ffee1b",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "lesson-stoic-resilience",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "5f03f83f31",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "memory-perfectionism-tension",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "2fdff66704",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "rel-marco-di-martino",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "59c2356a0e",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "rel-napoli-culture",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "803bb7ccd3",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "rel-parents",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "aee0ae3740",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "val-authenticity",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "fe49b07512",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "val-impact-utility",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "f6e7060ae0",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "val-independence",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "f4115cb827",
+      "fromNode": "domain-filosofia-valori",
+      "toNode": "val-transparency-loyalty",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "0e0521f584",
+      "fromNode": "domain-software-engineering",
+      "toNode": "aule-studio-app",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "c42d3c94e8",
+      "fromNode": "domain-software-engineering",
+      "toNode": "proj-caretrack",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "bf01e5f932",
+      "fromNode": "domain-software-engineering",
+      "toNode": "proj-streaksup-app",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "30b4d276ff",
+      "fromNode": "domain-software-engineering",
+      "toNode": "ux-frictionless",
+      "label": "CONTAINS_MODULE",
+      "color": "3"
+    },
+    {
+      "id": "34729f8846",
+      "fromNode": "ep-20260827-render-cloud-vs-local-hybrid-architecture",
+      "toNode": "person-pierfrancesco",
+      "label": "CONVERSATION_WITH",
+      "color": "3"
+    },
+    {
+      "id": "ce15e38700",
+      "fromNode": "episode-2026-08-27-graphrag-mcp-evolution",
+      "toNode": "mental-centaur-model",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "b9b127b0ae",
+      "fromNode": "episode-2026-08-27-graphrag-mcp-evolution",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "045b6752e7",
+      "fromNode": "episode-2026-08-27-telegram-omnipresence",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "84e99f8bd9",
+      "fromNode": "episode-2026-08-27-tree-structures-evaluation",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "bbd214e26a",
+      "fromNode": "episode-2026-08-27-universal-context-definition",
+      "toNode": "ai-reasoning-shared-cognitive-state-continuity",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "3bbd1493fd",
+      "fromNode": "episode-2026-08-27-universal-context-definition",
+      "toNode": "goal-multi-ai-shared-context-persistence",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "6fa2b1cf3e",
+      "fromNode": "episode-cross-model-memory-architecture",
+      "toNode": "ai-reasoning-cross-model-provenance-validation",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "86a594d07c",
+      "fromNode": "episode-cross-model-memory-architecture",
+      "toNode": "user-intent-provenance-model-tracking",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "7b28debe32",
+      "fromNode": "episode-frontend-deeptech-redesign-and-physics-zero-lag",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "8102f62096",
+      "fromNode": "episode-frontend-deeptech-redesign-and-physics-zero-lag",
+      "toNode": "person-pierfrancesco",
+      "label": "INVOLVES_USER",
+      "color": "3"
+    },
+    {
+      "id": "7d103e1a94",
+      "fromNode": "episode-infinite-context-philosophy",
+      "toNode": "ai-reasoning-infinite-context-architecture",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "f04c762a3d",
+      "fromNode": "episode-infinite-context-philosophy",
+      "toNode": "user-intent-infinite-context-persistence",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "04ad20ee45",
+      "fromNode": "episode-language-app-architecture",
+      "toNode": "intent-personal-language-learning-app",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "548712e8d5",
+      "fromNode": "episode-language-app-architecture",
+      "toNode": "reasoning-language-app-architecture",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "ff080c3c50",
+      "fromNode": "episode-system-metacognition",
+      "toNode": "intent-evaluate-ai-brain-architecture",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "378b75252c",
+      "fromNode": "feat-progressive-areas",
+      "toNode": "universal-ai-brain",
+      "label": "ENHANCES",
+      "color": "3"
+    },
+    {
+      "id": "b5baaecde7",
+      "fromNode": "goal-multi-ai-shared-context-persistence",
+      "toNode": "episode-2026-08-27-universal-context-definition",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "8637390f60",
+      "fromNode": "goal-multi-ai-shared-context-persistence",
+      "toNode": "episode-2026-08-27-universal-context-definition",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "5912233b35",
+      "fromNode": "goal-multi-ai-shared-context-persistence",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "15975e91b2",
+      "fromNode": "goal-multi-ai-shared-context-persistence",
+      "toNode": "person-pierfrancesco",
+      "label": "SERVES_USER",
+      "color": "3"
+    },
+    {
+      "id": "6f95b44fe5",
+      "fromNode": "goal-multi-ai-shared-context-persistence",
+      "toNode": "universal-ai-brain",
+      "label": "DEFINES_MISSION_OF",
+      "color": "3"
+    },
+    {
+      "id": "94a8e0ba12",
+      "fromNode": "goal-multi-ai-shared-context-persistence",
+      "toNode": "user-intent-provenance-model-tracking",
+      "label": "COMPLEMENTS",
+      "color": "3"
+    },
+    {
+      "id": "2de5c9eab2",
+      "fromNode": "intent-clarify-render-cloud-utility-and-llm-web-refusal",
+      "toNode": "ep-20260827-render-cloud-vs-local-hybrid-architecture",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "d49b1dcff2",
+      "fromNode": "intent-clarify-render-cloud-utility-and-llm-web-refusal",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "eb3fd7b665",
+      "fromNode": "intent-ep-20260827-graph-taxonomy-classification",
+      "toNode": "reason-ep-20260827-graph-taxonomy-classification",
+      "label": "GENERATES_REASONING",
+      "color": "3"
+    },
+    {
+      "id": "430b9329cf",
+      "fromNode": "intent-ep-20260827-graph-tree-unification",
+      "toNode": "reason-ep-20260827-graph-tree-unification",
+      "label": "GENERATES_REASONING",
+      "color": "3"
+    },
+    {
+      "id": "a107fbb3ba",
+      "fromNode": "intent-ep-20260827-hierarchical-overlay-reassurance",
+      "toNode": "reason-ep-20260827-hierarchical-overlay-reassurance",
+      "label": "GENERATES_REASONING",
+      "color": "3"
+    },
+    {
+      "id": "75e03b1e3b",
+      "fromNode": "intent-ep-20260827-hierarchical-tree-deployment-sync",
+      "toNode": "reason-ep-20260827-hierarchical-tree-deployment-sync",
+      "label": "GENERATES_REASONING",
+      "color": "3"
+    },
+    {
+      "id": "ec7a1a89bd",
+      "fromNode": "intent-ep-20260827-telegram-bot-interface",
+      "toNode": "reason-ep-20260827-telegram-bot-interface",
+      "label": "GENERATES_REASONING",
+      "color": "3"
+    },
+    {
+      "id": "8def205951",
+      "fromNode": "intent-ep-20260827-telegram-cognitive-hub-spec",
+      "toNode": "reason-ep-20260827-telegram-cognitive-hub-spec",
+      "label": "GENERATES_REASONING",
+      "color": "3"
+    },
+    {
+      "id": "dac2ebae66",
+      "fromNode": "intent-ep-20260827-tree-ranking-translation",
+      "toNode": "reason-ep-20260827-tree-ranking-translation",
+      "label": "GENERATES_REASONING",
+      "color": "3"
+    },
+    {
+      "id": "7067c5b808",
+      "fromNode": "intent-ep-20260827-tree-structures-evaluation",
+      "toNode": "reason-ep-20260827-tree-structures-evaluation",
+      "label": "GENERATES_REASONING",
+      "color": "3"
+    },
+    {
+      "id": "e87a098a1b",
+      "fromNode": "intent-evaluate-ai-brain-architecture",
+      "toNode": "episode-system-metacognition",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "f9f88ed9cc",
+      "fromNode": "intent-evaluate-ai-brain-architecture",
+      "toNode": "episode-system-metacognition",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "f206baa5d9",
+      "fromNode": "intent-language-app-ui-design",
+      "toNode": "episode-language-app-architecture",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "78f8ce254d",
+      "fromNode": "intent-language-app-ui-design",
+      "toNode": "episode-language-app-architecture",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "fff03255f3",
+      "fromNode": "intent-personal-language-learning-app",
+      "toNode": "episode-language-app-architecture",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "fc18cfd856",
+      "fromNode": "intent-personal-language-learning-app",
+      "toNode": "episode-language-app-architecture",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "9a6360c1b7",
+      "fromNode": "lesson-boundaries-clarity",
+      "toNode": "val-authenticity",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "d095974ef6",
+      "fromNode": "lesson-boundaries-clarity",
+      "toNode": "val-authenticity",
+      "label": "REINFORCES",
+      "color": "3"
+    },
+    {
+      "id": "cb7944aeb6",
+      "fromNode": "lesson-stoic-resilience",
+      "toNode": "memory-perfectionism-tension",
+      "label": "MITIGATES",
+      "color": "3"
+    },
+    {
+      "id": "a5638d1c45",
+      "fromNode": "lesson-stoic-resilience",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "cfe8f6c626",
+      "fromNode": "lesson-stoic-resilience",
+      "toNode": "rule-zero-placeholder",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "aae735cb96",
+      "fromNode": "memory-perfectionism-tension",
+      "toNode": "art-piano-composition",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "d9a5a4d0bc",
+      "fromNode": "memory-perfectionism-tension",
+      "toNode": "rule-zero-placeholder",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "172536089e",
+      "fromNode": "mental-centaur-model",
+      "toNode": "art-creative-writing",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "3d4eebfbf6",
+      "fromNode": "mental-centaur-model",
+      "toNode": "val-authenticity",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "2eb5b9126b",
+      "fromNode": "node-hierarchical-dendrogram",
+      "toNode": "node-knowledge-graph-memory",
+      "label": "ACTS_AS_INDEXING_OVERLAY_UPON",
+      "color": "3"
+    },
+    {
+      "id": "9952863718",
+      "fromNode": "node-hierarchical-dendrogram",
+      "toNode": "node-tree-architecture-verdict",
+      "label": "ELECTED_AS_OPTIMAL_SOLUTION",
+      "color": "3"
+    },
+    {
+      "id": "2a1a8046a6",
+      "fromNode": "node-hierarchical-tree-engine-impl",
+      "toNode": "node-knowledge-graph-memory",
+      "label": "PROVIDES_HIERARCHICAL_VIEW_FOR",
+      "color": "3"
+    },
+    {
+      "id": "042e66294f",
+      "fromNode": "node-knowledge-graph-memory",
+      "toNode": "node-hierarchical-dendrogram",
+      "label": "ORGANIZES_CLUSTERS_INTO",
+      "color": "3"
+    },
+    {
+      "id": "ec819b2d7c",
+      "fromNode": "node-knowledge-graph-memory",
+      "toNode": "node-search-tree-deliberation",
+      "label": "PROVIDES_STATE_SPACE_AND_CONSTRAINTS",
+      "color": "3"
+    },
+    {
+      "id": "9947142239",
+      "fromNode": "node-neuro-symbolic-brain",
+      "toNode": "node-knowledge-graph-memory",
+      "label": "USES_AS_CEREBRAL_CORTEX",
+      "color": "3"
+    },
+    {
+      "id": "23cea0d208",
+      "fromNode": "node-neuro-symbolic-brain",
+      "toNode": "node-search-tree-deliberation",
+      "label": "USES_AS_PREFRONTAL_DELIBERATION",
+      "color": "3"
+    },
+    {
+      "id": "5a1ba7e18e",
+      "fromNode": "node-neuro-symbolic-brain",
+      "toNode": "node-universal-ai-brain-taxonomy",
+      "label": "FORMALLY_CLASSIFIED_AS",
+      "color": "3"
+    },
+    {
+      "id": "fca1264d95",
+      "fromNode": "node-search-tree-deliberation",
+      "toNode": "node-knowledge-graph-memory",
+      "label": "CONSOLIDATES_DISCOVERED_PATHS_INTO",
+      "color": "3"
+    },
+    {
+      "id": "59c0417e9f",
+      "fromNode": "node-telegram-webhook-gateway",
+      "toNode": "node-hierarchical-tree-engine-impl",
+      "label": "EXECUTES_VIA_COMMAND_TREE",
+      "color": "3"
+    },
+    {
+      "id": "d986b89477",
+      "fromNode": "node-tree-architecture-verdict",
+      "toNode": "node-knowledge-graph-memory",
+      "label": "GOVERNS_MULTISCALE_RETRIEVAL_OF",
+      "color": "3"
+    },
+    {
+      "id": "771a4a4ca8",
+      "fromNode": "node-ubiquitous-ingestion",
+      "toNode": "node-knowledge-graph-memory",
+      "label": "FEEDS_REALTIME_DATA_INTO",
+      "color": "3"
+    },
+    {
+      "id": "a588d468ec",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "art-creative-writing",
+      "label": "PRODUCES",
+      "color": "3"
+    },
+    {
+      "id": "93a9868f08",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "art-piano-composition",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "ff3836688e",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "art-piano-composition",
+      "label": "PRACTICES",
+      "color": "3"
+    },
+    {
+      "id": "a93f5cc255",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "art-theatre-acting",
+      "label": "PERFORMS_IN",
+      "color": "3"
+    },
+    {
+      "id": "5564983140",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "aule-studio-app",
+      "label": "CREATOR_OF",
+      "color": "3"
+    },
+    {
+      "id": "3f4d251570",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "creative-multidisciplinary",
+      "label": "EXPRESSES_SYNTHESIS",
+      "color": "3"
+    },
+    {
+      "id": "d6d8b59036",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-ai-cognitive-systems",
+      "label": "ARCHITECT_AND_CREATOR",
+      "color": "3"
+    },
+    {
+      "id": "ba8e8218b8",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-ai-cognitive-systems",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "531ba2badd",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-crescita-personale",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "c2576bbf47",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-cultura-storia",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "96bb664aca",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-design-creativita",
+      "label": "ARCHITECT_AND_CREATOR",
+      "color": "3"
+    },
+    {
+      "id": "502e0aa1ba",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-design-creativita",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "4c33f636bc",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-filosofia-valori",
+      "label": "ARCHITECT_AND_CREATOR",
+      "color": "3"
+    },
+    {
+      "id": "acd93cdd05",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-filosofia-valori",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "411dc6f311",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-finanza-economia",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "dc2995321c",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-medicina-salute",
+      "label": "ARCHITECT_AND_CREATOR",
+      "color": "3"
+    },
+    {
+      "id": "e44f198359",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-medicina-salute",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "1912efc97c",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-musica-audio",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "e76c6221b3",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-produttivita-sistemi",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "a929a9980b",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-relazioni-comunicazione",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "dc8d5e19e8",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-scienza-matematica",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "6decf2cca3",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-software-engineering",
+      "label": "ARCHITECT_AND_CREATOR",
+      "color": "3"
+    },
+    {
+      "id": "7d91fc424a",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "domain-software-engineering",
+      "label": "FOUNDATIONAL_PILLAR",
+      "color": "3"
+    },
+    {
+      "id": "56947f4064",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "feat-progressive-areas",
+      "label": "COMMISSIONED",
+      "color": "3"
+    },
+    {
+      "id": "9827d6f1f7",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "intent-ep-20260827-graph-taxonomy-classification",
+      "label": "EXPRESSED",
+      "color": "3"
+    },
+    {
+      "id": "757e7ba5ee",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "intent-ep-20260827-graph-tree-unification",
+      "label": "EXPRESSED",
+      "color": "3"
+    },
+    {
+      "id": "575e1a9204",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "intent-ep-20260827-hierarchical-overlay-reassurance",
+      "label": "EXPRESSED",
+      "color": "3"
+    },
+    {
+      "id": "4591da142e",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "intent-ep-20260827-hierarchical-tree-deployment-sync",
+      "label": "EXPRESSED",
+      "color": "3"
+    },
+    {
+      "id": "3cfb15d04e",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "intent-ep-20260827-telegram-bot-interface",
+      "label": "EXPRESSED",
+      "color": "3"
+    },
+    {
+      "id": "5e08d7783c",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "intent-ep-20260827-telegram-cognitive-hub-spec",
+      "label": "EXPRESSED",
+      "color": "3"
+    },
+    {
+      "id": "ea38007732",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "intent-ep-20260827-tree-ranking-translation",
+      "label": "EXPRESSED",
+      "color": "3"
+    },
+    {
+      "id": "66da2059a5",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "intent-ep-20260827-tree-structures-evaluation",
+      "label": "EXPRESSED",
+      "color": "3"
+    },
+    {
+      "id": "6504431bca",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "mental-centaur-model",
+      "label": "ADVOCATES",
+      "color": "3"
+    },
+    {
+      "id": "751386cf80",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "proj-caretrack",
+      "label": "DEVELOPED",
+      "color": "3"
+    },
+    {
+      "id": "cc794b88f2",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "proj-linkly-qr",
+      "label": "DEPLOYED",
+      "color": "3"
+    },
+    {
+      "id": "31a39e1969",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "proj-streaksup-app",
+      "label": "ARCHITECTED_AND_DEVELOPED",
+      "color": "3"
+    },
+    {
+      "id": "c9cafb6d25",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "proj-tombolawifi",
+      "label": "CREATED",
+      "color": "3"
+    },
+    {
+      "id": "1d12078354",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "project-royal-gambit-chess",
+      "label": "OWNS",
+      "color": "3"
+    },
+    {
+      "id": "60ef21e3d4",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "rel-marco-di-martino",
+      "label": "BONDS_WITH",
+      "color": "3"
+    },
+    {
+      "id": "efe13f78e6",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "rel-marco-di-martino",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "422a67725d",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "rel-napoli-culture",
+      "label": "ROOTED_IN",
+      "color": "3"
+    },
+    {
+      "id": "b5c218151a",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "rel-parents",
+      "label": "CHERISHES",
+      "color": "3"
+    },
+    {
+      "id": "29c31d0ee9",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "rel-parents",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "1bb9c45aba",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "rigore-informativo",
+      "label": "PREFERS",
+      "color": "3"
+    },
+    {
+      "id": "d501f0acbf",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "rule-zero-cost",
+      "label": "APPLIES",
+      "color": "3"
+    },
+    {
+      "id": "00b6632afd",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "rule-zero-placeholder",
+      "label": "ENFORCES",
+      "color": "3"
+    },
+    {
+      "id": "0cb7010898",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "tax-ai-reasoning",
+      "label": "ESTABLISHED",
+      "color": "3"
+    },
+    {
+      "id": "b3b5c78dc7",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "universal-ai-brain",
+      "label": "ARCHITECT_OF",
+      "color": "3"
+    },
+    {
+      "id": "7a75a96899",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "user-intent-clean-clustered-ui",
+      "label": "REQUESTED",
+      "color": "3"
+    },
+    {
+      "id": "25a9c93802",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "user-intent-connect-gemini-claude-chatgpt-mcp",
+      "label": "REQUESTED",
+      "color": "3"
+    },
+    {
+      "id": "0086e2e3a3",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "user-intent-reasoning-and-chat-memory",
+      "label": "REQUESTED",
+      "color": "3"
+    },
+    {
+      "id": "fd42d33b31",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "user-intent-telegram-bot-gateway",
+      "label": "PLANNED",
+      "color": "3"
+    },
+    {
+      "id": "b3e36a67c4",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "user-intent-tree-search-enhancement",
+      "label": "PROPOSED",
+      "color": "3"
+    },
+    {
+      "id": "24e862110e",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "user-intent-zero-cost-graphrag",
+      "label": "DECLARED",
+      "color": "3"
+    },
+    {
+      "id": "43fc89efb1",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "val-authenticity",
+      "label": "EMBODIES",
+      "color": "3"
+    },
+    {
+      "id": "51bff03564",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "val-impact-utility",
+      "label": "STRIVES_FOR",
+      "color": "3"
+    },
+    {
+      "id": "10a8299110",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "val-independence",
+      "label": "VALUES",
+      "color": "3"
+    },
+    {
+      "id": "8db0c57c82",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "val-transparency-loyalty",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "dcd073ce69",
+      "fromNode": "person-pierfrancesco",
+      "toNode": "val-transparency-loyalty",
+      "label": "UPHOLDS",
+      "color": "3"
+    },
+    {
+      "id": "936779fd53",
+      "fromNode": "proj-caretrack",
+      "toNode": "domain-medicina-salute",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "7e40391e41",
+      "fromNode": "proj-caretrack",
+      "toNode": "val-impact-utility",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "86cd3d95b0",
+      "fromNode": "proj-caretrack",
+      "toNode": "val-impact-utility",
+      "label": "FULFILLS",
+      "color": "3"
+    },
+    {
+      "id": "85f0786b64",
+      "fromNode": "proj-cervelloartificiale",
+      "toNode": "domain-ai-cognitive-systems",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "8b3475368a",
+      "fromNode": "proj-cervelloartificiale",
+      "toNode": "person-pierfrancesco",
+      "label": "CREATED_BY",
+      "color": "3"
+    },
+    {
+      "id": "a6f5ca10c5",
+      "fromNode": "proj-jarvis-voice-assistant",
+      "toNode": "domain-ai-cognitive-systems",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "38a5854e3d",
+      "fromNode": "proj-jarvis-voice-assistant",
+      "toNode": "universal-ai-brain",
+      "label": "EXTENDS_BRAIN",
+      "color": "3"
+    },
+    {
+      "id": "bbe65d881a",
+      "fromNode": "proj-linkly-qr",
+      "toNode": "ux-frictionless",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "966e48b939",
+      "fromNode": "proj-linkly-qr",
+      "toNode": "ux-frictionless",
+      "label": "IMPLEMENTS",
+      "color": "3"
+    },
+    {
+      "id": "1f82a34370",
+      "fromNode": "proj-streaksup-app",
+      "toNode": "domain-produttivita-sistemi",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "7f49f557bd",
+      "fromNode": "proj-streaksup-app",
+      "toNode": "rule-zero-cost",
+      "label": "ALIGNED_WITH",
+      "color": "3"
+    },
+    {
+      "id": "404d0e72cc",
+      "fromNode": "proj-streaksup-app",
+      "toNode": "streaksup-particle-fx",
+      "label": "CONTAINS_MODULE",
+      "color": "3"
+    },
+    {
+      "id": "a31cb9df8b",
+      "fromNode": "proj-streaksup-app",
+      "toNode": "streaksup-particle-fx",
+      "label": "RENDERS_FX",
+      "color": "3"
+    },
+    {
+      "id": "e826ced8f3",
+      "fromNode": "proj-streaksup-app",
+      "toNode": "streaksup-privacy-zero-cloud",
+      "label": "CONTAINS_MODULE",
+      "color": "3"
+    },
+    {
+      "id": "3eb10f7338",
+      "fromNode": "proj-streaksup-app",
+      "toNode": "streaksup-privacy-zero-cloud",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "b0236a1fe7",
+      "fromNode": "proj-streaksup-app",
+      "toNode": "streaksup-privacy-zero-cloud",
+      "label": "EMBODIES_VALUE",
+      "color": "3"
+    },
+    {
+      "id": "627fe48a1b",
+      "fromNode": "proj-tombolawifi",
+      "toNode": "rel-napoli-culture",
+      "label": "CELEBRATES",
+      "color": "3"
+    },
+    {
+      "id": "36bc37ad83",
+      "fromNode": "proj-tombolawifi",
+      "toNode": "rel-napoli-culture",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "547e0b1e77",
+      "fromNode": "project-royal-gambit-chess",
+      "toNode": "domain-software-engineering",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "9364095003",
+      "fromNode": "reason-ep-20260827-graph-taxonomy-classification",
+      "toNode": "node-universal-ai-brain-taxonomy",
+      "label": "ESTABLISHES_CONCEPT",
+      "color": "3"
+    },
+    {
+      "id": "8a8b487c44",
+      "fromNode": "reason-ep-20260827-graph-tree-unification",
+      "toNode": "node-knowledge-graph-memory",
+      "label": "ESTABLISHES_CONCEPT",
+      "color": "3"
+    },
+    {
+      "id": "91543217f3",
+      "fromNode": "reason-ep-20260827-graph-tree-unification",
+      "toNode": "node-neuro-symbolic-brain",
+      "label": "ESTABLISHES_CONCEPT",
+      "color": "3"
+    },
+    {
+      "id": "0087fc10b3",
+      "fromNode": "reason-ep-20260827-graph-tree-unification",
+      "toNode": "node-search-tree-deliberation",
+      "label": "ESTABLISHES_CONCEPT",
+      "color": "3"
+    },
+    {
+      "id": "d62e01ab8c",
+      "fromNode": "reason-ep-20260827-hierarchical-tree-deployment-sync",
+      "toNode": "node-hierarchical-tree-engine-impl",
+      "label": "ESTABLISHES_CONCEPT",
+      "color": "3"
+    },
+    {
+      "id": "55748ff487",
+      "fromNode": "reason-ep-20260827-telegram-bot-interface",
+      "toNode": "node-ubiquitous-ingestion",
+      "label": "ESTABLISHES_CONCEPT",
+      "color": "3"
+    },
+    {
+      "id": "d6ed94848b",
+      "fromNode": "reason-ep-20260827-telegram-cognitive-hub-spec",
+      "toNode": "node-telegram-webhook-gateway",
+      "label": "ESTABLISHES_CONCEPT",
+      "color": "3"
+    },
+    {
+      "id": "8a160445e2",
+      "fromNode": "reason-ep-20260827-tree-ranking-translation",
+      "toNode": "node-tree-architecture-verdict",
+      "label": "ESTABLISHES_CONCEPT",
+      "color": "3"
+    },
+    {
+      "id": "ed9ac9e734",
+      "fromNode": "reason-ep-20260827-tree-structures-evaluation",
+      "toNode": "node-hierarchical-dendrogram",
+      "label": "ESTABLISHES_CONCEPT",
+      "color": "3"
+    },
+    {
+      "id": "5ea477245d",
+      "fromNode": "reasoning-language-app-architecture",
+      "toNode": "episode-language-app-architecture",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "b4219ec63b",
+      "fromNode": "reasoning-language-app-architecture",
+      "toNode": "episode-language-app-architecture",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "bbb1cf0611",
+      "fromNode": "reasoning-language-app-architecture",
+      "toNode": "intent-personal-language-learning-app",
+      "label": "SOLVES",
+      "color": "3"
+    },
+    {
+      "id": "01732d0eb2",
+      "fromNode": "rel-marco-di-martino",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "af7323802c",
+      "fromNode": "rel-napoli-culture",
+      "toNode": "art-theatre-acting",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "3025ebfa35",
+      "fromNode": "rel-napoli-culture",
+      "toNode": "proj-tombolawifi",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "924e019b66",
+      "fromNode": "rel-parents",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "7a44b5aa4c",
+      "fromNode": "rel-parents",
+      "toNode": "val-transparency-loyalty",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "ba0eaaa0a7",
+      "fromNode": "rigore-informativo",
+      "toNode": "brand-voice-surgical",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "f0524ba01b",
+      "fromNode": "rigore-informativo",
+      "toNode": "brand-voice-surgical",
+      "label": "SYNONYM_OF",
+      "color": "3"
+    },
+    {
+      "id": "9ca2f14822",
+      "fromNode": "rigore-informativo",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "d150429842",
+      "fromNode": "rule-zero-cost",
+      "toNode": "val-independence",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "a0a9b1a170",
+      "fromNode": "rule-zero-placeholder",
+      "toNode": "brand-voice-surgical",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "6b78b53ec3",
+      "fromNode": "streaksup-privacy-zero-cloud",
+      "toNode": "proj-streaksup-app",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "f5ace3062b",
+      "fromNode": "universal-ai-brain",
+      "toNode": "chat-session-2026-08-27-ui-evolution",
+      "label": "RECORDED_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "a9836d1649",
+      "fromNode": "universal-ai-brain",
+      "toNode": "domain-ai-cognitive-systems",
+      "label": "BELONGS_TO_DOMAIN",
+      "color": "3"
+    },
+    {
+      "id": "443d2b15c4",
+      "fromNode": "universal-ai-brain",
+      "toNode": "tax-ai-reasoning",
+      "label": "INCORPORATES",
+      "color": "3"
+    },
+    {
+      "id": "e95fce770e",
+      "fromNode": "user-intent-abbandono-jarvis-nuovo-progetto",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "c7be179d85",
+      "fromNode": "user-intent-abbandono-jarvis-nuovo-progetto",
+      "toNode": "proj-jarvis-voice-assistant",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "01f770e2e1",
+      "fromNode": "user-intent-ai-shorts-evaluation",
+      "toNode": "domain-finanza-economia",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "5655b1bb39",
+      "fromNode": "user-intent-ai-shorts-evaluation",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "1467977dc4",
+      "fromNode": "user-intent-allineamento-nodi-render",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "edebfb1320",
+      "fromNode": "user-intent-allineamento-nodi-render",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "76472bcc9b",
+      "fromNode": "user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "e1af58a6b9",
+      "fromNode": "user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "317d1ec204",
+      "fromNode": "user-intent-alternative-income-generation",
+      "toNode": "domain-finanza-economia",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "6fd646dd40",
+      "fromNode": "user-intent-alternative-income-generation",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "49eeece6fc",
+      "fromNode": "user-intent-analisi-feedback-gemini-ottimizzazione-cervello",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "579aeb99c7",
+      "fromNode": "user-intent-analisi-feedback-gemini-ottimizzazione-cervello",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "bb88ec8905",
+      "fromNode": "user-intent-architettura-connettoma-web-vs-desktop",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "47635ba094",
+      "fromNode": "user-intent-architettura-connettoma-web-vs-desktop",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "236ec539d6",
+      "fromNode": "user-intent-audit-critico-e-mockup-fr-2255",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "8a2462d258",
+      "fromNode": "user-intent-audit-critico-e-mockup-fr-2255",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "cbf3189da3",
+      "fromNode": "user-intent-avvio-openjarvis-ollama-gpt-cloud",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "7a3274864a",
+      "fromNode": "user-intent-avvio-openjarvis-ollama-gpt-cloud",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "8bb49d4da4",
+      "fromNode": "user-intent-backend-optimization-hybrid",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "9ec88f9dac",
+      "fromNode": "user-intent-backend-optimization-hybrid",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "79c2d614e3",
+      "fromNode": "user-intent-c-un-problema-vorrei-sapere-di-pi-3203",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "1125c0053f",
+      "fromNode": "user-intent-c-un-problema-vorrei-sapere-di-pi-3203",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "73d105f387",
+      "fromNode": "user-intent-che-ne-pensi-del-mio-cervello-artif-8743",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "af1548bc72",
+      "fromNode": "user-intent-che-ne-pensi-del-mio-cervello-artif-8743",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "68732332f7",
+      "fromNode": "user-intent-che-ne-pensi-del-mio-cervello-artif-8793",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "dd395d54a5",
+      "fromNode": "user-intent-che-ne-pensi-del-mio-cervello-artif-8793",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "2033041e44",
+      "fromNode": "user-intent-che-ore-sono-3134",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "b6ab28f4fd",
+      "fromNode": "user-intent-che-ore-sono-3134",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "92d0e9e259",
+      "fromNode": "user-intent-chi-pierfrancesco-amendola-e-cosa-8426",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "6b7be9b7bd",
+      "fromNode": "user-intent-chi-pierfrancesco-amendola-e-cosa-8426",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "ef8d50df07",
+      "fromNode": "user-intent-clean-clustered-ui",
+      "toNode": "chat-session-2026-08-27-ui-evolution",
+      "label": "DISCUSSED_IN",
+      "color": "3"
+    },
+    {
+      "id": "f51500d05f",
+      "fromNode": "user-intent-clean-clustered-ui",
+      "toNode": "feat-progressive-areas",
+      "label": "DRIVES_IMPLEMENTATION",
+      "color": "3"
+    },
+    {
+      "id": "f3235baf4c",
+      "fromNode": "user-intent-cloud-git-auto-push",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "c6907809dd",
+      "fromNode": "user-intent-cloud-git-auto-push",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "3e5f541eae",
+      "fromNode": "user-intent-comando-prompt-copia-rapi-8585",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "c5721a3548",
+      "fromNode": "user-intent-comando-prompt-copia-rapi-8585",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "3fec1229a2",
+      "fromNode": "user-intent-creazione-jarvis-voice-assistant",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "8af6bc0d4e",
+      "fromNode": "user-intent-creazione-jarvis-voice-assistant",
+      "toNode": "proj-jarvis-voice-assistant",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "06b5b2853c",
+      "fromNode": "user-intent-creazione-repo-jarvis-desktop",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "d8adf6d0a3",
+      "fromNode": "user-intent-creazione-repo-jarvis-desktop",
+      "toNode": "proj-jarvis-voice-assistant",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "cbde79749b",
+      "fromNode": "user-intent-creazione-video-showcase-universal-brain",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "805bea3424",
+      "fromNode": "user-intent-creazione-video-showcase-universal-brain",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "5d674ca37c",
+      "fromNode": "user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "a4a140a1e5",
+      "fromNode": "user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "03f1ffc8d2",
+      "fromNode": "user-intent-esplorazione-paradigmi-visuali-grafo",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "1347c1429e",
+      "fromNode": "user-intent-esplorazione-paradigmi-visuali-grafo",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "5aad159f3c",
+      "fromNode": "user-intent-fix-daemon-render-persistence",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "44a2458eca",
+      "fromNode": "user-intent-fix-daemon-render-persistence",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "5bfd0a4640",
+      "fromNode": "user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "cf153cd409",
+      "fromNode": "user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "e87697424f",
+      "fromNode": "user-intent-infinite-context-persistence",
+      "toNode": "episode-infinite-context-philosophy",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "7fe71284fd",
+      "fromNode": "user-intent-infinite-context-persistence",
+      "toNode": "episode-infinite-context-philosophy",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "771666d9ff",
+      "fromNode": "user-intent-infinite-context-persistence",
+      "toNode": "val-eternal-cognitive-continuity",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "1c3174e49c",
+      "fromNode": "user-intent-infinite-context-persistence",
+      "toNode": "val-eternal-cognitive-continuity",
+      "label": "EXPRESSES",
+      "color": "3"
+    },
+    {
+      "id": "29e257152e",
+      "fromNode": "user-intent-integrazione-openjarvis-stanford",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "1f55b06e6c",
+      "fromNode": "user-intent-integrazione-openjarvis-stanford",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "10c1d399af",
+      "fromNode": "user-intent-jarvis-ricordi-quali-sono-gli-emis-3117",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "ba7fe51b63",
+      "fromNode": "user-intent-jarvis-ricordi-quali-sono-gli-emis-3117",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "5b23bd7787",
+      "fromNode": "user-intent-ma-tutto-falso-8462",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "b808efa317",
+      "fromNode": "user-intent-ma-tutto-falso-8462",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "afb5c56198",
+      "fromNode": "user-intent-non-riesci-a-connetterti-al-mio-cer-8486",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "90f45e2cac",
+      "fromNode": "user-intent-non-riesci-a-connetterti-al-mio-cer-8486",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "fa1a814c9b",
+      "fromNode": "user-intent-nuove-rappresentazioni-vi-2874",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "793f14b3aa",
+      "fromNode": "user-intent-nuove-rappresentazioni-vi-2874",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "8782e95528",
+      "fromNode": "user-intent-occultamento-pulsanti-mob-9019",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "f4069298b3",
+      "fromNode": "user-intent-occultamento-pulsanti-mob-9019",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "4dfdd6a7ca",
+      "fromNode": "user-intent-ottimizzazione-mobile-web-8880",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "17f6924ddf",
+      "fromNode": "user-intent-ottimizzazione-mobile-web-8880",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "3b92ffb460",
+      "fromNode": "user-intent-potenziamento-skill-e-ril-8338",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "b0e311a9f1",
+      "fromNode": "user-intent-potenziamento-skill-e-ril-8338",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "07194ad14c",
+      "fromNode": "user-intent-provenance-model-tracking",
+      "toNode": "episode-cross-model-memory-architecture",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "8902d97b79",
+      "fromNode": "user-intent-provenance-model-tracking",
+      "toNode": "episode-cross-model-memory-architecture",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "1b9118de48",
+      "fromNode": "user-intent-quali-sono-i-progetti-principali-di-8169",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "88567bfd3e",
+      "fromNode": "user-intent-quali-sono-i-progetti-principali-di-8169",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "9da0f04f1e",
+      "fromNode": "user-intent-quali-sono-le-abitudini-monitorate-2979",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "e1eae42be2",
+      "fromNode": "user-intent-quali-sono-le-abitudini-monitorate-2979",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "102083edf0",
+      "fromNode": "user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "2eb4ab4cf0",
+      "fromNode": "user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "0a9e3ddf17",
+      "fromNode": "user-intent-reasoning-and-chat-memory",
+      "toNode": "chat-session-2026-08-27-ui-evolution",
+      "label": "DISCUSSED_IN",
+      "color": "3"
+    },
+    {
+      "id": "5662bf2502",
+      "fromNode": "user-intent-reasoning-and-chat-memory",
+      "toNode": "tax-ai-reasoning",
+      "label": "ORIGINATED",
+      "color": "3"
+    },
+    {
+      "id": "bcbaf3c2e9",
+      "fromNode": "user-intent-ristrutturazione-sigillo-12-macro-domini",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "63a4167c66",
+      "fromNode": "user-intent-ristrutturazione-sigillo-12-macro-domini",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "77fce95573",
+      "fromNode": "user-intent-telegram-bot-gateway",
+      "toNode": "arch-telegram-webhook-gateway",
+      "label": "DEFINES",
+      "color": "3"
+    },
+    {
+      "id": "8e1adc6dd5",
+      "fromNode": "user-intent-telegram-bot-gateway",
+      "toNode": "episode-2026-08-27-telegram-omnipresence",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "105b96a19d",
+      "fromNode": "user-intent-telegram-bot-gateway",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "63de2c860d",
+      "fromNode": "user-intent-tree-search-enhancement",
+      "toNode": "analysis-bst-vs-graph-taxonomy",
+      "label": "EVALUATED_BY",
+      "color": "3"
+    },
+    {
+      "id": "0f17af753f",
+      "fromNode": "user-intent-tree-search-enhancement",
+      "toNode": "episode-2026-08-27-tree-structures-evaluation",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "4cd12cf146",
+      "fromNode": "user-intent-tree-search-enhancement",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "edc16ffc5f",
+      "fromNode": "user-intent-universal-ai-hub-client",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "07854ae6b6",
+      "fromNode": "user-intent-universal-ai-hub-client",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "7e48c2531d",
+      "fromNode": "user-intent-valutazione-progetto-language-app",
+      "toNode": "intent-personal-language-learning-app",
+      "label": "RELATES_TO",
+      "color": "3"
+    },
+    {
+      "id": "ba169a4d27",
+      "fromNode": "user-intent-valutazione-progetto-language-app",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "f96db25e21",
+      "fromNode": "user-intent-verify-github-token-render",
+      "toNode": "person-pierfrancesco",
+      "label": "EXPRESSED_BY",
+      "color": "3"
+    },
+    {
+      "id": "a3e6bdebef",
+      "fromNode": "user-intent-verify-github-token-render",
+      "toNode": "universal-ai-brain",
+      "label": "TARGETS_PROJECT",
+      "color": "3"
+    },
+    {
+      "id": "18338be470",
+      "fromNode": "user-intent-zero-cost-graphrag",
+      "toNode": "ai-reasoning-hybrid-search-mcp",
+      "label": "TRIGGERS",
+      "color": "3"
+    },
+    {
+      "id": "220b54f3fd",
+      "fromNode": "user-intent-zero-cost-graphrag",
+      "toNode": "episode-2026-08-27-graphrag-mcp-evolution",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "e27d51f9d3",
+      "fromNode": "user-intent-zero-cost-graphrag",
+      "toNode": "person-pierfrancesco",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "0182768b96",
+      "fromNode": "ux-frictionless",
+      "toNode": "proj-caretrack",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "0fc2c7427d",
+      "fromNode": "ux-frictionless",
+      "toNode": "proj-linkly-qr",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "cb9718a6cc",
+      "fromNode": "val-authenticity",
+      "toNode": "brand-voice-surgical",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "a981ad0f49",
+      "fromNode": "val-authenticity",
+      "toNode": "lesson-boundaries-clarity",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "b08650e48a",
+      "fromNode": "val-eternal-cognitive-continuity",
+      "toNode": "ai-reasoning-infinite-context-architecture",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "90284e5d28",
+      "fromNode": "val-eternal-cognitive-continuity",
+      "toNode": "episode-infinite-context-philosophy",
+      "label": "BELONGS_TO_EPISODE",
+      "color": "3"
+    },
+    {
+      "id": "0cb72fb2d0",
+      "fromNode": "val-eternal-cognitive-continuity",
+      "toNode": "person-pierfrancesco",
+      "label": "HELD_BY",
+      "color": "3"
+    },
+    {
+      "id": "cb8b750e29",
+      "fromNode": "val-eternal-cognitive-continuity",
+      "toNode": "user-intent-infinite-context-persistence",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "875e588fa2",
+      "fromNode": "val-impact-utility",
+      "toNode": "proj-caretrack",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "6c3d53a232",
+      "fromNode": "val-independence",
+      "toNode": "rule-zero-cost",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "84a6aa8669",
+      "fromNode": "val-transparency-loyalty",
+      "toNode": "rel-marco-di-martino",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    },
+    {
+      "id": "03ed34d6bc",
+      "fromNode": "val-transparency-loyalty",
+      "toNode": "rel-parents",
+      "label": "CORPUS_CALLOSUM_LINK",
+      "color": "6"
+    }
+  ]
+}

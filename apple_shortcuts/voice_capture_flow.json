@@ -1,0 +1,44 @@
+{
+  "name": "Appunto per il Cervello",
+  "icon": "brain",
+  "color": "cyan",
+  "description": "Comando Rapido Apple (Siri, iOS, macOS, watchOS) per inviare istantaneamente note vocali al Connettoma Cognitivo.",
+  "workflow_steps": [
+    {
+      "step": 1,
+      "action": "Dettatura testo / Dictate Text",
+      "parameters": {
+        "language": "it_IT",
+        "stop_listening": "After Pause"
+      }
+    },
+    {
+      "step": 2,
+      "action": "Dizionario / Dictionary",
+      "parameters": {
+        "transcript": "Testo Dettato (Shortcut Input o Dictated Text)",
+        "source": "apple_shortcuts_siri"
+      }
+    },
+    {
+      "step": 3,
+      "action": "Ottieni contenuti da URL / Get Contents of URL",
+      "parameters": {
+        "url": "https://universal-ai-brain.onrender.com/api/memory/voice-note",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "request_body": "JSON (Dizionario dello step 2)"
+      }
+    },
+    {
+      "step": 4,
+      "action": "Mostra notifica / Show Notification",
+      "parameters": {
+        "title": "🧠 Universal Brain",
+        "body": "Nota vocale salvata con successo nel connettoma!"
+      }
+    }
+  ]
+}

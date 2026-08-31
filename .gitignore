@@ -29,3 +29,5 @@ scratch/
 *.temp
 *~
 .DS_Store
+safari_app/
+last_chat_id.txt

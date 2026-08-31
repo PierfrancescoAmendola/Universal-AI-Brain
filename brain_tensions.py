@@ -21,6 +21,7 @@ import re
 import json
 import sqlite3
 import hashlib
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from typing import Dict, Any, List, Optional, Tuple
 
@@ -50,7 +51,8 @@ def init_tensions_schema(conn: sqlite3.Connection):
     conn.commit()
 
 
-def get_db_connection(db_path: str = DEFAULT_DB_PATH) -> sqlite3.Connection:
+@contextmanager
+def get_db_connection(db_path: str = DEFAULT_DB_PATH):
     conn = sqlite3.connect(db_path, timeout=5.0)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=WAL;")
@@ -58,7 +60,11 @@ def get_db_connection(db_path: str = DEFAULT_DB_PATH) -> sqlite3.Connection:
     conn.execute("PRAGMA busy_timeout=5000;")
     conn.execute("PRAGMA foreign_keys=ON;")
     init_tensions_schema(conn)
-    return conn
+    try:
+        yield conn
+    finally:
+        conn.close()
+
 
 
 def generate_tension_id(node_a_id: str, node_b_id: str, tension_type: str) -> str:

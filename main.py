@@ -4,6 +4,7 @@ strict taxonomy labeling engine, and cognitive meta-prompts for LLMs.
 """
 
 import os
+import re
 import json
 import sqlite3
 import base64
@@ -450,6 +451,15 @@ class IngestPayload(BaseModel):
     nodes: List[NodeModel] = Field(default_factory=list, description="List of nodes to upsert")
     edges: List[EdgeModel] = Field(default_factory=list, description="List of explicit edges to upsert")
     links: Optional[List[EdgeModel]] = Field(default_factory=list, description="Alias for edges")
+
+
+class VoiceNotePayload(BaseModel):
+    transcript: str = Field(..., description="Testo trascritto da Siri, Comandi Rapidi o dettatura vocale")
+    title: Optional[str] = Field(None, description="Titolo opzionale")
+    source: Optional[str] = Field("apple_shortcuts_siri", description="Sorgente di cattura vocale")
+    hemisphere: Optional[Literal["LEFT", "RIGHT"]] = Field(None, description="Emisfero forzato se specificato")
+    tags: Optional[List[str]] = Field(default_factory=list, description="Tag aggiuntivi")
+
 
 
 # -----------------------------------------------------------------------------
@@ -1418,6 +1428,98 @@ def ingest_memory(payload: IngestPayload, background_tasks: BackgroundTasks = No
         "message": f"Ingested {nodes_upserted} nodes and {edges_upserted} edges.",
         "nodes_count": nodes_upserted,
         "edges_count": edges_upserted,
+        "timestamp": now
+    }
+
+
+@app.post("/api/memory/voice-note", tags=["Memory Ingest", "Apple Shortcuts"])
+def ingest_voice_note(payload: VoiceNotePayload, background_tasks: BackgroundTasks = None):
+    """
+    Endpoint ottimizzato per cattura vocale da Apple Shortcuts / Siri (iPhone, Mac, Apple Watch).
+    Esegue classificazione semantica automatica, crea il nodo atomico e le sinapsi fondative.
+    """
+    text = (payload.transcript or "").strip()
+    if not text:
+        raise HTTPException(status_code=400, detail="Trascrizione vocale vuota.")
+
+    now = datetime.now(timezone.utc).isoformat()
+    lines = [l.strip() for l in text.split("\n") if l.strip()]
+    first_line = lines[0] if lines else "Nota Vocale"
+    
+    title = (payload.title or (first_line[:60] if len(first_line) > 60 else first_line)).strip()
+    slug_base = re.sub(r'[^a-z0-9-]', '', re.sub(r'[\s_]+', '-', title.lower()))[:50].strip('-')
+    node_id = f"voice-{slug_base}-{int(datetime.now().timestamp()) % 10000}"
+
+    combined = f"{title} {text}".lower()
+    left_keywords = ["software", "sistemi", "sistema", "architettura", "database", "mcp", "codice", "python", "bug", "fix", "fastapi", "sql", "git", "algoritmo", "ingegneria", "api", "def ", "class ", "distribuiti"]
+    right_keywords = ["design", "valore", "ispirazione", "filosofia", "idea", "creatività", "pensiero", "emozione", "obiettivo", "abitudine", "relazione", "vita", "stoicismo"]
+
+    if payload.hemisphere:
+        hemisphere = payload.hemisphere
+    elif any(k in combined for k in left_keywords):
+        hemisphere = "LEFT"
+    elif any(k in combined for k in right_keywords):
+        hemisphere = "RIGHT"
+    else:
+        hemisphere = "RIGHT"  # Default vocale predilige idee/pensieri creativi
+
+    if hemisphere == "RIGHT":
+        primary_label = "CREATIVE_IDEA" if "idea" in combined else ("PERSONAL_VALUE" if "valore" in combined else "LIFE_LESSON")
+        domain = "domain-filosofia-valori" if primary_label == "PERSONAL_VALUE" else "domain-design-creativita"
+    else:
+        primary_label = "ARCHITECTURE" if "architettura" in combined or "api" in combined else "COGNITIVE_RULE"
+        domain = "domain-software-engineering" if primary_label == "ARCHITECTURE" else "domain-ai-cognitive-systems"
+
+    summary = text[:400] + ("..." if len(text) > 400 else "")
+    all_tags = list(set(["voice-capture", "siri-shortcuts", hemisphere.lower()] + [t.lower().strip() for t in payload.tags if t.strip()]))
+    tags_str = json.dumps(all_tags)
+    details_str = json.dumps({
+        "source": payload.source or "apple_shortcuts_siri",
+        "full_transcript": text,
+        "captured_by": "Pierfrancesco Amendola"
+    })
+
+    with get_db_connection() as conn:
+        # 1. Inserimento Nodo
+        conn.execute("""
+            INSERT OR REPLACE INTO nodes
+            (id, label, hemisphere, primary_label, category, tags, summary, details, confidence, parent_graph_id, layer_level, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'EXTRACTED', ?, 2, ?, ?)
+        """, (
+            node_id, title, hemisphere, primary_label, primary_label,
+            tags_str, summary, details_str, domain, now, now
+        ))
+
+        # 2. Sinapsi fondative
+        conn.execute("""
+            INSERT OR REPLACE INTO edges
+            (source, target, relation, confidence, reasoning, created_at)
+            VALUES (?, 'person-pierfrancesco', 'EXPRESSED_BY', 'EXTRACTED', 'Nota vocale catturata da Pierfrancesco', ?)
+        """, (node_id, now))
+
+        # Verifica se il dominio esiste prima di collegarlo
+        domain_exists = conn.execute("SELECT 1 FROM nodes WHERE id = ?", (domain,)).fetchone()
+        if domain_exists:
+            conn.execute("""
+                INSERT OR REPLACE INTO edges
+                (source, target, relation, confidence, reasoning, created_at)
+                VALUES (?, ?, 'BELONGS_TO_DOMAIN', 'EXTRACTED', 'Collegato al macro-dominio cognitivo', ?)
+            """, (node_id, domain, now))
+
+        conn.commit()
+        brain_db.invalidate_cache()
+
+    if background_tasks:
+        background_tasks.add_task(cloud_git_push_background, f"feat(voice): captured {title} ({node_id})")
+
+    return {
+        "status": "success",
+        "node_id": node_id,
+        "label": title,
+        "hemisphere": hemisphere,
+        "primary_label": primary_label,
+        "domain": domain,
+        "summary": summary,
         "timestamp": now
     }
 

@@ -171,7 +171,25 @@ Universal AI Brain espone un server standard **Model Context Protocol (JSON-RPC 
 
 ---
 
-## 🚀 8. Installazione Rapida in 1 Click (Mac / Linux)
+## 🌟 8. L'Ecosistema Ubiquitous Supercervello (100% Zero-Cost)
+
+Oltre al backend e alla sincronizzazione con Obsidian, il connettoma include un ecosistema completo ad attrito zero su macOS, Browser, Mobile e IDE:
+
+| Modulo / Strumento | Percorso / File | Descrizione |
+| :--- | :--- | :--- |
+| **🚀 Raycast Extension** | `raycast/` | Quick-search FTS5, quick-add di note e cattura dagli appunti con scorciatoia `Cmd+Space`. |
+| **🎙️ Siri & Apple Shortcuts** | `apple_shortcuts/` | Cattura vocale da iPhone, Apple Watch e Mac con auto-catalogazione via `/api/memory/voice-note`. |
+| **🌅 Daily Pulse Telegram** | `sync_daemon.py` | Invio automatico alle 08:00 del briefing di 90 secondi (curva dell'oblio + modello mentale). |
+| **🌐 Web Clipper (Safari & Chrome)** | `web_clipper/` | Estensione Manifest V3 per catturare articoli ed evidenziazioni con 1 click nel browser. |
+| **📖 Kindle Sync Engine** | `kindle_sync.py` | Importazione ed estrazione idempotente a costo zero da `My Clippings.txt`. |
+| **🌙 Consolidamento Notturno REM** | `brain_rem_cycle.py` | Demone notturno delle 03:00 per tessitura sinapsi, rilevamento contraddizioni e vacuum. |
+| **🧠 Ricerca Vettoriale Ibrida** | `brain_vectors.py` | Fusione RRF tra lessicale (FTS5 BM25) e vettoriale (Cosine similarity su n-grammi densi). |
+| **🛠️ IDE & Shell Auto-Hooks** | `ide_hooks/` | Iniezione contesto attivo pre-sessione e cattura automatica della Triade a fine lavoro. |
+| **🎨 Obsidian Canvas Sync** | `obsidian_canvas_sync.py` | Mappa visiva 2D bi-emisferica a schede sincronizzata con `00_CONNETOMA_CANVAS.canvas`. |
+
+---
+
+## 🚀 9. Installazione Rapida in 1 Click (Mac / Linux)
 
 Per configurare l'intero ambiente, il comando globale CLI, le skill AI e il demone LaunchAgent:
 
@@ -196,7 +214,8 @@ brain open                  # Apre la Web Dashboard nel browser
 
 ---
 
-## 🌐 9. Deploy su Render.com (0,00€ / Mese)
+## 🌐 10. Deploy su Render.com (0,00€ / Mese)
+
 
 1. Fai il **Fork** di questo repository su GitHub.
 2. Accedi a [dashboard.render.com](https://dashboard.render.com/) e crea un nuovo **Web Service**.

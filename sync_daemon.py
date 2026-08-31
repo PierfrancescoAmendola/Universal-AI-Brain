@@ -120,6 +120,8 @@ def main():
     last_vault_mtime = get_vault_mtime()
     last_periodic_check = time.time()
     last_keepalive_ping = time.time()
+    last_pulse_date = None
+    last_rem_date = None
     check_interval_seconds = 60
     keepalive_interval_seconds = 420  # Ping ogni 7 minuti (Render dorme a 15 min)
 
@@ -127,6 +129,35 @@ def main():
     while running:
         try:
             now = time.time()
+            now_dt = datetime.now()
+            today_str = now_dt.strftime("%Y-%m-%d")
+
+            # Controllo Consolidamento Notturno Fase REM (alle ore 03:00)
+            if now_dt.hour == 3 and last_rem_date != today_str:
+                try:
+                    from brain_rem_cycle import run_rem_consolidation
+                    logging.info(f"🌙 Schedulazione: Avvio Consolidamento Notturno REM delle 03:00 per {today_str}...")
+                    rem_res = run_rem_consolidation(db_path=LOCAL_DB, verbose=False)
+                    last_rem_date = today_str
+                    logging.info(f"✨ Consolidamento REM completato: +{rem_res.get('weaved_synapses', 0)} sinapsi tessute.")
+                except Exception as rem_err:
+                    logging.warning(f"⚠️ Errore consolidamento REM: {rem_err}")
+
+            # Controllo invio Daily Morning Pulse (alle ore 08:00 o successive se Mac riacceso)
+            if now_dt.hour >= 8 and last_pulse_date != today_str:
+                try:
+                    from telegram_bot import broadcast_morning_pulse
+                    logging.info(f"🌅 Schedulazione: Invio Daily Brain Pulse delle 08:00 per {today_str}...")
+                    sent = broadcast_morning_pulse()
+                    if sent:
+                        last_pulse_date = today_str
+                        logging.info(f"✅ Daily Brain Pulse inviato con successo via Telegram per {today_str}.")
+                    else:
+                        logging.info("ℹ️ Daily Brain Pulse: in attesa di primo messaggio Telegram per chat_id.")
+                        last_pulse_date = today_str  # Non spammare se chat_id non è ancora configurato
+                except Exception as pulse_err:
+                    logging.warning(f"⚠️ Errore invio Daily Pulse: {pulse_err}")
+
             current_db_mtime = get_db_mtime()
             current_vault_mtime = get_vault_mtime()
 

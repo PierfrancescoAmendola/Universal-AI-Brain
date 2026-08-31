@@ -18,6 +18,7 @@ import random
 import sqlite3
 from datetime import datetime, timezone
 from typing import Dict, Any, List, Optional, Tuple
+from contextlib import contextmanager
 
 DEFAULT_DB_PATH = os.getenv("BRAIN_DB_PATH", os.path.join(os.path.dirname(os.path.abspath(__file__)), "brain.db"))
 
@@ -80,14 +81,18 @@ FIRMWARE_DAILY_ROTATION = [
 ]
 
 
-def get_db_connection(db_path: str = DEFAULT_DB_PATH) -> sqlite3.Connection:
+@contextmanager
+def get_db_connection(db_path: str = DEFAULT_DB_PATH):
     conn = sqlite3.connect(db_path, timeout=5.0)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=WAL;")
     conn.execute("PRAGMA synchronous=NORMAL;")
     conn.execute("PRAGMA busy_timeout=5000;")
     conn.execute("PRAGMA foreign_keys=ON;")
-    return conn
+    try:
+        yield conn
+    finally:
+        conn.close()
 
 
 def calculate_dormant_nodes(limit: int = 3, db_path: str = DEFAULT_DB_PATH) -> List[Dict[str, Any]]:
@@ -197,19 +202,43 @@ def get_daily_resurface_packet(db_path: str = DEFAULT_DB_PATH) -> Dict[str, Any]
     }
 
 
+def format_telegram_morning_pulse(packet: Dict[str, Any]) -> str:
+    """
+    Formatta il briefing mattutino per Telegram in HTML conforme alle Bot API.
+    """
+    date_str = packet.get("date", datetime.now().strftime("%Y-%m-%d"))
+    lines = [
+        f"🧠 <b>DAILY BRAIN PULSE</b> · <i>{date_str}</i>",
+        "<blockquote>⏱️ <b>Briefing Cognitivo di 90 Secondi</b></blockquote>",
+        "\n📜 <b>3 NODI DALLA CURVA DELL'OBLIO:</b>"
+    ]
+
+    for i, n in enumerate(packet.get("resurface_nodes", []), 1):
+        hemi_icon = "⚡" if n.get("hemisphere") == "LEFT" else "🌸"
+        label = n.get("label", "Senza Titolo")
+        node_id = n.get("id", "")
+        summary = (n.get("summary") or "").strip()
+        days = n.get("days_dormant", 0)
+        lines.append(f"{i}. {hemi_icon} <b>{label}</b> (<code>{node_id}</code>)")
+        lines.append(f"   <i>Dormiente da {days:.0f}gg:</i> {summary[:180]}...")
+
+    tension = packet.get("tension_of_the_day")
+    if tension:
+        lines.append("\n⚡ <b>TENSIONE COGNITIVA DA ESAMINARE:</b>")
+        lines.append(f"• <b>{tension.get('node_a_label', 'A')}</b> ⚔️ <b>{tension.get('node_b_label', 'B')}</b>")
+        lines.append(f"  <i>{tension.get('description', '')}</i>")
+
+    firmware = packet.get("firmware_of_the_day")
+    if firmware:
+        lines.append("\n🧭 <b>MODELLO MENTALE DEL GIORNO:</b>")
+        lines.append(f"• <b>{firmware.get('name')}</b> (<i>{firmware.get('author')}</i>)")
+        lines.append(f"  ❓ <code>{firmware.get('question')}</code>")
+
+    lines.append("\n<i>Buona giornata produttiva, Pierfrancesco! 🚀</i>")
+    return "\n".join(lines)
+
+
 if __name__ == "__main__":
     packet = get_daily_resurface_packet()
-    print(f"=== 🧠 DAILY RESURFACE (90s Briefing) - {packet['date']} ===")
-    print("\n📜 3 Nodi da Riattivare:")
-    for n in packet["resurface_nodes"]:
-        print(f"  - [{n['primary_label']}] {n['label']} ({n['days_dormant']} giorni fa) | Score: {n['resurface_score']}")
-        print(f"    Sintesi: {n['summary']}")
-        
-    if packet["tension_of_the_day"]:
-        t = packet["tension_of_the_day"]
-        print(f"\n⚡ Tensione del Giorno: {t['node_a_label']} <--> {t['node_b_label']}")
-        print(f"   {t['description']}")
-        
-    f = packet["firmware_of_the_day"]
-    print(f"\n🧭 Firmware del Giorno: {f['name']} ({f['author']})")
-    print(f"   Domanda Guida: {f['question']}")
+    print(format_telegram_morning_pulse(packet))
+
