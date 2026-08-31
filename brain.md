@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:42:30 UTC | **Nodi Restituiti:** 519 (SX: 363 · DX: 156) | **Sinapsi Restituite:** 1206
-> **Consistenza Reale Connettoma:** 519 Nodi Totali nel Database | 1206 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 18:42:51 UTC | **Nodi Restituiti:** 524 (SX: 367 · DX: 157) | **Sinapsi Restituite:** 1215
+> **Consistenza Reale Connettoma:** 524 Nodi Totali nel Database | 1215 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -101,6 +101,10 @@
   - **Tags:** `#anti-amnesia` `#graph-rag` `#context-externalization` `#metacognition` `#gemini`
   - **Sintesi:** Deduzione logica Gemini: disaccoppiare la memoria a lungo termine dal context buffer del modello trasforma l'AI da sessione stateless a intelligenza stateful continua.
   - **Dettagli:** `raw`: `architecture_solution`: External Graph State (SQLite WAL + GraphRAG) vs Volatile Prompt Buffer, `benefits`: ["Nuova chat legge /brain.md e recupera istantaneamente l'intero stato pregresso", 'Nessun degrado qualitativo dovuto al context bloat', 'Indipendenza da limiti di contesto di specifici provider LLM'], `model`: Gemini 3.7 Flash
+- **Architettura Mappamondo 3D: Gabbia Olografica, Laser Sinaptici & Floating Rel Card** (`reasoning-architettura-mappamondo-spotlight-3d`)
+  - **Tags:** `#threejs` `#laser-synapses` `#hud-card` `#bi-hemispheric`
+  - **Sintesi:** Implementazione di anelli equatoriali/meridiani Three.js, isolamento 1st-degree neighbors al click, raggi laser additivi ad alta intensità e pannello HUD Glassmorphism con link di navigazione sinaptica.
+  - **Dettagli:** `stack`: Three.js WebGL + Glassmorphism CSS, `algorithm`: 1st-degree neighbor extraction & spherical alignment
 - **Architettura Modulare PWA con FSRS e LLM Locale** (`reasoning-language-app-architecture`)
   - **Tags:** `#architecture` `#fsrs` `#web-speech-api` `#sqlite` `#offline-first`
   - **Sintesi:** Proposta di architettura basata su motore Spaced Repetition (FSRS/SM-2), Web Speech API per audio/TTS nativo e integrazione LLM per generazione esercizi e roleplay senza dipendenze esterne bloccanti.
@@ -376,6 +380,10 @@
   - **Tags:** `#ai-deduction` `#epistemic-provenance` `#knowledge-graph` `#metacognition` `#gemini`
   - **Sintesi:** Deduzione logica Gemini: tracciare prompt e modello crea una memoria a provenienza epistemica verificabile, prevenendo allucinazioni di paternità e potenziando il retrieval.
   - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `verdict`: Approccio eccellente e architetturalmente solido, `benefits`: ['Provenance epistemica cross-modello', "Ancoraggio contestuale del ragionamento AI all'intento originario", 'Clustering semantico pulito senza rumore relazionale']
+- **Validazione e Blindatura della Strategia 100% Zero-Cost** (`reasoning-validazione-architettura-zero-costi`)
+  - **Tags:** `#audit-costi` `#local-first` `#open-source` `#free-tier`
+  - **Sintesi:** Tutti i componenti proposti poggiano su strumenti open-source, risorse locali macOS, tier gratuiti a vita (Render, GitHub Actions, Telegram Bot API) e modelli di embedding locali senza API a pagamento.
+  - **Dettagli:** `actions_taken`: ['Audit di ogni componente del piano di espansione', 'Verifica licenze e piani gratuiti per Raycast, Shortcuts, sqlite-vec, FastEmbed e Telegram', "Conferma dell'assenza totale di costi operativi o abbonamenti"], `model`: Gemini 3.7 Flash, `outcome`: Conferma al 100% della piena gratuità di ogni singolo elemento proposto, `responses_given`: Dettaglio voce per voce della conformità al vincolo 0,00€ Forever
 
 ### [Macro-Label: `ALGORITHM`]
 - **Achievement & 22-Trophy Engine** (`streaksup-gamification-engine`)
@@ -1724,6 +1732,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#obsidian-vault` `#cognitive-enhancement` `#daily-resurface` `#tensions-matrix` `#weave-link` `#firmware-models`
   - **Sintesi:** Integrazione bidirezionale di Obsidian Vault con note atomiche, rilevatore tensioni cognitive, weave link engine per nodi orfani, daily resurface spaced repetition e 9 firmware mentali.
   - **Dettagli:** `context`: Richiesta di potenziare Universal AI Brain superando le feature di Neomas con Obsidian Vault, Daily Resurface, Tensioni, Weave Link e 9 Firmware mentali., `user_prompt`: continua il lavoro che stavamo facendo, continua il lavoro del piano d'implementazione chiaro???
+- **Potenziamento Grafico Mappamondo 3D & Relazioni Sinaptiche** (`user-intent-mappamondo-3d-spotlight-relazioni`)
+  - **Tags:** `#3d-globe` `#webgl` `#threejs` `#spotlight` `#relationships`
+  - **Sintesi:** Richiesta di trasformazione visiva del Mappamondo 3D con spotlight interattivo delle relazioni, gabbia olografica e card sinaptica floating.
+  - **Dettagli:** `priority`: HIGH, `theme`: 3d-webgl-generative-ui
 - **Preferenze Pierfrancesco Grafica Scacchi Duolingo** (`user-intent-duolingo-chess-preference`)
   - **Tags:** `#pierfrancesco` `#preferenze` `#duolingo` `#scacchi` `#ui-ux`
   - **Sintesi:** Pierfrancesco richiede massima fedeltà visiva allo stile Duolingo Chess: scacchiera menta e bianco, pezzi 2D piatti vettoriali con gerarchia scalare, pulsanti 3D tattili e mascotte Duo interattiva.
@@ -1827,6 +1839,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#linux` `#3d-modeling` `#software` `#distribuzioni` `#open-source`
   - **Sintesi:** Richiesta di informazioni sull'esistenza di distribuzioni Linux per scaricare e utilizzare software di modellazione 3D.
   - **Dettagli:** `user_prompt`: Esistono distribuzioni Linux che permettono di scaricare software di modellazione 3D?, `context`: Analisi dell'ecosistema open source e professionale per la computer grafica 3D su ambiente Linux.
+- **Verifica del Vincolo Architetturale Zero-Cost (0,00€)** (`user-intent-verifica-vincolo-zero-costi`)
+  - **Tags:** `#zero-cost` `#budget` `#architettura` `#sostenibilità` `#open-source`
+  - **Sintesi:** Controllo rigoroso della gratuità totale (0,00€) di tutte le estensioni, integrazioni, strumenti e modelli proposti per il connettoma.
+  - **Dettagli:** `context`: Verifica del rispetto del vincolo fondativo: 100% Zero-Cost Architecture (0,00€ Forever), `user_prompt`: trasformare tutto questo è gratis??? hai rispettato la condizione che sia tutto gratis?
 
 
 ## EMISFERO DESTRO (Design, Emozioni, Relazioni, Valori, Arte)
@@ -2036,6 +2052,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#pkm` `#notion` `#obsidian` `#produttivita`
   - **Sintesi:** Sessione incentrata sui motivi per cui gli utenti collegano i propri workspace Notion e Obsidian ai modelli di linguaggio (LLM).
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Integrazione LLM con sistemi PKM (Notion vs Obsidian), `key_takeaways`: Notion eccelle in database relazionali collaborativi e automazioni cloud; Obsidian primeggia per privacy, gestione del grafo delle conoscenze e GraphRAG locale su file Markdown., `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+- **Episodio: Controllo di Rispetto del Vincolo 0,00€ Forever** (`episode-verifica-costi-zero-euro`)
+  - **Tags:** `#zero-cost` `#garanzia` `#trasparenza`
+  - **Sintesi:** Verifica dettagliata punto per punto che l'intero piano di espansione del supercervello rispetti la regola aurea dei 0,00€ Forever.
+  - **Dettagli:** `key_takeaways`: Ogni singola soluzione proposta rispetta tassativamente il vincolo di 0,00€ senza abbonamenti nascosti., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Implementare i moduli partendo dalle soluzioni a zero attrito e zero costo, `topic`: Verifica del vincolo di gratuità totale del connettoma
 - **Episodio: Creazione Video Showcase 1 Minuto Universal AI Brain** (`episode-video-showcase-anteprima-universal-brain`)
   - **Tags:** `#episodio` `#video` `#anteprima` `#comunicazione`
   - **Sintesi:** Sessione dedicata alla creazione dell'anteprima video di 60 secondi, comprensiva di screenshot generati, codice terminale, musica ed export video per la condivisione del connettoma.
@@ -2989,6 +3009,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-universal-ai-hub-client`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-update-readme-architecture`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-valutazione-progetto-language-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-verifica-vincolo-zero-costi`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-verify-github-token-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
@@ -3086,6 +3107,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_INTENT]--> (`user-intent-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-update-readme-architecture`) --[RECORDS_INTENT]--> (`user-intent-update-readme-architecture`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
+- (`episode-verifica-costi-zero-euro`) --[RECORDS_INTENT]--> (`user-intent-verifica-vincolo-zero-costi`) *(Corpo Calloso)*
 - (`episode-verify-github-token-render`) --[RECORDS_INTENT]--> (`user-intent-verify-github-token-render`) *(Corpo Calloso)*
 - (`episode-video-showcase-anteprima-universal-brain`) --[RECORDS_INTENT]--> (`user-intent-creazione-video-showcase-universal-brain`) *(Corpo Calloso)*
 - (`episode-yt-shorts-business-model`) --[RECORDS_INTENT]--> (`user-intent-ai-shorts-evaluation`) *(Corpo Calloso)*
@@ -3136,6 +3158,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_REASONING]--> (`reasoning-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-update-readme-architecture`) --[RECORDS_REASONING]--> (`reasoning-update-readme-architecture`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_REASONING]--> (`reasoning-analisi-fattibilita-language-app`) *(Corpo Calloso)*
+- (`episode-verifica-costi-zero-euro`) --[RECORDS_REASONING]--> (`reasoning-validazione-architettura-zero-costi`) *(Corpo Calloso)*
 - (`episode-verify-github-token-render`) --[RECORDS_REASONING]--> (`reasoning-verify-github-token-render`) *(Corpo Calloso)*
 - (`episode-video-showcase-anteprima-universal-brain`) --[RECORDS_REASONING]--> (`reasoning-creazione-video-showcase-universal-brain`) *(Corpo Calloso)*
 - (`episode-yt-shorts-business-model`) --[RECORDS_REASONING]--> (`ai-reasoning-market-analysis-automation`) *(Corpo Calloso)*
@@ -3422,6 +3445,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`project-royal-gambit-chess`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`universal-ai-brain`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`val-eternal-cognitive-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`)
+- (`user-intent-mappamondo-3d-spotlight-relazioni`) --[BELONGS_TO_PROJECT]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[BONDS_WITH]--> (`rel-marco-di-martino`)
 - (`aule-studio-app`) --[BUILT_WITH]--> (`flutter-dart-ecosystem`)
 - (`person-pierfrancesco`) --[CAPTURED_VIA_TELEGRAM]--> (`tg-idea-per-nuova-app-ai`)
@@ -3618,8 +3642,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-tassonomia-pkm-rag-notion-obsidian`) --[FULFILLS]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`)
 - (`reasoning-telegram-keepalive-confirmation`) --[FULFILLS]--> (`user-intent-telegram-keepalive-confirmation`)
 - (`reasoning-update-readme-architecture`) --[FULFILLS]--> (`user-intent-update-readme-architecture`)
+- (`reasoning-validazione-architettura-zero-costi`) --[FULFILLS]--> (`user-intent-verifica-vincolo-zero-costi`)
 - (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) --[FULFILLS]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`)
 - (`reasoning-verify-github-token-render`) --[FULFILLS]--> (`user-intent-verify-github-token-render`)
+- (`reasoning-architettura-mappamondo-spotlight-3d`) --[FULFILLS_INTENT]--> (`user-intent-mappamondo-3d-spotlight-relazioni`)
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-taxonomy-classification`)
 - (`intent-ep-20260827-graph-tree-unification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-tree-unification`)
 - (`intent-ep-20260827-hierarchical-overlay-reassurance`) --[GENERATES_REASONING]--> (`reason-ep-20260827-hierarchical-overlay-reassurance`)
@@ -3687,6 +3713,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-telegram-keepalive-confirmation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-update-readme-architecture`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-valutazione-language-app-antigravity`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-verifica-costi-zero-euro`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-verify-github-token-render`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-video-showcase-anteprima-universal-brain`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-yt-shorts-business-model`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -3730,6 +3757,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-telegram-keepalive-confirmation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-update-readme-architecture`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-validazione-architettura-zero-costi`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-verify-github-token-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`test-cloud-git-autopush-verification`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`)
@@ -3813,6 +3841,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-telegram-keepalive-confirmation`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-universal-ai-hub-client`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-update-readme-architecture`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-verifica-vincolo-zero-costi`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-verify-github-token-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-zero-cost-graphrag`) --[TRIGGERS]--> (`ai-reasoning-hybrid-search-mcp`)
 - (`person-pierfrancesco`) --[UPHOLDS]--> (`val-transparency-loyalty`)
