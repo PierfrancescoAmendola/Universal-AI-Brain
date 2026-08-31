@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 11:34:40 UTC | **Nodi Restituiti:** 360 (SX: 231 · DX: 129) | **Sinapsi Restituite:** 909
-> **Consistenza Reale Connettoma:** 360 Nodi Totali nel Database | 909 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 11:34:49 UTC | **Nodi Restituiti:** 363 (SX: 233 · DX: 130) | **Sinapsi Restituite:** 916
+> **Consistenza Reale Connettoma:** 363 Nodi Totali nel Database | 916 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -257,6 +257,10 @@
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code cla
   - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `responses_given`: Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio restituisce il Master Prompt formattato all'interno di un blocco <pre><code class="language-markdown">...</code></pre>, permettendo all'utente di toccare il riquadro sullo smartphone per copiare istantaneamente il testo negli appunti di iOS/Android., `actions_taken`: ['Aggiunto pulsante "📋 Copia Prompt AI" nella tastiera persistente di get_main_keyboard() in telegram_bot.py', 'Implementato handler per /prompt, prompt e relative varianti in process_telegram_message()', 'Formattato il Master System Prompt con escape HTML dentro <pre><code class="language-markdown"> per 1-tap copy', 'Aggiornato il menu comandi /help con la nuova sezione Integrazione AI Esterne', 'Testata esecuzione e pushato su origin/main per aggiornare il bot live su Render'], `outcome`: Comando /prompt operativo su Telegram con supporto copia al tocco su smartphone.
+- **Ragionamento: Copertura Telegram e Keep-Alive 7m** (`reasoning-telegram-keepalive-confirmation`)
+  - **Tags:** `#telegram-bot` `#ping-7m` `#zero-perdite`
+  - **Sintesi:** Integrazione Telegram bot con cloud git push e validazione Keep-Alive 7m in sync_daemon.
+  - **Dettagli:** `actions_taken`: ["Aggiornato telegram_bot.py per invocare cloud_git_push_background all'ingestione JSON", 'Confermato Keep-Alive già attivo in sync_daemon.py con ping /health ogni 7m (più sicuro di 14m)', 'Verificata attività nel log: ping registrati ed eseguiti con successo'], `model`: Gemini 3.7 Flash, `outcome`: Telegram coperto al 100% da doppio anello; Keep-Alive a 7m attivo e verificato nel demone, `responses_given`: Conferma copertura Telegram (bot esegue cloud push e demone sincronizza), spiegato che il Keep-Alive è già attivo ogni 7m nel demone.
 - **Ragionamento: Fix Demone LaunchAgent e Anti-Sleep Render** (`reasoning-fix-daemon-render-persistence`)
   - **Tags:** `#launchd` `#tcc-bypass` `#keepalive` `#git-sync`
   - **Sintesi:** Diagnosi e risoluzione integrale: TCC sandbox bypass tramite ~/.local/bin, keep-alive 7m anti-sleep, commit git automatico preventivo.
@@ -859,6 +863,10 @@
   - **Tags:** `#user-intent` `#chat` `#ottimizzazione-mobile-web-dashboard-universal`
   - **Sintesi:** Intento espresso da Pierfrancesco: Ottimizzazione Mobile Web Dashboard Universal Brain
   - **Dettagli:** `raw`: `user_prompt`: /caveman wenyan-ultra. assicurati di rendere la schermata online del sito ottimizzata anche epr mobile. ora devi lavorare solo sulla parte mobile, non cambiare l'interfaccia del sito come si vede sul pc. quando apro il sito sul mio telefono non vedo nulla....o almeno vedo solo il riquadro di destra che compare sul sito quando lo apro dal computer. chiaro??? usa i tag @ meta o viewport non so ma quelli usati per rendere le schermata ottimizzate per i vari dispositivi. /universal-brain /graphify, `context`: Sessione su Ottimizzazione Mobile Web Dashboard Universal Brain
+- **Intento: Persistenza Telegram e Keep-Alive Demone** (`user-intent-telegram-keepalive-confirmation`)
+  - **Tags:** `#telegram` `#keepalive` `#anti-sleep` `#persistenza`
+  - **Sintesi:** Confermare che la persistenza a doppio anello copra Telegram e implementare il keep-alive periodico anti-sleep.
+  - **Dettagli:** `context`: Conferma persistenza Telegram e richiesta funzione keep-alive anti-sleep a 14m, `user_prompt`: anche se l'inserimento avviene da telegram?? Conferma: Persistenza a doppio anello attiva. Ogni inserimento da Web, Mobile o Chat locale viene salvato, sincronizzato e committato su GitHub in tempo reale. Zero rischio perdite. ho pensato ad una cosa, affinchè il container di render non si spenga dopo 15 minuti, aggiungiamo una funzione al demone. il demone controlla solo se ci sono differenze tra il db locale e il db di render, cioè quello di github, affinchè il container non si spenga mai, il demone è come se dovesse fare ogni 14 minuti delle fine tirchieste in modo tale che il container si attivi e non si spenga mai, capito che intendo, si può fare?
 - **Intento: Potenziamento Skill e Rilascio Demone Si** (`user-intent-potenziamento-skill-e-ril-8338`)
   - **Tags:** `#user-intent` `#chat` `#potenziamento-skill-e-rilascio-demone-sincron`
   - **Sintesi:** Intento espresso da Pierfrancesco: Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
@@ -1210,6 +1218,10 @@
   - **Tags:** `#chat` `#ecografia` `#hardware` `#tesi`
   - **Sintesi:** Sessione dedicata alla comprensione del principio di funzionamento e dei casi d'uso degli ecografi con sonda lineare.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Tecnologia dei trasduttori lineari in ecografia clinica, `key_takeaways`: Le sonde lineari impiegano alte frequenze per fornire immagini rettangolari ad altissima risoluzione per tessuti superficiali come mammella e tiroide.
+- **Episodio: Persistenza Telegram e Heartbeat Demone** (`episode-telegram-keepalive-confirmation`)
+  - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
+  - **Sintesi:** Episodio di conferma della persistenza omnicanale (Telegram incluso) e del meccanismo keep-alive.
+  - **Dettagli:** `key_takeaways`: Telegram è ora pienamente integrato nel doppio anello di persistenza. Il demone esegue già un heartbeat anti-sleep ogni 7 minuti evitando lo shutdown di 15m., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessun task pendente. Tutto allineato e funzionante al 100%., `topic`: Telegram Ingest Persistence e Keep-Alive Heartbeat
 - **Episodio: Potenziamento Skill e Rilascio Demone Si** (`episode-potenziamento-skill-e-ril-8338`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
@@ -1806,6 +1818,7 @@
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-telegram-keepalive-confirmation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-universal-ai-hub-client`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-valutazione-progetto-language-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-verify-github-token-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1897,6 +1910,7 @@
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_INTENT]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
+- (`episode-telegram-keepalive-confirmation`) --[RECORDS_INTENT]--> (`user-intent-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
 - (`episode-verify-github-token-render`) --[RECORDS_INTENT]--> (`user-intent-verify-github-token-render`) *(Corpo Calloso)*
 - (`episode-video-showcase-anteprima-universal-brain`) --[RECORDS_INTENT]--> (`user-intent-creazione-video-showcase-universal-brain`) *(Corpo Calloso)*
@@ -1941,6 +1955,7 @@
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_REASONING]--> (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
+- (`episode-telegram-keepalive-confirmation`) --[RECORDS_REASONING]--> (`reasoning-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_REASONING]--> (`reasoning-analisi-fattibilita-language-app`) *(Corpo Calloso)*
 - (`episode-verify-github-token-render`) --[RECORDS_REASONING]--> (`reasoning-verify-github-token-render`) *(Corpo Calloso)*
 - (`episode-video-showcase-anteprima-universal-brain`) --[RECORDS_REASONING]--> (`reasoning-creazione-video-showcase-universal-brain`) *(Corpo Calloso)*
@@ -2281,6 +2296,7 @@
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[FULFILLS]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
 - (`reasoning-semplificazione-concettuale-causal-dl`) --[FULFILLS]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
+- (`reasoning-telegram-keepalive-confirmation`) --[FULFILLS]--> (`user-intent-telegram-keepalive-confirmation`)
 - (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) --[FULFILLS]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`)
 - (`reasoning-verify-github-token-render`) --[FULFILLS]--> (`user-intent-verify-github-token-render`)
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-taxonomy-classification`)
@@ -2343,6 +2359,7 @@
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-telegram-keepalive-confirmation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-valutazione-language-app-antigravity`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-verify-github-token-render`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-video-showcase-anteprima-universal-brain`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -2383,6 +2400,7 @@
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-telegram-keepalive-confirmation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-verify-github-token-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`test-cloud-git-autopush-verification`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`)
@@ -2457,6 +2475,7 @@
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-telegram-keepalive-confirmation`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-universal-ai-hub-client`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-verify-github-token-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-zero-cost-graphrag`) --[TRIGGERS]--> (`ai-reasoning-hybrid-search-mcp`)
