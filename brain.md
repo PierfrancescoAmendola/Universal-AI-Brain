@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 20:10:24 UTC | **Nodi Restituiti:** 563 (SX: 390 · DX: 173) | **Sinapsi Restituite:** 1299
-> **Consistenza Reale Connettoma:** 563 Nodi Totali nel Database | 1299 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 20:11:26 UTC | **Nodi Restituiti:** 564 (SX: 390 · DX: 174) | **Sinapsi Restituite:** 1301
+> **Consistenza Reale Connettoma:** 564 Nodi Totali nel Database | 1301 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -2031,6 +2031,12 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo"/>
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&l
 
+### [Macro-Label: `ARCHITECTURE`]
+- **Nota Rapida Raycast Test** (`node-nota-rapida-raycast-test`)
+  - **Tags:** `#raycast-quick-add` `#right` `#software-engineering`
+  - **Sintesi:** Verifica esecuzione diretta
+  - **Dettagli:** `source`: raycast_quick_add, `created_by`: Pierfrancesco Amendola
+
 ### [Macro-Label: `BRAND_VOICE`]
 - **Dominio: Cultura, Storia & Linguaggi** (`domain-cultura-storia`)
   - **Tags:** `#domain-hub` `#cultura` `#storia` `#lingue` `#letteratura` `#viaggi` `#antropologia`
@@ -2868,6 +2874,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
+- (`node-nota-rapida-raycast-test`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`) *(Corpo Calloso)*
 - (`proj-appalcool`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
 - (`proj-caretrack-demo`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
 - (`proj-docs_md`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
@@ -3824,6 +3831,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[EXPANDS_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`proj-streaksup-app`) --[EXPOSES_INTERACTIVITY_VIA]--> (`streaksup-app-intents-engine`)
 - (`universal-ai-brain`) --[EXPOSES_PROTOCOL]--> (`ai-memory-ingest-spec`)
+- (`node-nota-rapida-raycast-test`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`test-e2e-web-clipper`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2447`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
