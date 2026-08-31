@@ -225,7 +225,13 @@ def export_brain_to_vault(db_path: str = DEFAULT_DB_PATH, vault_dir: str = DEFAU
             
             if details_dict:
                 body_lines.append("## 📋 Dettagli Strutturati")
+                # Se presente percorso locale, metti subito il link cliccabile
+                if "file_uri" in details_dict or "local_path" in details_dict:
+                    uri = details_dict.get("file_uri") or f"file://{details_dict.get('local_path')}"
+                    body_lines.append(f"- **📂 Percorso Mac:** [{uri}]({uri})")
                 for k, v in details_dict.items():
+                    if k in ("file_uri", "local_path"):
+                        continue
                     if isinstance(v, list):
                         body_lines.append(f"- **{k}:**")
                         for item in v:
@@ -273,6 +279,7 @@ def export_brain_to_vault(db_path: str = DEFAULT_DB_PATH, vault_dir: str = DEFAU
         left_nodes = [n for n in nodes if (n.get("hemisphere") or "LEFT") == "LEFT"]
         right_nodes = [n for n in nodes if (n.get("hemisphere") or "LEFT") == "RIGHT"]
         domains = [n for n in nodes if int(n.get("layer_level") or 2) == 0]
+        projects = [n for n in nodes if int(n.get("layer_level") or 2) == 1 and n.get("primary_label") in ("PROJECT", "APP", "SCRIPT_TOOL", "REPOSITORY")]
         
         index_lines = [
             "# 🧠 Universal AI Brain — Obsidian Knowledge Vault",
@@ -291,6 +298,18 @@ def export_brain_to_vault(db_path: str = DEFAULT_DB_PATH, vault_dir: str = DEFAU
             icon = "⚡" if d.get("hemisphere") == "LEFT" else "🌸"
             index_lines.append(f"- {icon} [[{d['id']}]] — **{d['label']}**: {d.get('summary', '')}")
             
+        if projects:
+            index_lines.extend([
+                "",
+                "---",
+                "",
+                "## 💻 Piano 1: I Tuoi Progetti & App sul Mac",
+                ""
+            ])
+            for p in projects:
+                icon = "⚡" if p.get("hemisphere") == "LEFT" else "🌸"
+                index_lines.append(f"- {icon} [[{p['id']}]] — **{p['label']}** (`{p.get('primary_label')}`): {p.get('summary', '')}")
+
         index_lines.extend([
             "",
             "---",

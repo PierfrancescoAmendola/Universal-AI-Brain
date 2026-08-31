@@ -26,3 +26,5 @@ Gestione Finanziaria, Investimenti, Economia, Business Models, Strategia d'Impre
 - [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
 - [[user-intent-alternative-income-generation]] (`TARGETS_PROJECT`)
 - [[user-intent-ai-shorts-evaluation]] (`TARGETS_PROJECT`)
+- [[proj-appabbonamenti]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-eserciziocontocorrente]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_

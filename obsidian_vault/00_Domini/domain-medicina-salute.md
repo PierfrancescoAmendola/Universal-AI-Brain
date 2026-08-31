@@ -31,3 +31,12 @@ Medicina, Salute, Nutrizione, Fisiologia, Fitness, Dermatologia, Podologia e Bio
 - [[concept-modular-domain-subgraphs]] (`GOVERNS_PARTITIONING`) — _Restored from history_
 - [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
 - [[proj-caretrack]] (`BELONGS_TO_DOMAIN`) — _Il progetto proj-caretrack appartiene al dominio domain-medicina-salute_
+- [[proj-caretrack-demo]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-appalcool]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-website]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-tests]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-missing-feedback]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-docs_md]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-scripts]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-federicoiiapp]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-utils]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_

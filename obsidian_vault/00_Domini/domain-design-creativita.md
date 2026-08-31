@@ -36,3 +36,6 @@ UI/UX Design Dark-Tech, Graphic Design, Brand Voice, Tipografia, Estetica Visiva
 ## 📥 Connessioni Entranti (Backlinks)
 - [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Restored from history_
 - [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
+- [[proj-palazzografica]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-mary]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-apppalette]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_

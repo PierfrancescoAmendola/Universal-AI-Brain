@@ -119,3 +119,6 @@ Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP (Model Context Protocol)
 - [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
 - [[universal-ai-brain]] (`BELONGS_TO_DOMAIN`) — _Il progetto universal-ai-brain appartiene al dominio domain-ai-cognitive-systems_
 - [[proj-jarvis-voice-assistant]] (`BELONGS_TO_DOMAIN`) — _Il progetto proj-jarvis-voice-assistant appartiene al dominio domain-ai-cognitive-systems_
+- [[proj-particle-engine-simulation]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-cervelloartificiale]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-giocoscacchi]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_

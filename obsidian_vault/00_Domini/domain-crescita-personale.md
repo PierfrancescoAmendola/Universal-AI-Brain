@@ -24,3 +24,5 @@ Memoria Episodica di Vita, Lezioni Apprese, Abitudini Quotidiane, Riflessioni Pe
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
+- [[proj-appflashcards]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[proj-appscadenza]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
