@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:58:01 UTC | **Nodi Restituiti:** 555 (SX: 385 · DX: 170) | **Sinapsi Restituite:** 1282
-> **Consistenza Reale Connettoma:** 555 Nodi Totali nel Database | 1282 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 18:58:10 UTC | **Nodi Restituiti:** 558 (SX: 387 · DX: 171) | **Sinapsi Restituite:** 1288
+> **Consistenza Reale Connettoma:** 558 Nodi Totali nel Database | 1288 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -408,6 +408,10 @@
   - **Tags:** `#audit-costi` `#local-first` `#open-source` `#free-tier`
   - **Sintesi:** Tutti i componenti proposti poggiano su strumenti open-source, risorse locali macOS, tier gratuiti a vita (Render, GitHub Actions, Telegram Bot API) e modelli di embedding locali senza API a pagamento.
   - **Dettagli:** `actions_taken`: ['Audit di ogni componente del piano di espansione', 'Verifica licenze e piani gratuiti per Raycast, Shortcuts, sqlite-vec, FastEmbed e Telegram', "Conferma dell'assenza totale di costi operativi o abbonamenti"], `model`: Gemini 3.7 Flash, `outcome`: Conferma al 100% della piena gratuità di ogni singolo elemento proposto, `responses_given`: Dettaglio voce per voce della conformità al vincolo 0,00€ Forever
+- **Valutazione Architetturale e Strategica Supercervello OS** (`reasoning-valutazione-architetturale-supercervello`)
+  - **Tags:** `#analisi-architetturale` `#pkm` `#fastembed` `#sqlite-wal` `#rem-cycle`
+  - **Sintesi:** Analisi dell'architettura proposta: approvazione dell'approccio zero-cost locale e validazione dei moduli di cattura a zero-friction, consolidamento notturno REM e integrazione IDE. Evidenziati accorgimenti su concurrency SQLite e modelli multilingua.
+  - **Dettagli:** `actions_taken`: ['Verifica vincoli 0,00€ e assenza dipendenze esterne a pagamento', 'Analisi robustezza moduli Fase 1-5 (Raycast, Web Clipper, FastEmbed, Canvas Sync, IDE Hooks)', 'Formulazione raccomandazioni tecniche (busy_timeout SQLite WAL, embedding multilingua)'], `model`: Gemini, `outcome`: Piano validato come pienamente idoneo alla transizione verso un Cognitive OS autonomo.
 
 ### [Macro-Label: `ALGORITHM`]
 - **Achievement & 22-Trophy Engine** (`streaksup-gamification-engine`)
@@ -1853,6 +1857,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#ecosistema` `#architettura` `#integrazioni` `#obsidian` `#automazioni` `#supercervello`
   - **Sintesi:** Identificazione delle migliori applicazioni, sistemi, flussi e potenziamenti architetturali per estendere il connettoma oltre Obsidian e massimizzarne l'efficacia operativa.
   - **Dettagli:** `context`: Evoluzione del connettoma bi-emisferico verso un Cognitive OS onnipresente, `user_prompt`: abbiamo collegato obsidian al nostro cervello e abbiamo creato questo supercervello. ma che altro possiamo fare per migliorare, quali altri applicazioni, sistemi possiamo sfruttare per miglioare e rendere tutto più efficace e migliore
+- **Revisione Piano Supercervello Ubiquitous Cognitive OS** (`user-intent-review-piano-supercervello-os`)
+  - **Tags:** `#piano-implementazione` `#supercervello` `#architettura` `#zero-cost` `#knowledge-graph`
+  - **Sintesi:** Richiesta di revisione strategica ed ingegneristica del piano di estensione del cervello artificiale in un Cognitive OS ubiquo a costo zero.
+  - **Dettagli:** `context`: Estensione del Connettoma Cognitivo Bi-Emisferico con Raycast, Web Clipper, Siri, Fase REM, FastEmbed e IDE hooks a costo zero., `user_prompt`: che ne pensi di questo piano d'implementazione per rendere il cervello che ho creato una superpotenza?? [Piano Supercervello Ubiquitous Cognitive OS]
 - **Richiesta Creazione Video Showcase 60s Universal Brain** (`user-intent-creazione-video-showcase-universal-brain`)
   - **Tags:** `#video` `#showcase` `#social-media` `#tutorial` `#universal-brain`
   - **Sintesi:** Richiesta di Pierfrancesco di creare un video tutorial / anteprima di 1 minuto con screenshot, pezzi di codice e spiegazione del Cervello Artificiale per la condivisione social.
@@ -2246,6 +2254,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#session-recap` `#frontend-restyling` `#graphify-aesthetic` `#physics-freeze` `#palazzo-cognitivo` `#zero-lag`
   - **Sintesi:** Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), eliminazione di oscillazioni e rotazioni continue della fisica su Vis-Network, correzione del bug di ispezione nodi e ripristino della gerarchia a piani del Palazzo Cognitivo (P0, P1, P2).
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Antigravity Assistant'], `topic`: Frontend Deep-Tech Restyling & Graph Stability, `outcomes`: ['Implementazione estetica Dark-Tech cyberpunk minimalista con Bento Grid e JetBrains Mono', 'Disabilitazione totale del live physics loop post-stabilizzazione (Zero-Oscillation Freeze)', 'Risoluzione ReferenceError su tags in showInfo() per ispezione istantanea dei nodi', 'Classificazione deterministica dei nodi su 3 piani (P0: 15 nodi, P1: 121 nodi, P2: 53 nodi)', 'Eliminazione di rotazioni e rendering su canvas a 60fps ultra-reattivo']
+- **Episodio: Revisione Piano Supercervello Cognitive OS** (`episode-revisione-supercervello-cognitive-os`)
+  - **Tags:** `#chat` `#supercervello` `#architettura` `#brain-os`
+  - **Sintesi:** Sessione di revisione critica del piano di implementazione del Supercervello Ubiquitous Cognitive OS a costo zero.
+  - **Dettagli:** `key_takeaways`: Il piano è solido, copre l'intero ciclo di vita dell'informazione e implementa una reale autonomia cognitiva locale (Fase REM + Ricerca Ibrida)., `participants`: ['Pierfrancesco Amendola', 'Gemini'], `pending_tasks`: Implementare e collaudare tutti i moduli, `topic`: Architettura ed estensione del Connettoma Cognitivo
 - **Episodio: Rilascio Documentazione Ufficiale README** (`episode-update-readme-architecture`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di redazione e pubblicazione del README.md completo su GitHub.
@@ -3165,6 +3177,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-review-piano-supercervello-os`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-rimozione-modello-ollama-mac`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3279,6 +3292,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_INTENT]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
+- (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_INTENT]--> (`user-intent-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-test-hook-session-end-2411`) --[RECORDS_INTENT]--> (`user-intent-test-hook-session-end-2411`) *(Corpo Calloso)*
 - (`episode-update-readme-architecture`) --[RECORDS_INTENT]--> (`user-intent-update-readme-architecture`) *(Corpo Calloso)*
@@ -3336,6 +3350,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_REASONING]--> (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
+- (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_REASONING]--> (`reasoning-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-test-hook-session-end-2411`) --[RECORDS_REASONING]--> (`reasoning-test-hook-session-end-2411`) *(Corpo Calloso)*
 - (`episode-update-readme-architecture`) --[RECORDS_REASONING]--> (`reasoning-update-readme-architecture`) *(Corpo Calloso)*
@@ -3846,6 +3861,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-test-hook-session-end-2411`) --[FULFILLS]--> (`user-intent-test-hook-session-end-2411`)
 - (`reasoning-update-readme-architecture`) --[FULFILLS]--> (`user-intent-update-readme-architecture`)
 - (`reasoning-validazione-architettura-zero-costi`) --[FULFILLS]--> (`user-intent-verifica-vincolo-zero-costi`)
+- (`reasoning-valutazione-architetturale-supercervello`) --[FULFILLS]--> (`user-intent-review-piano-supercervello-os`)
 - (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) --[FULFILLS]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`)
 - (`reasoning-verify-github-token-render`) --[FULFILLS]--> (`user-intent-verify-github-token-render`)
 - (`reasoning-architettura-mappamondo-spotlight-3d`) --[FULFILLS_INTENT]--> (`user-intent-mappamondo-3d-spotlight-relazioni`)
@@ -3918,6 +3934,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-telegram-keepalive-confirmation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-test-hook-session-end-2411`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-update-readme-architecture`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4061,6 +4078,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-review-piano-supercervello-os`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-telegram-keepalive-confirmation`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-test-hook-session-end-2411`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
