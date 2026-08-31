@@ -70,7 +70,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:53:36 UTC | **Nodi Restituiti:** 532 (SX: 372 · DX: 160) | **Sinapsi Restituite:** 1232
+> **Data Generazione:** 2026-08-31 18:53:55 UTC | **Nodi Restituiti:** 532 (SX: 372 · DX: 160) | **Sinapsi Restituite:** 1232
 > **Consistenza Reale Connettoma:** 532 Nodi Totali nel Database | 1232 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
@@ -2689,21 +2689,21 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[APPLIES]--> (`rule-zero-cost`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ARCHITECTED]--> (`proj-unicampus`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ARCHITECTED_AND_DEVELOPED]--> (`proj-streaksup-app`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-software-engineering`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-ai-cognitive-systems`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-software-engineering`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ARCHITECT_OF]--> (`universal-ai-brain`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[AUTHORED]--> (`proj-kdp-ai-guide`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[AUTHOR_OF]--> (`proj-kdp-ai-book`) *(Corpo Calloso)*
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`continuous-ai-symbiosis`) *(Corpo Calloso)*
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-multi-llm-mcp-ecosystem`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-modular-domain-graph-topology`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-fractal-graph-of-graphs-evaluation`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
 - (`proj-appalcool`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
 - (`proj-caretrack-demo`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
 - (`proj-docs_md`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
@@ -2739,20 +2739,20 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ui-glass-dark-theme`) *(Corpo Calloso)*
 - (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
 - (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ux-frictionless-flow`) *(Corpo Calloso)*
-- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ux-frictionless`) *(Corpo Calloso)*
 - (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`node-telegram-bot-interface`) *(Corpo Calloso)*
 - (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`node-web-tree-explorer`) *(Corpo Calloso)*
+- (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ux-frictionless`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
-- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-glassmorphism-system`) *(Corpo Calloso)*
-- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-dynamic-island-ui`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-widget-suite-ui`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-alertless-icon-ux`) *(Corpo Calloso)*
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
+- (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`streaksup-app-intents-engine`) --[CONTROLS_IN_PLACE]--> (`streaksup-dynamic-island-ui`) *(Corpo Calloso)*
 - (`ai-reasoning-cross-model-provenance-validation`) --[CORPUS_CALLOSUM_LINK]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
-- (`ai-reasoning-infinite-context-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`ai-reasoning-infinite-context-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
+- (`ai-reasoning-infinite-context-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`ai-reasoning-shared-cognitive-state-continuity`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-universal-context-definition`) *(Corpo Calloso)*
 - (`antigravity-centaur-collaboration`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`) *(Corpo Calloso)*
 - (`art-creative-writing`) --[CORPUS_CALLOSUM_LINK]--> (`proj-kdp-ai-guide`) *(Corpo Calloso)*
@@ -2766,16 +2766,16 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`) *(Corpo Calloso)*
 - (`episode-2026-08-27-telegram-omnipresence`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`episode-2026-08-27-tree-structures-evaluation`) --[CORPUS_CALLOSUM_LINK]--> (`session-continuous-evolution`) *(Corpo Calloso)*
-- (`episode-2026-08-27-universal-context-definition`) --[CORPUS_CALLOSUM_LINK]--> (`goal-multi-ai-shared-context-persistence`) *(Corpo Calloso)*
 - (`episode-2026-08-27-universal-context-definition`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-shared-cognitive-state-continuity`) *(Corpo Calloso)*
-- (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-provenance-model-tracking`) *(Corpo Calloso)*
+- (`episode-2026-08-27-universal-context-definition`) --[CORPUS_CALLOSUM_LINK]--> (`goal-multi-ai-shared-context-persistence`) *(Corpo Calloso)*
 - (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-cross-model-provenance-validation`) *(Corpo Calloso)*
-- (`episode-infinite-context-philosophy`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-infinite-context-persistence`) *(Corpo Calloso)*
+- (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-provenance-model-tracking`) *(Corpo Calloso)*
 - (`episode-infinite-context-philosophy`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-infinite-context-architecture`) *(Corpo Calloso)*
+- (`episode-infinite-context-philosophy`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-infinite-context-persistence`) *(Corpo Calloso)*
 - (`episode-language-app-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`intent-personal-language-learning-app`) *(Corpo Calloso)*
 - (`episode-language-app-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`reasoning-language-app-architecture`) *(Corpo Calloso)*
-- (`episode-system-metacognition`) --[CORPUS_CALLOSUM_LINK]--> (`intent-evaluate-ai-brain-architecture`) *(Corpo Calloso)*
 - (`episode-system-metacognition`) --[CORPUS_CALLOSUM_LINK]--> (`reasoning-brain-architecture-analysis`) *(Corpo Calloso)*
+- (`episode-system-metacognition`) --[CORPUS_CALLOSUM_LINK]--> (`intent-evaluate-ai-brain-architecture`) *(Corpo Calloso)*
 - (`feat-ai-json-importer`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`feat-copy-ai-prompt`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`feat-light-terminal`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -2804,15 +2804,15 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`proj-particlesimulator`) --[CORPUS_CALLOSUM_LINK]--> (`art-piano-composition`) *(Corpo Calloso)*
 - (`proj-specula`) --[CORPUS_CALLOSUM_LINK]--> (`design-cyber-neon`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-glassmorphism-system`) *(Corpo Calloso)*
-- (`proj-streaksup-app`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
+- (`proj-streaksup-app`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`proj-tombolawifi`) --[CORPUS_CALLOSUM_LINK]--> (`rel-napoli-culture`) *(Corpo Calloso)*
 - (`reasoning-hybrid-pedagogy-engine`) --[CORPUS_CALLOSUM_LINK]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`reasoning-language-app-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`episode-language-app-architecture`) *(Corpo Calloso)*
 - (`rel-napoli-culture`) --[CORPUS_CALLOSUM_LINK]--> (`proj-napolilive`) *(Corpo Calloso)*
 - (`rel-napoli-culture`) --[CORPUS_CALLOSUM_LINK]--> (`proj-tombolawifi`) *(Corpo Calloso)*
-- (`rigore-informativo`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`rigore-informativo`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`) *(Corpo Calloso)*
+- (`rigore-informativo`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`rule-cloud-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`rule-zero-cost`) --[CORPUS_CALLOSUM_LINK]--> (`val-independence`) *(Corpo Calloso)*
 - (`rule-zero-placeholder`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`) *(Corpo Calloso)*
@@ -2828,14 +2828,14 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`streaksup-glassmorphism-system`) --[CORPUS_CALLOSUM_LINK]--> (`proj-streaksup-app`) *(Corpo Calloso)*
 - (`streaksup-i18n-runtime-engine`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-widget-suite-ui`) *(Corpo Calloso)*
 - (`streaksup-particle-fx`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-gamification-engine`) *(Corpo Calloso)*
-- (`streaksup-privacy-zero-cloud`) --[CORPUS_CALLOSUM_LINK]--> (`proj-streaksup-app`) *(Corpo Calloso)*
 - (`streaksup-privacy-zero-cloud`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-swiftdata-arch`) *(Corpo Calloso)*
+- (`streaksup-privacy-zero-cloud`) --[CORPUS_CALLOSUM_LINK]--> (`proj-streaksup-app`) *(Corpo Calloso)*
 - (`streaksup-streak-freeze-algo`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
 - (`streaksup-swiftdata-arch`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`streaksup-widget-suite-ui`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-app-intents-engine`) *(Corpo Calloso)*
 - (`streaksup-widget-suite-ui`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-darwin-ipc-protocol`) *(Corpo Calloso)*
-- (`user-intent-infinite-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
+- (`user-intent-infinite-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`user-intent-provenance-model-tracking`) --[CORPUS_CALLOSUM_LINK]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
 - (`user-intent-telegram-bot-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`user-intent-telegram-bot-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -2844,12 +2844,12 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
 - (`user-intent-zero-cost-graphrag`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-zero-oscillation-high-performance-graph`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
-- (`ux-frictionless`) --[CORPUS_CALLOSUM_LINK]--> (`proj-linkly-qr`) *(Corpo Calloso)*
 - (`ux-frictionless`) --[CORPUS_CALLOSUM_LINK]--> (`proj-caretrack`) *(Corpo Calloso)*
-- (`val-eternal-cognitive-continuity`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-infinite-context-persistence`) *(Corpo Calloso)*
+- (`ux-frictionless`) --[CORPUS_CALLOSUM_LINK]--> (`proj-linkly-qr`) *(Corpo Calloso)*
 - (`val-eternal-cognitive-continuity`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-infinite-context-architecture`) *(Corpo Calloso)*
-- (`val-impact-utility`) --[CORPUS_CALLOSUM_LINK]--> (`proj-caretrack`) *(Corpo Calloso)*
+- (`val-eternal-cognitive-continuity`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-infinite-context-persistence`) *(Corpo Calloso)*
 - (`val-impact-utility`) --[CORPUS_CALLOSUM_LINK]--> (`proj-alcolsafe`) *(Corpo Calloso)*
+- (`val-impact-utility`) --[CORPUS_CALLOSUM_LINK]--> (`proj-caretrack`) *(Corpo Calloso)*
 - (`val-independence`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[CREATED]--> (`proj-napolilive`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[CREATED]--> (`proj-tombolawifi`) *(Corpo Calloso)*
@@ -2970,9 +2970,9 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[DEPLOYED]--> (`proj-linkly-qr`) *(Corpo Calloso)*
 - (`node-commit-62e48df`) --[DEPLOYS_TO_PRODUCTION]--> (`node-hierarchical-tree-engine-impl`) *(Corpo Calloso)*
 - (`proj-specula`) --[DERIVES_FROM]--> (`design-cyber-neon`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-caretrack`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-alcolsafe`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-cinematch`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[DEVELOPED]--> (`proj-caretrack`) *(Corpo Calloso)*
 - (`user-intent-clean-clustered-ui`) --[DISCUSSED_IN]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`user-intent-reasoning-and-chat-memory`) --[DISCUSSED_IN]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[DISPLAYS_ON]--> (`streaksup-dynamic-island-ui`) *(Corpo Calloso)*
@@ -2988,14 +2988,14 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reason-ep-20260827-hierarchical-tree-deployment-sync`) --[ESTABLISHES_CONCEPT]--> (`node-commit-62e48df`) *(Corpo Calloso)*
 - (`reason-ep-20260827-telegram-bot-interface`) --[ESTABLISHES_CONCEPT]--> (`node-telegram-bot-interface`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[EXPORTS_WIDGETS]--> (`streaksup-widget-suite-ui`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-graph-tree-unification`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-graph-taxonomy-classification`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-bot-interface`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-tree-structures-evaluation`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-tree-ranking-translation`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-graph-tree-unification`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-hierarchical-overlay-reassurance`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-hierarchical-tree-deployment-sync`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-bot-interface`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-tree-ranking-translation`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`node-test-raycast-node`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3054,12 +3054,12 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`aule-studio-backend-arch`) --[FEEDS_DATA_TO]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
 - (`ai-reasoning-hybrid-search-mcp`) --[FORMULATES]--> (`episode-2026-08-27-graphrag-mcp-evolution`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-software-engineering`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-ai-cognitive-systems`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-medicina-salute`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-scienza-matematica`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-finanza-economia`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-medicina-salute`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-produttivita-sistemi`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-scienza-matematica`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-software-engineering`) *(Corpo Calloso)*
 - (`proj-alcolsafe`) --[FULFILLS]--> (`val-impact-utility`) *(Corpo Calloso)*
 - (`proj-caretrack`) --[FULFILLS]--> (`val-impact-utility`) *(Corpo Calloso)*
 - (`identity-cs-researcher`) --[HARMONIZES]--> (`creative-multidisciplinary`) *(Corpo Calloso)*
@@ -3206,10 +3206,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-yt-shorts-business-model`) --[RECORDS_REASONING]--> (`ai-reasoning-market-analysis-automation`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[RENDERED_VIA]--> (`aule-studio-mobile-ui`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[RENDERS_FX]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-clean-clustered-ui`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-reasoning-and-chat-memory`) *(Corpo Calloso)*
-- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-connect-gemini-claude-chatgpt-mcp`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-frontend-professional-restyle`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-clean-clustered-ui`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-connect-gemini-claude-chatgpt-mcp`) *(Corpo Calloso)*
+- (`person-pierfrancesco`) --[REQUESTED]--> (`user-intent-reasoning-and-chat-memory`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[RESEARCHES_AT]--> (`proj-bioinformatics-icar`) *(Corpo Calloso)*
 - (`goal-multi-ai-shared-context-persistence`) --[SERVES_USER]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`streaksup-streak-freeze-algo`) --[SHIELD_THEMED_BY]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
@@ -3234,26 +3234,17 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`design-duolingo-chess-pieces`) --[APPLIES_TO]--> (`person-pierfrancesco`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[ARCHITECTURAL_DECISION_FOR]--> (`domain-software-engineering`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[ARCHITECTURAL_PILLAR_OF]--> (`universal-ai-brain`)
-- (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-design-creativita`)
+- (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)
 - (`identity-cs-researcher`) --[AUTHORED]--> (`proj-kdp-ai-book`)
 - (`aule-studio-app`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`analysis-bst-vs-graph-taxonomy`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-episodic-memory-architecture`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-hybrid-search-mcp`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-clustering-decision`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`tax-ai-reasoning`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-cross-model-provenance-validation`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`graphify-knowledge-engine`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`deploy-render-zero-cost`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`feat-progressive-areas`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-cinematch`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-linkly-qr`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`sqlite-wal-persistence`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`feat-light-terminal`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-tombolawifi`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-unicampus`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`universal-ai-brain`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`caveman-communication-protocol`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-kdp-ai-guide`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-holly-benji-ai`)
@@ -3261,87 +3252,82 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-cloud-persistence`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`session-continuous-evolution`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`zero-debt-cost-rule`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rigore-informativo`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`feat-copy-ai-prompt`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-ai-thought-tracing`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`epistemologia-rigorosa`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-zero-placeholder`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-episodic-chat-preservation`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`idea-hierarchical-weighted-trees`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`repo-github-universal-ai-brain`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-zero-cost`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`mental-centaur-model`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-zero-cost-graphrag`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-tree-search-enhancement`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-clean-clustered-ui`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-reasoning-and-chat-memory`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-provenance-model-tracking`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-telegram-bot-gateway`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`arch-telegram-webhook-gateway`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-graph-tree-unification`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-graph-tree-unification`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-knowledge-graph-memory`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-search-tree-deliberation`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-neuro-symbolic-brain`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-graph-taxonomy-classification`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-graph-taxonomy-classification`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-universal-ai-brain-taxonomy`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-epistemic-grading-system`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-telegram-bot-interface`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-telegram-bot-interface`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-ubiquitous-ingestion`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-tree-structures-evaluation`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-tree-structures-evaluation`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-hierarchical-dendrogram`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-tree-ranking-translation`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-tree-ranking-translation`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-tree-architecture-verdict`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-hierarchical-overlay-reassurance`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-hierarchical-overlay-reassurance`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-multiscale-overlay-pattern`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-hierarchical-tree-deployment-sync`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-hierarchical-tree-deployment-sync`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-hierarchical-tree-engine-impl`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-mcp-brain-get-tree`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-telegram-cognitive-hub-spec`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-telegram-webhook-gateway`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-commit-965f0a8`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-connect-gemini-claude-chatgpt-mcp`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-multi-llm-mcp-skill-distribution`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`skill-universal-brain-installed`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`concept-modular-domain-subgraphs`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-modular-cluster-decentralization`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-domain-subgraph-modularity`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`concept-graph-of-graphs-hypergraph`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-hierarchical-multi-layer-graph-design`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-hypergraph-multi-scale-feasibility`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-cross-model-provenance-validation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-hybrid-search-mcp`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`analysis-bst-vs-graph-taxonomy`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`arch-telegram-webhook-gateway`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`concept-graph-of-graphs-hypergraph`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`concept-modular-domain-subgraphs`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`deploy-render-zero-cost`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`feat-progressive-areas`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-graph-taxonomy-classification`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-graph-tree-unification`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-hierarchical-overlay-reassurance`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-hierarchical-tree-deployment-sync`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-telegram-bot-interface`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-tree-ranking-translation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-tree-structures-evaluation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`mental-centaur-model`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-hierarchical-dendrogram`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-hierarchical-tree-engine-impl`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-knowledge-graph-memory`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-neuro-symbolic-brain`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-search-tree-deliberation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-telegram-webhook-gateway`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-tree-architecture-verdict`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-ubiquitous-ingestion`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-universal-ai-brain-taxonomy`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-linkly-qr`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`proj-tombolawifi`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-graph-taxonomy-classification`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-graph-tree-unification`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-hierarchical-overlay-reassurance`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-hierarchical-tree-deployment-sync`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-telegram-bot-interface`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-telegram-cognitive-hub-spec`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-tree-ranking-translation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-tree-structures-evaluation`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rigore-informativo`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-zero-cost`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-zero-placeholder`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`tax-ai-reasoning`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`universal-ai-brain`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-clean-clustered-ui`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-connect-gemini-claude-chatgpt-mcp`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-provenance-model-tracking`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-reasoning-and-chat-memory`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-telegram-bot-gateway`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-tree-search-enhancement`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-zero-cost-graphrag`)
 - (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`terse-caveman-brand-voice`)
-- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`brand-voice-engineering`)
-- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`brand-voice-surgical`)
 - (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`bi-hemispheric-polarity-palette`)
 - (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`palette-neon-cyber`)
-- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`art-piano-composition`)
 - (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`cyber-slate-space-aesthetic`)
 - (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`design-cyber-neon`)
 - (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`design-tokens-core`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`art-piano-composition`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`brand-voice-engineering`)
+- (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`brand-voice-surgical`)
 - (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`session-evolution-ui-persistence`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`art-theatre-acting`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`art-creative-writing`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`antigravity-centaur-collaboration`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`creative-multidisciplinary`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`memory-perfectionism-tension`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`lesson-boundaries-clarity`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`lesson-stoic-resilience`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-authenticity`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-independence`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-transparency-loyalty`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-impact-utility`)
 - (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-antonio-chieppa`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-parents`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-marco-di-martino`)
 - (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-academic-mentors`)
-- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-napoli-culture`)
 - (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`tg-idea-per-nuova-app-ai`)
 - (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-graph-tree-unification`)
 - (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-graph-taxonomy-classification`)
@@ -3352,17 +3338,31 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-hierarchical-tree-deployment-sync`)
 - (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`node-commit-62e48df`)
 - (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`ep-20260827-telegram-cognitive-hub-spec`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`antigravity-centaur-collaboration`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`art-creative-writing`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`art-theatre-acting`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`creative-multidisciplinary`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`lesson-boundaries-clarity`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`lesson-stoic-resilience`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`memory-perfectionism-tension`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-marco-di-martino`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-napoli-culture`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`rel-parents`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-authenticity`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-impact-utility`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-independence`)
+- (`domain-filosofia-valori`) --[BELONGS_TO_DOMAIN]--> (`val-transparency-loyalty`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-bioinformatics-icar`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-specula`)
-- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`aule-studio-app`)
-- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-caretrack`)
-- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-streaksup-app`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-alcolsafe`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-kdp-ai-book`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`coursework-cs-federico2`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-napolilive`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`fastapi-python-stack`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`flutter-dart-ecosystem`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`aule-studio-app`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-caretrack`)
+- (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-streaksup-app`)
 - (`kindle-6d280a533c87`) --[BELONGS_TO_DOMAIN]--> (`domain-crescita-personale`)
 - (`kindle-c962fde43767`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`node-test-raycast-node`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
@@ -3548,10 +3548,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`lesson-boundaries-clarity`) --[CORPUS_CALLOSUM_LINK]--> (`val-authenticity`)
 - (`lesson-stoic-resilience`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`memory-perfectionism-tension`) --[CORPUS_CALLOSUM_LINK]--> (`art-piano-composition`)
-- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`rel-parents`)
-- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`rel-marco-di-martino`)
-- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`val-transparency-loyalty`)
 - (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`art-piano-composition`)
+- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`rel-marco-di-martino`)
+- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`rel-parents`)
+- (`person-pierfrancesco`) --[CORPUS_CALLOSUM_LINK]--> (`val-transparency-loyalty`)
 - (`proj-bioinformatics-icar`) --[CORPUS_CALLOSUM_LINK]--> (`identity-cs-researcher`)
 - (`proj-regexriddle`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`proj-tesi-busbra-cnr`) --[CORPUS_CALLOSUM_LINK]--> (`identity-cs-researcher`)
@@ -3571,8 +3571,8 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ui-component-palazzo-cognitivo-multi-layer-navigator`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`lesson-boundaries-clarity`)
-- (`val-transparency-loyalty`) --[CORPUS_CALLOSUM_LINK]--> (`rel-parents`)
 - (`val-transparency-loyalty`) --[CORPUS_CALLOSUM_LINK]--> (`rel-marco-di-martino`)
+- (`val-transparency-loyalty`) --[CORPUS_CALLOSUM_LINK]--> (`rel-parents`)
 - (`proj-appalcool`) --[CREATED_BY]--> (`person-pierfrancesco`)
 - (`proj-appflashcards`) --[CREATED_BY]--> (`person-pierfrancesco`)
 - (`proj-apppalette`) --[CREATED_BY]--> (`person-pierfrancesco`)
@@ -3603,22 +3603,22 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`tax-ai-reasoning`) --[ENFORCED_BY]--> (`rule-ai-thought-tracing`)
 - (`universal-ai-brain`) --[ENFORCES_STYLE]--> (`caveman-communication-protocol`)
 - (`feat-progressive-areas`) --[ENHANCES]--> (`universal-ai-brain`)
-- (`reason-ep-20260827-graph-taxonomy-classification`) --[ESTABLISHES_CONCEPT]--> (`node-universal-ai-brain-taxonomy`)
 - (`reason-ep-20260827-graph-taxonomy-classification`) --[ESTABLISHES_CONCEPT]--> (`node-epistemic-grading-system`)
+- (`reason-ep-20260827-graph-taxonomy-classification`) --[ESTABLISHES_CONCEPT]--> (`node-universal-ai-brain-taxonomy`)
 - (`reason-ep-20260827-graph-tree-unification`) --[ESTABLISHES_CONCEPT]--> (`node-knowledge-graph-memory`)
-- (`reason-ep-20260827-graph-tree-unification`) --[ESTABLISHES_CONCEPT]--> (`node-search-tree-deliberation`)
 - (`reason-ep-20260827-graph-tree-unification`) --[ESTABLISHES_CONCEPT]--> (`node-neuro-symbolic-brain`)
+- (`reason-ep-20260827-graph-tree-unification`) --[ESTABLISHES_CONCEPT]--> (`node-search-tree-deliberation`)
 - (`reason-ep-20260827-hierarchical-overlay-reassurance`) --[ESTABLISHES_CONCEPT]--> (`node-multiscale-overlay-pattern`)
-- (`reason-ep-20260827-hierarchical-tree-deployment-sync`) --[ESTABLISHES_CONCEPT]--> (`node-hierarchical-tree-engine-impl`)
 - (`reason-ep-20260827-hierarchical-tree-deployment-sync`) --[ESTABLISHES_CONCEPT]--> (`node-mcp-brain-get-tree`)
+- (`reason-ep-20260827-hierarchical-tree-deployment-sync`) --[ESTABLISHES_CONCEPT]--> (`node-hierarchical-tree-engine-impl`)
 - (`reason-ep-20260827-telegram-bot-interface`) --[ESTABLISHES_CONCEPT]--> (`node-ubiquitous-ingestion`)
-- (`reason-ep-20260827-telegram-cognitive-hub-spec`) --[ESTABLISHES_CONCEPT]--> (`node-telegram-webhook-gateway`)
 - (`reason-ep-20260827-telegram-cognitive-hub-spec`) --[ESTABLISHES_CONCEPT]--> (`node-bidirectional-bfs-pathfinding`)
 - (`reason-ep-20260827-telegram-cognitive-hub-spec`) --[ESTABLISHES_CONCEPT]--> (`node-commit-965f0a8`)
+- (`reason-ep-20260827-telegram-cognitive-hub-spec`) --[ESTABLISHES_CONCEPT]--> (`node-telegram-webhook-gateway`)
 - (`reason-ep-20260827-tree-ranking-translation`) --[ESTABLISHES_CONCEPT]--> (`node-tree-architecture-verdict`)
 - (`reason-ep-20260827-tree-structures-evaluation`) --[ESTABLISHES_CONCEPT]--> (`node-mst-conceptual-backbone`)
-- (`reason-ep-20260827-tree-structures-evaluation`) --[ESTABLISHES_CONCEPT]--> (`node-hierarchical-dendrogram`)
 - (`reason-ep-20260827-tree-structures-evaluation`) --[ESTABLISHES_CONCEPT]--> (`node-prefix-radix-trie`)
+- (`reason-ep-20260827-tree-structures-evaluation`) --[ESTABLISHES_CONCEPT]--> (`node-hierarchical-dendrogram`)
 - (`user-intent-tree-search-enhancement`) --[EVALUATED_BY]--> (`analysis-bst-vs-graph-taxonomy`)
 - (`reasoning-brain-architecture-analysis`) --[EVALUATES]--> (`intent-evaluate-ai-brain-architecture`)
 - (`node-telegram-webhook-gateway`) --[EXECUTES_VIA_COMMAND_PATH]--> (`node-bidirectional-bfs-pathfinding`)
@@ -3636,12 +3636,12 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-infinite-context-architecture`) --[FORMALIZES]--> (`user-intent-infinite-context-persistence`)
 - (`node-neuro-symbolic-brain`) --[FORMALLY_CLASSIFIED_AS]--> (`node-universal-ai-brain-taxonomy`)
 - (`ai-reasoning-episodic-memory-architecture`) --[FORMULATED_RULE]--> (`rule-episodic-chat-preservation`)
-- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-design-creativita`)
-- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-musica-audio`)
-- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-filosofia-valori`)
-- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-relazioni-comunicazione`)
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-crescita-personale`)
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-cultura-storia`)
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-design-creativita`)
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-filosofia-valori`)
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-musica-audio`)
+- (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-relazioni-comunicazione`)
 - (`ai-reasoning-alternative-monetization-strategies`) --[FULFILLS]--> (`user-intent-alternative-income-generation`)
 - (`ai-reasoning-market-analysis-automation`) --[FULFILLS]--> (`user-intent-ai-shorts-evaluation`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
