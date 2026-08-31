@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 11:34:17 UTC | **Nodi Restituiti:** 357 (SX: 229 · DX: 128) | **Sinapsi Restituite:** 902
-> **Consistenza Reale Connettoma:** 357 Nodi Totali nel Database | 902 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 11:34:37 UTC | **Nodi Restituiti:** 360 (SX: 231 · DX: 129) | **Sinapsi Restituite:** 909
+> **Consistenza Reale Connettoma:** 360 Nodi Totali nel Database | 909 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -105,6 +105,10 @@
   - **Tags:** `#architecture` `#fsrs` `#web-speech-api` `#sqlite` `#offline-first`
   - **Sintesi:** Proposta di architettura basata su motore Spaced Repetition (FSRS/SM-2), Web Speech API per audio/TTS nativo e integrazione LLM per generazione esercizi e roleplay senza dipendenze esterne bloccanti.
   - **Dettagli:** `raw`: `core_components`: ['FSRS Engine', 'Local SQLite', 'Web Speech API', 'LLM Contextual Tutor'], `privacy_tier`: Local/Self-hosted, `model`: AI Assistant
+- **Architettura e Realizzazione Video Showcase 60s** (`reasoning-creazione-video-showcase-universal-brain`)
+  - **Tags:** `#video-engine` `#multimedia` `#canvas-1080p` `#web-audio` `#media-recorder`
+  - **Sintesi:** Progettazione e implementazione del video engine interattivo a 6 scene in 60 secondi con sintesi vocale, musica cyberpunk procedurale, export video 1080p e kit promozionale.
+  - **Dettagli:** `actions_taken`: ['Generazione di 4 visual ad altissima definizione per il connettoma 3D, Palazzo Cognitivo, terminale MCP multi-agent e Telegram bot zero-cost', 'Creazione applicazione web interattiva video_showcase.html con canvas 1080p 60fps, sintetizzatore audio cyberpunk Web Audio API, narrazione vocale italiana Web Speech API e registratore video MediaRecorder MP4/WebM', 'Creazione script Python export_video_preview.py per generazione preview animata universal_brain_preview.gif', 'Stesura kit post social per LinkedIn, Twitter e GitHub'], `model`: Gemini 3.7 Flash, `outcome`: Engine video e kit multimediale completato e pronto per la pubblicazione social., `responses_given`: Fornito player video completo, generatore video MP4/WebM in 1-click, GIF preview animata e guida scena per scena.
 - **Audit Critico e Fix Ottimizzazioni Backend** (`reasoning-backend-audit-and-fix`)
   - **Tags:** `#code-review` `#bug-fix` `#architecture` `#integration`
   - **Sintesi:** Analisi approfondita del codice generato, individuazione di 4 bug critici (perdita tags, cross_links, mismatch DB, rischio overwrite) e riscrittura sicura per integrazione nel main.py.
@@ -922,6 +926,10 @@
   - **Tags:** `#user-intent` `#context-preservation` `#infinite-memory` `#chat-saturation` `#zero-loss` `#cross-session`
   - **Sintesi:** Volontà utente: azzerare la perdita di contesto causata dalla saturazione delle finestre di contesto degli LLM, garantendo continuità cognitiva perenne tra chat diverse.
   - **Dettagli:** `raw`: `core_vision`: Memoria eterna, coerente e non volatile per passato, presente e futuro., `problem_solved`: Saturazione della context window e perdita della cronologia decisionale nei cambi di sessione., `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc...quante volte magari si deve cambiare chat perchè alcuni modelli saturano il contesto di una chat e si deve ricominciare da zero, come si fa??? si eprde tutto?? no quindi lo scopo è quello, non perdere mai il contesto e avere sempre memoria, per il passato, presente e futuro.
+- **Richiesta Creazione Video Showcase 60s Universal Brain** (`user-intent-creazione-video-showcase-universal-brain`)
+  - **Tags:** `#video` `#showcase` `#social-media` `#tutorial` `#universal-brain`
+  - **Sintesi:** Richiesta di Pierfrancesco di creare un video tutorial / anteprima di 1 minuto con screenshot, pezzi di codice e spiegazione del Cervello Artificiale per la condivisione social.
+  - **Dettagli:** `context`: Creazione di un video showcase/anteprima di 1 minuto, con screenshot, codice, animazioni e kit social per presentare il Cervello Artificiale /universal-brain., `user_prompt`: potresti crearmi un video tutorial, anteprima, un piccolo video di un minuto che spiega tramite scrrenshot presi da internt del mio cervello e tutto, anche con pezzi di codice, il mio cervello artificiale?? /universal-brain così da poterlo postare e far vedere a tutti, presentare un pò il mio cervello,
 - **Richiesta Metodi Alternativi di Guadagno** (`user-intent-alternative-income-generation`)
   - **Tags:** `#monetizzazione` `#side-hustle` `#business-models` `#proposte-alternative`
   - **Sintesi:** L'utente richiede la formulazione di strategie alternative e concrete per generare tra 100 e 500 euro/mese a costo zero iniziale.
@@ -1158,6 +1166,10 @@
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Comando /prompt Copia Rapida per Telegram Bot
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Comando /prompt Copia Rapida per Telegram Bot, `key_takeaways`: La formattazione <pre><code> di Telegram Bot API abilita la copia automatica con singolo tocco su iOS e Android., `pending_tasks`: Nessun task pendente.
+- **Episodio: Creazione Video Showcase 1 Minuto Universal AI Brain** (`episode-video-showcase-anteprima-universal-brain`)
+  - **Tags:** `#episodio` `#video` `#anteprima` `#comunicazione`
+  - **Sintesi:** Sessione dedicata alla creazione dell'anteprima video di 60 secondi, comprensiva di screenshot generati, codice terminale, musica ed export video per la condivisione del connettoma.
+  - **Dettagli:** `key_takeaways`: Creata una pipeline completa di presentazione video di 1 minuto sia via browser a 60fps con export MP4/WebM che via preview GIF animata, corredata dal kit di testo per i post social., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Registrazione video tramite 1-click in video_showcase.html e pubblicazione su LinkedIn / X / GitHub., `topic`: Creazione video tutorial e anteprima 60s per Universal AI Brain
 - **Episodio: Debrief Assessment Gemini e Ottimizzazione Memoria Neurale** (`episode-20260829-debrief-assessment-gemini`)
   - **Tags:** `#chat` `#continuità-cognitiva` `#gemini-feedback` `#connettoma`
   - **Sintesi:** Analisi comparativa tra il feedback di Gemini e la reale consistenza del connettoma, con piano per perfezionare il recupero di contesto per le AI esterne.
@@ -1773,6 +1785,7 @@
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-jarvis-voice-assistant`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-creazione-video-showcase-universal-brain`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-definizione-ecografo-trasduttore-lineare`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1886,6 +1899,7 @@
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_INTENT]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
 - (`episode-verify-github-token-render`) --[RECORDS_INTENT]--> (`user-intent-verify-github-token-render`) *(Corpo Calloso)*
+- (`episode-video-showcase-anteprima-universal-brain`) --[RECORDS_INTENT]--> (`user-intent-creazione-video-showcase-universal-brain`) *(Corpo Calloso)*
 - (`episode-yt-shorts-business-model`) --[RECORDS_INTENT]--> (`user-intent-ai-shorts-evaluation`) *(Corpo Calloso)*
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_REASONING]--> (`reasoning-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-avvio-intervista-universal-ai-hub`) --[RECORDS_REASONING]--> (`reasoning-architettura-universal-ai-hub`) *(Corpo Calloso)*
@@ -1929,6 +1943,7 @@
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_REASONING]--> (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_REASONING]--> (`reasoning-analisi-fattibilita-language-app`) *(Corpo Calloso)*
 - (`episode-verify-github-token-render`) --[RECORDS_REASONING]--> (`reasoning-verify-github-token-render`) *(Corpo Calloso)*
+- (`episode-video-showcase-anteprima-universal-brain`) --[RECORDS_REASONING]--> (`reasoning-creazione-video-showcase-universal-brain`) *(Corpo Calloso)*
 - (`episode-yt-shorts-business-model`) --[RECORDS_REASONING]--> (`ai-reasoning-market-analysis-automation`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[RENDERED_VIA]--> (`aule-studio-mobile-ui`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[RENDERS_FX]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
@@ -2241,6 +2256,7 @@
 - (`reasoning-chi-pierfrancesco-amendola-e-cosa-8426`) --[FULFILLS]--> (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`)
 - (`reasoning-cloud-git-auto-push`) --[FULFILLS]--> (`user-intent-cloud-git-auto-push`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[FULFILLS]--> (`user-intent-comando-prompt-copia-rapi-8585`)
+- (`reasoning-creazione-video-showcase-universal-brain`) --[FULFILLS]--> (`user-intent-creazione-video-showcase-universal-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
 - (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[FULFILLS]--> (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`)
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[FULFILLS]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
@@ -2329,6 +2345,7 @@
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-valutazione-language-app-antigravity`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-verify-github-token-render`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-video-showcase-anteprima-universal-brain`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-yt-shorts-business-model`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`skill-universal-brain-installed`) --[INTERFACES_WITH]--> (`node-knowledge-graph-memory`)
 - (`node-mcp-brain-get-tree`) --[INTERROGATES]--> (`node-hierarchical-tree-engine-impl`)
@@ -2350,6 +2367,7 @@
 - (`reasoning-che-ore-sono-3134`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-cloud-git-auto-push`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-creazione-video-showcase-universal-brain`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -2422,6 +2440,7 @@
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-creazione-jarvis-voice-assistant`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-repo-jarvis-desktop`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
+- (`user-intent-creazione-video-showcase-universal-brain`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-fix-daemon-render-persistence`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
