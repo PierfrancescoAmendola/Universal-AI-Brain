@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:52:41 UTC | **Nodi Restituiti:** 529 (SX: 370 · DX: 159) | **Sinapsi Restituite:** 1225
-> **Consistenza Reale Connettoma:** 529 Nodi Totali nel Database | 1225 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 18:53:33 UTC | **Nodi Restituiti:** 532 (SX: 372 · DX: 160) | **Sinapsi Restituite:** 1232
+> **Consistenza Reale Connettoma:** 532 Nodi Totali nel Database | 1232 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -301,6 +301,10 @@
   - **Tags:** `#docs` `#github` `#architettura` `#dual-ring`
   - **Sintesi:** Stesura della documentazione ufficiale con copertura completa di backend, algoritmi, persistenza e client.
   - **Dettagli:** `actions_taken`: ['Riscritto integralmente README.md con 10 capitoli tecnici approfonditi', 'Inclusi diagrammi ASCII e Mermaid per modello bi-emisferico e Dual-Ring Persistence', 'Documentati algoritmi (Bidirectional BFS, Recursive CTE, GraphRAG BM25) e ottimizzazioni SQLite WAL', 'Eseguito commit e push su GitHub origin main'], `model`: Gemini 3.7 Flash, `outcome`: README.md aggiornato al 100% e pubblicato su GitHub origin/main, `responses_given`: README.md riscritto e pubblicato su GitHub con dettagli esaustivi su tutti i moduli.
+- **Ragionamento: Test Hook Session End** (`reasoning-test-hook-session-end-2411`)
+  - **Tags:** `#ide-hook` `#ai-reasoning` `#test-hook-session-end`
+  - **Sintesi:** Verifica automatica dell hook di fine sessione
+  - **Dettagli:** `model`: IDE Assistant, `actions_taken`: ['brain_resurface.py', 'main.py', 'sync_daemon.py', 'telegram_bot.py', 'apple_shortcuts/', 'brain_rem_cycle.py', 'brain_vectors.py', 'export_video_preview.py', 'ide_hooks/', 'kindle_sync.py', 'last_chat_id.txt', 'raycast/', 'static/video_assets/', 'universal_brain_preview.gif', 'video_showcase.html', 'web_clipper/'], `outcome`: Session completed and verified
 - **Ragionamento: Verifica End-to-End Token Render** (`reasoning-verify-github-token-render`)
   - **Tags:** `#test-cloud` `#end-to-end` `#validazione`
   - **Sintesi:** Conferma del corretto funzionamento dell'ingestione cloud e del connettoma a 354 nodi.
@@ -1692,6 +1696,14 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Quali sono le abitudini monitorate ...
   - **Dettagli:** `raw`: `user_prompt`: Quali sono le abitudini monitorate in StreaksUp?, `channel`: JARVIS Voice Core
+- **Intento: Test Hook Session End** (`user-intent-test-hook-session-end-2411`)
+  - **Tags:** `#ide-hook` `#session-intent` `#test-hook-session-end`
+  - **Sintesi:** Obiettivo operativo: Test Hook Session End.
+  - **Dettagli:** `user_prompt`: Test Hook Session End, `modified_files`: ['brain_resurface.py', 'main.py', 'sync_daemon.py', 'telegram_bot.py', 'apple_shortcuts/', 'brain_rem_cycle.py', 'brain_vectors.py', 'export_video_preview.py', 'ide_hooks/', 'kindle_sync.py', 'last_chat_id.txt', 'raycast/', 'static/video_assets/', 'universal_brain_preview.gif', 'video_showcase.html', 'web_clipper/'], `diff_stat`: brain_resurface.py |  52 +++++++++++++++++++--------
+ main.py            | 102 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ sync_daemon.py     |  31 ++++++++++++++++
+ telegram_bot.py    |  61 ++++++++++++++++++++++++++++++--
+ 4 files changed, 229 insertions(+), 17 deletions(-)
 - **Intento: Verifica GITHUB_TOKEN su Render** (`user-intent-verify-github-token-render`)
   - **Tags:** `#github-token` `#render` `#verifica` `#cloud-push`
   - **Sintesi:** Verificare l'attivazione e il funzionamento del token GitHub su Render per auto-push cloud.
@@ -2160,6 +2172,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#conversation-episode` `#graph-theory` `#modularity` `#2026-08-27`
   - **Sintesi:** Definizione della topologia a sotto-grafi modulari: entità enciclopediche e verticali isolate da person-pierfrancesco.
   - **Dettagli:** `raw`: `topic`: Modular Subgraph Clustering, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Episodio: Test Hook Session End** (`episode-test-hook-session-end-2411`)
+  - **Tags:** `#ide-hook` `#dialogue-episode`
+  - **Sintesi:** Sessione di sviluppo dedicata a: Test Hook Session End.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'IDE Assistant'], `topic`: Test Hook Session End, `key_takeaways`: Task implementato e verificato con successo.
 - **Episodio: Validazione Token GitHub Render** (`episode-verify-github-token-render`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di verifica dell'inserimento del token GITHUB_TOKEN su Render e test di persistenza.
@@ -3027,6 +3043,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-telegram-keepalive-confirmation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-test-hook-session-end-2411`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-universal-ai-hub-client`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-update-readme-architecture`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-valutazione-progetto-language-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3128,6 +3145,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_INTENT]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_INTENT]--> (`user-intent-telegram-keepalive-confirmation`) *(Corpo Calloso)*
+- (`episode-test-hook-session-end-2411`) --[RECORDS_INTENT]--> (`user-intent-test-hook-session-end-2411`) *(Corpo Calloso)*
 - (`episode-update-readme-architecture`) --[RECORDS_INTENT]--> (`user-intent-update-readme-architecture`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
 - (`episode-verifica-costi-zero-euro`) --[RECORDS_INTENT]--> (`user-intent-verifica-vincolo-zero-costi`) *(Corpo Calloso)*
@@ -3179,6 +3197,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_REASONING]--> (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_REASONING]--> (`reasoning-telegram-keepalive-confirmation`) *(Corpo Calloso)*
+- (`episode-test-hook-session-end-2411`) --[RECORDS_REASONING]--> (`reasoning-test-hook-session-end-2411`) *(Corpo Calloso)*
 - (`episode-update-readme-architecture`) --[RECORDS_REASONING]--> (`reasoning-update-readme-architecture`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_REASONING]--> (`reasoning-analisi-fattibilita-language-app`) *(Corpo Calloso)*
 - (`episode-verifica-costi-zero-euro`) --[RECORDS_REASONING]--> (`reasoning-validazione-architettura-zero-costi`) *(Corpo Calloso)*
@@ -3670,6 +3689,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
 - (`reasoning-tassonomia-pkm-rag-notion-obsidian`) --[FULFILLS]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`)
 - (`reasoning-telegram-keepalive-confirmation`) --[FULFILLS]--> (`user-intent-telegram-keepalive-confirmation`)
+- (`reasoning-test-hook-session-end-2411`) --[FULFILLS]--> (`user-intent-test-hook-session-end-2411`)
 - (`reasoning-update-readme-architecture`) --[FULFILLS]--> (`user-intent-update-readme-architecture`)
 - (`reasoning-validazione-architettura-zero-costi`) --[FULFILLS]--> (`user-intent-verifica-vincolo-zero-costi`)
 - (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) --[FULFILLS]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`)
@@ -3740,6 +3760,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-telegram-keepalive-confirmation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-test-hook-session-end-2411`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-update-readme-architecture`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-valutazione-language-app-antigravity`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-verifica-costi-zero-euro`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -3785,6 +3806,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-telegram-keepalive-confirmation`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-test-hook-session-end-2411`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-update-readme-architecture`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-validazione-architettura-zero-costi`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-verify-github-token-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -3869,6 +3891,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-telegram-keepalive-confirmation`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-test-hook-session-end-2411`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-universal-ai-hub-client`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-update-readme-architecture`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-verifica-vincolo-zero-costi`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
