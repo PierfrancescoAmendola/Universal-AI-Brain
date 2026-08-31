@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:38:44 UTC | **Nodi Restituiti:** 516 (SX: 361 · DX: 155) | **Sinapsi Restituite:** 1199
-> **Consistenza Reale Connettoma:** 516 Nodi Totali nel Database | 1199 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 18:39:24 UTC | **Nodi Restituiti:** 519 (SX: 363 · DX: 156) | **Sinapsi Restituite:** 1206
+> **Consistenza Reale Connettoma:** 519 Nodi Totali nel Database | 1206 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -241,6 +241,10 @@
   - **Tags:** `#linux-distros` `#3d-software` `#blender` `#cad` `#flatpak`
   - **Sintesi:** Strutturazione della risposta evidenziando sia le distribuzioni specializzate (Fedora Design Suite, Ubuntu Studio) sia l'ampia compatibilità nativa dei software standard (Blender, FreeCAD, Houdini) su qualsiasi distro via package manager e Flatpak.
   - **Dettagli:** `model`: Gemini, `actions_taken`: ['Verifica distro creative specializzate (Fedora Design Suite, Ubuntu Studio)', 'Catalogazione software 3D nativi (Blender, FreeCAD, OpenSCAD, MeshLab)', 'Identificazione del packaging universale (Flatpak/AppImage) come best practice per artisti 3D'], `outcome`: Quadro completo, pratico e orientato all'installazione immediata.
+- **Piano Strategico di Evoluzione ad Alto Impatto per il Connettoma** (`reasoning-architettura-ecosistema-cognitivo-onnipresente`)
+  - **Tags:** `#raycast` `#web-clipper` `#sqlite-vec` `#nightly-weave` `#cursor-hooks` `#apple-shortcuts`
+  - **Sintesi:** Proposta architetturale a 5 pilastri: Quick-Capture macOS (Raycast/Siri), Knowledge Streams (Readwise/GitHub CI), Motore Cognitivo Aumentato (sqlite-vec & Fase REM notturna), Dev Workflow Hooks e Interfacce Spaziali.
+  - **Dettagli:** `actions_taken`: ['Analisi connettoma', 'Verifica tool MCP', 'Elaborazione matrice sinaptica di espansione'], `model`: Gemini 3.7 Flash, `outcome`: Blueprint completo di integrazioni per rendere il cervello onnipresente e ad attrito zero, `responses_given`: Roadmap dettagliata con categorizzazione a 5 pilastri e priorità di implementazione
 - **Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€** (`ai-reasoning-hybrid-search-mcp`)
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
@@ -1727,6 +1731,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#user-intent` `#context-preservation` `#infinite-memory` `#chat-saturation` `#zero-loss` `#cross-session`
   - **Sintesi:** Volontà utente: azzerare la perdita di contesto causata dalla saturazione delle finestre di contesto degli LLM, garantendo continuità cognitiva perenne tra chat diverse.
   - **Dettagli:** `raw`: `core_vision`: Memoria eterna, coerente e non volatile per passato, presente e futuro., `problem_solved`: Saturazione della context window e perdita della cronologia decisionale nei cambi di sessione., `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc...quante volte magari si deve cambiare chat perchè alcuni modelli saturano il contesto di una chat e si deve ricominciare da zero, come si fa??? si eprde tutto?? no quindi lo scopo è quello, non perdere mai il contesto e avere sempre memoria, per il passato, presente e futuro.
+- **Progettazione Ecosistema & Integrazioni Future del Supercervello** (`user-intent-espansione-supercervello-integrazioni`)
+  - **Tags:** `#ecosistema` `#architettura` `#integrazioni` `#obsidian` `#automazioni` `#supercervello`
+  - **Sintesi:** Identificazione delle migliori applicazioni, sistemi, flussi e potenziamenti architetturali per estendere il connettoma oltre Obsidian e massimizzarne l'efficacia operativa.
+  - **Dettagli:** `context`: Evoluzione del connettoma bi-emisferico verso un Cognitive OS onnipresente, `user_prompt`: abbiamo collegato obsidian al nostro cervello e abbiamo creato questo supercervello. ma che altro possiamo fare per migliorare, quali altri applicazioni, sistemi possiamo sfruttare per miglioare e rendere tutto più efficace e migliore
 - **Richiesta Creazione Video Showcase 60s Universal Brain** (`user-intent-creazione-video-showcase-universal-brain`)
   - **Tags:** `#video` `#showcase` `#social-media` `#tutorial` `#universal-brain`
   - **Sintesi:** Richiesta di Pierfrancesco di creare un video tutorial / anteprima di 1 minuto con screenshot, pezzi di codice e spiegazione del Cervello Artificiale per la condivisione social.
@@ -2012,6 +2020,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#troubleshooting` `#macos` `#ollama`
   - **Sintesi:** Sessione dedicata alla localizzazione ed eliminazione dei residui di storage lasciati dal download involontario di un modello locale con Ollama.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Pulizia storage locale da modelli LLM, `key_takeaways`: I modelli di Ollama su macOS persistono in ~/.ollama anche dopo la disinstallazione dell'app; rimozione eseguibile tramite rm -rf ~/.ollama.
+- **Episodio: Brainstorming Evolutivo & Nuove Frontiere del Supercervello** (`episode-espansione-ecosistema-supercervello`)
+  - **Tags:** `#evoluzione` `#supercervello` `#visione-futura` `#brainstorming`
+  - **Sintesi:** Sessione strategica tra Pierfrancesco e Gemini 3.7 Flash sull'espansione e integrazione del connettoma con nuove app e sistemi di automazione.
+  - **Dettagli:** `key_takeaways`: Passaggio da archivio a Ubiquitous Cognitive OS tramite Raycast, Web Clipper, Voice Memos e Consolidamento Notturno AI, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Scegliere il primo blocco da implementare (es. Raycast o Web Clipper), `topic`: Integrazioni e miglioramenti futuri per il Supercervello dopo Obsidian
 - **Episodio: Chiarimento Concetti Tesi Breast Cancer Classification** (`episode-chiarimento-concetti-tesi-deep-learning`)
   - **Tags:** `#chat` `#tesi` `#oncologia` `#deep-learning`
   - **Sintesi:** Sessione incentrata sulla definizione e contestualizzazione di Swin Transformer e Deep Stable Learning per la classificazione di immagini di cancro al seno.
@@ -2953,6 +2965,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-definizione-ecografo-trasduttore-lineare`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-distro-linux-modellazione-3d`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-espansione-supercervello-integrazioni`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-fix-daemon-render-persistence`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3055,6 +3068,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_INTENT]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_INTENT]--> (`user-intent-definizione-ecografo-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_INTENT]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
+- (`episode-espansione-ecosistema-supercervello`) --[RECORDS_INTENT]--> (`user-intent-espansione-supercervello-integrazioni`) *(Corpo Calloso)*
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_INTENT]--> (`user-intent-distro-linux-modellazione-3d`) *(Corpo Calloso)*
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_INTENT]--> (`user-intent-fix-daemon-render-persistence`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
@@ -3104,6 +3118,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_REASONING]--> (`reasoning-tassonomia-pkm-rag-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_REASONING]--> (`reasoning-caratterizzazione-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_REASONING]--> (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
+- (`episode-espansione-ecosistema-supercervello`) --[RECORDS_REASONING]--> (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) *(Corpo Calloso)*
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_REASONING]--> (`reasoning-mappatura-ecosistema-linux-3d`) *(Corpo Calloso)*
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_REASONING]--> (`reasoning-fix-daemon-render-persistence`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
@@ -3560,6 +3575,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
+- (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) --[FULFILLS]--> (`user-intent-espansione-supercervello-integrazioni`)
 - (`reasoning-architettura-jarvis-zero-cost`) --[FULFILLS]--> (`user-intent-creazione-jarvis-voice-assistant`)
 - (`reasoning-architettura-universal-ai-hub`) --[FULFILLS]--> (`user-intent-universal-ai-hub-client`)
 - (`reasoning-audit-critico-e-mockup-fr-2255`) --[FULFILLS]--> (`user-intent-audit-critico-e-mockup-fr-2255`)
@@ -3653,6 +3669,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-disamina-integrazioni-notion-obsidian`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-trasduttori-lineari`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-espansione-ecosistema-supercervello`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-esplorazione-linux-3d-modeling`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-fix-daemon-render-persistence`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -3687,6 +3704,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-analisi-fattibilita-language-app`) --[OPTIMIZES]--> (`reasoning-language-app-architecture`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-architettura-jarvis-zero-cost`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-audit-critico-e-mockup-fr-2255`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -3775,6 +3793,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-creazione-repo-jarvis-desktop`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-video-showcase-universal-brain`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-espansione-supercervello-integrazioni`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-fix-daemon-render-persistence`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
