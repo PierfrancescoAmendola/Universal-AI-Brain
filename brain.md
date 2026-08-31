@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:15:56 UTC | **Nodi Restituiti:** 513 (SX: 359 · DX: 154) | **Sinapsi Restituite:** 1194
-> **Consistenza Reale Connettoma:** 513 Nodi Totali nel Database | 1194 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 18:15:58 UTC | **Nodi Restituiti:** 516 (SX: 361 · DX: 155) | **Sinapsi Restituite:** 1199
+> **Consistenza Reale Connettoma:** 516 Nodi Totali nel Database | 1199 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -360,6 +360,10 @@
   - **Tags:** `#analisi-strategica` `#micro-saas` `#automazione-b2b` `#asset-digitali` `#editoria-tecnica`
   - **Sintesi:** Strutturazione di quattro canali scalabili a costo zero (Automazioni B2B, Micro-SaaS/App Freemium, Boilerplate di codice, Editoria tecnica KDP/Gumroad) con stime di conversione unitarie per raggiungere il target 100-500€/mese.
   - **Dettagli:** `model`: Gemini, `actions_taken`: ['Mappatura delle competenze tecniche su modelli B2B e B2C a basso rischio.', 'Definizione dei 4 pilastri: Automazioni/Agenti per PMI, Micro-App su abbonamento, Vendita Boilerplate/Template, Editoria tecnica specializzata.', "Calcolo del volume di vendita necessario per ciascun canale per raggiungere l'obiettivo prefissato.", "Realizzazione della matrice comparativa di ritorno economico e barriera all'ingresso."], `outcome`: Presentazione di alternative concrete orientate alla creazione di valore diretto e asset riutilizzabili.
+- **Tassonomia Architetturale: Cloud Database vs Local-First Graph PKM** (`reasoning-tassonomia-pkm-rag-notion-obsidian`)
+  - **Tags:** `#graph-rag` `#local-first` `#markdown` `#relational-pkm` `#mcp`
+  - **Sintesi:** Formalizzazione della dicotomia tra Notion (database relazionale cloud-first con metadati strutturati) e Obsidian (knowledge graph locale su file .md per privacy e GraphRAG).
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ['Mappatura delle differenze chiave di storage (Cloud API vs Filesystem locale)', "Definizione dei casi d'uso tipici di Obsidian (GraphRAG, wikilink automatici, privacy-preserving AI)", 'Confronto tabellare sintetico per identificazione immediata del trade-off'], `outcome`: Analisi comparativa chiara, tecnica e focalizzata su architettura e workflow., `ingested_via`: telegram_json_post, `user`: Pierfrancesco
 - **Tassonomia Metacognitiva & AI Reasoning Hub** (`tax-ai-reasoning`)
   - **Tags:** `#ai-reasoning` `#metacognition` `#chain-of-thought` `#rationale` `#knowledge-graph`
   - **Sintesi:** Area cognitiva dedicata al tracciamento dei ragionamenti, deduzioni analitiche e percorsi logici interni generati dall'AI durante le sessioni.
@@ -1520,6 +1524,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#feedback-gemini` `#graphrag` `#ottimizzazione-cervello` `#metamemoria`
   - **Sintesi:** Valutazione critica dell'assessment di Gemini sul Cervello Artificiale e definizione delle migliorie al GraphRAG e all'architettura.
   - **Dettagli:** `raw`: `context`: Diagnosi discrepanza tra percezione esterna di Gemini e stato reale del Knowledge Graph (304 nodi, 789 archi), `user_prompt`: vedi cosa mi ha detto gemini, secondo te che dobbiamo fare, cosa possiamo migliorare??
+- **Analisi Integrazioni LLM con Notion e Obsidian** (`user-intent-confronto-integrazioni-llm-notion-obsidian`)
+  - **Tags:** `#pkm` `#obsidian` `#notion` `#rag` `#second-brain` `#llm-tools`
+  - **Sintesi:** Richiesta di spiegazione comparativa sulle ragioni e i casi d'uso dell'integrazione di LLM con Notion e Obsidian.
+  - **Dettagli:** `user_prompt`: Perché molti collegano Notion a Claude, Gemini ecc…cosa fa di diverso. Perché collegano anche obsidian? Cosa si può fare con obsidian, `context`: Valutazione dei sistemi di Personal Knowledge Management (PKM) e strategie RAG locali vs cloud., `ingested_via`: telegram_json_post, `user`: Pierfrancesco
 - **Costruzione App Personale Apprendimento Portoghese e Tedesco** (`intent-personal-language-learning-app`)
   - **Tags:** `#language-learning` `#portuguese` `#german` `#personal-software` `#srs`
   - **Sintesi:** L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
@@ -2012,6 +2020,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Comando /prompt Copia Rapida per Telegram Bot
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Comando /prompt Copia Rapida per Telegram Bot, `key_takeaways`: La formattazione <pre><code> di Telegram Bot API abilita la copia automatica con singolo tocco su iOS e Android., `pending_tasks`: Nessun task pendente.
+- **Episodio: Confronto PKM e RAG su Notion e Obsidian** (`episode-disamina-integrazioni-notion-obsidian`)
+  - **Tags:** `#chat` `#pkm` `#notion` `#obsidian` `#produttivita`
+  - **Sintesi:** Sessione incentrata sui motivi per cui gli utenti collegano i propri workspace Notion e Obsidian ai modelli di linguaggio (LLM).
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Integrazione LLM con sistemi PKM (Notion vs Obsidian), `key_takeaways`: Notion eccelle in database relazionali collaborativi e automazioni cloud; Obsidian primeggia per privacy, gestione del grafo delle conoscenze e GraphRAG locale su file Markdown., `ingested_via`: telegram_json_post, `user`: Pierfrancesco
 - **Episodio: Creazione Video Showcase 1 Minuto Universal AI Brain** (`episode-video-showcase-anteprima-universal-brain`)
   - **Tags:** `#episodio` `#video` `#anteprima` `#comunicazione`
   - **Sintesi:** Sessione dedicata alla creazione dell'anteprima video di 60 secondi, comprensiva di screenshot generati, codice terminale, musica ed export video per la condivisione del connettoma.
@@ -2934,6 +2946,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-cloud-git-auto-push`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-confronto-integrazioni-llm-notion-obsidian`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-jarvis-voice-assistant`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-video-showcase-universal-brain`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3039,6 +3052,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-chiarimento-intuitivo-pilastri-teorici`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) *(Corpo Calloso)*
 - (`episode-cloud-git-auto-push`) --[RECORDS_INTENT]--> (`user-intent-cloud-git-auto-push`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
+- (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_INTENT]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_INTENT]--> (`user-intent-definizione-ecografo-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_INTENT]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_INTENT]--> (`user-intent-distro-linux-modellazione-3d`) *(Corpo Calloso)*
@@ -3087,6 +3101,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-chiarimento-intuitivo-pilastri-teorici`) --[RECORDS_REASONING]--> (`reasoning-semplificazione-concettuale-causal-dl`) *(Corpo Calloso)*
 - (`episode-cloud-git-auto-push`) --[RECORDS_REASONING]--> (`reasoning-cloud-git-auto-push`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
+- (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_REASONING]--> (`reasoning-tassonomia-pkm-rag-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_REASONING]--> (`reasoning-caratterizzazione-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_REASONING]--> (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_REASONING]--> (`reasoning-mappatura-ecosistema-linux-3d`) *(Corpo Calloso)*
@@ -3584,6 +3599,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[FULFILLS]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
 - (`reasoning-semplificazione-concettuale-causal-dl`) --[FULFILLS]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
+- (`reasoning-tassonomia-pkm-rag-notion-obsidian`) --[FULFILLS]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`)
 - (`reasoning-telegram-keepalive-confirmation`) --[FULFILLS]--> (`user-intent-telegram-keepalive-confirmation`)
 - (`reasoning-update-readme-architecture`) --[FULFILLS]--> (`user-intent-update-readme-architecture`)
 - (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) --[FULFILLS]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`)
@@ -3634,6 +3650,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-chiarimento-intuitivo-pilastri-teorici`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-cloud-git-auto-push`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-disamina-integrazioni-notion-obsidian`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-trasduttori-lineari`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-esplorazione-linux-3d-modeling`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
