@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:49:55 UTC | **Nodi Restituiti:** 525 (SX: 368 · DX: 157) | **Sinapsi Restituite:** 1217
-> **Consistenza Reale Connettoma:** 525 Nodi Totali nel Database | 1217 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 18:50:16 UTC | **Nodi Restituiti:** 526 (SX: 368 · DX: 158) | **Sinapsi Restituite:** 1219
+> **Consistenza Reale Connettoma:** 526 Nodi Totali nel Database | 1219 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -2335,6 +2335,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#emotional-growth` `#boundaries` `#relationships` `#clarity`
   - **Sintesi:** Non farsi carico unilateralmente della stabilità altrui; l'intensità emotiva non sostituisce la compatibilità e la chiarezza dei confini.
   - **Dettagli:** `raw`: `principles`: ['Rifiuto della sindrome del salvatore', 'Distinzione tra chimica momentanea e allineamento valoriale', 'Comunicazione esplicita senza dare nulla per scontato']
+- **Oggi ho riflettuto sul principio stoico della dicotomia del** (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`)
+  - **Tags:** `#siri-shortcuts` `#voice-capture` `#right`
+  - **Sintesi:** Oggi ho riflettuto sul principio stoico della dicotomia del controllo nella vita e nel lavoro.
+  - **Dettagli:** `source`: test_shortcut, `full_transcript`: Oggi ho riflettuto sul principio stoico della dicotomia del controllo nella vita e nel lavoro., `captured_by`: Pierfrancesco Amendola
 - **Resilienza Operativa & Post-Mortem Emotivo** (`lesson-stoic-resilience`)
   - **Tags:** `#stoicism` `#resilience` `#growth-mindset` `#refactoring`
   - **Sintesi:** Trattare gli ostacoli e le delusioni come dati da analizzare a mente fredda per iterare e migliorare senza autocommiserazione.
@@ -3450,6 +3454,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`proj-workspace`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`project-royal-gambit-chess`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`universal-ai-brain`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
+- (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
 - (`val-eternal-cognitive-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`)
 - (`user-intent-mappamondo-3d-spotlight-relazioni`) --[BELONGS_TO_PROJECT]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[BONDS_WITH]--> (`rel-marco-di-martino`)
@@ -3585,6 +3590,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[EXPANDS_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`proj-streaksup-app`) --[EXPOSES_INTERACTIVITY_VIA]--> (`streaksup-app-intents-engine`)
 - (`universal-ai-brain`) --[EXPOSES_PROTOCOL]--> (`ai-memory-ingest-spec`)
+- (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`)
 - (`user-intent-provenance-model-tracking`) --[EXTENDS]--> (`ai-memory-ingest-spec`)
 - (`proj-jarvis-voice-assistant`) --[EXTENDS_BRAIN]--> (`universal-ai-brain`)
