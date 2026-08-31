@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 21:25:27 UTC | **Nodi Restituiti:** 575 (SX: 397 · DX: 178) | **Sinapsi Restituite:** 1325
-> **Consistenza Reale Connettoma:** 575 Nodi Totali nel Database | 1325 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 21:25:30 UTC | **Nodi Restituiti:** 576 (SX: 397 · DX: 179) | **Sinapsi Restituite:** 1327
+> **Consistenza Reale Connettoma:** 576 Nodi Totali nel Database | 1327 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -2896,6 +2896,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#voice-capture` `#siri-shortcuts` `#right`
   - **Sintesi:** Riflessione sull'antifragilità nei sistemi software complessi e distribuiti.
   - **Dettagli:** `source`: test_suite_siri, `full_transcript`: Riflessione sull'antifragilità nei sistemi software complessi e distribuiti., `captured_by`: Pierfrancesco Amendola
+- **Voglio portare a spasso il cane perché mi provoca tante emoz** (`voice-voglio-portare-a-spasso-il-cane-perch-mi-provoca-t-1518`)
+  - **Tags:** `#siri-shortcuts` `#voice-capture` `#right`
+  - **Sintesi:** Voglio portare a spasso il cane perché mi provoca tante emozioni e mi manca
+  - **Dettagli:** `source`: siri_voice, `full_transcript`: Voglio portare a spasso il cane perché mi provoca tante emozioni e mi manca, `captured_by`: Pierfrancesco Amendola
 
 ### [Macro-Label: `MENTAL_MODEL`]
 - **Antifragility (Antifragilità)** (`firmware-antifragility`)
@@ -4064,6 +4068,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-8745`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-9065`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`voice-test-shortcuts-debug-7964`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
+- (`voice-voglio-portare-a-spasso-il-cane-perch-mi-provoca-t-1518`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
 - (`web-test-fastapi-docs`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`val-eternal-cognitive-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`)
 - (`user-intent-mappamondo-3d-spotlight-relazioni`) --[BELONGS_TO_PROJECT]--> (`universal-ai-brain`)
@@ -4204,6 +4209,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`test-e2e-web-clipper`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2447`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
+- (`voice-voglio-portare-a-spasso-il-cane-perch-mi-provoca-t-1518`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`)
 - (`user-intent-provenance-model-tracking`) --[EXTENDS]--> (`ai-memory-ingest-spec`)
 - (`proj-jarvis-voice-assistant`) --[EXTENDS_BRAIN]--> (`universal-ai-brain`)
