@@ -16,7 +16,8 @@ from datetime import datetime, timezone
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PROJECT_DIR)
 
-from sync_brain import sync_bidirectional, LOCAL_DB
+import urllib.request
+from sync_brain import sync_bidirectional, LOCAL_DB, RENDER_URL
 
 LOG_FILE = os.path.join(PROJECT_DIR, "sync_daemon.log")
 
@@ -39,6 +40,8 @@ def handle_shutdown(signum, frame):
 
 signal.signal(signal.SIGTERM, handle_shutdown)
 signal.signal(signal.SIGINT, handle_shutdown)
+if hasattr(signal, "SIGHUP"):
+    signal.signal(signal.SIGHUP, handle_shutdown)
 
 
 def get_db_mtime() -> float:
@@ -64,12 +67,27 @@ def rotate_log_if_needed(max_bytes: int = 1_000_000):
             pass
 
 
+def ping_render_keep_alive() -> bool:
+    """Pings Render health check to prevent free tier from sleeping (spin-down after 15m)."""
+    health_url = f"{RENDER_URL}/health"
+    try:
+        req = urllib.request.Request(health_url, headers={"User-Agent": "UniversalBrainKeepAlive/2.0"})
+        with urllib.request.urlopen(req, timeout=25) as resp:
+            if resp.status == 200:
+                logging.info("💓 Render Cloud Keep-Alive: OK (Server attivo 24/7)")
+                return True
+    except Exception as e:
+        logging.info(f"⏳ Render Cloud Keep-Alive wake-up ping inviato ({e})")
+    return False
+
+
 def main():
     global running
     logging.info("=======================================================")
     logging.info("🧠 Universal Brain Sync Daemon avviato con successo.")
     logging.info(f"📁 Directory Progetto: {PROJECT_DIR}")
     logging.info(f"🗄️ Database Locale: {LOCAL_DB}")
+    logging.info(f"🌐 Cloud Endpoint: {RENDER_URL}")
     logging.info("=======================================================")
 
     # 1. Sincronizzazione immediata all'avvio del computer
@@ -82,7 +100,9 @@ def main():
 
     last_db_mtime = get_db_mtime()
     last_periodic_check = time.time()
+    last_keepalive_ping = time.time()
     check_interval_seconds = 60
+    keepalive_interval_seconds = 420  # Ping ogni 7 minuti (Render dorme a 15 min)
 
     # 2. Loop continuo leggero (<0.01% CPU)
     while running:
@@ -91,28 +111,40 @@ def main():
             current_mtime = get_db_mtime()
             db_changed = current_mtime > (last_db_mtime + 0.5)
             periodic_due = (now - last_periodic_check) >= check_interval_seconds
+            keepalive_due = (now - last_keepalive_ping) >= keepalive_interval_seconds
 
             if db_changed or periodic_due:
+                if db_changed:
+                    # Piccolo debounce per attendere la fine delle scritture batch
+                    time.sleep(1.0)
+                    current_mtime = get_db_mtime()
+
                 reason = "Modifica locale rilevata" if db_changed else "Controllo periodico (60s)"
                 logging.info(f"🔄 Avvio sincronizzazione: {reason}...")
                 
                 res = sync_bidirectional(verbose=False)
+                last_db_mtime = get_db_mtime()
+                last_periodic_check = now
+
                 if res.get("success"):
-                    last_db_mtime = get_db_mtime()
-                    last_periodic_check = now
                     p_in = res.get("pulled_nodes", 0)
                     p_out = res.get("pushed_nodes", 0)
                     tot_n = res.get("nodes_count", 0)
                     tot_e = res.get("edges_count", 0)
                     if p_in > 0 or p_out > 0:
                         logging.info(f"✨ Sincronizzazione eseguita: +{p_in} scaricati, +{p_out} caricati (Totale: {tot_n} nodi, {tot_e} sinapsi).")
+                    elif res.get("warning"):
+                        logging.info(f"ℹ️ Connettoma locale allineato su Git ({tot_n} nodi, {tot_e} sinapsi). {res.get('warning')}")
                     else:
                         logging.info(f"🟢 Connettoma già allineato al 100%: {tot_n} nodi, {tot_e} sinapsi.")
                 else:
-                    logging.warning(f"⚠️ Sincronizzazione saltata: {res.get('reason', 'Errore sconosciuto')}")
-                    last_periodic_check = now
+                    logging.warning(f"⚠️ Sincronizzazione differita: {res.get('reason', 'Errore sconosciuto')}")
 
                 rotate_log_if_needed()
+
+            if keepalive_due:
+                ping_render_keep_alive()
+                last_keepalive_ping = time.time()
 
         except Exception as e:
             logging.error(f"❌ Errore nel ciclo del demone: {e}")

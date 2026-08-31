@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+.venv/
 
 # SQLite WAL and temp files (keep brain.db tracked for sync)
 *.db-shm
@@ -16,6 +17,11 @@ backups/
 
 # Logs
 *.log
+
+# Agent & graphify caches
+.agents/
+.claude/
+graphify-out/
 
 # Scratch & temporary files
 scratch/

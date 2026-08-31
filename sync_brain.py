@@ -39,39 +39,49 @@ def slugify(text: str) -> str:
     return slug[:45] if slug else "untitled"
 
 
-def fetch_render_data(timeout: int = 12) -> Optional[Dict[str, Any]]:
+def fetch_render_data(timeout: int = 35, retries: int = 3) -> Optional[Dict[str, Any]]:
     url = f"{RENDER_URL}/brain.json"
-    try:
-        req = urllib.request.Request(
-            url,
-            headers={"User-Agent": "UniversalBrainSync/2.0"}
-        )
-        with urllib.request.urlopen(req, timeout=timeout) as response:
-            return json.loads(response.read().decode("utf-8"))
-    except Exception as e:
-        print(f"⚠️ Impossibile raggiungere Render ({url}): {e}")
-        return None
+    for attempt in range(1, retries + 1):
+        try:
+            req = urllib.request.Request(
+                url,
+                headers={"User-Agent": "UniversalBrainSync/2.0"}
+            )
+            with urllib.request.urlopen(req, timeout=timeout) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except Exception as e:
+            if attempt < retries:
+                time.sleep(4)
+            else:
+                print(f"⚠️ Impossibile raggiungere Render ({url}) dopo {retries} tentativi: {e}")
+                return None
+    return None
 
 
-def push_to_render(payload: Dict[str, Any], timeout: int = 15) -> bool:
+def push_to_render(payload: Dict[str, Any], timeout: int = 35, retries: int = 2) -> bool:
     url = f"{RENDER_URL}/api/memory/ingest"
-    try:
-        data_bytes = json.dumps(payload).encode("utf-8")
-        req = urllib.request.Request(
-            url,
-            data=data_bytes,
-            headers={
-                "Content-Type": "application/json",
-                "User-Agent": "UniversalBrainSync/2.0"
-            },
-            method="POST"
-        )
-        with urllib.request.urlopen(req, timeout=timeout) as response:
-            res_json = json.loads(response.read().decode("utf-8"))
-            return res_json.get("success", True)
-    except Exception as e:
-        print(f"⚠️ Errore durante il push verso Render ({url}): {e}")
-        return False
+    for attempt in range(1, retries + 1):
+        try:
+            data_bytes = json.dumps(payload).encode("utf-8")
+            req = urllib.request.Request(
+                url,
+                data=data_bytes,
+                headers={
+                    "Content-Type": "application/json",
+                    "User-Agent": "UniversalBrainSync/2.0"
+                },
+                method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=timeout) as response:
+                res_json = json.loads(response.read().decode("utf-8"))
+                return res_json.get("success", True)
+        except Exception as e:
+            if attempt < retries:
+                time.sleep(3)
+            else:
+                print(f"⚠️ Errore durante il push verso Render ({url}): {e}")
+                return False
+    return False
 
 
 def export_brain_markdown():
@@ -93,15 +103,25 @@ def export_brain_markdown():
 
 
 def git_commit_and_push(commit_msg: str) -> bool:
-    """Commits brain.db and brain.md and pushes to origin main for cloud persistence."""
+    """Flushes WAL, updates brain.md, commits brain.db and brain.md and pushes to origin main for cloud persistence."""
     try:
+        with get_local_connection() as conn:
+            conn.execute("PRAGMA wal_checkpoint(TRUNCATE);")
+        export_brain_markdown()
+
         subprocess.run(["git", "add", "brain.db", "brain.md"], cwd=LOCAL_DIR, check=True, capture_output=True)
         st = subprocess.run(["git", "status", "--porcelain", "brain.db", "brain.md"], cwd=LOCAL_DIR, capture_output=True, text=True)
         if st.stdout.strip():
             subprocess.run(["git", "commit", "-m", commit_msg], cwd=LOCAL_DIR, check=True, capture_output=True)
-            subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_DIR, check=True, capture_output=True)
-            print(f"🚀 Git commit & push completati con successo su origin/main.")
-            return True
+            # Rebase before push to avoid non-fast-forward push failures
+            subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=LOCAL_DIR, capture_output=True, text=True)
+            push_res = subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_DIR, capture_output=True, text=True)
+            if push_res.returncode == 0:
+                print("🚀 Git commit & push completati con successo su origin/main.")
+                return True
+            else:
+                print(f"⚠️ Git push fallito: {push_res.stderr.strip()}")
+                return False
         return False
     except Exception as e:
         print(f"⚠️ Git push non riuscito o già allineato: {e}")
@@ -111,18 +131,32 @@ def git_commit_and_push(commit_msg: str) -> bool:
 def sync_bidirectional(verbose: bool = True) -> Dict[str, Any]:
     """
     Complete lossless two-way synchronization:
-    1. Pulls new nodes/edges from Render into local brain.db.
-    2. Pushes local new nodes/edges to Render via REST POST.
-    3. Flushes WAL, updates brain.md, and pushes to Git repository.
+    1. Ensures local uncommitted SQLite changes are checkpointed and pushed to Git.
+    2. Pulls new nodes/edges from Render into local brain.db.
+    3. Pushes local new nodes/edges to Render via REST POST.
+    4. Flushes WAL, updates brain.md, and pushes to Git repository.
     """
     if verbose:
         print("🔄 Inizio Sincronizzazione Bidirezionale (PC ⮂ Render Cloud)...")
 
+    # Step 0: Assicura che le modifiche locali non committate vadano subito su Git
+    git_commit_and_push("feat(sync): salvataggio locale automatico connettoma")
+
     render_data = fetch_render_data()
     if not render_data:
         if verbose:
-            print("⚠️ Connessione a Render non disponibile. Opero solo su database locale.")
-        return {"success": False, "reason": "Render unreachable"}
+            print("⚠️ Connessione a Render non disponibile (in standby o offline). Opero solo su database locale e Git.")
+        with get_local_connection() as conn:
+            curr_nodes = conn.execute("SELECT COUNT(*) FROM nodes").fetchone()[0]
+            curr_edges = conn.execute("SELECT COUNT(*) FROM edges").fetchone()[0]
+        return {
+            "success": True,
+            "nodes_count": curr_nodes,
+            "edges_count": curr_edges,
+            "pulled_nodes": 0,
+            "pushed_nodes": 0,
+            "warning": "Render in standby"
+        }
 
     render_nodes = {n["id"]: n for n in render_data.get("nodes", [])}
     render_edges_list = render_data.get("links", [])
@@ -234,9 +268,6 @@ def sync_bidirectional(verbose: bool = True) -> Dict[str, Any]:
 
     # 4. Consolidamento locale & Git Persistence
     if changes_made:
-        with get_local_connection() as conn:
-            conn.execute("PRAGMA wal_checkpoint(TRUNCATE);")
-        export_brain_markdown()
         commit_msg = f"feat(sync): sincronizzazione bidirezionale connettoma (+{len(only_in_local_nodes)} nodi locali, +{len(only_in_render_nodes)} nodi cloud)"
         git_commit_and_push(commit_msg)
 

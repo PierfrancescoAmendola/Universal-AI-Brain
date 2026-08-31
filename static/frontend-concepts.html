@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Universal AI Brain · Direzioni frontend</title>
+  <style>
+    :root {
+      --ink: oklch(22% .018 266);
+      --muted: oklch(48% .018 266);
+      --paper: oklch(97% .007 90);
+      --surface: oklch(94% .012 90);
+      --line: oklch(84% .018 90);
+      --blue: oklch(49% .14 245);
+      --violet: oklch(47% .13 303);
+      --orange: oklch(66% .14 57);
+      --rose: oklch(58% .15 355);
+      --mint: oklch(68% .11 160);
+      --shadow: 0 18px 48px oklch(22% .018 266 / .10);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .concept-bar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 18px; min-height: 68px; padding: 12px clamp(18px, 4vw, 64px); background: var(--ink); color: var(--paper); border-bottom: 1px solid oklch(32% .016 266); }
+    .brand { min-width: max-content; font-size: 13px; font-weight: 800; letter-spacing: .08em; }
+    .brand span { color: oklch(78% .10 210); }
+    .concept-tabs { display: flex; gap: 5px; overflow-x: auto; }
+    .concept-tab { min-width: max-content; padding: 8px 12px; border: 1px solid transparent; border-radius: 7px; color: oklch(82% .012 266); background: transparent; font-size: 13px; }
+    .concept-tab[aria-selected="true"] { color: var(--ink); background: var(--paper); }
+    .note { margin-left: auto; max-width: 360px; color: oklch(75% .012 266); font-size: 12px; line-height: 1.35; }
+    .concept { display: none; min-height: calc(100vh - 68px); }
+    .concept.active { display: block; }
+    .eyebrow { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .label { color: var(--muted); font-size: 12px; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 999px; color: var(--ink); background: var(--surface); font-size: 11px; font-weight: 700; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .button { border: 1px solid var(--ink); border-radius: 7px; padding: 9px 12px; background: var(--ink); color: var(--paper); font-size: 13px; font-weight: 700; }
+    .button.secondary { color: var(--ink); background: transparent; border-color: var(--line); }
+    .button:focus-visible, .concept-tab:focus-visible, .tree-item:focus-visible { outline: 3px solid oklch(65% .13 245 / .5); outline-offset: 2px; }
+
+    /* Concept 1: memory as a navigable atlas, not a particle field. */
+    .atlas-shell { max-width: 1500px; margin: 0 auto; padding: 28px clamp(18px, 4vw, 64px) 56px; }
+    .atlas-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; padding: 20px 0 34px; border-bottom: 1px solid var(--line); }
+    .atlas-head h1 { max-width: 720px; margin: 8px 0 0; font-size: clamp(32px, 5vw, 60px); letter-spacing: -.055em; line-height: .97; }
+    .atlas-head p { max-width: 580px; margin: 14px 0 0; color: var(--muted); font-size: 16px; line-height: 1.5; }
+    .atlas-search { display: flex; align-items: center; min-width: min(390px, 100%); gap: 9px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+    .atlas-search input { width: 100%; border: 0; outline: 0; color: var(--ink); background: transparent; }
+    .atlas-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr) 300px; gap: 30px; padding-top: 28px; }
+    .tree { padding-right: 18px; border-right: 1px solid var(--line); }
+    .tree h2, .inspector h2 { margin: 0 0 14px; font-size: 13px; letter-spacing: .02em; }
+    .tree-item { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 8px; border: 0; border-radius: 6px; color: var(--ink); background: transparent; text-align: left; font-size: 13px; }
+    .tree-item:hover, .tree-item.active { background: oklch(90% .037 245); }
+    .tree-item small { color: var(--muted); font-size: 11px; }
+    .atlas-main { min-width: 0; }
+    .time-heading { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 16px; }
+    .time-heading h2 { margin: 0; font-size: 23px; letter-spacing: -.035em; }
+    .thread { position: relative; padding-left: 28px; }
+    .thread::before { position: absolute; top: 6px; bottom: 20px; left: 7px; width: 1px; background: var(--line); content: ""; }
+    .memory { position: relative; display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 18px; padding: 0 0 23px; }
+    .memory::before { position: absolute; top: 4px; left: -25px; width: 10px; height: 10px; border: 3px solid var(--paper); border-radius: 50%; background: var(--blue); content: ""; }
+    .memory.right::before { background: var(--rose); }
+    .memory time { color: var(--muted); font-size: 12px; }
+    .memory article { padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .memory h3 { margin: 0 0 7px; font-size: 17px; letter-spacing: -.02em; }
+    .memory p { max-width: 660px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .memory .chip { margin-top: 11px; }
+    .inspector { align-self: start; padding: 18px; background: var(--surface); border-radius: 10px; }
+    .inspector h3 { margin: 5px 0 9px; font-size: 20px; letter-spacing: -.035em; }
+    .inspector p { margin: 0 0 14px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .connection { display: grid; grid-template-columns: 8px 1fr; gap: 8px; margin-top: 8px; font-size: 12px; }
+    .connection .dot { margin-top: 4px; color: var(--violet); }
+
+    /* Concept 2: semantic territory map, active paths are the graph representation. */
+    .territory { min-height: calc(100vh - 68px); background: oklch(20% .018 266); color: oklch(95% .008 90); }
+    .territory-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px clamp(18px, 4vw, 50px); border-bottom: 1px solid oklch(35% .016 266); }
+    .territory-header h1 { margin: 0; font-size: 26px; letter-spacing: -.04em; }
+    .territory-header p { max-width: 550px; margin: 4px 0 0; color: oklch(71% .016 266); font-size: 13px; }
+    .territory-filter { display: flex; gap: 5px; padding: 4px; border: 1px solid oklch(35% .016 266); border-radius: 8px; }
+    .territory-filter button { border: 0; border-radius: 5px; padding: 7px 9px; color: oklch(74% .016 266); background: transparent; font-size: 12px; }
+    .territory-filter button.active { color: var(--ink); background: oklch(95% .008 90); }
+    .territory-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; min-height: 660px; }
+    .map { position: relative; min-height: 660px; overflow: hidden; }
+    .map svg { position: absolute; width: 100%; height: 100%; inset: 0; }
+    .map-grid { stroke: oklch(31% .015 266); stroke-width: 1; }
+    .edge { stroke: oklch(55% .025 266); stroke-width: 1.25; opacity: .44; }
+    .edge.cross { stroke: var(--violet); stroke-width: 2; opacity: .83; }
+    .node { cursor: pointer; }
+    .node circle { stroke: oklch(20% .018 266); stroke-width: 5; transition: r .18s ease; }
+    .node:hover circle, .node.selected circle { r: 17; }
+    .node text { pointer-events: none; fill: oklch(88% .01 90); font-size: 12px; font-weight: 650; }
+    .node .sub { fill: oklch(64% .015 266); font-size: 10px; font-weight: 500; }
+    .territory-inspector { padding: 28px; border-left: 1px solid oklch(35% .016 266); background: oklch(18% .016 266); }
+    .territory-inspector h2 { margin: 8px 0; font-size: 23px; letter-spacing: -.035em; }
+    .territory-inspector p { color: oklch(70% .016 266); font-size: 13px; line-height: 1.55; }
+    .path-list { display: grid; gap: 8px; margin-top: 20px; }
+    .path-step { padding: 10px; border: 1px solid oklch(35% .016 266); border-radius: 7px; color: oklch(80% .014 266); font-size: 12px; }
+    .path-step strong { display: block; color: oklch(94% .008 90); font-size: 13px; }
+
+    /* Concept 3: investigation workspace, render only the relevant subgraph. */
+    .lens { min-height: calc(100vh - 68px); background: oklch(96% .009 248); }
+    .lens-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 18px clamp(18px, 4vw, 48px); background: oklch(99% .004 248); border-bottom: 1px solid oklch(85% .015 248); }
+    .lens-top h1 { margin: 0; font-size: 18px; letter-spacing: -.025em; }
+    .scope { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
+    .scope select { padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--paper); }
+    .lens-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr) 320px; min-height: 680px; }
+    .lens-nav { padding: 22px; border-right: 1px solid oklch(85% .015 248); background: oklch(99% .004 248); }
+    .lens-nav .nav-title { margin: 0 0 12px; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .09em; }
+    .lens-nav button { display: flex; width: 100%; justify-content: space-between; padding: 9px 6px; border: 0; border-radius: 5px; color: var(--ink); background: transparent; text-align: left; font-size: 13px; }
+    .lens-nav button:hover, .lens-nav button.active { background: oklch(91% .033 245); }
+    .lens-canvas { position: relative; padding: 32px; overflow: hidden; }
+    .lens-canvas h2 { max-width: 680px; margin: 9px 0; font-size: clamp(29px, 4vw, 48px); letter-spacing: -.05em; line-height: .98; }
+    .lens-canvas > p { max-width: 600px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .subgraph { position: relative; min-height: 430px; margin-top: 22px; border: 1px solid oklch(84% .015 248); border-radius: 12px; background: oklch(99% .004 248); overflow: hidden; }
+    .subgraph::before { position: absolute; inset: 0; opacity: .65; background-image: radial-gradient(oklch(69% .018 248) 1px, transparent 1px); background-size: 22px 22px; content: ""; }
+    .subgraph svg { position: absolute; width: 100%; height: 100%; inset: 0; }
+    .lens-node { position: absolute; z-index: 1; max-width: 145px; padding: 10px; border: 1px solid oklch(82% .018 248); border-radius: 8px; background: oklch(99% .004 248); box-shadow: 0 5px 15px oklch(24% .018 248 / .08); font-size: 12px; font-weight: 700; }
+    .lens-node small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; font-weight: 500; }
+    .lens-node.focus { border-color: var(--blue); background: oklch(92% .037 245); }
+    .lens-node.right { border-color: oklch(73% .09 355); background: oklch(94% .028 355); }
+    .n-1 { top: 46px; left: 10%; }.n-2 { top: 188px; left: 38%; }.n-3 { top: 74px; right: 10%; }.n-4 { bottom: 35px; right: 25%; }.n-5 { bottom: 46px; left: 14%; }
+    .evidence { padding: 28px 22px; border-left: 1px solid oklch(85% .015 248); background: oklch(99% .004 248); }
+    .evidence h2 { margin: 5px 0 15px; font-size: 21px; letter-spacing: -.035em; }
+    .evidence-row { display: grid; gap: 4px; padding: 13px 0; border-top: 1px solid oklch(87% .014 248); }
+    .evidence-row strong { font-size: 13px; }.evidence-row span { color: var(--muted); font-size: 12px; line-height: 1.4; }
+    .confidence { color: oklch(43% .11 160); font-size: 10px; font-weight: 800; letter-spacing: .07em; }
+
+    @media (max-width: 1050px) { .atlas-layout, .lens-layout { grid-template-columns: 220px minmax(0, 1fr); }.inspector, .evidence { display: none; }.territory-layout { grid-template-columns: 1fr; }.territory-inspector { display: none; } }
+    @media (max-width: 720px) { .concept-bar { align-items: flex-start; flex-wrap: wrap; }.note { display: none; }.atlas-head { grid-template-columns: 1fr; }.atlas-search { min-width: 0; }.atlas-layout, .lens-layout { display: block; }.tree, .lens-nav { display: none; }.memory { grid-template-columns: 1fr; gap: 5px; }.memory time { font-weight: 700; }.territory-header { align-items: flex-start; flex-direction: column; }.map { min-height: 560px; }.lens-canvas { padding: 24px 18px; }.subgraph { min-height: 480px; }.n-1 { left: 5%; }.n-2 { left: 28%; }.n-3 { right: 3%; }.n-4 { right: 15%; }.n-5 { left: 4%; } }
+  </style>
+</head>
+<body>
+  <nav class="concept-bar" aria-label="Selettore direzione frontend">
+    <div class="brand"><span>UAB</span> / DIREZIONI</div>
+    <div class="concept-tabs" role="tablist">
+      <button class="concept-tab" role="tab" aria-selected="true" aria-controls="atlas" data-concept="atlas">01 · Atlante</button>
+      <button class="concept-tab" role="tab" aria-selected="false" aria-controls="territory" data-concept="territory">02 · Territori</button>
+      <button class="concept-tab" role="tab" aria-selected="false" aria-controls="lens" data-concept="lens">03 · Lente</button>
+    </div>
+    <p class="note">Mockup interattivo. Ogni direzione risolve un compito diverso, non è solo una palette alternativa.</p>
+  </nav>
+
+  <section class="concept active" id="atlas" role="tabpanel">
+    <div class="atlas-shell">
+      <header class="atlas-head">
+        <div>
+          <div class="eyebrow">Concetto 01 · Atlante cognitivo</div>
+          <h1>La memoria è una storia navigabile, non una nebulosa da decifrare.</h1>
+          <p>Vista di default per ritrovare decisioni, conversazioni e progetti. Il grafo completo rimane disponibile come approfondimento, non come primo ostacolo.</p>
+        </div>
+        <label class="atlas-search">⌘ <input id="atlas-search" placeholder="Cerca: sync, design, architettura…" aria-label="Cerca nel cervello"></label>
+      </header>
+      <div class="atlas-layout">
+        <aside class="tree"><h2>PALAZZO COGNITIVO</h2>
+          <button class="tree-item active" data-node="Universal AI Brain"><span>◉ Universal AI Brain</span><small>85</small></button>
+          <button class="tree-item" data-node="Sistemi cognitivi"><span>○ Sistemi cognitivi</span><small>64</small></button>
+          <button class="tree-item" data-node="Design e creatività"><span>○ Design e creatività</span><small>41</small></button>
+          <button class="tree-item" data-node="Ingegneria software"><span>○ Ingegneria software</span><small>38</small></button>
+          <button class="tree-item" data-node="Memoria episodica"><span>○ Memoria episodica</span><small>56</small></button>
+        </aside>
+        <main class="atlas-main">
+          <div class="time-heading"><h2>Ultime connessioni rilevanti</h2><span class="label">ordinate per utilità, non solo per data</span></div>
+          <div class="thread">
+            <div class="memory"><time>OGGI<br>21:01</time><article><div class="eyebrow">Decisione · Architettura</div><h3>Sincronizzazione bidirezionale del connettoma</h3><p>Il client locale e Render condividono nodi ed archi. La versione reale richiede però una strategia di conflitto, non soltanto l’unione degli ID.</p><span class="chip" style="color:var(--blue)"><i class="dot"></i> 4 collegamenti attivi</span></article></div>
+            <div class="memory right"><time>IERI<br>15:10</time><article><div class="eyebrow">Idea · Design</div><h3>Dashboard come workspace di ricerca</h3><p>Il valore principale emerge quando l’interfaccia mostra un percorso con evidenze e provenienza, non quando visualizza tutte le sinapsi simultaneamente.</p><span class="chip" style="color:var(--rose)"><i class="dot"></i> Ponte interemisferico</span></article></div>
+            <div class="memory"><time>27 AGO<br>22:15</time><article><div class="eyebrow">Episodio · Metacognizione</div><h3>Grafo come substrato, albero come overlay</h3><p>La tassonomia è un indice di orientamento. Non sostituisce le relazioni trasversali, ma le rende recuperabili senza sovraccarico cognitivo.</p><span class="chip" style="color:var(--violet)"><i class="dot"></i> 3 sorgenti</span></article></div>
+          </div>
+        </main>
+        <aside class="inspector" aria-live="polite"><div class="eyebrow">Nodo selezionato</div><h3 id="atlas-node">Universal AI Brain</h3><p id="atlas-copy">Sistema di memoria persistente a grafo bi-emisferico. Qui il dettaglio è leggibile senza togliere contesto alla navigazione.</p><button class="button secondary">Apri sottografo</button><h2 style="margin-top:24px">COLLEGAMENTI</h2><div class="connection"><i class="dot"></i><span>GraphRAG e ricerca FTS5</span></div><div class="connection"><i class="dot"></i><span>Design Token e UX Flow</span></div><div class="connection"><i class="dot"></i><span>Episodi e decisioni</span></div></aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="concept territory" id="territory" role="tabpanel">
+    <header class="territory-header"><div><div class="eyebrow" style="color:oklch(72% .11 210)">Concetto 02 · Mappa di territori</div><h1>Relazioni visibili solo quando raccontano qualcosa.</h1><p>Una mappa semantica a cluster, progettata per esplorare domini e ponti del Corpo Calloso. Il path evidenziato sostituisce il rumore del grafo totale.</p></div><div class="territory-filter"><button class="active" data-filter="all">Tutto</button><button data-filter="left">Logica</button><button data-filter="bridge">Ponti</button><button data-filter="right">Creatività</button></div></header>
+    <div class="territory-layout"><main class="map"><svg viewBox="0 0 900 660" aria-label="Mappa del connettoma">
+      <defs><pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M 46 0 L 0 0 0 46" class="map-grid" fill="none"/></pattern></defs><rect width="900" height="660" fill="url(#grid)"/>
+      <line class="edge left-edge" x1="170" y1="190" x2="350" y2="320"/><line class="edge left-edge" x1="255" y1="465" x2="350" y2="320"/><line class="edge right-edge" x1="710" y1="195" x2="535" y2="325"/><line class="edge right-edge" x1="660" y1="470" x2="535" y2="325"/><line class="edge cross" x1="350" y1="320" x2="535" y2="325"/>
+      <g class="node left-node selected" tabindex="0" data-map-node="Universal AI Brain" transform="translate(350 320)"><circle r="14" fill="var(--blue)"/><text x="23" y="-4">Universal AI Brain</text><text class="sub" x="23" y="13">ARCHITETTURA · 85 nodi</text></g>
+      <g class="node left-node" tabindex="0" data-map-node="Software" transform="translate(170 190)"><circle r="12" fill="var(--mint)"/><text x="20" y="-3">Software</text><text class="sub" x="20" y="13">38 nodi</text></g>
+      <g class="node left-node" tabindex="0" data-map-node="Sistemi cognitivi" transform="translate(255 465)"><circle r="12" fill="var(--mint)"/><text x="20" y="-3">Sistemi cognitivi</text><text class="sub" x="20" y="13">64 nodi</text></g>
+      <g class="node right-node" tabindex="0" data-map-node="Design" transform="translate(710 195)"><circle r="12" fill="var(--rose)"/><text x="20" y="-3">Design</text><text class="sub" x="20" y="13">41 nodi</text></g>
+      <g class="node right-node" tabindex="0" data-map-node="Episodi" transform="translate(660 470)"><circle r="12" fill="var(--orange)"/><text x="20" y="-3">Episodi</text><text class="sub" x="20" y="13">56 nodi</text></g>
+      <g class="node" tabindex="0" data-map-node="Corpo Calloso" transform="translate(535 325)"><circle r="15" fill="var(--violet)"/><text x="24" y="-4">Corpo Calloso</text><text class="sub" x="24" y="13">370 ponti</text></g>
+    </svg></main><aside class="territory-inspector" aria-live="polite"><div class="eyebrow" style="color:oklch(73% .10 303)">Percorso attivo</div><h2 id="map-node">Universal AI Brain</h2><p id="map-copy">Il nodo non è una destinazione isolata. Qui il pannello espone perché una relazione è utile alla domanda attuale.</p><div class="path-list"><div class="path-step"><strong>1 · USER_INTENT</strong>Audit della struttura cognitiva</div><div class="path-step"><strong>2 · AI_REASONING</strong>Valutazione di integrità e rischi</div><div class="path-step"><strong>3 · DESIGN_TOKEN</strong>Rappresentazione leggibile del grafo</div></div></aside></div>
+  </section>
+
+  <section class="concept lens" id="lens" role="tabpanel">
+    <header class="lens-top"><h1>UNIVERSAL AI BRAIN <span class="label">/ workspace di indagine</span></h1><label class="scope">Scope <select id="scope"><option>Decisione: sync e provenienza</option><option>Progetto: Universal AI Brain</option><option>Dominio: Design e creatività</option></select></label></header>
+    <div class="lens-layout"><aside class="lens-nav"><p class="nav-title">VISTE</p><button class="active"><span>Indagine</span><small>⌘1</small></button><button><span>Timeline</span><small>⌘2</small></button><button><span>Conflitti</span><small>3</small></button><button><span>Provenienza</span><small>4</small></button><p class="nav-title" style="margin-top:28px">FILTRI</p><button><span>Solo evidenze</span><small>12</small></button><button><span>Inferenze</span><small>4</small></button></aside>
+      <main class="lens-canvas"><div class="eyebrow">Sottografo · 5 nodi / 6 relazioni</div><h2>Il sync ha una decisione incompleta: quale versione vince?</h2><p>Questa direzione è ideale quando usi il cervello per ragionare. Mostra il sottografo minimo utile, le prove e la prossima azione, evitando di trasformare la navigazione in un’attività di decodifica visiva.</p><div class="subgraph"><svg viewBox="0 0 680 430" preserveAspectRatio="none"><path d="M115 100 C210 95, 235 205, 315 210 S450 100, 560 112" fill="none" stroke="oklch(63% .08 245)" stroke-width="2"/><path d="M315 210 C420 250, 420 330, 500 350" fill="none" stroke="oklch(63% .08 245)" stroke-width="2"/><path d="M315 210 C220 290, 185 320, 130 340" fill="none" stroke="oklch(65% .10 355)" stroke-width="2"/></svg><div class="lens-node n-1">USER_INTENT<small>Audit e ristrutturazione</small></div><div class="lens-node focus n-2">AI_REASONING<small>Conflitto sync rilevato</small></div><div class="lens-node n-3">ARCHITECTURE<small>Sync bidirezionale</small></div><div class="lens-node right n-4">CREATIVE_IDEA<small>Workspace di indagine</small></div><div class="lens-node right n-5">CONVERSATION_EPISODE<small>Decisioni di progetto</small></div></div></main>
+      <aside class="evidence"><div class="eyebrow">Evidenza</div><h2>Per decidere ora</h2><div class="evidence-row"><span class="confidence">ESTRATTO</span><strong>320 nodi, 828 sinapsi</strong><span>Integrità referenziale attuale valida.</span></div><div class="evidence-row"><span class="confidence">ESTRATTO</span><strong>Sync per differenza di ID</strong><span>Le modifiche di uno stesso ID non vengono riconciliate.</span></div><div class="evidence-row"><span class="confidence" style="color:oklch(50% .12 57)">INFERITO</span><strong>Versioning necessario</strong><span>Serve una policy di merge o un registro di revisioni.</span></div><button class="button" style="width:100%;margin-top:18px">Proponi policy di merge</button></aside>
+    </div>
+  </section>
+  <script>
+    const tabs = document.querySelectorAll('.concept-tab');
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      tabs.forEach(t => t.setAttribute('aria-selected', String(t === tab)));
+      document.querySelectorAll('.concept').forEach(c => c.classList.toggle('active', c.id === tab.dataset.concept));
+    }));
+    const atlasCopy = { 'Universal AI Brain': 'Sistema di memoria persistente a grafo bi-emisferico. Qui il dettaglio è leggibile senza togliere contesto alla navigazione.', 'Sistemi cognitivi': 'Dominio per architetture cognitive, GraphRAG e continuità tra modelli.', 'Design e creatività': 'Nodo che rende esplicito il legame tra interfaccia, preferenze e comprensione della memoria.', 'Ingegneria software': 'Decisioni implementabili: API, SQLite, sync, test e deployment.', 'Memoria episodica': 'Le conversazioni diventano unità navigabili, collegate agli intenti e alle deduzioni.' };
+    document.querySelectorAll('.tree-item').forEach(item => item.addEventListener('click', () => { document.querySelectorAll('.tree-item').forEach(i => i.classList.toggle('active', i === item)); document.querySelector('#atlas-node').textContent = item.dataset.node; document.querySelector('#atlas-copy').textContent = atlasCopy[item.dataset.node]; }));
+    document.querySelector('#atlas-search').addEventListener('input', event => { const value = event.target.value.toLowerCase(); document.querySelectorAll('.memory').forEach(memory => memory.style.opacity = !value || memory.textContent.toLowerCase().includes(value) ? '1' : '.24'); });
+    const mapCopy = { 'Universal AI Brain': 'Sistema centrale. Selezionarlo rende visibili soltanto i percorsi che collegano una decisione tecnica ad un impatto nel lato umano o di design.', 'Software': 'Territorio delle componenti concrete. Il suo valore è diventare traccia verificabile delle scelte, non un’etichetta generica.', 'Sistemi cognitivi': 'Qui vivono gli algoritmi di recupero, rappresentazione e priorità della conoscenza.', 'Design': 'Territorio per token, UI component e UX flow. È collegato alla logica quando modifica la comprensione, non per decorazione.', 'Episodi': 'Unità temporali che danno provenienza alle conclusioni. Richiedono una triade di relazioni coerente.', 'Corpo Calloso': 'Ponti tra emisferi: vanno mostrati come path semantici, non come centinaia di linee equivalenti.' };
+    document.querySelectorAll('.node').forEach(node => node.addEventListener('click', () => { document.querySelectorAll('.node').forEach(n => n.classList.toggle('selected', n === node)); const name = node.dataset.mapNode; document.querySelector('#map-node').textContent = name; document.querySelector('#map-copy').textContent = mapCopy[name]; }));
+    document.querySelectorAll('.territory-filter button').forEach(button => button.addEventListener('click', () => { document.querySelectorAll('.territory-filter button').forEach(b => b.classList.toggle('active', b === button)); const filter = button.dataset.filter; document.querySelectorAll('.node').forEach(node => { const show = filter === 'all' || node.classList.contains(filter + '-node') || (filter === 'bridge' && node.dataset.mapNode === 'Corpo Calloso'); node.style.opacity = show ? '1' : '.18'; }); document.querySelectorAll('.edge').forEach(edge => { const show = filter === 'all' || edge.classList.contains(filter === 'bridge' ? 'cross' : filter + '-edge') || (filter === 'bridge' && edge.classList.contains('cross')); edge.style.opacity = show ? '' : '.08'; }); }));
+  </script>
+</body>
+</html>
