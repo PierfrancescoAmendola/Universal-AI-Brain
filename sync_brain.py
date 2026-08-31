@@ -121,17 +121,18 @@ def git_commit_and_push(commit_msg: str) -> bool:
         if st.stdout.strip():
             subprocess.run(["git", "commit", "-m", commit_msg], cwd=LOCAL_DIR, check=True, capture_output=True)
             # Rebase before push to avoid non-fast-forward push failures
-            subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=LOCAL_DIR, capture_output=True, text=True)
-            push_res = subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_DIR, capture_output=True, text=True)
-            if push_res.returncode == 0:
-                print("🚀 Git commit & push completati con successo su origin/main.")
-                return True
-            else:
-                print(f"⚠️ Git push fallito: {push_res.stderr.strip()}")
-                return False
-        return False
+            for attempt in range(3):
+                subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=LOCAL_DIR, capture_output=True, text=True)
+                push_res = subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_DIR, capture_output=True, text=True)
+                if push_res.returncode == 0:
+                    print("🚀 Git commit & push completati con successo su origin/main.")
+                    return True
+                time.sleep(1)
+            print(f"⚠️ Git push non riuscito al momento: {push_res.stderr.strip() if 'push_res' in locals() else 'conflitto ref'}")
+            return False
+        return True
     except Exception as e:
-        print(f"⚠️ Git push non riuscito o già allineato: {e}")
+        print(f"⚠️ Git commit non necessario o già allineato: {e}")
         return False
 
 

@@ -101,21 +101,22 @@ def search_brain(query: str, hemisphere_filter: Optional[str] = None, limit: int
         return results
 
 
-def format_markdown_output(query: str, results: List[Dict[str, Any]], hemi: Optional[str] = None):
-    """Formatta i risultati per la visualizzazione ricca di Raycast in Markdown."""
-    hemi_badge = f" `[{hemi}]`" if hemi else ""
-    print(f"# 🧠 Risultati Ricerca Cervello: *\"{query}\"*{hemi_badge}\n")
+def format_clean_output(query: str, results: List[Dict[str, Any]], hemi: Optional[str] = None):
+    """Formatta i risultati per una visualizzazione pulita, elegante e naturale in Raycast."""
+    hemi_info = f" [Filtro: {hemi}]" if hemi else ""
+    print(f"🧠 RISULTATI RICERCA: \"{query}\"{hemi_info}")
+    print("═" * 58)
 
     if not results:
-        print("Nessun nodo trovato nel connettoma per questa query.")
-        print("\n> 💡 *Suggerimento:* Prova con parole chiave più generali o usa `LEFT` / `RIGHT` per filtrare per emisfero.")
+        print("\nNessun nodo trovato nel connettoma per questa ricerca.")
+        print("Suggerimento: Prova con parole chiave più generiche o senza filtri.")
         return
 
-    print(f"Trovati **{len(results)}** nodi pertinenti:\n")
-    print("---")
+    print(f"Trovati {len(results)} elementi pertinenti:\n")
 
     for i, n in enumerate(results, 1):
         hemi_icon = "⚡" if n.get("hemisphere") == "LEFT" else "🌸"
+        hemi_label = "Sinistro" if n.get("hemisphere") == "LEFT" else "Destro"
         layer = n.get("layer_level", 2)
         layer_name = "P0 Attico" if layer == 0 else ("P1 Progetto/Episodio" if layer == 1 else "P2 Modulo Atomico")
         
@@ -124,22 +125,24 @@ def format_markdown_output(query: str, results: List[Dict[str, Any]], hemi: Opti
             try:
                 tags_list = json.loads(tags_raw)
             except Exception:
-                tags_list = []
+                tags_list = [t.strip() for t in tags_raw.split(",") if t.strip()]
         elif isinstance(tags_raw, list):
             tags_list = tags_raw
         else:
             tags_list = []
-        
-        tags_str = " ".join([f"`#{t}`" for t in tags_list[:5]])
-        summary = (n.get("summary") or "Nessun riassunto disponibile.").strip()
+        tags_str = " ".join([f"#{t}" for t in tags_list[:5]])
+        raw_summary = (n.get("summary") or "Nessuna sintesi disponibile.").strip()
+        # Rimuovi eventuali residui di formattazione markdown (**, *, `, #, ecc.)
+        clean_summary = re.sub(r'[*_`#>]', '', raw_summary).strip()
+        updated = str(n.get("updated_at", "")).split("T")[0]
 
-        print(f"\n### {i}. {hemi_icon} **{n.get('label')}** (`{n.get('id')}`)")
-        print(f"**Emisfero:** `{n.get('hemisphere')}` | **Tipo:** `{n.get('primary_label')}` | **Piano:** `{layer_name}`")
+        print(f"{i}. {hemi_icon} {n.get('label')}")
+        print(f"   • Tipo:       Emisfero {hemi_label} ({n.get('primary_label')}) | {layer_name}")
         if tags_str:
-            print(f"**Tags:** {tags_str}")
-        print(f"\n> {summary}\n")
-        print(f"🔗 *Parent:* `{n.get('parent_graph_id')}` | *Aggiornato:* `{n.get('updated_at')}`")
-        print("---")
+            print(f"   • Tag:        {tags_str}")
+        print(f"   • Contenuto:  {clean_summary}")
+        print(f"   • Riferimento:{n.get('id')} (Parent: {n.get('parent_graph_id')} | Aggiornato: {updated})")
+        print("─" * 58)
 
 
 def main():
@@ -152,7 +155,7 @@ def main():
     hemi_arg = sys.argv[2] if len(sys.argv) > 2 else None
     
     results = search_brain(query, hemi_arg, limit=10)
-    format_markdown_output(query, results, hemi_arg)
+    format_clean_output(query, results, hemi_arg)
 
 
 if __name__ == "__main__":
