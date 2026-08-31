@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:47:58 UTC | **Nodi Restituiti:** 524 (SX: 367 · DX: 157) | **Sinapsi Restituite:** 1215
-> **Consistenza Reale Connettoma:** 524 Nodi Totali nel Database | 1215 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 18:48:50 UTC | **Nodi Restituiti:** 525 (SX: 368 · DX: 157) | **Sinapsi Restituite:** 1217
+> **Consistenza Reale Connettoma:** 525 Nodi Totali nel Database | 1217 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -657,6 +657,10 @@ samples, guidance on mobile development, and a full API reference.
 - **Test Live Upload Verify** (`test-live-upload-verify`)
   - **Tags:** `#daemon-test`
   - **Sintesi:** Test di verifica upload automatico demone
+- **Test Raycast Node** (`node-test-raycast-node`)
+  - **Tags:** `#raycast-quick-add` `#left` `#software-engineering`
+  - **Sintesi:** Verifica integrazione Raycast con il connettoma
+  - **Dettagli:** `source`: raycast_quick_add, `created_by`: Pierfrancesco Amendola
 - **Tombola WiFi** (`proj-tombolawifi`)
   - **Tags:** `#websockets` `#nodejs` `#tradition` `#multiplayer`
   - **Sintesi:** Digitalizzazione multiplayer locale della classica Tombola napoletana con Smorfia e broadcast chiamate.
@@ -2961,6 +2965,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-hierarchical-tree-deployment-sync`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[EXPRESSED]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`) *(Corpo Calloso)*
 - (`intent-clarify-render-cloud-utility-and-llm-web-refusal`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`node-test-raycast-node`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ai-shorts-evaluation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allineamento-nodi-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3321,6 +3326,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-napolilive`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`fastapi-python-stack`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`flutter-dart-ecosystem`)
+- (`node-test-raycast-node`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`proj-1-minimal`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
 - (`proj-10-funptr`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
 - (`proj-12-templates`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
