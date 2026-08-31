@@ -55,6 +55,23 @@ def get_db_mtime() -> float:
     return mtime
 
 
+def get_vault_mtime() -> float:
+    """Returns the newest modification time among all Markdown files in obsidian_vault."""
+    vault_dir = os.path.join(PROJECT_DIR, "obsidian_vault")
+    if not os.path.exists(vault_dir):
+        return 0.0
+    mtime = 0.0
+    for root, _, files in os.walk(vault_dir):
+        for f in files:
+            if f.endswith(".md"):
+                fp = os.path.join(root, f)
+                try:
+                    mtime = max(mtime, os.path.getmtime(fp))
+                except Exception:
+                    pass
+    return mtime
+
+
 def rotate_log_if_needed(max_bytes: int = 1_000_000):
     """Keeps the log file compact (<1MB)."""
     if os.path.exists(LOG_FILE) and os.path.getsize(LOG_FILE) > max_bytes:
@@ -87,6 +104,7 @@ def main():
     logging.info("🧠 Universal Brain Sync Daemon avviato con successo.")
     logging.info(f"📁 Directory Progetto: {PROJECT_DIR}")
     logging.info(f"🗄️ Database Locale: {LOCAL_DB}")
+    logging.info(f"💎 Obsidian Vault: {os.path.join(PROJECT_DIR, 'obsidian_vault')}")
     logging.info(f"🌐 Cloud Endpoint: {RENDER_URL}")
     logging.info("=======================================================")
 
@@ -99,6 +117,7 @@ def main():
         logging.warning(f"⚠️ Sincronizzazione iniziale differita (rete non pronta): {e}")
 
     last_db_mtime = get_db_mtime()
+    last_vault_mtime = get_vault_mtime()
     last_periodic_check = time.time()
     last_keepalive_ping = time.time()
     check_interval_seconds = 60
@@ -108,22 +127,37 @@ def main():
     while running:
         try:
             now = time.time()
-            current_mtime = get_db_mtime()
-            db_changed = current_mtime > (last_db_mtime + 0.5)
+            current_db_mtime = get_db_mtime()
+            current_vault_mtime = get_vault_mtime()
+
+            db_changed = current_db_mtime > (last_db_mtime + 0.5)
+            vault_changed = current_vault_mtime > (last_vault_mtime + 0.5)
             periodic_due = (now - last_periodic_check) >= check_interval_seconds
             keepalive_due = (now - last_keepalive_ping) >= keepalive_interval_seconds
 
-            if db_changed or periodic_due:
-                if db_changed:
-                    # Piccolo debounce per attendere la fine delle scritture batch
-                    time.sleep(1.0)
-                    current_mtime = get_db_mtime()
+            if vault_changed:
+                # Modifiche dirette su Obsidian Vault -> importa in SQLite prima di sincronizzare
+                time.sleep(1.0)
+                logging.info("💎 Modifica rilevata in Obsidian Vault. Importazione in SQLite...")
+                try:
+                    from obsidian_vault_sync import import_vault_to_brain
+                    import_vault_to_brain(os.path.join(PROJECT_DIR, "obsidian_vault"), LOCAL_DB)
+                    current_db_mtime = get_db_mtime()
+                    last_vault_mtime = get_vault_mtime()
+                except Exception as e:
+                    logging.error(f"❌ Errore importazione da Obsidian: {e}")
 
-                reason = "Modifica locale rilevata" if db_changed else "Controllo periodico (60s)"
+            if db_changed or vault_changed or periodic_due:
+                if db_changed:
+                    time.sleep(1.0)
+                    current_db_mtime = get_db_mtime()
+
+                reason = "Modifica Obsidian" if vault_changed else ("Modifica SQLite" if db_changed else "Controllo periodico (60s)")
                 logging.info(f"🔄 Avvio sincronizzazione: {reason}...")
                 
                 res = sync_bidirectional(verbose=False)
                 last_db_mtime = get_db_mtime()
+                last_vault_mtime = get_vault_mtime()
                 last_periodic_check = now
 
                 if res.get("success"):

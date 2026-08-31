@@ -310,6 +310,14 @@ def tool_brain_ingest(nodes: List[Dict[str, Any]], edges: Optional[List[Dict[str
         conn.commit()
         brain_db.invalidate_cache()
 
+        # Aggiornamento istantaneo del Vault Obsidian
+        try:
+            from obsidian_vault_sync import export_brain_to_vault
+            vault_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "obsidian_vault")
+            export_brain_to_vault(DB_PATH, vault_dir)
+        except Exception:
+            pass
+
     return {
         "status": "success",
         "nodes_upserted": nodes_upserted,
