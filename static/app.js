@@ -2447,17 +2447,17 @@ async function triggerObsidianSync(action) {
 // 🌌 3D Celestial Constellation Globe Engine (Three.js WebGL)
 // -----------------------------------------------------------------------------
 
-let globeScene, globeCamera, globeRenderer, globeNodesGroup, globeEdgesGroup;
+let globeScene, globeCamera, globeRenderer, globeNodesGroup, globeEdgesGroup, globeGridGroup;
 let isGlobeInitialized = false;
 let isGlobeSpinning = true;
 let globeRaycaster, globeMouse, globeIntersectedNode = null;
+let selectedGlobeNodeId = null;
 let currentRadarFilter = 'all';
 let globeNodeMeshMap = new Map();
 let globeTargetRotationX = 0, globeTargetRotationY = 0;
 let globeRotationX = 0, globeRotationY = 0;
 let globeIsDragging = false, globePreviousMousePosition = { x: 0, y: 0 };
 let globeCameraDistance = 850;
-
 let isGlobeLoopRunning = false;
 
 function initOrUpdateGlobe3D() {
@@ -2490,8 +2490,12 @@ function initGlobe3D(container) {
   globeCamera.lookAt(0, 0, 0);
 
   // Luci
-  const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 1.4);
   globeScene.add(ambientLight);
+
+  const centerLight = new THREE.PointLight(0x00D2FF, 2.0, 1000);
+  centerLight.position.set(0, 0, 0);
+  globeScene.add(centerLight);
 
   globeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   globeRenderer.setSize(width, height);
@@ -2503,15 +2507,21 @@ function initGlobe3D(container) {
 
   container.appendChild(globeRenderer.domElement);
 
-  // Starfield Dust
+  // 1. Starfield Dust
   createGlobeStarfield();
 
+  // 2. Griglia Olografica del Globo & Anelli
+  globeGridGroup = new THREE.Group();
+  globeScene.add(globeGridGroup);
+  createGlobeGridAndCore();
+
+  // 3. Gruppi Nodi e Archi
   globeNodesGroup = new THREE.Group();
   globeEdgesGroup = new THREE.Group();
   globeScene.add(globeNodesGroup);
   globeScene.add(globeEdgesGroup);
 
-  // Raycaster for hover and click
+  // Raycaster per hover e click
   globeRaycaster = new THREE.Raycaster();
   globeRaycaster.params.Points = { threshold: 8 };
   globeMouse = new THREE.Vector2(-999, -999);
@@ -2524,6 +2534,60 @@ function initGlobe3D(container) {
     isGlobeLoopRunning = true;
     animateGlobe3D();
   }
+}
+
+function createGlobeGridAndCore() {
+  if (!globeGridGroup) return;
+
+  while (globeGridGroup.children.length > 0) {
+    globeGridGroup.remove(globeGridGroup.children[0]);
+  }
+
+  const radius = 330;
+
+  // Sfera a griglia olografica sottile
+  const sphereGeo = new THREE.SphereGeometry(radius, 24, 16);
+  const sphereMat = new THREE.MeshBasicMaterial({
+    color: 0x0c2038,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.18
+  });
+  const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
+  globeGridGroup.add(sphereMesh);
+
+  // Anello equatoriale (Pianeta / Corpo Calloso)
+  const ringGeo = new THREE.RingGeometry(radius - 2, radius + 2, 64);
+  const ringMat = new THREE.MeshBasicMaterial({
+    color: 0x00D2FF,
+    side: THREE.DoubleSide,
+    transparent: true,
+    opacity: 0.28
+  });
+  const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+  ringMesh.rotation.x = Math.PI / 2;
+  globeGridGroup.add(ringMesh);
+
+  // Anello meridiano (Separazione Emisferi)
+  const meridianMat = new THREE.MeshBasicMaterial({
+    color: 0xFF007F,
+    side: THREE.DoubleSide,
+    transparent: true,
+    opacity: 0.2
+  });
+  const meridianMesh = new THREE.Mesh(ringGeo, meridianMat);
+  meridianMesh.rotation.y = Math.PI / 2;
+  globeGridGroup.add(meridianMesh);
+
+  // Pulsar Core centrale
+  const coreGeo = new THREE.SphereGeometry(24, 16, 16);
+  const coreMat = new THREE.MeshBasicMaterial({
+    color: 0x38bdf8,
+    transparent: true,
+    opacity: 0.6
+  });
+  const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+  globeGridGroup.add(coreMesh);
 }
 
 function resizeGlobe3D() {
@@ -2541,12 +2605,12 @@ function resizeGlobe3D() {
 
 function createGlobeStarfield() {
   const starGeo = new THREE.BufferGeometry();
-  const starCount = 1800;
+  const starCount = 2000;
   const positions = new Float32Array(starCount * 3);
   const colors = new Float32Array(starCount * 3);
 
   for (let i = 0; i < starCount * 3; i += 3) {
-    const radius = 1200 + Math.random() * 800;
+    const radius = 1200 + Math.random() * 900;
     const theta = Math.random() * Math.PI * 2;
     const phi = Math.acos(Math.random() * 2 - 1);
 
@@ -2554,8 +2618,8 @@ function createGlobeStarfield() {
     positions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
     positions[i + 2] = radius * Math.cos(phi);
 
-    colors[i] = 0.5 + Math.random() * 0.5;
-    colors[i + 1] = 0.7 + Math.random() * 0.3;
+    colors[i] = 0.4 + Math.random() * 0.6;
+    colors[i + 1] = 0.6 + Math.random() * 0.4;
     colors[i + 2] = 1.0;
   }
 
@@ -2566,7 +2630,7 @@ function createGlobeStarfield() {
     size: 2.2,
     vertexColors: true,
     transparent: true,
-    opacity: 0.65
+    opacity: 0.6
   });
 
   const starField = new THREE.Points(starGeo, starMat);
@@ -2616,9 +2680,9 @@ function rebuildGlobeGeometry() {
 
     // Separazione Bi-Emisferica
     if (isLeft) {
-      theta = Math.PI * 0.15 + (theta % (Math.PI * 0.7)); // East hemisphere
+      theta = Math.PI * 0.15 + (theta % (Math.PI * 0.7)); // East hemisphere (Cyan)
     } else {
-      theta = Math.PI * 1.15 + (theta % (Math.PI * 0.7)); // West hemisphere
+      theta = Math.PI * 1.15 + (theta % (Math.PI * 0.7)); // West hemisphere (Magenta)
     }
 
     if (isDomain) {
@@ -2634,8 +2698,8 @@ function rebuildGlobeGeometry() {
     let colorHex = isLeft ? 0x00D2FF : 0xFF007F;
     if (isDomain) colorHex = 0xFFD15C;
 
-    const baseSize = isDomain ? 10 : Math.max(3.2, Math.min(8.5, 2.5 + Math.sqrt(deg) * 0.8));
-    const sphereGeo = new THREE.SphereGeometry(baseSize, 12, 12);
+    const baseSize = isDomain ? 9.5 : Math.max(3.0, Math.min(7.5, 2.2 + Math.sqrt(deg) * 0.75));
+    const sphereGeo = new THREE.SphereGeometry(baseSize, 14, 14);
     const sphereMat = new THREE.MeshBasicMaterial({
       color: colorHex,
       wireframe: false
@@ -2649,7 +2713,22 @@ function rebuildGlobeGeometry() {
     globeNodeMeshMap.set(node.id, mesh);
   });
 
-  // Costruisci Archi 3D
+  // Disegna Archi Normali (Costellazione)
+  drawGlobeStandardEdges();
+
+  // Se c'era un nodo selezionato, ripristina il suo spotlight
+  if (selectedGlobeNodeId && globeNodeMeshMap.has(selectedGlobeNodeId)) {
+    selectGlobeNode(selectedGlobeNodeId);
+  } else {
+    applyRadarFilter(currentRadarFilter);
+  }
+}
+
+function drawGlobeStandardEdges() {
+  while (globeEdgesGroup.children.length > 0) {
+    globeEdgesGroup.remove(globeEdgesGroup.children[0]);
+  }
+
   const intraLinePositions = [];
   const intraLineColors = [];
   const bridgeLinePositions = [];
@@ -2672,9 +2751,9 @@ function rebuildGlobeGeometry() {
       } else {
         intraLinePositions.push(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
         if (srcMesh.userData.node.hemisphere === 'LEFT') {
-          intraLineColors.push(0.0, 0.6, 0.9, 0.0, 0.6, 0.9);
+          intraLineColors.push(0.0, 0.7, 0.95, 0.0, 0.7, 0.95);
         } else {
-          intraLineColors.push(0.9, 0.1, 0.5, 0.9, 0.1, 0.5);
+          intraLineColors.push(0.95, 0.1, 0.55, 0.95, 0.1, 0.55);
         }
       }
     }
@@ -2688,7 +2767,7 @@ function rebuildGlobeGeometry() {
     const intraMat = new THREE.LineBasicMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: 0.25,
+      opacity: 0.22,
       blending: THREE.AdditiveBlending
     });
     const intraLines = new THREE.LineSegments(intraGeo, intraMat);
@@ -2710,8 +2789,214 @@ function rebuildGlobeGeometry() {
     const bridgeLines = new THREE.LineSegments(bridgeGeo, bridgeMat);
     globeEdgesGroup.add(bridgeLines);
   }
+}
 
+/**
+ * 🎯 Spotlight & Synaptic Relational Inspector on Node Click
+ */
+function selectGlobeNode(nodeId) {
+  selectedGlobeNodeId = nodeId;
+  const centerMesh = globeNodeMeshMap.get(nodeId);
+  if (!centerMesh) return;
+
+  const node = centerMesh.userData.node;
+  const isLeft = (node.hemisphere || 'LEFT') === 'LEFT';
+
+  // 1. Trova tutte le relazioni dirette (entranti e uscenti)
+  const outgoing = [];
+  const incoming = [];
+  const connectedNodeIds = new Set([nodeId]);
+
+  rawEdges.forEach(e => {
+    const sId = typeof e.source === 'object' ? e.source.id : e.source;
+    const tId = typeof e.target === 'object' ? e.target.id : e.target;
+
+    if (sId === nodeId) {
+      connectedNodeIds.add(tId);
+      const targetNode = rawNodes.find(n => n.id === tId);
+      outgoing.push({
+        targetId: tId,
+        label: targetNode ? targetNode.label : tId,
+        relation: e.relation || 'CONNECTS_TO',
+        hemisphere: targetNode ? targetNode.hemisphere : 'LEFT',
+        reasoning: e.reasoning
+      });
+    }
+    if (tId === nodeId) {
+      connectedNodeIds.add(sId);
+      const sourceNode = rawNodes.find(n => n.id === sId);
+      incoming.push({
+        sourceId: sId,
+        label: sourceNode ? sourceNode.label : sId,
+        relation: e.relation || 'CONNECTS_TO',
+        hemisphere: sourceNode ? sourceNode.hemisphere : 'LEFT',
+        reasoning: e.reasoning
+      });
+    }
+  });
+
+  // 2. Aggiorna Nodi 3D: illumina e ingrandisci i connessi, oscura il resto
+  globeNodeMeshMap.forEach((mesh, id) => {
+    if (id === nodeId) {
+      mesh.scale.set(2.4, 2.4, 2.4);
+      mesh.material.color.setHex(0xFFFFFF); // Bianco brillante supernova
+    } else if (connectedNodeIds.has(id)) {
+      mesh.scale.set(1.6, 1.6, 1.6);
+      mesh.material.color.setHex(mesh.userData.baseColor);
+    } else {
+      mesh.scale.set(0.45, 0.45, 0.45);
+      mesh.material.color.setHex(0x0a1424); // Dark-matter dim
+    }
+  });
+
+  // 3. Disegna SOLO i raggi laser delle sinapsi connesse
+  while (globeEdgesGroup.children.length > 0) {
+    globeEdgesGroup.remove(globeEdgesGroup.children[0]);
+  }
+
+  const laserPositions = [];
+  const laserColors = [];
+
+  connectedNodeIds.forEach(otherId => {
+    if (otherId === nodeId) return;
+    const otherMesh = globeNodeMeshMap.get(otherId);
+    if (!otherMesh) return;
+
+    const p1 = centerMesh.position;
+    const p2 = otherMesh.position;
+    const isCross = (node.hemisphere || 'LEFT') !== (otherMesh.userData.node.hemisphere || 'LEFT');
+
+    laserPositions.push(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
+
+    if (isCross) {
+      laserColors.push(1.0, 0.8, 0.1, 1.0, 0.8, 0.1); // Oro corpo calloso
+    } else if (isLeft) {
+      laserColors.push(0.0, 0.95, 1.0, 0.0, 0.95, 1.0); // Cyan laser
+    } else {
+      laserColors.push(1.0, 0.1, 0.6, 1.0, 0.1, 0.6); // Magenta laser
+    }
+  });
+
+  if (laserPositions.length > 0) {
+    const laserGeo = new THREE.BufferGeometry();
+    laserGeo.setAttribute('position', new THREE.Float32BufferAttribute(laserPositions, 3));
+    laserGeo.setAttribute('color', new THREE.Float32BufferAttribute(laserColors, 3));
+    const laserMat = new THREE.LineBasicMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.95,
+      linewidth: 3,
+      blending: THREE.AdditiveBlending
+    });
+    const laserLines = new THREE.LineSegments(laserGeo, laserMat);
+    globeEdgesGroup.add(laserLines);
+  }
+
+  // 4. Popola e Mostra la Card Olografica Relazioni
+  const card = document.getElementById('globe-rel-card');
+  const titleEl = document.getElementById('globe-rel-title');
+  const iconEl = document.getElementById('globe-rel-icon');
+  const metaEl = document.getElementById('globe-rel-meta');
+  const summaryEl = document.getElementById('globe-rel-summary');
+  const countEl = document.getElementById('globe-rel-count');
+  const listEl = document.getElementById('globe-rel-list');
+  const pathWrap = document.getElementById('globe-rel-path-wrap');
+  const pathLink = document.getElementById('globe-rel-path-link');
+  const isolateBtn = document.getElementById('btn-globe-isolate');
+
+  if (card && titleEl) {
+    titleEl.textContent = node.label || node.id;
+    iconEl.textContent = isLeft ? '⚡' : '🌸';
+    metaEl.textContent = `${isLeft ? '⚡ EMISFERO SINISTRO' : '🌸 EMISFERO DESTRO'} · ${node.primary_label || 'CONCEPT'} · PIANO ${node.layer_level || 1}`;
+    summaryEl.textContent = node.summary || 'Nessuna sintesi disponibile nel grafo.';
+    countEl.textContent = outgoing.length + incoming.length;
+
+    // Gestione link file Mac
+    const details = typeof node.details === 'object' ? node.details : {};
+    const localUri = details?.file_uri || (details?.local_path ? `file://${details.local_path}` : null);
+    if (localUri && pathWrap && pathLink) {
+      pathLink.href = localUri;
+      pathLink.textContent = `📂 ${details.local_path || localUri}`;
+      pathWrap.style.display = 'block';
+    } else if (pathWrap) {
+      pathWrap.style.display = 'none';
+    }
+
+    // Costruisci lista relazioni
+    if (listEl) {
+      listEl.innerHTML = '';
+
+      if (outgoing.length === 0 && incoming.length === 0) {
+        listEl.innerHTML = `<div style="color:#64748b; font-size:11px; padding:6px 0;">Nessuna sinapsi diretta collegata.</div>`;
+      }
+
+      outgoing.forEach(rel => {
+        const isBridge = rel.hemisphere !== node.hemisphere;
+        const item = document.createElement('div');
+        item.className = 'globe-rel-item';
+        item.onclick = () => selectGlobeNode(rel.targetId);
+        item.innerHTML = `
+          <div class="globe-rel-item-name" title="${rel.label}">${rel.hemisphere === 'LEFT' ? '⚡' : '🌸'} ${rel.label}</div>
+          <span class="globe-rel-item-badge ${isBridge ? 'bridge' : ''}">${rel.relation}</span>
+        `;
+        listEl.appendChild(item);
+      });
+
+      incoming.forEach(rel => {
+        const isBridge = rel.hemisphere !== node.hemisphere;
+        const item = document.createElement('div');
+        item.className = 'globe-rel-item';
+        item.onclick = () => selectGlobeNode(rel.sourceId);
+        item.innerHTML = `
+          <div class="globe-rel-item-name" title="${rel.label}">📥 ${rel.label}</div>
+          <span class="globe-rel-item-badge ${isBridge ? 'bridge' : ''}">← ${rel.relation}</span>
+        `;
+        listEl.appendChild(item);
+      });
+    }
+
+    card.style.display = 'flex';
+    if (isolateBtn) isolateBtn.style.display = 'inline-block';
+  }
+
+  // 5. Ruota dolcemente il mappamondo verso il nodo selezionato
+  const p = centerMesh.position;
+  const targetTheta = Math.atan2(p.x, p.z);
+  const targetPhi = Math.atan2(p.y, Math.sqrt(p.x * p.x + p.z * p.z));
+
+  globeTargetRotationY = -targetTheta;
+  globeTargetRotationX = targetPhi;
+
+  // Sincronizza anche la sidebar laterale
+  showInfo(nodeId);
+}
+
+function clearGlobeSelection() {
+  selectedGlobeNodeId = null;
+
+  const card = document.getElementById('globe-rel-card');
+  const isolateBtn = document.getElementById('btn-globe-isolate');
+  if (card) card.style.display = 'none';
+  if (isolateBtn) isolateBtn.style.display = 'none';
+
+  // Ripristina dimensioni e colori di tutti i nodi
+  globeNodeMeshMap.forEach(mesh => {
+    mesh.scale.set(1, 1, 1);
+    mesh.material.color.setHex(mesh.userData.baseColor);
+  });
+
+  // Ridisegna archi standard
+  drawGlobeStandardEdges();
   applyRadarFilter(currentRadarFilter);
+}
+
+function openSidebarDossierFromGlobe() {
+  if (selectedGlobeNodeId) {
+    showInfo(selectedGlobeNodeId);
+    if (window.innerWidth <= 900) {
+      switchMobileTab('sidebar');
+    }
+  }
 }
 
 function setupGlobeInteractions(container) {
@@ -2752,7 +3037,12 @@ function setupGlobeInteractions(container) {
     if (globeIntersectedNode) {
       const node = globeIntersectedNode.userData.node;
       if (node) {
-        openInspector(node);
+        selectGlobeNode(node.id);
+      }
+    } else if (!globeIsDragging) {
+      // Cliccato nello spazio vuoto: resetta focus se aperto
+      if (selectedGlobeNodeId && e.target === canvas) {
+        clearGlobeSelection();
       }
     }
   });
@@ -2769,7 +3059,7 @@ function animateGlobe3D() {
   isGlobeLoopRunning = true;
   requestAnimationFrame(animateGlobe3D);
 
-  if (isGlobeSpinning && !globeIsDragging) {
+  if (isGlobeSpinning && !globeIsDragging && !selectedGlobeNodeId) {
     globeTargetRotationY += 0.0018;
   }
 
@@ -2777,11 +3067,13 @@ function animateGlobe3D() {
   globeRotationX += (globeTargetRotationX - globeRotationX) * 0.08;
   globeRotationY += (globeTargetRotationY - globeRotationY) * 0.08;
 
-  if (globeNodesGroup && globeEdgesGroup) {
+  if (globeNodesGroup && globeEdgesGroup && globeGridGroup) {
     globeNodesGroup.rotation.x = globeRotationX;
     globeNodesGroup.rotation.y = globeRotationY;
     globeEdgesGroup.rotation.x = globeRotationX;
     globeEdgesGroup.rotation.y = globeRotationY;
+    globeGridGroup.rotation.x = globeRotationX;
+    globeGridGroup.rotation.y = globeRotationY;
   }
 
   // Raycasting hover check
@@ -2792,13 +3084,15 @@ function animateGlobe3D() {
     if (intersects.length > 0) {
       const hit = intersects[0].object;
       if (globeIntersectedNode !== hit) {
-        if (globeIntersectedNode) {
+        if (globeIntersectedNode && globeIntersectedNode.userData.node.id !== selectedGlobeNodeId) {
           globeIntersectedNode.scale.set(1, 1, 1);
           globeIntersectedNode.material.color.setHex(globeIntersectedNode.userData.baseColor);
         }
         globeIntersectedNode = hit;
-        globeIntersectedNode.scale.set(2.2, 2.2, 2.2);
-        globeIntersectedNode.material.color.setHex(0xFFFFFF);
+        if (hit.userData.node.id !== selectedGlobeNodeId) {
+          globeIntersectedNode.scale.set(1.9, 1.9, 1.9);
+          globeIntersectedNode.material.color.setHex(0xFFFFFF);
+        }
 
         const node = globeIntersectedNode.userData.node;
         const statusEl = document.getElementById('terminal-status-text');
@@ -2808,8 +3102,10 @@ function animateGlobe3D() {
       }
     } else {
       if (globeIntersectedNode) {
-        globeIntersectedNode.scale.set(1, 1, 1);
-        globeIntersectedNode.material.color.setHex(globeIntersectedNode.userData.baseColor);
+        if (globeIntersectedNode.userData.node.id !== selectedGlobeNodeId) {
+          globeIntersectedNode.scale.set(1, 1, 1);
+          globeIntersectedNode.material.color.setHex(globeIntersectedNode.userData.baseColor);
+        }
         globeIntersectedNode = null;
       }
     }
@@ -2832,6 +3128,7 @@ function resetGlobeCamera() {
   globeTargetRotationY = 0;
   globeCameraDistance = 850;
   if (globeCamera) globeCamera.position.set(0, 0, globeCameraDistance);
+  clearGlobeSelection();
 }
 
 // -----------------------------------------------------------------------------
@@ -2849,7 +3146,7 @@ function applyRadarFilter(filterKey) {
   const filterLower = filterKey.toLowerCase();
 
   // 1. Aggiorna 3D Constellation Globe
-  if (globeNodeMeshMap.size > 0) {
+  if (globeNodeMeshMap.size > 0 && !selectedGlobeNodeId) {
     globeNodeMeshMap.forEach((mesh, nodeId) => {
       const node = mesh.userData.node;
       const tagsStr = (Array.isArray(node.tags) ? node.tags.join(' ') : (node.tags || '')).toLowerCase();

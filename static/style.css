@@ -420,6 +420,237 @@ body {
   color: #10b981;
 }
 
+/* 3D Globe Holographic Relationship Overlay Card */
+.globe-rel-card {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  width: 360px;
+  max-width: calc(100% - 48px);
+  max-height: 480px;
+  background: rgba(10, 16, 28, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 210, 255, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(0, 210, 255, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #e2e8f0;
+  animation: globeCardSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+@keyframes globeCardSlideIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.globe-rel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+}
+
+.globe-rel-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.globe-rel-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.globe-rel-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 230px;
+}
+
+.globe-rel-meta {
+  font-size: 10px;
+  font-weight: 700;
+  color: #00D2FF;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-mono);
+}
+
+.globe-rel-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 15px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.globe-rel-close:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.globe-rel-summary {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+  max-height: 65px;
+  overflow-y: auto;
+}
+
+.globe-rel-path-wrap {
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.globe-rel-path-link {
+  font-size: 11px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  word-break: break-all;
+}
+
+.globe-rel-path-link:hover {
+  text-decoration: underline;
+  color: #7dd3fc;
+}
+
+.globe-rel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 0;
+  flex: 1;
+}
+
+.globe-rel-sec-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+}
+
+.globe-rel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  max-height: 150px;
+  padding-right: 4px;
+}
+
+.globe-rel-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.globe-rel-item:hover {
+  background: rgba(0, 210, 255, 0.15);
+  border-color: rgba(0, 210, 255, 0.5);
+  transform: translateX(3px);
+}
+
+.globe-rel-item-name {
+  font-weight: 600;
+  color: #f1f5f9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.globe-rel-item-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(0, 210, 255, 0.18);
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+
+.globe-rel-item-badge.bridge {
+  background: rgba(255, 184, 0, 0.25);
+  color: #fbbf24;
+}
+
+.globe-rel-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.globe-rel-btn-inspect {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(0, 210, 255, 0.25), rgba(168, 85, 247, 0.25));
+  border: 1px solid rgba(0, 210, 255, 0.5);
+  color: #ffffff;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.globe-rel-btn-inspect:hover {
+  background: linear-gradient(135deg, rgba(0, 210, 255, 0.4), rgba(168, 85, 247, 0.4));
+  border-color: #38bdf8;
+  box-shadow: 0 0 12px rgba(0, 210, 255, 0.3);
+}
+
+.globe-rel-btn-reset {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  cursor: pointer;
+}
+
+.globe-rel-btn-reset:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
 /* ==========================================================================
    Palazzo Cognitivo Floating Elevator Panel
    ========================================================================== */

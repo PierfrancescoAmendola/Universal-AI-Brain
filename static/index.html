@@ -197,6 +197,39 @@
         <div class="globe-hud-overlay">
           <button class="globe-hud-btn" id="btn-globe-spin" onclick="toggleGlobeSpin()" title="Attiva/Disattiva Rotazione Automatica">🔄 Auto-Spin</button>
           <button class="globe-hud-btn" onclick="resetGlobeCamera()" title="Reimposta visuale frontale del Mappamondo">🎯 Centra Globo</button>
+          <button class="globe-hud-btn" id="btn-globe-isolate" onclick="clearGlobeSelection()" style="display:none;" title="Mostra tutti i nodi">🌐 Mostra Tutti</button>
+        </div>
+
+        <!-- Floating 3D Node Holographic Relations Card -->
+        <div id="globe-rel-card" class="globe-rel-card" style="display:none;">
+          <div class="globe-rel-header">
+            <div class="globe-rel-title-wrap">
+              <span id="globe-rel-icon" class="globe-rel-icon">🪐</span>
+              <div>
+                <h3 id="globe-rel-title" class="globe-rel-title">Titolo Nodo</h3>
+                <span id="globe-rel-meta" class="globe-rel-meta">EMISFERO · CATEGORIA</span>
+              </div>
+            </div>
+            <button class="globe-rel-close" onclick="clearGlobeSelection()" title="Chiudi scheda">✕</button>
+          </div>
+
+          <p id="globe-rel-summary" class="globe-rel-summary">Sintesi del nodo selezionato...</p>
+
+          <div id="globe-rel-path-wrap" class="globe-rel-path-wrap" style="display:none;">
+            <a id="globe-rel-path-link" href="#" class="globe-rel-path-link" target="_blank">📂 Apri nel Finder / IDE</a>
+          </div>
+
+          <div class="globe-rel-section">
+            <div class="globe-rel-sec-title">🔗 Connessioni &amp; Sinapsi (<span id="globe-rel-count">0</span>)</div>
+            <div id="globe-rel-list" class="globe-rel-list">
+              <!-- Dynamically populated with connected nodes -->
+            </div>
+          </div>
+
+          <div class="globe-rel-actions">
+            <button class="globe-rel-btn-inspect" onclick="openSidebarDossierFromGlobe()">📖 Apri Dossier Completo</button>
+            <button class="globe-rel-btn-reset" onclick="clearGlobeSelection()">Chiudi Focus</button>
+          </div>
         </div>
       </div>
     </div>
@@ -599,6 +632,6 @@
     </button>
   </nav>
 
-  <script src="/static/app.js?v=20260831_1755"></script>
+  <script src="/static/app.js?v=20260831_2040"></script>
 </body>
 </html>
