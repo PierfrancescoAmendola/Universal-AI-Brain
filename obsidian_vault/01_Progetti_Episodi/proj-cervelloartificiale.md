@@ -48,3 +48,7 @@ updated_at: "2026-08-31T15:23:50.646666+00:00"
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[proj-cervelloartificiale-api-routes]] (`PART_OF_PROJECT`) — _Modulo architetturale del progetto_
+- [[user-intent-espansione-supercervello-integrazioni]] (`TARGETS_PROJECT`) — _Riferito all'evoluzione del progetto Cervello Artificiale_
+- [[reasoning-architettura-ecosistema-cognitivo-onnipresente]] (`OPTIMIZES`) — _Ottimizza ed espande il connettoma verso un Cognitive OS onnipresente_
+- [[user-intent-verifica-vincolo-zero-costi]] (`TARGETS_PROJECT`) — _Verifica i vincoli del progetto Cervello Artificiale_
+- [[reasoning-validazione-architettura-zero-costi]] (`OPTIMIZES`) — _Convalida e blinda il principio di costo zero del progetto_

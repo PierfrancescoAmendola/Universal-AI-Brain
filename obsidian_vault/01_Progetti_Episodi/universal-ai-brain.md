@@ -108,3 +108,4 @@ Sistema di memoria persistente a grafo bi-emisferico per agenti LLM (Claude, Gem
 - [[reasoning-update-readme-architecture]] (`OPTIMIZES`) — _Ottimizza il progetto target_
 - [[user-intent-potenziamento-cognitivo-obsidian-bridge]] (`TARGETS_PROJECT`) — _Obiettivo di potenziamento del connettoma Universal AI Brain_
 - [[reasoning-potenziamento-cognitivo-obsidian-bridge]] (`OPTIMIZES`) — _Ottimizzazione del backend, MCP e frontend dark-tech_
+- [[user-intent-mappamondo-3d-spotlight-relazioni]] (`BELONGS_TO_PROJECT`) — _Evoluzione interfaccia 3D del connettoma_

@@ -364,3 +364,7 @@ Identità centrale, connettoma fondativo e profilo di Pierfrancesco Amendola.
 - [[proj-pack3]] (`CREATED_BY`) — _Progetto ideato e sviluppato da Pierfrancesco Amendola_
 - [[user-intent-confronto-integrazioni-llm-notion-obsidian]] (`EXPRESSED_BY`)
 - [[episode-disamina-integrazioni-notion-obsidian]] (`INTERACTION_WITH`)
+- [[user-intent-espansione-supercervello-integrazioni]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
+- [[episode-espansione-ecosistema-supercervello]] (`INTERACTION_WITH`) — _Dialogo evolutivo con Pierfrancesco_
+- [[user-intent-verifica-vincolo-zero-costi]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco per verificare il vincolo economico_
+- [[episode-verifica-costi-zero-euro]] (`INTERACTION_WITH`) — _Dialogo sulla sostenibilità economica a 0 euro_
