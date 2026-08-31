@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 15:23:16 UTC | **Nodi Restituiti:** 381 (SX: 246 · DX: 135) | **Sinapsi Restituite:** 935
-> **Consistenza Reale Connettoma:** 381 Nodi Totali nel Database | 935 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 15:23:56 UTC | **Nodi Restituiti:** 513 (SX: 359 · DX: 154) | **Sinapsi Restituite:** 1194
+> **Consistenza Reale Connettoma:** 513 Nodi Totali nel Database | 1194 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -430,6 +430,12 @@
   - **Sintesi:** Gioco multiplayer in tempo reale della tombola su rete locale WiFi senza necessità di server cloud.
   - **Dettagli:** `raw`: `stack`: Flutter, WebSockets, `architecture`: Zero-cost local peer-to-peer / LAN sync
 
+### [Macro-Label: `API_ENDPOINT`]
+- **FastAPI REST Endpoints (proj-cervelloartificiale)** (`proj-cervelloartificiale-api-routes`)
+  - **Tags:** `#fastapi` `#rest-api` `#python`
+  - **Sintesi:** Pipeline API REST asincrona con validazione Pydantic per proj-cervelloartificiale.
+  - **Dettagli:** `parent_project`: proj-cervelloartificiale, `file_uri`: file:///Users/pierfrancesco/Desktop/CervelloArtificiale
+
 ### [Macro-Label: `API_SPEC`]
 - **AI Ingest & Markdown Read Protocol** (`ai-memory-ingest-spec`)
   - **Tags:** `#api-spec` `#brain-md` `#ingest` `#quick-add` `#json-schema`
@@ -447,6 +453,78 @@
   - **Tags:** `#ios` `#swift` `#app-store` `#color-extraction`
   - **Sintesi:** Utility iOS per campionamento, quantizzazione ed esportazione live di palette cromatiche conforme WCAG.
   - **Dettagli:** `raw`: `platform`: Apple App Store, `algorithms`: K-Means / Median Cut Color Quantization
+
+### [Macro-Label: `APP`]
+- **App Abbonamenti** (`proj-appabbonamenti`)
+  - **Tags:** `#mac-project` `#swift` `#web`
+  - **Sintesi:** **SubTracker** è un'applicazione iOS moderna e intuitiva progettata per monitorare tutti i tuoi abbonamenti in un unico posto. Sviluppata interamente in **SwiftUI** e **SwiftData**, offre un'esperienz
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppAbbonamenti, `file_uri`: file:///Users/pierfrancesco/Desktop/AppAbbonamenti, `languages`: ['Swift'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 24, `last_modified`: 2026-01-20T22:17:39.675718+00:00, `key_dependencies`: [], `readme_excerpt`: # SubTracker 📱
+
+**SubTracker** è un'applicazione iOS moderna e intuitiva progettata per monitorare tutti i tuoi abbonamenti in un unico posto. Sviluppata interamente in **SwiftUI** e **SwiftData**, offre un'esperienza utente premium con animazioni fluide, supporto multilingua e gestione avanzata delle notifiche.
+
+## 🚀 Funzionalità Principali
+
+### 📊 Dashboard Intuitiva
+* **Resoconto Spese**: Visualizza immediatamente quanto spendi al mese e all'anno.
+* **Lista Ordinata**: Gli abbonamenti sono ordinati automaticamente per data di rinnovo.
+* **Feedback Visivo**: Card colorate con icone personaliz
+- **App Napoli** (`proj-appnapoli`)
+  - **Tags:** `#c` `#c-lang` `#dart` `#flutter` `#mac-project` `#python` `#swift`
+  - **Sintesi:** Progetto Mac: App Napoli. Stack: C, Dart, Python, Swift.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppNapoli, `file_uri`: file:///Users/pierfrancesco/Desktop/AppNapoli, `languages`: ['C', 'Dart', 'Python', 'Swift'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 87, `last_modified`: 2026-05-21T08:47:13.228160+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **App Tombola** (`proj-apptombola`)
+  - **Tags:** `#c++` `#cpp` `#dart` `#flutter` `#mac-project` `#swift` `#web`
+  - **Sintesi:** A new Flutter project.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppTombola, `file_uri`: file:///Users/pierfrancesco/Desktop/AppTombola, `languages`: ['C++', 'Dart', 'Swift'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 59, `last_modified`: 2026-06-20T14:46:12.993483+00:00, `key_dependencies`: [], `readme_excerpt`: # app_tombola
+
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+- **Esercizio Conto Corrente** (`proj-eserciziocontocorrente`)
+  - **Tags:** `#mac-project` `#web`
+  - **Sintesi:** Un sistema bancario moderno con interfaccia grafica elegante in stile Apple, sviluppato in Java con JavaFX.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/EsercizioContoCorrente, `file_uri`: file:///Users/pierfrancesco/Desktop/EsercizioContoCorrente, `languages`: [], `frameworks`: [], `has_git`: True, `relevant_files_count`: 62, `last_modified`: 2025-10-04T12:11:52.447732+00:00, `key_dependencies`: [], `readme_excerpt`: # 🍎 Banca Apple - Sistema Bancario
+
+Un sistema bancario moderno con interfaccia grafica elegante in stile Apple, sviluppato in Java con JavaFX.
+
+## ✨ Caratteristiche
+
+- **Interfaccia Utente Elegante**: Design moderno ispirato allo stile Apple
+- **Architettura MVC**: Separazione pulita tra presentazione, business logic e persistenza
+- **Database H2**: Persistenza dati con database embedded
+- **Autenticazione Sicura**: Sistema di login con hash delle password (BCrypt)
+- **Operazioni Bancarie Complete**: Versamenti, prelievi, gestione conti con carta
+- **Pattern DAO**: Accesso ai dati strutturato
+- **Qr Generator** (`proj-qr_generator`)
+  - **Tags:** `#c++` `#cpp` `#dart` `#flutter` `#mac-project` `#swift` `#web`
+  - **Sintesi:** A new Flutter project.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppQrCode/qr_generator, `file_uri`: file:///Users/pierfrancesco/Desktop/AppQrCode/qr_generator, `languages`: ['C++', 'Dart', 'Swift'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 37, `last_modified`: 2026-06-06T16:21:40.419611+00:00, `key_dependencies`: [], `readme_excerpt`: # qr_generator
+
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
 
 ### [Macro-Label: `ARCHITECTURE`]
 - **Architettura Graph-of-Graphs / Palazzo Cognitivo a Piani** (`concept-graph-of-graphs-hypergraph`)
@@ -774,6 +852,665 @@
   - **Sintesi:** Ubiquitous Memory Ingestion (Layer: DYNAMIC_PLASTICITY, Tipo: COGNITIVE_CAPABILITY)
   - **Dettagli:** `raw`: `id`: node_ubiquitous_ingestion, `label`: Ubiquitous Memory Ingestion, `type`: COGNITIVE_CAPABILITY, `layer`: DYNAMIC_PLASTICITY
 
+### [Macro-Label: `PROJECT`]
+- **1 Minimal** (`proj-1-minimal`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: 1 Minimal. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/examples/1-minimal, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/examples/1-minimal, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2023-03-05T14:04:14+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **10 Funptr** (`proj-10-funptr`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: 10 Funptr. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/examples/10-funptr, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/examples/10-funptr, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2024-03-23T14:35:12+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **12 Templates** (`proj-12-templates`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: 12 Templates. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/examples/12-templates, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/examples/12-templates, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2024-03-25T13:07:44+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **2** (`proj-2`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: 2. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Esami LP1/Foto Cri/2, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Esami LP1/Foto Cri/2, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2025-06-16T20:51:41+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **2 Structured** (`proj-2-structured`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: 2 Structured. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/examples/2-structured, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/examples/2-structured, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 5, `last_modified`: 2024-03-13T11:08:40+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **3 Basictypes** (`proj-3-basictypes`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: 3 Basictypes. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/examples/3-basictypes, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/examples/3-basictypes, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2024-03-13T11:10:40+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **4 Allocation** (`proj-4-allocation`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: 4 Allocation. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/examples/4-allocation, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/examples/4-allocation, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2024-03-18T15:04:38+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **5 Usertypes** (`proj-5-usertypes`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: 5 Usertypes. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/examples/5-usertypes, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/examples/5-usertypes, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2024-03-18T15:03:46+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **6 Iostream** (`proj-6-iostream`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: 6 Iostream. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/examples/6-iostream, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/examples/6-iostream, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2024-03-20T07:38:30+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **7 String** (`proj-7-string`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: 7 String. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/examples/7-string, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/examples/7-string, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2024-03-20T07:38:30+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **8 Psecasgen** (`proj-8-psecasgen`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: 8 Psecasgen. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/examples/8-psecasgen, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/examples/8-psecasgen, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2024-03-20T07:38:30+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Accent Color.Colorset** (`proj-accentcolor-colorset`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Accent Color.Colorset. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/MacPulse2/MacPulse2/Assets.xcassets/AccentColor.colorset, `file_uri`: file:///Users/pierfrancesco/MacPulse2/MacPulse2/Assets.xcassets/AccentColor.colorset, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-10-23T07:32:00.540118+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Advanced Db(Mod.Db Tech)** (`proj-advanceddb-mod-db-tech`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Advanced Db(Mod.Db Tech). Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/AdvancedDB(MOD.DB tech), `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/AdvancedDB(MOD.DB tech), `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-06-23T16:28:32.114558+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Algebra** (`proj-algebra`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Algebra. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/ALGEBRA, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/ALGEBRA, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 4, `last_modified`: 2025-06-24T09:30:23.001475+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **App Calcolatori** (`proj-appcalcolatori`)
+  - **Tags:** `#ios` `#mac-project` `#swift` `#swiftui` `#xcodegen`
+  - **Sintesi:** Native iPhone utility suite built with SwiftUI, Swift 6, and iOS 18+.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppCalcolatori, `file_uri`: file:///Users/pierfrancesco/Desktop/AppCalcolatori, `languages`: ['Swift'], `frameworks`: ['SwiftUI', 'XcodeGen'], `has_git`: False, `relevant_files_count`: 23, `last_modified`: 2026-07-29T07:41:17.289956+00:00, `key_dependencies`: [], `readme_excerpt`: # PocketCalc+
+
+Native iPhone utility suite built with SwiftUI, Swift 6, and iOS 18+.
+
+## Generate and build
+
+```sh
+xcodegen generate
+xcodebuild -project PocketCalcPlus.xcodeproj -scheme PocketCalcPlus -configuration Debug build
+```
+
+XcodeGen keeps project generation deterministic; generated `.xcodeproj` is committed.
+
+## Before App Store archive
+
+- Replace AdMob test IDs in `Config/Release.xcconfig`.
+- Replace privacy policy and support URLs in `SettingsView.swift`.
+- Select production signing team and verify bundle identifier.
+- Complete App Store privacy labels for Google Mobile Ads.
+- **App Icon.Appiconset** (`proj-appicon-appiconset`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: App Icon.Appiconset. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/MacPulse2/MacPulse2/Assets.xcassets/AppIcon.appiconset, `file_uri`: file:///Users/pierfrancesco/MacPulse2/MacPulse2/Assets.xcassets/AppIcon.appiconset, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-10-23T07:32:02.159356+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Asd & Lasd** (`proj-asd-lasd`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Asd & Lasd. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/ASD & LASD, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/ASD & LASD, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2025-04-24T09:40:35.165134+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Auth Screens** (`proj-auth_screens`)
+  - **Tags:** `#javascript` `#mac-project` `#web`
+  - **Sintesi:** Progetto Mac: Auth Screens. Stack: JavaScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Downloads/Auth_Screens, `file_uri`: file:///Users/pierfrancesco/Downloads/Auth_Screens, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 3, `last_modified`: 2026-05-04T03:18:18+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Basi Di Dati Esercizi** (`proj-basi-di-dati-esercizi`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Basi Di Dati Esercizi. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/BASI DI DATI ESERCIZI, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/BASI DI DATI ESERCIZI, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 8, `last_modified`: 2025-04-26T08:56:30.637358+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Bdd** (`proj-bdd`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Bdd. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/BDD, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/BDD, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 3, `last_modified`: 2025-03-07T10:45:43+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Binari** (`proj-binari`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Binari. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LSO/Esercizi in C/binari, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LSO/Esercizi in C/binari, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-11-17T14:47:43.274341+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Book** (`proj-book`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto editoriale per edizione illustrata KDP.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-22/stavo-pensando-di-scrivere-un-libro/work/book, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-22/stavo-pensando-di-scrivere-un-libro/work/book, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 47, `last_modified`: 2026-07-26T22:48:51.873911+00:00, `key_dependencies`: [], `readme_excerpt`: # Cos'è davvero l'informatica
+
+Progetto editoriale per edizione illustrata KDP.
+
+## Struttura
+
+- `editorial-bible.md`: identità, pubblico, tono, criteri di qualità.
+- `chapter-map.md`: indice ragionato, obiettivi e budget per capitolo.
+- `main.tex`: radice del volume.
+- `bookstyle.sty`: sistema tipografico e componenti editoriali.
+- `frontmatter/`: occhiello, frontespizio, copyright, prologo.
+- `chapters/`: capitoli numerati.
+- `backmatter/`: glossario, note, bibliografia, crediti.
+- `assets/svg/`: diagrammi vettoriali originali.
+- `research/`: fonti, registro diritti e fact-check.
+- `build/`:
+- **Calm Raman** (`proj-calm-raman`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Calm Raman. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/antigravity/calm-raman, `file_uri`: file:///Users/pierfrancesco/Documents/antigravity/calm-raman, `languages`: [], `frameworks`: [], `has_git`: True, `relevant_files_count`: 0, `last_modified`: 2026-08-31T15:23:50.602671+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Cervello Artificiale** (`proj-cervelloartificiale`)
+  - **Tags:** `#fastapi` `#javascript` `#mac-project` `#python` `#uvicorn` `#web`
+  - **Sintesi:** > **Persistent Bi-Hemispheric Knowledge Graph, Hierarchical Tree Engine, Dual-Ring Cloud Persistence & MCP Server for Autonomous Multi-Agent AI Systems**
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/CervelloArtificiale, `file_uri`: file:///Users/pierfrancesco/Desktop/CervelloArtificiale, `languages`: ['JavaScript', 'Python'], `frameworks`: ['FastAPI', 'Uvicorn'], `has_git`: True, `relevant_files_count`: 441, `last_modified`: 2026-08-31T15:23:20.481809+00:00, `key_dependencies`: ['fastapi', 'uvicorn[standard]', 'pydantic'], `readme_excerpt`: # 🧠 Universal AI Brain (Connettoma Cognitivo Universale)
+> **Persistent Bi-Hemispheric Knowledge Graph, Hierarchical Tree Engine, Dual-Ring Cloud Persistence & MCP Server for Autonomous Multi-Agent AI Systems**  
+> *100% Zero-Cost Architecture (0,00€ Forever) · FastAPI · SQLite WAL + FTS5 · Bidirectional BFS · Model Context Protocol (MCP) · Telegram Gateway · 24/7 Keep-Alive Daemon*
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.sh
+- **Cisco Certification** (`proj-ciscocertification`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Cisco Certification. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Certificati/CiscoCertification, `file_uri`: file:///Users/pierfrancesco/Desktop/Certificati/CiscoCertification, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 6, `last_modified`: 2026-05-09T10:25:50.017104+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Codice Architettura Tesi** (`proj-codice_architettura_tesi`)
+  - **Tags:** `#mac-project` `#python`
+  - **Sintesi:** Progetto Mac: Codice Architettura Tesi. Stack: Python.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/codice_Architettura_Tesi, `file_uri`: file:///Users/pierfrancesco/Desktop/codice_Architettura_Tesi, `languages`: ['Python'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2026-04-12T15:47:26.789827+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Compito Luglio** (`proj-compito-luglio`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Compito Luglio. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Esami LP1/Esami 2020/compito luglio, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Esami LP1/Esami 2020/compito luglio, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 9, `last_modified`: 2025-06-16T20:51:42+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Compito Settembre** (`proj-compito-settembre`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Compito Settembre. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Esami LP1/Esami 2020/compito settembre, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Esami LP1/Esami 2020/compito settembre, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 10, `last_modified`: 2025-06-16T20:51:42+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Composetest** (`proj-composetest`)
+  - **Tags:** `#mac-project` `#python`
+  - **Sintesi:** Progetto Mac: Composetest. Stack: Python.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/composetest, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/composetest, `languages`: ['Python'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 3, `last_modified`: 2025-11-04T13:06:41.098364+00:00, `key_dependencies`: ['flask', 'redis'], `readme_excerpt`: 
+- **Cose Laurea** (`proj-cose_laurea`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Cose Laurea. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Cose_Laurea, `file_uri`: file:///Users/pierfrancesco/Desktop/Cose_Laurea, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 6, `last_modified`: 2026-08-07T20:03:53.078872+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Eager Pasteur** (`proj-eager-pasteur`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Eager Pasteur. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/antigravity/eager-pasteur, `file_uri`: file:///Users/pierfrancesco/Documents/antigravity/eager-pasteur, `languages`: [], `frameworks`: [], `has_git`: True, `relevant_files_count`: 0, `last_modified`: 2026-08-31T15:23:50.602799+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Economia** (`proj-economia`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Economia. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/ECONOMIA, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/ECONOMIA, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-07-05T13:51:46.478111+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Example** (`proj-example`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Example. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/example, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/example, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-11-04T12:19:18.719627+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Examples** (`proj-examples`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: Examples. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Examples/Examples, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Examples/Examples, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-04-29T17:55:13.339685+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Fanta Formula1** (`proj-fantaformula1`)
+  - **Tags:** `#javascript` `#mac-project` `#react`
+  - **Sintesi:** Un'applicazione di Fantacalcio dedicata alla Formula 1, sviluppata con React Native ed Expo.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Applicazioni/F1App/FantaFormula1, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Applicazioni/F1App/FantaFormula1, `languages`: ['JavaScript'], `frameworks`: ['React'], `has_git`: False, `relevant_files_count`: 30, `last_modified`: 2026-01-19T10:21:48.118559+00:00, `key_dependencies`: ['@react-native-async-storage/async-storage', '@react-navigation/bottom-tabs', '@react-navigation/drawer', '@react-navigation/native', '@react-navigation/stack', 'expo', 'expo-auth-session', 'expo-crypto', 'expo-status-bar', 'expo-web-browser', 'react', 'react-native', 'react-native-gesture-handler', 'react-native-reanimated', 'react-native-safe-area-context'], `readme_excerpt`: # FantaFormula1 - App Mobile
+
+Un'applicazione di Fantacalcio dedicata alla Formula 1, sviluppata con React Native ed Expo.
+
+## 🏎️ Caratteristiche Principali
+
+### Autenticazione
+- Registrazione e login con email
+- Accesso con Google
+- Accesso con Apple ID
+- Gestione profilo utente
+
+### Gestione Campionati
+- Creazione di campionati privati
+- Sistema di inviti con codice univoco
+- Partecipazione a campionati esistenti
+- Fino a 6 giocatori per campionato
+- Sistema di crediti personalizzabile per l'asta
+
+### Gestione Squadra
+- Acquisto di 3 piloti e 3 scuderie durante l'asta
+- Schieramento di 2 pil
+- **Food Lab2025** (`proj-foodlab2025`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Food Lab2025. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/git/FoodLab2025, `file_uri`: file:///Users/pierfrancesco/git/FoodLab2025, `languages`: [], `frameworks`: [], `has_git`: True, `relevant_files_count`: 21, `last_modified`: 2025-09-20T09:39:06.201131+00:00, `key_dependencies`: [], `readme_excerpt`: # FoodLab2025
+- **Gennaio 2021** (`proj-gennaio-2021`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Gennaio 2021. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Esami LP1/Gennaio 2021, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Esami LP1/Gennaio 2021, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 12, `last_modified`: 2021-10-18T15:28:56+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Gioco** (`proj-gioco`)
+  - **Tags:** `#c` `#c-lang` `#mac-project`
+  - **Sintesi:** Progetto Mac: Gioco. Stack: C.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/gioco/gioco, `file_uri`: file:///Users/pierfrancesco/Desktop/gioco/gioco, `languages`: ['C'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-03-11T10:33:28.782049+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Gioco Scacchi** (`proj-giocoscacchi`)
+  - **Tags:** `#mac-project` `#python` `#swift`
+  - **Sintesi:** Progetto Mac: Gioco Scacchi. Stack: Python, Swift.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/GiocoScacchi, `file_uri`: file:///Users/pierfrancesco/Desktop/GiocoScacchi, `languages`: ['Python', 'Swift'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 56, `last_modified`: 2026-08-28T12:46:37.759620+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Giugno 2021** (`proj-giugno-2021`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Giugno 2021. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Esami LP1/Giugno 2021, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Esami LP1/Giugno 2021, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 23, `last_modified`: 2021-10-16T16:09:49+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Gods Eye View Main** (`proj-gods-eye-view-main`)
+  - **Tags:** `#javascript` `#mac-project` `#vite` `#web`
+  - **Sintesi:** Photorealistic 3D globe. Live aircraft, ships, satellites, earthquakes, traffic, and public cameras, with clearly labeled modeled views where a live feed is unavailable. Hands-free voice control power
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Downloads/gods-eye-view-main, `file_uri`: file:///Users/pierfrancesco/Downloads/gods-eye-view-main, `languages`: ['JavaScript'], `frameworks`: ['Vite'], `has_git`: False, `relevant_files_count`: 180, `last_modified`: 2026-08-27T15:46:08+00:00, `key_dependencies`: ['@mapbox/vector-tile', 'cesium', 'egm96-universal', 'mgrs', 'pbf', 'satellite.js', 'puppeteer', 'sharp', 'vite', 'vite-plugin-cesium', 'ws'], `readme_excerpt`: <div align="center">
+
+# 🌐 God's Eye View
+
+### A spy-satellite simulator in your browser — then you realize the sources are public and the data is real.
+
+Photorealistic 3D globe. Live aircraft, ships, satellites, earthquakes, traffic, and public cameras, with clearly labeled modeled views where a live feed is unavailable. Hands-free voice control powered by a realtime AI agent.
+
+*No place left behind.*
+
+![Orbital HUD, a tracked live globe, FLIR terrain — then OPEN SOURCED](docs/media/hero-open-source-reveal.gif)
+
+<a href="https://www.youtube.com/@bilawalsidhu">
+  <img src="docs/media/youtube-po
+- **Google Certificate** (`proj-googlecertificate`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Google Certificate. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Certificati/GoogleCertificate, `file_uri`: file:///Users/pierfrancesco/Desktop/Certificati/GoogleCertificate, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 14, `last_modified`: 2026-05-09T13:40:22.547082+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Happy Plant Keeper** (`proj-happy-plant-keeper`)
+  - **Tags:** `#javascript` `#mac-project` `#react` `#swift` `#tailwind` `#tailwindcss` `#typescript` `#vite` `#web`
+  - **Sintesi:** **URL**: https://lovable.dev/projects/cc27e2fa-a880-48d4-8cea-2b8d52a99bf1
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Applicazioni/happy-plant-keeper, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Applicazioni/happy-plant-keeper, `languages`: ['JavaScript', 'Swift', 'TypeScript'], `frameworks`: ['React', 'TailwindCSS', 'Vite'], `has_git`: True, `relevant_files_count`: 92, `last_modified`: 2025-10-28T23:57:21.563342+00:00, `key_dependencies`: ['@capacitor/cli', '@capacitor/core', '@capacitor/ios', '@hookform/resolvers', '@radix-ui/react-accordion', '@radix-ui/react-alert-dialog', '@radix-ui/react-aspect-ratio', '@radix-ui/react-avatar', '@radix-ui/react-checkbox', '@radix-ui/react-collapsible', '@radix-ui/react-context-menu', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-hover-card', '@radix-ui/react-label'], `readme_excerpt`: # Welcome to your Lovable project
+
+## Project info
+
+**URL**: https://lovable.dev/projects/cc27e2fa-a880-48d4-8cea-2b8d52a99bf1
+
+## How can I edit this code?
+
+There are several ways of editing your application.
+
+**Use Lovable**
+
+Simply visit the [Lovable Project](https://lovable.dev/projects/cc27e2fa-a880-48d4-8cea-2b8d52a99bf1) and start prompting.
+
+Changes made via Lovable will be committed automatically to this repo.
+
+**Use your preferred IDE**
+
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+The onl
+- **Ingsw** (`proj-ingsw`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Ingsw. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/SWE/INGSW, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/SWE/INGSW, `languages`: [], `frameworks`: [], `has_git`: True, `relevant_files_count`: 85, `last_modified`: 2025-12-02T10:52:54.456996+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Jules Session 5370203018288358434** (`proj-jules_session_5370203018288358434`)
+  - **Tags:** `#javascript` `#mac-project` `#web`
+  - **Sintesi:** Progetto Mac: Jules Session 5370203018288358434. Stack: JavaScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Downloads/jules_session_5370203018288358434, `file_uri`: file:///Users/pierfrancesco/Downloads/jules_session_5370203018288358434, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 5, `last_modified`: 2026-05-10T13:17:36+00:00, `key_dependencies`: ['jsdom'], `readme_excerpt`: 
+- **Lp   Prova Esame Giugno** (`proj-lp---prova-esame-giugno`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Lp   Prova Esame Giugno. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Esami LP1/Esami giugno 2021/LP - Prova Esame Giugno, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Esami LP1/Esami giugno 2021/LP - Prova Esame Giugno, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 10, `last_modified`: 2025-06-16T20:51:41+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Lp1** (`proj-lp1`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Lp1. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/LP1, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/LP1, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-03-06T14:32:25.377620+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Lso** (`proj-lso`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Lso. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/LSO, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/LSO, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-09-15T14:02:54.225149+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Marzo 2021** (`proj-marzo-2021`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Marzo 2021. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Esami LP1/Marzo 2021, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Esami LP1/Marzo 2021, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 8, `last_modified`: 2021-10-17T16:04:37+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Ml(Neural Networks & Dl)** (`proj-ml-neural-networks-dl`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Ml(Neural Networks & Dl). Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/ML(Neural Networks & DL), `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/ML(Neural Networks & DL), `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 3, `last_modified`: 2026-06-23T16:29:40.749334+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **New Chapters** (`proj-new_chapters`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: New Chapters. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/new_chapters, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/new_chapters, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 11, `last_modified`: 2026-07-23T16:21:17.011231+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **New Project** (`proj-new-project`)
+  - **Tags:** `#javascript` `#mac-project` `#web`
+  - **Sintesi:** Progetto Mac: New Project. Stack: JavaScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/New project, `file_uri`: file:///Users/pierfrancesco/Documents/New project, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 9, `last_modified`: 2026-02-09T10:33:44.095897+00:00, `key_dependencies`: ['playwright'], `readme_excerpt`: 
+- **Nvidia Certification** (`proj-nvidiacertification`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Nvidia Certification. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Certificati/NvidiaCertification, `file_uri`: file:///Users/pierfrancesco/Desktop/Certificati/NvidiaCertification, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 5, `last_modified`: 2026-05-11T20:51:25.981710+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Oo** (`proj-oo`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Oo. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/OO, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/OO, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-11-29T14:28:00.020468+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Osmci** (`proj-osmci`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Osmci. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/OSMCI, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/OSMCI, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-06-23T16:28:03.210707+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Outputs** (`proj-outputs`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Outputs. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-08-21/sta/outputs, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-08-21/sta/outputs, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2026-08-21T14:44:18.728827+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Pack3** (`proj-pack3`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Pack3. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/source/pack1/pack3, `file_uri`: file:///Users/pierfrancesco/source/pack1/pack3, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-09-10T09:54:29.795480+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Pack4** (`proj-pack4`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Pack4. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/source/pack1/pack2/pack4, `file_uri`: file:///Users/pierfrancesco/source/pack1/pack2/pack4, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-09-10T09:56:36.376601+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Palazzo** (`proj-palazzo`)
+  - **Tags:** `#c` `#c-lang` `#mac-project`
+  - **Sintesi:** Progetto Mac: Palazzo. Stack: C.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Palazzo/Palazzo, `file_uri`: file:///Users/pierfrancesco/Documents/Palazzo/Palazzo, `languages`: ['C'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2024-10-21T19:48:49.409353+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Particle Engine Simulation** (`proj-particle-engine-simulation`)
+  - **Tags:** `#javascript` `#mac-project` `#web`
+  - **Sintesi:** A real-time **3D particle swarm simulator** built with **Three.js** and a custom CPU-side "physics" loop. It seamlessly morphs tens of thousands of particles into various procedural formations, driven
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Particle Engine Simulation, `file_uri`: file:///Users/pierfrancesco/Desktop/Particle Engine Simulation, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 14, `last_modified`: 2026-04-30T14:11:00.943410+00:00, `key_dependencies`: [], `readme_excerpt`: # 🌌 AI Particle Simulator
+
+A real-time **3D particle swarm simulator** built with **Three.js** and a custom CPU-side "physics" loop. It seamlessly morphs tens of thousands of particles into various procedural formations, driven by mathematical functions, physics simulations, and custom AI logic. 
+
+The project also features an experimental **hand-gesture control** layer powered by **MediaPipe Hands**, a **Smart Text Engine**, and an **AI Architect / Custom Logic** panel to inject JavaScript at runtime for maximum flexibility.
+
+> **Tech stack:** HTML, CSS, JavaScript (Vanilla, no bundler), Three
+- **Pdc** (`proj-pdc`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Pdc. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/PDC, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/PDC, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2026-06-23T16:30:33.748117+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Pgf Pie** (`proj-pgf-pie`)
+  - **Tags:** `#mac-project` `#web`
+  - **Sintesi:** ![CI](https://github.com/pgf-tikz/pgf-pie/workflows/CI/badge.svg)
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Downloads/pgf-pie, `file_uri`: file:///Users/pierfrancesco/Downloads/pgf-pie, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 6, `last_modified`: 2022-06-15T09:40:30+00:00, `key_dependencies`: [], `readme_excerpt`: # pgf-pie
+
+![CI](https://github.com/pgf-tikz/pgf-pie/workflows/CI/badge.svg)
+
+Some LaTeX macros for pie charts using the PGF/TikZ package.
+
+Please go to the official repository at https://github.com/pgf-tikz/pgf-pie or
+the official mailing list at https://tug.org/mailman/listinfo/pgf-tikz to
+submit bug reports, request new features, etc.
+
+Please read pgf-pie-manual.pdf for more information.
+
+## License
+
+pgf-pie is released under the terms of both the LPPL v1.3c and the GPL v2.
+- **Pierfrancesco Amendola** (`proj-pierfrancescoamendola`)
+  - **Tags:** `#javascript` `#mac-project` `#web`
+  - **Sintesi:** - Location: Naples 80125, Italy
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/PierfrancescoAmendola, `file_uri`: file:///Users/pierfrancesco/Desktop/PierfrancescoAmendola, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 35, `last_modified`: 2026-06-26T11:44:19.579749+00:00, `key_dependencies`: [], `readme_excerpt`: # Pierfrancesco Amendola
+
+- Location: Naples 80125, Italy
+- Date of Birth: 30/09/2005
+- Phone: +39 370 339 4489
+- Personal Email: [checcofran717@gmail.com](mailto:checcofran717@gmail.com)
+- University Email: [pi.amendola@studenti.unina.it](mailto:pi.amendola@studenti.unina.it)
+- GitHub: [github.com/PierfrancescoAmendola](https://github.com/PierfrancescoAmendola)
+- LinkedIn: [pierfrancesco-amendola](https://www.linkedin.com/in/pierfrancesco-amendola-0952a729a/)
+- Instagram: [@pierfrancesco.amendola](https://www.instagram.com/pierfrancesco.amendola)
+- Portfolio Website: [pierfrancescoamendola.gi
+- **Posgre Sql Pg Admin** (`proj-posgresql-pgadmin`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Posgre Sql Pg Admin. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/PosgreSQL-pgAdmin, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/PosgreSQL-pgAdmin, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2025-11-06T11:24:02.303028+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Progetto Gestione Bibloteca** (`proj-progetto-gestione-bibloteca`)
+  - **Tags:** `#mac-project` `#python`
+  - **Sintesi:** Sistema di gestione di una biblioteca pubblica/privata/casalinga, tiene traccia di tutto ciò che è necessario e fondamentale
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Progetto-Gestione-Bibloteca, `file_uri`: file:///Users/pierfrancesco/Desktop/Progetto-Gestione-Bibloteca, `languages`: ['Python'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 8, `last_modified`: 2025-10-01T10:45:40.075211+00:00, `key_dependencies`: [], `readme_excerpt`: # Progetto-Gestione-Bibloteca
+Sistema di gestione di una biblioteca pubblica/privata/casalinga, tiene traccia di tutto ciò che è necessario e fondamentale
+- **Propedia Demo** (`proj-propedia-demo`)
+  - **Tags:** `#javascript` `#mac-project` `#web`
+  - **Sintesi:** Mockup stakeholder, not production app.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-09/caveman-users-pierfrancesco-agents-skills-caveman-2/outputs/propedia-demo, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-09/caveman-users-pierfrancesco-agents-skills-caveman-2/outputs/propedia-demo, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 5, `last_modified`: 2026-07-09T12:44:21.560635+00:00, `key_dependencies`: [], `readme_excerpt`: # PROPEDIA demo
+
+Mockup stakeholder, not production app.
+
+## Run
+
+Open `index.html` directly or serve directory:
+
+```bash
+python3 -m http.server 4173 --directory outputs/propedia-demo
+```
+
+## What works
+
+- Onboarding with preloaded student profile and localStorage persistence.
+- Micro-diagnosis with deterministic questions and measured-level correction.
+- Prerequisite graph with depth and dependency reasons.
+- Adaptive explanation with depth switcher.
+- Study calendar generation up to exam date.
+- Emotional check-in with non-therapeutic coaching text.
+- Ateneo dashboard mock with aggregated di
+- **Psld1** (`proj-psld1`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: Psld1. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Progetto LASD 2025/PSLD1, `file_uri`: file:///Users/pierfrancesco/Desktop/Progetto LASD 2025/PSLD1, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 40, `last_modified`: 2025-05-23T12:46:19+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Psld2 Senza Git** (`proj-psld2-senza-git`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: Psld2 Senza Git. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Progetto LASD 2025/PSLD2 senza git, `file_uri`: file:///Users/pierfrancesco/Desktop/Progetto LASD 2025/PSLD2 senza git, `languages`: ['C++'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 54, `last_modified`: 2025-07-27T14:25:17.118549+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Render Final** (`proj-render_final`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Render Final. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_final, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_final, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-07-23T14:04:59.999747+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Render Pdf Temp** (`proj-render_pdf_temp`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Render Pdf Temp. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_pdf_temp, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_pdf_temp, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-07-23T14:50:01.586037+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Render Proof 1** (`proj-render_proof_1`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Render Proof 1. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_proof_1, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_proof_1, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-07-23T14:33:56.873932+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Render Proof Final** (`proj-render_proof_final`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Render Proof Final. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_proof_final, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_proof_final, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-07-23T14:50:01.936337+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Render Revision** (`proj-render_revision`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Render Revision. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_revision, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_revision, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-07-23T16:22:27.596136+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Render Revision Final** (`proj-render_revision_final`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Render Revision Final. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_revision_final, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render_revision_final, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-07-23T17:29:12.703701+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Render1** (`proj-render1`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Render1. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render1, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render1, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-07-23T14:00:55.210738+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Render2** (`proj-render2`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Render2. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render2, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render2, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-07-23T14:01:42.124254+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Render3** (`proj-render3`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Render3. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render3, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/render3, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-07-23T14:02:49.252847+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Rendered** (`proj-rendered`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Rendered. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-08-21/sta/work/rendered, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-08-21/sta/work/rendered, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-08-21T14:42:41.008218+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Rendered V2** (`proj-rendered_v2`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Rendered V2. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-08-21/sta/work/rendered_v2, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-08-21/sta/work/rendered_v2, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-08-21T14:43:38.264572+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Reti Di Calcolatori** (`proj-reti-di-calcolatori`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Reti Di Calcolatori. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/RETI DI CALCOLATORI, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/RETI DI CALCOLATORI, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2025-10-21T06:55:46.145099+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Sample** (`proj-sample`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: Sample. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/Sample/Sample, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/Sample/Sample, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-04-24T07:55:38.839054+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Sim** (`proj-sim`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Sim. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/SIM, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/SIM, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 3, `last_modified`: 2025-06-11T07:39:57.710469+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Sito Certificati** (`proj-sitocertificati`)
+  - **Tags:** `#javascript` `#mac-project` `#react` `#tailwind` `#tailwindcss` `#typescript` `#vite` `#web`
+  - **Sintesi:** This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/SitoCertificati, `file_uri`: file:///Users/pierfrancesco/Desktop/SitoCertificati, `languages`: ['JavaScript', 'TypeScript'], `frameworks`: ['React', 'TailwindCSS', 'Vite'], `has_git`: False, `relevant_files_count`: 31, `last_modified`: 2026-06-26T11:25:29.899930+00:00, `key_dependencies`: ['pdfjs-dist', 'react', 'react-dom', 'react-pdf', '@eslint/js', '@tailwindcss/postcss', '@types/node', '@types/react', '@types/react-dom', '@vitejs/plugin-react', 'autoprefixer', 'eslint', 'eslint-plugin-react-hooks', 'eslint-plugin-react-refresh', 'globals'], `readme_excerpt`: # React + TypeScript + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentatio
+- **Slide Tec Web** (`proj-slidetecweb`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Slide Tec Web. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/TEC WEB/SlideTecWeb, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/TEC WEB/SlideTecWeb, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 15, `last_modified`: 2026-04-28T10:45:38.194494+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Soluzione Postgress Pgadmin Prof** (`proj-soluzionepostgress_pgadmin_prof`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Soluzione Postgress Pgadmin Prof. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/soluzionePOSTGRESS_PGADMIN_PROF, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/soluzionePOSTGRESS_PGADMIN_PROF, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-11-06T10:27:19.787392+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Source Chapters** (`proj-source_chapters`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Source Chapters. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/source_chapters, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-23/documents-plugin-documents-openai-primary-runtime-3/work/source_chapters, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 14, `last_modified`: 2026-07-23T16:21:36.567343+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Spiegazione Codice Librerire** (`proj-spiegazione-codice-librerire`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Spiegazione Codice Librerire. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Progetto LASD 2025/Spiegazione codice librerire, `file_uri`: file:///Users/pierfrancesco/Desktop/Progetto LASD 2025/Spiegazione codice librerire, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 4, `last_modified`: 2025-07-23T06:46:12.330743+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Statistica** (`proj-statistica`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Statistica. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/PDF/CPS/Statistica, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/PDF/CPS/Statistica, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 17, `last_modified`: 2026-02-09T22:52:30+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Svolti** (`proj-svolti`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Svolti. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Esami LP1/Esame Marzo 2021/Svolti, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Esami LP1/Esame Marzo 2021/Svolti, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 4, `last_modified`: 2025-06-16T20:51:41+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Taste Skill** (`proj-taste-skill`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** This directory is now a multi-style frontend skill pack with a single main entrypoint.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Downloads/taste-skill, `file_uri`: file:///Users/pierfrancesco/Downloads/taste-skill, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 22, `last_modified`: 2026-04-12T15:01:20+00:00, `key_dependencies`: [], `readme_excerpt`: # Taste Skill Pack
+
+This directory is now a multi-style frontend skill pack with a single main entrypoint.
+
+## Start here
+
+- Main router: `SKILL.md`
+- Shared component system: `components/`
+- Style-specific skills: one `skill.md` inside each style folder
+
+The intended flow is:
+
+1. the agent reads `SKILL.md` first
+2. `SKILL.md` chooses the best style for the brief
+3. the agent opens that style's `skill.md`
+4. the agent uses `components/style-recipes.md` and the rest of `components/` to strengthen the build
+
+## Included styles
+
+- `brutalism`
+- `cinematic-product`
+- `dark-luxe`
+- `dashboards`
+- `
+- **Tec Web Lezioni** (`proj-tecweblezioni`)
+  - **Tags:** `#javascript` `#mac-project` `#web`
+  - **Sintesi:** Progetto Mac: Tec Web Lezioni. Stack: JavaScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/TecWebLezioni, `file_uri`: file:///Users/pierfrancesco/Desktop/TecWebLezioni, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 3, `last_modified`: 2026-04-21T12:35:08.234872+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Test Repo Main** (`proj-testrepo-main`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** Progetto Mac: Test Repo Main. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/TestRepo-main, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/TestRepo-main, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 4, `last_modified`: 2021-01-02T06:56:12+00:00, `key_dependencies`: [], `readme_excerpt`: # TestRepo
+- **Tscheck** (`proj-tscheck`)
+  - **Tags:** `#javascript` `#mac-project` `#react` `#tailwind` `#tailwindcss` `#typescript` `#vite` `#web`
+  - **Sintesi:** Progetto Mac: Tscheck. Stack: JavaScript, React, TailwindCSS, TypeScript, Vite.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Documents/Codex/2026-07-21/new-chat/work/tscheck, `file_uri`: file:///Users/pierfrancesco/Documents/Codex/2026-07-21/new-chat/work/tscheck, `languages`: ['JavaScript', 'TypeScript'], `frameworks`: ['React', 'TailwindCSS', 'Vite'], `has_git`: False, `relevant_files_count`: 14, `last_modified`: 2026-07-21T16:12:27.034058+00:00, `key_dependencies`: ['lucide-react', 'react', 'react-dom', '@types/react', '@types/react-dom', '@vitejs/plugin-react', 'autoprefixer', 'postcss', 'tailwindcss', 'typescript', 'vite'], `readme_excerpt`: 
+- **Uni Grade Projections Main** (`proj-uni-grade-projections-main`)
+  - **Tags:** `#javascript` `#mac-project` `#react` `#swift` `#tailwind` `#tailwindcss` `#typescript` `#vite` `#web`
+  - **Sintesi:** **URL**: https://lovable.dev/projects/a3846006-ca48-4704-9c96-8dc98198290c
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/Applicazioni/uni-grade-projections-main, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/Applicazioni/uni-grade-projections-main, `languages`: ['JavaScript', 'Swift', 'TypeScript'], `frameworks`: ['React', 'TailwindCSS', 'Vite'], `has_git`: False, `relevant_files_count`: 89, `last_modified`: 2025-11-01T16:25:57.758268+00:00, `key_dependencies`: ['@capacitor/ios', '@hookform/resolvers', '@radix-ui/react-accordion', '@radix-ui/react-alert-dialog', '@radix-ui/react-aspect-ratio', '@radix-ui/react-avatar', '@radix-ui/react-checkbox', '@radix-ui/react-collapsible', '@radix-ui/react-context-menu', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-hover-card', '@radix-ui/react-label', '@radix-ui/react-menubar', '@radix-ui/react-navigation-menu'], `readme_excerpt`: # Welcome to your Lovable project
+
+## Project info
+
+**URL**: https://lovable.dev/projects/a3846006-ca48-4704-9c96-8dc98198290c
+
+## How can I edit this code?
+
+There are several ways of editing your application.
+
+**Use Lovable**
+
+Simply visit the [Lovable Project](https://lovable.dev/projects/a3846006-ca48-4704-9c96-8dc98198290c) and start prompting.
+
+Changes made via Lovable will be committed automatically to this repo.
+
+**Use your preferred IDE**
+
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+The onl
+- **Uni Stats** (`proj-unistats`)
+  - **Tags:** `#ios` `#mac-project` `#swift` `#swiftui` `#web` `#xcodegen`
+  - **Sintesi:** Un'applicazione iOS nativa per il tracciamento e la simulazione della carriera universitaria.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppVoti/UniStats, `file_uri`: file:///Users/pierfrancesco/Desktop/AppVoti/UniStats, `languages`: ['Swift'], `frameworks`: ['SwiftUI', 'XcodeGen'], `has_git`: True, `relevant_files_count`: 33, `last_modified`: 2026-03-07T21:08:55.859565+00:00, `key_dependencies`: [], `readme_excerpt`: # UniStats iOS App
+
+Un'applicazione iOS nativa per il tracciamento e la simulazione della carriera universitaria.
+
+## Caratteristiche
+
+- **📚 Gestione Esami**: Aggiungi, modifica ed elimina i tuoi esami con voto, CFU, data e lode
+- **📊 Dashboard Statistiche**: Visualizza media ponderata, voto base di laurea, distribuzione voti e molto altro
+- **🎯 Simulatore Voto**: Prevedi il tuo voto finale di laurea in base a esami rimanenti e obiettivi
+- **📈 Proiezione Media**: Grafico dell'andamento storico con proiezioni future per raggiungere i tuoi obiettivi
+- **🧮 Calcolatori Utility**: Tool "Salva-Media
+- **Video Yt** (`proj-videoyt`)
+  - **Tags:** `#c++` `#cpp` `#mac-project`
+  - **Sintesi:** Progetto Mac: Video Yt. Stack: C++.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LASD/VideoYT/VideoYT, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LASD/VideoYT/VideoYT, `languages`: ['C++'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2025-05-08T11:00:31.367661+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Workspace** (`proj-workspace`)
+  - **Tags:** `#javascript` `#mac-project` `#web`
+  - **Sintesi:** Progetto Mac: Workspace. Stack: JavaScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Downloads/workspace, `file_uri`: file:///Users/pierfrancesco/Downloads/workspace, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 5, `last_modified`: 2026-08-30T14:35:35+00:00, `key_dependencies`: [], `readme_excerpt`: # Prova
+
+### [Macro-Label: `SCRIPT_TOOL`]
+- **App Aule Studio Type Script** (`proj-appaulestudiotypescript`)
+  - **Tags:** `#c` `#c-lang` `#javascript` `#mac-project` `#react` `#swift` `#typescript` `#web`
+  - **Sintesi:** **UniStudy Italia** è l'applicazione definitiva per gli studenti universitari italiani che cercano il posto perfetto per studiare. Che tu abbia bisogno di silenzio assoluto, di un'aula per lavori di g
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppAuleStudioTypeScript, `file_uri`: file:///Users/pierfrancesco/Desktop/AppAuleStudioTypeScript, `languages`: ['C', 'JavaScript', 'Swift', 'TypeScript'], `frameworks`: ['React'], `has_git`: True, `relevant_files_count`: 164, `last_modified`: 2026-03-04T22:30:29.257571+00:00, `key_dependencies`: ['@expo-google-fonts/montserrat', '@expo-google-fonts/poppins', '@react-native-async-storage/async-storage', '@react-native-community/masked-view', '@react-navigation/native', '@react-navigation/stack', 'expo', 'expo-av', 'expo-constants', 'expo-device', 'expo-font', 'expo-linear-gradient', 'expo-location', 'expo-permissions', 'expo-status-bar'], `readme_excerpt`: # UniStudy Italia 🎓🇮🇹
+
+**UniStudy Italia** è l'applicazione definitiva per gli studenti universitari italiani che cercano il posto perfetto per studiare. Che tu abbia bisogno di silenzio assoluto, di un'aula per lavori di gruppo o di una biblioteca aperta 24h, UniStudy ti aiuta a trovarla.
+
+## 🌟 Funzionalità Principali
+
+*   **Multi-Ateneo**: Supporto per oltre 100 atenei e istituti su tutto il territorio nazionale:
+    *   **Campania**: Federico II, Vanvitelli, Parthenope, L'Orientale, UNISA (Salerno), UNISANNIO (Benevento).
+    *   **Lazio**: La Sapienza, Tor Vergata.
+    *   **Piemonte**: Un
+- **Habit Tracker** (`proj-habittracker`)
+  - **Tags:** `#appgroup` `#ios` `#javascript` `#mac-project` `#swift` `#swiftui` `#web` `#widgetkit` `#xcodegen`
+  - **Sintesi:** Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nativa progettata per aiutarti a costruire, mantenere e tracciare le tue abitudini quotidiane in modo semplice ed elegante.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/HabitTracker, `file_uri`: file:///Users/pierfrancesco/Desktop/HabitTracker, `languages`: ['JavaScript', 'Swift'], `frameworks`: ['AppGroup', 'SwiftUI', 'WidgetKit', 'XcodeGen'], `has_git`: True, `relevant_files_count`: 82, `last_modified`: 2026-08-27T11:01:24.397072+00:00, `key_dependencies`: [], `readme_excerpt`: # 🎯 Habit Tracker
+
+Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nativa progettata per aiutarti a costruire, mantenere e tracciare le tue abitudini quotidiane in modo semplice ed elegante. L'app offre un'esperienza fluida e personalizzata per garantire che raggiungere i tuoi obiettivi diventi, appunto, un'abitudine.
+
+---
+
+## 🚀 Panoramica del Progetto
+
+**Habit Tracker** è sviluppata interamente per l'ecosistema Apple (iOS 17.0+), sfruttando le più recenti tecnologie introdotte per iOS come **SwiftUI** e **SwiftData**. L'obiettivo è quello di fornire all'utente uno
+- **Mac Pulse Tests** (`proj-macpulsetests`)
+  - **Tags:** `#mac-project` `#swift`
+  - **Sintesi:** Progetto Mac: Mac Pulse Tests. Stack: Swift.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/MacPulse/MacPulseTests, `file_uri`: file:///Users/pierfrancesco/MacPulse/MacPulseTests, `languages`: ['Swift'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-10-21T19:49:24.024815+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Mac Pulse Uitests** (`proj-macpulseuitests`)
+  - **Tags:** `#mac-project` `#swift`
+  - **Sintesi:** Progetto Mac: Mac Pulse Uitests. Stack: Swift.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/MacPulse/MacPulseUITests, `file_uri`: file:///Users/pierfrancesco/MacPulse/MacPulseUITests, `languages`: ['Swift'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2025-10-21T19:49:24.080852+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Mac Pulse2Tests** (`proj-macpulse2tests`)
+  - **Tags:** `#mac-project` `#swift`
+  - **Sintesi:** Progetto Mac: Mac Pulse2Tests. Stack: Swift.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/MacPulse2/MacPulse2Tests, `file_uri`: file:///Users/pierfrancesco/MacPulse2/MacPulse2Tests, `languages`: ['Swift'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-10-23T07:32:02.367029+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Mac Pulse2Uitests** (`proj-macpulse2uitests`)
+  - **Tags:** `#mac-project` `#swift`
+  - **Sintesi:** Progetto Mac: Mac Pulse2Uitests. Stack: Swift.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/MacPulse2/MacPulse2UITests, `file_uri`: file:///Users/pierfrancesco/MacPulse2/MacPulse2UITests, `languages`: ['Swift'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2025-10-23T07:32:02.398936+00:00, `key_dependencies`: [], `readme_excerpt`: 
+
+### [Macro-Label: `UI_COMPONENT`]
+- **SwiftUI Interface Layer (proj-appcalcolatori)** (`proj-appcalcolatori-ui-layer`)
+  - **Tags:** `#swiftui` `#ui` `#apple`
+  - **Sintesi:** Interfaccia utente dichiarativa SwiftUI per il progetto proj-appcalcolatori.
+  - **Dettagli:** `parent_project`: proj-appcalcolatori, `file_uri`: file:///Users/pierfrancesco/Desktop/AppCalcolatori
+- **SwiftUI Interface Layer (proj-caretrack-demo)** (`proj-caretrack-demo-ui-layer`)
+  - **Tags:** `#swiftui` `#ui` `#apple`
+  - **Sintesi:** Interfaccia utente dichiarativa SwiftUI per il progetto proj-caretrack-demo.
+  - **Dettagli:** `parent_project`: proj-caretrack-demo, `file_uri`: file:///Users/pierfrancesco/Desktop/CareTrack-Demo
+- **SwiftUI Interface Layer (proj-habittracker)** (`proj-habittracker-ui-layer`)
+  - **Tags:** `#swiftui` `#ui` `#apple`
+  - **Sintesi:** Interfaccia utente dichiarativa SwiftUI per il progetto proj-habittracker.
+  - **Dettagli:** `parent_project`: proj-habittracker, `file_uri`: file:///Users/pierfrancesco/Desktop/HabitTracker
+- **SwiftUI Interface Layer (proj-unistats)** (`proj-unistats-ui-layer`)
+  - **Tags:** `#swiftui` `#ui` `#apple`
+  - **Sintesi:** Interfaccia utente dichiarativa SwiftUI per il progetto proj-unistats.
+  - **Dettagli:** `parent_project`: proj-unistats, `file_uri`: file:///Users/pierfrancesco/Desktop/AppVoti/UniStats
+
 ### [Macro-Label: `USER_INTENT`]
 - **Allineamento e Diagnosi Discrepanza Nodi Render e Locale** (`user-intent-allineamento-nodi-render`)
   - **Tags:** `#render` `#sync` `#deploy` `#git` `#discrepanza`
@@ -1077,6 +1814,55 @@
 
 
 ## EMISFERO DESTRO (Design, Emozioni, Relazioni, Valori, Arte)
+### [Macro-Label: `APP`]
+- **App Flash Cards** (`proj-appflashcards`)
+  - **Tags:** `#mac-project` `#swift`
+  - **Sintesi:** App iOS nativa per studiare con flashcard.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppFlashCards, `file_uri`: file:///Users/pierfrancesco/Desktop/AppFlashCards, `languages`: ['Swift'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 86, `last_modified`: 2026-01-15T12:45:37.751785+00:00, `key_dependencies`: [], `readme_excerpt`: # Ripassa! - Flashcard App
+
+App iOS nativa per studiare con flashcard.
+
+## Caratteristiche
+
+- ✅ Aggiungi domande e risposte
+- ✅ Swipe per navigare tra le carte
+- ✅ Tap per vedere la risposta con animazione flip 3D
+- ✅ Modalità casuale per lo studio
+- ✅ Contatore delle carte studiate
+- ✅ Statistiche dettagliate
+- ✅ Dark mode automatico
+- ✅ 100% offline
+
+## Tecnologie
+
+- Swift 5.9+
+- SwiftUI
+- iOS 16.0+
+- UserDefaults per persistenza
+
+## Come Aprire il Progetto
+
+1. Apri `Ripassa.xcodeproj` con Xcode
+2. Seleziona un simulatore iOS o device
+3. Premi ⌘R per build e run
+
+## Struttura del Progetto
+
+`
+- **App Scadenza** (`proj-appscadenza`)
+  - **Tags:** `#c` `#c-lang` `#mac-project` `#react` `#swift` `#typescript`
+  - **Sintesi:** **Traccia le scadenze. Riduci gli sprechi. Risparmia.**
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppScadenza, `file_uri`: file:///Users/pierfrancesco/Desktop/AppScadenza, `languages`: ['C', 'Swift', 'TypeScript'], `frameworks`: ['React'], `has_git`: False, `relevant_files_count`: 32, `last_modified`: 2026-01-20T22:17:39.717717+00:00, `key_dependencies`: ['@react-native-async-storage/async-storage', '@react-native-community/datetimepicker', 'expo', 'expo-barcode-scanner', 'expo-camera', 'expo-notifications', 'expo-splash-screen', 'expo-status-bar', 'lucide-react-native', 'react', 'react-native', 'react-native-gesture-handler', 'react-native-reanimated', '@types/react', 'typescript'], `readme_excerpt`: # 🌱 FreshCheck
+
+**Traccia le scadenze. Riduci gli sprechi. Risparmia.**
+
+FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire le scadenze dei tuoi prodotti alimentari, riducendo gli sprechi e risparmiando denaro.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native"/>
+  <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo"/>
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&l
+
 ### [Macro-Label: `BRAND_VOICE`]
 - **Dominio: Cultura, Storia & Linguaggi** (`domain-cultura-storia`)
   - **Tags:** `#domain-hub` `#cultura` `#storia` `#lingue` `#letteratura` `#viaggi` `#antropologia`
@@ -1550,6 +2336,168 @@
   - **Sintesi:** La tecnologia deve risolvere problemi reali, proteggere le persone e migliorare l'esperienza umana quotidiana.
   - **Dettagli:** `raw`: `mission`: Salute digitale, prevenzione, accessibilità ed educazione
 
+### [Macro-Label: `PROJECT`]
+- **App Alcool** (`proj-appalcool`)
+  - **Tags:** `#c` `#c-lang` `#dart` `#flutter` `#javascript` `#mac-project` `#swift` `#typescript` `#web`
+  - **Sintesi:** **SafeCheck** is a Flutter mobile app that helps users assess their alcohol consumption safety in real‑time. It combines a series of physical‑performance tests (reflex, balance, coordination, HGN) wit
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppAlcool, `file_uri`: file:///Users/pierfrancesco/Desktop/AppAlcool, `languages`: ['C', 'Dart', 'JavaScript', 'Swift', 'TypeScript'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 123, `last_modified`: 2026-06-19T14:32:45.444215+00:00, `key_dependencies`: [], `readme_excerpt`: # SafeCheck 📱
+
+**SafeCheck** is a Flutter mobile app that helps users assess their alcohol consumption safety in real‑time. It combines a series of physical‑performance tests (reflex, balance, coordination, HGN) with a Watson Total Body Water (TBW) based Blood Alcohol Concentration (BAC) calculator. The app then fuses the physiological test scores with the chemical BAC estimate to produce a final safety score and risk level.
+
+---
+
+## Table of Contents
+1. [Features](#features)
+2. [Architecture & Tech Stack](#architecture--tech-stack)
+3. [Installation & Setup](#installation--setup)
+4. [Running t
+- **App Palette** (`proj-apppalette`)
+  - **Tags:** `#c++` `#cpp` `#dart` `#flutter` `#javascript` `#mac-project` `#python` `#swift` `#typescript` `#web`
+  - **Sintesi:** A new Flutter project.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppPalette, `file_uri`: file:///Users/pierfrancesco/Desktop/AppPalette, `languages`: ['C++', 'Dart', 'JavaScript', 'Python', 'Swift', 'TypeScript'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 118, `last_modified`: 2026-06-11T19:00:06.667132+00:00, `key_dependencies`: [], `readme_excerpt`: # palette_app
+
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+- **Backend** (`proj-backend`)
+  - **Tags:** `#backend` `#express` `#javascript` `#mac-project`
+  - **Sintesi:** Progetto Mac: Backend. Stack: Express, JavaScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppMatch/backend, `file_uri`: file:///Users/pierfrancesco/Desktop/AppMatch/backend, `languages`: ['JavaScript'], `frameworks`: ['Express'], `has_git`: False, `relevant_files_count`: 33, `last_modified`: 2026-06-11T19:30:16.978260+00:00, `key_dependencies`: ['bcryptjs', 'cors', 'dotenv', 'express', 'express-rate-limit', 'jsonwebtoken', 'mongoose', 'morgan', 'nodemailer', 'redis', 'socket.io', 'winston', 'zod', 'nodemon'], `readme_excerpt`: 
+- **Care Track Demo** (`proj-caretrack-demo`)
+  - **Tags:** `#ios` `#mac-project` `#swift` `#swiftui` `#xcodegen`
+  - **Sintesi:** ![Platform](https://img.shields.io/badge/Platform-iOS%2018.0+-blue.svg)
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/CareTrack-Demo, `file_uri`: file:///Users/pierfrancesco/Desktop/CareTrack-Demo, `languages`: ['Swift'], `frameworks`: ['SwiftUI', 'XcodeGen'], `has_git`: True, `relevant_files_count`: 64, `last_modified`: 2026-05-06T18:20:04.223387+00:00, `key_dependencies`: [], `readme_excerpt`: # 🏥 CareTrack
+
+![Platform](https://img.shields.io/badge/Platform-iOS%2018.0+-blue.svg)
+![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
+![UI](https://img.shields.io/badge/UI-SwiftUI-success.svg)
+![Architecture](https://img.shields.io/badge/Architecture-MVVM-lightgrey.svg)
+
+**CareTrack** è un'applicazione iOS innovativa per la gestione dell'assistenza sanitaria domiciliare e il monitoraggio clinico. Progettata per favorire la collaborazione e la trasparenza, connette in tempo reale tre attori fondamentali del percorso di cura: **Pazienti**, **Caregiver** e **Infermieri/Medici**.
+
+---
+- **Cypress Tests** (`proj-cypress_tests`)
+  - **Tags:** `#cypress` `#javascript` `#mac-project` `#testing`
+  - **Sintesi:** Progetto Mac: Cypress Tests. Stack: Cypress, JavaScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppMatch/cypress_tests, `file_uri`: file:///Users/pierfrancesco/Desktop/AppMatch/cypress_tests, `languages`: ['JavaScript'], `frameworks`: ['Cypress'], `has_git`: False, `relevant_files_count`: 8, `last_modified`: 2026-06-11T14:07:36.400553+00:00, `key_dependencies`: ['cypress'], `readme_excerpt`: 
+- **Docs Md** (`proj-docs_md`)
+  - **Tags:** `#mac-project`
+  - **Sintesi:** ![Status](https://img.shields.io/badge/status-active-success.svg)
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/DataMed/docs_md, `file_uri`: file:///Users/pierfrancesco/DataMed/docs_md, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 82, `last_modified`: 2025-12-10T14:57:25.543971+00:00, `key_dependencies`: [], `readme_excerpt`: # 🎓 App Federico II - Per Studenti
+
+![Status](https://img.shields.io/badge/status-active-success.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+
+App mobile completa per gli studenti dell'Università degli Studi di Napoli Federico II.
+
+## ✨ Funzionalità
+
+- 📊 **Gestione Voti** - Tieni traccia dei tuoi esami e calcola la media
+- 📅 **Orario Lezioni** - Organizza il tuo calendario settimanale
+- 🗺️ **Mappa Ristoranti Convenzionati** - Trova ristoranti con convenzioni ADISURC e universitarie
+- 📚 **Aule Studio** - Visualizza la capienza delle aule studio disponibili
+- 🎓 **Borse di
+- **Federico Iiapp** (`proj-federicoiiapp`)
+  - **Tags:** `#c` `#c-lang` `#javascript` `#mac-project` `#python` `#react` `#swift` `#typescript` `#web`
+  - **Sintesi:** Progetto Mac: Federico Iiapp. Stack: C, JavaScript, Python, React, Swift, TypeScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/DataMed/FedericoIIApp, `file_uri`: file:///Users/pierfrancesco/DataMed/FedericoIIApp, `languages`: ['C', 'JavaScript', 'Python', 'Swift', 'TypeScript'], `frameworks`: ['React'], `has_git`: False, `relevant_files_count`: 228, `last_modified`: 2026-03-07T14:17:31.712535+00:00, `key_dependencies`: ['@expo/vector-icons', '@react-native-async-storage/async-storage', '@react-native-community/datetimepicker', '@react-native-community/netinfo', '@react-navigation/bottom-tabs', '@react-navigation/drawer', '@react-navigation/native', '@react-navigation/stack', '@shopify/react-native-skia', 'expo', 'expo-auth-session', 'expo-calendar', 'expo-camera', 'expo-constants', 'expo-crypto'], `readme_excerpt`: 
+- **Frontend** (`proj-frontend`)
+  - **Tags:** `#c++` `#cpp` `#dart` `#flutter` `#mac-project` `#swift` `#web`
+  - **Sintesi:** A new Flutter project.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/AppMatch/frontend, `file_uri`: file:///Users/pierfrancesco/Desktop/AppMatch/frontend, `languages`: ['C++', 'Dart', 'Swift'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 83, `last_modified`: 2026-06-11T19:39:44.392223+00:00, `key_dependencies`: [], `readme_excerpt`: # unicampus
+
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+- **Mary** (`proj-mary`)
+  - **Tags:** `#mac-project` `#web`
+  - **Sintesi:** Progetto Mac: Mary. Stack: Varie.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Sfizi HTML/Mary, `file_uri`: file:///Users/pierfrancesco/Desktop/Sfizi HTML/Mary, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2026-03-24T08:47:43.343496+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Missing Feedback** (`proj-missing-feedback`)
+  - **Tags:** `#backend` `#express` `#javascript` `#mac-project`
+  - **Sintesi:** Progetto Mac: Missing Feedback. Stack: Express, JavaScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/DataMed/backend/missing-feedback, `file_uri`: file:///Users/pierfrancesco/DataMed/backend/missing-feedback, `languages`: ['JavaScript'], `frameworks`: ['Express'], `has_git`: False, `relevant_files_count`: 3, `last_modified`: 2025-12-10T14:57:25.531224+00:00, `key_dependencies`: ['cors', 'dotenv', 'express', 'nodemailer'], `readme_excerpt`: 
+- **Palazzografica** (`proj-palazzografica`)
+  - **Tags:** `#c` `#c-lang` `#mac-project`
+  - **Sintesi:** Progetto Mac: Palazzografica. Stack: C.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/palazzo/palazzografica/palazzografica, `file_uri`: file:///Users/pierfrancesco/Desktop/palazzo/palazzografica/palazzografica, `languages`: ['C'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2024-10-22T21:42:34.210587+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Scripts** (`proj-scripts`)
+  - **Tags:** `#javascript` `#mac-project` `#python`
+  - **Sintesi:** Progetto Mac: Scripts. Stack: JavaScript, Python.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/DataMed/scripts, `file_uri`: file:///Users/pierfrancesco/DataMed/scripts, `languages`: ['JavaScript', 'Python'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 6, `last_modified`: 2025-12-10T14:57:25.567495+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Tests** (`proj-tests`)
+  - **Tags:** `#mac-project` `#typescript`
+  - **Sintesi:** Progetto Mac: Tests. Stack: TypeScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/DataMed/tests, `file_uri`: file:///Users/pierfrancesco/DataMed/tests, `languages`: ['TypeScript'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-12-10T14:57:25.571074+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Uni Match** (`proj-unimatch`)
+  - **Tags:** `#mac-project` `#react` `#typescript`
+  - **Sintesi:** Progetto Mac: Uni Match. Stack: React, TypeScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UniMatch, `file_uri`: file:///Users/pierfrancesco/Desktop/UniMatch, `languages`: ['TypeScript'], `frameworks`: ['React'], `has_git`: False, `relevant_files_count`: 33, `last_modified`: 2026-03-06T10:58:20.293816+00:00, `key_dependencies`: ['@expo/vector-icons', '@react-navigation/bottom-tabs', '@react-navigation/native', '@react-navigation/native-stack', 'expo', 'expo-asset', 'expo-constants', 'expo-file-system', 'expo-font', 'expo-linear-gradient', 'expo-status-bar', 'react', 'react-native', 'react-native-gesture-handler', 'react-native-safe-area-context'], `readme_excerpt`: 
+- **Uni Match 1** (`proj-unimatch-1`)
+  - **Tags:** `#c++` `#cpp` `#dart` `#flutter` `#mac-project` `#swift` `#web`
+  - **Sintesi:** App Flutter cross-platform (iOS + Android) per il dating tra studenti universitari italiani.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UniMatch-1, `file_uri`: file:///Users/pierfrancesco/Desktop/UniMatch-1, `languages`: ['C++', 'Dart', 'Swift'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 120, `last_modified`: 2026-05-24T10:50:51.634229+00:00, `key_dependencies`: [], `readme_excerpt`: # 🎓 UniMatch — Dating App per Universitari Italiani
+
+App Flutter cross-platform (iOS + Android) per il dating tra studenti universitari italiani.
+
+---
+
+## 📁 Struttura del Progetto
+
+```
+unimatch/
+├── lib/
+│   ├── main.dart                    # Entry point + routing
+│   ├── theme/
+│   │   └── app_theme.dart           # Colori, tema light/dark
+│   ├── models/
+│   │   └── models.dart              # UserProfile, MatchModel, MessageModel
+│   ├── services/
+│   │   ├── auth_service.dart        # Login/registrazione Supabase
+│   │   └── encryption_service.dart  # AES-256-GCM E2E + PBKDF2 password
+│   ├
+- **Utils** (`proj-utils`)
+  - **Tags:** `#javascript` `#mac-project` `#typescript`
+  - **Sintesi:** Progetto Mac: Utils. Stack: JavaScript, TypeScript.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/DataMed/src/utils, `file_uri`: file:///Users/pierfrancesco/DataMed/src/utils, `languages`: ['JavaScript', 'TypeScript'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2025-12-10T14:57:25.569220+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Website** (`proj-website`)
+  - **Tags:** `#javascript` `#mac-project` `#web`
+  - **Sintesi:** Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizioni, FAQ e informazioni di supporto per l'app FedericoII Studenti.
+  - **Dettagli:** `local_path`: /Users/pierfrancesco/DataMed/website, `file_uri`: file:///Users/pierfrancesco/DataMed/website, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 4, `last_modified`: 2026-03-06T18:50:25.763196+00:00, `key_dependencies`: [], `readme_excerpt`: # FedericoII Studenti - Official Website
+
+Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizioni, FAQ e informazioni di supporto per l'app FedericoII Studenti.
+
+## ✨ Features
+
+- 🎨 **Design Premium**: Gradients moderni, animazioni fluide, tema scuro e chiaro
+- 📱 **Fully Responsive**: Perfetto su mobile, tablet e desktop
+- ⚡ **Performance Optimized**: Nessuna dipendenza esterna, CSS/JS inline
+- 🌙 **Dark Mode**: Toggle built-in con persistenza tra sessioni
+- ♿ **Accessible**: WCAG 2.1 compliant, keyboard navigation, reduced motion support
+- 🔒 **Privacy First**: Nessun 
+
 ### [Macro-Label: `RELATIONSHIP`]
 - **Antonio Renato Chieppa** (`rel-antonio-chieppa`)
   - **Tags:** `#friendship` `#study-partner` `#academic-collaboration`
@@ -1676,6 +2624,15 @@
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-multi-llm-mcp-ecosystem`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-modular-domain-graph-topology`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-fractal-graph-of-graphs-evaluation`) *(Corpo Calloso)*
+- (`proj-appalcool`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`proj-caretrack-demo`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`proj-docs_md`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`proj-federicoiiapp`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`proj-missing-feedback`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`proj-scripts`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`proj-tests`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`proj-utils`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
+- (`proj-website`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`) *(Corpo Calloso)*
 - (`ai-reasoning-cross-model-provenance-validation`) --[BELONGS_TO_EPISODE]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[BELONGS_TO_EPISODE]--> (`ep-20260827-render-cloud-vs-local-hybrid-architecture`) *(Corpo Calloso)*
 - (`ai-reasoning-infinite-context-architecture`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
@@ -1816,6 +2773,114 @@
 - (`val-independence`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[CREATED]--> (`proj-napolilive`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[CREATED]--> (`proj-tombolawifi`) *(Corpo Calloso)*
+- (`proj-1-minimal`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-10-funptr`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-12-templates`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-2`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-2-structured`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-3-basictypes`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-4-allocation`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-5-usertypes`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-6-iostream`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-7-string`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-8-psecasgen`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-accentcolor-colorset`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-advanceddb-mod-db-tech`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-algebra`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-appabbonamenti`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-appaulestudiotypescript`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-appcalcolatori`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-appicon-appiconset`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-appnapoli`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-apptombola`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-asd-lasd`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-auth_screens`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-basi-di-dati-esercizi`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-bdd`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-binari`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-book`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-calm-raman`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-cervelloartificiale`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-ciscocertification`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-codice_architettura_tesi`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-compito-luglio`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-compito-settembre`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-composetest`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-cose_laurea`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-eager-pasteur`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-economia`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-eserciziocontocorrente`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-example`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-examples`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-fantaformula1`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-foodlab2025`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-gennaio-2021`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-gioco`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-giocoscacchi`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-giugno-2021`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-gods-eye-view-main`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-googlecertificate`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-habittracker`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-happy-plant-keeper`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-ingsw`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-jules_session_5370203018288358434`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-lp---prova-esame-giugno`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-lp1`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-lso`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-macpulse2tests`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-macpulse2uitests`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-macpulsetests`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-macpulseuitests`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-marzo-2021`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-ml-neural-networks-dl`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-new-project`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-new_chapters`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-nvidiacertification`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-oo`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-osmci`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-outputs`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-pack3`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-pack4`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-palazzo`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-particle-engine-simulation`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-pdc`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-pgf-pie`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-pierfrancescoamendola`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-posgresql-pgadmin`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-progetto-gestione-bibloteca`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-propedia-demo`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-psld1`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-psld2-senza-git`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-qr_generator`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-render1`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-render2`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-render3`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-render_final`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-render_pdf_temp`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-render_proof_1`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-render_proof_final`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-render_revision`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-render_revision_final`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-rendered`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-rendered_v2`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-reti-di-calcolatori`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-sample`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-sim`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-sitocertificati`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-slidetecweb`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-soluzionepostgress_pgadmin_prof`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-source_chapters`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-spiegazione-codice-librerire`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-statistica`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-svolti`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-taste-skill`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-tecweblezioni`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-testrepo-main`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-tscheck`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-uni-grade-projections-main`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-unistats`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-videoyt`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-workspace`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[CREATOR_OF]--> (`aule-studio-app`) *(Corpo Calloso)*
 - (`concept-interhemispheric-inhibition-gating`) --[CROSS_CALLOSAL_INHIBITION]--> (`domain-filosofia-valori`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[DECLARED]--> (`user-intent-zero-cost-graphrag`) *(Corpo Calloso)*
@@ -1939,6 +3004,7 @@
 - (`user-intent-connect-gemini-claude-chatgpt-mcp`) --[PART_OF_EPISODE]--> (`episode-2026-08-27-multi-llm-mcp-ecosystem`) *(Corpo Calloso)*
 - (`user-intent-hierarchical-multi-layer-graph-design`) --[PART_OF_EPISODE]--> (`episode-2026-08-27-fractal-graph-of-graphs-evaluation`) *(Corpo Calloso)*
 - (`user-intent-modular-cluster-decentralization`) --[PART_OF_EPISODE]--> (`episode-2026-08-27-modular-domain-graph-topology`) *(Corpo Calloso)*
+- (`proj-caretrack-demo-ui-layer`) --[PART_OF_PROJECT]--> (`proj-caretrack-demo`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PLANNED]--> (`user-intent-telegram-bot-gateway`) *(Corpo Calloso)*
 - (`taxonomy-deterministic-floor-classification-engine`) --[POWERS_HIERARCHY]--> (`ui-component-palazzo-cognitivo-multi-layer-navigator`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PREFERS]--> (`rigore-informativo`) *(Corpo Calloso)*
@@ -2202,9 +3268,127 @@
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-napolilive`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`fastapi-python-stack`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`flutter-dart-ecosystem`)
+- (`proj-1-minimal`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-10-funptr`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-12-templates`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-2`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-2-structured`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-3-basictypes`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-4-allocation`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-5-usertypes`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-6-iostream`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-7-string`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-8-psecasgen`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-accentcolor-colorset`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-advanceddb-mod-db-tech`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-algebra`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-appabbonamenti`) --[BELONGS_TO_DOMAIN]--> (`domain-finanza-economia`)
+- (`proj-appaulestudiotypescript`) --[BELONGS_TO_DOMAIN]--> (`domain-produttivita-sistemi`)
+- (`proj-appcalcolatori`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-appflashcards`) --[BELONGS_TO_DOMAIN]--> (`domain-crescita-personale`)
+- (`proj-appicon-appiconset`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-appnapoli`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-apppalette`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
+- (`proj-appscadenza`) --[BELONGS_TO_DOMAIN]--> (`domain-crescita-personale`)
+- (`proj-apptombola`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-asd-lasd`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-auth_screens`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-backend`) --[BELONGS_TO_DOMAIN]--> (`domain-relazioni-comunicazione`)
+- (`proj-basi-di-dati-esercizi`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-bdd`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-binari`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-book`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-calm-raman`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`proj-caretrack`) --[BELONGS_TO_DOMAIN]--> (`domain-medicina-salute`)
+- (`proj-cervelloartificiale`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
+- (`proj-ciscocertification`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-codice_architettura_tesi`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-compito-luglio`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-compito-settembre`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-composetest`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-cose_laurea`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-cypress_tests`) --[BELONGS_TO_DOMAIN]--> (`domain-relazioni-comunicazione`)
+- (`proj-eager-pasteur`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-economia`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-eserciziocontocorrente`) --[BELONGS_TO_DOMAIN]--> (`domain-finanza-economia`)
+- (`proj-example`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-examples`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-fantaformula1`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-foodlab2025`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-frontend`) --[BELONGS_TO_DOMAIN]--> (`domain-relazioni-comunicazione`)
+- (`proj-gennaio-2021`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-gioco`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-giocoscacchi`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
+- (`proj-giugno-2021`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-gods-eye-view-main`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-googlecertificate`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-habittracker`) --[BELONGS_TO_DOMAIN]--> (`domain-produttivita-sistemi`)
+- (`proj-happy-plant-keeper`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-ingsw`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
 - (`proj-jarvis-voice-assistant`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
+- (`proj-jules_session_5370203018288358434`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-lp---prova-esame-giugno`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-lp1`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-lso`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-macpulse2tests`) --[BELONGS_TO_DOMAIN]--> (`domain-produttivita-sistemi`)
+- (`proj-macpulse2uitests`) --[BELONGS_TO_DOMAIN]--> (`domain-produttivita-sistemi`)
+- (`proj-macpulsetests`) --[BELONGS_TO_DOMAIN]--> (`domain-produttivita-sistemi`)
+- (`proj-macpulseuitests`) --[BELONGS_TO_DOMAIN]--> (`domain-produttivita-sistemi`)
+- (`proj-mary`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
+- (`proj-marzo-2021`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-ml-neural-networks-dl`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-new-project`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-new_chapters`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-nvidiacertification`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-oo`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-osmci`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-outputs`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-pack3`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-pack4`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-palazzo`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-palazzografica`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
+- (`proj-particle-engine-simulation`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
+- (`proj-pdc`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-pgf-pie`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-pierfrancescoamendola`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-posgresql-pgadmin`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-progetto-gestione-bibloteca`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-propedia-demo`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-psld1`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-psld2-senza-git`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-qr_generator`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-render1`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-render2`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-render3`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-render_final`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-render_pdf_temp`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-render_proof_1`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-render_proof_final`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-render_revision`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-render_revision_final`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-rendered`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-rendered_v2`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-reti-di-calcolatori`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-sample`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-sim`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-sitocertificati`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-slidetecweb`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-soluzionepostgress_pgadmin_prof`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-source_chapters`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-spiegazione-codice-librerire`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-statistica`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
 - (`proj-streaksup-app`) --[BELONGS_TO_DOMAIN]--> (`domain-produttivita-sistemi`)
+- (`proj-svolti`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-taste-skill`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-tecweblezioni`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-testrepo-main`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-tscheck`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
+- (`proj-uni-grade-projections-main`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-unimatch`) --[BELONGS_TO_DOMAIN]--> (`domain-relazioni-comunicazione`)
+- (`proj-unimatch-1`) --[BELONGS_TO_DOMAIN]--> (`domain-relazioni-comunicazione`)
+- (`proj-unistats`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-videoyt`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
+- (`proj-workspace`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`project-royal-gambit-chess`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`universal-ai-brain`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`val-eternal-cognitive-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`)
@@ -2288,6 +3472,25 @@
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`lesson-boundaries-clarity`)
 - (`val-transparency-loyalty`) --[CORPUS_CALLOSUM_LINK]--> (`rel-parents`)
 - (`val-transparency-loyalty`) --[CORPUS_CALLOSUM_LINK]--> (`rel-marco-di-martino`)
+- (`proj-appalcool`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-appflashcards`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-apppalette`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-appscadenza`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-backend`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-caretrack-demo`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-cypress_tests`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-docs_md`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-federicoiiapp`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-frontend`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-mary`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-missing-feedback`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-palazzografica`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-scripts`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-tests`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-unimatch`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-unimatch-1`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-utils`) --[CREATED_BY]--> (`person-pierfrancesco`)
+- (`proj-website`) --[CREATED_BY]--> (`person-pierfrancesco`)
 - (`user-intent-telegram-bot-gateway`) --[DEFINES]--> (`arch-telegram-webhook-gateway`)
 - (`ai-reasoning-infinite-context-architecture`) --[DEFINES_CORE_PURPOSE_OF]--> (`universal-ai-brain`)
 - (`goal-multi-ai-shared-context-persistence`) --[DEFINES_MISSION_OF]--> (`universal-ai-brain`)
@@ -2499,6 +3702,10 @@
 - (`user-intent-reasoning-and-chat-memory`) --[ORIGINATED]--> (`tax-ai-reasoning`)
 - (`user-intent-biological-lazy-loading-inhibition`) --[ORIGINATES_PARADIGM]--> (`concept-interhemispheric-inhibition-gating`)
 - (`user-intent-modular-cluster-decentralization`) --[ORIGINATES_RULE]--> (`concept-modular-domain-subgraphs`)
+- (`proj-appcalcolatori-ui-layer`) --[PART_OF_PROJECT]--> (`proj-appcalcolatori`)
+- (`proj-cervelloartificiale-api-routes`) --[PART_OF_PROJECT]--> (`proj-cervelloartificiale`)
+- (`proj-habittracker-ui-layer`) --[PART_OF_PROJECT]--> (`proj-habittracker`)
+- (`proj-unistats-ui-layer`) --[PART_OF_PROJECT]--> (`proj-unistats`)
 - (`person-pierfrancesco`) --[PERFORMS_IN]--> (`art-theatre-acting`)
 - (`universal-ai-brain`) --[PERSISTS_INTO]--> (`sqlite-wal-persistence`)
 - (`proj-streaksup-app`) --[PERSISTS_WITH]--> (`streaksup-swiftdata-arch`)
