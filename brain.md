@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 11:37:51 UTC | **Nodi Restituiti:** 363 (SX: 233 · DX: 130) | **Sinapsi Restituite:** 916
-> **Consistenza Reale Connettoma:** 363 Nodi Totali nel Database | 916 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 11:37:54 UTC | **Nodi Restituiti:** 366 (SX: 235 · DX: 131) | **Sinapsi Restituite:** 923
+> **Consistenza Reale Connettoma:** 366 Nodi Totali nel Database | 923 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -281,6 +281,10 @@
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Riformulata la skill universal-brain con protocollo obbligatorio a 2 fasi e 3 livelli di ingestione (MCP/CLI, POST HTTP, Fallback JSON). Implementato il demone background macOS (com.universalbrain.syn
   - **Dettagli:** `raw`: `model`: Gemini 3.7 Flash, `responses_given`: Riformulata la skill universal-brain con protocollo obbligatorio a 2 fasi e 3 livelli di ingestione (MCP/CLI, POST HTTP, Fallback JSON). Implementato il demone background macOS (com.universalbrain.sync.plist) attivo all'avvio (<0.01% CPU, ~20MB RAM) per sincronizzazione bidirezionale continua PC ⮂ Render., `actions_taken`: ['Riformulato SKILL.md con protocollo a 2 fasi (Pre-Response Retrieval + Post-Response Ingestion)', 'Distribuito SKILL.md in ~/.gemini/config/skills/, ~/.agents/skills/, e ~/.agents/rules/', 'Aggiornato prompt.md e sync_brain.py con motore bidirezionale completo e helper 1-command', 'Creato sync_daemon.py con logging rotativo e monitoraggio mtime SQLite', 'Creato ed eseguito install_daemon.sh per LaunchAgent macOS in ~/Library/LaunchAgents/', 'Esteso il comando globale brain CLI con sync, record e daemon management in install.sh', 'Eseguita verifica end-to-end con 100% successo'], `outcome`: Demone attivo in background e connettoma allineato al 100% tra PC locale e Render Cloud.
+- **Ragionamento: Riformulazione Completa Documentazione README** (`reasoning-update-readme-architecture`)
+  - **Tags:** `#docs` `#github` `#architettura` `#dual-ring`
+  - **Sintesi:** Stesura della documentazione ufficiale con copertura completa di backend, algoritmi, persistenza e client.
+  - **Dettagli:** `actions_taken`: ['Riscritto integralmente README.md con 10 capitoli tecnici approfonditi', 'Inclusi diagrammi ASCII e Mermaid per modello bi-emisferico e Dual-Ring Persistence', 'Documentati algoritmi (Bidirectional BFS, Recursive CTE, GraphRAG BM25) e ottimizzazioni SQLite WAL', 'Eseguito commit e push su GitHub origin main'], `model`: Gemini 3.7 Flash, `outcome`: README.md aggiornato al 100% e pubblicato su GitHub origin/main, `responses_given`: README.md riscritto e pubblicato su GitHub con dettagli esaustivi su tutti i moduli.
 - **Ragionamento: Verifica End-to-End Token Render** (`reasoning-verify-github-token-render`)
   - **Tags:** `#test-cloud` `#end-to-end` `#validazione`
   - **Sintesi:** Conferma del corretto funzionamento dell'ingestione cloud e del connettoma a 354 nodi.
@@ -823,6 +827,10 @@
   - **Tags:** `#user-intent` `#query` `#integrity-and-coexistence-verification`
   - **Sintesi:** mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)
   - **Dettagli:** `raw`: `raw_query`: mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree), `intent_type`: INTEGRITY_AND_COEXISTENCE_VERIFICATION, `epistemic_status`: EXTRACTED, `target_domain`: Knowledge Preservation / Multiscale Graph Architectures, `user_prompt`: mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)
+- **Intento: Aggiornamento Documentazione README.md** (`user-intent-update-readme-architecture`)
+  - **Tags:** `#readme` `#documentazione` `#architettura` `#backend` `#algoritmi`
+  - **Sintesi:** Documentare in modo esaustivo architettura bi-emisferica, backend, algoritmi, doppio anello e frontend nel README.md.
+  - **Dettagli:** `context`: Riscrivere e potenziare il README.md della repository GitHub con tutti i dettagli tecnici del connettoma, `user_prompt`: ora aggiorna il file read.me della mia repo su github affinchè contenga tutto su come sia strutturato il cervello, il frontend, ma sorpatutto il backedn, la logica, gli algoritmi, i vari sistemi per mantenere attivo il server ecc...
 - **Intento: Allora vorrei dirti che oggi ho man...** (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Allora vorrei dirti che oggi ho man...
@@ -1238,6 +1246,10 @@
   - **Tags:** `#session-recap` `#frontend-restyling` `#graphify-aesthetic` `#physics-freeze` `#palazzo-cognitivo` `#zero-lag`
   - **Sintesi:** Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), eliminazione di oscillazioni e rotazioni continue della fisica su Vis-Network, correzione del bug di ispezione nodi e ripristino della gerarchia a piani del Palazzo Cognitivo (P0, P1, P2).
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Antigravity Assistant'], `topic`: Frontend Deep-Tech Restyling & Graph Stability, `outcomes`: ['Implementazione estetica Dark-Tech cyberpunk minimalista con Bento Grid e JetBrains Mono', 'Disabilitazione totale del live physics loop post-stabilizzazione (Zero-Oscillation Freeze)', 'Risoluzione ReferenceError su tags in showInfo() per ispezione istantanea dei nodi', 'Classificazione deterministica dei nodi su 3 piani (P0: 15 nodi, P1: 121 nodi, P2: 53 nodi)', 'Eliminazione di rotazioni e rendering su canvas a 60fps ultra-reattivo']
+- **Episodio: Rilascio Documentazione Ufficiale README** (`episode-update-readme-architecture`)
+  - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
+  - **Sintesi:** Episodio di redazione e pubblicazione del README.md completo su GitHub.
+  - **Dettagli:** `key_takeaways`: Il README.md è ora la fonte di verità tecnica completa per l'architettura, il funzionamento del demone, il backend FastAPI e il frontend., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessun task pendente. Repository e connettoma allineati al 100%., `topic`: Aggiornamento Documentazione e Architettura README.md
 - **Episodio: Risoluzione Demone e Persistenza Nodi** (`episode-fix-daemon-render-persistence`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di analisi e riparazione del demone di sincronizzazione e della persistenza del connettoma.
@@ -1820,6 +1832,7 @@
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-telegram-keepalive-confirmation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-universal-ai-hub-client`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-update-readme-architecture`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-valutazione-progetto-language-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-verify-github-token-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
@@ -1911,6 +1924,7 @@
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_INTENT]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_INTENT]--> (`user-intent-telegram-keepalive-confirmation`) *(Corpo Calloso)*
+- (`episode-update-readme-architecture`) --[RECORDS_INTENT]--> (`user-intent-update-readme-architecture`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
 - (`episode-verify-github-token-render`) --[RECORDS_INTENT]--> (`user-intent-verify-github-token-render`) *(Corpo Calloso)*
 - (`episode-video-showcase-anteprima-universal-brain`) --[RECORDS_INTENT]--> (`user-intent-creazione-video-showcase-universal-brain`) *(Corpo Calloso)*
@@ -1956,6 +1970,7 @@
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_REASONING]--> (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_REASONING]--> (`reasoning-telegram-keepalive-confirmation`) *(Corpo Calloso)*
+- (`episode-update-readme-architecture`) --[RECORDS_REASONING]--> (`reasoning-update-readme-architecture`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_REASONING]--> (`reasoning-analisi-fattibilita-language-app`) *(Corpo Calloso)*
 - (`episode-verify-github-token-render`) --[RECORDS_REASONING]--> (`reasoning-verify-github-token-render`) *(Corpo Calloso)*
 - (`episode-video-showcase-anteprima-universal-brain`) --[RECORDS_REASONING]--> (`reasoning-creazione-video-showcase-universal-brain`) *(Corpo Calloso)*
@@ -2297,6 +2312,7 @@
 - (`reasoning-semplificazione-concettuale-causal-dl`) --[FULFILLS]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
 - (`reasoning-telegram-keepalive-confirmation`) --[FULFILLS]--> (`user-intent-telegram-keepalive-confirmation`)
+- (`reasoning-update-readme-architecture`) --[FULFILLS]--> (`user-intent-update-readme-architecture`)
 - (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) --[FULFILLS]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`)
 - (`reasoning-verify-github-token-render`) --[FULFILLS]--> (`user-intent-verify-github-token-render`)
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-taxonomy-classification`)
@@ -2360,6 +2376,7 @@
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-telegram-keepalive-confirmation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-update-readme-architecture`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-valutazione-language-app-antigravity`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-verify-github-token-render`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-video-showcase-anteprima-universal-brain`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -2401,6 +2418,7 @@
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-telegram-keepalive-confirmation`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-update-readme-architecture`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-verify-github-token-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`test-cloud-git-autopush-verification`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-evolution-ui-persistence`)
@@ -2477,6 +2495,7 @@
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-telegram-keepalive-confirmation`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-universal-ai-hub-client`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-update-readme-architecture`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-verify-github-token-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-zero-cost-graphrag`) --[TRIGGERS]--> (`ai-reasoning-hybrid-search-mcp`)
 - (`person-pierfrancesco`) --[UPHOLDS]--> (`val-transparency-loyalty`)
