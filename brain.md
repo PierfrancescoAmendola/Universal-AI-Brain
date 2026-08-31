@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 15:03:16 UTC | **Nodi Restituiti:** 378 (SX: 244 · DX: 134) | **Sinapsi Restituite:** 928
-> **Consistenza Reale Connettoma:** 378 Nodi Totali nel Database | 928 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 15:03:37 UTC | **Nodi Restituiti:** 381 (SX: 246 · DX: 135) | **Sinapsi Restituite:** 935
+> **Consistenza Reale Connettoma:** 381 Nodi Totali nel Database | 935 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -105,6 +105,10 @@
   - **Tags:** `#architecture` `#fsrs` `#web-speech-api` `#sqlite` `#offline-first`
   - **Sintesi:** Proposta di architettura basata su motore Spaced Repetition (FSRS/SM-2), Web Speech API per audio/TTS nativo e integrazione LLM per generazione esercizi e roleplay senza dipendenze esterne bloccanti.
   - **Dettagli:** `raw`: `core_components`: ['FSRS Engine', 'Local SQLite', 'Web Speech API', 'LLM Contextual Tutor'], `privacy_tier`: Local/Self-hosted, `model`: AI Assistant
+- **Architettura Motori Cognitivi, Sincronizzazione Vault e Test Suite E2E** (`reasoning-potenziamento-cognitivo-obsidian-bridge`)
+  - **Tags:** `#backend` `#fastapi` `#sqlite-wal` `#mcp` `#testing` `#architecture`
+  - **Sintesi:** Implementati 6 nuovi motori Python indipendenti, registrati 12 tool MCP JSON-RPC, aggiunti endpoint REST FastAPI, esteso schema SQLite WAL con tabella tensions e 9 modelli permanenti, aggiornato frontend dark-tech con 5 modali e validata suite di 24 test (100% pass).
+  - **Dettagli:** `actions_taken`: ['Creato modulo obsidian_vault_sync.py per export/import note atomiche .md con frontmatter YAML e wikilinks', 'Creato modulo brain_tensions.py con schema SQLite dedicato e strategie Hegeliane/Steelman', 'Creato modulo brain_weave.py per auto-ponti di nodi orfani e Corpo Calloso', 'Creato modulo brain_resurface.py con modello matematico di Ebbinghaus per il briefing 90s', 'Creato modulo brain_firmware.py con i 9 modelli mentali e seeding nel connettoma', 'Creato modulo brain_library.py per dialogo groundato con autori e mentori', 'Registrati 12 nuovi tool MCP in mcp_server.py ed estesi gli endpoint REST in main.py', 'Aggiornato frontend dark-tech con pulsanti topbar e 5 modali dedicati in index.html e app.js', 'Sviluppata e validata test suite completa con 24 test unitari (100% success rate)'], `model`: Gemini 3.7 Flash, `outcome`: Architettura completata, verificata e sincronizzata con successo su database e Obsidian Vault locale., `responses_given`: Piano di implementazione a 8 task eseguito integralmente con test superati al 100%.
 - **Architettura e Realizzazione Video Showcase 60s** (`reasoning-creazione-video-showcase-universal-brain`)
   - **Tags:** `#video-engine` `#multimedia` `#canvas-1080p` `#web-audio` `#media-recorder`
   - **Sintesi:** Progettazione e implementazione del video engine interattivo a 6 scene in 60 secondi con sintesi vocale, musica cyberpunk procedurale, export video 1080p e kit promozionale.
@@ -967,6 +971,10 @@
   - **Tags:** `#backend` `#performance` `#sqlite` `#optimization` `#safety`
   - **Sintesi:** Richiesta di applicare ottimizzazioni backend (indici, cache, CTE) con approccio ibrido e backup preventivo, senza perdere dati o funzionalità.
   - **Dettagli:** `user_prompt`: voglio l'opzione c, ibrida con backup, non voglio perdere nulla!!! procedi con l'implementazione., `context`: Analisi critica di Gemini su bug (tags, cross_links) e necessità di integrare senza rompere il main.py esistente.
+- **Potenziamento Cognitivo del Connettoma e Integrazione Obsidian Vault** (`user-intent-potenziamento-cognitivo-obsidian-bridge`)
+  - **Tags:** `#obsidian-vault` `#cognitive-enhancement` `#daily-resurface` `#tensions-matrix` `#weave-link` `#firmware-models`
+  - **Sintesi:** Integrazione bidirezionale di Obsidian Vault con note atomiche, rilevatore tensioni cognitive, weave link engine per nodi orfani, daily resurface spaced repetition e 9 firmware mentali.
+  - **Dettagli:** `context`: Richiesta di potenziare Universal AI Brain superando le feature di Neomas con Obsidian Vault, Daily Resurface, Tensioni, Weave Link e 9 Firmware mentali., `user_prompt`: continua il lavoro che stavamo facendo, continua il lavoro del piano d'implementazione chiaro???
 - **Preferenze Pierfrancesco Grafica Scacchi Duolingo** (`user-intent-duolingo-chess-preference`)
   - **Tags:** `#pierfrancesco` `#preferenze` `#duolingo` `#scacchi` `#ui-ux`
   - **Sintesi:** Pierfrancesco richiede massima fedeltà visiva allo stile Duolingo Chess: scacchiera menta e bianco, pezzi 2D piatti vettoriali con gerarchia scalare, pulsanti 3D tattili e mascotte Duo interattiva.
@@ -1290,6 +1298,10 @@
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di redazione e pubblicazione del README.md completo su GitHub.
   - **Dettagli:** `key_takeaways`: Il README.md è ora la fonte di verità tecnica completa per l'architettura, il funzionamento del demone, il backend FastAPI e il frontend., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessun task pendente. Repository e connettoma allineati al 100%., `topic`: Aggiornamento Documentazione e Architettura README.md
+- **Episodio: Rilascio Motori Cognitivi Avanzati e Obsidian Bridge** (`episode-potenziamento-cognitivo-obsidian-bridge`)
+  - **Tags:** `#chat` `#connettoma` `#obsidian` `#continuità-cognitiva`
+  - **Sintesi:** Sessione di analisi del progetto Neomas, superamento con architettura ad alte prestazioni SQLite WAL e rilascio completo del ponte Obsidian con briefing giornaliero e matrici dialettiche.
+  - **Dettagli:** `key_takeaways`: Universal AI Brain supera Neomas integrando un vero database SQLite WAL + FTS5 sub-millisecondo con sincronizzazione bidirezionale Markdown su Obsidian Vault e suite completa di motori cognitivi., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Sincronizzazione finale e auto-push Git / Render., `topic`: Rilascio Completo Motori Cognitivi e Obsidian Bridge
 - **Episodio: Risoluzione Demone e Persistenza Nodi** (`episode-fix-daemon-render-persistence`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di analisi e riparazione del demone di sincronizzazione e della persistenza del connettoma.
@@ -1873,6 +1885,7 @@
 - (`user-intent-nuove-rappresentazioni-vi-2874`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-potenziamento-cognitivo-obsidian-bridge`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1971,6 +1984,7 @@
 - (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_INTENT]--> (`user-intent-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_INTENT]--> (`user-intent-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
+- (`episode-potenziamento-cognitivo-obsidian-bridge`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-cognitivo-obsidian-bridge`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
@@ -2018,6 +2032,7 @@
 - (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_REASONING]--> (`reasoning-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
+- (`episode-potenziamento-cognitivo-obsidian-bridge`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-cognitivo-obsidian-bridge`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
@@ -2355,6 +2370,7 @@
 - (`reasoning-openjarvis-collegamento-connettoma`) --[FULFILLS]--> (`user-intent-integrazione-openjarvis-stanford`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[FULFILLS]--> (`user-intent-ottimizzazione-mobile-web-8880`)
 - (`reasoning-piano-implementazione-jarvis-desktop`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
+- (`reasoning-potenziamento-cognitivo-obsidian-bridge`) --[FULFILLS]--> (`user-intent-potenziamento-cognitivo-obsidian-bridge`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[FULFILLS]--> (`user-intent-potenziamento-skill-e-ril-8338`)
 - (`reasoning-progettazione-5-paradigmi-visuali-connettoma`) --[FULFILLS]--> (`user-intent-esplorazione-paradigmi-visuali-grafo`)
 - (`reasoning-quali-sono-i-progetti-principali-di-8169`) --[FULFILLS]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`)
@@ -2426,6 +2442,7 @@
 - (`episode-nuove-rappresentazioni-vi-2874`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ottimizzazione-mobile-web-8880`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-potenziamento-cognitivo-obsidian-bridge`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-skill-e-ril-8338`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -2466,6 +2483,7 @@
 - (`reasoning-nuove-rappresentazioni-vi-2874`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-potenziamento-cognitivo-obsidian-bridge`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-potenziamento-skill-e-ril-8338`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-progettazione-5-paradigmi-visuali-connettoma`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -2543,6 +2561,7 @@
 - (`user-intent-nuove-rappresentazioni-vi-2874`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-potenziamento-cognitivo-obsidian-bridge`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
