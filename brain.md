@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:53:55 UTC | **Nodi Restituiti:** 532 (SX: 372 · DX: 160) | **Sinapsi Restituite:** 1232
-> **Consistenza Reale Connettoma:** 532 Nodi Totali nel Database | 1232 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 18:54:10 UTC | **Nodi Restituiti:** 538 (SX: 374 · DX: 164) | **Sinapsi Restituite:** 1244
+> **Consistenza Reale Connettoma:** 538 Nodi Totali nel Database | 1244 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -277,6 +277,10 @@
   - **Tags:** `#telegram-bot` `#ping-7m` `#zero-perdite`
   - **Sintesi:** Integrazione Telegram bot con cloud git push e validazione Keep-Alive 7m in sync_daemon.
   - **Dettagli:** `actions_taken`: ["Aggiornato telegram_bot.py per invocare cloud_git_push_background all'ingestione JSON", 'Confermato Keep-Alive già attivo in sync_daemon.py con ping /health ogni 7m (più sicuro di 14m)', 'Verificata attività nel log: ping registrati ed eseguiti con successo'], `model`: Gemini 3.7 Flash, `outcome`: Telegram coperto al 100% da doppio anello; Keep-Alive a 7m attivo e verificato nel demone, `responses_given`: Conferma copertura Telegram (bot esegue cloud push e demone sincronizza), spiegato che il Keep-Alive è già attivo ogni 7m nel demone.
+- **Ragionamento: E2E Test Session Hook** (`reasoning-e2e-test-session-hook-2447`)
+  - **Tags:** `#ide-hook` `#ai-reasoning` `#e2e-test-session-hook`
+  - **Sintesi:** Verifica automatica suite
+  - **Dettagli:** `model`: IDE Assistant, `actions_taken`: ['brain.db', 'brain_resurface.py', 'main.py', 'obsidian_vault/.obsidian/workspace.json', 'skills-lock.json', 'sync_daemon.py', 'telegram_bot.py', 'apple_shortcuts/', 'brain_rem_cycle.py', 'brain_vectors.py', 'export_video_preview.py', 'ide_hooks/', 'kindle_sync.py', 'last_chat_id.txt', 'obsidian_canvas_sync.py', 'obsidian_vault/00_CONNETOMA_CANVAS.canvas', 'raycast/', 'skills/brandkit', 'skills/design-taste-frontend', 'skills/design-taste-frontend-v1', 'skills/full-output-enforcement', 'skills/gpt-taste', 'skills/high-end-visual-design', 'skills/image-to-code', 'skills/imagegen-frontend-mobile', 'skills/imagegen-frontend-web', 'skills/industrial-brutalist-ui', 'skills/minimalist-ui', 'skills/redesign-existing-projects', 'skills/stitch-design-taste', 'static/video_assets/', 'tests/test_supercervello_ecosystem.py', 'universal_brain_preview.gif', 'video_showcase.html', 'web_clipper/'], `outcome`: Session completed and verified
 - **Ragionamento: Fix Demone LaunchAgent e Anti-Sleep Render** (`reasoning-fix-daemon-render-persistence`)
   - **Tags:** `#launchd` `#tcc-bypass` `#keepalive` `#git-sync`
   - **Sintesi:** Diagnosi e risoluzione integrale: TCC sandbox bypass tramite ~/.local/bin, keep-alive 7m anti-sleep, commit git automatico preventivo.
@@ -1660,6 +1664,17 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#user-intent` `#chat` `#comando-prompt-copia-rapida-per-telegram-bot`
   - **Sintesi:** Intento espresso da Pierfrancesco: Comando /prompt Copia Rapida per Telegram Bot
   - **Dettagli:** `raw`: `user_prompt`: /universal-brain aggiungi ai comandi su telegram la possibilità che richiamato il comando /prompt si copi sul telefono il prompt che deve poi incollare l'utente nei vari software ai online chiaro??, `context`: Sessione su Comando /prompt Copia Rapida per Telegram Bot
+- **Intento: E2E Test Session Hook** (`user-intent-e2e-test-session-hook-2447`)
+  - **Tags:** `#ide-hook` `#session-intent` `#e2e-test-session-hook`
+  - **Sintesi:** Obiettivo operativo: E2E Test Session Hook.
+  - **Dettagli:** `user_prompt`: E2E Test Session Hook, `modified_files`: ['brain.db', 'brain_resurface.py', 'main.py', 'obsidian_vault/.obsidian/workspace.json', 'skills-lock.json', 'sync_daemon.py', 'telegram_bot.py', 'apple_shortcuts/', 'brain_rem_cycle.py', 'brain_vectors.py', 'export_video_preview.py', 'ide_hooks/', 'kindle_sync.py', 'last_chat_id.txt', 'obsidian_canvas_sync.py', 'obsidian_vault/00_CONNETOMA_CANVAS.canvas', 'raycast/', 'skills/brandkit', 'skills/design-taste-frontend', 'skills/design-taste-frontend-v1', 'skills/full-output-enforcement', 'skills/gpt-taste', 'skills/high-end-visual-design', 'skills/image-to-code', 'skills/imagegen-frontend-mobile', 'skills/imagegen-frontend-web', 'skills/industrial-brutalist-ui', 'skills/minimalist-ui', 'skills/redesign-existing-projects', 'skills/stitch-design-taste', 'static/video_assets/', 'tests/test_supercervello_ecosystem.py', 'universal_brain_preview.gif', 'video_showcase.html', 'web_clipper/'], `diff_stat`: brain.db                                | Bin 2248704 -> 2260992 bytes
+ brain_resurface.py                      |  52 +++++++++++-----
+ main.py                                 | 102 ++++++++++++++++++++++++++++++++
+ obsidian_vault/.obsidian/workspace.json |   4 +-
+ skills-lock.json                        |  78 ++++++++++++++++++++++++
+ sync_daemon.py                          |  31 ++++++++++
+ telegram_bot.py                         |  61 ++++++++++++++++++-
+ 7 files changed, 309 insertions(+), 19 deletions(-)
 - **Intento: Fix Demone Sync e Persistenza Render** (`user-intent-fix-daemon-render-persistence`)
   - **Tags:** `#demone` `#sync` `#render` `#persistenza`
   - **Sintesi:** Risolvere il malfunzionamento del demone di sync, prevenire lo spegnimento di Render e garantire persistenza continua dei 347 nodi.
@@ -2100,6 +2115,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio sull'approvazione e innesto dell'auto-push Git lato Render per chiudere il cerchio della persistenza.
   - **Dettagli:** `key_takeaways`: Con GITHUB_TOKEN su Render, ogni post web esegue git push in background, eliminando il punto singolo di fallimento se il PC locale è spento., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Inserire GITHUB_TOKEN nelle Environment Variables di Render Dashboard se si desidera attivare il push cloud autonomo., `topic`: Cloud-Side Git Auto-Push e Persistenza a Doppio Anello
+- **Episodio: E2E Test Session Hook** (`episode-e2e-test-session-hook-2447`)
+  - **Tags:** `#ide-hook` `#dialogue-episode`
+  - **Sintesi:** Sessione di sviluppo dedicata a: E2E Test Session Hook.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'IDE Assistant'], `topic`: E2E Test Session Hook, `key_takeaways`: Task implementato e verificato con successo.
 - **Episodio: Esplorazione Modellazione 3D su Linux** (`episode-esplorazione-linux-3d-modeling`)
   - **Tags:** `#chat` `#linux` `#3d` `#grafica`
   - **Sintesi:** Sessione incentrata sulle capacità del sistema operativo Linux e delle sue varianti nel supporto e download di software di modellazione 3D.
@@ -2302,6 +2321,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#music` `#theatre` `#writing` `#centaur-ai`
   - **Sintesi:** Integrazione tra rigore computazionale e sensibilità creativa (pianoforte, teatro Tricca Ballacche, scrittura, modello Centauro).
   - **Dettagli:** `raw`: `music`: Pianoforte, chitarra, violino, composizione, `theatre`: Attore compagnia Tricca Ballacche, `languages`: Italiano, Inglese (cert. UK), Spagnolo, Francese, Tedesco, Portoghese, `human_ai_vision`: Centaur Model: umana strategia + macchina computazionale
+- **Test E2E Web Clipper Node** (`test-e2e-web-clipper`)
+  - **Tags:** `#web-clipper` `#test`
+  - **Sintesi:** Verifica completa dell'ingestione Web Clipper.
+  - **Dettagli:** `url`: https://example.com, `user`: Pierfrancesco
 - **Test Live Download Node** (`test-live-download-node`)
   - **Tags:** `#daemon-download-test`
   - **Sintesi:** Test di verifica download automatico da cloud a locale
@@ -2351,6 +2374,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#domain-hub` `#crescita-personale` `#abitudini` `#lezioni-vita` `#benessere` `#riflessioni`
   - **Sintesi:** Memoria Episodica di Vita, Lezioni Apprese, Abitudini Quotidiane, Riflessioni Personali, Fitness Mentale e Crescita Continua.
   - **Dettagli:** `scope`: Personal growth, daily habits, life lessons, holistic wellbeing
+- **Il Cigno Nero (Nassim Taleb) - Estratto** (`kindle-3e8f7aed7312`)
+  - **Tags:** `#kindle` `#lettura` `#libro` `#right` `#crescita-personale`
+  - **Sintesi:** Non considerare solo ciò che vedi, ma anche ciò che non vedi.
+  - **Dettagli:** `book_title`: Il Cigno Nero, `author`: Nassim Taleb, `full_quote`: Non considerare solo ciò che vedi, ma anche ciò che non vedi., `kindle_meta`: - Highlight Loc. 100 | 2024-01-01, `imported_by`: kindle_sync_engine
 - **Lezione di Architettura: Backend come Singola Sorgente di Verità e Pipeline di Rendering Pulita** (`lesson-backend-ground-truth-and-clean-canvas-rendering`)
   - **Tags:** `#architecture-lesson` `#ground-truth` `#clean-code` `#full-stack-integrity`
   - **Sintesi:** Principio guida per lo sviluppo del Cervello Artificiale: il backend SQLite/FastAPI deve essere l unica sorgente di verità per lo stato e i metadati, mentre il frontend deve limitarsi a presentare i dati con zero loop di rendering o simulazioni fisiche non controllate.
@@ -2371,6 +2398,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#stoicism` `#resilience` `#growth-mindset` `#refactoring`
   - **Sintesi:** Trattare gli ostacoli e le delusioni come dati da analizzare a mente fredda per iterare e migliorare senza autocommiserazione.
   - **Dettagli:** `raw`: `method`: Isolare la causa radice, applicare la correzione, ripartire con focus rinnovato
+- **Riflessione sull'antifragilità nei sistemi software compless** (`voice-riflessione-sullantifragilit-nei-sistemi-software-2447`)
+  - **Tags:** `#voice-capture` `#siri-shortcuts` `#right`
+  - **Sintesi:** Riflessione sull'antifragilità nei sistemi software complessi e distribuiti.
+  - **Dettagli:** `source`: test_suite_siri, `full_transcript`: Riflessione sull'antifragilità nei sistemi software complessi e distribuiti., `captured_by`: Pierfrancesco Amendola
 
 ### [Macro-Label: `MENTAL_MODEL`]
 - **Antifragility (Antifragilità)** (`firmware-antifragility`)
@@ -3021,6 +3052,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-creazione-video-showcase-universal-brain`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-definizione-ecografo-trasduttore-lineare`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-distro-linux-modellazione-3d`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-e2e-test-session-hook-2447`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-espansione-supercervello-integrazioni`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3128,6 +3160,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_INTENT]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_INTENT]--> (`user-intent-definizione-ecografo-trasduttore-lineare`) *(Corpo Calloso)*
+- (`episode-e2e-test-session-hook-2447`) --[RECORDS_INTENT]--> (`user-intent-e2e-test-session-hook-2447`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_INTENT]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-espansione-ecosistema-supercervello`) --[RECORDS_INTENT]--> (`user-intent-espansione-supercervello-integrazioni`) *(Corpo Calloso)*
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_INTENT]--> (`user-intent-distro-linux-modellazione-3d`) *(Corpo Calloso)*
@@ -3180,6 +3213,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_REASONING]--> (`reasoning-tassonomia-pkm-rag-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_REASONING]--> (`reasoning-caratterizzazione-trasduttore-lineare`) *(Corpo Calloso)*
+- (`episode-e2e-test-session-hook-2447`) --[RECORDS_REASONING]--> (`reasoning-e2e-test-session-hook-2447`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_REASONING]--> (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-espansione-ecosistema-supercervello`) --[RECORDS_REASONING]--> (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) *(Corpo Calloso)*
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_REASONING]--> (`reasoning-mappatura-ecosistema-linux-3d`) *(Corpo Calloso)*
@@ -3284,10 +3318,8 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-telegram-cognitive-hub-spec`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-tree-ranking-translation`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`intent-ep-20260827-tree-structures-evaluation`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`mental-centaur-model`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-hierarchical-dendrogram`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-hierarchical-tree-engine-impl`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-knowledge-graph-memory`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-neuro-symbolic-brain`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-search-tree-deliberation`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-telegram-webhook-gateway`)
@@ -3305,10 +3337,8 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-tree-ranking-translation`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`reason-ep-20260827-tree-structures-evaluation`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rigore-informativo`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-zero-cost`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-zero-placeholder`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`tax-ai-reasoning`)
-- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`universal-ai-brain`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-clean-clustered-ui`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-connect-gemini-claude-chatgpt-mcp`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-provenance-model-tracking`)
@@ -3316,6 +3346,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-telegram-bot-gateway`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-tree-search-enhancement`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`user-intent-zero-cost-graphrag`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`mental-centaur-model`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`node-knowledge-graph-memory`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`rule-zero-cost`)
+- (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`universal-ai-brain`)
 - (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`terse-caveman-brand-voice`)
 - (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`bi-hemispheric-polarity-palette`)
 - (`domain-design-creativita`) --[BELONGS_TO_DOMAIN]--> (`palette-neon-cyber`)
@@ -3363,6 +3397,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`aule-studio-app`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-caretrack`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-streaksup-app`)
+- (`kindle-3e8f7aed7312`) --[BELONGS_TO_DOMAIN]--> (`domain-crescita-personale`)
 - (`kindle-6d280a533c87`) --[BELONGS_TO_DOMAIN]--> (`domain-crescita-personale`)
 - (`kindle-c962fde43767`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`node-test-raycast-node`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
@@ -3490,6 +3525,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`project-royal-gambit-chess`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`universal-ai-brain`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
+- (`voice-riflessione-sullantifragilit-nei-sistemi-software-2447`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
 - (`web-test-fastapi-docs`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`val-eternal-cognitive-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`)
 - (`user-intent-mappamondo-3d-spotlight-relazioni`) --[BELONGS_TO_PROJECT]--> (`universal-ai-brain`)
@@ -3626,7 +3662,9 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[EXPANDS_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`proj-streaksup-app`) --[EXPOSES_INTERACTIVITY_VIA]--> (`streaksup-app-intents-engine`)
 - (`universal-ai-brain`) --[EXPOSES_PROTOCOL]--> (`ai-memory-ingest-spec`)
+- (`test-e2e-web-clipper`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
+- (`voice-riflessione-sullantifragilit-nei-sistemi-software-2447`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`)
 - (`user-intent-provenance-model-tracking`) --[EXTENDS]--> (`ai-memory-ingest-spec`)
 - (`proj-jarvis-voice-assistant`) --[EXTENDS_BRAIN]--> (`universal-ai-brain`)
@@ -3663,6 +3701,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-creazione-video-showcase-universal-brain`) --[FULFILLS]--> (`user-intent-creazione-video-showcase-universal-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
 - (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[FULFILLS]--> (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`)
+- (`reasoning-e2e-test-session-hook-2447`) --[FULFILLS]--> (`user-intent-e2e-test-session-hook-2447`)
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[FULFILLS]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
 - (`reasoning-eliminazione-jarvis-pulizia`) --[FULFILLS]--> (`user-intent-abbandono-jarvis-nuovo-progetto`)
 - (`reasoning-fix-daemon-render-persistence`) --[FULFILLS]--> (`user-intent-fix-daemon-render-persistence`)
@@ -3743,6 +3782,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-integrazioni-notion-obsidian`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-trasduttori-lineari`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-e2e-test-session-hook-2447`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-espansione-ecosistema-supercervello`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-esplorazione-linux-3d-modeling`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -3791,6 +3831,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-creazione-video-showcase-universal-brain`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-e2e-test-session-hook-2447`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-fix-daemon-render-persistence`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -3835,6 +3876,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`node-prefix-radix-trie`) --[PROVIDES_INSTANT_NODE_ACCESS_TO]--> (`node-knowledge-graph-memory`)
 - (`node-knowledge-graph-memory`) --[PROVIDES_STATE_SPACE_AND_CONSTRAINTS]--> (`node-search-tree-deliberation`)
 - (`ai-reasoning-clustering-decision`) --[RATIONALE_FOR]--> (`feat-progressive-areas`)
+- (`kindle-3e8f7aed7312`) --[READ_BY]--> (`person-pierfrancesco`)
 - (`kindle-6d280a533c87`) --[READ_BY]--> (`person-pierfrancesco`)
 - (`analysis-bst-vs-graph-taxonomy`) --[RECOMMENDS]--> (`idea-hierarchical-weighted-trees`)
 - (`node-commit-965f0a8`) --[RECORDS_ARCHITECTURE_INTENT]--> (`node-telegram-webhook-gateway`)
@@ -3872,6 +3914,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-creazione-jarvis-voice-assistant`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-repo-jarvis-desktop`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-video-showcase-universal-brain`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-e2e-test-session-hook-2447`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-espansione-supercervello-integrazioni`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
