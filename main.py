@@ -8,13 +8,14 @@ import json
 import sqlite3
 import base64
 import urllib.parse
+import subprocess
 from collections import deque
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Literal, Set
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, Query, HTTPException, Request, Response
+from fastapi import FastAPI, Query, HTTPException, Request, Response, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
@@ -1192,11 +1193,60 @@ def sanitize_and_translate_text(text: str) -> str:
     return cleaned
 
 
+def cloud_git_push_background(commit_msg: str = "feat(cloud): persistenza automatica connettoma da Render"):
+    """
+    Flushes SQLite WAL, regenerates brain.md, and pushes to GitHub repository
+    if GITHUB_TOKEN environment variable is configured in Render.
+    Ensures 100% cloud persistence even across container restarts when local PC is offline.
+    """
+    gh_token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
+    if not gh_token:
+        return False
+
+    repo_owner = os.getenv("GITHUB_REPOSITORY_OWNER", "PierfrancescoAmendola")
+    repo_name = os.getenv("GITHUB_REPOSITORY_NAME", "Universal-AI-Brain")
+    project_dir = os.path.dirname(os.path.abspath(__file__))
+    brain_md = os.path.join(project_dir, "brain.md")
+
+    try:
+        with get_db_connection() as conn:
+            conn.execute("PRAGMA wal_checkpoint(TRUNCATE);")
+
+        try:
+            res = get_brain_markdown()
+            with open(brain_md, "w", encoding="utf-8") as f:
+                f.write(res.body.decode("utf-8"))
+        except Exception:
+            pass
+
+        subprocess.run(["git", "config", "user.name", "Universal Brain Cloud Bot"], cwd=project_dir, capture_output=True)
+        subprocess.run(["git", "config", "user.email", "brain-bot@universal-ai.cloud"], cwd=project_dir, capture_output=True)
+        subprocess.run(["git", "add", "brain.db", "brain.md"], cwd=project_dir, capture_output=True)
+
+        st = subprocess.run(["git", "status", "--porcelain", "brain.db", "brain.md"], cwd=project_dir, capture_output=True, text=True)
+        if st.stdout.strip():
+            subprocess.run(["git", "commit", "-m", commit_msg], cwd=project_dir, capture_output=True)
+            remote_url = f"https://x-access-token:{gh_token}@github.com/{repo_owner}/{repo_name}.git"
+            subprocess.run(["git", "pull", "--rebase", remote_url, "main"], cwd=project_dir, capture_output=True)
+            push_res = subprocess.run(["git", "push", remote_url, "main"], cwd=project_dir, capture_output=True, text=True)
+            if push_res.returncode == 0:
+                print(f"🚀 [Cloud Git Auto-Push] Persistenza completata con successo su GitHub origin/main.")
+                return True
+            else:
+                print(f"⚠️ [Cloud Git Auto-Push] Errore push: {push_res.stderr.strip()}")
+                return False
+        return False
+    except Exception as e:
+        print(f"⚠️ [Cloud Git Auto-Push] Eccezione: {e}")
+        return False
+
+
 @app.post("/api/memory/ingest", tags=["Memory Ingest"])
-def ingest_memory(payload: IngestPayload):
+def ingest_memory(payload: IngestPayload, background_tasks: BackgroundTasks = None):
     """
     Atomically ingests or updates nodes and edges extracted from an LLM conversation or uploaded JSON file using high-performance batch operations.
     Enforces taxonomy assignment, translates foreign/CJK tokens to Italian/English, and creates automatic Corpus Callosum cross_links.
+    If GITHUB_TOKEN is configured in Render, triggers an asynchronous background Git commit & push.
     """
     now = datetime.now(timezone.utc).isoformat()
     nodes_upserted = 0
@@ -1344,6 +1394,9 @@ def ingest_memory(payload: IngestPayload):
         conn.commit()
         brain_db.invalidate_cache()
 
+    if background_tasks:
+        background_tasks.add_task(cloud_git_push_background, f"feat(cloud): ingest {nodes_upserted} nodi, {edges_upserted} archi")
+
     return {
         "status": "success",
         "message": f"Ingested {nodes_upserted} nodes and {edges_upserted} edges.",
@@ -1355,6 +1408,7 @@ def ingest_memory(payload: IngestPayload):
 
 @app.get("/api/quick-add", tags=["Memory Ingest"])
 def quick_add(
+    background_tasks: BackgroundTasks = None,
     data: Optional[str] = Query(None, description="Base64 encoded JSON IngestPayload"),
     id: Optional[str] = Query(None, description="Slug ID for the node"),
     label: Optional[str] = Query(None, description="Visible node title"),
@@ -1421,7 +1475,7 @@ def quick_add(
         else:
             raise ValueError("No valid node data provided in query or base64 payload.")
 
-        ingest_res = ingest_memory(IngestPayload(nodes=nodes_to_add, edges=edges_to_add))
+        ingest_res = ingest_memory(IngestPayload(nodes=nodes_to_add, edges=edges_to_add), background_tasks=background_tasks)
 
         if format == "json":
             return ingest_res
