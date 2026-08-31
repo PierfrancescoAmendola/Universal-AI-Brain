@@ -191,10 +191,7 @@ function initNetwork() {
         avoidOverlap: 0.8
       },
       stabilization: {
-        enabled: true,
-        iterations: 150,
-        updateInterval: 150,
-        fit: true
+        enabled: false
       }
     },
     interaction: {
@@ -452,12 +449,12 @@ async function fetchBrainData() {
       }
     }
 
-    await loadPalazzoData();
     renderGraphData();
     updateStatsHUD();
     buildLegend();
     populateLinkDropdown();
     updateTerminalStats();
+    loadPalazzoData(); // In background senza bloccare il primo frame
   } catch (err) {
     console.error('Failed to load brain data:', err);
   }
@@ -2888,8 +2885,8 @@ function applyRadarFilter(filterKey) {
   }
 
   // 2. Aggiorna 2D Vis Network (se in modalità 2D)
-  if (network && nodesDataset && graphViewMode !== 'globe') {
-    const allNodes = nodesDataset.get();
+  if (network && typeof nodesDS !== 'undefined' && nodesDS && graphViewMode !== 'globe') {
+    const allNodes = nodesDS.get();
     const updates = [];
 
     allNodes.forEach(node => {
@@ -2921,7 +2918,7 @@ function applyRadarFilter(filterKey) {
       });
     });
 
-    nodesDataset.update(updates);
+    nodesDS.update(updates);
   }
 }
 
