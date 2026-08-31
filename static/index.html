@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/static/style.css?v=20260829_1510">
+  <link rel="stylesheet" href="/static/style.css?v=20260831_1715">
   <script src="/static/vendor/vis-network.min.js"></script>
 </head>
 <body class="dark-tech-theme">
@@ -51,9 +51,34 @@
 
     <!-- Right Header Actions -->
     <div class="topbar-right">
+      <button class="topbar-action-btn" id="btn-hud-resurface" onclick="openResurfaceModal()" title="Daily Resurface: Briefing Cognitivo 90s">
+        <span>🔄</span>
+        <span>90s Resurface</span>
+      </button>
+
+      <button class="topbar-action-btn" id="btn-hud-tensions" onclick="openTensionsModal()" title="Matrice delle Tensioni Cognitive & Contraddizioni">
+        <span>⚡</span>
+        <span>Tensioni</span>
+      </button>
+
+      <button class="topbar-action-btn" id="btn-hud-weave" onclick="openWeaveModal()" title="Weave Link: Auto-Ponti per Nodi Orfani">
+        <span>🕸️</span>
+        <span>Weave</span>
+      </button>
+
+      <button class="topbar-action-btn" id="btn-hud-firmware" onclick="openFirmwareModal()" title="9 Firmware Cognitivi (Modelli Mentali)">
+        <span>🧭</span>
+        <span>Firmware</span>
+      </button>
+
+      <button class="topbar-action-btn" id="btn-hud-obsidian" onclick="openObsidianModal()" title="Obsidian Vault: Sincronizzazione Note Markdown">
+        <span>💎</span>
+        <span>Obsidian</span>
+      </button>
+
       <button class="topbar-action-btn" id="btn-hud-tree" onclick="openTreeModal()" title="Visualizza Albero Gerarchico di Conoscenza">
         <span>🌳</span>
-        <span>Albero Gerarchico</span>
+        <span>Albero</span>
       </button>
 
       <button class="topbar-action-btn btn-terminal-trigger" id="btn-hud-term" onclick="toggleTerminal()" title="Apri Console di Attività &amp; HTTP Inspector (⌘`)">
@@ -411,10 +436,122 @@
         <span style="font-size:12px; color:var(--text-muted);" id="tree-footer-stats">Caricamento nodi...</span>
         <button type="button" class="btn" onclick="closeTreeModal()">Chiudi</button>
       </div>
+  <!-- Daily Resurface 90s Modal -->
+  <div class="modal-overlay" id="resurface-modal-backdrop" style="display:none;" onclick="closeResurfaceModal()">
+    <div class="modal modal-lg modal-cognitive-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:24px;">🔄</span>
+          <div>
+            <h3 class="modal-title" style="margin:0; font-size:17px;">Daily Resurface (Briefing 90s)</h3>
+            <span style="font-size:12px; color:var(--text-muted);">Spaced Repetition di Ebbinghaus: recupera memoria storica e modelli mentali</span>
+          </div>
+        </div>
+        <button class="modal-close-icon" onclick="closeResurfaceModal()" title="Chiudi">✕</button>
+      </div>
+      <div class="modal-body" id="resurface-modal-body" style="padding:15px 0;">
+        <div style="text-align:center; padding:30px; color:var(--text-muted);">Caricamento briefing...</div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:10px; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px;">
+        <button type="button" class="btn" onclick="closeResurfaceModal()">Completa Briefing</button>
+      </div>
     </div>
   </div>
 
-  <!-- Mobile Bottom Navigation Bar (Visible exclusively on mobile screens <= 900px) -->
+  <!-- Tensions & Contradictions Modal -->
+  <div class="modal-overlay" id="tensions-modal-backdrop" style="display:none;" onclick="closeTensionsModal()">
+    <div class="modal modal-lg modal-cognitive-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:24px;">⚡</span>
+          <div>
+            <h3 class="modal-title" style="margin:0; font-size:17px;">Matrice delle Tensioni Cognitive</h3>
+            <span style="font-size:12px; color:var(--text-muted);">Riconciliazione dialettica e steelmanning tra idee, regole e tesi opposte</span>
+          </div>
+        </div>
+        <button class="modal-close-icon" onclick="closeTensionsModal()" title="Chiudi">✕</button>
+      </div>
+      <div class="modal-body" id="tensions-modal-body" style="padding:15px 0; max-height:65vh; overflow-y:auto;">
+        <div style="text-align:center; padding:30px; color:var(--text-muted);">Scansione tensioni nel connettoma...</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px;">
+        <button type="button" class="btn" onclick="scanCandidateTensions()">🔍 Rileva Nuove Tensioni</button>
+        <button type="button" class="btn" onclick="closeTensionsModal()">Chiudi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weave Link Manager Modal -->
+  <div class="modal-overlay" id="weave-modal-backdrop" style="display:none;" onclick="closeWeaveModal()">
+    <div class="modal modal-lg modal-cognitive-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:24px;">🕸️</span>
+          <div>
+            <h3 class="modal-title" style="margin:0; font-size:17px;">Weave Link Engine (Ponti Nodi Orfani)</h3>
+            <span style="font-size:12px; color:var(--text-muted);">Tessitura automatica di connessioni ad alta affinità e Corpo Calloso</span>
+          </div>
+        </div>
+        <button class="modal-close-icon" onclick="closeWeaveModal()" title="Chiudi">✕</button>
+      </div>
+      <div class="modal-body" id="weave-modal-body" style="padding:15px 0; max-height:65vh; overflow-y:auto;">
+        <div style="text-align:center; padding:30px; color:var(--text-muted);">Calcolo proposte di collegamento sinaptico...</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px;">
+        <button type="button" class="btn btn-primary" id="btn-weave-apply-all" onclick="applyAllWeaveProposals()">✨ Accetta &amp; Tessi Tutti i Collegamenti</button>
+        <button type="button" class="btn" onclick="closeWeaveModal()">Chiudi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9 Firmware Mental Models Modal -->
+  <div class="modal-overlay" id="firmware-modal-backdrop" style="display:none;" onclick="closeFirmwareModal()">
+    <div class="modal modal-lg modal-cognitive-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:24px;">🧭</span>
+          <div>
+            <h3 class="modal-title" style="margin:0; font-size:17px;">I 9 Firmware Cognitivi (Modelli Mentali)</h3>
+            <span style="font-size:12px; color:var(--text-muted);">Passa le tue decisioni e architetture attraverso lenti di pensiero rigorose</span>
+          </div>
+        </div>
+        <button class="modal-close-icon" onclick="closeFirmwareModal()" title="Chiudi">✕</button>
+      </div>
+      <div class="modal-body" id="firmware-modal-body" style="padding:15px 0; max-height:65vh; overflow-y:auto;">
+        <div style="text-align:center; padding:30px; color:var(--text-muted);">Caricamento firmware...</div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:10px; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px;">
+        <button type="button" class="btn" onclick="closeFirmwareModal()">Chiudi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Obsidian Vault Bridge Modal -->
+  <div class="modal-overlay" id="obsidian-modal-backdrop" style="display:none;" onclick="closeObsidianModal()">
+    <div class="modal modal-cognitive-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:24px;">💎</span>
+          <div>
+            <h3 class="modal-title" style="margin:0; font-size:17px;">Obsidian Knowledge Vault Bridge</h3>
+            <span style="font-size:12px; color:var(--text-muted);">Sincronizzazione note atomiche Markdown (.md) e wikilinks [[...]]</span>
+          </div>
+        </div>
+        <button class="modal-close-icon" onclick="closeObsidianModal()" title="Chiudi">✕</button>
+      </div>
+      <div class="modal-body" id="obsidian-modal-body" style="padding:15px 0;">
+        <div style="text-align:center; padding:30px; color:var(--text-muted);">Verifica stato vault Obsidian...</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px;">
+        <div style="display:flex; gap:8px;">
+          <button type="button" class="btn btn-primary" onclick="triggerObsidianSync('sync')">🔄 Sincronizza Ora</button>
+          <button type="button" class="btn" onclick="triggerObsidianSync('export')">📤 Esporta su Vault</button>
+          <button type="button" class="btn" onclick="triggerObsidianSync('import')">📥 Importa da Vault</button>
+        </div>
+        <button type="button" class="btn" onclick="closeObsidianModal()">Chiudi</button>
+      </div>
+    </div>
+  </div>
   <nav class="mobile-nav-bar" id="mobile-nav-bar" style="display: none;">
     <button class="mobile-nav-btn active" id="mob-tab-graph" onclick="switchMobileTab('graph')">
       <span class="mob-icon">🌐</span>
@@ -438,6 +575,6 @@
     </button>
   </nav>
 
-  <script src="/static/app.js?v=20260829_1510"></script>
+  <script src="/static/app.js?v=20260831_1715"></script>
 </body>
 </html>

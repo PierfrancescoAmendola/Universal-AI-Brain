@@ -2054,6 +2054,377 @@ function setupBackdropClicks() {
   }
 }
 
+// -----------------------------------------------------------------------------
+// Cognitive Enhancements & Obsidian Vault Frontend Handlers
+// -----------------------------------------------------------------------------
+
+// 1. Daily Resurface
+async function openResurfaceModal() {
+  const modal = document.getElementById('resurface-modal-backdrop');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  const body = document.getElementById('resurface-modal-body');
+  body.innerHTML = `<div style="text-align:center; padding:30px; color:var(--text-muted);">Caricamento briefing...</div>`;
+  
+  try {
+    const res = await fetch('/api/cognitive/resurface');
+    if (!res.ok) throw new Error("Errore nel recupero del Daily Resurface");
+    const data = await res.json();
+    
+    let html = `
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; background:rgba(0,210,255,0.06); padding:10px 14px; border-radius:8px; border:1px solid rgba(0,210,255,0.2);">
+        <div>
+          <span style="font-weight:700; color:#00D2FF;">📅 Data: ${data.date}</span>
+          <span style="color:var(--text-muted); font-size:12px; margin-left:10px;">Tempo stimato: ${data.duration_seconds}s</span>
+        </div>
+        <span style="font-size:12px; background:rgba(255,255,255,0.1); padding:3px 8px; border-radius:4px;">Spaced Repetition Active</span>
+      </div>
+      <h4 style="margin:10px 0 8px 0; color:#00D2FF; font-size:14px;">📜 3 Nodi Dormienti da Riattivare (Curva di Ebbinghaus)</h4>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px; margin-bottom:15px;">
+    `;
+    
+    data.resurface_nodes.forEach(n => {
+      const isLeft = n.hemisphere === 'LEFT';
+      const color = isLeft ? '#00D2FF' : '#FF007F';
+      html += `
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-left:3px solid ${color}; border-radius:6px; padding:10px; cursor:pointer;" onclick="focusNode('${n.id}'); closeResurfaceModal();">
+          <div style="font-size:11px; color:${color}; font-weight:600; text-transform:uppercase;">${n.primary_label} · ${n.days_dormant}g fa</div>
+          <div style="font-weight:700; font-size:13px; margin:4px 0;">${n.label}</div>
+          <div style="font-size:12px; color:var(--text-muted); line-height:1.4;">${(n.summary || '').substring(0, 100)}...</div>
+        </div>
+      `;
+    });
+    
+    html += `</div>`;
+    
+    if (data.tension_of_the_day) {
+      const t = data.tension_of_the_day;
+      html += `
+        <h4 style="margin:10px 0 8px 0; color:#FFB800; font-size:14px;">⚡ Tensione Aperta del Giorno</h4>
+        <div style="background:rgba(255,184,0,0.06); border:1px solid rgba(255,184,0,0.25); border-radius:6px; padding:12px; margin-bottom:15px;">
+          <div style="font-weight:700; font-size:13px; color:#FFD15C;">${t.node_a_label} ⚔️ ${t.node_b_label}</div>
+          <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">${t.description}</div>
+        </div>
+      `;
+    }
+    
+    if (data.firmware_of_the_day) {
+      const f = data.firmware_of_the_day;
+      html += `
+        <h4 style="margin:10px 0 8px 0; color:#A78BFA; font-size:14px;">🧭 Firmware / Modello Mentale del Giorno</h4>
+        <div style="background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.25); border-radius:6px; padding:12px;">
+          <div style="font-weight:700; font-size:13px; color:#C4B5FD;">${f.name} <span style="font-weight:400; font-size:11px; color:var(--text-muted);">(${f.author})</span></div>
+          <div style="font-size:12px; color:#EDE9FE; margin-top:4px; font-style:italic;">"${f.question}"</div>
+        </div>
+      `;
+    }
+    
+    body.innerHTML = html;
+  } catch (err) {
+    body.innerHTML = `<div style="color:#FF4C4C; padding:20px;">Errore: ${err.message}</div>`;
+  }
+}
+
+function closeResurfaceModal() {
+  const modal = document.getElementById('resurface-modal-backdrop');
+  if (modal) modal.style.display = 'none';
+}
+
+// 2. Tensions Matrix
+async function openTensionsModal() {
+  const modal = document.getElementById('tensions-modal-backdrop');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  renderTensionsList();
+}
+
+function closeTensionsModal() {
+  const modal = document.getElementById('tensions-modal-backdrop');
+  if (modal) modal.style.display = 'none';
+}
+
+async function renderTensionsList() {
+  const body = document.getElementById('tensions-modal-body');
+  body.innerHTML = `<div style="text-align:center; padding:30px; color:var(--text-muted);">Caricamento tensioni...</div>`;
+  try {
+    const res = await fetch('/api/cognitive/tensions');
+    const tensions = await res.json();
+    
+    if (!tensions || tensions.length === 0) {
+      body.innerHTML = `
+        <div style="text-align:center; padding:40px; color:var(--text-muted);">
+          <span style="font-size:32px;">🧘</span>
+          <div style="margin-top:10px; font-weight:600;">Nessuna tensione aperta registrata nel connettoma.</div>
+          <p style="font-size:12px;">Clicca su 'Rileva Nuove Tensioni' per scansionare idee polarizzanti.</p>
+        </div>
+      `;
+      return;
+    }
+    
+    let html = `<div style="display:flex; flex-direction:column; gap:12px;">`;
+    tensions.forEach(t => {
+      html += `
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <span style="font-size:11px; background:rgba(255,184,0,0.15); color:#FFB800; padding:2px 8px; border-radius:4px; font-weight:600;">${t.tension_type} · ${t.status}</span>
+            <span style="font-size:11px; color:var(--text-muted);">${t.id}</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto 1fr; gap:10px; align-items:center; margin:10px 0;">
+            <div style="background:rgba(0,210,255,0.05); border:1px solid rgba(0,210,255,0.2); padding:8px; border-radius:6px;">
+              <strong style="color:#00D2FF; font-size:12px;">${t.node_a_label || t.node_a_id}</strong>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">${(t.node_a_summary || '').substring(0, 70)}...</div>
+            </div>
+            <span style="font-size:18px;">⚡</span>
+            <div style="background:rgba(255,0,127,0.05); border:1px solid rgba(255,0,127,0.2); padding:8px; border-radius:6px;">
+              <strong style="color:#FF007F; font-size:12px;">${t.node_b_label || t.node_b_id}</strong>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">${(t.node_b_summary || '').substring(0, 70)}...</div>
+            </div>
+          </div>
+          <div style="font-size:12px; color:var(--text-main); margin-bottom:10px;">${t.description}</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="btn btn-sm" onclick="promptResolveTension('${t.id}', 'STEELMAN')">🛡️ Steelman</button>
+            <button class="btn btn-sm" onclick="promptResolveTension('${t.id}', 'MERGE_AI')">🧬 Sintesi AI</button>
+            <button class="btn btn-sm" onclick="promptResolveTension('${t.id}', 'FALSE_POSITIVE')">✕ Falso Positivo</button>
+          </div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+    body.innerHTML = html;
+  } catch (err) {
+    body.innerHTML = `<div style="color:#FF4C4C; padding:20px;">Errore: ${err.message}</div>`;
+  }
+}
+
+async function scanCandidateTensions() {
+  const body = document.getElementById('tensions-modal-body');
+  body.innerHTML = `<div style="text-align:center; padding:30px; color:var(--text-muted);">Scansione automatica in corso...</div>`;
+  try {
+    const res = await fetch('/api/cognitive/tensions/detect?limit=5');
+    const candidates = await res.json();
+    if (!candidates || candidates.length === 0) {
+      alert("Nessuna nuova tensione rilevata.");
+      renderTensionsList();
+      return;
+    }
+    for (const c of candidates) {
+      await fetch('/api/cognitive/tensions/create', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          node_a_id: c.node_a_id,
+          node_b_id: c.node_b_id,
+          tension_type: c.tension_type,
+          description: c.description
+        })
+      });
+    }
+    renderTensionsList();
+  } catch (err) {
+    alert("Errore scansione: " + err.message);
+  }
+}
+
+async function promptResolveTension(tensionId, strategy) {
+  const notes = prompt(`Inserisci note di risoluzione per la strategia ${strategy}:`, `Risoluzione applicata con strategia ${strategy}`);
+  if (!notes) return;
+  try {
+    const res = await fetch('/api/cognitive/tensions/resolve', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        tension_id: tensionId,
+        strategy: strategy,
+        resolution_notes: notes
+      })
+    });
+    if (res.ok) {
+      alert("Tensione risolta e archiviata con successo!");
+      renderTensionsList();
+    }
+  } catch (err) {
+    alert("Errore risoluzione: " + err.message);
+  }
+}
+
+// 3. Weave Link Engine
+let currentWeaveProposals = [];
+async function openWeaveModal() {
+  const modal = document.getElementById('weave-modal-backdrop');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  const body = document.getElementById('weave-modal-body');
+  body.innerHTML = `<div style="text-align:center; padding:30px; color:var(--text-muted);">Ricerca nodi orfani e generazione ponti...</div>`;
+  
+  try {
+    const res = await fetch('/api/cognitive/weave/proposals?max_proposals=12');
+    currentWeaveProposals = await res.json();
+    
+    if (!currentWeaveProposals || currentWeaveProposals.length === 0) {
+      body.innerHTML = `
+        <div style="text-align:center; padding:40px; color:var(--text-muted);">
+          <span style="font-size:32px;">🕸️</span>
+          <div style="margin-top:10px; font-weight:600;">Tutti i nodi sono densamente connessi!</div>
+        </div>
+      `;
+      return;
+    }
+    
+    let html = `<div style="display:flex; flex-direction:column; gap:10px;">`;
+    currentWeaveProposals.forEach((p, idx) => {
+      const isCross = p.is_cross_hemisphere;
+      const tagBg = isCross ? 'rgba(255,0,127,0.15)' : 'rgba(0,210,255,0.15)';
+      const tagCol = isCross ? '#FF007F' : '#00D2FF';
+      html += `
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:6px; padding:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:11px; background:${tagBg}; color:${tagCol}; padding:2px 8px; border-radius:4px; font-weight:600;">${p.relation}</span>
+            <span style="font-size:11px; color:var(--text-muted);">${p.confidence}</span>
+          </div>
+          <div style="margin:8px 0; font-size:13px; font-weight:600;">
+            <span style="color:#00D2FF;">${p.source_label}</span> ➔ <span style="color:#FF007F;">${p.target_label}</span>
+          </div>
+          <div style="font-size:12px; color:var(--text-muted);">${p.reasoning}</div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+    body.innerHTML = html;
+  } catch (err) {
+    body.innerHTML = `<div style="color:#FF4C4C; padding:20px;">Errore: ${err.message}</div>`;
+  }
+}
+
+function closeWeaveModal() {
+  const modal = document.getElementById('weave-modal-backdrop');
+  if (modal) modal.style.display = 'none';
+}
+
+async function applyAllWeaveProposals() {
+  if (!currentWeaveProposals || currentWeaveProposals.length === 0) return;
+  try {
+    const res = await fetch('/api/cognitive/weave/apply', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ proposals: currentWeaveProposals })
+    });
+    const data = await res.json();
+    alert(`Successo: ${data.message}`);
+    closeWeaveModal();
+    fetchBrainData();
+  } catch (err) {
+    alert("Errore applicazione link: " + err.message);
+  }
+}
+
+// 4. Firmware Mental Models
+async function openFirmwareModal() {
+  const modal = document.getElementById('firmware-modal-backdrop');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  const body = document.getElementById('firmware-modal-body');
+  body.innerHTML = `<div style="text-align:center; padding:30px; color:var(--text-muted);">Caricamento 9 firmware...</div>`;
+  
+  try {
+    const res = await fetch('/api/cognitive/firmware/list');
+    const models = await res.json();
+    
+    let html = `<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px;">`;
+    models.forEach(m => {
+      html += `
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:14px; display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div style="font-size:11px; color:#A78BFA; font-weight:600; text-transform:uppercase;">${m.author}</div>
+            <div style="font-weight:700; font-size:14px; margin:4px 0; color:#EDE9FE;">${m.name}</div>
+            <div style="font-size:12px; color:var(--text-muted); line-height:1.4; margin-bottom:12px;">${m.tagline}</div>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="promptApplyFirmware('${m.key}')">🧭 Applica a Problema</button>
+        </div>
+      `;
+    });
+    html += `</div>`;
+    body.innerHTML = html;
+  } catch (err) {
+    body.innerHTML = `<div style="color:#FF4C4C; padding:20px;">Errore: ${err.message}</div>`;
+  }
+}
+
+function closeFirmwareModal() {
+  const modal = document.getElementById('firmware-modal-backdrop');
+  if (modal) modal.style.display = 'none';
+}
+
+async function promptApplyFirmware(mode) {
+  const problem = prompt("Inserisci il problema o decisione da esaminare con questo firmware:");
+  if (!problem) return;
+  try {
+    const res = await fetch('/api/cognitive/firmware/apply', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ mode: mode, problem: problem })
+    });
+    const data = await res.json();
+    if (data.directive) {
+      await navigator.clipboard.writeText(data.directive);
+      alert(`Direttiva di pensiero ${data.firmware_name} generata e COPIATA negli appunti! Incollala in qualsiasi chat AI.`);
+    }
+  } catch (err) {
+    alert("Errore: " + err.message);
+  }
+}
+
+// 5. Obsidian Vault Bridge
+async function openObsidianModal() {
+  const modal = document.getElementById('obsidian-modal-backdrop');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  renderObsidianStatus();
+}
+
+function closeObsidianModal() {
+  const modal = document.getElementById('obsidian-modal-backdrop');
+  if (modal) modal.style.display = 'none';
+}
+
+async function renderObsidianStatus() {
+  const body = document.getElementById('obsidian-modal-body');
+  body.innerHTML = `<div style="text-align:center; padding:30px; color:var(--text-muted);">Verifica vault...</div>`;
+  try {
+    const res = await fetch('/api/obsidian/status');
+    const st = await res.json();
+    body.innerHTML = `
+      <div style="background:rgba(0,210,255,0.05); border:1px solid rgba(0,210,255,0.2); border-radius:8px; padding:15px; margin-bottom:12px;">
+        <div style="font-size:13px; font-weight:700; color:#00D2FF; margin-bottom:6px;">💎 Percorso Vault:</div>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-muted); word-break:break-all;">${st.vault_dir}</div>
+        <div style="margin-top:12px; font-size:14px;">
+          Note Markdown sincronizzate: <strong style="color:#00D2FF;">${st.markdown_notes_count}</strong>
+        </div>
+      </div>
+      <div style="font-size:12px; color:var(--text-muted); line-height:1.5;">
+        Puoi aprire direttamente questa cartella come <strong>Vault in Obsidian</strong> su macOS/iOS per sfogliare il connettoma con grafi 3D e note atomiche.
+      </div>
+    `;
+  } catch (err) {
+    body.innerHTML = `<div style="color:#FF4C4C; padding:20px;">Errore: ${err.message}</div>`;
+  }
+}
+
+async function triggerObsidianSync(action) {
+  try {
+    const res = await fetch('/api/obsidian/sync', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ action: action })
+    });
+    const data = await res.json();
+    alert(`Sincronizzazione Obsidian completata: ${JSON.stringify(data)}`);
+    renderObsidianStatus();
+    fetchBrainData();
+  } catch (err) {
+    alert("Errore sync Obsidian: " + err.message);
+  }
+}
+
 /**
  * Mobile Navigation & Responsive Routing (Exclusive for Mobile Screens <= 900px)
  */
@@ -2085,3 +2456,4 @@ window.addEventListener('DOMContentLoaded', () => {
   setupDropzone();
   setupBackdropClicks();
 });
+

@@ -21,6 +21,13 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from pydantic import BaseModel, Field
 
+from obsidian_vault_sync import sync_bidirectional, export_brain_to_vault, import_vault_to_brain
+from brain_tensions import get_tensions, create_or_update_tension, resolve_tension, detect_candidate_tensions, init_tensions_schema
+from brain_weave import compute_weave_proposals, apply_weave_links
+from brain_resurface import get_daily_resurface_packet
+from brain_firmware import list_available_firmware, apply_firmware_lens, seed_firmware_nodes_in_brain
+from brain_library import list_available_lenses, build_lens_dialogue_prompt, extract_lens_subgraph
+
 
 # -----------------------------------------------------------------------------
 # Configuration & Constants
@@ -248,12 +255,21 @@ def init_db():
                 SELECT id, label, primary_label, category, tags, summary, details FROM nodes;
             """)
 
+        # Inizializza schema tensioni
+        init_tensions_schema(conn)
+
         conn.commit()
 
         cursor = conn.execute("SELECT COUNT(*) AS count FROM nodes")
         row = cursor.fetchone()
         if row and row["count"] == 0:
             seed_initial_brain(conn)
+        
+        # Assicura la presenza dei 9 Firmware cognitivi
+        try:
+            seed_firmware_nodes_in_brain(DB_PATH)
+        except Exception:
+            pass
         
         # Warm-up in-memory cache
         brain_db.invalidate_cache()
@@ -1667,6 +1683,157 @@ def download_database_file():
             conn.execute("PRAGMA wal_checkpoint(FULL);")
         return FileResponse(DB_PATH, filename="brain.db", media_type="application/x-sqlite3")
     raise HTTPException(status_code=404, detail="Database file not found")
+
+
+# -----------------------------------------------------------------------------
+# Cognitive Enhancements & Obsidian API Endpoints
+# -----------------------------------------------------------------------------
+
+class TensionCreatePayload(BaseModel):
+    node_a_id: str
+    node_b_id: str
+    tension_type: str = "CONTRADICTION"
+    description: str
+
+
+class TensionResolvePayload(BaseModel):
+    tension_id: str
+    strategy: str
+    resolution_notes: str
+
+
+class WeaveApplyPayload(BaseModel):
+    proposals: List[Dict[str, Any]]
+
+
+class FirmwareApplyPayload(BaseModel):
+    mode: str
+    problem: str
+    context: Optional[str] = None
+
+
+class LibraryQueryPayload(BaseModel):
+    lens_id_or_keyword: str
+    question: str
+
+
+class ObsidianSyncPayload(BaseModel):
+    action: str = "sync"
+    vault_dir: Optional[str] = None
+
+
+@app.get("/api/obsidian/status", tags=["Obsidian Bridge"])
+def get_obsidian_status():
+    """Get status of the local Obsidian Vault."""
+    vault_dir = os.getenv("OBSIDIAN_VAULT_DIR", os.path.join(os.path.dirname(os.path.abspath(__file__)), "obsidian_vault"))
+    exists = os.path.exists(vault_dir)
+    md_count = 0
+    if exists:
+        for _, _, files in os.walk(vault_dir):
+            md_count += sum(1 for f in files if f.endswith(".md"))
+    return {
+        "vault_dir": vault_dir,
+        "exists": exists,
+        "markdown_notes_count": md_count
+    }
+
+
+@app.post("/api/obsidian/sync", tags=["Obsidian Bridge"])
+def sync_obsidian_vault(payload: ObsidianSyncPayload = ObsidianSyncPayload()):
+    """Trigger bi-directional sync or manual export/import with Obsidian Vault."""
+    vault_dir = payload.vault_dir or os.getenv("OBSIDIAN_VAULT_DIR", os.path.join(os.path.dirname(os.path.abspath(__file__)), "obsidian_vault"))
+    if payload.action == "export":
+        res = export_brain_to_vault(DB_PATH, vault_dir)
+    elif payload.action == "import":
+        res = import_vault_to_brain(vault_dir, DB_PATH)
+        brain_db.invalidate_cache()
+    else:
+        res = sync_bidirectional(vault_dir, DB_PATH)
+        brain_db.invalidate_cache()
+    return res
+
+
+@app.get("/api/cognitive/tensions", tags=["Cognitive Engine"])
+def get_cognitive_tensions(status: Optional[str] = None, limit: int = 50):
+    """Retrieve active or resolved cognitive tensions and contradictions."""
+    return get_tensions(status=status, limit=limit, db_path=DB_PATH)
+
+
+@app.post("/api/cognitive/tensions/create", tags=["Cognitive Engine"])
+def create_cognitive_tension(payload: TensionCreatePayload):
+    """Create a new cognitive tension or trade-off between two nodes."""
+    res = create_or_update_tension(
+        node_a_id=payload.node_a_id,
+        node_b_id=payload.node_b_id,
+        tension_type=payload.tension_type,
+        description=payload.description,
+        db_path=DB_PATH
+    )
+    brain_db.invalidate_cache()
+    return res
+
+
+@app.post("/api/cognitive/tensions/resolve", tags=["Cognitive Engine"])
+def resolve_cognitive_tension(payload: TensionResolvePayload):
+    """Resolve an open cognitive tension with a specified strategy."""
+    res = resolve_tension(
+        tension_id=payload.tension_id,
+        strategy=payload.strategy,
+        resolution_notes=payload.resolution_notes,
+        db_path=DB_PATH
+    )
+    brain_db.invalidate_cache()
+    return res
+
+
+@app.get("/api/cognitive/tensions/detect", tags=["Cognitive Engine"])
+def detect_tensions_endpoint(limit: int = 15):
+    """Scan the graph for candidate uncataloged contradictions and trade-offs."""
+    return detect_candidate_tensions(db_path=DB_PATH, limit=limit)
+
+
+@app.get("/api/cognitive/weave/proposals", tags=["Cognitive Engine"])
+def get_weave_proposals_endpoint(max_proposals: int = 15, max_degree: int = 2):
+    """Generate link proposals and Callosal bridges for orphan nodes."""
+    return compute_weave_proposals(max_proposals=max_proposals, max_degree=max_degree, db_path=DB_PATH)
+
+
+@app.post("/api/cognitive/weave/apply", tags=["Cognitive Engine"])
+def apply_weave_proposals_endpoint(payload: WeaveApplyPayload):
+    """Atomically apply accepted weave link proposals to SQLite WAL."""
+    res = apply_weave_links(payload.proposals, db_path=DB_PATH)
+    brain_db.invalidate_cache()
+    return res
+
+
+@app.get("/api/cognitive/resurface", tags=["Cognitive Engine"])
+def get_daily_resurface_endpoint():
+    """Retrieve the 90-second Daily Cognitive Briefing."""
+    return get_daily_resurface_packet(db_path=DB_PATH)
+
+
+@app.get("/api/cognitive/firmware/list", tags=["Cognitive Engine"])
+def list_firmware_endpoint():
+    """List the 9 cognitive mental models / thinking lenses."""
+    return list_available_firmware()
+
+
+@app.post("/api/cognitive/firmware/apply", tags=["Cognitive Engine"])
+def apply_firmware_endpoint(payload: FirmwareApplyPayload):
+    """Apply a cognitive firmware thinking lens to analyze a problem."""
+    return apply_firmware_lens(payload.mode, payload.problem, payload.context)
+
+
+@app.get("/api/cognitive/library/lenses", tags=["Cognitive Engine"])
+def list_library_lenses_endpoint():
+    """List available author, book, and mentor lenses."""
+    return list_available_lenses(db_path=DB_PATH)
+
+
+@app.post("/api/cognitive/library/query", tags=["Cognitive Engine"])
+def query_library_lens_endpoint(payload: LibraryQueryPayload):
+    """Generate grounded persona dialogue prompt with strict node citations."""
+    return build_lens_dialogue_prompt(payload.lens_id_or_keyword, payload.question, db_path=DB_PATH)
 
 
 # -----------------------------------------------------------------------------

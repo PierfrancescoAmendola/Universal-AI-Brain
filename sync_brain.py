@@ -103,11 +103,18 @@ def export_brain_markdown():
 
 
 def git_commit_and_push(commit_msg: str) -> bool:
-    """Flushes WAL, updates brain.md, commits brain.db and brain.md and pushes to origin main for cloud persistence."""
+    """Flushes WAL, updates brain.md, updates obsidian_vault, commits and pushes to origin main for cloud persistence."""
     try:
         with get_local_connection() as conn:
             conn.execute("PRAGMA wal_checkpoint(TRUNCATE);")
         export_brain_markdown()
+        
+        # Sincronizza anche l'Obsidian Vault
+        try:
+            from obsidian_vault_sync import export_brain_to_vault
+            export_brain_to_vault(LOCAL_DB, os.path.join(LOCAL_DIR, "obsidian_vault"))
+        except Exception:
+            pass
 
         subprocess.run(["git", "add", "brain.db", "brain.md"], cwd=LOCAL_DIR, check=True, capture_output=True)
         st = subprocess.run(["git", "status", "--porcelain", "brain.db", "brain.md"], cwd=LOCAL_DIR, capture_output=True, text=True)

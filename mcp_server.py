@@ -15,6 +15,12 @@ from collections import deque
 DB_PATH = os.getenv("BRAIN_DB_PATH", os.path.join(os.path.dirname(os.path.abspath(__file__)), "brain.db"))
 
 from optimized_brain_db import create_optimized_brain_db
+from obsidian_vault_sync import sync_bidirectional, export_brain_to_vault, import_vault_to_brain
+from brain_tensions import get_tensions, create_or_update_tension, resolve_tension, detect_candidate_tensions
+from brain_weave import compute_weave_proposals, apply_weave_links
+from brain_resurface import get_daily_resurface_packet
+from brain_firmware import list_available_firmware, apply_firmware_lens, seed_firmware_nodes_in_brain
+from brain_library import list_available_lenses, build_lens_dialogue_prompt, extract_lens_subgraph
 
 brain_db = create_optimized_brain_db(DB_PATH)
 
@@ -454,6 +460,77 @@ def tool_brain_get_palazzo() -> Dict[str, Any]:
         }
 
 
+def tool_brain_sync_obsidian(action: str = "sync", vault_dir: Optional[str] = None) -> Dict[str, Any]:
+    """Sync, export or import Markdown notes with Obsidian Vault."""
+    v_dir = vault_dir or os.getenv("OBSIDIAN_VAULT_DIR", os.path.join(os.path.dirname(os.path.abspath(__file__)), "obsidian_vault"))
+    if action == "export":
+        return export_brain_to_vault(DB_PATH, v_dir)
+    elif action == "import":
+        return import_vault_to_brain(v_dir, DB_PATH)
+    else:
+        return sync_bidirectional(v_dir, DB_PATH)
+
+
+def tool_brain_get_tensions(status: Optional[str] = None, limit: int = 50) -> Dict[str, Any]:
+    """Retrieve active or resolved cognitive tensions and contradictions."""
+    tensions = get_tensions(status=status, limit=limit, db_path=DB_PATH)
+    return {"count": len(tensions), "tensions": tensions}
+
+
+def tool_brain_create_tension(node_a_id: str, node_b_id: str, tension_type: str = "CONTRADICTION", description: str = "") -> Dict[str, Any]:
+    """Create a cognitive tension or trade-off between two nodes."""
+    return create_or_update_tension(node_a_id, node_b_id, tension_type, description, db_path=DB_PATH)
+
+
+def tool_brain_resolve_tension(tension_id: str, strategy: str, resolution_notes: str) -> Dict[str, Any]:
+    """Resolve a tension using a strategy (MERGE_AI, RECONCILE_MANUAL, STEELMAN, FALSE_POSITIVE, IGNORED)."""
+    return resolve_tension(tension_id, strategy, resolution_notes, db_path=DB_PATH)
+
+
+def tool_brain_detect_tensions(limit: int = 15) -> Dict[str, Any]:
+    """Detect candidate contradictions or dialectical trade-offs across nodes."""
+    candidates = detect_candidate_tensions(db_path=DB_PATH, limit=limit)
+    return {"count": len(candidates), "candidate_tensions": candidates}
+
+
+def tool_brain_get_weave_proposals(max_proposals: int = 15, max_degree: int = 2) -> Dict[str, Any]:
+    """Generate link proposals and Callosal bridges for orphan or low-degree nodes."""
+    proposals = compute_weave_proposals(max_proposals=max_proposals, max_degree=max_degree, db_path=DB_PATH)
+    return {"count": len(proposals), "proposals": proposals}
+
+
+def tool_brain_apply_weave_links(proposals: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Atomically apply accepted weave link proposals to the graph."""
+    return apply_weave_links(proposals, db_path=DB_PATH)
+
+
+def tool_brain_get_daily_resurface() -> Dict[str, Any]:
+    """Get the 90-second Daily Cognitive Resurface packet (dormant nodes, tension, daily mental model)."""
+    return get_daily_resurface_packet(db_path=DB_PATH)
+
+
+def tool_brain_list_firmware() -> Dict[str, Any]:
+    """List the 9 cognitive mental models / firmware thinking lenses."""
+    models = list_available_firmware()
+    return {"count": len(models), "firmware_models": models}
+
+
+def tool_brain_apply_firmware(mode: str, problem: str, context: Optional[str] = None) -> Dict[str, Any]:
+    """Apply a cognitive firmware thinking lens (Inversion, Antifragility, First Principles, etc.) to a problem."""
+    return apply_firmware_lens(mode, problem, context)
+
+
+def tool_brain_list_lenses() -> Dict[str, Any]:
+    """List available authors, books, and mentor lenses in the knowledge graph."""
+    lenses = list_available_lenses(db_path=DB_PATH)
+    return {"count": len(lenses), "lenses": lenses}
+
+
+def tool_brain_query_library_lens(lens_id_or_keyword: str, question: str) -> Dict[str, Any]:
+    """Generate a grounded persona dialogue prompt with strict node citations for an author, book, or mentor."""
+    return build_lens_dialogue_prompt(lens_id_or_keyword, question, db_path=DB_PATH)
+
+
 # -----------------------------------------------------------------------------
 # MCP JSON-RPC 2.0 Server Protocol Dispatcher
 # -----------------------------------------------------------------------------
@@ -469,7 +546,7 @@ MCP_TOOLS = [
     },
     {
         "name": "brain_get_tree",
-        "description": "Retrieve the Hierarchical Knowledge Tree (層級譜系樹) to explore macro-areas, taxonomies, and atomic nodes hierarchically.",
+        "description": "Retrieve the Hierarchical Knowledge Tree to explore macro-areas, taxonomies, and atomic nodes hierarchically.",
         "inputSchema": {
             "type": "object",
             "properties": {
@@ -527,7 +604,7 @@ MCP_TOOLS = [
     },
     {
         "name": "brain_ingest",
-        "description": "Atomically upsert new memory nodes and relational edges conforming to the Graphify Cognitive Protocol.",
+        "description": "Atomically upsert new memory nodes and relational edges conforming to the Cognitive Memory Protocol.",
         "inputSchema": {
             "type": "object",
             "properties": {
@@ -552,6 +629,140 @@ MCP_TOOLS = [
             "type": "object",
             "properties": {}
         }
+    },
+    {
+        "name": "brain_sync_obsidian",
+        "description": "Bi-directional synchronization between SQLite graph and Obsidian Vault Markdown notes.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "action": {"type": "string", "description": "Action: 'sync', 'export', or 'import' (default: 'sync')"},
+                "vault_dir": {"type": "string", "description": "Optional custom Obsidian vault path"}
+            }
+        }
+    },
+    {
+        "name": "brain_get_tensions",
+        "description": "Get active or resolved cognitive tensions, paradoxes, and contradictions between ideas.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "status": {"type": "string", "description": "Filter by status: 'OPEN', 'RESOLVED', 'FALSE_POSITIVE', 'IGNORED'"},
+                "limit": {"type": "integer", "description": "Max results to return (default: 50)"}
+            }
+        }
+    },
+    {
+        "name": "brain_create_tension",
+        "description": "Record a contradiction or trade-off between two nodes in the brain.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "node_a_id": {"type": "string", "description": "First node ID"},
+                "node_b_id": {"type": "string", "description": "Second node ID"},
+                "tension_type": {"type": "string", "description": "Type: 'CONTRADICTION', 'TRADE_OFF', 'PARADOX', 'DIALECTIC'"},
+                "description": {"type": "string", "description": "Explanation of the tension"}
+            },
+            "required": ["node_a_id", "node_b_id", "description"]
+        }
+    },
+    {
+        "name": "brain_resolve_tension",
+        "description": "Resolve a cognitive tension using Hegelian synthesis, steelmanning, or manual reconciliation.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "tension_id": {"type": "string", "description": "Unique tension ID"},
+                "strategy": {"type": "string", "description": "Strategy: 'MERGE_AI', 'RECONCILE_MANUAL', 'STEELMAN', 'FALSE_POSITIVE', 'IGNORED'"},
+                "resolution_notes": {"type": "string", "description": "Detailed resolution notes or synthesis"}
+            },
+            "required": ["tension_id", "strategy", "resolution_notes"]
+        }
+    },
+    {
+        "name": "brain_detect_tensions",
+        "description": "Scan the knowledge graph for uncataloged semantic contradictions and trade-offs.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "limit": {"type": "integer", "description": "Max candidates to return (default: 15)"}
+            }
+        }
+    },
+    {
+        "name": "brain_get_weave_proposals",
+        "description": "Find orphan nodes and propose high-value intra-domain and Corpus Callosum synaptic links.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "max_proposals": {"type": "integer", "description": "Max proposals (default: 15)"},
+                "max_degree": {"type": "integer", "description": "Max degree of target orphan nodes (default: 2)"}
+            }
+        }
+    },
+    {
+        "name": "brain_apply_weave_links",
+        "description": "Atomically apply accepted weave link proposals into SQLite WAL.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "proposals": {
+                    "type": "array",
+                    "items": {"type": "object"},
+                    "description": "List of accepted link proposal objects (source, target, relation, reasoning)"
+                }
+            },
+            "required": ["proposals"]
+        }
+    },
+    {
+        "name": "brain_get_daily_resurface",
+        "description": "Retrieve the 90-second Daily Cognitive Briefing: 3 dormant nodes (Ebbinghaus curve), 1 tension, 1 mental model.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "brain_list_firmware",
+        "description": "List the 9 cognitive mental models / thinking lenses (Inversion, Antifragility, First Principles, Pareto, etc.).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "brain_apply_firmware",
+        "description": "Apply a specific mental model lens to analyze a problem or architectural decision.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "mode": {"type": "string", "description": "Firmware mode (e.g., 'inversion', 'antifragility', 'first_principles', 'second_order', 'pareto', 'feynman', 'circle_of_competence', 'opportunity_cost', 'bayesian_updating')"},
+                "problem": {"type": "string", "description": "Problem statement or decision to analyze"},
+                "context": {"type": "string", "description": "Optional context or constraints"}
+            },
+            "required": ["mode", "problem"]
+        }
+    },
+    {
+        "name": "brain_list_lenses",
+        "description": "List available author, book, and mentor lenses for grounded dialogue.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "brain_query_library_lens",
+        "description": "Generate a grounded persona prompt with exact node citations to talk directly with an author, book, or mentor.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "lens_id_or_keyword": {"type": "string", "description": "ID or keyword of the book/author (e.g., 'marcus-aurelius', 'taleb', 'hormozi')"},
+                "question": {"type": "string", "description": "Question to ask the mentor/book"}
+            },
+            "required": ["lens_id_or_keyword", "question"]
+        }
     }
 ]
 
@@ -571,7 +782,7 @@ def handle_json_rpc(req: Dict[str, Any]) -> Optional[Dict[str, Any]]:
                 },
                 "serverInfo": {
                     "name": "universal-ai-brain-mcp",
-                    "version": "1.1.0"
+                    "version": "2.0.0"
                 }
             }
         }
@@ -610,6 +821,30 @@ def handle_json_rpc(req: Dict[str, Any]) -> Optional[Dict[str, Any]]:
                 res = tool_brain_ingest(args.get("nodes", []), args.get("edges", []))
             elif tool_name == "brain_get_stats":
                 res = tool_brain_get_stats()
+            elif tool_name == "brain_sync_obsidian":
+                res = tool_brain_sync_obsidian(args.get("action", "sync"), args.get("vault_dir"))
+            elif tool_name == "brain_get_tensions":
+                res = tool_brain_get_tensions(args.get("status"), args.get("limit", 50))
+            elif tool_name == "brain_create_tension":
+                res = tool_brain_create_tension(args.get("node_a_id", ""), args.get("node_b_id", ""), args.get("tension_type", "CONTRADICTION"), args.get("description", ""))
+            elif tool_name == "brain_resolve_tension":
+                res = tool_brain_resolve_tension(args.get("tension_id", ""), args.get("strategy", ""), args.get("resolution_notes", ""))
+            elif tool_name == "brain_detect_tensions":
+                res = tool_brain_detect_tensions(args.get("limit", 15))
+            elif tool_name == "brain_get_weave_proposals":
+                res = tool_brain_get_weave_proposals(args.get("max_proposals", 15), args.get("max_degree", 2))
+            elif tool_name == "brain_apply_weave_links":
+                res = tool_brain_apply_weave_links(args.get("proposals", []))
+            elif tool_name == "brain_get_daily_resurface":
+                res = tool_brain_get_daily_resurface()
+            elif tool_name == "brain_list_firmware":
+                res = tool_brain_list_firmware()
+            elif tool_name == "brain_apply_firmware":
+                res = tool_brain_apply_firmware(args.get("mode", ""), args.get("problem", ""), args.get("context"))
+            elif tool_name == "brain_list_lenses":
+                res = tool_brain_list_lenses()
+            elif tool_name == "brain_query_library_lens":
+                res = tool_brain_query_library_lens(args.get("lens_id_or_keyword", ""), args.get("question", ""))
             else:
                 return {
                     "jsonrpc": "2.0",

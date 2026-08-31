@@ -1,0 +1,204 @@
+{
+  "main": {
+    "id": "e4116392817972c4",
+    "type": "split",
+    "children": [
+      {
+        "id": "939e661f6d2b04d7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "70dcb938551b5fb8",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Vista grafo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d2726c4cc7118f24",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ae1b10e8fcc0db4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "397fc6879ec014b5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Esplora file"
+            }
+          },
+          {
+            "id": "e4f37a0e808216aa",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Ricerca"
+            }
+          },
+          {
+            "id": "1990bb4bb63b5b86",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Segnalibri"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "30577375f319b028",
+    "type": "split",
+    "children": [
+      {
+        "id": "c9a52b6a812fc39b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ad7715eab710d466",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Riferimenti"
+            }
+          },
+          {
+            "id": "82cd015d71b3ed4e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Collegamenti in uscita"
+            }
+          },
+          {
+            "id": "de977c7959b1bc6d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etichette"
+            }
+          },
+          {
+            "id": "611f7c6b84fe546b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Tutte le proprietà"
+            }
+          },
+          {
+            "id": "e886b710dedfae61",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Struttura"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Apri selettore rapido": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota giornaliera": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false,
+      "bases:Crea nuova Base": false
+    }
+  },
+  "active": "70dcb938551b5fb8",
+  "lastOpenFiles": [
+    "02_Moduli_Atomici/firmware-second-order.md",
+    "02_Moduli_Atomici/firmware-pareto.md",
+    "02_Moduli_Atomici/firmware-opportunity-cost.md",
+    "02_Moduli_Atomici/firmware-inversion.md",
+    "02_Moduli_Atomici/firmware-first-principles.md",
+    "02_Moduli_Atomici/firmware-feynman.md",
+    "02_Moduli_Atomici/firmware-circle-of-competence.md",
+    "02_Moduli_Atomici/firmware-bayesian-updating.md",
+    "02_Moduli_Atomici/firmware-antifragility.md",
+    "01_Progetti_Episodi/user-intent-potenziamento-cognitivo-obsidian-bridge.md",
+    "01_Progetti_Episodi/reasoning-potenziamento-cognitivo-obsidian-bridge.md",
+    "01_Progetti_Episodi/episode-potenziamento-cognitivo-obsidian-bridge.md",
+    "00_INDEX.md",
+    "Senza nome.canvas",
+    "01_Progetti_Episodi/universal-ai-brain.md",
+    "01_Progetti_Episodi/proj-streaksup-app.md",
+    "00_Domini/person-pierfrancesco.md"
+  ]
+}
