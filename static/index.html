@@ -10,8 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/static/style.css?v=20260831_1715">
+  <link rel="stylesheet" href="/static/style.css?v=20260831_1730">
   <script src="/static/vendor/vis-network.min.js"></script>
+  <script src="/static/vendor/three.min.js"></script>
 </head>
 <body class="dark-tech-theme">
 
@@ -153,14 +154,17 @@
         </div>
       </div>
 
-      <!-- Floating Graph View Mode Controller -->
+      <!-- Floating Graph View Mode Controller & Radar Filter Bar -->
       <div class="view-controls-bar">
         <div class="view-mode-pill">
           <button class="mode-tab active" id="mode-btn-areas" onclick="setGraphViewMode('areas')" title="Mostra solo le macro-aree: clicca su un nodo per espandere i suoi rami">
-            <span class="mode-icon">📂</span> Aree a Espansione
+            <span class="mode-icon">📂</span> Aree
           </button>
           <button class="mode-tab" id="mode-btn-full" onclick="setGraphViewMode('full')" title="Visualizza tutti i nodi e sinapsi contemporaneamente">
-            <span class="mode-icon">🌐</span> Vista Completa
+            <span class="mode-icon">🌐</span> Vista 2D
+          </button>
+          <button class="mode-tab" id="mode-btn-globe" onclick="setGraphViewMode('globe')" title="Mappamondo Neurale 3D: Costellazione sferica bi-emisferica interattiva">
+            <span class="mode-icon">🌌</span> Mappamondo 3D
           </button>
         </div>
         
@@ -172,9 +176,29 @@
             <span>🔄</span> Ricompatta
           </button>
         </div>
+
+        <!-- Radar Tech & Theme Filter Pill -->
+        <div class="radar-filter-pill" id="radar-filter-pill">
+          <span class="radar-label">📡 Radar:</span>
+          <button class="radar-btn active" data-radar="all" onclick="applyRadarFilter('all')">Tutti</button>
+          <button class="radar-btn" data-radar="swift" onclick="applyRadarFilter('swift')">🍎 Swift/iOS</button>
+          <button class="radar-btn" data-radar="python" onclick="applyRadarFilter('python')">🐍 Python/AI</button>
+          <button class="radar-btn" data-radar="web" onclick="applyRadarFilter('web')">🌐 Web/TS</button>
+          <button class="radar-btn" data-radar="cpp" onclick="applyRadarFilter('cpp')">⚙️ C++/Algo</button>
+          <button class="radar-btn" data-radar="medical" onclick="applyRadarFilter('medical')">🏥 Medicina</button>
+          <button class="radar-btn" data-radar="bridges" onclick="applyRadarFilter('bridges')">⚡ Ponti</button>
+        </div>
       </div>
       
       <div id="graph"></div>
+      
+      <!-- 3D Celestial Globe Canvas Container -->
+      <div id="globe-3d-container" style="display:none;">
+        <div class="globe-hud-overlay">
+          <button class="globe-hud-btn" id="btn-globe-spin" onclick="toggleGlobeSpin()" title="Attiva/Disattiva Rotazione Automatica">🔄 Auto-Spin</button>
+          <button class="globe-hud-btn" onclick="resetGlobeCamera()" title="Reimposta visuale frontale del Mappamondo">🎯 Centra Globo</button>
+        </div>
+      </div>
     </div>
 
     <!-- Right: Graphify Sidebar Inspector -->
@@ -575,6 +599,6 @@
     </button>
   </nav>
 
-  <script src="/static/app.js?v=20260831_1715"></script>
+  <script src="/static/app.js?v=20260831_1740"></script>
 </body>
 </html>

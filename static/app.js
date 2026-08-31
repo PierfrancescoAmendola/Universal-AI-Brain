@@ -332,28 +332,43 @@ function selectPalazzoFloor(floorOption) {
 }
 
 /**
- * Progressive Areas View Mode Switchers
+ * Progressive Areas & 3D Celestial Globe View Mode Switchers
  */
 function setGraphViewMode(mode) {
   graphViewMode = mode;
   
   const btnAreas = document.getElementById('mode-btn-areas');
   const btnFull = document.getElementById('mode-btn-full');
+  const btnGlobe = document.getElementById('mode-btn-globe');
   const actionsPill = document.getElementById('areas-action-pill');
+  const palazzoElevator = document.getElementById('palazzo-elevator');
+  const graphContainer = document.getElementById('graph');
+  const globeContainer = document.getElementById('globe-3d-container');
 
-  if (btnAreas && btnFull) {
+  [btnAreas, btnFull, btnGlobe].forEach(b => b && b.classList.remove('active'));
+
+  if (mode === 'globe') {
+    if (btnGlobe) btnGlobe.classList.add('active');
+    if (actionsPill) actionsPill.style.display = 'none';
+    if (palazzoElevator) palazzoElevator.style.display = 'none';
+    if (graphContainer) graphContainer.style.display = 'none';
+    if (globeContainer) globeContainer.style.display = 'block';
+    
+    initOrUpdateGlobe3D();
+  } else {
+    if (globeContainer) globeContainer.style.display = 'none';
+    if (graphContainer) graphContainer.style.display = 'block';
+    if (palazzoElevator) palazzoElevator.style.display = 'flex';
+    
     if (mode === 'areas') {
-      btnAreas.classList.add('active');
-      btnFull.classList.remove('active');
+      if (btnAreas) btnAreas.classList.add('active');
       if (actionsPill) actionsPill.style.display = 'flex';
     } else {
-      btnFull.classList.add('active');
-      btnAreas.classList.remove('active');
+      if (btnFull) btnFull.classList.add('active');
       if (actionsPill) actionsPill.style.display = 'none';
     }
+    renderGraphData();
   }
-
-  renderGraphData();
 }
 
 function toggleNodeExpansion(nodeId) {
@@ -2422,6 +2437,457 @@ async function triggerObsidianSync(action) {
     fetchBrainData();
   } catch (err) {
     alert("Errore sync Obsidian: " + err.message);
+// -----------------------------------------------------------------------------
+// 🌌 3D Celestial Constellation Globe Engine (Three.js WebGL)
+// -----------------------------------------------------------------------------
+
+let globeScene, globeCamera, globeRenderer, globeNodesGroup, globeEdgesGroup;
+let isGlobeInitialized = false;
+let isGlobeSpinning = true;
+let globeRaycaster, globeMouse, globeIntersectedNode = null;
+let currentRadarFilter = 'all';
+let globeNodeMeshMap = new Map();
+let globeTargetRotationX = 0, globeTargetRotationY = 0;
+let globeRotationX = 0, globeRotationY = 0;
+let globeIsDragging = false, globePreviousMousePosition = { x: 0, y: 0 };
+let globeCameraDistance = 850;
+
+function initOrUpdateGlobe3D() {
+  const container = document.getElementById('globe-3d-container');
+  if (!container) return;
+
+  if (!isGlobeInitialized) {
+    initGlobe3D(container);
+  } else {
+    rebuildGlobeGeometry();
+  }
+}
+
+function initGlobe3D(container) {
+  if (typeof THREE === 'undefined') {
+    container.innerHTML = `<div style="color:#FF4C4C; padding:40px; text-align:center;">Errore: Libreria Three.js non disponibile.</div>`;
+    return;
+  }
+
+  const width = container.clientWidth || window.innerWidth - 380;
+  const height = container.clientHeight || window.innerHeight - 48;
+
+  globeScene = new THREE.Scene();
+  globeScene.fog = new THREE.FogExp2(0x040711, 0.0006);
+
+  globeCamera = new THREE.PerspectiveCamera(50, width / height, 1, 4000);
+  globeCamera.position.set(0, 0, globeCameraDistance);
+
+  globeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  globeRenderer.setSize(width, height);
+  globeRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  
+  // Rimuovi vecchi canvas se presenti
+  const oldCanvas = container.querySelector('canvas');
+  if (oldCanvas) oldCanvas.remove();
+
+  container.appendChild(globeRenderer.domElement);
+
+  // Starfield Dust
+  createGlobeStarfield();
+
+  globeNodesGroup = new THREE.Group();
+  globeEdgesGroup = new THREE.Group();
+  globeScene.add(globeNodesGroup);
+  globeScene.add(globeEdgesGroup);
+
+  // Raycaster for hover and click
+  globeRaycaster = new THREE.Raycaster();
+  globeRaycaster.params.Points = { threshold: 8 };
+  globeMouse = new THREE.Vector2();
+
+  setupGlobeInteractions(container);
+  rebuildGlobeGeometry();
+
+  isGlobeInitialized = true;
+  animateGlobe3D();
+}
+
+function createGlobeStarfield() {
+  const starGeo = new THREE.BufferGeometry();
+  const starCount = 1800;
+  const positions = new Float32Array(starCount * 3);
+  const colors = new Float32Array(starCount * 3);
+
+  for (let i = 0; i < starCount * 3; i += 3) {
+    const radius = 1200 + Math.random() * 800;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(Math.random() * 2 - 1);
+
+    positions[i] = radius * Math.sin(phi) * Math.cos(theta);
+    positions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
+    positions[i + 2] = radius * Math.cos(phi);
+
+    colors[i] = 0.5 + Math.random() * 0.5;
+    colors[i + 1] = 0.7 + Math.random() * 0.3;
+    colors[i + 2] = 1.0;
+  }
+
+  starGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  starGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+  const starMat = new THREE.PointsMaterial({
+    size: 2.2,
+    vertexColors: true,
+    transparent: true,
+    opacity: 0.65
+  });
+
+  const starField = new THREE.Points(starGeo, starMat);
+  globeScene.add(starField);
+}
+
+function rebuildGlobeGeometry() {
+  if (!globeNodesGroup || !rawNodes.length) return;
+
+  // Pulisci gruppi precedenti
+  while (globeNodesGroup.children.length > 0) {
+    const obj = globeNodesGroup.children[0];
+    globeNodesGroup.remove(obj);
+  }
+  while (globeEdgesGroup.children.length > 0) {
+    const obj = globeEdgesGroup.children[0];
+    globeEdgesGroup.remove(obj);
+  }
+  globeNodeMeshMap.clear();
+
+  const radius = 330;
+  const nodeCount = rawNodes.length;
+
+  // Calcola gradi
+  const degreeMap = new Map();
+  rawEdges.forEach(e => {
+    degreeMap.set(e.source, (degreeMap.get(e.source) || 0) + 1);
+    degreeMap.set(e.target, (degreeMap.get(e.target) || 0) + 1);
+  });
+
+  // Mappa coordinate sferiche bi-emisferiche
+  rawNodes.forEach((node, idx) => {
+    const isLeft = (node.hemisphere || 'LEFT') === 'LEFT';
+    const isDomain = parseInt(node.layer_level) === 0;
+    const deg = degreeMap.get(node.id) || 1;
+
+    // Fibonacci sphere segmentata per emisfero
+    const offset = 2 / nodeCount;
+    const y = ((idx * offset) - 1) + (offset / 2);
+    const r = Math.sqrt(1 - y * y);
+
+    // Phi e Theta
+    const phi = Math.acos(y);
+    let theta = (idx * 2.399963229728653); // Golden angle
+
+    // Separazione Bi-Emisferica
+    if (isLeft) {
+      theta = Math.PI * 0.15 + (theta % (Math.PI * 0.7)); // East hemisphere
+    } else {
+      theta = Math.PI * 1.15 + (theta % (Math.PI * 0.7)); // West hemisphere
+    }
+
+    if (isDomain) {
+      // Posiziona i macro-domini sulla corona polare superiore
+      theta = (idx * (Math.PI * 2 / 12));
+    }
+
+    const xPos = radius * Math.sin(phi) * Math.cos(theta);
+    const yPos = radius * Math.cos(phi) * (isDomain ? 1.05 : 1.0);
+    const zPos = radius * Math.sin(phi) * Math.sin(theta);
+
+    // Colore
+    let colorHex = isLeft ? 0x00D2FF : 0xFF007F;
+    if (isDomain) colorHex = 0xFFD15C;
+
+    const baseSize = isDomain ? 10 : Math.max(3.2, Math.min(8.5, 2.5 + Math.sqrt(deg) * 0.8));
+    const sphereGeo = new THREE.SphereGeometry(baseSize, 12, 12);
+    const sphereMat = new THREE.MeshBasicMaterial({
+      color: colorHex,
+      wireframe: false
+    });
+
+    const mesh = new THREE.Mesh(sphereGeo, sphereMat);
+    mesh.position.set(xPos, yPos, zPos);
+    mesh.userData = { node: node, baseColor: colorHex, baseSize: baseSize, degree: deg };
+
+    globeNodesGroup.add(mesh);
+    globeNodeMeshMap.set(node.id, mesh);
+  });
+
+  // Costruisci Archi 3D
+  const intraLinePositions = [];
+  const intraLineColors = [];
+  const bridgeLinePositions = [];
+  const bridgeLineColors = [];
+
+  rawEdges.forEach(edge => {
+    const srcMesh = globeNodeMeshMap.get(edge.source);
+    const tgtMesh = globeNodeMeshMap.get(edge.target);
+
+    if (srcMesh && tgtMesh) {
+      const isCross = (srcMesh.userData.node.hemisphere || 'LEFT') !== (tgtMesh.userData.node.hemisphere || 'LEFT');
+      const p1 = srcMesh.position;
+      const p2 = tgtMesh.position;
+
+      if (isCross) {
+        bridgeLinePositions.push(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
+        bridgeLineColors.push(1.0, 0.75, 0.1, 1.0, 0.75, 0.1); // Gold amber
+      } else {
+        intraLinePositions.push(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
+        if (srcMesh.userData.node.hemisphere === 'LEFT') {
+          intraLineColors.push(0.0, 0.6, 0.9, 0.0, 0.6, 0.9);
+        } else {
+          intraLineColors.push(0.9, 0.1, 0.5, 0.9, 0.1, 0.5);
+        }
+      }
+    }
+  });
+
+  // Intra Lines
+  if (intraLinePositions.length > 0) {
+    const intraGeo = new THREE.BufferGeometry();
+    intraGeo.setAttribute('position', new THREE.Float32BufferAttribute(intraLinePositions, 3));
+    intraGeo.setAttribute('color', new THREE.Float32BufferAttribute(intraLineColors, 3));
+    const intraMat = new THREE.LineBasicMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.22,
+      blending: THREE.AdditiveBlending
+    });
+    const intraLines = new THREE.LineSegments(intraGeo, intraMat);
+    globeEdgesGroup.add(intraLines);
+  }
+
+  // Bridge Lines (Corpo Calloso)
+  if (bridgeLinePositions.length > 0) {
+    const bridgeGeo = new THREE.BufferGeometry();
+    bridgeGeo.setAttribute('position', new THREE.Float32BufferAttribute(bridgeLinePositions, 3));
+    bridgeGeo.setAttribute('color', new THREE.Float32BufferAttribute(bridgeLineColors, 3));
+    const bridgeMat = new THREE.LineBasicMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.75,
+      linewidth: 2,
+      blending: THREE.AdditiveBlending
+    });
+    const bridgeLines = new THREE.LineSegments(bridgeGeo, bridgeMat);
+    globeEdgesGroup.add(bridgeLines);
+  }
+
+  applyRadarFilter(currentRadarFilter);
+}
+
+function setupGlobeInteractions(container) {
+  const canvas = globeRenderer.domElement;
+
+  canvas.addEventListener('mousedown', (e) => {
+    globeIsDragging = true;
+    globePreviousMousePosition = { x: e.clientX, y: e.clientY };
+  });
+
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    globeMouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    globeMouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+
+    if (globeIsDragging) {
+      const deltaX = e.clientX - globePreviousMousePosition.x;
+      const deltaY = e.clientY - globePreviousMousePosition.y;
+
+      globeTargetRotationY += deltaX * 0.005;
+      globeTargetRotationX += deltaY * 0.005;
+
+      globePreviousMousePosition = { x: e.clientX, y: e.clientY };
+    }
+  });
+
+  window.addEventListener('mouseup', () => {
+    globeIsDragging = false;
+  });
+
+  canvas.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    globeCameraDistance = Math.max(350, Math.min(1600, globeCameraDistance + e.deltaY * 0.8));
+    globeCamera.position.z = globeCameraDistance;
+  }, { passive: false });
+
+  canvas.addEventListener('click', (e) => {
+    if (globeIntersectedNode) {
+      const node = globeIntersectedNode.userData.node;
+      if (node) {
+        openInspector(node);
+      }
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (graphViewMode === 'globe' && globeRenderer && globeCamera) {
+      const width = container.clientWidth || window.innerWidth - 380;
+      const height = container.clientHeight || window.innerHeight - 48;
+      globeCamera.aspect = width / height;
+      globeCamera.updateProjectionMatrix();
+      globeRenderer.setSize(width, height);
+    }
+  });
+}
+
+function animateGlobe3D() {
+  requestAnimationFrame(animateGlobe3D);
+
+  if (graphViewMode !== 'globe' || !globeRenderer || !globeScene) return;
+
+  if (isGlobeSpinning && !globeIsDragging) {
+    globeTargetRotationY += 0.0018;
+  }
+
+  // Smooth rotation damping
+  globeRotationX += (globeTargetRotationX - globeRotationX) * 0.08;
+  globeRotationY += (globeTargetRotationY - globeRotationY) * 0.08;
+
+  if (globeNodesGroup && globeEdgesGroup) {
+    globeNodesGroup.rotation.x = globeRotationX;
+    globeNodesGroup.rotation.y = globeRotationY;
+    globeEdgesGroup.rotation.x = globeRotationX;
+    globeEdgesGroup.rotation.y = globeRotationY;
+  }
+
+  // Raycasting hover check
+  if (globeRaycaster && globeCamera && globeNodesGroup) {
+    globeRaycaster.setFromCamera(globeMouse, globeCamera);
+    const intersects = globeRaycaster.intersectObjects(globeNodesGroup.children);
+
+    if (intersects.length > 0) {
+      const hit = intersects[0].object;
+      if (globeIntersectedNode !== hit) {
+        if (globeIntersectedNode) {
+          globeIntersectedNode.scale.set(1, 1, 1);
+          globeIntersectedNode.material.color.setHex(globeIntersectedNode.userData.baseColor);
+        }
+        globeIntersectedNode = hit;
+        globeIntersectedNode.scale.set(2.2, 2.2, 2.2);
+        globeIntersectedNode.material.color.setHex(0xFFFFFF);
+
+        const node = globeIntersectedNode.userData.node;
+        const statusEl = document.getElementById('terminal-status-text');
+        if (statusEl && node) {
+          statusEl.innerHTML = `🪐 <strong>${node.label}</strong> [${node.primary_label || 'NODE'}] · ${node.hemisphere === 'LEFT' ? '⚡ Sinistro' : '🌸 Destro'}`;
+        }
+      }
+    } else {
+      if (globeIntersectedNode) {
+        globeIntersectedNode.scale.set(1, 1, 1);
+        globeIntersectedNode.material.color.setHex(globeIntersectedNode.userData.baseColor);
+        globeIntersectedNode = null;
+      }
+    }
+  }
+
+  globeRenderer.render(globeScene, globeCamera);
+}
+
+function toggleGlobeSpin() {
+  isGlobeSpinning = !isGlobeSpinning;
+  const btn = document.getElementById('btn-globe-spin');
+  if (btn) {
+    btn.classList.toggle('active', isGlobeSpinning);
+    btn.textContent = isGlobeSpinning ? '🔄 Auto-Spin ON' : '⏸️ Auto-Spin OFF';
+  }
+}
+
+function resetGlobeCamera() {
+  globeTargetRotationX = 0;
+  globeTargetRotationY = 0;
+  globeCameraDistance = 850;
+  if (globeCamera) globeCamera.position.set(0, 0, globeCameraDistance);
+}
+
+// -----------------------------------------------------------------------------
+// 📡 Radar Tech & Theme Filter Engine
+// -----------------------------------------------------------------------------
+
+function applyRadarFilter(filterKey) {
+  currentRadarFilter = filterKey;
+
+  // Aggiorna pulsanti UI
+  document.querySelectorAll('.radar-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.radar === filterKey);
+  });
+
+  const filterLower = filterKey.toLowerCase();
+
+  // 1. Aggiorna 3D Constellation Globe
+  if (globeNodeMeshMap.size > 0) {
+    globeNodeMeshMap.forEach((mesh, nodeId) => {
+      const node = mesh.userData.node;
+      const tagsStr = (Array.isArray(node.tags) ? node.tags.join(' ') : (node.tags || '')).toLowerCase();
+      const labelStr = (node.label || '').toLowerCase();
+      const idStr = (node.id || '').toLowerCase();
+      const combined = `${tagsStr} ${labelStr} ${idStr}`;
+
+      let matches = false;
+      if (filterLower === 'all') {
+        matches = true;
+      } else if (filterLower === 'swift') {
+        matches = combined.includes('swift') || combined.includes('ios') || combined.includes('widgetkit');
+      } else if (filterLower === 'python') {
+        matches = combined.includes('python') || combined.includes('fastapi') || combined.includes('ai') || combined.includes('torch');
+      } else if (filterLower === 'web') {
+        matches = combined.includes('typescript') || combined.includes('react') || combined.includes('javascript') || combined.includes('web');
+      } else if (filterLower === 'cpp') {
+        matches = combined.includes('cpp') || combined.includes('c++') || combined.includes('algo') || combined.includes('lasd') || combined.includes('c-lang');
+      } else if (filterLower === 'medical') {
+        matches = combined.includes('medicina') || combined.includes('salute') || combined.includes('datamed') || combined.includes('caretrack') || combined.includes('alcool');
+      } else if (filterLower === 'bridges') {
+        matches = (mesh.userData.degree || 0) >= 4;
+      }
+
+      if (matches) {
+        mesh.material.color.setHex(mesh.userData.baseColor);
+        mesh.scale.set(1.4, 1.4, 1.4);
+      } else {
+        mesh.material.color.setHex(0x1a2638);
+        mesh.scale.set(0.6, 0.6, 0.6);
+      }
+    });
+  }
+
+  // 2. Aggiorna 2D Vis Network (se in modalità 2D)
+  if (network && nodesDataset && graphViewMode !== 'globe') {
+    const allNodes = nodesDataset.get();
+    const updates = [];
+
+    allNodes.forEach(node => {
+      const tagsStr = (Array.isArray(node.tags) ? node.tags.join(' ') : (node.tags || '')).toLowerCase();
+      const labelStr = (node.label || '').toLowerCase();
+      const idStr = (node.id || '').toLowerCase();
+      const combined = `${tagsStr} ${labelStr} ${idStr}`;
+
+      let matches = false;
+      if (filterLower === 'all') {
+        matches = true;
+      } else if (filterLower === 'swift') {
+        matches = combined.includes('swift') || combined.includes('ios');
+      } else if (filterLower === 'python') {
+        matches = combined.includes('python') || combined.includes('fastapi') || combined.includes('ai');
+      } else if (filterLower === 'web') {
+        matches = combined.includes('typescript') || combined.includes('react') || combined.includes('javascript');
+      } else if (filterLower === 'cpp') {
+        matches = combined.includes('cpp') || combined.includes('lasd');
+      } else if (filterLower === 'medical') {
+        matches = combined.includes('medicina') || combined.includes('salute') || combined.includes('datamed');
+      } else if (filterLower === 'bridges') {
+        matches = true;
+      }
+
+      updates.push({
+        id: node.id,
+        opacity: matches ? 1.0 : 0.15
+      });
+    });
+
+    nodesDataset.update(updates);
   }
 }
 
