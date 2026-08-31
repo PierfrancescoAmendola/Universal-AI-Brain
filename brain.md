@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:51:22 UTC | **Nodi Restituiti:** 526 (SX: 368 · DX: 158) | **Sinapsi Restituite:** 1219
-> **Consistenza Reale Connettoma:** 526 Nodi Totali nel Database | 1219 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 18:51:51 UTC | **Nodi Restituiti:** 527 (SX: 369 · DX: 158) | **Sinapsi Restituite:** 1221
+> **Consistenza Reale Connettoma:** 527 Nodi Totali nel Database | 1221 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -587,6 +587,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#mutation-import` `#devops-timeline` `#graph-state`
   - **Sintesi:** Commit 965f0a8 (110 Nodes, 253 Synapses) (Layer: DEVOPS_TIMELINE, Tipo: GRAPH_STATE)
   - **Dettagli:** `raw`: `id`: node_commit_965f0a8, `label`: Commit 965f0a8 (110 Nodes, 253 Synapses), `type`: GRAPH_STATE, `layer`: DEVOPS_TIMELINE
+- **Documentazione Ufficiale FastAPI Dependency Injection** (`web-test-fastapi-docs`)
+  - **Tags:** `#web-clipper` `#fastapi` `#python`
+  - **Sintesi:** FastAPI Dependency Injection system provides clean hierarchical dependency management.
+  - **Dettagli:** `source_url`: https://fastapi.tiangolo.com/tutorial/dependencies/, `clipped_by`: Pierfrancesco
 - **Dominio: Ingegneria Software & Architetture** (`domain-software-engineering`)
   - **Tags:** `#domain-hub` `#software-engineering` `#backend` `#frontend` `#architecture` `#sqlite-wal` `#fastapi`
   - **Sintesi:** Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite e linguaggi di programmazione.
@@ -3020,6 +3024,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-valutazione-progetto-language-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-verifica-vincolo-zero-costi`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-verify-github-token-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`web-test-fastapi-docs`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`aule-studio-backend-arch`) --[FEEDS_DATA_TO]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
@@ -3455,6 +3460,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`project-royal-gambit-chess`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`universal-ai-brain`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
+- (`web-test-fastapi-docs`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`val-eternal-cognitive-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`)
 - (`user-intent-mappamondo-3d-spotlight-relazioni`) --[BELONGS_TO_PROJECT]--> (`universal-ai-brain`)
 - (`person-pierfrancesco`) --[BONDS_WITH]--> (`rel-marco-di-martino`)
