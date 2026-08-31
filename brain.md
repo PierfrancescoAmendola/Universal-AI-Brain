@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 18:51:55 UTC | **Nodi Restituiti:** 527 (SX: 369 · DX: 158) | **Sinapsi Restituite:** 1221
-> **Consistenza Reale Connettoma:** 527 Nodi Totali nel Database | 1221 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 18:52:03 UTC | **Nodi Restituiti:** 529 (SX: 370 · DX: 159) | **Sinapsi Restituite:** 1225
+> **Consistenza Reale Connettoma:** 529 Nodi Totali nel Database | 1225 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -839,6 +839,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#firmware` `#mental-model` `#circle_of_competence`
   - **Sintesi:** Definisci con precisione chirurgica ciò che sai e ammetti ciò che ignori.
   - **Dettagli:** `author`: Warren Buffett & Charlie Munger, `reasoning_steps`: ['1. Traccia il confine esatto: quali parti di questo problema padroneggi con certezza empirica?', "2. Dichiara esplicitamente le zone d'ombra, le dipendenze da terze parti e le incognite.", '3. Rifiuta di prendere decisioni definitive al di fuori del perimetro senza aver prima acquisito evidenza verificabile.', '4. Affidati a esperti, fallback difensivi o isolamento modulare per la parte sconosciuta.']
+- **Clean Code: A Handbook of Agile Software Craftsmanship (Robert C. Martin) - Estratto** (`kindle-c962fde43767`)
+  - **Tags:** `#kindle` `#lettura` `#libro` `#left` `#software-engineering`
+  - **Sintesi:** Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
+  - **Dettagli:** `book_title`: Clean Code: A Handbook of Agile Software Craftsmanship, `author`: Robert C. Martin, `full_quote`: Any fool can write code that a computer can understand. Good programmers write code that humans can understand., `kindle_meta`: - Your Highlight on Location 200-205 | Added on Tuesday, February 20, 2024 03:15:00 PM, `imported_by`: kindle_sync_engine
 - **Filosofia Ingegneristica a Costo Zero** (`rule-zero-cost`)
   - **Tags:** `#efficiency` `#self-hosted` `#sqlite` `#lean-architecture`
   - **Sintesi:** Progettare sistemi snelli ed efficienti eliminando i costi infrastrutturali fissi tramite tecnologie locali o open-source.
@@ -2339,6 +2343,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#emotional-growth` `#boundaries` `#relationships` `#clarity`
   - **Sintesi:** Non farsi carico unilateralmente della stabilità altrui; l'intensità emotiva non sostituisce la compatibilità e la chiarezza dei confini.
   - **Dettagli:** `raw`: `principles`: ['Rifiuto della sindrome del salvatore', 'Distinzione tra chimica momentanea e allineamento valoriale', 'Comunicazione esplicita senza dare nulla per scontato']
+- **Meditazioni (Marco Aurelio) - Estratto** (`kindle-6d280a533c87`)
+  - **Tags:** `#kindle` `#lettura` `#libro` `#right` `#crescita-personale`
+  - **Sintesi:** Non perdere altro tempo a discutere su cosa sia un uomo buono: sii un uomo buono.
+  - **Dettagli:** `book_title`: Meditazioni, `author`: Marco Aurelio, `full_quote`: Non perdere altro tempo a discutere su cosa sia un uomo buono: sii un uomo buono., `kindle_meta`: - Your Highlight on Location 45-48 | Added on Monday, January 15, 2024 10:30:00 AM, `imported_by`: kindle_sync_engine
 - **Oggi ho riflettuto sul principio stoico della dicotomia del** (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`)
   - **Tags:** `#siri-shortcuts` `#voice-capture` `#right`
   - **Sintesi:** Oggi ho riflettuto sul principio stoico della dicotomia del controllo nella vita e nel lavoro.
@@ -3072,6 +3080,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[PRODUCED_ARCHITECTURE]--> (`architecture-vis-network-silent-stabilization-zero-lag`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PROPOSED]--> (`user-intent-tree-search-enhancement`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[PROVIDES_FLOW]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
+- (`kindle-c962fde43767`) --[READ_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`ai-reasoning-episodic-memory-architecture`) --[REASONED_DURING]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[RECORDED_EPISODE]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_INTENT]--> (`user-intent-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
@@ -3335,6 +3344,8 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`proj-napolilive`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`fastapi-python-stack`)
 - (`domain-software-engineering`) --[BELONGS_TO_DOMAIN]--> (`flutter-dart-ecosystem`)
+- (`kindle-6d280a533c87`) --[BELONGS_TO_DOMAIN]--> (`domain-crescita-personale`)
+- (`kindle-c962fde43767`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`node-test-raycast-node`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`proj-1-minimal`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
 - (`proj-10-funptr`) --[BELONGS_TO_DOMAIN]--> (`domain-scienza-matematica`)
@@ -3802,6 +3813,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`node-prefix-radix-trie`) --[PROVIDES_INSTANT_NODE_ACCESS_TO]--> (`node-knowledge-graph-memory`)
 - (`node-knowledge-graph-memory`) --[PROVIDES_STATE_SPACE_AND_CONSTRAINTS]--> (`node-search-tree-deliberation`)
 - (`ai-reasoning-clustering-decision`) --[RATIONALE_FOR]--> (`feat-progressive-areas`)
+- (`kindle-6d280a533c87`) --[READ_BY]--> (`person-pierfrancesco`)
 - (`analysis-bst-vs-graph-taxonomy`) --[RECOMMENDS]--> (`idea-hierarchical-weighted-trees`)
 - (`node-commit-965f0a8`) --[RECORDS_ARCHITECTURE_INTENT]--> (`node-telegram-webhook-gateway`)
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[REFINED_COMPONENT]--> (`ui-component-palazzo-cognitivo-multi-layer-navigator`)
