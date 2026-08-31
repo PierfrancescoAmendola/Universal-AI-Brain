@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 20:26:20 UTC | **Nodi Restituiti:** 564 (SX: 390 · DX: 174) | **Sinapsi Restituite:** 1301
-> **Consistenza Reale Connettoma:** 564 Nodi Totali nel Database | 1301 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 20:26:20 UTC | **Nodi Restituiti:** 565 (SX: 391 · DX: 174) | **Sinapsi Restituite:** 1303
+> **Consistenza Reale Connettoma:** 565 Nodi Totali nel Database | 1303 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -829,6 +829,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#siri-shortcuts` `#left` `#voice-capture`
   - **Sintesi:** Riflessione sull'antifragilità nei sistemi software complessi e distribuiti.
   - **Dettagli:** `source`: test_suite_siri, `full_transcript`: Riflessione sull'antifragilità nei sistemi software complessi e distribuiti., `captured_by`: Pierfrancesco Amendola
+- **Test shortcuts debug** (`voice-test-shortcuts-debug-7964`)
+  - **Tags:** `#voice-capture` `#left` `#siri-shortcuts`
+  - **Sintesi:** Test shortcuts debug
+  - **Dettagli:** `source`: siri_voice, `full_transcript`: Test shortcuts debug, `captured_by`: Pierfrancesco Amendola
 - **Verifica Cloud Git Auto-Push Render** (`test-cloud-git-autopush-verification`)
   - **Tags:** `#test` `#render-autopush` `#cloud-persistence`
   - **Sintesi:** Nodo di validazione del meccanismo di auto-push Git da Render su GitHub origin main.
@@ -3231,6 +3235,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2485`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2529`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2690`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`voice-test-shortcuts-debug-7964`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`web-test-fastapi-docs`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`episode-2026-08-27-graphrag-mcp-evolution`) --[EXTENDS]--> (`session-continuous-evolution`) *(Corpo Calloso)*
@@ -3695,6 +3700,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2485`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2529`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2690`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
+- (`voice-test-shortcuts-debug-7964`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`web-test-fastapi-docs`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`val-eternal-cognitive-continuity`) --[BELONGS_TO_EPISODE]--> (`episode-infinite-context-philosophy`)
 - (`user-intent-mappamondo-3d-spotlight-relazioni`) --[BELONGS_TO_PROJECT]--> (`universal-ai-brain`)
