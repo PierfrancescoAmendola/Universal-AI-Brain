@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 14:54:12 UTC | **Nodi Restituiti:** 369 (SX: 237 · DX: 132) | **Sinapsi Restituite:** 928
-> **Consistenza Reale Connettoma:** 369 Nodi Totali nel Database | 928 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 14:54:42 UTC | **Nodi Restituiti:** 378 (SX: 244 · DX: 134) | **Sinapsi Restituite:** 928
+> **Consistenza Reale Connettoma:** 378 Nodi Totali nel Database | 928 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -725,18 +725,46 @@
   - **Dettagli:** `raw`: `url`: https://github.com/PierfrancescoAmendola/Universal-AI-Brain, `owner`: PierfrancescoAmendola, `branch`: main, `visibility`: Public
 
 ### [Macro-Label: `MENTAL_MODEL`]
+- **Bayesian Updating (Aggiornamento Bayesiano)** (`firmware-bayesian-updating`)
+  - **Tags:** `#firmware` `#mental-model` `#bayesian_updating`
+  - **Sintesi:** Aggiorna la probabilità della tua tesi iniziale in proporzione alle nuove evidenze.
+  - **Dettagli:** `author`: Thomas Bayes, `reasoning_steps`: ['1. Dichiara la tua ipotesi/credenza a priori (Prior Probability P(H)).', '2. Valuta la forza e la veridicità delle nuove prove osservate (Likelihood P(E|H)).', '3. Ricalibra la probabilità a posteriori (Posterior P(H|E)) senza arroccarsi su dogmi pregressi.', "4. Modifica la rotta d'azione se la probabilità aggiornata scende sotto la soglia di sicurezza."]
+- **Circle of Competence (Cerchio di Competenza)** (`firmware-circle-of-competence`)
+  - **Tags:** `#firmware` `#mental-model` `#circle_of_competence`
+  - **Sintesi:** Definisci con precisione chirurgica ciò che sai e ammetti ciò che ignori.
+  - **Dettagli:** `author`: Warren Buffett & Charlie Munger, `reasoning_steps`: ['1. Traccia il confine esatto: quali parti di questo problema padroneggi con certezza empirica?', "2. Dichiara esplicitamente le zone d'ombra, le dipendenze da terze parti e le incognite.", '3. Rifiuta di prendere decisioni definitive al di fuori del perimetro senza aver prima acquisito evidenza verificabile.', '4. Affidati a esperti, fallback difensivi o isolamento modulare per la parte sconosciuta.']
 - **Filosofia Ingegneristica a Costo Zero** (`rule-zero-cost`)
   - **Tags:** `#efficiency` `#self-hosted` `#sqlite` `#lean-architecture`
   - **Sintesi:** Progettare sistemi snelli ed efficienti eliminando i costi infrastrutturali fissi tramite tecnologie locali o open-source.
   - **Dettagli:** `raw`: `practices`: ['SQLite WAL invece di server DB pesanti', 'Client-side processing', 'Static/Serverless hosting']
+- **First Principles (Primi Principi)** (`firmware-first-principles`)
+  - **Tags:** `#firmware` `#mental-model` `#first_principles`
+  - **Sintesi:** Riduci il problema ai suoi assiomi fisici/logici essenziali senza affidarti all'analogia.
+  - **Dettagli:** `author`: Aristotele & Elon Musk, `reasoning_steps`: ["1. Isola le credenze convenzionali o le pratiche 'standard' accettate per abitudine.", '2. Riduci il problema alle uniche verità indiscutibili e non negoziabili (leggi fisiche, logica, risorse atomiche).', '3. Ricostruisci una soluzione da zero (bottom-up) partendo solo da quegli assiomi.', '4. Elimina ogni strato superfluo derivato da conformismo o abitudine storica.']
+- **Inversion (Inversione)** (`firmware-inversion`)
+  - **Tags:** `#firmware` `#mental-model` `#inversion`
+  - **Sintesi:** Non cercare solo come vincere; definisci come perdere e poi evitalo rigorosamente.
+  - **Dettagli:** `author`: Charlie Munger & Carl Jacobi, `reasoning_steps`: ['1. Definisci il fallimento catastrofico o lo scenario peggiore per questo problema.', '2. Elenca le 3-5 azioni o assunzioni che causerebbero direttamente quel disastro.', '3. Trasforma ciascuna causa di fallimento in una guardia difensiva o vincolo vincolante.', "4. Riorganizza il piano d'azione per eliminare prima i punti di rottura irreversibili."]
 - **Modello Centauro (Uomo + AI)** (`mental-centaur-model`)
   - **Tags:** `#ai-philosophy` `#human-agency` `#cognitive-extension`
   - **Sintesi:** L'AI agisce come moltiplicatore computazionale, mentre l'essere umano detiene il controllo etico, strategico ed estetico.
   - **Dettagli:** `raw`: `human_role`: Visione, intenzionalità etica, discernimento critico, anima artistica, `machine_role`: Velocità esecutiva, esplorazione combinatoria, precisione formale
+- **Opportunity Cost (Costo Opportunità)** (`firmware-opportunity-cost`)
+  - **Tags:** `#firmware` `#mental-model` `#opportunity_cost`
+  - **Sintesi:** Il vero costo di una scelta è il valore della migliore alternativa a cui rinunci.
+  - **Dettagli:** `author`: Economia Classica, `reasoning_steps`: ["1. Identifica l'azione proposta e le risorse richieste (tempo, concentrazione, CPU, budget).", '2. Elenca le 2 migliori alternative escluse se dedichi le risorse a questa scelta.', '3. Calcola il ROI differenziale tra la scelta e le alternative.', '4. Procedi solo se il valore netto atteso supera la migliore alternativa sacrificata.']
+- **Pareto Principle (80/20)** (`firmware-pareto`)
+  - **Tags:** `#firmware` `#mental-model` `#pareto`
+  - **Sintesi:** Il 20% delle cause genera l'80% degli effetti. Trova quel 20% vitale ed elimina l'80% banale.
+  - **Dettagli:** `author`: Vilfredo Pareto, `reasoning_steps`: ["1. Isola l'elenco di tutte le feature, componenti o task sul tavolo.", "2. Identifica il 20% che sblocca direttamente l'80% del valore percepito o delle prestazioni.", '3. Esegui subito quel 20% critico con massima dedizione.', '4. Taglia, rimanda o automatizza il restante 80% secondario.']
 - **Persistenza Totale del Contesto e dei Pensieri Multi-AI** (`goal-multi-ai-shared-context-persistence`)
   - **Tags:** `#shared-context` `#conversational-continuity` `#multi-ai` `#cross-agent-memory` `#universal-recall`
   - **Sintesi:** Principio fondante: preservare integralmente contesto, richieste e deduzioni di tutte le chat con qualsiasi AI affinché ogni modello condivida la memoria storica universale.
   - **Dettagli:** `raw`: `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc..., `core_objective`: Garantire che qualunque AI (Claude, Gemini, ChatGPT, DeepSeek, ecc.) sappia sempre con esattezza cosa è stato detto, pensato e deciso nelle sessioni precedenti., `context_dimensions`: ['Richieste Utente (USER_INTENT)', 'Deduzioni Logiche (AI_REASONING)', 'Episodi Tematici (CONVERSATION_EPISODE)', 'Attribuzione Modello (details.model)']
+- **Second-Order Thinking (Pensiero del Secondo Ordine)** (`firmware-second-order`)
+  - **Tags:** `#firmware` `#mental-model` `#second_order`
+  - **Sintesi:** E poi cosa succede? Valuta le conseguenze delle conseguenze a medio-lungo termine.
+  - **Dettagli:** `author`: Howard Marks, `reasoning_steps`: ["1. Individua l'effetto immediato di 1° ordine (es. aumento velocità o riduzione costi).", "2. Domanda: 'E poi cosa accade a cascata?' (Effetti di 2° ordine su complessità, debito tecnico, carico cognitivo).", '3. Proietta gli effetti di 3° ordine (incentivi perversi, reazioni del sistema, scalabilità nel tempo).', "4. Valuta se il guadagno a breve termine giustifica l'entropia a lungo termine."]
 - **Ubiquitous Memory Ingestion** (`node-ubiquitous-ingestion`)
   - **Tags:** `#mutation-import` `#dynamic-plasticity` `#cognitive-capability`
   - **Sintesi:** Ubiquitous Memory Ingestion (Layer: DYNAMIC_PLASTICITY, Tipo: COGNITIVE_CAPABILITY)
@@ -1465,6 +1493,16 @@
   - **Tags:** `#stoicism` `#resilience` `#growth-mindset` `#refactoring`
   - **Sintesi:** Trattare gli ostacoli e le delusioni come dati da analizzare a mente fredda per iterare e migliorare senza autocommiserazione.
   - **Dettagli:** `raw`: `method`: Isolare la causa radice, applicare la correzione, ripartire con focus rinnovato
+
+### [Macro-Label: `MENTAL_MODEL`]
+- **Antifragility (Antifragilità)** (`firmware-antifragility`)
+  - **Tags:** `#firmware` `#mental-model` `#antifragility`
+  - **Sintesi:** Trarre vantaggio dal disordine, dagli errori e dalla volatilità anziché limitarsi a resistervi.
+  - **Dettagli:** `author`: Nassim Nicholas Taleb, `reasoning_steps`: ['1. Isola le asimmetrie: dove hai un limite di perdita noto (downside cappato) e un potenziale di guadagno illimitato (upside aperto)?', '2. Progetta un meccanismo di feedback loop che trasformi ogni bug, errore o fallimento in una regola/test automatizzato permanente.', '3. Elimina le fragilità da singolo punto di rottura (Single Point of Failure).', '4. Aggiungi ridondanza strategica e modularità disaccoppiata.']
+- **Feynman Technique (Tecnica di Feynman)** (`firmware-feynman`)
+  - **Tags:** `#firmware` `#mental-model` `#feynman`
+  - **Sintesi:** Se non riesci a spiegarlo in termini semplici a un profano, non lo hai compreso a fondo.
+  - **Dettagli:** `author`: Richard Feynman, `reasoning_steps`: ['1. Spiega il concetto, architettura o bug in linguaggio naturale chiarissimo, come a un bambino di 10 anni.', '2. Individua i passaggi in cui sei costretto a ricorrere a gergo tecnico complicato per mascherare un vuoto concettuale.', '3. Torna alla sorgente per chiarire quel punto esatto finché non diventa trasparente.', '4. Usa analogie intuitive e riduci la spiegazione alla sua pura essenza.']
 
 ### [Macro-Label: `PERSONAL_VALUE`]
 - **Autenticità & Trasparenza Radicale** (`val-authenticity`)
