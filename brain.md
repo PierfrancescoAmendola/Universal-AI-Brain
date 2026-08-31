@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-30 14:38:57 UTC | **Nodi Restituiti:** 335 (SX: 214 · DX: 121) | **Sinapsi Restituite:** 860
-> **Consistenza Reale Connettoma:** 335 Nodi Totali nel Database | 860 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 10:47:57 UTC | **Nodi Restituiti:** 347 (SX: 222 · DX: 125) | **Sinapsi Restituite:** 880
+> **Consistenza Reale Connettoma:** 347 Nodi Totali nel Database | 880 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -109,6 +109,10 @@
   - **Tags:** `#code-review` `#bug-fix` `#architecture` `#integration`
   - **Sintesi:** Analisi approfondita del codice generato, individuazione di 4 bug critici (perdita tags, cross_links, mismatch DB, rischio overwrite) e riscrittura sicura per integrazione nel main.py.
   - **Dettagli:** `model`: Qwen 2.5 Max (con audit Gemini), `actions_taken`: ['Audit riga-per-riga di optimized_brain_db.py vs main.py', "Identificazione perdita campo 'tags' in bulk_ingest", "Rilevamento assenza logica 'cross_links' e metadati cognitivi", 'Riscrittura funzioni ottimizzate con fix inclusi', 'Creazione snippet di integrazione sicura per main.py'], `outcome`: Backend ottimizzato pronto per produzione: 50-100x più veloce, zero perdita dati, tutte le funzionalità cognitive preservate.
+- **Caratterizzazione Fisica e Clinica della Sonda Lineare** (`reasoning-caratterizzazione-trasduttore-lineare`)
+  - **Tags:** `#fisica-ultrasuoni` `#frequenze-alte` `#risoluzione-spaziale` `#imaging-senologico`
+  - **Sintesi:** Analisi delle proprietà della sonda lineare (frequenze 7-18 MHz, campo visivo rettangolare, risoluzione assiale e laterale) con focus applicativo sull'imaging mammario e la rilevazione di lesioni.
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ['Definizione geometrica del fascio ultrasonoro parallelo', 'Spiegazione del trade-off tra alta frequenza/risoluzione e bassa profondità', "Correlazione diretta con l'imaging senologico e la classificazione delle lesioni"], `outcome`: Quadro chiaro della tecnologia hardware all'origine dei dataset ecografici usati nei modelli di Deep Learning.
 - **Deduzione AI: Architettura Client Unificato Multi-AI a Costo Zero** (`reasoning-architettura-universal-ai-hub`)
   - **Tags:** `#architettura` `#client-unificato` `#zero-cost`
   - **Sintesi:** Proposta architetturale: web-app/desktop locale leggera con FastAPI + frontend reattivo Tailwind, selettore provider (Groq/Gemini/Ollama/DeepSeek) e pipeline automatica di GraphRAG pre/post turno.
@@ -217,6 +221,14 @@
   - **Tags:** `#diagnosi-retrieval` `#graphrag-optimization` `#knowledge-graph` `#master-prompt`
   - **Sintesi:** Identificato falso positivo: Gemini vedeva 1 solo entry a causa di un retrieval limitato. Proposto potenziamento del GraphRAG (iniezione baseline Palazzo), telemetria e consolidamento nodi stack.
   - **Dettagli:** `raw`: `actions_taken`: ['Verifica metriche reali con brain_get_stats (304 nodi, 789 archi)', 'Analisi cause retrieval parziale su client esterni', 'Definizione interventi su GraphRAG pre-response, osservabilità e master prompt'], `model`: Gemini 3.7 Flash, `outcome`: Chiarezza architetturale ristabilita e roadmap attuabile
+- **Elaborazione Metafore e Spiegazioni Intuitive per AI Causale** (`reasoning-semplificazione-concettuale-causal-dl`)
+  - **Tags:** `#pedagogia-tecnica` `#metafore` `#inferenza-causale` `#attention`
+  - **Sintesi:** Traduzione di concetti ad elevata densità matematica in metafore pratiche ed esempi clinici immediati (es. bias da ospedale/macchinario, relazione gelato-scottature).
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ['Scomposizione dei 4 concetti in coppie problema-soluzione', 'Applicazione di analogie visive e scenari clinici concreti', "Mantenimento del rigore concettuale eliminando l'overload notazionale"], `outcome`: Quadro concettuale accessibile e pronto per l'esposizione orale/discorsiva.
+- **Identificazione Percorsi Storage e Pulizia Ollama macOS** (`reasoning-risoluzione-residui-ollama-mac`)
+  - **Tags:** `#ollama` `#filesystem` `#bash` `#diagnosi`
+  - **Sintesi:** Analisi dell'architettura di storage di Ollama su macOS: identificati i percorsi ~/.ollama/models/blobs e ~/Library/Application Support/Ollama con relativi comandi di rimozione sicura.
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ['Mappatura directory predefinita modelli Ollama (~/.ollama/models/blobs)', 'Fornitura comando di verifica dimensione disco (du -sh)', 'Fornitura comando di eliminazione ricorsiva sicura (rm -rf)'], `outcome`: Istruzioni fornite per il recupero immediato di 7GB di spazio su disco.
 - **Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€** (`ai-reasoning-hybrid-search-mcp`)
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
@@ -308,6 +320,10 @@
 - **Risposta groq: non riesci a connetterti al mio cer...** (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`)
   - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
   - **Sintesi:** Sì, **sono già connesso al tuo “cervello artificiale”**.
+- **Sintesi Teorico-Applicativa Swin Transformer e Deep Stable Learning** (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`)
+  - **Tags:** `#computer-vision` `#causal-inference` `#medical-imaging` `#ood-generalization`
+  - **Sintesi:** Formalizzazione del funzionamento di Swin Transformer (attenzione a finestre traslate gerarchiche) e Deep Stable Learning (decorrelazione di confondenti/inferenza causale per robustezza OOD) applicati all'imaging oncologico mammario.
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ['Mappatura di Swin Transformer su complessità lineare e feature multiscala per lesioni mammarie', 'Mappatura di Deep Stable Learning su inferenza causale, sample reweighting e generalizzazione OOD in contesti multi-centro clinici', "Connessione con l'interpretabilità diagnostica BI-RADS"], `outcome`: Spiegazione concisa, ad alta densità informativa e orientata alla discussione di tesi.
 - **Strategia Micro-Business e Servizi B2B Leggeri** (`ai-reasoning-alternative-monetization-strategies`)
   - **Tags:** `#analisi-strategica` `#micro-saas` `#automazione-b2b` `#asset-digitali` `#editoria-tecnica`
   - **Sintesi:** Strutturazione di quattro canali scalabili a costo zero (Automazioni B2B, Micro-SaaS/App Freemium, Boilerplate di codice, Editoria tecnica KDP/Gumroad) con stime di conversione unitarie per raggiungere il target 100-500€/mese.
@@ -882,6 +898,10 @@
   - **Tags:** `#monetizzazione` `#side-hustle` `#business-models` `#proposte-alternative`
   - **Sintesi:** L'utente richiede la formulazione di strategie alternative e concrete per generare tra 100 e 500 euro/mese a costo zero iniziale.
   - **Dettagli:** `user_prompt`: allora propronimi un altro metodo perfavore, `context`: Transizione da modelli basati sulla viralità passiva a modelli ad alto valore aggiunto basati su sviluppo software e asset digitali.
+- **Richiesta Spiegazione Swin Transformer e Deep Stable Learning** (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
+  - **Tags:** `#tesi` `#breast-cancer` `#deep-learning` `#swin-transformer` `#stable-learning`
+  - **Sintesi:** Richiesta di spiegazione breve, tecnica ed efficace su Swin Transformer e Deep Stable Learning nel contesto della classificazione del cancro al seno.
+  - **Dettagli:** `user_prompt`: puoi spiegarmi in modo breve, conciso ed efficace cosa è un Swim Transformers cos'è una o cosa fa la Deep Stable Learning. Sono concetti della mia tesi sulla classificazione tramite deep Learning di immagini di cancro al seno, `context`: Tesi di laurea sulla classificazione di immagini di cancro al seno tramite tecniche avanzate di Deep Learning.
 - **Richiesta Utente: Abbandono Jarvis e Avvio Nuovo Progetto** (`user-intent-abbandono-jarvis-nuovo-progetto`)
   - **Tags:** `#abbandono-jarvis` `#pivot` `#nuovo-progetto` `#semplicità`
   - **Sintesi:** Pierfrancesco ordina la cancellazione di Jarvis/OpenJarvis e l'orientamento verso un progetto più pragmatico e funzionale.
@@ -926,10 +946,22 @@
   - **Tags:** `#ui-design` `#visual-paradigms` `#graph-visualization` `#interfaccia`
   - **Sintesi:** Richiesta utente di visualizzare nuovi disegni, interfacce e layout architetturali per rappresentare il connettoma neurale (307 nodi, 2 emisferi).
   - **Dettagli:** `context`: Richiesta di vedere nuovi layout, disegni e stili d'interfaccia per il grafo a due emisferi, `user_prompt`: adesso abbiamo avuto un miglioramento e potenziamento??? ora voglio vedere altri esempi di rappresentare il nostro grafo, voglio vedere altri modi, altri 'disegni', deve rimanere così, ma voglio che cambi l'interfaccia chapito che intendo?
+- **Rimozione Modello Ollama Residuo su macOS** (`user-intent-rimozione-modello-ollama-mac`)
+  - **Tags:** `#macos` `#ollama` `#storage` `#cleanup` `#terminale`
+  - **Sintesi:** Richiesta di individuazione ed eliminazione completa di un modello LLM da 7GB rimasto su disco dopo la disinstallazione di Ollama.
+  - **Dettagli:** `user_prompt`: ho scaricato Ollama, e mentre ero sul terminale involontariamente ho installato un modello di intelligenza artificiale di 7GB sul mio Mac. ora ho disitintallato Ollama, ma il modello di intelligenza artificiale ora è, teoricamente, ancora sul mio Mac...dove lo trovo?? come lo elimino?? non voglio che ci sia, `context`: macOS; l'utente ha già rimosso l'eseguibile/app Ollama ma necessita di ripulire i file binari pesanti (~/.ollama).
 - **Ristrutturazione e Sigillatura dei 12 Macro-Domini Fondativi** (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
   - **Tags:** `#macro-domini` `#palazzo-cognitivo` `#gerarchia` `#sigillo-piano-0`
   - **Sintesi:** Riorganizzazione gerarchica del connettoma: sigillatura del Piano 0 con 12 macro-domini canonici, riassegnazione di tutti i nodi orfani e divieto di creazione dinamica per le AI esterne.
   - **Dettagli:** `context`: Chiusura della tassonomia di Piano 0 e ri-parenting semantico a costo zero e zero perdita dati, `user_prompt`: si assolutamente ristruttura così. però non voglio eprdere i nodi o i loro contenuti dobbiamo solo riorganizzarre. salva tutto il contesto nel cervello mi raccomando !!!
+- **Spiegazione Ecografi con Trasduttore Lineare** (`user-intent-definizione-ecografo-trasduttore-lineare`)
+  - **Tags:** `#ecografia` `#hardware-medico` `#trasduttore-lineare` `#breast-imaging` `#ultrasound`
+  - **Sintesi:** Richiesta di definizione, caratteristiche e campi d'uso degli ecografi con trasduttore lineare.
+  - **Dettagli:** `user_prompt`: cosa sono gli ecografi con trasduttore lineare, `context`: Comprensione del dominio di acquisizione immagini ecografiche mammarie per la tesi di laurea.
+- **Spiegazione Semplificata Self-Attention e Concetti Causali** (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
+  - **Tags:** `#didattica` `#self-attention` `#causal-inference` `#confounders` `#decorrelation`
+  - **Sintesi:** Richiesta di chiarimento divulgativo e intuitivo sui concetti cardine di self-attention, inferenza causale, confounders e decorrelazione delle feature.
+  - **Dettagli:** `user_prompt`: mi spieghi cosa 'è la self attention, inferenza causale, decorrelazione delle feature, feature confounders. però in modo semplice, `context`: Necessità di comprensione concettuale e intuitiva dei pilastri matematico-statistici della tesi.
 - **Tracciamento Richiesta Utente & Modello AI nella Memoria** (`user-intent-provenance-model-tracking`)
   - **Tags:** `#user-intent` `#model-attribution` `#context-preservation` `#cross-model-memory` `#episodic-tracking`
   - **Sintesi:** Proposta utente: includere nel JSON di ingestione il prompt integrale e il modello AI sorgente per preservare contesto e consentire recall cross-modello.
@@ -1086,6 +1118,14 @@
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Audit critico e mockup frontend del Universal AI Brain
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Audit critico e mockup frontend del Universal AI Brain, `key_takeaways`: Risoluzione e decisioni per Audit critico e mockup frontend del Universal AI Brain, `pending_tasks`: Nessun task pendente
+- **Episodio: Bonifica Modello Ollama 7GB su macOS** (`episode-bonifica-storage-ollama-mac`)
+  - **Tags:** `#chat` `#troubleshooting` `#macos` `#ollama`
+  - **Sintesi:** Sessione dedicata alla localizzazione ed eliminazione dei residui di storage lasciati dal download involontario di un modello locale con Ollama.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Pulizia storage locale da modelli LLM, `key_takeaways`: I modelli di Ollama su macOS persistono in ~/.ollama anche dopo la disinstallazione dell'app; rimozione eseguibile tramite rm -rf ~/.ollama.
+- **Episodio: Chiarimento Concetti Tesi Breast Cancer Classification** (`episode-chiarimento-concetti-tesi-deep-learning`)
+  - **Tags:** `#chat` `#tesi` `#oncologia` `#deep-learning`
+  - **Sintesi:** Sessione incentrata sulla definizione e contestualizzazione di Swin Transformer e Deep Stable Learning per la classificazione di immagini di cancro al seno.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Architetture Transformer e Inferenza Causale in Imaging Oncologico, `key_takeaways`: Swin Transformer ottimizza la computazione visiva multiscala con finestre shiftate; Deep Stable Learning assicura robustezza OOD rimuovendo correlazioni spurie nei dati clinici.
 - **Episodio: Comando /prompt Copia Rapida per Telegra** (`episode-comando-prompt-copia-rapi-8585`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Comando /prompt Copia Rapida per Telegram Bot
@@ -1122,6 +1162,10 @@
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Ottimizzazione Mobile Web Dashboard Universal Brain
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Ottimizzazione Mobile Web Dashboard Universal Brain, `key_takeaways`: Il routing a tab mobile separa il canvas 2D dall'ispettore sui display compatti, garantendo massima usabilità., `pending_tasks`: Nessun task pendente.
+- **Episodio: Panoramica Sonde Ecografiche Lineari** (`episode-disamina-trasduttori-lineari`)
+  - **Tags:** `#chat` `#ecografia` `#hardware` `#tesi`
+  - **Sintesi:** Sessione dedicata alla comprensione del principio di funzionamento e dei casi d'uso degli ecografi con sonda lineare.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Tecnologia dei trasduttori lineari in ecografia clinica, `key_takeaways`: Le sonde lineari impiegano alte frequenze per fornire immagini rettangolari ad altissima risoluzione per tessuti superficiali come mammella e tiroide.
 - **Episodio: Potenziamento Skill e Rilascio Demone Si** (`episode-potenziamento-skill-e-ril-8338`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
@@ -1142,6 +1186,10 @@
   - **Tags:** `#chat` `#continuità-cognitiva` `#macro-domini` `#palazzo-cognitivo`
   - **Sintesi:** Riorganizzazione storica e sigillo del Piano 0 del Palazzo Cognitivo con 12 Macro-Domini permanenti e blindatura delle regole di routing.
   - **Dettagli:** `key_takeaways`: Il Piano 0 è ora immutabile (13 nodi); tutte le future AI devono associare ogni nuovo nodo a uno dei 12 domini, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Sincronizzazione finale PC ⮂ Render Cloud, `topic`: Riorganizzazione Macro-Domini e sigillatura Piano 0
+- **Episodio: Spiegazione Intuitiva Concetti Causali e Attention** (`episode-chiarimento-intuitivo-pilastri-teorici`)
+  - **Tags:** `#chat` `#divulgazione` `#fondamenti-ai` `#tesi`
+  - **Sintesi:** Sessione dedicata alla chiarificazione intuitiva di Self-Attention, Inferenza Causale, Feature Confounders e Decorrelazione.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Intuizione dietro Deep Stable Learning e Transformers, `key_takeaways`: La self-attention calcola l'importanza relativa del contesto; l'inferenza causale evita shortcut; i confounders sono falsi indizi; la decorrelazione neutralizza i confounders.
 - **Episodio: Teoria dei Sotto-Grafi Modulari e Decentramento Hub** (`episode-2026-08-27-modular-domain-graph-topology`)
   - **Tags:** `#conversation-episode` `#graph-theory` `#modularity` `#2026-08-27`
   - **Sintesi:** Definizione della topologia a sotto-grafi modulari: entità enciclopediche e verticali isolate da person-pierfrancesco.
@@ -1684,6 +1732,7 @@
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-jarvis-voice-assistant`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-definizione-ecografo-trasduttore-lineare`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1698,7 +1747,10 @@
 - (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-rimozione-modello-ollama-mac`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-universal-ai-hub-client`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-valutazione-progetto-language-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[EXPRESSES]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
@@ -1765,12 +1817,16 @@
 - (`episode-alternative-monetization-brainstorming`) --[RECORDS_INTENT]--> (`user-intent-alternative-income-generation`) *(Corpo Calloso)*
 - (`episode-audit-critico-e-mockup-fr-2255`) --[RECORDS_INTENT]--> (`user-intent-audit-critico-e-mockup-fr-2255`) *(Corpo Calloso)*
 - (`episode-backend-optimization-session`) --[RECORDS_INTENT]--> (`user-intent-backend-optimization-hybrid`) *(Corpo Calloso)*
+- (`episode-bonifica-storage-ollama-mac`) --[RECORDS_INTENT]--> (`user-intent-rimozione-modello-ollama-mac`) *(Corpo Calloso)*
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_INTENT]--> (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[RECORDS_INTENT]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`) *(Corpo Calloso)*
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8793`) --[RECORDS_INTENT]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) *(Corpo Calloso)*
 - (`episode-che-ore-sono-3134`) --[RECORDS_INTENT]--> (`user-intent-che-ore-sono-3134`) *(Corpo Calloso)*
 - (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[RECORDS_INTENT]--> (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) *(Corpo Calloso)*
+- (`episode-chiarimento-concetti-tesi-deep-learning`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) *(Corpo Calloso)*
+- (`episode-chiarimento-intuitivo-pilastri-teorici`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
+- (`episode-disamina-trasduttori-lineari`) --[RECORDS_INTENT]--> (`user-intent-definizione-ecografo-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_INTENT]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_INTENT]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
@@ -1801,12 +1857,16 @@
 - (`episode-alternative-monetization-brainstorming`) --[RECORDS_REASONING]--> (`ai-reasoning-alternative-monetization-strategies`) *(Corpo Calloso)*
 - (`episode-audit-critico-e-mockup-fr-2255`) --[RECORDS_REASONING]--> (`reasoning-audit-critico-e-mockup-fr-2255`) *(Corpo Calloso)*
 - (`episode-backend-optimization-session`) --[RECORDS_REASONING]--> (`reasoning-backend-audit-and-fix`) *(Corpo Calloso)*
+- (`episode-bonifica-storage-ollama-mac`) --[RECORDS_REASONING]--> (`reasoning-risoluzione-residui-ollama-mac`) *(Corpo Calloso)*
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_REASONING]--> (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[RECORDS_REASONING]--> (`reasoning-che-ne-pensi-del-mio-cervello-artif-8743`) *(Corpo Calloso)*
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8793`) --[RECORDS_REASONING]--> (`reasoning-che-ne-pensi-del-mio-cervello-artif-8793`) *(Corpo Calloso)*
 - (`episode-che-ore-sono-3134`) --[RECORDS_REASONING]--> (`reasoning-che-ore-sono-3134`) *(Corpo Calloso)*
 - (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[RECORDS_REASONING]--> (`reasoning-chi-pierfrancesco-amendola-e-cosa-8426`) *(Corpo Calloso)*
+- (`episode-chiarimento-concetti-tesi-deep-learning`) --[RECORDS_REASONING]--> (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) *(Corpo Calloso)*
+- (`episode-chiarimento-intuitivo-pilastri-teorici`) --[RECORDS_REASONING]--> (`reasoning-semplificazione-concettuale-causal-dl`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
+- (`episode-disamina-trasduttori-lineari`) --[RECORDS_REASONING]--> (`reasoning-caratterizzazione-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_REASONING]--> (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_REASONING]--> (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
@@ -2125,6 +2185,7 @@
 - (`reasoning-audit-critico-e-mockup-fr-2255`) --[FULFILLS]--> (`user-intent-audit-critico-e-mockup-fr-2255`)
 - (`reasoning-backend-audit-and-fix`) --[FULFILLS]--> (`user-intent-backend-optimization-hybrid`)
 - (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) --[FULFILLS]--> (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`)
+- (`reasoning-caratterizzazione-trasduttore-lineare`) --[FULFILLS]--> (`user-intent-definizione-ecografo-trasduttore-lineare`)
 - (`reasoning-che-ne-pensi-del-mio-cervello-artif-8743`) --[FULFILLS]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`)
 - (`reasoning-che-ne-pensi-del-mio-cervello-artif-8793`) --[FULFILLS]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`)
 - (`reasoning-che-ore-sono-3134`) --[FULFILLS]--> (`user-intent-che-ore-sono-3134`)
@@ -2149,7 +2210,10 @@
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[FULFILLS]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[FULFILLS]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
+- (`reasoning-risoluzione-residui-ollama-mac`) --[FULFILLS]--> (`user-intent-rimozione-modello-ollama-mac`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[FULFILLS]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
+- (`reasoning-semplificazione-concettuale-causal-dl`) --[FULFILLS]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
+- (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
 - (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) --[FULFILLS]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`)
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-taxonomy-classification`)
 - (`intent-ep-20260827-graph-tree-unification`) --[GENERATES_REASONING]--> (`reason-ep-20260827-graph-tree-unification`)
@@ -2187,12 +2251,16 @@
 - (`episode-alternative-monetization-brainstorming`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-audit-critico-e-mockup-fr-2255`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-backend-optimization-session`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-bonifica-storage-ollama-mac`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8793`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-che-ore-sono-3134`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-chiarimento-concetti-tesi-deep-learning`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-chiarimento-intuitivo-pilastri-teorici`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-disamina-trasduttori-lineari`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
