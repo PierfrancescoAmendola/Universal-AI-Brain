@@ -98,17 +98,50 @@ def broadcast_morning_pulse(chat_id: Optional[int] = None) -> bool:
 
 
 def get_main_keyboard() -> Dict[str, Any]:
-    """Returns the quick-access keyboard for Telegram mobile clients."""
+    """Returns the upgraded quick-access keyboard for Telegram mobile clients."""
     return {
         "keyboard": [
-            [{"text": "📋 Menu Comandi"}, {"text": "📋 Copia Prompt AI"}],
-            [{"text": "🌅 Daily Pulse"}, {"text": "📊 Statistiche Cervello"}],
-            [{"text": "🌳 Albero Gerarchico"}, {"text": "💻 Terminale Log"}],
-            [{"text": "📥 Posta JSON AI"}, {"text": "🔍 Ricerca Progetti"}]
+            [{"text": "🌅 Daily Pulse"}, {"text": "🔍 Ricerca Ibrida"}],
+            [{"text": "🌙 Ciclo REM"}, {"text": "⚡ Tensioni Aperte"}],
+            [{"text": "📊 Statistiche Cervello"}, {"text": "🌳 Albero Gerarchico"}],
+            [{"text": "📋 Copia Prompt AI"}, {"text": "💻 Terminale Log"}]
         ],
         "resize_keyboard": True,
         "persistent": True
     }
+
+
+def sync_telegram_bot_commands() -> bool:
+    """Registra i comandi ufficiali del bot presso le API di Telegram (setMyCommands)."""
+    if not TELEGRAM_BOT_TOKEN:
+        return False
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/setMyCommands"
+    commands = [
+        {"command": "pulse", "description": "🌅 Briefing mattutino 90s (Ebbinghaus + Modello)"},
+        {"command": "search", "description": "🔍 Ricerca full-text e semantica ibrida"},
+        {"command": "rem", "description": "🌙 Consolidamento notturno REM e tessitura sinapsi"},
+        {"command": "tensions", "description": "⚡ Tensioni e contraddizioni aperte"},
+        {"command": "firmware", "description": "🧭 Modello mentale attivo (Primi Principi)"},
+        {"command": "tree", "description": "🌳 Albero gerarchico di conoscenza"},
+        {"command": "stats", "description": "📊 Statistiche globali del connettoma"},
+        {"command": "terminal", "description": "💻 Console e log ultime attività"},
+        {"command": "prompt", "description": "📋 Master Prompt per ChatGPT/Claude"},
+        {"command": "add", "description": "➕ Inserimento rapido nuova memoria"},
+        {"command": "help", "description": "ℹ️ Menu comandi e guida completa"}
+    ]
+    try:
+        req = urllib.request.Request(
+            url,
+            data=json.dumps({"commands": commands}).encode("utf-8"),
+            headers={"Content-Type": "application/json"}
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            return data.get("ok", False)
+    except Exception as e:
+        print(f"[Telegram Commands Error] Failed to setMyCommands: {e}", file=sys.stderr)
+        return False
+
 
 
 
@@ -350,25 +383,110 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
         except Exception as e:
             return f"❌ Errore durante il calcolo del Daily Pulse: {e}"
 
+    # 1.2 /rem, "🌙 Ciclo REM"
+    if cmd.lower() in ("/rem", "rem", "🌙 ciclo rem", "ciclo rem", "fase rem"):
+        try:
+            from brain_rem_cycle import run_rem_consolidation
+            res = run_rem_consolidation(auto_apply_weave=True, verbose=False)
+            return (
+                f"🌙 <b>CONSOLIDAMENTO NOTTURNO REM ESEGUITO</b>\n"
+                f"────────────────────────\n"
+                f"✨ <b>Sinapsi Tessute:</b> +{res.get('weaved_synapses', 0)}\n"
+                f"⚡ <b>Tensioni Identificate:</b> {res.get('tensions_found', 0)}\n"
+                f"🧹 <b>Ottimizzazione DB:</b> WAL Checkpoint & VACUUM completati\n"
+                f"⏱️ <b>Tempo di Esecuzione:</b> {res.get('elapsed_seconds', 0)}s\n"
+                f"────────────────────────\n"
+                f"🧠 <i>Il connettoma è stato consolidato e deframmentato.</i>"
+            )
+        except Exception as e:
+            return f"❌ Errore durante il ciclo REM: {e}"
+
+    # 1.3 /tensions, "⚡ Tensioni Aperte"
+    if cmd.lower() in ("/tensions", "tensions", "⚡ tensioni aperte", "tensioni aperte", "tensioni"):
+        try:
+            from brain_tensions import get_tensions, detect_candidate_tensions
+            open_t = get_tensions(status="OPEN", limit=5)
+            candidates = detect_candidate_tensions(limit=3)
+            lines = ["⚡ <b>TENSIONI COGNITIVE & CONTRADDIZIONI APERTE</b>\n────────────────────────"]
+            if open_t:
+                lines.append("<b>📌 Tensioni Registrate:</b>")
+                for t in open_t:
+                    lines.append(f"• <b>{t['node_a_label']}</b> ⮂ <b>{t['node_b_label']}</b>\n  <i>{t['description']}</i>")
+            if candidates:
+                lines.append("\n<b>🔮 Potenziali Contraddizioni Rilevate (AI Sentinel):</b>")
+                for c in candidates[:3]:
+                    lines.append(f"• <b>{c['node_a_label']}</b> vs <b>{c['node_b_label']}</b>\n  <i>{c.get('description', 'Trade-off rilevato')}</i>")
+            if not open_t and not candidates:
+                lines.append("Nessuna tensione aperta. Connettoma in perfetto equilibrio dialettico!")
+            lines.append("────────────────────────\n🌐 <i>Risolvi su:</i> https://universal-ai-brain.onrender.com")
+            return "\n".join(lines)
+        except Exception as e:
+            return f"❌ Errore caricamento tensioni: {e}"
+
+    # 1.4 /firmware, "🧭 Modello Mentale"
+    if cmd.lower() in ("/firmware", "firmware", "🧭 modello mentale", "modello mentale"):
+        try:
+            from brain_resurface import FIRMWARE_DAILY_ROTATION
+            day_idx = int(time.time() / 86400) % len(FIRMWARE_DAILY_ROTATION)
+            fw = FIRMWARE_DAILY_ROTATION[day_idx]
+            return (
+                f"🧭 <b>MODELLO MENTALE DEL GIORNO</b>\n"
+                f"────────────────────────\n"
+                f"🎯 <b>Principio:</b> {fw['name']}\n"
+                f"👤 <b>Autore:</b> {fw['author']}\n\n"
+                f"❓ <b>Domanda Guida per la Giornata:</b>\n"
+                f"<i>\"{fw['question']}\"</i>\n"
+                f"────────────────────────"
+            )
+        except Exception as e:
+            return f"❌ Errore caricamento firmware: {e}"
+
+    # 1.5 /hybrid <query>, /vector <query>, "🔍 Ricerca Ibrida"
+    if cmd.startswith("/hybrid") or cmd.startswith("/vector") or cmd == "🔍 Ricerca Ibrida":
+        q = cmd.replace("/hybrid", "").replace("/vector", "").replace("🔍 Ricerca Ibrida", "").strip()
+        if not q:
+            return "⚠️ <i>Uso:</i> <code>/hybrid &lt;concetto o domanda&gt;</code>\nEsempio: <code>/hybrid architettura database</code>"
+        try:
+            from brain_vectors import get_hybrid_search_engine
+            engine = get_hybrid_search_engine()
+            res = engine.search_hybrid(q, limit=5)
+            if not res:
+                return f"🔍 Nessun risultato vettoriale trovato per <b>'{q}'</b>."
+            lines = [f"🧠 <b>RICERCA SEMANTICA IBRIDA (RRF) per '{q}':</b>\n────────────────────────"]
+            for r in res:
+                ico = "⚡" if r.get("hemisphere") == "LEFT" else "🌸"
+                sim = int(r.get("cosine_similarity", 0) * 100)
+                lines.append(f"{ico} <b>{r['label']}</b> (Similarità: {sim}%)\n📝 {r.get('summary', '')[:120]}...\n")
+            lines.append("────────────────────────\n🌐 <i>Dashboard:</i> https://universal-ai-brain.onrender.com")
+            return "\n".join(lines)
+        except Exception as e:
+            return f"❌ Errore ricerca ibrida: {e}"
+
     # 2. /start, /help, /menu
     if cmd in ("/start", "/help", "/menu", "help", "menu", "📋 Menu Comandi"):
+        sync_telegram_bot_commands()
         return (
-            f"🧠 <b>UNIVERSAL AI BRAIN - MENU COMANDI</b>\n"
-            f"<i>Connesso all'intelligenza di Pierfrancesco</i>\n"
+            f"🧠 <b>UNIVERSAL AI BRAIN - UBIQUITOUS BOT</b>\n"
+            f"<i>Connesso all'intelligenza di Pierfrancesco Amendola</i>\n"
             f"────────────────────────\n"
+            f"<b>🌅 Apprendimento & Metacognizione:</b>\n"
+            f"• <code>/pulse</code> - Briefing mattutino 90s (Ebbinghaus + Modello)\n"
+            f"• <code>/rem</code> - Esegui consolidamento notturno REM e tessitura\n"
+            f"• <code>/tensions</code> - Visualizza contraddizioni e tensioni aperte\n"
+            f"• <code>/firmware</code> - Modello mentale del giorno (First Principles)\n\n"
             f"<b>🔍 Navigazione & Ricerca:</b>\n"
-            f"• <code>/search &lt;query&gt;</code> - Ricerca BM25 istantanea\n"
+            f"• <code>/search &lt;query&gt;</code> - Ricerca lessicale FTS5 istantanea\n"
+            f"• <code>/hybrid &lt;query&gt;</code> - Ricerca semantica vettoriale (RRF)\n"
             f"• <code>/tree</code> - Albero gerarchico di tutte le categorie\n"
-            f"• <code>/stats</code> - Metriche globali (nodi, sinapsi, ponti)\n"
+            f"• <code>/stats</code> - Metriche connettoma (nodi, sinapsi, ponti)\n"
             f"• <code>/path &lt;id1&gt; &lt;id2&gt;</code> - Cammino minimo tra concetti\n"
-            f"• <code>/terminal</code> - Console e log delle ultime attività/notifiche\n\n"
+            f"• <code>/terminal</code> - Console e log delle ultime attività\n\n"
             f"<b>📋 Integrazione AI Esterne:</b>\n"
             f"• <code>/prompt</code> - Copia istantanea del Master Prompt per ChatGPT/Claude\n\n"
             f"<b>📥 Inserimento & Ingestione:</b>\n"
-            f"• <b>Incolla JSON di ChatGPT/Claude</b> - Riconoscimento e salvataggio automatico!\n"
-            f"• <code>/post &lt;JSON&gt;</code> - Inserimento esplicito blocco JSON\n"
+            f"• <b>Incolla JSON di ChatGPT/Claude</b> - Salvataggio automatico!\n"
             f"• <code>/add &lt;titolo&gt; | &lt;sintesi&gt;</code> - Inserimento rapido nota/idea\n"
-            f"• <b>Messaggio libero</b> - Salva all'istante una nuova memoria\n\n"
+            f"• <b>Messaggio di testo libero</b> - Salva all'istante una nuova memoria\n\n"
             f"<b>🌐 Web Dashboard:</b>\n"
             f"https://universal-ai-brain.onrender.com"
         )
@@ -723,6 +841,7 @@ def run_telegram_polling():
         return
 
     print(f"[Telegram Bot] Starting long-polling service for @pier_brain_ai_bot...")
+    sync_telegram_bot_commands()
     last_update_id = 0
 
     while True:
