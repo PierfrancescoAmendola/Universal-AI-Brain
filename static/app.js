@@ -352,10 +352,17 @@ function setGraphViewMode(mode) {
     if (actionsPill) actionsPill.style.display = 'none';
     if (palazzoElevator) palazzoElevator.style.display = 'none';
     if (graphContainer) graphContainer.style.display = 'none';
-    if (globeContainer) globeContainer.style.display = 'block';
+    if (globeContainer) {
+      globeContainer.style.display = 'block';
+    }
     
     initOrUpdateGlobe3D();
+    if (!isGlobeLoopRunning) {
+      isGlobeLoopRunning = true;
+      animateGlobe3D();
+    }
   } else {
+    isGlobeLoopRunning = false;
     if (globeContainer) globeContainer.style.display = 'none';
     if (graphContainer) graphContainer.style.display = 'block';
     if (palazzoElevator) palazzoElevator.style.display = 'flex';
@@ -2454,6 +2461,8 @@ let globeRotationX = 0, globeRotationY = 0;
 let globeIsDragging = false, globePreviousMousePosition = { x: 0, y: 0 };
 let globeCameraDistance = 850;
 
+let isGlobeLoopRunning = false;
+
 function initOrUpdateGlobe3D() {
   const container = document.getElementById('globe-3d-container');
   if (!container) return;
@@ -2463,6 +2472,8 @@ function initOrUpdateGlobe3D() {
   } else {
     rebuildGlobeGeometry();
   }
+  setTimeout(resizeGlobe3D, 50);
+  setTimeout(resizeGlobe3D, 250);
 }
 
 function initGlobe3D(container) {
@@ -2471,14 +2482,19 @@ function initGlobe3D(container) {
     return;
   }
 
-  const width = container.clientWidth || window.innerWidth - 380;
-  const height = container.clientHeight || window.innerHeight - 48;
+  const rect = container.getBoundingClientRect();
+  const width = rect.width || container.clientWidth || (window.innerWidth - 380);
+  const height = rect.height || container.clientHeight || (window.innerHeight - 48);
 
   globeScene = new THREE.Scene();
-  globeScene.fog = new THREE.FogExp2(0x040711, 0.0006);
 
-  globeCamera = new THREE.PerspectiveCamera(50, width / height, 1, 4000);
+  globeCamera = new THREE.PerspectiveCamera(45, width / height, 1, 5000);
   globeCamera.position.set(0, 0, globeCameraDistance);
+  globeCamera.lookAt(0, 0, 0);
+
+  // Luci
+  const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+  globeScene.add(ambientLight);
 
   globeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   globeRenderer.setSize(width, height);
@@ -2501,13 +2517,29 @@ function initGlobe3D(container) {
   // Raycaster for hover and click
   globeRaycaster = new THREE.Raycaster();
   globeRaycaster.params.Points = { threshold: 8 };
-  globeMouse = new THREE.Vector2();
+  globeMouse = new THREE.Vector2(-999, -999);
 
   setupGlobeInteractions(container);
   rebuildGlobeGeometry();
 
   isGlobeInitialized = true;
-  animateGlobe3D();
+  if (!isGlobeLoopRunning) {
+    isGlobeLoopRunning = true;
+    animateGlobe3D();
+  }
+}
+
+function resizeGlobe3D() {
+  const container = document.getElementById('globe-3d-container');
+  if (!container || !globeRenderer || !globeCamera) return;
+  const rect = container.getBoundingClientRect();
+  const width = rect.width || container.clientWidth || (window.innerWidth - 380);
+  const height = rect.height || container.clientHeight || (window.innerHeight - 48);
+  if (width > 0 && height > 0) {
+    globeCamera.aspect = width / height;
+    globeCamera.updateProjectionMatrix();
+    globeRenderer.setSize(width, height);
+  }
 }
 
 function createGlobeStarfield() {
@@ -2545,7 +2577,7 @@ function createGlobeStarfield() {
 }
 
 function rebuildGlobeGeometry() {
-  if (!globeNodesGroup || !rawNodes.length) return;
+  if (!globeNodesGroup || !rawNodes || !rawNodes.length) return;
 
   // Pulisci gruppi precedenti
   while (globeNodesGroup.children.length > 0) {
@@ -2564,8 +2596,10 @@ function rebuildGlobeGeometry() {
   // Calcola gradi
   const degreeMap = new Map();
   rawEdges.forEach(e => {
-    degreeMap.set(e.source, (degreeMap.get(e.source) || 0) + 1);
-    degreeMap.set(e.target, (degreeMap.get(e.target) || 0) + 1);
+    const sId = typeof e.source === 'object' ? e.source.id : e.source;
+    const tId = typeof e.target === 'object' ? e.target.id : e.target;
+    degreeMap.set(sId, (degreeMap.get(sId) || 0) + 1);
+    degreeMap.set(tId, (degreeMap.get(tId) || 0) + 1);
   });
 
   // Mappa coordinate sferiche bi-emisferiche
@@ -2575,12 +2609,12 @@ function rebuildGlobeGeometry() {
     const deg = degreeMap.get(node.id) || 1;
 
     // Fibonacci sphere segmentata per emisfero
-    const offset = 2 / nodeCount;
+    const offset = 2 / Math.max(nodeCount, 1);
     const y = ((idx * offset) - 1) + (offset / 2);
-    const r = Math.sqrt(1 - y * y);
+    const r = Math.sqrt(Math.max(0, 1 - y * y));
 
     // Phi e Theta
-    const phi = Math.acos(y);
+    const phi = Math.acos(Math.max(-1, Math.min(1, y)));
     let theta = (idx * 2.399963229728653); // Golden angle
 
     // Separazione Bi-Emisferica
@@ -2625,8 +2659,10 @@ function rebuildGlobeGeometry() {
   const bridgeLineColors = [];
 
   rawEdges.forEach(edge => {
-    const srcMesh = globeNodeMeshMap.get(edge.source);
-    const tgtMesh = globeNodeMeshMap.get(edge.target);
+    const sId = typeof edge.source === 'object' ? edge.source.id : edge.source;
+    const tId = typeof edge.target === 'object' ? edge.target.id : edge.target;
+    const srcMesh = globeNodeMeshMap.get(sId);
+    const tgtMesh = globeNodeMeshMap.get(tId);
 
     if (srcMesh && tgtMesh) {
       const isCross = (srcMesh.userData.node.hemisphere || 'LEFT') !== (tgtMesh.userData.node.hemisphere || 'LEFT');
@@ -2655,7 +2691,7 @@ function rebuildGlobeGeometry() {
     const intraMat = new THREE.LineBasicMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: 0.22,
+      opacity: 0.25,
       blending: THREE.AdditiveBlending
     });
     const intraLines = new THREE.LineSegments(intraGeo, intraMat);
@@ -2670,7 +2706,7 @@ function rebuildGlobeGeometry() {
     const bridgeMat = new THREE.LineBasicMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: 0.75,
+      opacity: 0.85,
       linewidth: 2,
       blending: THREE.AdditiveBlending
     });
@@ -2724,21 +2760,17 @@ function setupGlobeInteractions(container) {
     }
   });
 
-  window.addEventListener('resize', () => {
-    if (graphViewMode === 'globe' && globeRenderer && globeCamera) {
-      const width = container.clientWidth || window.innerWidth - 380;
-      const height = container.clientHeight || window.innerHeight - 48;
-      globeCamera.aspect = width / height;
-      globeCamera.updateProjectionMatrix();
-      globeRenderer.setSize(width, height);
-    }
-  });
+  window.addEventListener('resize', resizeGlobe3D);
 }
 
 function animateGlobe3D() {
-  requestAnimationFrame(animateGlobe3D);
+  if (graphViewMode !== 'globe' || !globeRenderer || !globeScene) {
+    isGlobeLoopRunning = false;
+    return;
+  }
 
-  if (graphViewMode !== 'globe' || !globeRenderer || !globeScene) return;
+  isGlobeLoopRunning = true;
+  requestAnimationFrame(animateGlobe3D);
 
   if (isGlobeSpinning && !globeIsDragging) {
     globeTargetRotationY += 0.0018;
