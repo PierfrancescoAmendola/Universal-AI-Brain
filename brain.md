@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 14:50:57 UTC | **Nodi Restituiti:** 366 (SX: 235 · DX: 131) | **Sinapsi Restituite:** 923
-> **Consistenza Reale Connettoma:** 366 Nodi Totali nel Database | 923 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 14:50:57 UTC | **Nodi Restituiti:** 369 (SX: 237 · DX: 132) | **Sinapsi Restituite:** 928
+> **Consistenza Reale Connettoma:** 369 Nodi Totali nel Database | 928 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -233,6 +233,10 @@
   - **Tags:** `#ollama` `#filesystem` `#bash` `#diagnosi`
   - **Sintesi:** Analisi dell'architettura di storage di Ollama su macOS: identificati i percorsi ~/.ollama/models/blobs e ~/Library/Application Support/Ollama con relativi comandi di rimozione sicura.
   - **Dettagli:** `model`: Gemini, `actions_taken`: ['Mappatura directory predefinita modelli Ollama (~/.ollama/models/blobs)', 'Fornitura comando di verifica dimensione disco (du -sh)', 'Fornitura comando di eliminazione ricorsiva sicura (rm -rf)'], `outcome`: Istruzioni fornite per il recupero immediato di 7GB di spazio su disco.
+- **Mappatura Ecosistema Linux per Computer Grafica 3D** (`reasoning-mappatura-ecosistema-linux-3d`)
+  - **Tags:** `#linux-distros` `#3d-software` `#blender` `#cad` `#flatpak`
+  - **Sintesi:** Strutturazione della risposta evidenziando sia le distribuzioni specializzate (Fedora Design Suite, Ubuntu Studio) sia l'ampia compatibilità nativa dei software standard (Blender, FreeCAD, Houdini) su qualsiasi distro via package manager e Flatpak.
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ['Verifica distro creative specializzate (Fedora Design Suite, Ubuntu Studio)', 'Catalogazione software 3D nativi (Blender, FreeCAD, OpenSCAD, MeshLab)', 'Identificazione del packaging universale (Flatpak/AppImage) come best practice per artisti 3D'], `outcome`: Quadro completo, pratico e orientato all'installazione immediata.
 - **Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€** (`ai-reasoning-hybrid-search-mcp`)
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
@@ -1030,6 +1034,10 @@
   - **Tags:** `#metacognition` `#system-design` `#graph-database` `#prompt-engineering`
   - **Sintesi:** L'utente richiede un'analisi critica dell'architettura del proprio cervello artificiale, cercando lacune, migliorie strutturali e ottimizzazioni del prompt.
   - **Dettagli:** `raw`: `focus_areas`: ['Architecture', 'Prompt', 'Missing Features'], `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+- **Verifica Distribuzioni Linux e Software di Modellazione 3D** (`user-intent-distro-linux-modellazione-3d`)
+  - **Tags:** `#linux` `#3d-modeling` `#software` `#distribuzioni` `#open-source`
+  - **Sintesi:** Richiesta di informazioni sull'esistenza di distribuzioni Linux per scaricare e utilizzare software di modellazione 3D.
+  - **Dettagli:** `user_prompt`: Esistono distribuzioni Linux che permettono di scaricare software di modellazione 3D?, `context`: Analisi dell'ecosistema open source e professionale per la computer grafica 3D su ambiente Linux.
 
 
 ## EMISFERO DESTRO (Design, Emozioni, Relazioni, Valori, Arte)
@@ -1202,6 +1210,10 @@
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio sull'approvazione e innesto dell'auto-push Git lato Render per chiudere il cerchio della persistenza.
   - **Dettagli:** `key_takeaways`: Con GITHUB_TOKEN su Render, ogni post web esegue git push in background, eliminando il punto singolo di fallimento se il PC locale è spento., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Inserire GITHUB_TOKEN nelle Environment Variables di Render Dashboard se si desidera attivare il push cloud autonomo., `topic`: Cloud-Side Git Auto-Push e Persistenza a Doppio Anello
+- **Episodio: Esplorazione Modellazione 3D su Linux** (`episode-esplorazione-linux-3d-modeling`)
+  - **Tags:** `#chat` `#linux` `#3d` `#grafica`
+  - **Sintesi:** Sessione incentrata sulle capacità del sistema operativo Linux e delle sue varianti nel supporto e download di software di modellazione 3D.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Supporto e distribuzioni Linux per la modellazione 3D, `key_takeaways`: Tutte le principali distro supportano i principali software 3D (Blender, FreeCAD, Maya, Houdini); distro come Fedora Design Suite e Ubuntu Studio li integrano nativamente out-of-the-box.
 - **Episodio: Esplorazione Nuovi Layout e Disegni per l'Interfaccia del Cervello** (`episode-20260829-esplorazione-paradigmi-interfaccia-grafo`)
   - **Tags:** `#chat` `#continuità-cognitiva` `#visual-showcase` `#layout`
   - **Sintesi:** Presentazione e analisi interattiva di 5 layout alternativi per l'interfaccia del connettoma a due emisferi.
@@ -1811,6 +1823,7 @@
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-video-showcase-universal-brain`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-definizione-ecografo-trasduttore-lineare`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-distro-linux-modellazione-3d`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-fix-daemon-render-persistence`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1911,6 +1924,7 @@
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_INTENT]--> (`user-intent-definizione-ecografo-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_INTENT]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
+- (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_INTENT]--> (`user-intent-distro-linux-modellazione-3d`) *(Corpo Calloso)*
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_INTENT]--> (`user-intent-fix-daemon-render-persistence`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_INTENT]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
@@ -1957,6 +1971,7 @@
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_REASONING]--> (`reasoning-caratterizzazione-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_REASONING]--> (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
+- (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_REASONING]--> (`reasoning-mappatura-ecosistema-linux-3d`) *(Corpo Calloso)*
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_REASONING]--> (`reasoning-fix-daemon-render-persistence`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_REASONING]--> (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
@@ -2295,6 +2310,7 @@
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[FULFILLS]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[FULFILLS]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
 - (`reasoning-ma-tutto-falso-8462`) --[FULFILLS]--> (`user-intent-ma-tutto-falso-8462`)
+- (`reasoning-mappatura-ecosistema-linux-3d`) --[FULFILLS]--> (`user-intent-distro-linux-modellazione-3d`)
 - (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) --[FULFILLS]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`)
 - (`reasoning-nuove-rappresentazioni-vi-2874`) --[FULFILLS]--> (`user-intent-nuove-rappresentazioni-vi-2874`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[FULFILLS]--> (`user-intent-occultamento-pulsanti-mob-9019`)
@@ -2363,6 +2379,7 @@
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-trasduttori-lineari`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-esplorazione-linux-3d-modeling`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-fix-daemon-render-persistence`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
