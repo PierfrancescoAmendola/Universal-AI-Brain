@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-08-31 11:27:10 UTC | **Nodi Restituiti:** 350 (SX: 224 · DX: 126) | **Sinapsi Restituite:** 887
-> **Consistenza Reale Connettoma:** 350 Nodi Totali nel Database | 887 Sinapsi Totali
+> **Data Generazione:** 2026-08-31 11:27:20 UTC | **Nodi Restituiti:** 353 (SX: 226 · DX: 127) | **Sinapsi Restituite:** 894
+> **Consistenza Reale Connettoma:** 353 Nodi Totali nel Database | 894 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -241,6 +241,10 @@
   - **Tags:** `#ai-reasoning` `#hybrid-cloud` `#distributed-systems` `#cross-client-synergy` `#metacognition`
   - **Sintesi:** Deduzione architetturale: Render agisce come Hub pubblico permanente (Telegram Webhook, Web Visualizer, OpenAPI GPTs), mentre MCP agisce come bus a bassissima latenza per agenti IDE.
   - **Dettagli:** `raw`: `model`: Antigravity / Google DeepMind Agent, `key_pillars`: ['Render Cloud: Accessibilità universale mobile 24/7, Telegram bot webhook, integrazione OpenAI Actions HTTPS', 'Local MCP: Esecuzione a latenza zero (<1ms) su SQLite WAL durante il coding in IDE', 'Web Chat Workflow: Allegazione diretta di brain.md o endpoint /brain.md pubblico per AI con Web Search']
+- **Ragionamento: Architettura Dual-Ring Git Persistence** (`reasoning-cloud-git-auto-push`)
+  - **Tags:** `#dual-ring` `#fastapi-background-tasks` `#github-token`
+  - **Sintesi:** Implementazione del doppio anello di persistenza: Mac demone + Render server push asincrono.
+  - **Dettagli:** `actions_taken`: ['Implementata funzione cloud_git_push_background in main.py con BackgroundTasks', 'Configurato supporto GITHUB_TOKEN per git commit & push direttamente dal container Render', 'Creato sistema a doppio anello (Client Daemon su Mac + Server Auto-Push su Render)'], `model`: Gemini 3.7 Flash, `outcome`: Architettura a doppio anello implementata e rilasciata su GitHub main, `responses_given`: Approvata l'idea eccellente: implementata in main.py con BackgroundTasks asincroni e spiegata la configurazione di GITHUB_TOKEN su Render.
 - **Ragionamento: Audit critico e mockup frontend del Univ** (`reasoning-audit-critico-e-mockup-fr-2255`)
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Audit basato sul repository, sul database SQLite e sul connettoma remoto: rilevate criticità di sicurezza API, sincronizzazione senza conflitti, tassonomia e provenienza; creato artefatto con tre dire
@@ -815,6 +819,10 @@
   - **Tags:** `#user-intent` `#chat` `#audit-critico-e-mockup-frontend-del-universal`
   - **Sintesi:** Intento espresso da Pierfrancesco: Audit critico e mockup frontend del Universal AI Brain
   - **Dettagli:** `user_prompt`: Analizza criticamente il progetto Universal AI Brain e il suo Universal Knowledge Graph, evidenzia punti critici e realizza mockup frontend interattivi con codice reale per scegliere una ristrutturazione., `context`: Sessione su Audit critico e mockup frontend del Universal AI Brain
+- **Intento: Cloud-Side Git Auto-Push da Render** (`user-intent-cloud-git-auto-push`)
+  - **Tags:** `#cloud-sync` `#git-push` `#render` `#persistenza`
+  - **Sintesi:** Eseguire git push automatico direttamente dal cloud ad ogni post/ingestione su Render.
+  - **Dettagli:** `context`: Persistenza autonoma lato cloud su Render per evitare regressioni di commit, `user_prompt`: però potremmo fare che ogni volta che facciamo un post tramite sito web, o qualsiasi altra parte, questo post che contiene le nostre info, i nodi, archi, ecc... faccia anche un git push, quindi carichi tutto su github, in modo tale che se render si spegne e si riavvia non andrà a prendere il vecchio db, ma sarà sempre aggiornato, che ne pensi??
 - **Intento: Comando /prompt Copia Rapida per Telegra** (`user-intent-comando-prompt-copia-rapi-8585`)
   - **Tags:** `#user-intent` `#chat` `#comando-prompt-copia-rapida-per-telegram-bot`
   - **Sintesi:** Intento espresso da Pierfrancesco: Comando /prompt Copia Rapida per Telegram Bot
@@ -1150,6 +1158,10 @@
   - **Tags:** `#conversation-episode` `#mcp` `#claude` `#gemini` `#chatgpt` `#multi-llm` `#skill`
   - **Sintesi:** Integrazione globale del cervello e della skill /universal-brain su tutti i modelli di frontiera.
   - **Dettagli:** `raw`: `timestamp`: 2026-08-27T21:45:00CEST, `models_targeted`: ['Claude Desktop', 'Gemini / Antigravity', 'ChatGPT Custom Actions', 'Cursor / Windsurf'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio: Distribuzione MCP e Skill /universal-brain su Gemini, Claude e ChatGPT
+- **Episodio: Doppio Anello di Persistenza Cloud** (`episode-cloud-git-auto-push`)
+  - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
+  - **Sintesi:** Episodio sull'approvazione e innesto dell'auto-push Git lato Render per chiudere il cerchio della persistenza.
+  - **Dettagli:** `key_takeaways`: Con GITHUB_TOKEN su Render, ogni post web esegue git push in background, eliminando il punto singolo di fallimento se il PC locale è spento., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Inserire GITHUB_TOKEN nelle Environment Variables di Render Dashboard se si desidera attivare il push cloud autonomo., `topic`: Cloud-Side Git Auto-Push e Persistenza a Doppio Anello
 - **Episodio: Esplorazione Nuovi Layout e Disegni per l'Interfaccia del Cervello** (`episode-20260829-esplorazione-paradigmi-interfaccia-grafo`)
   - **Tags:** `#chat` `#continuità-cognitiva` `#visual-showcase` `#layout`
   - **Sintesi:** Presentazione e analisi interattiva di 5 layout alternativi per l'interfaccia del connettoma a due emisferi.
@@ -1741,6 +1753,7 @@
 - (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-che-ore-sono-3134`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-cloud-git-auto-push`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-jarvis-voice-assistant`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -1838,6 +1851,7 @@
 - (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[RECORDS_INTENT]--> (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) *(Corpo Calloso)*
 - (`episode-chiarimento-concetti-tesi-deep-learning`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) *(Corpo Calloso)*
 - (`episode-chiarimento-intuitivo-pilastri-teorici`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) *(Corpo Calloso)*
+- (`episode-cloud-git-auto-push`) --[RECORDS_INTENT]--> (`user-intent-cloud-git-auto-push`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_INTENT]--> (`user-intent-definizione-ecografo-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_INTENT]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
@@ -1879,6 +1893,7 @@
 - (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[RECORDS_REASONING]--> (`reasoning-chi-pierfrancesco-amendola-e-cosa-8426`) *(Corpo Calloso)*
 - (`episode-chiarimento-concetti-tesi-deep-learning`) --[RECORDS_REASONING]--> (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) *(Corpo Calloso)*
 - (`episode-chiarimento-intuitivo-pilastri-teorici`) --[RECORDS_REASONING]--> (`reasoning-semplificazione-concettuale-causal-dl`) *(Corpo Calloso)*
+- (`episode-cloud-git-auto-push`) --[RECORDS_REASONING]--> (`reasoning-cloud-git-auto-push`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_REASONING]--> (`reasoning-caratterizzazione-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_REASONING]--> (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
@@ -2205,6 +2220,7 @@
 - (`reasoning-che-ne-pensi-del-mio-cervello-artif-8793`) --[FULFILLS]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`)
 - (`reasoning-che-ore-sono-3134`) --[FULFILLS]--> (`user-intent-che-ore-sono-3134`)
 - (`reasoning-chi-pierfrancesco-amendola-e-cosa-8426`) --[FULFILLS]--> (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`)
+- (`reasoning-cloud-git-auto-push`) --[FULFILLS]--> (`user-intent-cloud-git-auto-push`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[FULFILLS]--> (`user-intent-comando-prompt-copia-rapi-8585`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
 - (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[FULFILLS]--> (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`)
@@ -2275,6 +2291,7 @@
 - (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-chiarimento-concetti-tesi-deep-learning`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-chiarimento-intuitivo-pilastri-teorici`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-cloud-git-auto-push`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-trasduttori-lineari`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -2310,6 +2327,7 @@
 - (`reasoning-audit-critico-e-mockup-fr-2255`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-che-ore-sono-3134`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-cloud-git-auto-push`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -2377,6 +2395,7 @@
 - (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-che-ore-sono-3134`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-cloud-git-auto-push`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-creazione-jarvis-voice-assistant`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-repo-jarvis-desktop`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
