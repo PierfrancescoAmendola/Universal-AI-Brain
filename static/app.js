@@ -2434,9 +2434,11 @@ async function triggerObsidianSync(action) {
     const data = await res.json();
     alert(`Sincronizzazione Obsidian completata: ${JSON.stringify(data)}`);
     renderObsidianStatus();
-    fetchBrainData();
   } catch (err) {
     alert("Errore sync Obsidian: " + err.message);
+  }
+}
+
 // -----------------------------------------------------------------------------
 // 🌌 3D Celestial Constellation Globe Engine (Three.js WebGL)
 // -----------------------------------------------------------------------------
