@@ -262,6 +262,13 @@ def parse_and_ingest_json_payload(raw_text: str, user_name: str) -> Optional[str
         total_nodes = conn.execute("SELECT COUNT(*) AS c FROM nodes").fetchone()["c"]
         total_edges = conn.execute("SELECT COUNT(*) AS c FROM edges").fetchone()["c"]
 
+    # Trigger dual-ring Git persistence
+    try:
+        from main import cloud_git_push_background
+        cloud_git_push_background(f"feat(telegram): ingest {nodes_upserted} nodi, {edges_upserted} archi")
+    except Exception:
+        pass
+
     nodes_formatted = "\n".join(f"• {item}" for item in inserted_nodes_summary[:10])
     if len(inserted_nodes_summary) > 10:
         nodes_formatted += f"\n<i>...e altri {len(inserted_nodes_summary)-10} nodi</i>"
