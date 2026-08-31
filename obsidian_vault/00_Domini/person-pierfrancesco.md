@@ -362,3 +362,5 @@ Identità centrale, connettoma fondativo e profilo di Pierfrancesco Amendola.
 - [[proj-foodlab2025]] (`CREATED_BY`) — _Progetto ideato e sviluppato da Pierfrancesco Amendola_
 - [[proj-pack4]] (`CREATED_BY`) — _Progetto ideato e sviluppato da Pierfrancesco Amendola_
 - [[proj-pack3]] (`CREATED_BY`) — _Progetto ideato e sviluppato da Pierfrancesco Amendola_
+- [[user-intent-confronto-integrazioni-llm-notion-obsidian]] (`EXPRESSED_BY`)
+- [[episode-disamina-integrazioni-notion-obsidian]] (`INTERACTION_WITH`)

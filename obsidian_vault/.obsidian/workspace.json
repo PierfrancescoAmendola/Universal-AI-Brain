@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Domini/person-pierfrancesco.md",
+                "file": "01_Progetti_Episodi/chat-session-2026-08-27-ui-evolution.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "person-pierfrancesco"
+              "title": "chat-session-2026-08-27-ui-evolution"
             }
           }
         ]
@@ -55,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "UniStats",
+                "query": "biblioteca",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -100,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "00_Domini/person-pierfrancesco.md",
+                "file": "01_Progetti_Episodi/chat-session-2026-08-27-ui-evolution.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "00_Domini/person-pierfrancesco.md",
+                "file": "01_Progetti_Episodi/chat-session-2026-08-27-ui-evolution.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_Domini/person-pierfrancesco.md",
+                "file": "01_Progetti_Episodi/chat-session-2026-08-27-ui-evolution.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -191,6 +191,17 @@
   },
   "active": "70dcb938551b5fb8",
   "lastOpenFiles": [
+    "01_Progetti_Episodi/user-intent-confronto-integrazioni-llm-notion-obsidian.md",
+    "01_Progetti_Episodi/reasoning-tassonomia-pkm-rag-notion-obsidian.md",
+    "01_Progetti_Episodi/episode-disamina-integrazioni-notion-obsidian.md",
+    "00_Domini/domain-scienza-matematica.md",
+    "Senza nome 1.canvas",
+    "Senza nome.base",
+    "2026-08-31.md",
+    "Senza nome.canvas",
+    "01_Progetti_Episodi/proj-progetto-gestione-bibloteca.md",
+    "00_INDEX.md",
+    "00_Domini/person-pierfrancesco.md",
     "02_Moduli_Atomici/proj-unistats-ui-layer.md",
     "02_Moduli_Atomici/proj-habittracker-ui-layer.md",
     "02_Moduli_Atomici/proj-cervelloartificiale-api-routes.md",
@@ -208,15 +219,6 @@
     "01_Progetti_Episodi/proj-tests.md",
     "01_Progetti_Episodi/proj-testrepo-main.md",
     "01_Progetti_Episodi/proj-tecweblezioni.md",
-    "01_Progetti_Episodi/proj-taste-skill.md",
-    "01_Progetti_Episodi/proj-svolti.md",
-    "01_Progetti_Episodi/proj-statistica.md",
-    "01_Progetti_Episodi/proj-spiegazione-codice-librerire.md",
-    "01_Progetti_Episodi/proj-source_chapters.md",
-    "01_Progetti_Episodi/proj-soluzionepostgress_pgadmin_prof.md",
-    "01_Progetti_Episodi/proj-slidetecweb.md",
-    "01_Progetti_Episodi/proj-sitocertificati.md",
-    "01_Progetti_Episodi/proj-sim.md",
-    "Senza nome.canvas"
+    "01_Progetti_Episodi/proj-taste-skill.md"
   ]
 }
