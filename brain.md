@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-01 10:52:35 UTC | **Nodi Restituiti:** 585 (SX: 403 · DX: 182) | **Sinapsi Restituite:** 1344
-> **Consistenza Reale Connettoma:** 585 Nodi Totali nel Database | 1344 Sinapsi Totali
+> **Data Generazione:** 2026-09-01 10:54:18 UTC | **Nodi Restituiti:** 588 (SX: 405 · DX: 183) | **Sinapsi Restituite:** 1351
+> **Consistenza Reale Connettoma:** 588 Nodi Totali nel Database | 1351 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -117,6 +117,10 @@
   - **Tags:** `#backend` `#fastapi` `#sqlite-wal` `#mcp` `#testing` `#architecture`
   - **Sintesi:** Implementati 6 nuovi motori Python indipendenti, registrati 12 tool MCP JSON-RPC, aggiunti endpoint REST FastAPI, esteso schema SQLite WAL con tabella tensions e 9 modelli permanenti, aggiornato frontend dark-tech con 5 modali e validata suite di 24 test (100% pass).
   - **Dettagli:** `actions_taken`: ['Creato modulo obsidian_vault_sync.py per export/import note atomiche .md con frontmatter YAML e wikilinks', 'Creato modulo brain_tensions.py con schema SQLite dedicato e strategie Hegeliane/Steelman', 'Creato modulo brain_weave.py per auto-ponti di nodi orfani e Corpo Calloso', 'Creato modulo brain_resurface.py con modello matematico di Ebbinghaus per il briefing 90s', 'Creato modulo brain_firmware.py con i 9 modelli mentali e seeding nel connettoma', 'Creato modulo brain_library.py per dialogo groundato con autori e mentori', 'Registrati 12 nuovi tool MCP in mcp_server.py ed estesi gli endpoint REST in main.py', 'Aggiornato frontend dark-tech con pulsanti topbar e 5 modali dedicati in index.html e app.js', 'Sviluppata e validata test suite completa con 24 test unitari (100% success rate)'], `model`: Gemini 3.7 Flash, `outcome`: Architettura completata, verificata e sincronizzata con successo su database e Obsidian Vault locale., `responses_given`: Piano di implementazione a 8 task eseguito integralmente con test superati al 100%.
+- **Architettura UI Semplificata e Fullscreen 3D** (`reasoning-ui-declutter-projector-fullscreen`)
+  - **Tags:** `#untagged`
+  - **Sintesi:** Riprogettazione layout con Glassmorphism dropdowns e commutazione fullscreen per il 3D Projector
+  - **Dettagli:** `actions_taken`: ['Raggruppati bottoni topbar in dropdown Strumenti ed Esporta', 'Configurato Projector 3D a schermo intero (100vw) con scomparsa automatica della sidebar destra', 'Eliminato il codice legacy del Mappamondo 3D'], `model`: Antigravity, `outcome`: Interfaccia ultra-pulita, zero disordine e Projector 3D a tutto schermo
 - **Architettura e Realizzazione Video Showcase 60s** (`reasoning-creazione-video-showcase-universal-brain`)
   - **Tags:** `#video-engine` `#multimedia` `#canvas-1080p` `#web-audio` `#media-recorder`
   - **Sintesi:** Progettazione e implementazione del video engine interattivo a 6 scene in 60 secondi con sintesi vocale, musica cyberpunk procedurale, export video 1080p e kit promozionale.
@@ -1644,6 +1648,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#language-learning` `#portuguese` `#german` `#personal-software` `#srs`
   - **Sintesi:** L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
   - **Dettagli:** `raw`: `target_languages`: ['Portoghese', 'Tedesco'], `motivation`: Superamento paywall/energia di Duolingo, `scope`: Uso esclusivo personale e privato, `user_prompt`: L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
+- **De-cluttering UI & Projector 3D a Schermo Intero** (`user-intent-ui-declutter-projector-fullscreen`)
+  - **Tags:** `#untagged`
+  - **Sintesi:** Semplificazione radicale dell'interfaccia con dropdown e visualizzatore 3D full-page
+  - **Dettagli:** `context`: Eliminazione bottoni sparsi, menu a tendina e Projector 3D a schermo intero, `user_prompt`: rifacciamo il look con menù a tendina, projector 3d a schermo intero senza sidebar destra ed eliminazione mappamondo 3d
 - **Definizione Architettura & Gamification App Personale Lingue** (`intent-personal-language-app-structure`)
   - **Tags:** `#duolingo-like` `#busuu-like` `#pedagogy` `#curriculum-design` `#gamification`
   - **Sintesi:** L'utente richiede consigli approfonditi sulla struttura funzionale e pedagogica di un'app personale (stile Duolingo/Busuu) con flow a lezioni, zero paywall e nessun blocco energia.
@@ -2665,6 +2673,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#session-recap` `#frontend-restyling` `#graphify-aesthetic` `#physics-freeze` `#palazzo-cognitivo` `#zero-lag`
   - **Sintesi:** Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), eliminazione di oscillazioni e rotazioni continue della fisica su Vis-Network, correzione del bug di ispezione nodi e ripristino della gerarchia a piani del Palazzo Cognitivo (P0, P1, P2).
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Antigravity Assistant'], `topic`: Frontend Deep-Tech Restyling & Graph Stability, `outcomes`: ['Implementazione estetica Dark-Tech cyberpunk minimalista con Bento Grid e JetBrains Mono', 'Disabilitazione totale del live physics loop post-stabilizzazione (Zero-Oscillation Freeze)', 'Risoluzione ReferenceError su tags in showInfo() per ispezione istantanea dei nodi', 'Classificazione deterministica dei nodi su 3 piani (P0: 15 nodi, P1: 121 nodi, P2: 53 nodi)', 'Eliminazione di rotazioni e rendering su canvas a 60fps ultra-reattivo']
+- **Episodio: Restyling UI & Fullscreen 3D Projector** (`episode-ui-declutter-projector-fullscreen`)
+  - **Tags:** `#untagged`
+  - **Sintesi:** Sessione di riprogettazione estetica e funzionale dell'interfaccia di Universal AI Brain
+  - **Dettagli:** `key_takeaways`: Interfaccia ripulita da bottoni sparsi, modalita 3D immersiva a schermo intero senza sidebar, `participants`: ['Pierfrancesco Amendola', 'Antigravity'], `topic`: UI/UX De-cluttering & 3D Projector Fullscreen
 - **Episodio: Revisione Piano Supercervello Cognitive OS** (`episode-revisione-supercervello-cognitive-os`)
   - **Tags:** `#chat` `#supercervello` `#architettura` `#brain-os`
   - **Sintesi:** Sessione di revisione critica del piano di implementazione del Supercervello Ubiquitous Cognitive OS a costo zero.
@@ -3622,6 +3634,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-telegram-keepalive-confirmation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-test-hook-session-end-2411`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-ui-declutter-projector-fullscreen`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-universal-ai-hub-client`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-update-readme-architecture`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-valutazione-progetto-language-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3743,6 +3756,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_INTENT]--> (`user-intent-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-test-hook-session-end-2411`) --[RECORDS_INTENT]--> (`user-intent-test-hook-session-end-2411`) *(Corpo Calloso)*
+- (`episode-ui-declutter-projector-fullscreen`) --[RECORDS_INTENT]--> (`user-intent-ui-declutter-projector-fullscreen`) *(Corpo Calloso)*
 - (`episode-update-readme-architecture`) --[RECORDS_INTENT]--> (`user-intent-update-readme-architecture`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_INTENT]--> (`user-intent-valutazione-progetto-language-app`) *(Corpo Calloso)*
 - (`episode-verifica-costi-zero-euro`) --[RECORDS_INTENT]--> (`user-intent-verifica-vincolo-zero-costi`) *(Corpo Calloso)*
@@ -3807,6 +3821,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_REASONING]--> (`reasoning-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-test-hook-session-end-2411`) --[RECORDS_REASONING]--> (`reasoning-test-hook-session-end-2411`) *(Corpo Calloso)*
+- (`episode-ui-declutter-projector-fullscreen`) --[RECORDS_REASONING]--> (`reasoning-ui-declutter-projector-fullscreen`) *(Corpo Calloso)*
 - (`episode-update-readme-architecture`) --[RECORDS_REASONING]--> (`reasoning-update-readme-architecture`) *(Corpo Calloso)*
 - (`episode-valutazione-language-app-antigravity`) --[RECORDS_REASONING]--> (`reasoning-analisi-fattibilita-language-app`) *(Corpo Calloso)*
 - (`episode-verifica-costi-zero-euro`) --[RECORDS_REASONING]--> (`reasoning-validazione-architettura-zero-costi`) *(Corpo Calloso)*
@@ -4329,6 +4344,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-tassonomia-pkm-rag-notion-obsidian`) --[FULFILLS]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`)
 - (`reasoning-telegram-keepalive-confirmation`) --[FULFILLS]--> (`user-intent-telegram-keepalive-confirmation`)
 - (`reasoning-test-hook-session-end-2411`) --[FULFILLS]--> (`user-intent-test-hook-session-end-2411`)
+- (`reasoning-ui-declutter-projector-fullscreen`) --[FULFILLS]--> (`user-intent-ui-declutter-projector-fullscreen`)
 - (`reasoning-update-readme-architecture`) --[FULFILLS]--> (`user-intent-update-readme-architecture`)
 - (`reasoning-validazione-architettura-zero-costi`) --[FULFILLS]--> (`user-intent-verifica-vincolo-zero-costi`)
 - (`reasoning-valutazione-architetturale-supercervello`) --[FULFILLS]--> (`user-intent-review-piano-supercervello-os`)
@@ -4413,6 +4429,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-telegram-keepalive-confirmation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-test-hook-session-end-2411`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-ui-declutter-projector-fullscreen`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-update-readme-architecture`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-valutazione-language-app-antigravity`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-verifica-costi-zero-euro`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4429,6 +4446,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`lesson-backend-ground-truth-and-clean-canvas-rendering`) --[MENTAL_MODEL_OF]--> (`person-pierfrancesco`)
 - (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
+- (`reasoning-ui-declutter-projector-fullscreen`) --[MODIFIES]--> (`universal-ai-brain`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-analisi-fattibilita-language-app`) --[OPTIMIZES]--> (`reasoning-language-app-architecture`)
@@ -4569,6 +4587,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-telegram-keepalive-confirmation`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-test-hook-session-end-2411`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
+- (`user-intent-ui-declutter-projector-fullscreen`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-universal-ai-hub-client`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-update-readme-architecture`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-verifica-vincolo-zero-costi`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
