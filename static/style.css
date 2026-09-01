@@ -259,9 +259,11 @@ body {
   flex: 1;
   height: 100%;
   position: relative;
-  background-color: var(--bg-deep);
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background: radial-gradient(circle at 50% 50%, #0c111d 0%, #06070a 100%);
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(12, 17, 29, 0.96) 0%, rgba(6, 7, 10, 0.98) 100%),
+    radial-gradient(rgba(0, 210, 255, 0.08) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px;
   overflow: hidden;
 }
 

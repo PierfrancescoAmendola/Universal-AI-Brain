@@ -183,40 +183,59 @@ function initNetwork() {
       enabled: true,
       solver: 'forceAtlas2Based',
       forceAtlas2Based: {
-        gravitationalConstant: -60,
-        centralGravity: 0.005,
-        springLength: 120,
-        springConstant: 0.08,
-        damping: 0.4,
-        avoidOverlap: 0.8
+        gravitationalConstant: -100,
+        centralGravity: 0.003,
+        springLength: 140,
+        springConstant: 0.06,
+        damping: 0.5,
+        avoidOverlap: 1.0
       },
       stabilization: {
-        enabled: false
+        enabled: true,
+        iterations: 120,
+        updateInterval: 25,
+        fit: true
       }
     },
     interaction: {
       hover: true,
-      tooltipDelay: 100,
+      tooltipDelay: 80,
       hideEdgesOnDrag: true,
       navigationButtons: false,
       keyboard: false
     },
     nodes: {
       shape: 'dot',
-      borderWidth: 1.5,
-      shadow: false,
+      borderWidth: 2,
+      borderWidthSelected: 3.5,
+      shadow: {
+        enabled: true,
+        color: 'rgba(0, 210, 255, 0.4)',
+        size: 10,
+        x: 0,
+        y: 0
+      },
       font: {
         size: 11,
         color: '#f8fafc',
-        face: "'JetBrains Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-        strokeWidth: 3,
-        strokeColor: '#07080c'
+        face: "'JetBrains Mono', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+        strokeWidth: 2.5,
+        strokeColor: '#07080c',
+        vadjust: 2
       }
     },
     edges: {
       smooth: { type: 'continuous', roundness: 0.2 },
-      arrows: { to: { enabled: true, scaleFactor: 0.45 } },
-      selectionWidth: 2
+      arrows: { to: { enabled: true, scaleFactor: 0.4 } },
+      selectionWidth: 2.5,
+      hoverWidth: 1.8,
+      shadow: {
+        enabled: true,
+        color: 'rgba(0, 210, 255, 0.2)',
+        size: 6,
+        x: 0,
+        y: 0
+      }
     }
   };
 
@@ -587,36 +606,46 @@ function renderGraphData() {
     }
 
     const isExpanded = expandedNodeIds.has(n.id);
-    let label = n.label;
+    let rawLabel = n.label || n.id;
+    let label = rawLabel;
     const floorLvl = getFloor(n);
+    const isHub = CORE_MACRO_HUBS.has(n.id) || n.id === 'person-pierfrancesco' || floorLvl === 0;
 
     if (currentPalazzoFloor === 'vertical') {
-      label = `[P${floorLvl}] ${n.label}`;
+      label = `[P${floorLvl}] ${rawLabel.length > 20 ? rawLabel.substring(0, 18) + '…' : rawLabel}`;
     } else if (graphViewMode === 'areas' && currentPalazzoFloor === 'all') {
+      const cleanName = rawLabel.length > 22 ? rawLabel.substring(0, 20) + '…' : rawLabel;
       if (hiddenCount > 0) {
-        label = `${n.label} ⊕${hiddenCount}`;
+        label = `${cleanName} ⊕${hiddenCount}`;
       } else if (isExpanded && totalNeighbors > 1) {
-        label = `${n.label} ⊖`;
+        label = `${cleanName} ⊖`;
+      } else {
+        label = cleanName;
       }
+    } else if (graphViewMode === 'full') {
+      label = rawLabel.length > 22 ? rawLabel.substring(0, 20) + '…' : rawLabel;
     }
 
-    const isHub = CORE_MACRO_HUBS.has(n.id) || n.id === 'person-pierfrancesco' || floorLvl === 0;
-    if (isHub) {
-      size += 4;
-    }
+    let nodeSize = isHub ? Math.min(30, Math.max(18, 16 + degree * 1.5)) : Math.min(22, Math.max(12, 10 + degree * 1.2));
+    let nodeBorderColor = floorLvl === 0 ? '#ffe082' : (isLeft ? '#38bdf8' : '#f43f5e');
+    let nodeBgColor = floorLvl === 0 ? '#ffd15c' : catColor;
+    let nodeShadow = floorLvl === 0 
+      ? { enabled: true, color: 'rgba(255, 209, 92, 0.75)', size: 16, x: 0, y: 0 }
+      : { enabled: true, color: isLeft ? 'rgba(0, 210, 255, 0.45)' : 'rgba(255, 0, 127, 0.45)', size: 10, x: 0, y: 0 };
 
     const nodeObj = {
       id: n.id,
       label: label,
       title: `${n.label} [Piano ${floorLvl}: ${n.primary_label || n.category}]${hiddenCount > 0 ? ` (Clicca per espandere +${hiddenCount} nodi collegati)` : ''}`,
-      size: size,
+      size: nodeSize,
       color: {
-        background: catColor,
-        border: floorLvl === 0 ? '#38bdf8' : (isHub ? '#ffffff' : (isLeft ? '#00D2FF' : '#FF007F')),
-        highlight: { background: '#ffffff', border: catColor }
+        background: nodeBgColor,
+        border: nodeBorderColor,
+        highlight: { background: '#ffffff', border: isLeft ? '#00D2FF' : '#FF007F' }
       },
-      borderWidth: isHub ? 3 : (hiddenCount > 0 ? 2.5 : 1.5),
-      shadow: isHub ? { enabled: true, color: catColor, size: 8 } : false,
+      borderWidth: isHub ? 3 : (hiddenCount > 0 ? 2.5 : 1.8),
+      borderWidthSelected: 3.5,
+      shadow: nodeShadow,
       _data: n,
       _degree: degree,
       _floor: floorLvl,
@@ -647,16 +676,19 @@ function renderGraphData() {
     const sFloor = getFloor(sNode);
     const tFloor = getFloor(tNode);
     const isCrossFloor = (sFloor !== tFloor);
+    const isLeftEdge = (sNode && sNode.hemisphere === 'LEFT') && (tNode && tNode.hemisphere === 'LEFT');
 
-    let edgeColor = isCross ? CALLOSUM_COLOR : 'rgba(148, 163, 184, 0.45)';
+    let edgeColor = isCross ? CALLOSUM_COLOR : (isLeftEdge ? 'rgba(0, 210, 255, 0.25)' : 'rgba(255, 0, 127, 0.25)');
     let edgeWidth = isCross ? 2.2 : 1.2;
-    let isDashed = isCross;
+    let isDashed = isCross ? [5, 4] : false;
     let edgeTitle = `${e.relation || 'CONNECTS_TO'}${isCross ? ' (Corpo Calloso)' : ''}`;
+    let edgeShadow = isCross ? { enabled: true, color: 'rgba(168, 85, 247, 0.6)', size: 8 } : false;
 
     if (currentPalazzoFloor === 'vertical' && isCrossFloor) {
       edgeColor = '#38bdf8';
       edgeWidth = 2.8;
       isDashed = [6, 4];
+      edgeShadow = { enabled: true, color: 'rgba(56, 189, 248, 0.7)', size: 10 };
       edgeTitle = `⚡ Ascensore Sinaptico [Piano ${sFloor} ↔ Piano ${tFloor}] · ${e.relation || 'CONNECTS'}`;
     }
 
@@ -667,10 +699,11 @@ function renderGraphData() {
       title: edgeTitle,
       width: edgeWidth,
       dashes: isDashed,
+      shadow: edgeShadow,
       color: {
         color: edgeColor,
         highlight: '#ffffff',
-        hover: isCross ? '#e9d5ff' : '#38bdf8'
+        hover: isCross ? '#e9d5ff' : '#00d2ff'
       }
     });
   });
@@ -689,28 +722,28 @@ function renderGraphData() {
           enabled: true,
           solver: 'forceAtlas2Based',
           forceAtlas2Based: {
-            gravitationalConstant: -60,
-            centralGravity: 0.005,
-            springLength: 120,
-            springConstant: 0.08,
-            damping: 0.4,
-            avoidOverlap: 0.8
+            gravitationalConstant: -100,
+            centralGravity: 0.003,
+            springLength: 140,
+            springConstant: 0.06,
+            damping: 0.5,
+            avoidOverlap: 1.0
           },
           stabilization: {
             enabled: true,
-            iterations: 150,
-            updateInterval: 150,
+            iterations: 120,
+            updateInterval: 25,
             fit: true
           }
         }
       });
-      network.stabilize(150);
+      network.stabilize(120);
       network.once('stabilized', () => {
         network.setOptions({ physics: { enabled: false } });
       });
       setTimeout(() => {
         if (network) network.setOptions({ physics: { enabled: false } });
-      }, 200);
+      }, 300);
     }
   }
 }
