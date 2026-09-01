@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-01 10:07:06 UTC | **Nodi Restituiti:** 582 (SX: 401 · DX: 181) | **Sinapsi Restituite:** 1337
-> **Consistenza Reale Connettoma:** 582 Nodi Totali nel Database | 1337 Sinapsi Totali
+> **Data Generazione:** 2026-09-01 10:07:42 UTC | **Nodi Restituiti:** 585 (SX: 403 · DX: 182) | **Sinapsi Restituite:** 1344
+> **Consistenza Reale Connettoma:** 585 Nodi Totali nel Database | 1344 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -97,6 +97,10 @@
   - **Tags:** `#versioning` `#vector-embeddings` `#data-volatility` `#conflict-resolution`
   - **Sintesi:** Identificazione di mancanze critiche nella gestione temporale (decadimento, versioning dei nodi conflittuali) e suggerimento di integrazione vettoriale per la ricerca semantica ibrida.
   - **Dettagli:** `raw`: `proposed_edge`: SUPERSEDES, `proposed_fields`: ['timestamp_updated', 'volatility', 'embedding_vector'], `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+- **Analisi e Mappatura Stack Grafico Frontend** (`reasoning-analisi-stack-grafico-universal-brain`)
+  - **Tags:** `#architecture` `#frontend` `#vis-network` `#threejs` `#d3` `#cytoscape`
+  - **Sintesi:** Analisi tecnica comparativa sull'impiego reale di Vis-Network (vista 2D), Three.js (Mappamondo 3D), D3.js / 3D-Force-Graph (mockup prototipali) e Cytoscape.js nel progetto Universal AI Brain.
+  - **Dettagli:** `actions_taken`: ['Ispezione del connettoma e del repository CervelloArtificiale', 'Verifica librerie in static/vendor/ e static/app.js', 'Mappatura del ruolo effettivo di Vis-Network, Three.js, 3D-Force-Graph, D3.js e Cytoscape.js'], `model`: Gemini 3.7 Flash, `outcome`: Spiegazione dettagliata dello stack attivo in produzione (Vis-Network + Three.js nativo), delle librerie prototipate (3D-Force-Graph, D3.js) e del potenziale futuro di Cytoscape.js, `responses_given`: Mappatura esaustiva del ruolo di ciascuna tecnologia nel progetto
 - **Architettura Anti-Amnesia: Grafo Esterno vs Context Window Effimera** (`ai-reasoning-infinite-context-architecture`)
   - **Tags:** `#anti-amnesia` `#graph-rag` `#context-externalization` `#metacognition` `#gemini`
   - **Sintesi:** Deduzione logica Gemini: disaccoppiare la memoria a lungo termine dal context buffer del modello trasforma l'AI da sessione stateless a intelligenza stateful continua.
@@ -1632,6 +1636,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#pkm` `#obsidian` `#notion` `#rag` `#second-brain` `#llm-tools`
   - **Sintesi:** Richiesta di spiegazione comparativa sulle ragioni e i casi d'uso dell'integrazione di LLM con Notion e Obsidian.
   - **Dettagli:** `user_prompt`: Perché molti collegano Notion a Claude, Gemini ecc…cosa fa di diverso. Perché collegano anche obsidian? Cosa si può fare con obsidian, `context`: Valutazione dei sistemi di Personal Knowledge Management (PKM) e strategie RAG locali vs cloud., `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+- **Chiarimento Stack Rendering Grafi Frontend** (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
+  - **Tags:** `#frontend` `#graph-visualization` `#vis-network` `#threejs` `#d3js` `#cytoscape`
+  - **Sintesi:** Verifica dello stato di utilizzo e adozione di Vis-network, 3d-force-graph, Three.js, D3.js e Cytoscape.js nel frontend del connettoma.
+  - **Dettagli:** `context`: Richiesta chiarimenti sull'uso di Cytoscape.js, Vis-network, 3d-force-graph e D3.js nel frontend di Universal AI Brain, `user_prompt`: /universal-brain per la rappresentazione grafica dei grafi nel nostro frontend/sito, usiamo queste cose?? Cytoscape.js, Vis-network, 3d-force-graph, D3.js
 - **Costruzione App Personale Apprendimento Portoghese e Tedesco** (`intent-personal-language-learning-app`)
   - **Tags:** `#language-learning` `#portuguese` `#german` `#personal-software` `#srs`
   - **Sintesi:** L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
@@ -2541,6 +2549,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#tesi` `#oncologia` `#deep-learning`
   - **Sintesi:** Sessione incentrata sulla definizione e contestualizzazione di Swin Transformer e Deep Stable Learning per la classificazione di immagini di cancro al seno.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Architetture Transformer e Inferenza Causale in Imaging Oncologico, `key_takeaways`: Swin Transformer ottimizza la computazione visiva multiscala con finestre shiftate; Deep Stable Learning assicura robustezza OOD rimuovendo correlazioni spurie nei dati clinici.
+- **Episodio: Chiarimento Tecnologie Grafiche Frontend** (`episode-chiarimento-librerie-grafi-frontend`)
+  - **Tags:** `#chat` `#frontend-stack` `#graph-rendering`
+  - **Sintesi:** Sessione di chiarimento sullo stack di visualizzazione grafi adottato e prototipato nel sito e nella dashboard del connettoma.
+  - **Dettagli:** `key_takeaways`: Vis-Network e Three.js sono i motori di produzione attivi; D3 e 3D-Force-Graph sono testati nei mockup; Cytoscape è la candidata per scenari iper-complessi (>5000 nodi)., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Eventuale integrazione della vista radiale D3 o motore ibrido per performance estreme, `topic`: Tecnologie di rendering grafico per Universal AI Brain
 - **Episodio: Comando /prompt Copia Rapida per Telegra** (`episode-comando-prompt-copia-rapi-8585`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Comando /prompt Copia Rapida per Telegram Bot
@@ -3568,6 +3580,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-che-ore-sono-3134`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-chiarimento-stack-rendering-grafi-frontend`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-cloud-git-auto-push`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-confronto-integrazioni-llm-notion-obsidian`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3696,6 +3709,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[RECORDS_INTENT]--> (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) *(Corpo Calloso)*
 - (`episode-chiarimento-concetti-tesi-deep-learning`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) *(Corpo Calloso)*
 - (`episode-chiarimento-intuitivo-pilastri-teorici`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) *(Corpo Calloso)*
+- (`episode-chiarimento-librerie-grafi-frontend`) --[RECORDS_INTENT]--> (`user-intent-chiarimento-stack-rendering-grafi-frontend`) *(Corpo Calloso)*
 - (`episode-cloud-git-auto-push`) --[RECORDS_INTENT]--> (`user-intent-cloud-git-auto-push`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-completamento-supercervello-ecosistema`) --[RECORDS_INTENT]--> (`user-intent-implementazione-ecosistema-supercervello`) *(Corpo Calloso)*
@@ -3759,6 +3773,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[RECORDS_REASONING]--> (`reasoning-chi-pierfrancesco-amendola-e-cosa-8426`) *(Corpo Calloso)*
 - (`episode-chiarimento-concetti-tesi-deep-learning`) --[RECORDS_REASONING]--> (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) *(Corpo Calloso)*
 - (`episode-chiarimento-intuitivo-pilastri-teorici`) --[RECORDS_REASONING]--> (`reasoning-semplificazione-concettuale-causal-dl`) *(Corpo Calloso)*
+- (`episode-chiarimento-librerie-grafi-frontend`) --[RECORDS_REASONING]--> (`reasoning-analisi-stack-grafico-universal-brain`) *(Corpo Calloso)*
 - (`episode-cloud-git-auto-push`) --[RECORDS_REASONING]--> (`reasoning-cloud-git-auto-push`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-completamento-supercervello-ecosistema`) --[RECORDS_REASONING]--> (`reasoning-costruzione-collaudo-ecosistema-supercervello`) *(Corpo Calloso)*
@@ -4259,6 +4274,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-market-analysis-automation`) --[FULFILLS]--> (`user-intent-ai-shorts-evaluation`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
+- (`reasoning-analisi-stack-grafico-universal-brain`) --[FULFILLS]--> (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
 - (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) --[FULFILLS]--> (`user-intent-espansione-supercervello-integrazioni`)
 - (`reasoning-architettura-jarvis-zero-cost`) --[FULFILLS]--> (`user-intent-creazione-jarvis-voice-assistant`)
@@ -4363,6 +4379,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-chi-pierfrancesco-amendola-e-cosa-8426`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-chiarimento-concetti-tesi-deep-learning`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-chiarimento-intuitivo-pilastri-teorici`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-chiarimento-librerie-grafi-frontend`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-cloud-git-auto-push`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-completamento-supercervello-ecosistema`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4415,6 +4432,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-analisi-fattibilita-language-app`) --[OPTIMIZES]--> (`reasoning-language-app-architecture`)
+- (`reasoning-analisi-stack-grafico-universal-brain`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-architettura-jarvis-zero-cost`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
@@ -4516,6 +4534,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-che-ore-sono-3134`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-chiarimento-stack-rendering-grafi-frontend`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-cloud-git-auto-push`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-creazione-jarvis-voice-assistant`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
