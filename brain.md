@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-01 11:26:30 UTC | **Nodi Restituiti:** 588 (SX: 405 · DX: 183) | **Sinapsi Restituite:** 1351
-> **Consistenza Reale Connettoma:** 588 Nodi Totali nel Database | 1351 Sinapsi Totali
+> **Data Generazione:** 2026-09-01 11:26:39 UTC | **Nodi Restituiti:** 591 (SX: 407 · DX: 184) | **Sinapsi Restituite:** 1358
+> **Consistenza Reale Connettoma:** 591 Nodi Totali nel Database | 1358 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -105,6 +105,10 @@
   - **Tags:** `#anti-amnesia` `#graph-rag` `#context-externalization` `#metacognition` `#gemini`
   - **Sintesi:** Deduzione logica Gemini: disaccoppiare la memoria a lungo termine dal context buffer del modello trasforma l'AI da sessione stateless a intelligenza stateful continua.
   - **Dettagli:** `raw`: `architecture_solution`: External Graph State (SQLite WAL + GraphRAG) vs Volatile Prompt Buffer, `benefits`: ["Nuova chat legge /brain.md e recupera istantaneamente l'intero stato pregresso", 'Nessun degrado qualitativo dovuto al context bloat', 'Indipendenza da limiti di contesto di specifici provider LLM'], `model`: Gemini 3.7 Flash
+- **Architettura ConstellationGroup 3D, Decoupling Luminosità e Geometria Sferica** (`reasoning-embedding-projector-globe-and-optics`)
+  - **Tags:** `#threejs` `#webgl` `#architecture` `#matrix-transform`
+  - **Sintesi:** Risolto bug di scaling ricorsivo unificando i mesh in constellationGroup; implementato calcolo spaziale Fibonacci/Golden Angle per gli emisferi ed emissione colore RGB per la luminosità.
+  - **Dettagli:** `actions_taken`: ['Creato constellationGroup per gestione matriciale uniforme di punti, archi, laser, domini e labels', 'Implementato calcolo posizioni sferiche Emisferi Globo con polar crown per L0', 'Disaccoppiata luminosità dalla dimensione dei nodi tramite moltiplicatore sui vertici RGB', 'Stilizzato pulsante di uscita in rosso pieno brillante con bagliore neon'], `model`: Antigravity 2.0, `outcome`: Visualizzazione 3D ed Emisferi completata a 60 FPS con controllo ottico continuo e zero bug di coordinate
 - **Architettura Mappamondo 3D: Gabbia Olografica, Laser Sinaptici & Floating Rel Card** (`reasoning-architettura-mappamondo-spotlight-3d`)
   - **Tags:** `#threejs` `#laser-synapses` `#hud-card` `#bi-hemispheric`
   - **Sintesi:** Implementazione di anelli equatoriali/meridiani Three.js, isolamento 1st-degree neighbors al click, raggi laser additivi ad alta intensità e pannello HUD Glassmorphism con link di navigazione sinaptica.
@@ -1664,6 +1668,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#supercervello` `#raycast` `#safari-clipper` `#siri` `#rem-cycle` `#obsidian-canvas` `#zero-cost`
   - **Sintesi:** Costruzione completa e collaudo a 10 test di tutti i moduli di estensione: Raycast, Web Clipper Safari, Siri Voice Note, Daily Pulse Telegram, Kindle Sync, REM Cycle, Ricerca Ibrida RRF, IDE Hooks e Obsidian Canvas.
   - **Dettagli:** `context`: Costruzione dell'intero ecosistema ad attrito zero su Safari, Mac, Mobile e demone notturno, `user_prompt`: allora procedi con l'implementazione del piano chiaro??? io utilizzo safari. va bene l'orario che hai stabilito. procedi, mi raaccomando, vai piano piano
+- **Integrazione Emisferi Globo, Ottica Spaziale e Refinements Projector 3D** (`user-intent-embedding-projector-globe-and-optics`)
+  - **Tags:** `#ui` `#projector3d` `#webgl` `#threejs` `#optics`
+  - **Sintesi:** Implementazione della modalità Mappamondo Sferico con distribuzione bi-emisferica, controlli slider GPU per distanza nodi, luminosità pura e opacità archi, e pulsante di uscita rosso in basso a sinistra.
+  - **Dettagli:** `context`: Mappamondo 3D sferico stile projector, disaccoppiamento luminosità da dimensione nodi, spaziatura nodi fluida e uscita projector in basso a sinistra in rosso, `user_prompt`: in project 3d affianco 3d volumetrico e planare aggiungi emisfero, proviamo a creare un mappamondo... aggiungi la possibilità di modificare la distanza dei nodi tra di loro, se aumentare la luminosità degli archi o dei nodi... non voglio che la luminosità sia dipendente dalla dimensione dei nodi.
 - **Integrazione Riferimento Tabelle Comparative nel Cappello del Capitolo 6** (`user-intent-integrazione-tabelle-cappello-capitolo-6`)
   - **Tags:** `#tesi-laurea` `#tabelle-comparative` `#latex` `#metodologia`
   - **Sintesi:** Richiesta di aggiungere 2-3 righe al cappello introduttivo del Capitolo 6 specificando che i risultati saranno presentati e comparati sistematicamente tramite tabelle riassuntive.
@@ -2749,6 +2757,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#system-evaluation` `#meta-conversation` `#ai-development`
   - **Sintesi:** Sessione dedicata all'introspezione sistemica e al miglioramento dell'infrastruttura cognitiva dell'AI stessa.
   - **Dettagli:** `raw`: `date`: 2026-08-29, `topic`: System Metacognition & Graphify Protocol, `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+- **Perfezionamento del 3D Cognitive Embedding Projector & Ottica Neurale** (`episode-embedding-projector-globe-and-optics`)
+  - **Tags:** `#episode` `#projector3d` `#design` `#session`
+  - **Sintesi:** Sessione di sviluppo per arricchire il visualizzatore neurale 3D con proiezione a globo, controllo di luminosità e spaziatura, e layout ergonomico.
+  - **Dettagli:** `key_takeaways`: Il Projector 3D dispone ora di 3 modalità spaziali (3D Volum., 2D Planare, Emisferi Globo), controlli ottici in tempo reale e uscita rapida. Il grafo 2D e la sidebar restano invariati., `participants`: ['Pierfrancesco Amendola', 'Antigravity 2.0'], `pending_tasks`: Nessuno, `topic`: Evoluzione del 3D Cognitive Embedding Projector & Ottica Neurale
 - **Progettazione Piattaforma Personale di Apprendimento Linguistico** (`episode-language-app-architecture`)
   - **Tags:** `#language-learning` `#software-design` `#chat-session`
   - **Sintesi:** Discussione architetturale incentrata sulla creazione di un'applicazione proprietaria e non divulgata per lo studio del portoghese e del tedesco senza restrizioni di utilizzo.
@@ -3609,6 +3621,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-e2e-test-session-hook-8745`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-e2e-test-session-hook-9065`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-embedding-projector-globe-and-optics`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-espansione-supercervello-integrazioni`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-fix-daemon-render-persistence`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3736,6 +3749,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-e2e-test-session-hook-8745`) --[RECORDS_INTENT]--> (`user-intent-e2e-test-session-hook-8745`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-9065`) --[RECORDS_INTENT]--> (`user-intent-e2e-test-session-hook-9065`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_INTENT]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
+- (`episode-embedding-projector-globe-and-optics`) --[RECORDS_INTENT]--> (`user-intent-embedding-projector-globe-and-optics`) *(Corpo Calloso)*
 - (`episode-espansione-ecosistema-supercervello`) --[RECORDS_INTENT]--> (`user-intent-espansione-supercervello-integrazioni`) *(Corpo Calloso)*
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_INTENT]--> (`user-intent-distro-linux-modellazione-3d`) *(Corpo Calloso)*
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_INTENT]--> (`user-intent-fix-daemon-render-persistence`) *(Corpo Calloso)*
@@ -3801,6 +3815,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-e2e-test-session-hook-8745`) --[RECORDS_REASONING]--> (`reasoning-e2e-test-session-hook-8745`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-9065`) --[RECORDS_REASONING]--> (`reasoning-e2e-test-session-hook-9065`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_REASONING]--> (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
+- (`episode-embedding-projector-globe-and-optics`) --[RECORDS_REASONING]--> (`reasoning-embedding-projector-globe-and-optics`) *(Corpo Calloso)*
 - (`episode-espansione-ecosistema-supercervello`) --[RECORDS_REASONING]--> (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) *(Corpo Calloso)*
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_REASONING]--> (`reasoning-mappatura-ecosistema-linux-3d`) *(Corpo Calloso)*
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_REASONING]--> (`reasoning-fix-daemon-render-persistence`) *(Corpo Calloso)*
@@ -4317,6 +4332,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-e2e-test-session-hook-9065`) --[FULFILLS]--> (`user-intent-e2e-test-session-hook-9065`)
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[FULFILLS]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
 - (`reasoning-eliminazione-jarvis-pulizia`) --[FULFILLS]--> (`user-intent-abbandono-jarvis-nuovo-progetto`)
+- (`reasoning-embedding-projector-globe-and-optics`) --[FULFILLS]--> (`user-intent-embedding-projector-globe-and-optics`)
 - (`reasoning-fix-daemon-render-persistence`) --[FULFILLS]--> (`user-intent-fix-daemon-render-persistence`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[FULFILLS]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
 - (`reasoning-integrazione-esplicita-tabelle-comparative`) --[FULFILLS]--> (`user-intent-integrazione-tabelle-cappello-capitolo-6`)
@@ -4409,6 +4425,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-e2e-test-session-hook-8745`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-e2e-test-session-hook-9065`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-embedding-projector-globe-and-optics`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-espansione-ecosistema-supercervello`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-esplorazione-linux-3d-modeling`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-fix-daemon-render-persistence`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4471,6 +4488,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-e2e-test-session-hook-8745`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-e2e-test-session-hook-9065`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-embedding-projector-globe-and-optics`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-fix-daemon-render-persistence`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -4566,6 +4584,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-e2e-test-session-hook-8745`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-e2e-test-session-hook-9065`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-embedding-projector-globe-and-optics`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-espansione-supercervello-integrazioni`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-fix-daemon-render-persistence`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
