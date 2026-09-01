@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-01 09:35:14 UTC | **Nodi Restituiti:** 579 (SX: 399 · DX: 180) | **Sinapsi Restituite:** 1332
-> **Consistenza Reale Connettoma:** 579 Nodi Totali nel Database | 1332 Sinapsi Totali
+> **Data Generazione:** 2026-09-01 09:35:16 UTC | **Nodi Restituiti:** 582 (SX: 401 · DX: 181) | **Sinapsi Restituite:** 1337
+> **Consistenza Reale Connettoma:** 582 Nodi Totali nel Database | 1337 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -249,6 +249,10 @@
   - **Tags:** `#ollama` `#filesystem` `#bash` `#diagnosi`
   - **Sintesi:** Analisi dell'architettura di storage di Ollama su macOS: identificati i percorsi ~/.ollama/models/blobs e ~/Library/Application Support/Ollama con relativi comandi di rimozione sicura.
   - **Dettagli:** `model`: Gemini, `actions_taken`: ['Mappatura directory predefinita modelli Ollama (~/.ollama/models/blobs)', 'Fornitura comando di verifica dimensione disco (du -sh)', 'Fornitura comando di eliminazione ricorsiva sicura (rm -rf)'], `outcome`: Istruzioni fornite per il recupero immediato di 7GB di spazio su disco.
+- **Integrazione Lessicale di Tabelle e Metriche Quantitative** (`reasoning-integrazione-esplicita-tabelle-comparative`)
+  - **Tags:** `#struttura-tesi` `#sintesi-quantitativa` `#cross-validation`
+  - **Sintesi:** Inserimento di un capoverso finale che valorizza le tabelle riassuntive della tesi (Tabelle 6.4 - 6.16) e l'analisi quantitativa della variabilità statistica nei fold di cross-validation, prima del dettaglio delle sezioni.
+  - **Dettagli:** `model`: Gemini 2.5, `actions_taken`: ['Mantenimento della struttura concisa a tre brevi capoversi', 'Aggiunta esplicita della menzione alle tabelle comparative e alle metriche prestazionali', 'Preservazione del registro scientifico formale in lingua italiana'], `outcome`: Cappello completo, equilibrato e perfettamente allineato ai contenuti tabellari del capitolo
 - **Mappatura Ecosistema Linux per Computer Grafica 3D** (`reasoning-mappatura-ecosistema-linux-3d`)
   - **Tags:** `#linux-distros` `#3d-software` `#blender` `#cad` `#flatpak`
   - **Sintesi:** Strutturazione della risposta evidenziando sia le distribuzioni specializzate (Fedora Design Suite, Ubuntu Studio) sia l'ampia compatibilità nativa dei software standard (Blender, FreeCAD, Houdini) su qualsiasi distro via package manager e Flatpak.
@@ -1644,6 +1648,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#supercervello` `#raycast` `#safari-clipper` `#siri` `#rem-cycle` `#obsidian-canvas` `#zero-cost`
   - **Sintesi:** Costruzione completa e collaudo a 10 test di tutti i moduli di estensione: Raycast, Web Clipper Safari, Siri Voice Note, Daily Pulse Telegram, Kindle Sync, REM Cycle, Ricerca Ibrida RRF, IDE Hooks e Obsidian Canvas.
   - **Dettagli:** `context`: Costruzione dell'intero ecosistema ad attrito zero su Safari, Mac, Mobile e demone notturno, `user_prompt`: allora procedi con l'implementazione del piano chiaro??? io utilizzo safari. va bene l'orario che hai stabilito. procedi, mi raaccomando, vai piano piano
+- **Integrazione Riferimento Tabelle Comparative nel Cappello del Capitolo 6** (`user-intent-integrazione-tabelle-cappello-capitolo-6`)
+  - **Tags:** `#tesi-laurea` `#tabelle-comparative` `#latex` `#metodologia`
+  - **Sintesi:** Richiesta di aggiungere 2-3 righe al cappello introduttivo del Capitolo 6 specificando che i risultati saranno presentati e comparati sistematicamente tramite tabelle riassuntive.
+  - **Dettagli:** `user_prompt`: perfetto aggiungi solo che vedremo i risultati ottenuti, e potremo compararli tramite le tabelle ecc..giusto altre due/tre righe, `context`: Perfezionamento finale del testo introduttivo del Capitolo 6 (Risultati e Discussione) per la tesi di laurea triennale.
 - **Intento Utente: Collegare Cervello via MCP e Skill a Claude, Gemini e ChatGPT** (`user-intent-connect-gemini-claude-chatgpt-mcp`)
   - **Tags:** `#user-intent` `#mcp-integration` `#multi-model-sync`
   - **Sintesi:** Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
@@ -2601,6 +2609,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#continuità-cognitiva` `#visual-showcase` `#layout`
   - **Sintesi:** Presentazione e analisi interattiva di 5 layout alternativi per l'interfaccia del connettoma a due emisferi.
   - **Dettagli:** `key_takeaways`: I dati rimangono invariati (307 nodi), ma il rendering può spaziare da orbite 3D a torri isometriche a mappe Voronoi., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Scegliere il layout preferito da integrare nella Web App live, `topic`: Nuove visualizzazioni e stili di rendering per il grafo di memoria
+- **Episodio: Finalizzazione Cappello Risultati con Riferimento Tabelle** (`episode-perfezionamento-cappello-tabelle-cap-6`)
+  - **Tags:** `#chat` `#tesi` `#finalizzazione`
+  - **Sintesi:** Completamento dell'introduzione sintetica al capitolo dei risultati con menzione specifica al confronto tramite tabelle e matrici di confusione.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Integrazione riferimento alle tabelle comparative nel Capitolo 6, `key_takeaways`: Generato il frammento definitivo in LaTeX pronto per la compilazione.
 - **Episodio: Fondamenti e Filosofia della Memoria Eterna Cross-Chat** (`episode-infinite-context-philosophy`)
   - **Tags:** `#conversation-episode` `#core-mission` `#context-saturation` `#gemini-session`
   - **Sintesi:** Formalizzazione della ragion d'essere del cervello artificiale: superare il reset della memoria per saturazione delle chat tramite grafo semantico unificato.
@@ -3578,6 +3590,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-implementazione-ecosistema-supercervello`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-integrazione-openjarvis-stanford`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-integrazione-tabelle-cappello-capitolo-6`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ma-tutto-falso-8462`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3706,6 +3719,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_INTENT]--> (`user-intent-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_INTENT]--> (`user-intent-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
+- (`episode-perfezionamento-cappello-tabelle-cap-6`) --[RECORDS_INTENT]--> (`user-intent-integrazione-tabelle-cappello-capitolo-6`) *(Corpo Calloso)*
 - (`episode-potenziamento-cognitivo-obsidian-bridge`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-cognitivo-obsidian-bridge`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
@@ -3768,6 +3782,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_REASONING]--> (`reasoning-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
+- (`episode-perfezionamento-cappello-tabelle-cap-6`) --[RECORDS_REASONING]--> (`reasoning-integrazione-esplicita-tabelle-comparative`) *(Corpo Calloso)*
 - (`episode-potenziamento-cognitivo-obsidian-bridge`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-cognitivo-obsidian-bridge`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
@@ -4273,6 +4288,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-eliminazione-jarvis-pulizia`) --[FULFILLS]--> (`user-intent-abbandono-jarvis-nuovo-progetto`)
 - (`reasoning-fix-daemon-render-persistence`) --[FULFILLS]--> (`user-intent-fix-daemon-render-persistence`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[FULFILLS]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
+- (`reasoning-integrazione-esplicita-tabelle-comparative`) --[FULFILLS]--> (`user-intent-integrazione-tabelle-cappello-capitolo-6`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[FULFILLS]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
 - (`reasoning-ma-tutto-falso-8462`) --[FULFILLS]--> (`user-intent-ma-tutto-falso-8462`)
 - (`reasoning-mappatura-ecosistema-linux-3d`) --[FULFILLS]--> (`user-intent-distro-linux-modellazione-3d`)
@@ -4370,6 +4386,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-nuove-rappresentazioni-vi-2874`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ottimizzazione-mobile-web-8880`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-perfezionamento-cappello-tabelle-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-cognitivo-obsidian-bridge`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-skill-e-ril-8338`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
