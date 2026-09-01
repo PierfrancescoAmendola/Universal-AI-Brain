@@ -8,7 +8,7 @@ layer_level: 1
 parent_graph_id: root
 tags: [web-clipper, test]
 confidence: EXTRACTED
-updated_at: "2026-08-31T20:44:25.630013+00:00"
+updated_at: "2026-09-01T14:47:40.626117+00:00"
 ---
 
 # Test E2E Web Clipper Node

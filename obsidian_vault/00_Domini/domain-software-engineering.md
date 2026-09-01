@@ -106,3 +106,4 @@ Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architett
 - [[node-nota-rapida-raycast-test]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio tematico_
 - [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Disegnato su Obsidian Canvas_
 - [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_
+- [[reasoning-gesture-zoom-terminal-dock-tabs]] (`BELONGS_TO`) — _Appartiene al dominio di Ingegneria del Software_

@@ -125,7 +125,10 @@ Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP (Model Context Protocol)
 - [[voice-test-shortcuts-debug-7964]] (`BELONGS_TO_DOMAIN`)
 - [[voice-riflessione-sullantifragilit-nei-sistemi-software-8745]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio cognitivo_
 - [[voice-riflessione-sullantifragilit-nei-sistemi-software-9065]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio cognitivo_
+- [[voice-riflessione-sullantifragilit-nei-sistemi-software-3785]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio cognitivo_
+- [[voice-riflessione-sullantifragilit-nei-sistemi-software-4060]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio cognitivo_
 - [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Disegnato su Obsidian Canvas_
 - [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_
 - [[proj-cervelloartificiale]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
 - [[universal-ai-brain]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[ux-natural-gesture-controls-3d]] (`BELONGS_TO`) — _Appartiene al dominio di Sistemi Cognitivi e AI Interattiva_

@@ -1067,9 +1067,439 @@ window.EmbeddingProjector = (function() {
     animate();
   }
 
+  /* ==========================================================================
+     MediaPipe Hand Gesture 3D Spatial Controller
+     ========================================================================== */
+  let isGestureEnabled = false;
+  let handsDetector = null;
+  let webcamStream = null;
+  let gestureVideoEl = null;
+  let gestureCanvasEl = null;
+  let gestureCtx = null;
+  let gestureAnimFrameId = null;
+
+  let prevHandPos = null;
+  let smoothedPos = { x: 0.5, y: 0.5 };
+  let prevPinchDist = null;
+  let prevTwoHandsDist = null;
+  let prevHandScale = null;
+
+  function toggleGestureControl() {
+    if (isGestureEnabled) {
+      stopGestureControl();
+    } else {
+      startGestureControl();
+    }
+  }
+
+  async function startGestureControl() {
+    const btn = document.getElementById('proj-btn-gesture');
+    const hud = document.getElementById('proj-gesture-hud');
+    gestureVideoEl = document.getElementById('proj-webcam-video');
+    gestureCanvasEl = document.getElementById('proj-webcam-canvas');
+    if (gestureCanvasEl) gestureCtx = gestureCanvasEl.getContext('2d');
+
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      alert('Accesso webcam non supportato dal tuo browser.');
+      return;
+    }
+
+    try {
+      webcamStream = await navigator.mediaDevices.getUserMedia({
+        video: { width: 320, height: 240, facingMode: 'user' }
+      });
+      if (gestureVideoEl) {
+        gestureVideoEl.srcObject = webcamStream;
+        await gestureVideoEl.play();
+      }
+
+      if (btn) btn.classList.add('active');
+      if (hud) hud.style.display = 'flex';
+      isGestureEnabled = true;
+
+      if (typeof window.Hands !== 'undefined') {
+        initMediaPipeHands();
+      } else {
+        loadMediaPipeScripts().then(initMediaPipeHands);
+      }
+    } catch (err) {
+      console.error('Errore avvio webcam:', err);
+      alert('Impossibile accedere alla webcam: ' + err.message);
+      stopGestureControl();
+    }
+  }
+
+  function stopGestureControl() {
+    isGestureEnabled = false;
+    const btn = document.getElementById('proj-btn-gesture');
+    const hud = document.getElementById('proj-gesture-hud');
+    if (btn) btn.classList.remove('active');
+    if (hud) hud.style.display = 'none';
+
+    if (webcamStream) {
+      webcamStream.getTracks().forEach(t => t.stop());
+      webcamStream = null;
+    }
+    if (gestureAnimFrameId) {
+      cancelAnimationFrame(gestureAnimFrameId);
+      gestureAnimFrameId = null;
+    }
+    prevHandPos = null;
+    prevPinchDist = null;
+    prevTwoHandsDist = null;
+    prevHandScale = null;
+  }
+
+  function loadMediaPipeScripts() {
+    return new Promise(resolve => {
+      if (window.Hands) { resolve(); return; }
+      const s1 = document.createElement('script');
+      s1.src = 'https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js';
+      s1.crossOrigin = 'anonymous';
+      document.head.appendChild(s1);
+
+      const s2 = document.createElement('script');
+      s2.src = 'https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js';
+      s2.crossOrigin = 'anonymous';
+      s2.onload = () => resolve();
+      document.head.appendChild(s2);
+    });
+  }
+
+  function initMediaPipeHands() {
+    if (!window.Hands) return;
+
+    handsDetector = new window.Hands({
+      locateFile: file => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
+    });
+
+    handsDetector.setOptions({
+      maxNumHands: 2,
+      modelComplexity: 1,
+      minDetectionConfidence: 0.5,
+      minTrackingConfidence: 0.5
+    });
+
+    handsDetector.onResults(onHandResults);
+
+    async function sendFrame() {
+      if (!isGestureEnabled || !gestureVideoEl || gestureVideoEl.paused) return;
+      if (gestureVideoEl.readyState >= 2) {
+        await handsDetector.send({ image: gestureVideoEl });
+      }
+      gestureAnimFrameId = requestAnimationFrame(sendFrame);
+    }
+    sendFrame();
+  }
+
+  const HAND_CONNECTIONS = [
+    [0,1],[1,2],[2,3],[3,4],
+    [0,5],[5,6],[6,7],[7,8],
+    [5,9],[9,10],[10,11],[11,12],
+    [9,13],[13,14],[14,15],[15,16],
+    [13,17],[17,18],[18,19],[19,20],[0,17]
+  ];
+
+  function onHandResults(results) {
+    try {
+      if (!gestureCanvasEl || !gestureCtx) return;
+      const ctx = gestureCtx;
+      const w = gestureCanvasEl.width;
+      const h = gestureCanvasEl.height;
+
+      ctx.save();
+      ctx.clearRect(0, 0, w, h);
+      if (results.image) {
+        ctx.drawImage(results.image, 0, 0, w, h);
+      }
+
+      const badge = document.getElementById('proj-gesture-state');
+
+      if (!results.multiHandLandmarks || results.multiHandLandmarks.length === 0) {
+        if (badge) {
+          badge.innerText = 'Mostra mano/mani...';
+          badge.style.color = '#94a3b8';
+        }
+        prevHandPos = null;
+        prevPinchDist = null;
+        prevTwoHandsDist = null;
+        prevHandScale = null;
+        ctx.restore();
+        return;
+      }
+
+      const handsCount = results.multiHandLandmarks.length;
+
+      // Disegna scheletro neon di tutte le mani rilevate
+      results.multiHandLandmarks.forEach((landmarks, hIdx) => {
+        const handColor = hIdx === 0 ? '#00d2ff' : '#ff007f';
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = handColor;
+        HAND_CONNECTIONS.forEach(([i, j]) => {
+          const p1 = landmarks[i];
+          const p2 = landmarks[j];
+          if (p1 && p2) {
+            ctx.beginPath();
+            ctx.moveTo(p1.x * w, p1.y * h);
+            ctx.lineTo(p2.x * w, p2.y * h);
+            ctx.stroke();
+          }
+        });
+
+        landmarks.forEach((p, idx) => {
+        landmarks.forEach((p, idx) => {
+          if (!p) return;
+          ctx.beginPath();
+          ctx.arc(p.x * w, p.y * h, (idx === 8 || idx === 12) ? 5 : 3, 0, Math.PI * 2);
+          ctx.fillStyle = (idx === 8 || idx === 12) ? '#ffd15c' : handColor;
+          ctx.fill();
+        });
+      });
+
+      // Se 2 mani, disegna linea tratteggiata di connessione tra le due mani
+      if (handsCount >= 2) {
+        const h1 = results.multiHandLandmarks[0][0]; // Wrist 1
+        const h2 = results.multiHandLandmarks[1][0]; // Wrist 2
+        if (h1 && h2) {
+          ctx.save();
+          ctx.setLineDash([4, 4]);
+          ctx.beginPath();
+          ctx.moveTo(h1.x * w, h1.y * h);
+          ctx.lineTo(h2.x * w, h2.y * h);
+          ctx.strokeStyle = '#ffd15c';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+
+      ctx.restore();
+
+      // Processamento Gesti
+      if (handsCount >= 2) {
+        processTwoHandGestures(results.multiHandLandmarks, badge);
+      } else {
+        processSingleHandGestures(results.multiHandLandmarks[0], badge);
+      }
+    } catch (err) {
+      console.warn('Errore gesture frame:', err);
+    }
+  }
+
+  function dist(p1, p2) {
+    if (!p1 || !p2) return 1.0;
+    const dx = p1.x - p2.x;
+    const dy = p1.y - p2.y;
+    const dz = (p1.z || 0) - (p2.z || 0);
+    return Math.sqrt(dx * dx + dy * dy + dz * dz);
+  }
+
+  /* Gesti a Due Mani (Zoom intuitivo allargando/avvicinando le mani) */
+  function processTwoHandGestures(hands, badge) {
+    const h1 = hands[0][0]; // polso 1
+    const h2 = hands[1][0]; // polso 2
+    const currentDist = dist(h1, h2);
+
+    if (badge) {
+      badge.innerText = '👐 2 Mani: Zoom';
+      badge.style.color = '#ffd15c';
+    }
+
+    if (prevTwoHandsDist !== null && camera && controls) {
+      const delta = currentDist - prevTwoHandsDist;
+      // Allargando le mani (delta > 0) -> Zoom In (avvicina camera al target)
+      // Avvicinando le mani (delta < 0) -> Zoom Out (allontana camera)
+      if (Math.abs(delta) > 0.002) {
+        const factor = Math.exp(-delta * 3.5);
+        const offset = camera.position.clone().sub(controls.target);
+        const newDist = offset.length() * factor;
+        if (newDist > 20 && newDist < 4000) {
+          offset.multiplyScalar(factor);
+          camera.position.copy(controls.target).add(offset);
+          controls.update();
+        }
+        if (badge) {
+          badge.innerText = delta > 0 ? '👐 Zoom In (Allarga)' : '👐 Zoom Out (Avvicina)';
+        }
+      }
+    }
+
+    prevTwoHandsDist = currentDist;
+    prevPinchDist = null;
+    prevHandPos = null;
+    prevHandScale = null;
+  }
+
+  /* Gesti a Una Sola Mano (Zoom ✌️ o Profondità, Pugno Pan ✊, Indice Raycast ☝️, Palmo Orbita 🖐️) */
+  function processSingleHandGestures(lm, badge) {
+    if (!lm || lm.length < 21) return;
+    prevTwoHandsDist = null;
+
+    const wrist = lm[0];
+    const thumbTip = lm[4];
+    const indexTip = lm[8];
+    const middleTip = lm[12];
+    const ringTip = lm[16];
+    const pinkyTip = lm[20];
+    const middleMcp = lm[9];
+
+    const palmScale = dist(wrist, middleMcp); // Scala/profondità mano rispetto alla telecamera
+    const dIndexWrist = dist(indexTip, wrist);
+    const dMiddleWrist = dist(middleTip, wrist);
+    const dRingWrist = dist(ringTip, wrist);
+    const dPinkyWrist = dist(pinkyTip, wrist);
+
+    // Smoothing coordinate (EMA)
+    const rawX = 1.0 - (wrist.x * 0.4 + indexTip.x * 0.6); // Vista a specchio
+    const rawY = (wrist.y * 0.4 + indexTip.y * 0.6);
+    smoothedPos.x = smoothedPos.x * 0.6 + rawX * 0.4;
+    smoothedPos.y = smoothedPos.y * 0.6 + rawY * 0.4;
+
+    // Riconoscimento Gesti calibrato (SENZA PINCH)
+    const isFist = (dIndexWrist < 0.22 && dMiddleWrist < 0.22 && dRingWrist < 0.22 && dPinkyWrist < 0.22);
+    const isPointing = (dIndexWrist > 0.32 && dMiddleWrist < 0.25 && dRingWrist < 0.25 && dPinkyWrist < 0.25);
+    const isPeaceSign = (dIndexWrist > 0.32 && dMiddleWrist > 0.32 && dRingWrist < 0.25 && dPinkyWrist < 0.25); // ✌️ Zoom gesture
+    const isOpenPalm = (dIndexWrist > 0.32 && dMiddleWrist > 0.32 && dRingWrist > 0.32 && dPinkyWrist > 0.32);
+
+    if (isPeaceSign) {
+      // 1. GESTO DUE DITA (✌️ PEACE ZOOM)
+      // Muovendo la mano in alto fa Zoom In; muovendo in basso fa Zoom Out
+      if (badge) {
+        badge.innerText = '✌️ Zoom (Muovi Su/Giù)';
+        badge.style.color = '#ffd15c';
+      }
+
+      if (camera && controls) {
+        let zoomDelta = 0;
+
+        // Variazione movimento verticale (Su = Zoom In, Giù = Zoom Out)
+        if (prevHandPos !== null) {
+          const dy = smoothedPos.y - prevHandPos.y;
+          if (Math.abs(dy) > 0.002) {
+            zoomDelta += dy * 4.0;
+          }
+        }
+
+        // Variazione profondità mano
+        if (prevHandScale !== null) {
+          const dScale = palmScale - prevHandScale;
+          if (Math.abs(dScale) > 0.003) {
+            zoomDelta -= dScale * 6.0;
+          }
+        }
+
+        if (zoomDelta !== 0) {
+          const factor = Math.exp(zoomDelta * 0.9);
+          const offset = camera.position.clone().sub(controls.target);
+          const newDist = offset.length() * factor;
+          if (newDist > 20 && newDist < 4000) {
+            offset.multiplyScalar(factor);
+            camera.position.copy(controls.target).add(offset);
+            controls.update();
+          }
+        }
+      }
+
+      prevHandScale = palmScale;
+    } else if (isFist) {
+      // 2. CLOSED FIST PAN (Spostamento Camera ✊)
+      if (badge) {
+        badge.innerText = '✊ Spostamento Camera';
+        badge.style.color = '#ff007f';
+      }
+
+      if (prevHandPos && camera && controls) {
+        const dx = (smoothedPos.x - prevHandPos.x) * 450;
+        const dy = (smoothedPos.y - prevHandPos.y) * 450;
+        const te = camera.matrix.elements;
+        const right = new THREE.Vector3(te[0], te[1], te[2]);
+        const up = new THREE.Vector3(te[4], te[5], te[6]);
+        const panOffset = new THREE.Vector3();
+        panOffset.addScaledVector(right, -dx * 0.7);
+        panOffset.addScaledVector(up, dy * 0.7);
+        camera.position.add(panOffset);
+        controls.target.add(panOffset);
+        controls.update();
+      }
+      prevHandScale = palmScale;
+    } else if (isPointing) {
+      // 3. INDEX POINTER / RAYCAST (Puntatore Laser ☝️)
+      if (badge) {
+        badge.innerText = '☝️ Puntatore Laser';
+        badge.style.color = '#38bdf8';
+      }
+
+      if (renderer && camera && pointCloudMesh) {
+        const mouse = new THREE.Vector2(smoothedPos.x * 2 - 1, -(smoothedPos.y * 2 - 1));
+        const raycaster = new THREE.Raycaster();
+        raycaster.params.Points.threshold = 14;
+        raycaster.setFromCamera(mouse, camera);
+        const hits = raycaster.intersectObject(pointCloudMesh);
+        if (hits.length > 0) {
+          const node = brainNodes[hits[0].index];
+          if (node) {
+            selectNode(node);
+          }
+        }
+      }
+      prevHandScale = palmScale;
+    } else if (isOpenPalm) {
+      // 4. OPEN PALM ORBIT & DEPTH ZOOM (🖐️ Orbita 3D e Zoom in Profondità)
+      if (badge) {
+        badge.innerText = '🖐️ Orbita 3D & Profondità';
+        badge.style.color = '#10b981';
+      }
+
+      if (camera && controls) {
+        // Rotazione Orbita con movimento X/Y
+        if (prevHandPos) {
+          const dx = (smoothedPos.x - prevHandPos.x) * 5.5;
+          const dy = (smoothedPos.y - prevHandPos.y) * 5.5;
+          const offset = camera.position.clone().sub(controls.target);
+          const spherical = new THREE.Spherical().setFromVector3(offset);
+          spherical.theta -= dx;
+          spherical.phi = Math.max(0.05, Math.min(Math.PI - 0.05, spherical.phi - dy));
+          offset.setFromSpherical(spherical);
+          camera.position.copy(controls.target).add(offset);
+          camera.lookAt(controls.target);
+          controls.update();
+        }
+
+        // Zoom Naturale in Profondità: Avvicinando la mano alla webcam fa Zoom In, Allontanandola fa Zoom Out
+        if (prevHandScale !== null) {
+          const dScale = palmScale - prevHandScale;
+          if (Math.abs(dScale) > 0.0035) {
+            const zoomDelta = -dScale * 5.5;
+            const factor = Math.exp(zoomDelta * 0.8);
+            const offset = camera.position.clone().sub(controls.target);
+            const newDist = offset.length() * factor;
+            if (newDist > 20 && newDist < 4000) {
+              offset.multiplyScalar(factor);
+              camera.position.copy(controls.target).add(offset);
+              controls.update();
+            }
+            if (badge) {
+              badge.innerText = dScale > 0 ? '🖐️ Zoom In (Mano Vicina)' : '🖐️ Zoom Out (Mano Lontana)';
+            }
+          }
+        }
+      }
+      prevHandScale = palmScale;
+    } else {
+      if (badge) {
+        badge.innerText = 'Tracciamento attivo';
+        badge.style.color = '#00d2ff';
+      }
+      prevHandScale = palmScale;
+    }
+
+    prevHandPos = { x: smoothedPos.x, y: smoothedPos.y };
+  }
+
   function stop() {
     isRunning = false;
     isTsneRunning = false;
+    stopGestureControl();
     const btn = document.getElementById('proj-btn-tsne-toggle');
     if (btn) btn.classList.remove('btn-pause');
   }
@@ -1084,6 +1514,7 @@ window.EmbeddingProjector = (function() {
     setAlgorithm,
     toggleTsne,
     resetTsne,
+    toggleGestureControl,
     setPerplexity: p => { perplexity = parseInt(p); },
     setLearningRate: lr => { learningRate = parseInt(lr); },
     setKnn: k => { knnCount = parseInt(k); if (selectedNode) selectNode(selectedNode); },

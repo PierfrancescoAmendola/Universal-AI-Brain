@@ -404,11 +404,9 @@ Identità centrale, connettoma fondativo e profilo di Pierfrancesco Amendola.
 - [[user-intent-e2e-test-session-hook-8745]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
 - [[episode-e2e-test-session-hook-8745]] (`INTERACTION_WITH`) — _Interazione con Pierfrancesco_
 - [[voice-riflessione-sullantifragilit-nei-sistemi-software-9065]] (`EXPRESSED_BY`) — _Nota vocale catturata da Pierfrancesco_
-- [[test-e2e-web-clipper]] (`EXPRESSED_BY`)
 - [[kindle-c7eedf9ce6bb]] (`READ_BY`) — _Evidenziato durante la lettura da Pierfrancesco_
 - [[user-intent-e2e-test-session-hook-9065]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
 - [[episode-e2e-test-session-hook-9065]] (`INTERACTION_WITH`) — _Interazione con Pierfrancesco_
-- [[proj-cervelloartificiale]] (`CREATED_BY`) — _Disegnato su Obsidian Canvas_
 - [[voice-voglio-portare-a-spasso-il-cane-perch-mi-provoca-t-1518]] (`EXPRESSED_BY`)
 - [[user-intent-accorciamento-cappello-capitolo-6]] (`EXPRESSED_BY`)
 - [[episode-revisione-sintesi-cappello-cap-6]] (`INTERACTION_WITH`)
@@ -420,3 +418,15 @@ Identità centrale, connettoma fondativo e profilo di Pierfrancesco Amendola.
 - [[episode-ui-declutter-projector-fullscreen]] (`INTERACTION_WITH`)
 - [[user-intent-embedding-projector-globe-and-optics]] (`EXPRESSED_BY`) — _Intento espresso da Pierfrancesco Amendola_
 - [[episode-embedding-projector-globe-and-optics]] (`INTERACTION_WITH`) — _Interazione tra Pierfrancesco e Antigravity_
+- [[voice-riflessione-sullantifragilit-nei-sistemi-software-3785]] (`EXPRESSED_BY`) — _Nota vocale catturata da Pierfrancesco_
+- [[kindle-af44c67aa724]] (`READ_BY`) — _Evidenziato durante la lettura da Pierfrancesco_
+- [[user-intent-e2e-test-session-hook-3786]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
+- [[episode-e2e-test-session-hook-3786]] (`INTERACTION_WITH`) — _Interazione con Pierfrancesco_
+- [[voice-riflessione-sullantifragilit-nei-sistemi-software-4060]] (`EXPRESSED_BY`) — _Nota vocale catturata da Pierfrancesco_
+- [[test-e2e-web-clipper]] (`EXPRESSED_BY`)
+- [[kindle-33f27ba609b5]] (`READ_BY`) — _Evidenziato durante la lettura da Pierfrancesco_
+- [[user-intent-e2e-test-session-hook-4060]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
+- [[episode-e2e-test-session-hook-4060]] (`INTERACTION_WITH`) — _Interazione con Pierfrancesco_
+- [[proj-cervelloartificiale]] (`CREATED_BY`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-gesture-zoom-terminal-dock-tabs]] (`EXPRESSED_BY`) — _Espresso direttamente da Pierfrancesco Amendola_
+- [[episode-gesture-zoom-terminal-dock-tabs]] (`INTERACTION_WITH`) — _Interazione e dialogo tra Pierfrancesco e l'assistente AI_

@@ -8,7 +8,7 @@ layer_level: 2
 parent_graph_id: domain-filosofia-valori
 tags: [firmware, mental-model, antifragility]
 confidence: EXTRACTED
-updated_at: "2026-09-01T10:39:10.816843+00:00"
+updated_at: "2026-09-01T14:45:01.950407+00:00"
 ---
 
 # Antifragility (Antifragilità)

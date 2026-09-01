@@ -8,7 +8,7 @@ layer_level: 2
 parent_graph_id: domain-finanza-economia
 tags: [firmware, mental-model, opportunity_cost]
 confidence: EXTRACTED
-updated_at: "2026-09-01T10:39:10.816695+00:00"
+updated_at: "2026-09-01T14:45:01.949698+00:00"
 ---
 
 # Opportunity Cost (Costo Opportunità)

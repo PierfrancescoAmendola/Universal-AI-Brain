@@ -39,6 +39,7 @@ UI/UX Design Dark-Tech, Graphic Design, Brand Voice, Tipografia, Estetica Visiva
 - [[proj-apppalette]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio cognitivo_
 - [[voice-riflessione-sullantifragilit-nei-sistemi-software-2447]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio cognitivo_
+- [[voice-voglio-portare-a-spasso-il-cane-perch-mi-provoca-t-1518]] (`BELONGS_TO_DOMAIN`)
 - [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Disegnato su Obsidian Canvas_
 - [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_
-- [[voice-voglio-portare-a-spasso-il-cane-perch-mi-provoca-t-1518]] (`BELONGS_TO_DOMAIN`)
+- [[ui-bottom-terminal-dock]] (`BELONGS_TO`) — _Appartiene al dominio di Design e Interfaccia Utente_

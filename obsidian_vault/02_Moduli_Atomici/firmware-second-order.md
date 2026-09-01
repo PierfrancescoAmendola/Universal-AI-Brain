@@ -8,7 +8,7 @@ layer_level: 2
 parent_graph_id: domain-ai-cognitive-systems
 tags: [firmware, mental-model, second_order]
 confidence: EXTRACTED
-updated_at: "2026-09-01T10:39:10.816172+00:00"
+updated_at: "2026-09-01T14:45:01.949186+00:00"
 ---
 
 # Second-Order Thinking (Pensiero del Secondo Ordine)

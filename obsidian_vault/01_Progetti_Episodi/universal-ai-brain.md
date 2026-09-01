@@ -107,11 +107,15 @@ Sistema di memoria persistente a grafo bi-emisferico per agenti LLM (Claude, Gem
 - [[user-intent-ristrutturazione-sigillo-12-macro-domini]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 - [[user-intent-universal-ai-hub-client]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 - [[user-intent-verify-github-token-render]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
-- [[person-pierfrancesco]] (`ARCHITECT_OF`) — _Disegnato su Obsidian Canvas_
 - [[user-intent-chiarimento-stack-rendering-grafi-frontend]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
 - [[reasoning-analisi-stack-grafico-universal-brain]] (`OPTIMIZES`) — _Ottimizza la chiarezza architetturale del frontend_
 - [[user-intent-ui-declutter-projector-fullscreen]] (`TARGETS_PROJECT`)
 - [[reasoning-ui-declutter-projector-fullscreen]] (`MODIFIES`)
 - [[user-intent-embedding-projector-globe-and-optics]] (`TARGETS_PROJECT`) — _L'intento targetta il sistema di visualizzazione del Cervello Neurale_
 - [[reasoning-embedding-projector-globe-and-optics]] (`OPTIMIZES`) — _Le ottimizzazioni 3D migliorano il sistema universal-ai-brain_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`ARCHITECT_OF`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-gesture-zoom-terminal-dock-tabs]] (`TARGETS_PROJECT`) — _Riferito alla dashboard e al proiettore 3D di Universal AI Brain_
+- [[reasoning-gesture-zoom-terminal-dock-tabs]] (`OPTIMIZES`) — _Ottimizza il connettoma e l'interfaccia utente del progetto_
+- [[ui-bottom-terminal-dock]] (`PART_OF`) — _Componente integrato nella web app di Universal AI Brain_
+- [[ux-natural-gesture-controls-3d]] (`PART_OF`) — _Esperienza utente del proiettore 3D integrata in Universal AI Brain_

@@ -32,4 +32,6 @@ Memoria Episodica di Vita, Lezioni Apprese, Abitudini Quotidiane, Riflessioni Pe
 - [[kindle-cba1775488ae]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio del libro_
 - [[kindle-bb8b1e467610]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio del libro_
 - [[kindle-c7eedf9ce6bb]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio del libro_
+- [[kindle-af44c67aa724]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio del libro_
+- [[kindle-33f27ba609b5]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio del libro_
 - [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_

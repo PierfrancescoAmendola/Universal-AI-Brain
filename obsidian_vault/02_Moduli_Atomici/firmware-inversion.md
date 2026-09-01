@@ -8,7 +8,7 @@ layer_level: 2
 parent_graph_id: domain-ai-cognitive-systems
 tags: [firmware, mental-model, inversion]
 confidence: EXTRACTED
-updated_at: "2026-09-01T10:39:10.815461+00:00"
+updated_at: "2026-09-01T14:45:01.948271+00:00"
 ---
 
 # Inversion (Inversione)

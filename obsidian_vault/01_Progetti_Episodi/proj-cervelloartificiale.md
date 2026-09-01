@@ -71,3 +71,7 @@ updated_at: "2026-08-31T15:23:50.646666+00:00"
 - [[reasoning-e2e-test-session-hook-8745]] (`OPTIMIZES`) — _Ottimizza il progetto_
 - [[user-intent-e2e-test-session-hook-9065]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
 - [[reasoning-e2e-test-session-hook-9065]] (`OPTIMIZES`) — _Ottimizza il progetto_
+- [[user-intent-e2e-test-session-hook-3786]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[reasoning-e2e-test-session-hook-3786]] (`OPTIMIZES`) — _Ottimizza il progetto_
+- [[user-intent-e2e-test-session-hook-4060]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[reasoning-e2e-test-session-hook-4060]] (`OPTIMIZES`) — _Ottimizza il progetto_

@@ -25,82 +25,9 @@ const CORE_MACRO_HUBS = new Set([
   'domain-design-creativita'
 ]);
 
-// Terminal and Activity Logger State
-const terminalLogs = [];
-let terminalFilter = 'all';
-let terminalSearchQuery = '';
-let terminalIsOpen = false;
-let isTerminalMinimized = false;
-let isTerminalExpanded = false;
+// Seen nodes tracker for initial load
 let seenNodeIds = new Set();
 let isInitialLoad = true;
-
-// Transparent Network Interceptor (logs all requests and posts)
-const _nativeFetch = window.fetch;
-window.fetch = async function(...args) {
-  const url = typeof args[0] === 'string' ? args[0] : (args[0] && args[0].url ? args[0].url : 'unknown');
-  const options = args[1] || {};
-  const method = (options.method || 'GET').toUpperCase();
-  const startTime = performance.now();
-  const timestamp = new Date();
-  
-  let requestBody = null;
-  if (options.body) {
-    try {
-      requestBody = typeof options.body === 'string' ? JSON.parse(options.body) : options.body;
-    } catch(e) {
-      requestBody = options.body;
-    }
-  }
-
-  const logEntry = {
-    id: 'log-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5),
-    type: 'http',
-    method: method,
-    url: url,
-    timestamp: timestamp,
-    timeStr: timestamp.toLocaleTimeString() + '.' + String(timestamp.getMilliseconds()).padStart(3, '0'),
-    payload: requestBody,
-    status: 'pending',
-    statusCode: null,
-    durationMs: 0,
-    responseSnippet: null
-  };
-
-  addTerminalLog(logEntry);
-
-  try {
-    const response = await _nativeFetch.apply(this, args);
-    const duration = Math.round(performance.now() - startTime);
-    
-    logEntry.durationMs = duration;
-    logEntry.statusCode = response.status;
-    logEntry.status = response.ok ? 'success' : 'error';
-
-    try {
-      const clone = response.clone();
-      const text = await clone.text();
-      try {
-        logEntry.responseSnippet = JSON.parse(text);
-      } catch(e) {
-        logEntry.responseSnippet = text.slice(0, 300);
-      }
-    } catch(e) {
-      // response stream not readable
-    }
-
-    updateTerminalLog(logEntry);
-    return response;
-  } catch (error) {
-    const duration = Math.round(performance.now() - startTime);
-    logEntry.durationMs = duration;
-    logEntry.status = 'error';
-    logEntry.statusCode = 0;
-    logEntry.error = error.message;
-    updateTerminalLog(logEntry);
-    throw error;
-  }
-};
 
 const LEFT_COLOR = '#00D2FF';
 const RIGHT_COLOR = '#FF007F';
@@ -371,6 +298,9 @@ function setGraphViewMode(mode) {
 
   if (mode === 'projector') {
     document.body.classList.add('projector-active');
+    const termWrapper = document.getElementById('light-terminal-wrapper');
+    if (termWrapper) termWrapper.classList.remove('open');
+
     if (btnProjector) btnProjector.classList.add('active');
     if (btn2D) btn2D.classList.remove('active');
     
@@ -527,7 +457,6 @@ async function fetchBrainData() {
     updateStatsHUD();
     buildLegend();
     populateLinkDropdown();
-    updateTerminalStats();
     loadPalazzoData(); // In background senza bloccare il primo frame
   } catch (err) {
     console.error('Failed to load brain data:', err);
@@ -769,6 +698,10 @@ function showInfo(nodeId) {
   selectedNodeId = nodeId;
   const node = rawNodes.find(n => n.id === nodeId);
   if (!node) return;
+
+  if (window.TerminalEngine) {
+    window.TerminalEngine.logNode('ISPEZIONE', node);
+  }
 
   const isLeft = node.hemisphere === 'LEFT';
   const hemiBadge = isLeft 
@@ -1664,250 +1597,51 @@ async function deleteSelectedNode() {
  */
 
 function recordNodeActivity(node, actionType = 'ADDED') {
-  const ts = node.created_at ? new Date(node.created_at) : new Date();
-  const logEntry = {
-    id: 'node-' + node.id + '-' + (ts.getTime() || Date.now()),
-    type: 'node',
-    method: 'NODE',
-    actionType: actionType,
-    nodeId: node.id,
-    label: node.label,
-    hemisphere: node.hemisphere,
-    primaryLabel: node.primary_label || node.category,
-    tags: Array.isArray(node.tags) ? node.tags : [],
-    summary: node.summary,
-    timestamp: ts,
-    timeStr: ts.toLocaleTimeString() + '.' + String(ts.getMilliseconds()).padStart(3, '0'),
-    details: node.details || {}
-  };
-  addTerminalLog(logEntry);
+  if (window.TerminalEngine) {
+    window.TerminalEngine.logNode(actionType, node);
+  }
 }
 
 function addTerminalLog(entry) {
-  terminalLogs.unshift(entry);
-  if (terminalLogs.length > 500) terminalLogs.pop();
-  updateTerminalStats();
-  renderTerminalLogs();
-}
-
-function updateTerminalLog(entry) {
-  const idx = terminalLogs.findIndex(l => l.id === entry.id);
-  if (idx !== -1) {
-    terminalLogs[idx] = { ...entry };
-  }
-  updateTerminalStats();
-  renderTerminalLogs();
-}
-
-function updateTerminalStats() {
-  const allCount = terminalLogs.length;
-  const httpCount = terminalLogs.filter(l => l.type === 'http').length;
-  const nodesCount = terminalLogs.filter(l => l.type === 'node').length;
-
-  const countAllEl = document.getElementById('count-all');
-  const countHttpEl = document.getElementById('count-http');
-  const countNodesEl = document.getElementById('count-nodes');
-  const hudBadgeEl = document.getElementById('hud-terminal-badge');
-  const totalReqsEl = document.getElementById('term-total-reqs');
-  const totalNodesEl = document.getElementById('term-total-nodes');
-
-  if (countAllEl) countAllEl.textContent = allCount;
-  if (countHttpEl) countHttpEl.textContent = httpCount;
-  if (countNodesEl) countNodesEl.textContent = nodesCount;
-  if (hudBadgeEl) hudBadgeEl.textContent = allCount;
-  if (totalReqsEl) totalReqsEl.textContent = `${httpCount} chiamate API`;
-  if (totalNodesEl) totalNodesEl.textContent = `${rawNodes.length} nodi attivi`;
-}
-
-function setTerminalFilter(filter) {
-  terminalFilter = filter;
-  document.querySelectorAll('.term-tab').forEach(tab => {
-    if (tab.dataset.filter === filter) {
-      tab.classList.add('active');
+  if (window.TerminalEngine) {
+    if (entry.type === 'node' || entry.category === 'NODE') {
+      window.TerminalEngine.logNode(entry.actionType || 'NODO', entry);
+    } else if (entry.type === 'http' || entry.category === 'HTTP') {
+      window.TerminalEngine.logHttp(entry);
     } else {
-      tab.classList.remove('active');
+      window.TerminalEngine.log(entry.type || 'info', entry.category || 'SYS', entry.message || entry.label || '', entry);
     }
-  });
-  renderTerminalLogs();
-}
-
-function filterTerminalLogs(query) {
-  terminalSearchQuery = (query || '').toLowerCase().trim();
-  renderTerminalLogs();
-}
-
-function renderTerminalLogs() {
-  const container = document.getElementById('terminal-body');
-  if (!container) return;
-
-  let filtered = terminalLogs;
-
-  if (terminalFilter === 'http') {
-    filtered = filtered.filter(l => l.type === 'http');
-  } else if (terminalFilter === 'nodes') {
-    filtered = filtered.filter(l => l.type === 'node');
   }
-
-  if (terminalSearchQuery) {
-    filtered = filtered.filter(l => {
-      if (l.type === 'http') {
-        const urlMatch = (l.url || '').toLowerCase().includes(terminalSearchQuery);
-        const methodMatch = (l.method || '').toLowerCase().includes(terminalSearchQuery);
-        const statusMatch = String(l.statusCode || '').includes(terminalSearchQuery);
-        return urlMatch || methodMatch || statusMatch;
-      } else {
-        const labelMatch = (l.label || '').toLowerCase().includes(terminalSearchQuery);
-        const idMatch = (l.nodeId || '').toLowerCase().includes(terminalSearchQuery);
-        const sumMatch = (l.summary || '').toLowerCase().includes(terminalSearchQuery);
-        const tagMatch = l.tags && l.tags.some(t => t.toLowerCase().includes(terminalSearchQuery));
-        return labelMatch || idMatch || sumMatch || tagMatch;
-      }
-    });
-  }
-
-  if (filtered.length === 0) {
-    container.innerHTML = `<div class="term-empty-state">Nessun evento o richiesta registrata con i filtri correnti.</div>`;
-    return;
-  }
-
-  const html = filtered.map(item => {
-    if (item.type === 'http') {
-      const methodClass = item.method.toLowerCase();
-      const statusClass = (item.statusCode >= 200 && item.statusCode < 300) ? 's-200' : 's-err';
-      const statusText = item.statusCode ? `${item.statusCode} ${item.status.toUpperCase()}` : 'PENDING';
-      const durationText = item.durationMs ? `${item.durationMs}ms` : '...';
-
-      let payloadHtml = '';
-      if (item.payload) {
-        payloadHtml = `
-          <div class="term-payload-toggle" onclick="toggleLogPayload('${item.id}-req')">▶ Mostra Payload Inviato (JSON)</div>
-          <div id="${item.id}-req" style="display:none;">
-            <pre>${esc(JSON.stringify(item.payload, null, 2))}</pre>
-          </div>
-        `;
-      }
-
-      let resHtml = '';
-      if (item.responseSnippet) {
-        resHtml = `
-          <div class="term-payload-toggle" onclick="toggleLogPayload('${item.id}-res')">▶ Risposta Server (Preview)</div>
-          <div id="${item.id}-res" style="display:none;">
-            <pre>${esc(typeof item.responseSnippet === 'object' ? JSON.stringify(item.responseSnippet, null, 2) : item.responseSnippet)}</pre>
-          </div>
-        `;
-      }
-
-      return `
-        <div class="term-entry type-${methodClass}">
-          <div class="term-entry-header">
-            <div class="term-entry-left">
-              <span class="term-time">${item.timeStr}</span>
-              <span class="term-badge-method ${methodClass}">${item.method}</span>
-              <span class="term-entry-url">${esc(item.url)}</span>
-            </div>
-            <div style="display:flex; align-items:center; gap:6px;">
-              <span class="term-duration">${durationText}</span>
-              <span class="term-badge-status ${statusClass}">${statusText}</span>
-            </div>
-          </div>
-          <div class="term-entry-detail">
-            ${payloadHtml}
-            ${resHtml}
-          </div>
-        </div>
-      `;
-    } else {
-      // Node Entry
-      const isLeft = item.hemisphere === 'LEFT';
-      const hemiClass = isLeft ? 'left' : 'right';
-      const tagsStr = item.tags && item.tags.length ? item.tags.map(t => `#${t}`).join(' ') : '';
-
-      return `
-        <div class="term-entry type-node">
-          <div class="term-entry-header">
-            <div class="term-entry-left">
-              <span class="term-time">${item.timeStr}</span>
-              <span class="term-badge-method node">CONCETTO</span>
-              <span class="term-node-title" onclick="focusNode('${esc(item.nodeId)}')" style="cursor:pointer;" title="Clicca per evidenziare nel grafo">
-                ${esc(item.label)}
-              </span>
-              <span class="term-hemi-tag ${hemiClass}">${item.hemisphere}</span>
-              <code style="font-size:10px; color:#8b5cf6;">[${esc(item.primaryLabel)}]</code>
-            </div>
-            <span class="term-badge-status s-200">${esc(item.actionType)}</span>
-          </div>
-          <div class="term-entry-detail">
-            <div style="color:#1e293b; font-size:11px;">${esc(item.summary || 'Nessuna sintesi')}</div>
-            ${tagsStr ? `<div style="color:#0284c7; font-size:10px; margin-top:2px;">${esc(tagsStr)}</div>` : ''}
-            <div class="term-payload-toggle" onclick="toggleLogPayload('${item.id}-det')">▶ Dettagli e Metadati</div>
-            <div id="${item.id}-det" style="display:none;">
-              <pre>${esc(JSON.stringify({ id: item.nodeId, hemisphere: item.hemisphere, primary_label: item.primaryLabel, tags: item.tags, details: item.details }, null, 2))}</pre>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-  }).join('');
-
-  container.innerHTML = html;
-}
-
-function toggleLogPayload(elementId) {
-  const el = document.getElementById(elementId);
-  if (!el) return;
-  el.style.display = el.style.display === 'none' ? 'block' : 'none';
 }
 
 function toggleTerminal() {
-  const wrapper = document.getElementById('light-terminal-wrapper');
-  if (!wrapper) return;
-  terminalIsOpen = !terminalIsOpen;
-  if (terminalIsOpen) {
-    wrapper.classList.add('open');
-    renderTerminalLogs();
-    const searchInput = document.getElementById('term-search');
-    if (searchInput) searchInput.focus();
-  } else {
-    wrapper.classList.remove('open');
+  if (window.TerminalEngine) {
+    window.TerminalEngine.toggleDrawer();
   }
 }
 
 function minimizeTerminal() {
-  const term = document.getElementById('light-terminal');
-  if (!term) return;
-  isTerminalMinimized = !isTerminalMinimized;
-  if (isTerminalMinimized) {
-    term.classList.add('minimized');
-  } else {
-    term.classList.remove('minimized');
+  if (window.TerminalEngine) {
+    window.TerminalEngine.minimizeDrawer();
   }
 }
 
 function expandTerminal() {
-  const term = document.getElementById('light-terminal');
-  if (!term) return;
-  isTerminalExpanded = !isTerminalExpanded;
-  if (isTerminalExpanded) {
-    term.classList.add('expanded');
-  } else {
-    term.classList.remove('expanded');
+  if (window.TerminalEngine) {
+    window.TerminalEngine.expandDrawer();
   }
 }
 
 function clearTerminalLogs() {
-  terminalLogs.length = 0;
-  updateTerminalStats();
-  renderTerminalLogs();
+  if (window.TerminalEngine) {
+    window.TerminalEngine.clearLogs();
+  }
 }
 
 function exportTerminalLogs() {
-  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(terminalLogs, null, 2));
-  const downloadAnchor = document.createElement('a');
-  downloadAnchor.setAttribute("href", dataStr);
-  downloadAnchor.setAttribute("download", `brain-activity-logs-${new Date().toISOString().slice(0, 10)}.json`);
-  document.body.appendChild(downloadAnchor);
-  downloadAnchor.click();
-  downloadAnchor.remove();
+  if (window.TerminalEngine) {
+    window.TerminalEngine.executeCommand('export json');
+  }
 }
 
 // ============================================================================
@@ -2605,5 +2339,8 @@ window.addEventListener('DOMContentLoaded', () => {
   setupSearch();
   setupDropzone();
   setupBackdropClicks();
+  if (window.TerminalEngine) {
+    window.TerminalEngine.init();
+  }
 });
 

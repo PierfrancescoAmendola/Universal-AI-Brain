@@ -8,7 +8,7 @@ layer_level: 2
 parent_graph_id: domain-produttivita-sistemi
 tags: [firmware, mental-model, pareto]
 confidence: EXTRACTED
-updated_at: "2026-09-01T10:39:10.817337+00:00"
+updated_at: "2026-09-01T14:45:01.950715+00:00"
 ---
 
 # Pareto Principle (80/20)
