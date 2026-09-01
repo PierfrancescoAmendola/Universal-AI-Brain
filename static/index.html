@@ -10,13 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/static/style.css?v=20260831_1730">
-  <link rel="stylesheet" href="/static/embedding_projector.css?v=20260901_1235">
+  <link rel="stylesheet" href="/static/style.css?v=20260901_1300">
+  <link rel="stylesheet" href="/static/embedding_projector.css?v=20260901_1300">
   <script src="/static/vendor/vis-network.min.js"></script>
   <script src="/static/vendor/three.min.js"></script>
   <script src="/static/vendor/OrbitControls.js"></script>
   <script src="/static/vendor/tween.umd.js"></script>
-  <script src="/static/embedding_projector.js?v=20260901_1235"></script>
+  <script src="/static/embedding_projector.js?v=20260901_1300"></script>
 </head>
 <body class="dark-tech-theme">
 
@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <!-- Right Header Actions -->
+    <!-- Right Header Actions (Direct Action Buttons + Export Dropdown) -->
     <div class="topbar-right">
       <button class="topbar-action-btn" id="btn-hud-resurface" onclick="openResurfaceModal()" title="Daily Resurface: Briefing Cognitivo 90s">
         <span>🔄</span>
@@ -86,28 +86,45 @@
         <span>Albero</span>
       </button>
 
-      <button class="topbar-action-btn btn-terminal-trigger" id="btn-hud-term" onclick="toggleTerminal()" title="Apri Console di Attività &amp; HTTP Inspector (⌘`)">
-        <span class="term-pulse-dot"></span>
-        <span>💻 Terminale Live</span>
-        <span id="hud-terminal-badge" class="hud-term-badge">0</span>
-      </button>
-
       <div class="topbar-divider"></div>
 
-      <button class="topbar-action-btn btn-prompt-copy" id="btn-hud-prompt" onclick="copyAIPrompt()" title="Copia prompt direttiva Graphify per Claude / ChatGPT / Gemini">
-        <span>📋</span>
-        <span>Copia Prompt</span>
-      </button>
+      <!-- Dropdown: Esporta e Condividi -->
+      <div class="topbar-dropdown" id="dropdown-export">
+        <button class="topbar-action-btn dropdown-trigger" onclick="toggleDropdown('dropdown-export')" title="Esporta e Condividi Dati">
+          <span>📤</span>
+          <span>Esporta ▾</span>
+        </button>
+        <div class="dropdown-menu">
+          <div class="dropdown-item" onclick="copyAIPrompt(); closeAllDropdowns();">
+            <span class="dd-icon">📋</span>
+            <div class="dd-info">
+              <span class="dd-title">Copia Prompt Graphify</span>
+              <span class="dd-sub">Per Claude / ChatGPT / Gemini</span>
+            </div>
+          </div>
+          <div class="dropdown-item" onclick="copyFullBrainMarkdown(); closeAllDropdowns();">
+            <span class="dd-icon">📄</span>
+            <div class="dd-info">
+              <span class="dd-title">Copia Markdown (.md)</span>
+              <span class="dd-sub">Testo integrale del connettoma</span>
+            </div>
+          </div>
+          <a href="/api/memory/backup" target="_blank" class="dropdown-item" onclick="closeAllDropdowns();">
+            <span class="dd-icon">💾</span>
+            <div class="dd-info">
+              <span class="dd-title">Backup JSON Completo</span>
+              <span class="dd-sub">Dump persistente del cervello</span>
+            </div>
+          </a>
+        </div>
+      </div>
 
-      <button class="topbar-action-btn" id="btn-copy-full-md" onclick="copyFullBrainMarkdown()" title="Copia l'intero testo di brain.md negli appunti">
-        <span>📄</span>
-        <span>.md</span>
+      <!-- Terminal Trigger -->
+      <button class="topbar-action-btn btn-terminal-trigger" id="btn-hud-term" onclick="toggleTerminal()" title="Apri Console di Attività &amp; HTTP Inspector (⌘`)">
+        <span class="term-pulse-dot"></span>
+        <span>💻 Console</span>
+        <span id="hud-terminal-badge" class="hud-term-badge">0</span>
       </button>
-
-      <a href="/api/memory/backup" target="_blank" class="topbar-action-btn btn-backup" title="Scarica Dump JSON Completo del Cervello">
-        <span>💾</span>
-        <span>Backup</span>
-      </a>
     </div>
   </header>
 
@@ -158,87 +175,44 @@
         </div>
       </div>
 
-      <!-- Floating Graph View Mode Controller & Radar Filter Bar -->
+      <!-- Floating Graph View Mode Controller & Filter Dropdown Bar -->
       <div class="view-controls-bar">
         <div class="view-mode-pill">
-          <button class="mode-tab active" id="mode-btn-areas" onclick="setGraphViewMode('areas')" title="Mostra solo le macro-aree: clicca su un nodo per espandere i suoi rami">
-            <span class="mode-icon">📂</span> Aree
+          <button class="mode-tab active" id="mode-btn-2d" onclick="setGraphViewMode('areas')" title="Vista Grafo 2D: Esplorazione progressiva o completa dei nodi">
+            <span class="mode-icon">📂</span> Grafo 2D
           </button>
-          <button class="mode-tab" id="mode-btn-full" onclick="setGraphViewMode('full')" title="Visualizza tutti i nodi e sinapsi contemporaneamente">
-            <span class="mode-icon">🌐</span> Vista 2D
-          </button>
-          <button class="mode-tab" id="mode-btn-globe" onclick="setGraphViewMode('globe')" title="Mappamondo Neurale 3D: Costellazione sferica bi-emisferica interattiva">
-            <span class="mode-icon">🌌</span> Mappamondo 3D
-          </button>
-          <button class="mode-tab" id="mode-btn-projector" onclick="setGraphViewMode('projector')" title="3D Cognitive Embedding Projector: Proiezione vettoriale semantica con t-SNE, UMAP, PCA e k-NN Lasers">
+          <button class="mode-tab" id="mode-btn-projector" onclick="setGraphViewMode('projector')" title="3D Cognitive Embedding Projector: Visualizzatore vettoriale a schermo intero">
             <span class="mode-icon">✨</span> Projector 3D
           </button>
         </div>
         
-        <div class="view-actions-pill" id="areas-action-pill">
+        <!-- Sotto-modalità Grafo 2D -->
+        <div class="view-actions-pill" id="graph-2d-submodes">
+          <button class="action-tab active" id="submode-areas" onclick="set2DSubMode('areas')" title="Aree Progressive: mostra solo macro-hub ed espandi rami al click">Aree</button>
+          <button class="action-tab" id="submode-full" onclick="set2DSubMode('full')" title="Visualizza tutti i nodi contemporaneamente">Rete Completa</button>
           <button class="action-tab" id="btn-expand-toggle" onclick="toggleExpandAll()" title="Espandi o richiudi tutti i sotto-nodi">
-            <span id="expand-all-icon">➕</span> <span id="expand-all-label">Espandi Tutto</span>
-          </button>
-          <button class="action-tab" onclick="resetToMacroAreas()" title="Ricompatta alle sole macro-aree centrali">
-            <span>🔄</span> Ricompatta
+            <span id="expand-all-icon">➕</span>
           </button>
         </div>
 
-        <!-- Radar Tech & Theme Filter Pill -->
-        <div class="radar-filter-pill" id="radar-filter-pill">
-          <span class="radar-label">📡 Radar:</span>
-          <button class="radar-btn active" data-radar="all" onclick="applyRadarFilter('all')">Tutti</button>
-          <button class="radar-btn" data-radar="swift" onclick="applyRadarFilter('swift')">🍎 Swift/iOS</button>
-          <button class="radar-btn" data-radar="python" onclick="applyRadarFilter('python')">🐍 Python/AI</button>
-          <button class="radar-btn" data-radar="web" onclick="applyRadarFilter('web')">🌐 Web/TS</button>
-          <button class="radar-btn" data-radar="cpp" onclick="applyRadarFilter('cpp')">⚙️ C++/Algo</button>
-          <button class="radar-btn" data-radar="medical" onclick="applyRadarFilter('medical')">🏥 Medicina</button>
-          <button class="radar-btn" data-radar="bridges" onclick="applyRadarFilter('bridges')">⚡ Ponti</button>
+        <!-- Radar Filter Dropdown -->
+        <div class="topbar-dropdown" id="dropdown-radar">
+          <button class="radar-dropdown-btn" onclick="toggleDropdown('dropdown-radar')">
+            <span class="radar-label">📡 Radar: <strong id="active-radar-label">Tutti</strong> ▾</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-compact">
+            <div class="dropdown-item-compact active" data-radar="all" onclick="applyRadarFilter('all', 'Tutti'); closeAllDropdowns();">📡 Tutti i Filtri</div>
+            <div class="dropdown-item-compact" data-radar="swift" onclick="applyRadarFilter('swift', 'Swift/iOS'); closeAllDropdowns();">🍎 Swift / iOS</div>
+            <div class="dropdown-item-compact" data-radar="python" onclick="applyRadarFilter('python', 'Python/AI'); closeAllDropdowns();">🐍 Python / AI</div>
+            <div class="dropdown-item-compact" data-radar="web" onclick="applyRadarFilter('web', 'Web/TS'); closeAllDropdowns();">🌐 Web / TypeScript</div>
+            <div class="dropdown-item-compact" data-radar="cpp" onclick="applyRadarFilter('cpp', 'C++/Algo'); closeAllDropdowns();">⚙️ C++ / Algoritmi</div>
+            <div class="dropdown-item-compact" data-radar="medical" onclick="applyRadarFilter('medical', 'Medicina'); closeAllDropdowns();">🏥 Medicina / Salute</div>
+            <div class="dropdown-item-compact" data-radar="bridges" onclick="applyRadarFilter('bridges', 'Ponti Callosi'); closeAllDropdowns();">⚡ Ponti del Corpo Calloso</div>
+          </div>
         </div>
       </div>
       
       <div id="graph"></div>
-      
-      <!-- 3D Celestial Globe Canvas Container -->
-      <div id="globe-3d-container" style="display:none;">
-        <div class="globe-hud-overlay">
-          <button class="globe-hud-btn" id="btn-globe-spin" onclick="toggleGlobeSpin()" title="Attiva/Disattiva Rotazione Automatica">🔄 Auto-Spin</button>
-          <button class="globe-hud-btn" onclick="resetGlobeCamera()" title="Reimposta visuale frontale del Mappamondo">🎯 Centra Globo</button>
-          <button class="globe-hud-btn" id="btn-globe-isolate" onclick="clearGlobeSelection()" style="display:none;" title="Mostra tutti i nodi">🌐 Mostra Tutti</button>
-        </div>
-
-        <!-- Floating 3D Node Holographic Relations Card -->
-        <div id="globe-rel-card" class="globe-rel-card" style="display:none;">
-          <div class="globe-rel-header">
-            <div class="globe-rel-title-wrap">
-              <span id="globe-rel-icon" class="globe-rel-icon">🪐</span>
-              <div>
-                <h3 id="globe-rel-title" class="globe-rel-title">Titolo Nodo</h3>
-                <span id="globe-rel-meta" class="globe-rel-meta">EMISFERO · CATEGORIA</span>
-              </div>
-            </div>
-            <button class="globe-rel-close" onclick="clearGlobeSelection()" title="Chiudi scheda">✕</button>
-          </div>
-
-          <p id="globe-rel-summary" class="globe-rel-summary">Sintesi del nodo selezionato...</p>
-
-          <div id="globe-rel-path-wrap" class="globe-rel-path-wrap" style="display:none;">
-            <a id="globe-rel-path-link" href="#" class="globe-rel-path-link" target="_blank">📂 Apri nel Finder / IDE</a>
-          </div>
-
-          <div class="globe-rel-section">
-            <div class="globe-rel-sec-title">🔗 Connessioni &amp; Sinapsi (<span id="globe-rel-count">0</span>)</div>
-            <div id="globe-rel-list" class="globe-rel-list">
-              <!-- Dynamically populated with connected nodes -->
-            </div>
-          </div>
-
-          <div class="globe-rel-actions">
-            <button class="globe-rel-btn-inspect" onclick="openSidebarDossierFromGlobe()">📖 Apri Dossier Completo</button>
-            <button class="globe-rel-btn-reset" onclick="clearGlobeSelection()">Chiudi Focus</button>
-          </div>
-        </div>
-      </div>
 
       <!-- 3D Cognitive Embedding Projector Container -->
       <div id="projector-3d-container" style="display:none;">
@@ -259,10 +233,13 @@
             <div class="proj-section-title">Visualizzazione Spaziale</div>
             <div class="proj-dim-grid">
               <button class="proj-dim-btn active" id="proj-btn-view-3d" onclick="EmbeddingProjector.setDimension('3D')">
-                <span>🌐</span> 3D Volumetrico
+                <span>🌐</span> 3D Volum.
               </button>
               <button class="proj-dim-btn" id="proj-btn-view-2d" onclick="EmbeddingProjector.setDimension('2D')">
                 <span>🗺️</span> 2D Planare
+              </button>
+              <button class="proj-dim-btn" id="proj-btn-view-globe" onclick="EmbeddingProjector.setDimension('globe')">
+                <span>🪐</span> Emisferi
               </button>
             </div>
           </div>
@@ -331,6 +308,35 @@
             </div>
           </div>
 
+          <!-- Visual Optics & Spacing (Distanza Nodi & Luminosità) -->
+          <div>
+            <div class="proj-section-title">Ottica &amp; Spaziatura Nodi</div>
+            <!-- Distanza tra i Nodi -->
+            <div class="proj-slider-row">
+              <div class="proj-slider-header">
+                <span>Distanza Nodi (Scala)</span>
+                <strong id="proj-spacing-val" style="color:#00d2ff;">1.0x</strong>
+              </div>
+              <input type="range" class="proj-range" min="0.4" max="2.5" step="0.05" value="1.0" oninput="document.getElementById('proj-spacing-val').innerText=this.value+'x'; EmbeddingProjector.setNodeSpacing(this.value);">
+            </div>
+            <!-- Luminosità Nodi (Pura Intensità di Luce) -->
+            <div class="proj-slider-row">
+              <div class="proj-slider-header">
+                <span>Luminosità Nodi (Radianza)</span>
+                <strong id="proj-brightness-val" style="color:#ffd15c;">1.0x</strong>
+              </div>
+              <input type="range" class="proj-range" min="0.2" max="3.0" step="0.1" value="1.0" oninput="document.getElementById('proj-brightness-val').innerText=this.value+'x'; EmbeddingProjector.setNodeBrightness(this.value);">
+            </div>
+            <!-- Luminosità / Opacità Archi -->
+            <div class="proj-slider-row">
+              <div class="proj-slider-header">
+                <span>Luminosità Archi (Opacità)</span>
+                <strong id="proj-edge-brightness-val" style="color:#a855f7;">100%</strong>
+              </div>
+              <input type="range" class="proj-range" min="10" max="100" step="5" value="100" oninput="document.getElementById('proj-edge-brightness-val').innerText=this.value+'%'; EmbeddingProjector.setEdgeBrightness(this.value);">
+            </div>
+          </div>
+
           <!-- Hemisphere & Domain Filters -->
           <div>
             <div class="proj-section-title">Filtri Emisferici</div>
@@ -340,6 +346,13 @@
               <span class="proj-chip" onclick="EmbeddingProjector.filterHemisphere('RIGHT', this)">Destro (Vision)</span>
               <span class="proj-chip" onclick="EmbeddingProjector.filterHemisphere('L0', this)">Domini L0</span>
             </div>
+          </div>
+
+          <!-- Exit Button at bottom of left panel -->
+          <div class="proj-exit-box">
+            <button class="proj-exit-btn-bottom" onclick="setGraphViewMode('areas')" title="Chiudi Projector 3D e torna al Grafo 2D">
+              <span>✕</span> Chiudi Projector (Torna al 2D)
+            </button>
           </div>
         </div>
 
@@ -781,6 +794,6 @@
     </button>
   </nav>
 
-  <script src="/static/app.js?v=20260831_2040"></script>
+  <script src="/static/app.js?v=20260901_1300"></script>
 </body>
 </html>

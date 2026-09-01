@@ -416,3 +416,7 @@ Identità centrale, connettoma fondativo e profilo di Pierfrancesco Amendola.
 - [[episode-perfezionamento-cappello-tabelle-cap-6]] (`INTERACTION_WITH`)
 - [[user-intent-chiarimento-stack-rendering-grafi-frontend]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
 - [[episode-chiarimento-librerie-grafi-frontend]] (`INTERACTION_WITH`) — _Dialogo con Pierfrancesco_
+- [[user-intent-ui-declutter-projector-fullscreen]] (`EXPRESSED_BY`)
+- [[episode-ui-declutter-projector-fullscreen]] (`INTERACTION_WITH`)
+- [[user-intent-embedding-projector-globe-and-optics]] (`EXPRESSED_BY`) — _Intento espresso da Pierfrancesco Amendola_
+- [[episode-embedding-projector-globe-and-optics]] (`INTERACTION_WITH`) — _Interazione tra Pierfrancesco e Antigravity_

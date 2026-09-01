@@ -8,7 +8,7 @@ layer_level: 2
 parent_graph_id: domain-produttivita-sistemi
 tags: [firmware, mental-model, circle_of_competence]
 confidence: EXTRACTED
-updated_at: "2026-08-31T14:54:40.672018+00:00"
+updated_at: "2026-09-01T10:39:10.816538+00:00"
 ---
 
 # Circle of Competence (Cerchio di Competenza)

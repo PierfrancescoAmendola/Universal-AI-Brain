@@ -183,59 +183,40 @@ function initNetwork() {
       enabled: true,
       solver: 'forceAtlas2Based',
       forceAtlas2Based: {
-        gravitationalConstant: -100,
-        centralGravity: 0.003,
-        springLength: 140,
-        springConstant: 0.06,
-        damping: 0.5,
-        avoidOverlap: 1.0
+        gravitationalConstant: -60,
+        centralGravity: 0.005,
+        springLength: 120,
+        springConstant: 0.08,
+        damping: 0.4,
+        avoidOverlap: 0.8
       },
       stabilization: {
-        enabled: true,
-        iterations: 120,
-        updateInterval: 25,
-        fit: true
+        enabled: false
       }
     },
     interaction: {
       hover: true,
-      tooltipDelay: 80,
+      tooltipDelay: 100,
       hideEdgesOnDrag: true,
       navigationButtons: false,
       keyboard: false
     },
     nodes: {
       shape: 'dot',
-      borderWidth: 2,
-      borderWidthSelected: 3.5,
-      shadow: {
-        enabled: true,
-        color: 'rgba(0, 210, 255, 0.4)',
-        size: 10,
-        x: 0,
-        y: 0
-      },
+      borderWidth: 1.5,
+      shadow: false,
       font: {
         size: 11,
         color: '#f8fafc',
-        face: "'JetBrains Mono', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-        strokeWidth: 2.5,
-        strokeColor: '#07080c',
-        vadjust: 2
+        face: "'JetBrains Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        strokeWidth: 3,
+        strokeColor: '#07080c'
       }
     },
     edges: {
       smooth: { type: 'continuous', roundness: 0.2 },
-      arrows: { to: { enabled: true, scaleFactor: 0.4 } },
-      selectionWidth: 2.5,
-      hoverWidth: 1.8,
-      shadow: {
-        enabled: true,
-        color: 'rgba(0, 210, 255, 0.2)',
-        size: 6,
-        x: 0,
-        y: 0
-      }
+      arrows: { to: { enabled: true, scaleFactor: 0.45 } },
+      selectionWidth: 2
     }
   };
 
@@ -348,74 +329,121 @@ function selectPalazzoFloor(floorOption) {
 }
 
 /**
- * Progressive Areas & 3D Celestial Globe View Mode Switchers
+ * Global Dropdown Controllers
+ */
+function toggleDropdown(dropdownId) {
+  const dd = document.getElementById(dropdownId);
+  if (!dd) return;
+  const wasOpen = dd.classList.contains('open');
+  closeAllDropdowns();
+  if (!wasOpen) {
+    dd.classList.add('open');
+  }
+}
+
+function closeAllDropdowns() {
+  document.querySelectorAll('.topbar-dropdown.open').forEach(dd => {
+    dd.classList.remove('open');
+  });
+}
+
+window.addEventListener('click', (e) => {
+  if (!e.target.closest('.topbar-dropdown')) {
+    closeAllDropdowns();
+  }
+});
+
+/**
+ * Clean Unified View Mode Switcher
  */
 function setGraphViewMode(mode) {
   graphViewMode = mode;
   
-  const btnAreas = document.getElementById('mode-btn-areas');
-  const btnFull = document.getElementById('mode-btn-full');
-  const btnGlobe = document.getElementById('mode-btn-globe');
+  const btn2D = document.getElementById('mode-btn-2d');
   const btnProjector = document.getElementById('mode-btn-projector');
-  const actionsPill = document.getElementById('areas-action-pill');
-  const palazzoElevator = document.getElementById('palazzo-elevator');
   const graphContainer = document.getElementById('graph');
-  const globeContainer = document.getElementById('globe-3d-container');
+  const graphContainerWrapper = document.getElementById('graph-container');
   const projectorContainer = document.getElementById('projector-3d-container');
-
-  [btnAreas, btnFull, btnGlobe, btnProjector].forEach(b => b && b.classList.remove('active'));
+  const palazzoElevator = document.getElementById('palazzo-elevator');
+  const submodesPill = document.getElementById('graph-2d-submodes');
+  const radarDropdown = document.getElementById('dropdown-radar');
+  const sidebar = document.getElementById('sidebar');
 
   if (mode === 'projector') {
+    document.body.classList.add('projector-active');
     if (btnProjector) btnProjector.classList.add('active');
-    if (actionsPill) actionsPill.style.display = 'none';
-    if (palazzoElevator) palazzoElevator.style.display = 'none';
+    if (btn2D) btn2D.classList.remove('active');
+    
+    if (sidebar) sidebar.style.setProperty('display', 'none', 'important');
+    if (graphContainerWrapper) graphContainerWrapper.style.setProperty('width', '100vw', 'important');
     if (graphContainer) graphContainer.style.display = 'none';
-    if (globeContainer) {
-      globeContainer.style.display = 'none';
-      isGlobeLoopRunning = false;
-    }
+    if (palazzoElevator) palazzoElevator.style.display = 'none';
+    if (submodesPill) submodesPill.style.display = 'none';
+    if (radarDropdown) radarDropdown.style.display = 'none';
+    
     if (projectorContainer) {
-      projectorContainer.style.display = 'block';
+      projectorContainer.style.setProperty('display', 'block', 'important');
+      projectorContainer.style.setProperty('position', 'fixed', 'important');
+      projectorContainer.style.setProperty('top', '48px', 'important');
+      projectorContainer.style.setProperty('left', '0', 'important');
+      projectorContainer.style.setProperty('right', '0', 'important');
+      projectorContainer.style.setProperty('bottom', '0', 'important');
+      projectorContainer.style.setProperty('width', '100vw', 'important');
+      projectorContainer.style.setProperty('height', 'calc(100vh - 48px)', 'important');
+      projectorContainer.style.setProperty('z-index', '100', 'important');
     }
 
     if (window.EmbeddingProjector) {
       window.EmbeddingProjector.init(projectorContainer);
       window.EmbeddingProjector.setData(rawNodes, rawEdges);
       window.EmbeddingProjector.start();
-    }
-  } else if (mode === 'globe') {
-    if (window.EmbeddingProjector) window.EmbeddingProjector.stop();
-    if (projectorContainer) projectorContainer.style.display = 'none';
-    if (btnGlobe) btnGlobe.classList.add('active');
-    if (actionsPill) actionsPill.style.display = 'none';
-    if (palazzoElevator) palazzoElevator.style.display = 'none';
-    if (graphContainer) graphContainer.style.display = 'none';
-    if (globeContainer) {
-      globeContainer.style.display = 'block';
-    }
-    
-    initOrUpdateGlobe3D();
-    if (!isGlobeLoopRunning) {
-      isGlobeLoopRunning = true;
-      animateGlobe3D();
+      if (typeof window.EmbeddingProjector.resize === 'function') {
+        window.EmbeddingProjector.resize();
+        setTimeout(window.EmbeddingProjector.resize, 50);
+        setTimeout(window.EmbeddingProjector.resize, 200);
+      }
     }
   } else {
+    document.body.classList.remove('projector-active');
+    if (btn2D) btn2D.classList.add('active');
+    if (btnProjector) btnProjector.classList.remove('active');
+    
+    if (sidebar) sidebar.style.removeProperty('display');
+    if (graphContainerWrapper) graphContainerWrapper.style.removeProperty('width');
     if (window.EmbeddingProjector) window.EmbeddingProjector.stop();
-    if (projectorContainer) projectorContainer.style.display = 'none';
-    isGlobeLoopRunning = false;
-    if (globeContainer) globeContainer.style.display = 'none';
+    if (projectorContainer) projectorContainer.style.setProperty('display', 'none');
     if (graphContainer) graphContainer.style.display = 'block';
     if (palazzoElevator) palazzoElevator.style.display = 'flex';
-    
-    if (mode === 'areas') {
-      if (btnAreas) btnAreas.classList.add('active');
-      if (actionsPill) actionsPill.style.display = 'flex';
-    } else {
-      if (btnFull) btnFull.classList.add('active');
-      if (actionsPill) actionsPill.style.display = 'none';
-    }
+    if (submodesPill) submodesPill.style.display = 'flex';
+    if (radarDropdown) radarDropdown.style.display = 'inline-block';
+
     renderGraphData();
   }
+}
+
+function set2DSubMode(submode) {
+  graphViewMode = submode;
+  const btnAreas = document.getElementById('submode-areas');
+  const btnFull = document.getElementById('submode-full');
+  
+  if (btnAreas) btnAreas.classList.toggle('active', submode === 'areas');
+  if (btnFull) btnFull.classList.toggle('active', submode === 'full');
+
+  renderGraphData();
+}
+
+function applyRadarFilter(filterKey, labelText) {
+  currentRadarFilter = filterKey;
+  const labelEl = document.getElementById('active-radar-label');
+  if (labelEl && labelText) {
+    labelEl.textContent = labelText;
+  }
+  
+  document.querySelectorAll('#dropdown-radar .dropdown-item-compact').forEach(item => {
+    item.classList.toggle('active', item.dataset.radar === filterKey);
+  });
+
+  renderGraphData();
 }
 
 function toggleNodeExpansion(nodeId) {
@@ -606,46 +634,36 @@ function renderGraphData() {
     }
 
     const isExpanded = expandedNodeIds.has(n.id);
-    let rawLabel = n.label || n.id;
-    let label = rawLabel;
+    let label = n.label;
     const floorLvl = getFloor(n);
-    const isHub = CORE_MACRO_HUBS.has(n.id) || n.id === 'person-pierfrancesco' || floorLvl === 0;
 
     if (currentPalazzoFloor === 'vertical') {
-      label = `[P${floorLvl}] ${rawLabel.length > 20 ? rawLabel.substring(0, 18) + '…' : rawLabel}`;
+      label = `[P${floorLvl}] ${n.label}`;
     } else if (graphViewMode === 'areas' && currentPalazzoFloor === 'all') {
-      const cleanName = rawLabel.length > 22 ? rawLabel.substring(0, 20) + '…' : rawLabel;
       if (hiddenCount > 0) {
-        label = `${cleanName} ⊕${hiddenCount}`;
+        label = `${n.label} ⊕${hiddenCount}`;
       } else if (isExpanded && totalNeighbors > 1) {
-        label = `${cleanName} ⊖`;
-      } else {
-        label = cleanName;
+        label = `${n.label} ⊖`;
       }
-    } else if (graphViewMode === 'full') {
-      label = rawLabel.length > 22 ? rawLabel.substring(0, 20) + '…' : rawLabel;
     }
 
-    let nodeSize = isHub ? Math.min(30, Math.max(18, 16 + degree * 1.5)) : Math.min(22, Math.max(12, 10 + degree * 1.2));
-    let nodeBorderColor = floorLvl === 0 ? '#ffe082' : (isLeft ? '#38bdf8' : '#f43f5e');
-    let nodeBgColor = floorLvl === 0 ? '#ffd15c' : catColor;
-    let nodeShadow = floorLvl === 0 
-      ? { enabled: true, color: 'rgba(255, 209, 92, 0.75)', size: 16, x: 0, y: 0 }
-      : { enabled: true, color: isLeft ? 'rgba(0, 210, 255, 0.45)' : 'rgba(255, 0, 127, 0.45)', size: 10, x: 0, y: 0 };
+    const isHub = CORE_MACRO_HUBS.has(n.id) || n.id === 'person-pierfrancesco' || floorLvl === 0;
+    if (isHub) {
+      size += 4;
+    }
 
     const nodeObj = {
       id: n.id,
       label: label,
       title: `${n.label} [Piano ${floorLvl}: ${n.primary_label || n.category}]${hiddenCount > 0 ? ` (Clicca per espandere +${hiddenCount} nodi collegati)` : ''}`,
-      size: nodeSize,
+      size: size,
       color: {
-        background: nodeBgColor,
-        border: nodeBorderColor,
-        highlight: { background: '#ffffff', border: isLeft ? '#00D2FF' : '#FF007F' }
+        background: catColor,
+        border: floorLvl === 0 ? '#38bdf8' : (isHub ? '#ffffff' : (isLeft ? '#00D2FF' : '#FF007F')),
+        highlight: { background: '#ffffff', border: catColor }
       },
-      borderWidth: isHub ? 3 : (hiddenCount > 0 ? 2.5 : 1.8),
-      borderWidthSelected: 3.5,
-      shadow: nodeShadow,
+      borderWidth: isHub ? 3 : (hiddenCount > 0 ? 2.5 : 1.5),
+      shadow: isHub ? { enabled: true, color: catColor, size: 8 } : false,
       _data: n,
       _degree: degree,
       _floor: floorLvl,
@@ -676,19 +694,16 @@ function renderGraphData() {
     const sFloor = getFloor(sNode);
     const tFloor = getFloor(tNode);
     const isCrossFloor = (sFloor !== tFloor);
-    const isLeftEdge = (sNode && sNode.hemisphere === 'LEFT') && (tNode && tNode.hemisphere === 'LEFT');
 
-    let edgeColor = isCross ? CALLOSUM_COLOR : (isLeftEdge ? 'rgba(0, 210, 255, 0.25)' : 'rgba(255, 0, 127, 0.25)');
+    let edgeColor = isCross ? CALLOSUM_COLOR : 'rgba(148, 163, 184, 0.45)';
     let edgeWidth = isCross ? 2.2 : 1.2;
-    let isDashed = isCross ? [5, 4] : false;
+    let isDashed = isCross;
     let edgeTitle = `${e.relation || 'CONNECTS_TO'}${isCross ? ' (Corpo Calloso)' : ''}`;
-    let edgeShadow = isCross ? { enabled: true, color: 'rgba(168, 85, 247, 0.6)', size: 8 } : false;
 
     if (currentPalazzoFloor === 'vertical' && isCrossFloor) {
       edgeColor = '#38bdf8';
       edgeWidth = 2.8;
       isDashed = [6, 4];
-      edgeShadow = { enabled: true, color: 'rgba(56, 189, 248, 0.7)', size: 10 };
       edgeTitle = `⚡ Ascensore Sinaptico [Piano ${sFloor} ↔ Piano ${tFloor}] · ${e.relation || 'CONNECTS'}`;
     }
 
@@ -699,11 +714,10 @@ function renderGraphData() {
       title: edgeTitle,
       width: edgeWidth,
       dashes: isDashed,
-      shadow: edgeShadow,
       color: {
         color: edgeColor,
         highlight: '#ffffff',
-        hover: isCross ? '#e9d5ff' : '#00d2ff'
+        hover: isCross ? '#e9d5ff' : '#38bdf8'
       }
     });
   });
@@ -722,28 +736,28 @@ function renderGraphData() {
           enabled: true,
           solver: 'forceAtlas2Based',
           forceAtlas2Based: {
-            gravitationalConstant: -100,
-            centralGravity: 0.003,
-            springLength: 140,
-            springConstant: 0.06,
-            damping: 0.5,
-            avoidOverlap: 1.0
+            gravitationalConstant: -60,
+            centralGravity: 0.005,
+            springLength: 120,
+            springConstant: 0.08,
+            damping: 0.4,
+            avoidOverlap: 0.8
           },
           stabilization: {
             enabled: true,
-            iterations: 120,
-            updateInterval: 25,
+            iterations: 150,
+            updateInterval: 150,
             fit: true
           }
         }
       });
-      network.stabilize(120);
+      network.stabilize(150);
       network.once('stabilized', () => {
         network.setOptions({ physics: { enabled: false } });
       });
       setTimeout(() => {
         if (network) network.setOptions({ physics: { enabled: false } });
-      }, 300);
+      }, 200);
     }
   }
 }
@@ -2504,752 +2518,34 @@ async function triggerObsidianSync(action) {
 }
 
 // -----------------------------------------------------------------------------
-// 🌌 3D Celestial Constellation Globe Engine (Three.js WebGL)
+// 📡 Radar Tech & Theme Filter Engine (2D Network & Global)
 // -----------------------------------------------------------------------------
 
-let globeScene, globeCamera, globeRenderer, globeNodesGroup, globeEdgesGroup, globeGridGroup;
-let isGlobeInitialized = false;
-let isGlobeSpinning = true;
-let globeRaycaster, globeMouse, globeIntersectedNode = null;
-let selectedGlobeNodeId = null;
-let currentRadarFilter = 'all';
-let globeNodeMeshMap = new Map();
-let globeTargetRotationX = 0, globeTargetRotationY = 0;
-let globeRotationX = 0, globeRotationY = 0;
-let globeIsDragging = false, globePreviousMousePosition = { x: 0, y: 0 };
-let globeCameraDistance = 850;
-let isGlobeLoopRunning = false;
-
-function initOrUpdateGlobe3D() {
-  const container = document.getElementById('globe-3d-container');
-  if (!container) return;
-
-  if (!isGlobeInitialized) {
-    initGlobe3D(container);
-  } else {
-    rebuildGlobeGeometry();
-  }
-  setTimeout(resizeGlobe3D, 50);
-  setTimeout(resizeGlobe3D, 250);
-}
-
-function initGlobe3D(container) {
-  if (typeof THREE === 'undefined') {
-    container.innerHTML = `<div style="color:#FF4C4C; padding:40px; text-align:center;">Errore: Libreria Three.js non disponibile.</div>`;
-    return;
-  }
-
-  const rect = container.getBoundingClientRect();
-  const width = rect.width || container.clientWidth || (window.innerWidth - 380);
-  const height = rect.height || container.clientHeight || (window.innerHeight - 48);
-
-  globeScene = new THREE.Scene();
-
-  globeCamera = new THREE.PerspectiveCamera(45, width / height, 1, 5000);
-  globeCamera.position.set(0, 0, globeCameraDistance);
-  globeCamera.lookAt(0, 0, 0);
-
-  // Luci
-  const ambientLight = new THREE.AmbientLight(0xffffff, 1.4);
-  globeScene.add(ambientLight);
-
-  const centerLight = new THREE.PointLight(0x00D2FF, 2.0, 1000);
-  centerLight.position.set(0, 0, 0);
-  globeScene.add(centerLight);
-
-  globeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  globeRenderer.setSize(width, height);
-  globeRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  
-  // Rimuovi vecchi canvas se presenti
-  const oldCanvas = container.querySelector('canvas');
-  if (oldCanvas) oldCanvas.remove();
-
-  container.appendChild(globeRenderer.domElement);
-
-  // 1. Starfield Dust
-  createGlobeStarfield();
-
-  // 2. Griglia Olografica del Globo & Anelli
-  globeGridGroup = new THREE.Group();
-  globeScene.add(globeGridGroup);
-  createGlobeGridAndCore();
-
-  // 3. Gruppi Nodi e Archi
-  globeNodesGroup = new THREE.Group();
-  globeEdgesGroup = new THREE.Group();
-  globeScene.add(globeNodesGroup);
-  globeScene.add(globeEdgesGroup);
-
-  // Raycaster per hover e click
-  globeRaycaster = new THREE.Raycaster();
-  globeRaycaster.params.Points = { threshold: 8 };
-  globeMouse = new THREE.Vector2(-999, -999);
-
-  setupGlobeInteractions(container);
-  rebuildGlobeGeometry();
-
-  isGlobeInitialized = true;
-  if (!isGlobeLoopRunning) {
-    isGlobeLoopRunning = true;
-    animateGlobe3D();
-  }
-}
-
-function createGlobeGridAndCore() {
-  if (!globeGridGroup) return;
-
-  while (globeGridGroup.children.length > 0) {
-    globeGridGroup.remove(globeGridGroup.children[0]);
-  }
-
-  const radius = 330;
-
-  // Sfera a griglia olografica sottile
-  const sphereGeo = new THREE.SphereGeometry(radius, 24, 16);
-  const sphereMat = new THREE.MeshBasicMaterial({
-    color: 0x0c2038,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.18
-  });
-  const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
-  globeGridGroup.add(sphereMesh);
-
-  // Anello equatoriale (Pianeta / Corpo Calloso)
-  const ringGeo = new THREE.RingGeometry(radius - 2, radius + 2, 64);
-  const ringMat = new THREE.MeshBasicMaterial({
-    color: 0x00D2FF,
-    side: THREE.DoubleSide,
-    transparent: true,
-    opacity: 0.28
-  });
-  const ringMesh = new THREE.Mesh(ringGeo, ringMat);
-  ringMesh.rotation.x = Math.PI / 2;
-  globeGridGroup.add(ringMesh);
-
-  // Anello meridiano (Separazione Emisferi)
-  const meridianMat = new THREE.MeshBasicMaterial({
-    color: 0xFF007F,
-    side: THREE.DoubleSide,
-    transparent: true,
-    opacity: 0.2
-  });
-  const meridianMesh = new THREE.Mesh(ringGeo, meridianMat);
-  meridianMesh.rotation.y = Math.PI / 2;
-  globeGridGroup.add(meridianMesh);
-
-  // Pulsar Core centrale
-  const coreGeo = new THREE.SphereGeometry(24, 16, 16);
-  const coreMat = new THREE.MeshBasicMaterial({
-    color: 0x38bdf8,
-    transparent: true,
-    opacity: 0.6
-  });
-  const coreMesh = new THREE.Mesh(coreGeo, coreMat);
-  globeGridGroup.add(coreMesh);
-}
-
-function resizeGlobe3D() {
-  const container = document.getElementById('globe-3d-container');
-  if (!container || !globeRenderer || !globeCamera) return;
-  const rect = container.getBoundingClientRect();
-  const width = rect.width || container.clientWidth || (window.innerWidth - 380);
-  const height = rect.height || container.clientHeight || (window.innerHeight - 48);
-  if (width > 0 && height > 0) {
-    globeCamera.aspect = width / height;
-    globeCamera.updateProjectionMatrix();
-    globeRenderer.setSize(width, height);
-  }
-}
-
-function createGlobeStarfield() {
-  const starGeo = new THREE.BufferGeometry();
-  const starCount = 2000;
-  const positions = new Float32Array(starCount * 3);
-  const colors = new Float32Array(starCount * 3);
-
-  for (let i = 0; i < starCount * 3; i += 3) {
-    const radius = 1200 + Math.random() * 900;
-    const theta = Math.random() * Math.PI * 2;
-    const phi = Math.acos(Math.random() * 2 - 1);
-
-    positions[i] = radius * Math.sin(phi) * Math.cos(theta);
-    positions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
-    positions[i + 2] = radius * Math.cos(phi);
-
-    colors[i] = 0.4 + Math.random() * 0.6;
-    colors[i + 1] = 0.6 + Math.random() * 0.4;
-    colors[i + 2] = 1.0;
-  }
-
-  starGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  starGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-  const starMat = new THREE.PointsMaterial({
-    size: 2.2,
-    vertexColors: true,
-    transparent: true,
-    opacity: 0.6
-  });
-
-  const starField = new THREE.Points(starGeo, starMat);
-  globeScene.add(starField);
-}
-
-function rebuildGlobeGeometry() {
-  if (!globeNodesGroup || !rawNodes || !rawNodes.length) return;
-
-  // Pulisci gruppi precedenti
-  while (globeNodesGroup.children.length > 0) {
-    const obj = globeNodesGroup.children[0];
-    globeNodesGroup.remove(obj);
-  }
-  while (globeEdgesGroup.children.length > 0) {
-    const obj = globeEdgesGroup.children[0];
-    globeEdgesGroup.remove(obj);
-  }
-  globeNodeMeshMap.clear();
-
-  const radius = 330;
-  const nodeCount = rawNodes.length;
-
-  // Calcola gradi
-  const degreeMap = new Map();
-  rawEdges.forEach(e => {
-    const sId = typeof e.source === 'object' ? e.source.id : e.source;
-    const tId = typeof e.target === 'object' ? e.target.id : e.target;
-    degreeMap.set(sId, (degreeMap.get(sId) || 0) + 1);
-    degreeMap.set(tId, (degreeMap.get(tId) || 0) + 1);
-  });
-
-  // Mappa coordinate sferiche bi-emisferiche
-  rawNodes.forEach((node, idx) => {
-    const isLeft = (node.hemisphere || 'LEFT') === 'LEFT';
-    const isDomain = parseInt(node.layer_level) === 0;
-    const deg = degreeMap.get(node.id) || 1;
-
-    // Fibonacci sphere segmentata per emisfero
-    const offset = 2 / Math.max(nodeCount, 1);
-    const y = ((idx * offset) - 1) + (offset / 2);
-    const r = Math.sqrt(Math.max(0, 1 - y * y));
-
-    // Phi e Theta
-    const phi = Math.acos(Math.max(-1, Math.min(1, y)));
-    let theta = (idx * 2.399963229728653); // Golden angle
-
-    // Separazione Bi-Emisferica
-    if (isLeft) {
-      theta = Math.PI * 0.15 + (theta % (Math.PI * 0.7)); // East hemisphere (Cyan)
-    } else {
-      theta = Math.PI * 1.15 + (theta % (Math.PI * 0.7)); // West hemisphere (Magenta)
-    }
-
-    if (isDomain) {
-      // Posiziona i macro-domini sulla corona polare superiore
-      theta = (idx * (Math.PI * 2 / 12));
-    }
-
-    const xPos = radius * Math.sin(phi) * Math.cos(theta);
-    const yPos = radius * Math.cos(phi) * (isDomain ? 1.05 : 1.0);
-    const zPos = radius * Math.sin(phi) * Math.sin(theta);
-
-    // Colore
-    let colorHex = isLeft ? 0x00D2FF : 0xFF007F;
-    if (isDomain) colorHex = 0xFFD15C;
-
-    const baseSize = isDomain ? 9.5 : Math.max(3.0, Math.min(7.5, 2.2 + Math.sqrt(deg) * 0.75));
-    const sphereGeo = new THREE.SphereGeometry(baseSize, 14, 14);
-    const sphereMat = new THREE.MeshBasicMaterial({
-      color: colorHex,
-      wireframe: false
-    });
-
-    const mesh = new THREE.Mesh(sphereGeo, sphereMat);
-    mesh.position.set(xPos, yPos, zPos);
-    mesh.userData = { node: node, baseColor: colorHex, baseSize: baseSize, degree: deg };
-
-    globeNodesGroup.add(mesh);
-    globeNodeMeshMap.set(node.id, mesh);
-  });
-
-  // Disegna Archi Normali (Costellazione)
-  drawGlobeStandardEdges();
-
-  // Se c'era un nodo selezionato, ripristina il suo spotlight
-  if (selectedGlobeNodeId && globeNodeMeshMap.has(selectedGlobeNodeId)) {
-    selectGlobeNode(selectedGlobeNodeId);
-  } else {
-    applyRadarFilter(currentRadarFilter);
-  }
-}
-
-function drawGlobeStandardEdges() {
-  while (globeEdgesGroup.children.length > 0) {
-    globeEdgesGroup.remove(globeEdgesGroup.children[0]);
-  }
-
-  const intraLinePositions = [];
-  const intraLineColors = [];
-  const bridgeLinePositions = [];
-  const bridgeLineColors = [];
-
-  rawEdges.forEach(edge => {
-    const sId = typeof edge.source === 'object' ? edge.source.id : edge.source;
-    const tId = typeof edge.target === 'object' ? edge.target.id : edge.target;
-    const srcMesh = globeNodeMeshMap.get(sId);
-    const tgtMesh = globeNodeMeshMap.get(tId);
-
-    if (srcMesh && tgtMesh) {
-      const isCross = (srcMesh.userData.node.hemisphere || 'LEFT') !== (tgtMesh.userData.node.hemisphere || 'LEFT');
-      const p1 = srcMesh.position;
-      const p2 = tgtMesh.position;
-
-      if (isCross) {
-        bridgeLinePositions.push(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
-        bridgeLineColors.push(1.0, 0.75, 0.1, 1.0, 0.75, 0.1); // Gold amber
-      } else {
-        intraLinePositions.push(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
-        if (srcMesh.userData.node.hemisphere === 'LEFT') {
-          intraLineColors.push(0.0, 0.7, 0.95, 0.0, 0.7, 0.95);
-        } else {
-          intraLineColors.push(0.95, 0.1, 0.55, 0.95, 0.1, 0.55);
-        }
-      }
-    }
-  });
-
-  // Intra Lines
-  if (intraLinePositions.length > 0) {
-    const intraGeo = new THREE.BufferGeometry();
-    intraGeo.setAttribute('position', new THREE.Float32BufferAttribute(intraLinePositions, 3));
-    intraGeo.setAttribute('color', new THREE.Float32BufferAttribute(intraLineColors, 3));
-    const intraMat = new THREE.LineBasicMaterial({
-      vertexColors: true,
-      transparent: true,
-      opacity: 0.22,
-      blending: THREE.AdditiveBlending
-    });
-    const intraLines = new THREE.LineSegments(intraGeo, intraMat);
-    globeEdgesGroup.add(intraLines);
-  }
-
-  // Bridge Lines (Corpo Calloso)
-  if (bridgeLinePositions.length > 0) {
-    const bridgeGeo = new THREE.BufferGeometry();
-    bridgeGeo.setAttribute('position', new THREE.Float32BufferAttribute(bridgeLinePositions, 3));
-    bridgeGeo.setAttribute('color', new THREE.Float32BufferAttribute(bridgeLineColors, 3));
-    const bridgeMat = new THREE.LineBasicMaterial({
-      vertexColors: true,
-      transparent: true,
-      opacity: 0.85,
-      linewidth: 2,
-      blending: THREE.AdditiveBlending
-    });
-    const bridgeLines = new THREE.LineSegments(bridgeGeo, bridgeMat);
-    globeEdgesGroup.add(bridgeLines);
-  }
-}
-
-/**
- * 🎯 Spotlight & Synaptic Relational Inspector on Node Click
- */
-function selectGlobeNode(nodeId) {
-  selectedGlobeNodeId = nodeId;
-  const centerMesh = globeNodeMeshMap.get(nodeId);
-  if (!centerMesh) return;
-
-  const node = centerMesh.userData.node;
-  const isLeft = (node.hemisphere || 'LEFT') === 'LEFT';
-
-  // 1. Trova tutte le relazioni dirette (entranti e uscenti)
-  const outgoing = [];
-  const incoming = [];
-  const connectedNodeIds = new Set([nodeId]);
-
-  rawEdges.forEach(e => {
-    const sId = typeof e.source === 'object' ? e.source.id : e.source;
-    const tId = typeof e.target === 'object' ? e.target.id : e.target;
-
-    if (sId === nodeId) {
-      connectedNodeIds.add(tId);
-      const targetNode = rawNodes.find(n => n.id === tId);
-      outgoing.push({
-        targetId: tId,
-        label: targetNode ? targetNode.label : tId,
-        relation: e.relation || 'CONNECTS_TO',
-        hemisphere: targetNode ? targetNode.hemisphere : 'LEFT',
-        reasoning: e.reasoning
-      });
-    }
-    if (tId === nodeId) {
-      connectedNodeIds.add(sId);
-      const sourceNode = rawNodes.find(n => n.id === sId);
-      incoming.push({
-        sourceId: sId,
-        label: sourceNode ? sourceNode.label : sId,
-        relation: e.relation || 'CONNECTS_TO',
-        hemisphere: sourceNode ? sourceNode.hemisphere : 'LEFT',
-        reasoning: e.reasoning
-      });
-    }
-  });
-
-  // 2. Aggiorna Nodi 3D: illumina e ingrandisci i connessi, oscura il resto
-  globeNodeMeshMap.forEach((mesh, id) => {
-    if (id === nodeId) {
-      mesh.scale.set(2.4, 2.4, 2.4);
-      mesh.material.color.setHex(0xFFFFFF); // Bianco brillante supernova
-    } else if (connectedNodeIds.has(id)) {
-      mesh.scale.set(1.6, 1.6, 1.6);
-      mesh.material.color.setHex(mesh.userData.baseColor);
-    } else {
-      mesh.scale.set(0.45, 0.45, 0.45);
-      mesh.material.color.setHex(0x0a1424); // Dark-matter dim
-    }
-  });
-
-  // 3. Disegna SOLO i raggi laser delle sinapsi connesse
-  while (globeEdgesGroup.children.length > 0) {
-    globeEdgesGroup.remove(globeEdgesGroup.children[0]);
-  }
-
-  const laserPositions = [];
-  const laserColors = [];
-
-  connectedNodeIds.forEach(otherId => {
-    if (otherId === nodeId) return;
-    const otherMesh = globeNodeMeshMap.get(otherId);
-    if (!otherMesh) return;
-
-    const p1 = centerMesh.position;
-    const p2 = otherMesh.position;
-    const isCross = (node.hemisphere || 'LEFT') !== (otherMesh.userData.node.hemisphere || 'LEFT');
-
-    laserPositions.push(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
-
-    if (isCross) {
-      laserColors.push(1.0, 0.8, 0.1, 1.0, 0.8, 0.1); // Oro corpo calloso
-    } else if (isLeft) {
-      laserColors.push(0.0, 0.95, 1.0, 0.0, 0.95, 1.0); // Cyan laser
-    } else {
-      laserColors.push(1.0, 0.1, 0.6, 1.0, 0.1, 0.6); // Magenta laser
-    }
-  });
-
-  if (laserPositions.length > 0) {
-    const laserGeo = new THREE.BufferGeometry();
-    laserGeo.setAttribute('position', new THREE.Float32BufferAttribute(laserPositions, 3));
-    laserGeo.setAttribute('color', new THREE.Float32BufferAttribute(laserColors, 3));
-    const laserMat = new THREE.LineBasicMaterial({
-      vertexColors: true,
-      transparent: true,
-      opacity: 0.95,
-      linewidth: 3,
-      blending: THREE.AdditiveBlending
-    });
-    const laserLines = new THREE.LineSegments(laserGeo, laserMat);
-    globeEdgesGroup.add(laserLines);
-  }
-
-  // 4. Popola e Mostra la Card Olografica Relazioni
-  const card = document.getElementById('globe-rel-card');
-  const titleEl = document.getElementById('globe-rel-title');
-  const iconEl = document.getElementById('globe-rel-icon');
-  const metaEl = document.getElementById('globe-rel-meta');
-  const summaryEl = document.getElementById('globe-rel-summary');
-  const countEl = document.getElementById('globe-rel-count');
-  const listEl = document.getElementById('globe-rel-list');
-  const pathWrap = document.getElementById('globe-rel-path-wrap');
-  const pathLink = document.getElementById('globe-rel-path-link');
-  const isolateBtn = document.getElementById('btn-globe-isolate');
-
-  if (card && titleEl) {
-    titleEl.textContent = node.label || node.id;
-    iconEl.textContent = isLeft ? '⚡' : '🌸';
-    metaEl.textContent = `${isLeft ? '⚡ EMISFERO SINISTRO' : '🌸 EMISFERO DESTRO'} · ${node.primary_label || 'CONCEPT'} · PIANO ${node.layer_level || 1}`;
-    summaryEl.textContent = node.summary || 'Nessuna sintesi disponibile nel grafo.';
-    countEl.textContent = outgoing.length + incoming.length;
-
-    // Gestione link file Mac
-    const details = typeof node.details === 'object' ? node.details : {};
-    const localUri = details?.file_uri || (details?.local_path ? `file://${details.local_path}` : null);
-    if (localUri && pathWrap && pathLink) {
-      pathLink.href = localUri;
-      pathLink.textContent = `📂 ${details.local_path || localUri}`;
-      pathWrap.style.display = 'block';
-    } else if (pathWrap) {
-      pathWrap.style.display = 'none';
-    }
-
-    // Costruisci lista relazioni
-    if (listEl) {
-      listEl.innerHTML = '';
-
-      if (outgoing.length === 0 && incoming.length === 0) {
-        listEl.innerHTML = `<div style="color:#64748b; font-size:11px; padding:6px 0;">Nessuna sinapsi diretta collegata.</div>`;
-      }
-
-      outgoing.forEach(rel => {
-        const isBridge = rel.hemisphere !== node.hemisphere;
-        const item = document.createElement('div');
-        item.className = 'globe-rel-item';
-        item.onclick = () => selectGlobeNode(rel.targetId);
-        item.innerHTML = `
-          <div class="globe-rel-item-name" title="${rel.label}">${rel.hemisphere === 'LEFT' ? '⚡' : '🌸'} ${rel.label}</div>
-          <span class="globe-rel-item-badge ${isBridge ? 'bridge' : ''}">${rel.relation}</span>
-        `;
-        listEl.appendChild(item);
-      });
-
-      incoming.forEach(rel => {
-        const isBridge = rel.hemisphere !== node.hemisphere;
-        const item = document.createElement('div');
-        item.className = 'globe-rel-item';
-        item.onclick = () => selectGlobeNode(rel.sourceId);
-        item.innerHTML = `
-          <div class="globe-rel-item-name" title="${rel.label}">📥 ${rel.label}</div>
-          <span class="globe-rel-item-badge ${isBridge ? 'bridge' : ''}">← ${rel.relation}</span>
-        `;
-        listEl.appendChild(item);
-      });
-    }
-
-    card.style.display = 'flex';
-    if (isolateBtn) isolateBtn.style.display = 'inline-block';
-  }
-
-  // 5. Ruota dolcemente il mappamondo verso il nodo selezionato
-  const p = centerMesh.position;
-  const targetTheta = Math.atan2(p.x, p.z);
-  const targetPhi = Math.atan2(p.y, Math.sqrt(p.x * p.x + p.z * p.z));
-
-  globeTargetRotationY = -targetTheta;
-  globeTargetRotationX = targetPhi;
-
-  // Sincronizza anche la sidebar laterale
-  showInfo(nodeId);
-}
-
-function clearGlobeSelection() {
-  selectedGlobeNodeId = null;
-
-  const card = document.getElementById('globe-rel-card');
-  const isolateBtn = document.getElementById('btn-globe-isolate');
-  if (card) card.style.display = 'none';
-  if (isolateBtn) isolateBtn.style.display = 'none';
-
-  // Ripristina dimensioni e colori di tutti i nodi
-  globeNodeMeshMap.forEach(mesh => {
-    mesh.scale.set(1, 1, 1);
-    mesh.material.color.setHex(mesh.userData.baseColor);
-  });
-
-  // Ridisegna archi standard
-  drawGlobeStandardEdges();
-  applyRadarFilter(currentRadarFilter);
-}
-
-function openSidebarDossierFromGlobe() {
-  if (selectedGlobeNodeId) {
-    showInfo(selectedGlobeNodeId);
-    if (window.innerWidth <= 900) {
-      switchMobileTab('sidebar');
-    }
-  }
-}
-
-function setupGlobeInteractions(container) {
-  const canvas = globeRenderer.domElement;
-
-  canvas.addEventListener('mousedown', (e) => {
-    globeIsDragging = true;
-    globePreviousMousePosition = { x: e.clientX, y: e.clientY };
-  });
-
-  canvas.addEventListener('mousemove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    globeMouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    globeMouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-
-    if (globeIsDragging) {
-      const deltaX = e.clientX - globePreviousMousePosition.x;
-      const deltaY = e.clientY - globePreviousMousePosition.y;
-
-      globeTargetRotationY += deltaX * 0.005;
-      globeTargetRotationX += deltaY * 0.005;
-
-      globePreviousMousePosition = { x: e.clientX, y: e.clientY };
-    }
-  });
-
-  window.addEventListener('mouseup', () => {
-    globeIsDragging = false;
-  });
-
-  canvas.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    globeCameraDistance = Math.max(350, Math.min(1600, globeCameraDistance + e.deltaY * 0.8));
-    globeCamera.position.z = globeCameraDistance;
-  }, { passive: false });
-
-  canvas.addEventListener('click', (e) => {
-    if (globeIntersectedNode) {
-      const node = globeIntersectedNode.userData.node;
-      if (node) {
-        selectGlobeNode(node.id);
-      }
-    } else if (!globeIsDragging) {
-      // Cliccato nello spazio vuoto: resetta focus se aperto
-      if (selectedGlobeNodeId && e.target === canvas) {
-        clearGlobeSelection();
-      }
-    }
-  });
-
-  window.addEventListener('resize', resizeGlobe3D);
-}
-
-function animateGlobe3D() {
-  if (graphViewMode !== 'globe' || !globeRenderer || !globeScene) {
-    isGlobeLoopRunning = false;
-    return;
-  }
-
-  isGlobeLoopRunning = true;
-  requestAnimationFrame(animateGlobe3D);
-
-  if (isGlobeSpinning && !globeIsDragging && !selectedGlobeNodeId) {
-    globeTargetRotationY += 0.0018;
-  }
-
-  // Smooth rotation damping
-  globeRotationX += (globeTargetRotationX - globeRotationX) * 0.08;
-  globeRotationY += (globeTargetRotationY - globeRotationY) * 0.08;
-
-  if (globeNodesGroup && globeEdgesGroup && globeGridGroup) {
-    globeNodesGroup.rotation.x = globeRotationX;
-    globeNodesGroup.rotation.y = globeRotationY;
-    globeEdgesGroup.rotation.x = globeRotationX;
-    globeEdgesGroup.rotation.y = globeRotationY;
-    globeGridGroup.rotation.x = globeRotationX;
-    globeGridGroup.rotation.y = globeRotationY;
-  }
-
-  // Raycasting hover check
-  if (globeRaycaster && globeCamera && globeNodesGroup) {
-    globeRaycaster.setFromCamera(globeMouse, globeCamera);
-    const intersects = globeRaycaster.intersectObjects(globeNodesGroup.children);
-
-    if (intersects.length > 0) {
-      const hit = intersects[0].object;
-      if (globeIntersectedNode !== hit) {
-        if (globeIntersectedNode && globeIntersectedNode.userData.node.id !== selectedGlobeNodeId) {
-          globeIntersectedNode.scale.set(1, 1, 1);
-          globeIntersectedNode.material.color.setHex(globeIntersectedNode.userData.baseColor);
-        }
-        globeIntersectedNode = hit;
-        if (hit.userData.node.id !== selectedGlobeNodeId) {
-          globeIntersectedNode.scale.set(1.9, 1.9, 1.9);
-          globeIntersectedNode.material.color.setHex(0xFFFFFF);
-        }
-
-        const node = globeIntersectedNode.userData.node;
-        const statusEl = document.getElementById('terminal-status-text');
-        if (statusEl && node) {
-          statusEl.innerHTML = `🪐 <strong>${node.label}</strong> [${node.primary_label || 'NODE'}] · ${node.hemisphere === 'LEFT' ? '⚡ Sinistro' : '🌸 Destro'}`;
-        }
-      }
-    } else {
-      if (globeIntersectedNode) {
-        if (globeIntersectedNode.userData.node.id !== selectedGlobeNodeId) {
-          globeIntersectedNode.scale.set(1, 1, 1);
-          globeIntersectedNode.material.color.setHex(globeIntersectedNode.userData.baseColor);
-        }
-        globeIntersectedNode = null;
-      }
-    }
-  }
-
-  globeRenderer.render(globeScene, globeCamera);
-}
-
-function toggleGlobeSpin() {
-  isGlobeSpinning = !isGlobeSpinning;
-  const btn = document.getElementById('btn-globe-spin');
-  if (btn) {
-    btn.classList.toggle('active', isGlobeSpinning);
-    btn.textContent = isGlobeSpinning ? '🔄 Auto-Spin ON' : '⏸️ Auto-Spin OFF';
-  }
-}
-
-function resetGlobeCamera() {
-  globeTargetRotationX = 0;
-  globeTargetRotationY = 0;
-  globeCameraDistance = 850;
-  if (globeCamera) globeCamera.position.set(0, 0, globeCameraDistance);
-  clearGlobeSelection();
-}
-
-// -----------------------------------------------------------------------------
-// 📡 Radar Tech & Theme Filter Engine
-// -----------------------------------------------------------------------------
-
-function applyRadarFilter(filterKey) {
+function applyRadarFilter(filterKey, labelText) {
   currentRadarFilter = filterKey;
 
-  // Aggiorna pulsanti UI
-  document.querySelectorAll('.radar-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.radar === filterKey);
-  });
-
-  const filterLower = filterKey.toLowerCase();
-
-  // 1. Aggiorna 3D Constellation Globe
-  if (globeNodeMeshMap.size > 0 && !selectedGlobeNodeId) {
-    globeNodeMeshMap.forEach((mesh, nodeId) => {
-      const node = mesh.userData.node;
-      const tagsStr = (Array.isArray(node.tags) ? node.tags.join(' ') : (node.tags || '')).toLowerCase();
-      const labelStr = (node.label || '').toLowerCase();
-      const idStr = (node.id || '').toLowerCase();
-      const combined = `${tagsStr} ${labelStr} ${idStr}`;
-
-      let matches = false;
-      if (filterLower === 'all') {
-        matches = true;
-      } else if (filterLower === 'swift') {
-        matches = combined.includes('swift') || combined.includes('ios') || combined.includes('widgetkit');
-      } else if (filterLower === 'python') {
-        matches = combined.includes('python') || combined.includes('fastapi') || combined.includes('ai') || combined.includes('torch');
-      } else if (filterLower === 'web') {
-        matches = combined.includes('typescript') || combined.includes('react') || combined.includes('javascript') || combined.includes('web');
-      } else if (filterLower === 'cpp') {
-        matches = combined.includes('cpp') || combined.includes('c++') || combined.includes('algo') || combined.includes('lasd') || combined.includes('c-lang');
-      } else if (filterLower === 'medical') {
-        matches = combined.includes('medicina') || combined.includes('salute') || combined.includes('datamed') || combined.includes('caretrack') || combined.includes('alcool');
-      } else if (filterLower === 'bridges') {
-        matches = (mesh.userData.degree || 0) >= 4;
-      }
-
-      if (matches) {
-        mesh.material.color.setHex(mesh.userData.baseColor);
-        mesh.scale.set(1.4, 1.4, 1.4);
-      } else {
-        mesh.material.color.setHex(0x1a2638);
-        mesh.scale.set(0.6, 0.6, 0.6);
-      }
-    });
+  // Aggiorna etichetta e stato nel dropdown
+  const labelEl = document.getElementById('active-radar-label');
+  if (labelEl && labelText) {
+    labelEl.textContent = labelText;
   }
 
-  // 2. Aggiorna 2D Vis Network (se in modalità 2D)
-  if (network && typeof nodesDS !== 'undefined' && nodesDS && graphViewMode !== 'globe') {
+  document.querySelectorAll('#dropdown-radar .dropdown-item-compact').forEach(item => {
+    item.classList.toggle('active', item.dataset.radar === filterKey);
+  });
+
+  const filterLower = (filterKey || 'all').toLowerCase();
+
+  // Aggiorna 2D Vis Network
+  if (network && typeof nodesDS !== 'undefined' && nodesDS) {
     const allNodes = nodesDS.get();
     const updates = [];
 
     allNodes.forEach(node => {
-      const tagsStr = (Array.isArray(node.tags) ? node.tags.join(' ') : (node.tags || '')).toLowerCase();
-      const labelStr = (node.label || '').toLowerCase();
-      const idStr = (node.id || '').toLowerCase();
+      const nData = node._data || rawNodes.find(x => x.id === node.id) || {};
+      const tagsStr = (Array.isArray(nData.tags) ? nData.tags.join(' ') : (nData.tags || '')).toLowerCase();
+      const labelStr = (nData.label || '').toLowerCase();
+      const idStr = (nData.id || '').toLowerCase();
       const combined = `${tagsStr} ${labelStr} ${idStr}`;
 
       let matches = false;
@@ -3264,9 +2560,9 @@ function applyRadarFilter(filterKey) {
       } else if (filterLower === 'cpp') {
         matches = combined.includes('cpp') || combined.includes('lasd');
       } else if (filterLower === 'medical') {
-        matches = combined.includes('medicina') || combined.includes('salute') || combined.includes('datamed');
+        matches = combined.includes('medicina') || combined.includes('salute') || combined.includes('datamed') || combined.includes('caretrack');
       } else if (filterLower === 'bridges') {
-        matches = true;
+        matches = (node._degree || 0) >= 3;
       }
 
       updates.push({

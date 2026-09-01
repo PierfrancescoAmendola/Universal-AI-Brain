@@ -8,7 +8,7 @@ layer_level: 2
 parent_graph_id: domain-crescita-personale
 tags: [firmware, mental-model, feynman]
 confidence: EXTRACTED
-updated_at: "2026-08-31T14:54:40.672430+00:00"
+updated_at: "2026-09-01T10:39:10.817478+00:00"
 ---
 
 # Feynman Technique (Tecnica di Feynman)

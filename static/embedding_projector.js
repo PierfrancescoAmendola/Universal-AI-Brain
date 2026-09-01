@@ -15,6 +15,7 @@ window.EmbeddingProjector = (function() {
   let camera = null;
   let renderer = null;
   let controls = null;
+  let constellationGroup = null;
   let pointCloudMesh = null;
   let domainMeshesGroup = null;
   let linesMesh = null;
@@ -43,6 +44,9 @@ window.EmbeddingProjector = (function() {
   let activeFilter = 'ALL';
   let selectedNode = null;
   let hoveredNode = null;
+  let nodeSpacingScale = 1.0;
+  let nodeBrightness = 1.0;
+  let edgeBrightness = 1.0;
 
   // Coordinate spaziali
   const positions = {
@@ -50,6 +54,7 @@ window.EmbeddingProjector = (function() {
     umap: null,
     pca: null,
     bipolar: null,
+    globe: null,
     current: null
   };
 
@@ -127,6 +132,7 @@ window.EmbeddingProjector = (function() {
     positions.umap = new Float32Array(N * 3);
     positions.pca = new Float32Array(N * 3);
     positions.bipolar = new Float32Array(N * 3);
+    positions.globe = new Float32Array(N * 3);
     positions.current = new Float32Array(N * 3);
 
     // 1. Bi-Polar Hemisphere Space
@@ -173,7 +179,38 @@ window.EmbeddingProjector = (function() {
       positions.umap[i * 3 + 2] = clusterCenterZ + (Math.random() - 0.5) * 80;
     });
 
-    // 4. Initial t-SNE Random Nebula
+    // 4. Spherical Bi-Hemispheric Constellation Globe
+    const radius = 220;
+    const offset = 2 / Math.max(N, 1);
+    brainNodes.forEach((n, i) => {
+      const isLeft = n.hemisphere === 'LEFT';
+      const isL0 = n.layer_level === 0;
+
+      const yNorm = ((i * offset) - 1) + (offset / 2);
+      const phi = Math.acos(Math.max(-1, Math.min(1, yNorm)));
+      let theta = (i * 2.399963229728653); // Golden angle
+
+      if (isLeft) {
+        theta = Math.PI * 0.15 + (theta % (Math.PI * 0.7)); // Est / Sinistro
+      } else {
+        theta = Math.PI * 1.15 + (theta % (Math.PI * 0.7)); // Ovest / Destro
+      }
+
+      if (isL0) {
+        theta = (i * (Math.PI * 2 / 12));
+      }
+
+      const r = isL0 ? radius * 1.08 : radius;
+      const x = r * Math.sin(phi) * Math.cos(theta);
+      const y = r * Math.cos(phi) * (isL0 ? 1.05 : 1.0);
+      const z = r * Math.sin(phi) * Math.sin(theta);
+
+      positions.globe[i * 3] = x;
+      positions.globe[i * 3 + 1] = y;
+      positions.globe[i * 3 + 2] = z;
+    });
+
+    // 5. Initial t-SNE Random Nebula
     for (let i = 0; i < N * 3; i++) {
       positions.tsne[i] = (Math.random() - 0.5) * 220;
       positions.current[i] = positions.tsne[i];
@@ -232,10 +269,13 @@ window.EmbeddingProjector = (function() {
     createCosmicStarfield();
 
     // Gruppi di oggetti
+    constellationGroup = new THREE.Group();
+    scene.add(constellationGroup);
+
     domainMeshesGroup = new THREE.Group();
     labelSpritesGroup = new THREE.Group();
-    scene.add(domainMeshesGroup);
-    scene.add(labelSpritesGroup);
+    constellationGroup.add(domainMeshesGroup);
+    constellationGroup.add(labelSpritesGroup);
 
     createKnnLaserOverlay();
 
@@ -263,19 +303,20 @@ window.EmbeddingProjector = (function() {
       pos[i + 1] = r * Math.sin(phi) * Math.sin(theta);
       pos[i + 2] = r * Math.cos(phi);
 
-      col[i] = 0.4 + Math.random() * 0.6;
-      col[i + 1] = 0.6 + Math.random() * 0.4;
-      col[i + 2] = 1.0;
+      const isCyan = Math.random() > 0.5;
+      col[i] = isCyan ? 0.0 : 0.8;
+      col[i + 1] = isCyan ? 0.7 : 0.0;
+      col[i + 2] = isCyan ? 1.0 : 0.8;
     }
 
     geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
     geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
 
     const mat = new THREE.PointsMaterial({
-      size: 2.0,
+      size: 2.2,
       vertexColors: true,
       transparent: true,
-      opacity: 0.55
+      opacity: 0.45
     });
 
     starField = new THREE.Points(geo, mat);
@@ -286,7 +327,9 @@ window.EmbeddingProjector = (function() {
    * Carica i nodi e gli archi dal grafo del cervello
    */
   function setData(nodes, edges) {
-    brainNodes = nodes || [];
+    if (!nodes || !nodes.length) return;
+
+    brainNodes = nodes;
     brainEdges = edges || [];
 
     nodeIndexMap.clear();
@@ -306,12 +349,12 @@ window.EmbeddingProjector = (function() {
     if (!scene || !brainNodes.length) return;
 
     // Rimuovi vecchi mesh
-    if (pointCloudMesh) {
-      scene.remove(pointCloudMesh);
+    if (pointCloudMesh && constellationGroup) {
+      constellationGroup.remove(pointCloudMesh);
       pointCloudMesh = null;
     }
-    if (linesMesh) {
-      scene.remove(linesMesh);
+    if (linesMesh && constellationGroup) {
+      constellationGroup.remove(linesMesh);
       linesMesh = null;
     }
     while (domainMeshesGroup.children.length > 0) {
@@ -350,22 +393,28 @@ window.EmbeddingProjector = (function() {
     geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
     // PointsMaterial con texture sferica anti-aliased (ZERO QUADRATI!)
+    // Dimensione FISSA indipendente dalla luminosità:
     const material = new THREE.PointsMaterial({
       size: 10.0,
       map: circleTexture,
       vertexColors: true,
       transparent: true,
-      opacity: 0.92,
+      opacity: 0.95,
       alphaTest: 0.01,
       sizeAttenuation: true
     });
 
     pointCloudMesh = new THREE.Points(geometry, material);
-    scene.add(pointCloudMesh);
+    if (constellationGroup) constellationGroup.add(pointCloudMesh);
+    else scene.add(pointCloudMesh);
 
     // Archi strutturali del grafo
     createGraphLines();
     updateLabels();
+
+    if (constellationGroup) {
+      constellationGroup.scale.set(nodeSpacingScale, nodeSpacingScale, nodeSpacingScale);
+    }
   }
 
   /**
@@ -434,13 +483,14 @@ window.EmbeddingProjector = (function() {
     const lineMat = new THREE.LineBasicMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: 0.16,
+      opacity: 0.18 * edgeBrightness,
       linewidth: 1
     });
 
     linesMesh = new THREE.LineSegments(lineGeo, lineMat);
     linesMesh.visible = showGraphEdges;
-    scene.add(linesMesh);
+    if (constellationGroup) constellationGroup.add(linesMesh);
+    else scene.add(linesMesh);
   }
 
   /**
@@ -452,11 +502,12 @@ window.EmbeddingProjector = (function() {
     const knnMat = new THREE.LineBasicMaterial({
       color: 0x00d2ff,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.85 * edgeBrightness,
       linewidth: 2
     });
     knnLinesMesh = new THREE.LineSegments(knnGeo, knnMat);
-    scene.add(knnLinesMesh);
+    if (constellationGroup) constellationGroup.add(knnLinesMesh);
+    else scene.add(knnLinesMesh);
   }
 
   /**
@@ -519,6 +570,14 @@ window.EmbeddingProjector = (function() {
     const tsneControls = document.getElementById('proj-tsne-controls');
     if (tsneControls) tsneControls.style.display = algo === 'tsne' ? 'flex' : 'none';
 
+    // Se eravamo in vista globo, torna a vista 3D standard per l'algoritmo
+    const btnGlobe = document.getElementById('proj-btn-view-globe');
+    if (btnGlobe && btnGlobe.classList.contains('active')) {
+      const btn3d = document.getElementById('proj-btn-view-3d');
+      if (btn3d) btn3d.classList.add('active');
+      btnGlobe.classList.remove('active');
+    }
+
     const source = positions[algo];
     if (source && window.TWEEN) {
       for (let i = 0; i < brainNodes.length * 3; i++) {
@@ -533,28 +592,41 @@ window.EmbeddingProjector = (function() {
   }
 
   /**
-   * Switch 3D Volumetrico <-> 2D Planare
+   * Switch 3D Volumetrico <-> 2D Planare <-> Emisferi Globo
    */
   function setDimension(dim) {
-    is3D = (dim === '3D');
+    is3D = (dim === '3D' || dim === 'globe');
     const btn3d = document.getElementById('proj-btn-view-3d');
     const btn2d = document.getElementById('proj-btn-view-2d');
-    if (btn3d) btn3d.classList.toggle('active', is3D);
-    if (btn2d) btn2d.classList.toggle('active', !is3D);
+    const btnGlobe = document.getElementById('proj-btn-view-globe');
 
-    const source = positions[currentAlgorithm];
+    if (btn3d) btn3d.classList.toggle('active', dim === '3D');
+    if (btn2d) btn2d.classList.toggle('active', dim === '2D');
+    if (btnGlobe) btnGlobe.classList.toggle('active', dim === 'globe');
+
+    const source = (dim === 'globe') ? positions.globe : positions[currentAlgorithm];
     if (source && window.TWEEN) {
       for (let i = 0; i < brainNodes.length; i++) {
-        const targetZ = is3D ? source[i * 3 + 2] : 0;
+        const tx = source[i * 3];
+        const ty = source[i * 3 + 1];
+        let tz = source[i * 3 + 2];
+        if (dim === '2D') tz = 0;
+
         new TWEEN.Tween(positions.current)
-          .to({ [i * 3 + 2]: targetZ }, 750)
-          .easing(TWEEN.Easing.Quadratic.Out)
+          .to({
+            [i * 3]: tx,
+            [i * 3 + 1]: ty,
+            [i * 3 + 2]: tz
+          }, 850)
+          .easing(TWEEN.Easing.Cubic.Out)
           .start();
       }
 
-      if (!is3D) {
-        new TWEEN.Tween(camera.position).to({ x: 0, y: 0, z: 520 }, 750).start();
-        new TWEEN.Tween(camera.rotation).to({ x: 0, y: 0, z: 0 }, 750).start();
+      if (dim === '2D') {
+        new TWEEN.Tween(camera.position).to({ x: 0, y: 0, z: 520 }, 850).start();
+        new TWEEN.Tween(camera.rotation).to({ x: 0, y: 0, z: 0 }, 850).start();
+      } else if (dim === 'globe') {
+        new TWEEN.Tween(camera.position).to({ x: 0, y: 30, z: 520 }, 850).start();
       }
     }
   }
@@ -759,10 +831,11 @@ window.EmbeddingProjector = (function() {
     const idx = nodeIndexMap.get(node.id);
     if (idx === undefined) return;
 
+    const scale = nodeSpacingScale || 1.0;
     const targetPos = {
-      x: positions.current[idx * 3],
-      y: positions.current[idx * 3 + 1],
-      z: positions.current[idx * 3 + 2]
+      x: positions.current[idx * 3] * scale,
+      y: positions.current[idx * 3 + 1] * scale,
+      z: positions.current[idx * 3 + 2] * scale
     };
 
     if (window.TWEEN) {
@@ -774,46 +847,64 @@ window.EmbeddingProjector = (function() {
     }
   }
 
-  function filterHemisphere(hemi, btnEl) {
-    activeFilter = hemi;
-    document.querySelectorAll('.proj-filter-chips .proj-chip').forEach(c => c.classList.remove('active'));
-    if (btnEl) btnEl.classList.add('active');
-
+  /**
+   * Aggiorna la luminosità / radianza dei nodi senza toccare minimamente la loro dimensione geometrica.
+   */
+  function updateNodeColorsAndBrightness() {
     if (!pointCloudMesh) return;
     const colors = pointCloudMesh.geometry.attributes.color.array;
-    const sizes = pointCloudMesh.geometry.attributes.size.array;
 
     brainNodes.forEach((n, i) => {
-      let visible = true;
-      if (hemi === 'LEFT' && n.hemisphere !== 'LEFT') visible = false;
-      if (hemi === 'RIGHT' && n.hemisphere !== 'RIGHT') visible = false;
-      if (hemi === 'L0' && n.layer_level !== 0) visible = false;
-
       const isLeft = n.hemisphere === 'LEFT';
       const isL0 = n.layer_level === 0;
+      let visible = true;
+
+      if (activeFilter === 'LEFT' && !isLeft) visible = false;
+      if (activeFilter === 'RIGHT' && isLeft) visible = false;
+      if (activeFilter === 'L0' && !isL0) visible = false;
+
       let baseColor = isLeft ? new THREE.Color(0x00d2ff) : new THREE.Color(0xff007f);
       if (isL0) baseColor = new THREE.Color(0xffd15c);
 
       if (visible) {
-        colors[i * 3] = baseColor.r;
-        colors[i * 3 + 1] = baseColor.g;
-        colors[i * 3 + 2] = baseColor.b;
-        sizes[i] = isL0 ? 15.0 : 8.0;
+        // Luminosità pura del colore RGB
+        colors[i * 3] = baseColor.r * nodeBrightness;
+        colors[i * 3 + 1] = baseColor.g * nodeBrightness;
+        colors[i * 3 + 2] = baseColor.b * nodeBrightness;
       } else {
-        colors[i * 3] = 0.12;
-        colors[i * 3 + 1] = 0.15;
-        colors[i * 3 + 2] = 0.20;
-        sizes[i] = 2.0;
+        colors[i * 3] = 0.08 * nodeBrightness;
+        colors[i * 3 + 1] = 0.08 * nodeBrightness;
+        colors[i * 3 + 2] = 0.12 * nodeBrightness;
       }
     });
 
     pointCloudMesh.geometry.attributes.color.needsUpdate = true;
-    pointCloudMesh.geometry.attributes.size.needsUpdate = true;
+
+    // Aggiorna radianza delle sfere dei domini L0 senza mai alterarne la dimensione/scala
+    if (domainMeshesGroup) {
+      domainMeshesGroup.children.forEach(mesh => {
+        if (mesh.material) {
+          mesh.material.color = new THREE.Color(0xffd15c).multiplyScalar(Math.min(2.0, nodeBrightness));
+          mesh.material.opacity = Math.min(1.0, 0.85 * Math.min(1.5, nodeBrightness));
+        }
+        if (mesh.userData && mesh.userData.ring && mesh.userData.ring.material) {
+          mesh.userData.ring.material.color = new THREE.Color(0xffd15c).multiplyScalar(Math.min(2.0, nodeBrightness));
+          mesh.userData.ring.material.opacity = Math.min(1.0, 0.4 * nodeBrightness);
+        }
+      });
+    }
+  }
+
+  function filterHemisphere(hemi, btnEl) {
+    activeFilter = hemi;
+    document.querySelectorAll('.proj-chip').forEach(c => c.classList.remove('active'));
+    if (btnEl) btnEl.classList.add('active');
+    updateNodeColorsAndBrightness();
   }
 
   function setupInteractions() {
     const raycaster = new THREE.Raycaster();
-    raycaster.params.Points.threshold = 9;
+    raycaster.params.Points.threshold = 7;
     const mouse = new THREE.Vector2(-999, -999);
     const tooltip = document.getElementById('proj-tooltip');
 
@@ -863,38 +954,61 @@ window.EmbeddingProjector = (function() {
   }
 
   function syncLinesAndSprites() {
-    if (!linesMesh) return;
-    const linePosAttr = linesMesh.geometry.attributes.position;
-    let ptr = 0;
+    if (linesMesh && showGraphEdges) {
+      const linePosAttr = linesMesh.geometry.attributes.position;
+      let ptr = 0;
 
-    brainEdges.forEach(e => {
-      const sId = typeof e.source === 'object' ? e.source.id : e.source;
-      const tId = typeof e.target === 'object' ? e.target.id : e.target;
-      const sIdx = nodeIndexMap.get(sId);
-      const tIdx = nodeIndexMap.get(tId);
-      if (sIdx !== undefined && tIdx !== undefined) {
-        linePosAttr.setXYZ(ptr++, positions.current[sIdx * 3], positions.current[sIdx * 3 + 1], positions.current[sIdx * 3 + 2]);
-        linePosAttr.setXYZ(ptr++, positions.current[tIdx * 3], positions.current[tIdx * 3 + 1], positions.current[tIdx * 3 + 2]);
-      }
-    });
-    linePosAttr.needsUpdate = true;
+      brainEdges.forEach(e => {
+        const sId = typeof e.source === 'object' ? e.source.id : e.source;
+        const tId = typeof e.target === 'object' ? e.target.id : e.target;
+        const sIdx = nodeIndexMap.get(sId);
+        const tIdx = nodeIndexMap.get(tId);
+        if (sIdx !== undefined && tIdx !== undefined && ptr + 1 < linePosAttr.count) {
+          linePosAttr.setXYZ(
+            ptr++,
+            positions.current[sIdx * 3],
+            positions.current[sIdx * 3 + 1],
+            positions.current[sIdx * 3 + 2]
+          );
+          linePosAttr.setXYZ(
+            ptr++,
+            positions.current[tIdx * 3],
+            positions.current[tIdx * 3 + 1],
+            positions.current[tIdx * 3 + 2]
+          );
+        }
+      });
+      linePosAttr.needsUpdate = true;
+    }
 
     // Sincronizza Pulsar L0
     if (domainMeshesGroup) {
       domainMeshesGroup.children.forEach(mesh => {
         const idx = mesh.userData.nodeIndex;
-        mesh.position.set(positions.current[idx * 3], positions.current[idx * 3 + 1], positions.current[idx * 3 + 2]);
-        if (mesh.userData.ring) {
-          mesh.userData.ring.rotation.z += 0.02;
+        if (idx !== undefined) {
+          mesh.position.set(
+            positions.current[idx * 3],
+            positions.current[idx * 3 + 1],
+            positions.current[idx * 3 + 2]
+          );
+          if (mesh.userData.ring) {
+            mesh.userData.ring.rotation.z += 0.02;
+          }
         }
       });
     }
 
     // Sincronizza etichette
-    if (labelSpritesGroup) {
+    if (labelSpritesGroup && showLabels) {
       labelSpritesGroup.children.forEach(sp => {
         const idx = sp.userData.nodeIndex;
-        sp.position.set(positions.current[idx * 3], positions.current[idx * 3 + 1] + 8, positions.current[idx * 3 + 2]);
+        if (idx !== undefined) {
+          sp.position.set(
+            positions.current[idx * 3],
+            positions.current[idx * 3 + 1] + 8,
+            positions.current[idx * 3 + 2]
+          );
+        }
       });
     }
   }
@@ -973,6 +1087,27 @@ window.EmbeddingProjector = (function() {
     setPerplexity: p => { perplexity = parseInt(p); },
     setLearningRate: lr => { learningRate = parseInt(lr); },
     setKnn: k => { knnCount = parseInt(k); if (selectedNode) selectNode(selectedNode); },
+    setNodeSpacing: s => {
+      nodeSpacingScale = parseFloat(s) || 1.0;
+      if (constellationGroup) {
+        constellationGroup.scale.set(nodeSpacingScale, nodeSpacingScale, nodeSpacingScale);
+      }
+    },
+    setNodeBrightness: b => {
+      nodeBrightness = parseFloat(b) || 1.0;
+      updateNodeColorsAndBrightness();
+    },
+    setEdgeBrightness: eb => {
+      edgeBrightness = (parseFloat(eb) || 100) / 100;
+      if (linesMesh) {
+        linesMesh.material.opacity = 0.22 * edgeBrightness;
+        linesMesh.material.needsUpdate = true;
+      }
+      if (knnLinesMesh) {
+        knnLinesMesh.material.opacity = 0.85 * edgeBrightness;
+        knnLinesMesh.material.needsUpdate = true;
+      }
+    },
     toggleGraphEdges: () => {
       showGraphEdges = !showGraphEdges;
       if (linesMesh) linesMesh.visible = showGraphEdges;
@@ -998,6 +1133,7 @@ window.EmbeddingProjector = (function() {
         selectNode(match);
         focusCameraOnNode(match.id);
       }
-    }
+    },
+    resize: onResize
   };
 })();

@@ -111,3 +111,7 @@ Sistema di memoria persistente a grafo bi-emisferico per agenti LLM (Claude, Gem
 - [[person-pierfrancesco]] (`ARCHITECT_OF`) — _Disegnato su Obsidian Canvas_
 - [[user-intent-chiarimento-stack-rendering-grafi-frontend]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
 - [[reasoning-analisi-stack-grafico-universal-brain]] (`OPTIMIZES`) — _Ottimizza la chiarezza architetturale del frontend_
+- [[user-intent-ui-declutter-projector-fullscreen]] (`TARGETS_PROJECT`)
+- [[reasoning-ui-declutter-projector-fullscreen]] (`MODIFIES`)
+- [[user-intent-embedding-projector-globe-and-optics]] (`TARGETS_PROJECT`) — _L'intento targetta il sistema di visualizzazione del Cervello Neurale_
+- [[reasoning-embedding-projector-globe-and-optics]] (`OPTIMIZES`) — _Le ottimizzazioni 3D migliorano il sistema universal-ai-brain_

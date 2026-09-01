@@ -8,7 +8,7 @@ layer_level: 2
 parent_graph_id: domain-ai-cognitive-systems
 tags: [firmware, mental-model, first_principles]
 confidence: EXTRACTED
-updated_at: "2026-08-31T14:54:40.671975+00:00"
+updated_at: "2026-09-01T10:39:10.816371+00:00"
 ---
 
 # First Principles (Primi Principi)
