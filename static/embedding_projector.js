@@ -1247,7 +1247,6 @@ window.EmbeddingProjector = (function() {
         });
 
         landmarks.forEach((p, idx) => {
-        landmarks.forEach((p, idx) => {
           if (!p) return;
           ctx.beginPath();
           ctx.arc(p.x * w, p.y * h, (idx === 8 || idx === 12) ? 5 : 3, 0, Math.PI * 2);
