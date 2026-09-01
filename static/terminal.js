@@ -400,7 +400,7 @@ window.TerminalEngine = (function () {
   /**
    * Interactive CLI Command Dispatcher
    */
-  function executeCommand(cmdLine) {
+  async function executeCommand(cmdLine) {
     const raw = (cmdLine || '').trim();
     if (!raw) return;
 
@@ -426,22 +426,22 @@ window.TerminalEngine = (function () {
         break;
       case 'status':
       case 'stats':
-        execStats();
+        await execStats();
         break;
       case 'search':
       case 'find':
-        execSearch(args.join(' '));
+        await execSearch(args.join(' '));
         break;
       case 'node':
       case 'inspect':
-        execInspectNode(args[0]);
+        await execInspectNode(args[0]);
         break;
       case 'links':
       case 'edges':
-        execLinks(args[0]);
+        await execLinks(args[0]);
         break;
       case 'path':
-        execPath(args[0], args[1]);
+        await execPath(args[0], args[1]);
         break;
       case 'tensions':
       case 'tension':
@@ -495,6 +495,24 @@ window.TerminalEngine = (function () {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
+  async function ensureBrainData() {
+    if (window.rawNodes && Array.isArray(window.rawNodes) && window.rawNodes.length > 0) {
+      return { nodes: window.rawNodes, edges: window.rawEdges || [] };
+    }
+    try {
+      const res = await fetch('/brain.json');
+      if (res.ok) {
+        const data = await res.json();
+        window.rawNodes = data.nodes || [];
+        window.rawEdges = data.links || [];
+        return { nodes: window.rawNodes, edges: window.rawEdges };
+      }
+    } catch (e) {
+      console.warn('Terminal Engine unable to fetch /brain.json:', e);
+    }
+    return { nodes: window.rawNodes || [], edges: window.rawEdges || [] };
+  }
+
   /* Command Implementations */
 
   function execHelp() {
@@ -527,9 +545,8 @@ window.TerminalEngine = (function () {
     printOutput(html, 'CLI');
   }
 
-  function execStats() {
-    const nodes = window.rawNodes || [];
-    const edges = window.rawEdges || [];
+  async function execStats() {
+    const { nodes, edges } = await ensureBrainData();
     let sx = 0, dx = 0, callosum = 0, l0 = 0, l1 = 0, l2 = 0;
 
     nodes.forEach(n => {
@@ -560,18 +577,19 @@ window.TerminalEngine = (function () {
     printOutput(html, 'STATS');
   }
 
-  function execSearch(query) {
+  async function execSearch(query) {
     if (!query) {
       printOutput('Specificare un termine di ricerca. Es: <strong style="color:#00d2ff;">search swift</strong>', 'CLI');
       return;
     }
-    const nodes = window.rawNodes || [];
+    const { nodes } = await ensureBrainData();
     const q = query.toLowerCase().trim();
     const matches = nodes.filter(n => {
       return (n.label && n.label.toLowerCase().includes(q)) ||
              (n.id && n.id.toLowerCase().includes(q)) ||
              (n.category && n.category.toLowerCase().includes(q)) ||
-             (n.tags && Array.isArray(n.tags) && n.tags.some(t => t.toLowerCase().includes(q)));
+             (n.tags && Array.isArray(n.tags) && n.tags.some(t => t.toLowerCase().includes(q))) ||
+             (n.summary && n.summary.toLowerCase().includes(q));
     });
 
     if (matches.length === 0) {
@@ -610,13 +628,13 @@ window.TerminalEngine = (function () {
     }
   }
 
-  function execInspectNode(nodeId) {
+  async function execInspectNode(nodeId) {
     if (!nodeId) {
       printOutput('Specificare un ID nodo. Es: <strong style="color:#00d2ff;">node person-pierfrancesco</strong>', 'CLI');
       return;
     }
-    const nodes = window.rawNodes || [];
-    const n = nodes.find(item => item.id === nodeId || item.label.toLowerCase() === nodeId.toLowerCase());
+    const { nodes } = await ensureBrainData();
+    const n = nodes.find(item => item.id === nodeId || (item.label && item.label.toLowerCase() === nodeId.toLowerCase()));
     if (!n) {
       printOutput(`Nodo non trovato: <strong style="color:#ef4444;">${escapeHtml(nodeId)}</strong>`, 'INSPECT');
       return;
@@ -646,14 +664,13 @@ window.TerminalEngine = (function () {
     }
   }
 
-  function execLinks(nodeId) {
+  async function execLinks(nodeId) {
     if (!nodeId) {
       printOutput('Specificare un ID nodo. Es: <strong style="color:#00d2ff;">links person-pierfrancesco</strong>', 'CLI');
       return;
     }
-    const nodes = window.rawNodes || [];
-    const edges = window.rawEdges || [];
-    const n = nodes.find(item => item.id === nodeId || item.label.toLowerCase() === nodeId.toLowerCase());
+    const { nodes, edges } = await ensureBrainData();
+    const n = nodes.find(item => item.id === nodeId || (item.label && item.label.toLowerCase() === nodeId.toLowerCase()));
     if (!n) {
       printOutput(`Nodo non trovato: <strong style="color:#ef4444;">${escapeHtml(nodeId)}</strong>`, 'LINKS');
       return;
@@ -703,16 +720,15 @@ window.TerminalEngine = (function () {
     printOutput(html, 'LINKS');
   }
 
-  function execPath(fromId, toId) {
+  async function execPath(fromId, toId) {
     if (!fromId || !toId) {
       printOutput('Specificare nodo di partenza e di arrivo. Es: <strong style="color:#00d2ff;">path person-pierfrancesco project-streaksup</strong>', 'CLI');
       return;
     }
 
-    const nodes = window.rawNodes || [];
-    const edges = window.rawEdges || [];
-    const sNode = nodes.find(n => n.id === fromId || n.label.toLowerCase() === fromId.toLowerCase());
-    const tNode = nodes.find(n => n.id === toId || n.label.toLowerCase() === toId.toLowerCase());
+    const { nodes, edges } = await ensureBrainData();
+    const sNode = nodes.find(n => n.id === fromId || (n.label && n.label.toLowerCase() === fromId.toLowerCase()));
+    const tNode = nodes.find(n => n.id === toId || (n.label && n.label.toLowerCase() === toId.toLowerCase()));
 
     if (!sNode || !tNode) {
       printOutput(`Impossibile trovare uno o entrambi i nodi (${fromId} -> ${toId})`, 'PATH');

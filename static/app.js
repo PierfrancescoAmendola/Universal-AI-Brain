@@ -7,6 +7,8 @@ let nodesDS = null;
 let edgesDS = null;
 let rawNodes = [];
 let rawEdges = [];
+window.rawNodes = rawNodes;
+window.rawEdges = rawEdges;
 // Progressive Area & Cluster View Modes
 let graphViewMode = 'areas'; // 'areas' (macro clusters) or 'full' (all nodes)
 let expandedNodeIds = new Set(['person-pierfrancesco']);
@@ -425,6 +427,8 @@ async function fetchBrainData() {
     
     rawNodes = data.nodes || [];
     rawEdges = data.links || [];
+    window.rawNodes = rawNodes;
+    window.rawEdges = rawEdges;
 
     // Track nodes in terminal feed
     if (rawNodes.length > 0) {
