@@ -27,5 +27,5 @@ Richiesta di configurazione MCP e binding della skill /universal-brain su Claude
 - [[ai-reasoning-multi-llm-mcp-skill-distribution]] (`GENERATES_REASONING`) — _Restored from history_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`REQUESTED`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`REQUESTED`) — _Disegnato su Obsidian Canvas_

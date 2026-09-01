@@ -1958,6 +1958,38 @@ def serve_index():
     return HTMLResponse("<h1>Universal AI Brain</h1><p>index.html not found in static folder.</p>")
 
 
+@app.get("/mockup", response_class=HTMLResponse, tags=["Frontend"])
+@app.get("/tactical", response_class=HTMLResponse, tags=["Frontend"])
+@app.get("/cyber", response_class=HTMLResponse, tags=["Frontend"])
+@app.get("/matrix", response_class=HTMLResponse, tags=["Frontend"])
+def serve_tactical_mockup():
+    """Serves the interactive Top-Secret Military / DARPA Tactical HUD mockup."""
+    matrix_file = os.path.join(STATIC_DIR, "neural-command-matrix.html")
+    if os.path.exists(matrix_file):
+        return FileResponse(
+            matrix_file,
+            media_type="text/html",
+            headers={
+                "Cache-Control": "no-cache, no-store, must-revalidate, max-age=0",
+                "Pragma": "no-cache",
+                "Expires": "0"
+            }
+        )
+    mockup_file = os.path.join(STATIC_DIR, "tactical-mockup.html")
+    if os.path.exists(mockup_file):
+        return FileResponse(
+            mockup_file,
+            media_type="text/html",
+            headers={
+                "Cache-Control": "no-cache, no-store, must-revalidate, max-age=0",
+                "Pragma": "no-cache",
+                "Expires": "0"
+            }
+        )
+    return HTMLResponse("<h1>Tactical Mockup</h1><p>neural-command-matrix.html not found in static folder.</p>")
+
+
+
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 

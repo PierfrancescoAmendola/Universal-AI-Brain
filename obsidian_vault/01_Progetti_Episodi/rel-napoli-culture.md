@@ -24,13 +24,13 @@ Forte attaccamento culturale alla città di Napoli, fonte di ispirazione per pro
 
 ## 🔗 Connessioni Uscenti
 - [[proj-napolilive]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[proj-tombolawifi]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[art-theatre-acting]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[art-theatre-acting]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[proj-tombolawifi]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[proj-tombolawifi]] (`CELEBRATES`) — _Restored from history_
 - [[proj-napolilive]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[proj-tombolawifi]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[proj-napolilive]] (`HONORS`) — _Restored from history_
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[person-pierfrancesco]] (`ROOTED_IN`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`ROOTED_IN`) — _Disegnato su Obsidian Canvas_
+- [[proj-tombolawifi]] (`CELEBRATES`) — _Disegnato su Obsidian Canvas_
+- [[proj-tombolawifi]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

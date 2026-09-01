@@ -24,8 +24,8 @@ Richiesta utente di visualizzare nuovi disegni, interfacce e layout architettura
 - **user_prompt:** adesso abbiamo avuto un miglioramento e potenziamento??? ora voglio vedere altri esempi di rappresentare il nostro grafo, voglio vedere altri modi, altri 'disegni', deve rimanere così, ma voglio che cambi l'interfaccia chapito che intendo?
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[reasoning-progettazione-5-paradigmi-visuali-connettoma]] (`FULFILLS`) — _Soddisfa la richiesta di visualizzazioni alternative_

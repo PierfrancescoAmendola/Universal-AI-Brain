@@ -23,11 +23,11 @@ Deduzione architetturale: Render agisce come Hub pubblico permanente (Telegram W
 - **raw:** `model`: Antigravity / Google DeepMind Agent, `key_pillars`: ['Render Cloud: Accessibilità universale mobile 24/7, Telegram bot webhook, integrazione OpenAI Actions HTTPS', 'Local MCP: Esecuzione a latenza zero (<1ms) su SQLite WAL durante il coding in IDE', 'Web Chat Workflow: Allegazione diretta di brain.md o endpoint /brain.md pubblico per AI con Web Search']
 
 ## 🔗 Connessioni Uscenti
-- [[ep-20260827-render-cloud-vs-local-hybrid-architecture]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[domain-software-engineering]] (`ARCHITECTURAL_DECISION_FOR`) — _Restored from history_
-- [[universal-ai-brain]] (`ARCHITECTURAL_PILLAR_OF`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`EXPANDS_DOMAIN`) — _Restored from history_
-- [[intent-clarify-render-cloud-utility-and-llm-web-refusal]] (`RESPONDS_TO_INTENT`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`EXPANDS_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[domain-software-engineering]] (`ARCHITECTURAL_DECISION_FOR`) — _Disegnato su Obsidian Canvas_
+- [[ep-20260827-render-cloud-vs-local-hybrid-architecture]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[intent-clarify-render-cloud-utility-and-llm-web-refusal]] (`RESPONDS_TO_INTENT`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`ARCHITECTURAL_PILLAR_OF`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[concept-llm-indirect-injection-safeguard]] (`PREVENTS_FALSE_POSITIVES_IN`) — _Restored from history_
+- [[concept-llm-indirect-injection-safeguard]] (`PREVENTS_FALSE_POSITIVES_IN`) — _Disegnato su Obsidian Canvas_

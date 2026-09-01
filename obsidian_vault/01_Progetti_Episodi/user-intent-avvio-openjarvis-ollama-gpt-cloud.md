@@ -23,8 +23,8 @@ Test di esecuzione su OpenJarvis con Ollama gpt-oss:120b-cloud e recupero dal co
 - **raw:** `action`: Avvio di OpenJarvis con modello Ollama gpt-oss:120b-cloud e verifica risposta con memoria, `user_query`: Chi è Pierfrancesco?, `user_prompt`: Test di esecuzione su OpenJarvis con Ollama gpt-oss:120b-cloud e recupero dal connettoma neurale.
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-20260829-test-openjarvis-ollama-successo]] (`RECORDS_INTENT`) — _Restored from history_

@@ -1,8 +1,8 @@
 # 🧠 Universal AI Brain — Obsidian Knowledge Vault
 > **Persistent Bi-Hemispheric Knowledge Graph & Cognitive Palace**
 
-**Totale Nodi:** 524 | **Emisfero Sinistro (⚡):** 367 | **Emisfero Destro (🌸):** 157 | **Sinapsi:** 1215
-_Ultima Sincronizzazione: 2026-08-31 18:42:59 UTC_
+**Totale Nodi:** 585 | **Emisfero Sinistro (⚡):** 403 | **Emisfero Destro (🌸):** 182 | **Sinapsi:** 1344
+_Ultima Sincronizzazione: 2026-09-01 10:08:31 UTC_
 
 ---
 

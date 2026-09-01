@@ -23,9 +23,9 @@ Ubiquitous Memory Ingestion (Layer: DYNAMIC_PLASTICITY, Tipo: COGNITIVE_CAPABILI
 - **raw:** `id`: node_ubiquitous_ingestion, `label`: Ubiquitous Memory Ingestion, `type`: COGNITIVE_CAPABILITY, `layer`: DYNAMIC_PLASTICITY
 
 ## 🔗 Connessioni Uscenti
-- [[node-knowledge-graph-memory]] (`FEEDS_REALTIME_DATA_INTO`) — _Restored from history_
+- [[node-knowledge-graph-memory]] (`FEEDS_REALTIME_DATA_INTO`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[node-telegram-bot-interface]] (`ENABLES`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[reason-ep-20260827-telegram-bot-interface]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[reason-ep-20260827-telegram-bot-interface]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_

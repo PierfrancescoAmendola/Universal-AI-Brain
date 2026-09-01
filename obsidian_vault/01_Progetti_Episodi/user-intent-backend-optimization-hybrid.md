@@ -24,8 +24,8 @@ Richiesta di applicare ottimizzazioni backend (indici, cache, CTE) con approccio
 - **context:** Analisi critica di Gemini su bug (tags, cross_links) e necessità di integrare senza rompere il main.py esistente.
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`)
-- [[universal-ai-brain]] (`TARGETS_PROJECT`)
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[reasoning-backend-audit-and-fix]] (`FULFILLS`)

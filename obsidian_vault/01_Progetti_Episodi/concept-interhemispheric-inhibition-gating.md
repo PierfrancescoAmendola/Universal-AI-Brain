@@ -23,9 +23,9 @@ Meccanismo neurobiologico computazionale in cui l'emisfero non pertinente al tas
 - **raw:** `biological_basis`: Inibizione interemisferica mediata da interneuroni GABAergici via Corpo Calloso, `computational_benefit`: Riduzione token del 50-60%, eliminazione del rumore semantico, ricerca sub-millisecondo
 
 ## 🔗 Connessioni Uscenti
-- [[domain-filosofia-valori]] (`CROSS_CALLOSAL_INHIBITION`) — _Restored from history_
 - [[algorithm-selective-hemispheric-activation]] (`IMPLEMENTED_BY`) — _Restored from history_
+- [[domain-filosofia-valori]] (`CROSS_CALLOSAL_INHIBITION`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`CONTAINS_CONCEPT`) — _Restored from history_
 - [[user-intent-biological-lazy-loading-inhibition]] (`ORIGINATES_PARADIGM`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`CONTAINS_CONCEPT`) — _Disegnato su Obsidian Canvas_

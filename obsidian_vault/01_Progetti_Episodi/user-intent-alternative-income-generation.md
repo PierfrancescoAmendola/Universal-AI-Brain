@@ -24,8 +24,8 @@ L'utente richiede la formulazione di strategie alternative e concrete per genera
 - **context:** Transizione da modelli basati sulla viralità passiva a modelli ad alto valore aggiunto basati su sviluppo software e asset digitali.
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`)
-- [[domain-finanza-economia]] (`TARGETS_PROJECT`)
+- [[domain-finanza-economia]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[ai-reasoning-alternative-monetization-strategies]] (`FULFILLS`)

@@ -26,9 +26,9 @@ Formalizzata la transizione dell'Universal Knowledge Graph in una piattaforma mu
 - [[ep-20260827-hierarchical-tree-deployment-sync]] (`ANALYZES_EPISODE`) — _Restored from history_
 - [[node-web-tree-explorer]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
 - [[node-commit-62e48df]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
-- [[node-hierarchical-tree-engine-impl]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
 - [[node-mcp-brain-get-tree]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
+- [[node-hierarchical-tree-engine-impl]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[intent-ep-20260827-hierarchical-tree-deployment-sync]] (`GENERATES_REASONING`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[intent-ep-20260827-hierarchical-tree-deployment-sync]] (`GENERATES_REASONING`) — _Disegnato su Obsidian Canvas_

@@ -23,10 +23,10 @@ Progetto di collegare il cervello a un Bot Telegram personale per query rapide, 
 - **raw:** `capabilities`: ['Query FTS5', 'Shortest path', 'Hierarchical tree summary', 'Quick note ingestion'], `user_prompt`: Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ovunque via smartphone.
 
 ## 🔗 Connessioni Uscenti
-- [[episode-2026-08-27-telegram-omnipresence]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[arch-telegram-webhook-gateway]] (`DEFINES`) — _Restored from history_
+- [[arch-telegram-webhook-gateway]] (`DEFINES`) — _Disegnato su Obsidian Canvas_
+- [[episode-2026-08-27-telegram-omnipresence]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`PLANNED`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`PLANNED`) — _Disegnato su Obsidian Canvas_

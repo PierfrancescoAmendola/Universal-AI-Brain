@@ -27,7 +27,7 @@ Area cognitiva dedicata al tracciamento dei ragionamenti, deduzioni analitiche e
 - [[ai-reasoning-clustering-decision]] (`GOVERNS`) — _Restored from history_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`ESTABLISHED`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[universal-ai-brain]] (`INCORPORATES`) — _Restored from history_
-- [[user-intent-reasoning-and-chat-memory]] (`ORIGINATED`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`ESTABLISHED`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`INCORPORATES`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-reasoning-and-chat-memory]] (`ORIGINATED`) — _Disegnato su Obsidian Canvas_

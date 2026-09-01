@@ -23,12 +23,12 @@ Sessione di analisi architetturale tra Pierfrancesco e Gemini 3.7 Flash sull'inc
 - **raw:** `topic`: Cross-Model Memory Provenance & User Intent Ingest, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `date`: 2026-08-27
 
 ## 🔗 Connessioni Uscenti
-- [[user-intent-provenance-model-tracking]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[ai-reasoning-cross-model-provenance-validation]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[ai-reasoning-cross-model-provenance-validation]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-provenance-model-tracking]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[ai-reasoning-cross-model-provenance-validation]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[user-intent-provenance-model-tracking]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[ai-reasoning-cross-model-provenance-validation]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[user-intent-provenance-model-tracking]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[ai-reasoning-cross-model-provenance-validation]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[ai-reasoning-cross-model-provenance-validation]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-provenance-model-tracking]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-provenance-model-tracking]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

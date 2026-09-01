@@ -23,8 +23,8 @@ Prompt espresso a groq (openai/gpt-oss-120b): ma è tutto falso!!!
 - **raw:** `user_prompt`: ma è tutto falso!!!, `provider`: groq
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-ma-tutto-falso-8462]] (`RECORDS_INTENT`) — _Restored from history_

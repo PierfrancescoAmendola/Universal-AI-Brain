@@ -23,10 +23,10 @@ Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BF
 - **raw:** `search_engine`: SQLite FTS5 Porter Unicode61, `pathfinding`: Bidirectional Breadth-First Search (BFS), `context_scoping`: k-hop neighborhood subgraph extraction, `interoperability`: JSON-RPC 2.0 stdio MCP Server, `model`: LLM Assistant (Historical Session)
 
 ## 🔗 Connessioni Uscenti
-- [[episode-2026-08-27-graphrag-mcp-evolution]] (`FORMULATES`) — _Restored from history_
-- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[episode-2026-08-27-graphrag-mcp-evolution]] (`FORMULATES`) — _Disegnato su Obsidian Canvas_
+- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[user-intent-zero-cost-graphrag]] (`TRIGGERS`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-zero-cost-graphrag]] (`TRIGGERS`) — _Disegnato su Obsidian Canvas_

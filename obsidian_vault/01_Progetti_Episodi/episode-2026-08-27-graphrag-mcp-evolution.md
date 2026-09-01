@@ -24,11 +24,11 @@ Sessione di ingegnerizzazione avanzata: sviluppo e verifica del motore FTS5 BM25
 
 ## 🔗 Connessioni Uscenti
 - [[session-continuous-evolution]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[session-continuous-evolution]] (`EXTENDS`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[user-intent-zero-cost-graphrag]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[ai-reasoning-hybrid-search-mcp]] (`FORMULATES`) — _Restored from history_
+- [[ai-reasoning-hybrid-search-mcp]] (`FORMULATES`) — _Disegnato su Obsidian Canvas_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-zero-cost-graphrag]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

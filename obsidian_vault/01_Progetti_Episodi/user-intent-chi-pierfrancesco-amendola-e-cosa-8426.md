@@ -23,8 +23,8 @@ Prompt espresso a groq (openai/gpt-oss-120b): chi è Pierfrancesco Amendola e co
 - **raw:** `user_prompt`: chi è Pierfrancesco Amendola e cosa fa il suo cervello artificiale, `provider`: groq
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-chi-pierfrancesco-amendola-e-cosa-8426]] (`RECORDS_INTENT`) — _Restored from history_

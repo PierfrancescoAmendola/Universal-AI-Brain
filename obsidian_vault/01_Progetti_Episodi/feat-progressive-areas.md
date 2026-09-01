@@ -23,10 +23,10 @@ Motore di rendering a fioritura progressiva: visualizza i Macro-Hub compatti e n
 - **raw:** `mode`: Progressive Disclosure, `features`: ['macro-hubs', 'interactive-bloom', 'badge-counters', 'compact-view']
 
 ## 🔗 Connessioni Uscenti
-- [[universal-ai-brain]] (`ENHANCES`) — _Restored from history_
+- [[universal-ai-brain]] (`ENHANCES`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`COMMISSIONED`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[user-intent-clean-clustered-ui]] (`DRIVES_IMPLEMENTATION`) — _Restored from history_
 - [[ai-reasoning-clustering-decision]] (`RATIONALE_FOR`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`COMMISSIONED`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-clean-clustered-ui]] (`DRIVES_IMPLEMENTATION`) — _Disegnato su Obsidian Canvas_

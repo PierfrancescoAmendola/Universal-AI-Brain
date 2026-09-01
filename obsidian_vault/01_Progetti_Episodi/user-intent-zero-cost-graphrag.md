@@ -23,10 +23,10 @@ Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shor
 - **raw:** `requested_features`: ['Motore di ricerca ibrido & GraphRAG (FTS5 BM25, Shortest Path, Subgraph extraction)', 'Protocollo MCP per Claude Desktop, Cursor e Antigravity', 'Zero costi operativi e massima stabilità'], `user_prompt`: Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shortest Path) e server MCP per Claude/Cursor senza costi aggiuntivi.
 
 ## 🔗 Connessioni Uscenti
-- [[episode-2026-08-27-graphrag-mcp-evolution]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[ai-reasoning-hybrid-search-mcp]] (`TRIGGERS`) — _Restored from history_
+- [[ai-reasoning-hybrid-search-mcp]] (`TRIGGERS`) — _Disegnato su Obsidian Canvas_
+- [[episode-2026-08-27-graphrag-mcp-evolution]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`DECLARED`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`DECLARED`) — _Disegnato su Obsidian Canvas_

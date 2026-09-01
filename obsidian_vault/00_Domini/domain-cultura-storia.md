@@ -23,4 +23,4 @@ Storia, Letteratura, Lingue Straniere, Cultura Generale, Viaggi, Società e Antr
 - **scope:** Culture, world history, foreign languages, anthropology, literature
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
+- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_

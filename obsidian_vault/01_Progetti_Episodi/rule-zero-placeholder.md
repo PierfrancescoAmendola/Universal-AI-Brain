@@ -23,14 +23,14 @@ Divieto tassativo di codice troncato, finto o parziale; ogni soluzione deve esse
 - **raw:** `banned`: ['// resto del codice', '/* implementare qui */', 'TODO stub'], `standard`: Production-ready code only
 
 ## 🔗 Connessioni Uscenti
-- [[brand-voice-surgical]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[brand-voice-surgical]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[brand-voice-surgical]] (`COMPLEMENTS`) — _Restored from history_
-- [[brand-voice-surgical]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[lesson-stoic-resilience]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[memory-perfectionism-tension]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`ENFORCES`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[epistemologia-rigorosa]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[epistemologia-rigorosa]] (`SUPPORTS`) — _Restored from history_
+- [[brand-voice-surgical]] (`COMPLEMENTS`) — _Disegnato su Obsidian Canvas_
+- [[brand-voice-surgical]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[lesson-stoic-resilience]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[memory-perfectionism-tension]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`ENFORCES`) — _Disegnato su Obsidian Canvas_

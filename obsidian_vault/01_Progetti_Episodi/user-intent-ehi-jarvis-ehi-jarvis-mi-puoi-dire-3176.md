@@ -23,8 +23,8 @@ Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ehi Jarvis ehi Jarv
 - **raw:** `user_prompt`: ehi Jarvis ehi Jarvis mi puoi dire che ore sono?, `channel`: JARVIS Voice Core
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176]] (`RECORDS_INTENT`) — _Restored from history_

@@ -43,8 +43,8 @@ updated_at: "2026-08-31T15:23:50.646666+00:00"
 [![Python 3.10+](https://img.sh
 
 ## 🔗 Connessioni Uscenti
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
-- [[person-pierfrancesco]] (`CREATED_BY`) — _Progetto ideato e sviluppato da Pierfrancesco Amendola_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CREATED_BY`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[proj-cervelloartificiale-api-routes]] (`PART_OF_PROJECT`) — _Modulo architetturale del progetto_
@@ -52,3 +52,22 @@ updated_at: "2026-08-31T15:23:50.646666+00:00"
 - [[reasoning-architettura-ecosistema-cognitivo-onnipresente]] (`OPTIMIZES`) — _Ottimizza ed espande il connettoma verso un Cognitive OS onnipresente_
 - [[user-intent-verifica-vincolo-zero-costi]] (`TARGETS_PROJECT`) — _Verifica i vincoli del progetto Cervello Artificiale_
 - [[reasoning-validazione-architettura-zero-costi]] (`OPTIMIZES`) — _Convalida e blinda il principio di costo zero del progetto_
+- [[user-intent-test-hook-session-end-2411]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[reasoning-test-hook-session-end-2411]] (`OPTIMIZES`) — _Ottimizza il progetto_
+- [[user-intent-e2e-test-session-hook-2447]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[reasoning-e2e-test-session-hook-2447]] (`OPTIMIZES`) — _Ottimizza il progetto_
+- [[user-intent-e2e-test-session-hook-2471]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[reasoning-e2e-test-session-hook-2471]] (`OPTIMIZES`) — _Ottimizza il progetto_
+- [[user-intent-e2e-test-session-hook-2485]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[reasoning-e2e-test-session-hook-2485]] (`OPTIMIZES`) — _Ottimizza il progetto_
+- [[user-intent-e2e-test-session-hook-2529]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[reasoning-e2e-test-session-hook-2529]] (`OPTIMIZES`) — _Ottimizza il progetto_
+- [[user-intent-implementazione-ecosistema-supercervello]] (`TARGETS_PROJECT`) — _Target del progetto Cervello Artificiale_
+- [[reasoning-costruzione-collaudo-ecosistema-supercervello]] (`OPTIMIZES`) — _Potenzia e trasforma il connettoma in un Ubiquitous Cognitive OS a 0,00€_
+- [[user-intent-review-piano-supercervello-os]] (`TARGETS_PROJECT`) — _Riferito al progetto Cervello Artificiale_
+- [[user-intent-e2e-test-session-hook-2691]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[reasoning-e2e-test-session-hook-2691]] (`OPTIMIZES`) — _Ottimizza il progetto_
+- [[user-intent-e2e-test-session-hook-8745]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[reasoning-e2e-test-session-hook-8745]] (`OPTIMIZES`) — _Ottimizza il progetto_
+- [[user-intent-e2e-test-session-hook-9065]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[reasoning-e2e-test-session-hook-9065]] (`OPTIMIZES`) — _Ottimizza il progetto_

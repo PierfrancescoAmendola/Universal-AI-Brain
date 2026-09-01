@@ -23,13 +23,13 @@ Principio fondante: preservare integralmente contesto, richieste e deduzioni di 
 - **raw:** `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc..., `core_objective`: Garantire che qualunque AI (Claude, Gemini, ChatGPT, DeepSeek, ecc.) sappia sempre con esattezza cosa è stato detto, pensato e deciso nelle sessioni precedenti., `context_dimensions`: ['Richieste Utente (USER_INTENT)', 'Deduzioni Logiche (AI_REASONING)', 'Episodi Tematici (CONVERSATION_EPISODE)', 'Attribuzione Modello (details.model)']
 
 ## 🔗 Connessioni Uscenti
-- [[episode-2026-08-27-universal-context-definition]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[episode-2026-08-27-universal-context-definition]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`SERVES_USER`) — _Restored from history_
-- [[user-intent-provenance-model-tracking]] (`COMPLEMENTS`) — _Restored from history_
-- [[universal-ai-brain]] (`DEFINES_MISSION_OF`) — _Restored from history_
+- [[episode-2026-08-27-universal-context-definition]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[episode-2026-08-27-universal-context-definition]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`SERVES_USER`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`DEFINES_MISSION_OF`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-provenance-model-tracking]] (`COMPLEMENTS`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[episode-2026-08-27-universal-context-definition]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[ai-reasoning-shared-cognitive-state-continuity]] (`VALIDATES`) — _Restored from history_
+- [[ai-reasoning-shared-cognitive-state-continuity]] (`VALIDATES`) — _Disegnato su Obsidian Canvas_
+- [[episode-2026-08-27-universal-context-definition]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

@@ -23,9 +23,9 @@ Relazioni Umane, Famiglia, Amici, Networking Professionale, Comunicazione Interp
 - **scope:** Human relationships, networking, empathy, communication skills
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
 - [[proj-cypress_tests]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-frontend]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-backend]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-unimatch-1]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-unimatch]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_

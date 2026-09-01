@@ -24,18 +24,21 @@ UI/UX Design Dark-Tech, Graphic Design, Brand Voice, Tipografia, Estetica Visiva
 
 ## 🔗 Connessioni Uscenti
 - [[terse-caveman-brand-voice]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[brand-voice-engineering]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[brand-voice-surgical]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[bi-hemispheric-polarity-palette]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[palette-neon-cyber]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[art-piano-composition]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[cyber-slate-space-aesthetic]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[design-cyber-neon]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[design-tokens-core]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[art-piano-composition]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[brand-voice-engineering]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[brand-voice-surgical]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Restored from history_
-- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
 - [[proj-palazzografica]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-mary]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-apppalette]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio cognitivo_
+- [[voice-riflessione-sullantifragilit-nei-sistemi-software-2447]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio cognitivo_
+- [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_
+- [[voice-voglio-portare-a-spasso-il-cane-perch-mi-provoca-t-1518]] (`BELONGS_TO_DOMAIN`)

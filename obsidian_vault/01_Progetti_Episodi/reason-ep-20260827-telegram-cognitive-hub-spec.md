@@ -24,10 +24,10 @@ Definita la pipeline I/O perimetrale: Telegram App -> HTTPS Webhook (/api/telegr
 
 ## 🔗 Connessioni Uscenti
 - [[ep-20260827-telegram-cognitive-hub-spec]] (`ANALYZES_EPISODE`) — _Restored from history_
-- [[node-telegram-webhook-gateway]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
 - [[node-bidirectional-bfs-pathfinding]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
 - [[node-commit-965f0a8]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
+- [[node-telegram-webhook-gateway]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[intent-ep-20260827-telegram-cognitive-hub-spec]] (`GENERATES_REASONING`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[intent-ep-20260827-telegram-cognitive-hub-spec]] (`GENERATES_REASONING`) — _Disegnato su Obsidian Canvas_

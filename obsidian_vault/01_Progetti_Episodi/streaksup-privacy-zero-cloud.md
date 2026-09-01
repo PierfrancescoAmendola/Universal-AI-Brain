@@ -23,11 +23,11 @@ Valore etico cardine: 100% offline, nessun server remoto, nessun tracciamento an
 - **raw:** `cloud_dependency`: Zero (100% local), `telemetry`: None, `account_required`: False, `backup`: Full JSON export / import
 
 ## 🔗 Connessioni Uscenti
-- [[proj-streaksup-app]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[streaksup-swiftdata-arch]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[proj-streaksup-app]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[proj-streaksup-app]] (`CONTAINS_MODULE`) — _Restored from history_
-- [[proj-streaksup-app]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[streaksup-swiftdata-arch]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[proj-streaksup-app]] (`EMBODIES_VALUE`) — _Restored from history_
+- [[proj-streaksup-app]] (`CONTAINS_MODULE`) — _Disegnato su Obsidian Canvas_
+- [[proj-streaksup-app]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[proj-streaksup-app]] (`EMBODIES_VALUE`) — _Disegnato su Obsidian Canvas_

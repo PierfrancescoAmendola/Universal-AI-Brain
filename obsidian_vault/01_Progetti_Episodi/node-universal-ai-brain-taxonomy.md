@@ -26,6 +26,6 @@ Attributed Heterogeneous Temporal Multigraph (Layer: FORMAL_THEORY, Tipo: GRAPH_
 - [[node-epistemic-grading-system]] (`INCORPORATES_AS_CORE_FEATURE`) — _Restored from history_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[reason-ep-20260827-graph-taxonomy-classification]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
-- [[node-neuro-symbolic-brain]] (`FORMALLY_CLASSIFIED_AS`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[node-neuro-symbolic-brain]] (`FORMALLY_CLASSIFIED_AS`) — _Disegnato su Obsidian Canvas_
+- [[reason-ep-20260827-graph-taxonomy-classification]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_

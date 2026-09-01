@@ -24,9 +24,9 @@ Ideazione e pianificazione dell'interfaccia mobile Telegram per estendere l'ubiq
 
 ## 🔗 Connessioni Uscenti
 - [[session-continuous-evolution]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[user-intent-telegram-bot-gateway]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[arch-telegram-webhook-gateway]] (`PART_OF`) — _Restored from history_
+- [[arch-telegram-webhook-gateway]] (`PART_OF`) — _Disegnato su Obsidian Canvas_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-telegram-bot-gateway]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

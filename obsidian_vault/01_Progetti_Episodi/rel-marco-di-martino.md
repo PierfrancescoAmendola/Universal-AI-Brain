@@ -23,10 +23,10 @@ Compagno di percorso accademico e amico fidato con cui condividere la crescita u
 - **raw:** `context`: Supporto reciproco continuativo durante la laurea in Informatica
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[person-pierfrancesco]] (`BONDS_WITH`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-transparency-loyalty]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`BONDS_WITH`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-transparency-loyalty]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

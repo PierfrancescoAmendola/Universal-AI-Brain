@@ -28,14 +28,10 @@ Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architett
 - [[ui-glass-dark-theme]] (`CONTAINS_MODULE`) — _Restored from history_
 - [[student-booking-ux-flow]] (`CONTAINS_MODULE`) — _Restored from history_
 - [[ux-frictionless-flow]] (`CONTAINS_MODULE`) — _Restored from history_
-- [[ux-frictionless]] (`CONTAINS_MODULE`) — _Restored from history_
 - [[node-telegram-bot-interface]] (`CONTAINS_MODULE`) — _Restored from history_
 - [[node-web-tree-explorer]] (`CONTAINS_MODULE`) — _Restored from history_
 - [[proj-bioinformatics-icar]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[proj-specula]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[aule-studio-app]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[proj-caretrack]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[proj-streaksup-app]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[proj-alcolsafe]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[proj-kdp-ai-book]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[coursework-cs-federico2]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
@@ -53,13 +49,12 @@ Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architett
 - [[node-mst-conceptual-backbone]] (`CONTAINS_MODULE`) — _Restored from history_
 - [[node-prefix-radix-trie]] (`CONTAINS_MODULE`) — _Restored from history_
 - [[node-bidirectional-bfs-pathfinding]] (`CONTAINS_MODULE`) — _Restored from history_
+- [[aule-studio-app]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[proj-caretrack]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[ux-frictionless]] (`CONTAINS_MODULE`) — _Disegnato su Obsidian Canvas_
+- [[proj-streaksup-app]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Restored from history_
-- [[ai-reasoning-hybrid-cloud-local-symbiosis]] (`ARCHITECTURAL_DECISION_FOR`) — _Restored from history_
-- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
-- [[project-royal-gambit-chess]] (`BELONGS_TO_DOMAIN`) — _Il progetto project-royal-gambit-chess appartiene al dominio domain-software-engineering_
-- [[aule-studio-app]] (`BELONGS_TO_DOMAIN`) — _Il progetto aule-studio-app appartiene al dominio domain-software-engineering_
 - [[proj-qr_generator]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-pierfrancescoamendola]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-sitocertificati]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
@@ -102,3 +97,12 @@ Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architett
 - [[proj-foodlab2025]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-pack4]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-pack3]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[node-test-raycast-node]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio tematico_
+- [[web-test-fastapi-docs]] (`BELONGS_TO_DOMAIN`)
+- [[kindle-c962fde43767]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio del libro_
+- [[ai-reasoning-hybrid-cloud-local-symbiosis]] (`ARCHITECTURAL_DECISION_FOR`) — _Disegnato su Obsidian Canvas_
+- [[aule-studio-app]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[project-royal-gambit-chess]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[node-nota-rapida-raycast-test]] (`BELONGS_TO_DOMAIN`) — _Collegato al macro-dominio tematico_
+- [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_

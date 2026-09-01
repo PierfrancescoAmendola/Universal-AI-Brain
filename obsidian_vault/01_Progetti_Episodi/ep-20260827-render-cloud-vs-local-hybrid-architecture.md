@@ -23,9 +23,9 @@ Chiarimento architetturale sulla dualità e cooperazione tra Render Cloud 24/7 (
 - **raw:** `topic`: Architettura Ibrida Cloud Render vs MCP Locale & Gestione Guardrails Anti-Injection nei Web Chat LLM, `participants`: ['Pierfrancesco Amendola', 'Antigravity / Google DeepMind Agent'], `date`: 2026-08-27
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`CONVERSATION_WITH`) — _Restored from history_
+- [[person-pierfrancesco]] (`CONVERSATION_WITH`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[ai-reasoning-hybrid-cloud-local-symbiosis]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[concept-llm-indirect-injection-safeguard]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[intent-clarify-render-cloud-utility-and-llm-web-refusal]] (`BELONGS_TO_EPISODE`) — _Restored from history_
+- [[ai-reasoning-hybrid-cloud-local-symbiosis]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[concept-llm-indirect-injection-safeguard]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[intent-clarify-render-cloud-utility-and-llm-web-refusal]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_

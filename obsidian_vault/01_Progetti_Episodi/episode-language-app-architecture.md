@@ -23,17 +23,17 @@ Discussione architetturale incentrata sulla creazione di un'applicazione proprie
 - **raw:** `date`: 2026-08-29, `topic`: Architettura software per apprendimento linguistico autonomo, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
 
 ## 🔗 Connessioni Uscenti
-- [[intent-personal-language-learning-app]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[reasoning-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[intent-personal-language-learning-app]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[reasoning-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[intent-language-app-ui-design]] (`BELONGS_TO_EPISODE`) — _Restored from history_
 - [[intent-personal-language-app-structure]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[intent-personal-language-learning-app]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[reasoning-language-app-architecture]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[intent-language-app-ui-design]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[intent-personal-language-app-structure]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[intent-personal-language-learning-app]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[reasoning-hybrid-pedagogy-engine]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[reasoning-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[design-language-app-system]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[intent-language-app-ui-design]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[intent-language-app-ui-design]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[intent-personal-language-learning-app]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[intent-personal-language-learning-app]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[reasoning-language-app-architecture]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[reasoning-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

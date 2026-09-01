@@ -23,8 +23,8 @@ Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: che ore sono...
 - **raw:** `user_prompt`: che ore sono, `channel`: JARVIS Voice Core
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-che-ore-sono-3134]] (`RECORDS_INTENT`) — _Restored from history_

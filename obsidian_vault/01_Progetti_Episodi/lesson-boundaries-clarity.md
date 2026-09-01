@@ -23,9 +23,9 @@ Non farsi carico unilateralmente della stabilità altrui; l'intensità emotiva n
 - **raw:** `principles`: ['Rifiuto della sindrome del salvatore', 'Distinzione tra chimica momentanea e allineamento valoriale', 'Comunicazione esplicita senza dare nulla per scontato']
 
 ## 🔗 Connessioni Uscenti
-- [[val-authenticity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-authenticity]] (`REINFORCES`) — _Restored from history_
+- [[val-authenticity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-authenticity]] (`REINFORCES`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[val-authenticity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[val-authenticity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

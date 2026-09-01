@@ -23,13 +23,13 @@ Assistente vocale AI continuo in tempo reale a costo zero, integrato con il conn
 - **raw:** `cost_tier`: 0 EUR / 100% Free, `llm_stack`: ['Groq Llama 3.3', 'Gemini 2.5 Flash', 'Ollama Qwen 2.5'], `mcp_integration`: mcp_server.py Universal AI Brain, `stt_engine`: Faster-Whisper / Groq Whisper, `tts_engine`: Kokoro-82M / Edge-TTS, `wake_word`: openWakeWord (Hey Jarvis)
 
 ## 🔗 Connessioni Uscenti
-- [[universal-ai-brain]] (`EXTENDS_BRAIN`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Il progetto proj-jarvis-voice-assistant appartiene al dominio domain-ai-cognitive-systems_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`EXTENDS_BRAIN`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[reasoning-openjarvis-collegamento-connettoma]] (`CONNECTS`) — _Restored from history_
 - [[reasoning-architettura-jarvis-zero-cost]] (`OPTIMIZES`) — _Restored from history_
 - [[reasoning-rilascio-jarvis-desktop-completato]] (`OPTIMIZES`) — _Restored from history_
-- [[user-intent-abbandono-jarvis-nuovo-progetto]] (`TARGETS_PROJECT`) — _Restored from history_
-- [[user-intent-creazione-jarvis-voice-assistant]] (`TARGETS_PROJECT`) — _Restored from history_
-- [[user-intent-creazione-repo-jarvis-desktop]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[user-intent-abbandono-jarvis-nuovo-progetto]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-creazione-jarvis-voice-assistant]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-creazione-repo-jarvis-desktop]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_

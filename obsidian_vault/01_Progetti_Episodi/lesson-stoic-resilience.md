@@ -23,9 +23,9 @@ Trattare gli ostacoli e le delusioni come dati da analizzare a mente fredda per 
 - **raw:** `method`: Isolare la causa radice, applicare la correzione, ripartire con focus rinnovato
 
 ## 🔗 Connessioni Uscenti
-- [[rule-zero-placeholder]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[memory-perfectionism-tension]] (`MITIGATES`) — _Restored from history_
+- [[memory-perfectionism-tension]] (`MITIGATES`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[rule-zero-placeholder]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_

@@ -23,7 +23,6 @@ Matematica pura e applicata, Algoritmica teorica, Statistica, Fisica, Teoria del
 - **scope:** Mathematical modeling, algorithms, statistics, complexity theory
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
 - [[proj-psld2-senza-git]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-spiegazione-codice-librerire]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-psld1]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
@@ -79,3 +78,4 @@ Matematica pura e applicata, Algoritmica teorica, Statistica, Fisica, Teoria del
 - [[proj-testrepo-main]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-cose_laurea]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-unistats]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_

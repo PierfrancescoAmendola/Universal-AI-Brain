@@ -1,0 +1,3099 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>UNIVERSAL AI BRAIN // NORAD C4ISR TACTICAL FUI</title>
+  
+  <!-- High-Precision Tactical Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Relative Vendor Scripts & Fallbacks for 100% Offline & File:// Compatibility -->
+  <script src="./brain_data.js"></script>
+  <script src="./vendor/three.min.js"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+      document.head.appendChild(s);
+    }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       HOLYWOOD FUI (FANTASY USER INTERFACE) DESIGN TOKENS
+       ========================================================================== */
+    :root {
+      /* Theme 1 Default: SKUNKWORKS C2 (Amber CRT Phosphor / Stealth Carbon) */
+      --bg-base: #040507;
+      --bg-surface: #07090e;
+      --bg-surface-elevated: #0c1018;
+      --bg-panel: rgba(7, 9, 14, 0.95);
+      --bg-input: #05060a;
+      
+      --border-subtle: rgba(255, 184, 0, 0.16);
+      --border-strong: rgba(255, 184, 0, 0.35);
+      --border-focus: #ffb800;
+      --border-grid: rgba(255, 184, 0, 0.04);
+
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --text-tactical: #ffb800;
+
+      --accent-primary: #ffb800;    /* Amber CRT */
+      --accent-secondary: #00f0ff;  /* Cyan Radar */
+      --accent-left: #00e5ff;       /* Left Logic */
+      --accent-right: #ff2a5f;      /* Right Design */
+      --accent-bridge: #c084fc;     /* Corpus Callosum */
+      --accent-success: #00ff9d;    /* Telemetry Green */
+      --accent-alert: #ff3344;      /* DEFCON Red */
+
+      --glow-primary: rgba(255, 184, 0, 0.3);
+      --glow-cyan: rgba(0, 240, 255, 0.3);
+      --glow-radar: rgba(255, 184, 0, 0.06);
+
+      --font-mono: 'JetBrains Mono', SFMono-Regular, Consolas, monospace;
+      --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --corner-bracket: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+    }
+
+    /* THEME 2: DARPA QUANTUM (Cold War Green Phosphor / Stealth Matrix) */
+    body[data-theme="darpa"] {
+      --bg-base: #020504;
+      --bg-surface: #040c08;
+      --bg-surface-elevated: #081710;
+      --bg-panel: rgba(4, 12, 8, 0.95);
+      --bg-input: #030805;
+      
+      --border-subtle: rgba(0, 255, 157, 0.18);
+      --border-strong: rgba(0, 255, 157, 0.4);
+      --border-focus: #00ff9d;
+      --border-grid: rgba(0, 255, 157, 0.04);
+
+      --text-primary: #e6f7f0;
+      --text-secondary: #6ea389;
+      --text-muted: #3f6b55;
+      --text-tactical: #00ff9d;
+
+      --accent-primary: #00ff9d;    /* Emerald Green Phosphor */
+      --accent-secondary: #38bdf8;
+      --accent-left: #38bdf8;
+      --accent-right: #f43f5e;
+      --accent-bridge: #c084fc;
+      --accent-success: #00ff9d;
+      --accent-alert: #ff2a5f;
+
+      --glow-primary: rgba(0, 255, 157, 0.3);
+      --glow-cyan: rgba(56, 189, 248, 0.3);
+      --glow-radar: rgba(0, 255, 157, 0.06);
+    }
+
+    /* THEME 3: STRATCOM CYBER (Deep Space Navy & Cobalt Hologram) */
+    body[data-theme="stratcom"] {
+      --bg-base: #01040d;
+      --bg-surface: #040817;
+      --bg-surface-elevated: #08102b;
+      --bg-panel: rgba(4, 8, 23, 0.95);
+      --bg-input: #020512;
+      
+      --border-subtle: rgba(59, 130, 246, 0.2);
+      --border-strong: rgba(59, 130, 246, 0.45);
+      --border-focus: #38bdf8;
+      --border-grid: rgba(59, 130, 246, 0.04);
+
+      --text-primary: #f1f5f9;
+      --text-secondary: #7e99be;
+      --text-muted: #486184;
+      --text-tactical: #38bdf8;
+
+      --accent-primary: #38bdf8;    /* Cobalt Cyan */
+      --accent-secondary: #a855f7;
+      --accent-left: #38bdf8;
+      --accent-right: #ec4899;
+      --accent-bridge: #a855f7;
+      --accent-success: #10b981;
+      --accent-alert: #ef4444;
+
+      --glow-primary: rgba(56, 189, 248, 0.3);
+      --glow-cyan: rgba(168, 85, 247, 0.3);
+      --glow-radar: rgba(56, 189, 248, 0.06);
+    }
+
+    /* ==========================================================================
+       BASE & RETICLE GRIDS
+       ========================================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      position: relative;
+    }
+
+    /* Millimeter Grid Texture */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, var(--border-grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--border-grid) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* CRT Scanline Scan Vignette */
+    body::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 65%, rgba(0,0,0,0.75) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* ==========================================================================
+       1. TOP SECURITY & SITUATION ROOM TELEMETRY BANNER
+       ========================================================================== */
+    .fui-security-bar {
+      height: 22px;
+      background: #000000;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      z-index: 20;
+    }
+
+    .classification-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-primary);
+      font-weight: 700;
+    }
+
+    .defcon-badge {
+      background: rgba(255, 51, 68, 0.15);
+      border: 1px solid var(--accent-alert);
+      color: var(--accent-alert);
+      padding: 1px 6px;
+      font-weight: 800;
+      border-radius: 2px;
+    }
+
+    .telemetry-stream-ticker {
+      display: flex;
+      gap: 14px;
+    }
+
+    .theme-switcher-pills {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .theme-pill-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      padding: 1px 6px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.15s ease;
+    }
+
+    .theme-pill-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--border-focus);
+    }
+
+    .theme-pill-btn.active {
+      background: var(--accent-primary);
+      color: #000000;
+      font-weight: 800;
+      border-color: var(--accent-primary);
+    }
+
+    /* ==========================================================================
+       2. MASTER FUI TOPBAR (COMMAND HUD)
+       ========================================================================== */
+    .fui-topbar {
+      height: 48px;
+      background: var(--bg-panel);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      z-index: 20;
+      position: relative;
+    }
+
+    .fui-brand-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .fui-radar-indicator {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--border-strong);
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .fui-radar-sweep {
+      position: absolute;
+      inset: 2px;
+      border-radius: 50%;
+      border-right: 2px solid var(--accent-primary);
+      animation: radar-spin 3s linear infinite;
+    }
+
+    @keyframes radar-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .fui-radar-core {
+      width: 5px;
+      height: 5px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--accent-primary);
+    }
+
+    .fui-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fui-brand-name {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .fui-brand-name span.badge {
+      font-size: 8.5px;
+      padding: 1px 4px;
+      background: rgba(255, 184, 0, 0.12);
+      border: 1px solid var(--border-strong);
+      color: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .fui-brand-subtitle {
+      font-size: 9px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      letter-spacing: 0.04em;
+    }
+
+    /* Telemetry HUD Gauges */
+    .fui-telemetry-hud {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hud-gauge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 3px 8px;
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      position: relative;
+    }
+
+    .hud-gauge::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 3px;
+      height: 3px;
+      border-top: 1px solid var(--border-focus);
+      border-left: 1px solid var(--border-focus);
+    }
+
+    .hud-gauge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .hud-gauge-dot.left { background: var(--accent-left); box-shadow: 0 0 6px var(--accent-left); }
+    .hud-gauge-dot.right { background: var(--accent-right); box-shadow: 0 0 6px var(--accent-right); }
+    .hud-gauge-dot.bridge { background: var(--accent-bridge); box-shadow: 0 0 6px var(--accent-bridge); }
+
+    .hud-gauge-label { color: var(--text-muted); font-size: 9.5px; }
+    .hud-gauge-val { font-weight: 700; color: var(--text-primary); }
+
+    /* Action Buttons */
+    .fui-action-bar {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .fui-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border-radius: 2px;
+      transition: all 0.15s ease;
+    }
+
+    .fui-btn:hover {
+      background: var(--bg-surface-elevated);
+      color: var(--text-primary);
+      border-color: var(--border-strong);
+    }
+
+    .fui-btn-primary {
+      background: rgba(255, 184, 0, 0.1);
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+    .fui-btn-primary:hover {
+      background: var(--accent-primary);
+      color: #000000;
+      box-shadow: 0 0 10px var(--glow-primary);
+    }
+
+    .sound-toggle-btn {
+      width: 26px;
+      height: 26px;
+      padding: 0;
+      justify-content: center;
+    }
+
+    /* ==========================================================================
+       3. MAIN COCKPIT: LEFT TELEMETRY WING / GRAPH / RIGHT DOSSIER
+       ========================================================================== */
+    .fui-workspace {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    /* Left Telemetry Wing (Oscilloscope, Silos, Spectrogram) */
+    .fui-left-wing {
+      width: 220px;
+      height: 100%;
+      background: var(--bg-panel);
+      backdrop-filter: blur(12px);
+      border-right: 1px solid var(--border-strong);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      z-index: 15;
+    }
+
+    .wing-header {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: var(--text-tactical);
+      padding: 8px 12px 4px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Live Canvas Oscilloscope */
+    .oscilloscope-card {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .oscilloscope-header {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    #oscilloscope-canvas {
+      width: 100%;
+      height: 38px;
+      background: #020305;
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+      display: block;
+    }
+
+    /* Silo Depth Elevator */
+    .dock-floor-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 6px 8px;
+    }
+
+    .dock-floor-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-secondary);
+      padding: 6px 8px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 2px;
+      transition: all 0.15s ease;
+    }
+
+    .dock-floor-btn:hover {
+      background: var(--bg-surface);
+      border-color: var(--border-subtle);
+      color: var(--text-primary);
+    }
+
+    .dock-floor-btn.active {
+      background: rgba(255, 184, 0, 0.08);
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      font-weight: 700;
+    }
+
+    .dock-floor-tag {
+      font-size: 9px;
+      opacity: 0.7;
+    }
+
+    .dock-divider {
+      height: 1px;
+      background: var(--border-subtle);
+      margin: 4px 10px;
+    }
+
+    .radar-tag-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 4px 8px;
+    }
+
+    .radar-tag-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 4px 6px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 2px;
+    }
+
+    .radar-tag-btn:hover {
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+    }
+
+    .radar-tag-btn.active {
+      background: var(--bg-surface-elevated);
+      border-color: var(--border-strong);
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .radar-tag-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 1px;
+      background: var(--text-muted);
+    }
+    .radar-tag-btn.active .radar-tag-dot { background: var(--accent-primary); }
+
+    /* Telemetry Histogram Equalizer at bottom */
+    .spectrogram-card {
+      margin-top: auto;
+      padding: 8px 12px;
+      border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .spectrogram-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 24px;
+      background: #020305;
+      padding: 2px 4px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+    }
+
+    .spec-bar {
+      flex: 1;
+      background: var(--accent-primary);
+      opacity: 0.6;
+      border-radius: 1px;
+      transition: height 0.1s ease;
+    }
+
+    /* ==========================================================================
+       CENTER: TACTICAL FUI RADAR & 3D GLOBE VIEWPORT
+       ========================================================================== */
+    .fui-graph-viewport {
+      flex: 1;
+      min-height: 0;
+      height: 100%;
+      position: relative;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    #tactical-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: grab;
+    }
+    #tactical-canvas:active {
+      cursor: grabbing;
+    }
+
+    #globe-3d-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 5;
+    }
+
+    /* Top Left View Mode Switcher */
+    .fui-floating-controls {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+      z-index: 15;
+    }
+
+    .fui-mode-pill {
+      background: var(--bg-panel);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-strong);
+      border-radius: 2px;
+      padding: 2px;
+      display: flex;
+      gap: 2px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+    }
+
+    .fui-mode-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      padding: 4px 9px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .fui-mode-btn:hover { color: var(--text-primary); }
+    .fui-mode-btn.active {
+      background: var(--accent-primary);
+      color: #000000;
+      font-weight: 800;
+      box-shadow: 0 0 8px var(--glow-primary);
+    }
+
+    /* Azimuth Compass Overlay in Canvas (Top Right) */
+    .fui-compass-overlay {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--bg-panel);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+      padding: 4px 8px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+      z-index: 12;
+    }
+
+    /* 3D Globe HUD Overlay Controls */
+    .globe-hud-overlay {
+      position: absolute;
+      top: 48px;
+      left: 12px;
+      display: none;
+      gap: 6px;
+      z-index: 15;
+    }
+
+    .globe-hud-btn {
+      background: var(--bg-panel);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-strong);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 3px 8px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    .globe-hud-btn:hover { color: var(--text-primary); border-color: var(--accent-primary); }
+
+    /* Lock-on Target Reticle Tooltip */
+    .graph-reticle-tooltip {
+      position: absolute;
+      pointer-events: none;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-focus);
+      padding: 6px 10px;
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--text-primary);
+      z-index: 25;
+      transform: translate(14px, -50%);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.8), 0 0 10px var(--glow-primary);
+      display: none;
+    }
+
+    .reticle-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 2px;
+      font-size: 8.5px;
+      color: var(--accent-primary);
+      letter-spacing: 0.1em;
+    }
+
+    .reticle-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .reticle-meta {
+      color: var(--text-muted);
+      font-size: 9.5px;
+      margin-top: 2px;
+    }
+
+    /* Bottom Canvas HUD Strip */
+    .fui-canvas-hud {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      pointer-events: none;
+      z-index: 15;
+    }
+
+    .hud-search-box {
+      pointer-events: auto;
+      background: var(--bg-panel);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-strong);
+      border-radius: 2px;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 320px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+    }
+
+    .hud-search-box input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      width: 100%;
+    }
+
+    .hud-search-kbd {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      padding: 1px 4px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+      color: var(--text-muted);
+    }
+
+    .hud-zoom-controls {
+      pointer-events: auto;
+      background: var(--bg-panel);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-strong);
+      border-radius: 2px;
+      display: flex;
+      gap: 2px;
+      padding: 2px;
+    }
+
+    .hud-zoom-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      padding: 3px 8px;
+      height: 26px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      border-radius: 2px;
+    }
+
+    .hud-zoom-btn:hover {
+      background: var(--bg-surface-elevated);
+      color: var(--text-primary);
+    }
+
+    /* Fast Hex Dump Waterflow Ticker */
+    .hex-stream-ticker {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      color: var(--border-focus);
+      opacity: 0.5;
+      letter-spacing: 0.06em;
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       4. RIGHT CLASSIFIED DOSSIER WING
+       ========================================================================== */
+    .fui-inspector {
+      width: 360px;
+      background: var(--bg-panel);
+      backdrop-filter: blur(16px);
+      border-left: 1px solid var(--border-strong);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      z-index: 15;
+      position: relative;
+    }
+
+    .dossier-header {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .dossier-tag-badge {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--accent-primary);
+      border: 1px solid var(--border-focus);
+      padding: 2px 6px;
+      border-radius: 2px;
+      background: rgba(255, 184, 0, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .dossier-stamp-classified {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 900;
+      color: var(--accent-alert);
+      border: 1px dashed var(--accent-alert);
+      padding: 1px 5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transform: rotate(-2deg);
+    }
+
+    .dossier-body {
+      flex: 1;
+      padding: 14px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .dossier-hero {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+      padding: 12px;
+      position: relative;
+    }
+
+    .dossier-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: var(--accent-primary);
+    }
+
+    .dossier-id-hash {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .dossier-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .dossier-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+    }
+
+    .meta-item-label { color: var(--text-muted); }
+    .meta-item-val { font-weight: 700; color: var(--text-primary); }
+
+    .dossier-section-title {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.1em;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .dossier-summary-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+      padding: 10px;
+      font-size: 11.5px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    .dossier-synapse-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .synapse-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+      padding: 6px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .synapse-item:hover {
+      background: var(--bg-surface-elevated);
+      border-color: var(--border-focus);
+      color: #ffffff;
+      transform: translateX(2px);
+    }
+
+    .synapse-item-rel {
+      font-size: 8.5px;
+      color: var(--accent-bridge);
+      border: 1px solid rgba(192, 132, 252, 0.3);
+      padding: 1px 4px;
+      border-radius: 2px;
+    }
+
+    .dossier-actions {
+      padding: 10px 14px;
+      border-top: 1px solid var(--border-strong);
+      background: rgba(0,0,0,0.3);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .dossier-empty {
+      text-align: center;
+      padding: 50px 16px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .dossier-empty-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+      opacity: 0.6;
+    }
+
+    /* ==========================================================================
+       5. BOTTOM FUI SIGNAL TERMINAL DRAWER
+       ========================================================================== */
+    .fui-terminal-drawer {
+      height: 150px;
+      background: #000000;
+      border-top: 1px solid var(--border-strong);
+      display: flex;
+      flex-direction: column;
+      z-index: 20;
+      position: relative;
+      transition: height 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fui-terminal-drawer.collapsed {
+      height: 26px;
+    }
+
+    .terminal-top-handle {
+      height: 26px;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .terminal-handle-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-primary);
+    }
+
+    .terminal-pulse-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent-success);
+      box-shadow: 0 0 6px var(--accent-success);
+    }
+
+    .terminal-logs-scroll {
+      flex: 1;
+      padding: 6px 12px;
+      overflow-y: auto;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      line-height: 1.5;
+      color: #94a3b8;
+    }
+
+    .log-line {
+      display: flex;
+      gap: 6px;
+    }
+
+    .log-time { color: var(--text-muted); }
+    .log-tag-sigint { color: var(--accent-secondary); font-weight: 700; }
+    .log-tag-bridge { color: var(--accent-bridge); font-weight: 700; }
+    .log-tag-tension { color: var(--accent-alert); font-weight: 700; }
+    .log-tag-ok { color: var(--accent-success); }
+
+    .terminal-input-bar {
+      height: 28px;
+      border-top: 1px solid var(--border-subtle);
+      background: #040508;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+    }
+
+    .terminal-prompt-symbol {
+      color: var(--accent-primary);
+      font-weight: 800;
+    }
+
+    .terminal-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      flex: 1;
+    }
+
+    /* ==========================================================================
+       MODALS
+       ========================================================================== */
+    .c2-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .c2-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .c2-modal-window {
+      width: 780px;
+      max-width: 92vw;
+      max-height: 85vh;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-focus);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.9), 0 0 30px var(--glow-primary);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .modal-head {
+      padding: 12px 16px;
+      background: var(--bg-surface-elevated);
+      border-bottom: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+    }
+
+    .modal-title-text {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .modal-close-btn {
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 2px 6px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    .modal-close-btn:hover { color: #ffffff; border-color: var(--accent-alert); }
+
+    .modal-content {
+      padding: 18px;
+      overflow-y: auto;
+      flex: 1;
+      font-size: 12.5px;
+    }
+
+    .modal-foot {
+      padding: 10px 16px;
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-base);
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
+    .tactical-grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 10px;
+    }
+
+    .tactical-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tactical-card:hover {
+      border-color: var(--accent-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    }
+
+    .tactical-card-tag {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      color: var(--accent-primary);
+      margin-bottom: 2px;
+    }
+
+    .tactical-card-title {
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .tactical-card-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .c2-dropzone {
+      border: 2px dashed var(--border-strong);
+      padding: 24px;
+      text-align: center;
+      background: var(--bg-base);
+      border-radius: 2px;
+      cursor: pointer;
+      font-family: var(--font-mono);
+    }
+    .c2-dropzone:hover { border-color: var(--accent-primary); }
+
+    .c2-textarea {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+      padding: 8px;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 1.4;
+      resize: vertical;
+      outline: none;
+    }
+    .c2-textarea:focus { border-color: var(--accent-primary); }
+
+  </style>
+</head>
+<body data-theme="skunkworks">
+
+  <!-- 1. TOP SITUATION ROOM CLASSIFICATION & TELEMETRY BAR -->
+  <div class="fui-security-bar">
+    <div class="classification-tag">
+      <span>TOP SECRET // EYES ONLY // SCI-ORCON</span>
+      <span class="defcon-badge">DEFCON 1 ACTIVE</span>
+    </div>
+
+    <div class="telemetry-stream-ticker">
+      <span id="telemetry-zulu-time">ZULU: 23:04:15Z</span>
+      <span id="telemetry-lat-lon">COORD: 44°20'54"N 08°11'27"E</span>
+      <span id="telemetry-nodes-edges">CONNECTOME: 575 NODI · 1325 ARCHI</span>
+      <span>C4ISR: SECURE</span>
+    </div>
+
+    <!-- Theme Switcher (1. Skunkworks Amber, 2. DARPA Emerald, 3. StratCom Cobalt) -->
+    <div class="theme-switcher-pills">
+      <span style="font-size:8.5px; margin-right:4px;">TACTICAL FUI:</span>
+      <button class="theme-pill-btn active" id="btn-theme-skunkworks" onclick="setTacticalTheme('skunkworks')">1. SKUNKWORKS</button>
+      <button class="theme-pill-btn" id="btn-theme-darpa" onclick="setTacticalTheme('darpa')">2. DARPA</button>
+      <button class="theme-pill-btn" id="btn-theme-stratcom" onclick="setTacticalTheme('stratcom')">3. STRATCOM</button>
+    </div>
+  </div>
+
+  <!-- 2. MASTER COMMAND TOPBAR -->
+  <header class="fui-topbar">
+    <div class="fui-brand-block">
+      <div class="fui-radar-indicator">
+        <div class="fui-radar-sweep"></div>
+        <div class="fui-radar-core"></div>
+      </div>
+      <div class="fui-brand-text">
+        <div class="fui-brand-name">
+          UNIVERSAL AI BRAIN
+          <span class="badge">NORAD C4ISR v3.5</span>
+        </div>
+        <div class="fui-brand-subtitle">HOLLYWOOD FUI · NEUROMORPHIC CONNECTOME</div>
+      </div>
+    </div>
+
+    <!-- Telemetry Gauges -->
+    <div class="fui-telemetry-hud">
+      <div class="hud-gauge" title="Emisfero Sinistro: Logica, Architettura, Algoritmi, Regole">
+        <span class="hud-gauge-dot left"></span>
+        <span class="hud-gauge-label">SX LOGIC:</span>
+        <span class="hud-gauge-val" id="stat-left-count">284</span>
+      </div>
+      <div class="hud-gauge" title="Emisfero Destro: Design, Emozioni, Relazioni, Episodi">
+        <span class="hud-gauge-dot right"></span>
+        <span class="hud-gauge-label">DX DESIGN:</span>
+        <span class="hud-gauge-val" id="stat-right-count">291</span>
+      </div>
+      <div class="hud-gauge" title="Ponti Corpo Calloso: Sinapsi Inter-emisferiche">
+        <span class="hud-gauge-dot bridge"></span>
+        <span class="hud-gauge-label">BRIDGES:</span>
+        <span class="hud-gauge-val" id="stat-bridge-count">148</span>
+      </div>
+    </div>
+
+    <!-- Tactical Action Suite -->
+    <div class="fui-action-bar">
+      <button class="fui-btn" onclick="openModal('resurface-modal')">
+        <span>🔄</span> 90s RESURFACE
+      </button>
+      <button class="fui-btn" onclick="openModal('tensions-modal')">
+        <span>⚡</span> TENSIONI
+      </button>
+      <button class="fui-btn" onclick="openModal('weave-modal')">
+        <span>🕸️</span> WEAVE
+      </button>
+      <button class="fui-btn" onclick="openModal('firmware-modal')">
+        <span>🧭</span> FIRMWARE
+      </button>
+      <button class="fui-btn fui-btn-primary" onclick="openModal('ingest-modal')">
+        <span>📥</span> INGEST JSON
+      </button>
+      <button class="fui-btn sound-toggle-btn" id="sound-btn" onclick="toggleTacticalAudio()" title="Audio feedback tattico">
+        <span id="sound-icon">🔇</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 3. MAIN COCKPIT WORKSPACE -->
+  <main class="fui-workspace">
+
+    <!-- Left Wing: Live Oscilloscope, Silo Elevator & Spectrogram -->
+    <aside class="fui-left-wing">
+      
+      <!-- FUI Oscilloscope Waveform -->
+      <div class="oscilloscope-card">
+        <div class="oscilloscope-header">
+          <span>SYNAPSE CARRIER WAVE</span>
+          <span id="osc-freq">432.0 Hz</span>
+        </div>
+        <canvas id="oscilloscope-canvas"></canvas>
+      </div>
+
+      <div class="wing-header">
+        <span>DEPTH SILO // PALAZZO</span>
+        <span>[LVL 0-2]</span>
+      </div>
+      <div class="dock-floor-list">
+        <button class="dock-floor-btn active" onclick="setFloorFilter('all', this)">
+          <span>🌐 TUTTI I LIVELLI</span>
+          <span class="dock-floor-tag" id="dock-count-all">575</span>
+        </button>
+        <button class="dock-floor-btn" onclick="setFloorFilter('P0', this)">
+          <span>P0: ATTICO STRATEGICO</span>
+          <span class="dock-floor-tag" id="dock-count-p0">42</span>
+        </button>
+        <button class="dock-floor-btn" onclick="setFloorFilter('P1', this)">
+          <span>P1: LIVELLO PROGETTI</span>
+          <span class="dock-floor-tag" id="dock-count-p1">188</span>
+        </button>
+        <button class="dock-floor-btn" onclick="setFloorFilter('P2', this)">
+          <span>P2: MODULI ATOMICI</span>
+          <span class="dock-floor-tag" id="dock-count-p2">345</span>
+        </button>
+      </div>
+
+      <div class="dock-divider"></div>
+
+      <div class="wing-header">
+        <span>RADAR SPETTRO TECH</span>
+        <span>[FILTRI]</span>
+      </div>
+      <div class="radar-tag-list">
+        <button class="radar-tag-btn active" onclick="setCategoryFilter('all', this)">
+          <span class="radar-tag-dot"></span> Tutti i Domini
+        </button>
+        <button class="radar-tag-btn" onclick="setCategoryFilter('ai', this)">
+          <span class="radar-tag-dot"></span> AI &amp; Cognitive
+        </button>
+        <button class="radar-tag-btn" onclick="setCategoryFilter('swift', this)">
+          <span class="radar-tag-dot"></span> Apple / Swift
+        </button>
+        <button class="radar-tag-btn" onclick="setCategoryFilter('arch', this)">
+          <span class="radar-tag-dot"></span> Architettura &amp; Backend
+        </button>
+        <button class="radar-tag-btn" onclick="setCategoryFilter('design', this)">
+          <span class="radar-tag-dot"></span> Design &amp; UI System
+        </button>
+        <button class="radar-tag-btn" onclick="setCategoryFilter('bridges', this)">
+          <span class="radar-tag-dot"></span> Solo Ponti Callosi
+        </button>
+      </div>
+
+      <!-- Live Animated Spectrogram Histogram -->
+      <div class="spectrogram-card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:2px;">
+          <span>SPECTRAL BANDWIDTH</span>
+          <span style="color:var(--accent-primary)">98.4%</span>
+        </div>
+        <div class="spectrogram-bars" id="spec-bars-container">
+          <div class="spec-bar" style="height:40%"></div>
+          <div class="spec-bar" style="height:65%"></div>
+          <div class="spec-bar" style="height:85%"></div>
+          <div class="spec-bar" style="height:35%"></div>
+          <div class="spec-bar" style="height:90%"></div>
+          <div class="spec-bar" style="height:55%"></div>
+          <div class="spec-bar" style="height:75%"></div>
+          <div class="spec-bar" style="height:45%"></div>
+          <div class="spec-bar" style="height:80%"></div>
+          <div class="spec-bar" style="height:60%"></div>
+          <div class="spec-bar" style="height:95%"></div>
+          <div class="spec-bar" style="height:30%"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Center: Tactical Radar & 3D Globe Theater -->
+    <section class="fui-graph-viewport" id="viewport-container">
+      
+      <!-- Floating View Controller -->
+      <div class="fui-floating-controls">
+        <div class="fui-mode-pill">
+          <button class="fui-mode-btn active" id="mode-btn-tactical" onclick="setCanvasMode('tactical')">
+            <span>📡</span> RADAR TATTICO
+          </button>
+          <button class="fui-mode-btn" id="mode-btn-hemispheres" onclick="setCanvasMode('hemispheres')">
+            <span>🧠</span> BI-EMISFERICO
+          </button>
+          <button class="fui-mode-btn" id="mode-btn-bridges" onclick="setCanvasMode('bridges')">
+            <span>⚡</span> PONTI CALLOSI
+          </button>
+          <button class="fui-mode-btn" id="mode-btn-globe" onclick="setCanvasMode('globe')">
+            <span>🌐</span> GLOBO 3D
+          </button>
+        </div>
+      </div>
+
+      <!-- Azimuth Compass Overlay -->
+      <div class="fui-compass-overlay">
+        <span>AZIMUTH: <strong style="color:var(--accent-primary)" id="hud-azimuth">042°</strong></span>
+        <span>RANGE: <strong>1200km</strong></span>
+        <span>MODE: <strong style="color:var(--accent-success)">TRACKING</strong></span>
+      </div>
+
+      <!-- 3D Globe HUD Controls -->
+      <div class="globe-hud-overlay" id="globe-hud-controls">
+        <button class="globe-hud-btn" id="btn-globe-spin" onclick="toggleGlobeSpin()">🔄 AUTO-SPIN: ON</button>
+        <button class="globe-hud-btn" onclick="resetGlobeCamera()">🎯 CENTRA GLOBO</button>
+      </div>
+
+      <!-- 2D Canvas (Obsidian Force Engine + Hollywood FUI Radar Overlay) -->
+      <canvas id="tactical-canvas"></canvas>
+
+      <!-- 3D Three.js WebGL Holographic Globe -->
+      <div id="globe-3d-container"></div>
+
+      <!-- Lock-On Target Reticle Tooltip -->
+      <div id="reticle-tooltip" class="graph-reticle-tooltip">
+        <div class="reticle-header">
+          <span>⌖ LOCK-ON TARGET</span>
+          <span id="ret-target-id">#ID-00</span>
+        </div>
+        <div class="reticle-title" id="ret-target-title">Nome Concetto</div>
+        <div class="reticle-meta" id="ret-target-meta">EMISFERO · CATEGORIA</div>
+      </div>
+
+      <!-- Bottom HUD Quick Strip -->
+      <div class="fui-canvas-hud">
+        <div class="hud-search-box">
+          <span style="color:var(--accent-primary); font-size:11px;">🔍</span>
+          <input type="text" id="graph-search-input" placeholder="Cerca o aggancia un nodo (#tag, ID, nome)..." oninput="onSearchQuery(this.value)">
+          <kbd class="hud-search-kbd">⌘K</kbd>
+        </div>
+
+        <div class="hex-stream-ticker" id="hex-waterfall">
+          0x7FFF8A41 // 0xDEADC0DE // SYN_STREAM_ACTIVE // 575 NODES CONNECTED
+        </div>
+
+        <div class="hud-zoom-controls">
+          <button class="hud-zoom-btn" onclick="fitGraphView()" title="Inquadra tutti i 575 nodi">🎯 FIT GRAPH</button>
+          <button class="hud-zoom-btn" onclick="expandGraphSpacing()" title="Allarga la spaziatura tra i nodi">⚡ ALLARGA</button>
+          <button class="hud-zoom-btn" onclick="compactGraphSpacing()" title="Compatta la spaziatura tra i nodi">⚡ COMPATTA</button>
+          <button class="hud-zoom-btn" onclick="reheatSimulation()" title="Ricalcola fisica a forze">🔄 RESET FISICA</button>
+          <button class="hud-zoom-btn" onclick="adjustZoom(1.25)">+</button>
+          <button class="hud-zoom-btn" onclick="adjustZoom(0.8)">-</button>
+          <button class="hud-zoom-btn" onclick="resetCanvasCamera()">0,0</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right: Classified Dossier Inspector -->
+    <aside class="fui-inspector" id="dossier-inspector">
+      <div class="dossier-header">
+        <div class="dossier-tag-badge">
+          <span>●</span> DOSSIER CLASSIFICATO
+        </div>
+        <div class="dossier-stamp-classified">EYES ONLY</div>
+      </div>
+
+      <div class="dossier-body" id="dossier-content">
+        <div class="dossier-empty">
+          <div class="dossier-empty-icon">🎯</div>
+          <div style="font-weight:700; margin-bottom:4px;">NESSUN BERSAGLIO AGGANCIATO</div>
+          <div style="font-size:10.5px;">Clicca o trascina un nodo per aprire il fascicolo di intelligence</div>
+        </div>
+      </div>
+
+      <div class="dossier-actions" id="dossier-footer-actions" style="display:none;">
+        <button class="fui-btn" onclick="copyDossierMarkdown()">📋 COPIA MD</button>
+        <button class="fui-btn fui-btn-primary" onclick="focusSelectedNodeSynapses()">⚡ LOCK SINAPSI</button>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- 4. BOTTOM SIGNAL TERMINAL -->
+  <footer class="fui-terminal-drawer" id="tactical-terminal">
+    <div class="terminal-top-handle" onclick="toggleTerminalDrawer()">
+      <div class="terminal-handle-left">
+        <span class="terminal-pulse-dot"></span>
+        <strong>SITUATION ROOM TELEMETRY INTERCEPT &amp; API STREAM</strong>
+        <span style="color:var(--text-muted); font-size:9px;">(NORAD C4ISR KERNEL · 60 FPS)</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span style="color:var(--text-muted); font-size:9.5px;">COMANDO: <code>⌘`</code></span>
+        <button class="theme-pill-btn" onclick="event.stopPropagation(); clearTerminalLogs()">CLEAR</button>
+        <span id="term-toggle-icon">▼</span>
+      </div>
+    </div>
+
+    <div class="terminal-logs-scroll" id="terminal-logs">
+      <div class="log-line">
+        <span class="log-time">[23:04:02]</span>
+        <span class="log-tag-sigint">[SIGINT-BOOT]</span>
+        <span>Hollywood FUI C4ISR Tactical Kernel armato. 575 nodi &amp; 1325 sinapsi integrate.</span>
+      </div>
+      <div class="log-line">
+        <span class="log-time">[23:04:03]</span>
+        <span class="log-tag-bridge">[CALLOSUM]</span>
+        <span>Canale inter-emisferico calibrato: 148 ponti prioritari attivi.</span>
+      </div>
+      <div class="log-line">
+        <span class="log-time">[23:04:05]</span>
+        <span class="log-tag-ok">[FASTAPI-OK]</span>
+        <span>Connessione neurale stabilizzata. Zero errori di protocollo.</span>
+      </div>
+    </div>
+
+    <div class="terminal-input-bar">
+      <span class="terminal-prompt-symbol">c4isr@norad-c2:~$</span>
+      <input type="text" class="terminal-input" id="terminal-cmd-input" placeholder="Digita comando (scan, resurface, tensions, weave, firmware, stats, fit, clear)..." onkeydown="handleTerminalCommand(event)">
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS (RESURFACE, TENSIONS, WEAVE, FIRMWARE, INGEST)
+       ========================================================================== -->
+
+  <!-- Modal 1: 90s Daily Resurface Briefing -->
+  <div class="c2-modal-overlay" id="resurface-modal" onclick="closeModalOnBackdrop(event, 'resurface-modal')">
+    <div class="c2-modal-window">
+      <div class="modal-head">
+        <div class="modal-title-text">
+          <span>🔄</span> 90-SECOND DAILY RESURFACE DOSSIER
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('resurface-modal')">✕</button>
+      </div>
+      <div class="modal-content">
+        <p style="color:var(--text-muted); margin-bottom:14px; font-family:var(--font-mono); font-size:10.5px;">
+          SPACED REPETITION INTELLIGENCE: 5 Concetti chiave riemersi oggi dal connettoma per mantenere attivo il modello mentale.
+        </p>
+        <div class="tactical-grid-cards" id="resurface-cards-container"></div>
+      </div>
+      <div class="modal-foot">
+        <button class="fui-btn fui-btn-primary" onclick="closeModal('resurface-modal')">ACQUISISCI BRIEFING</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Matrice Tensioni Cognitive -->
+  <div class="c2-modal-overlay" id="tensions-modal" onclick="closeModalOnBackdrop(event, 'tensions-modal')">
+    <div class="c2-modal-window">
+      <div class="modal-head">
+        <div class="modal-title-text">
+          <span>⚡</span> MATRICE DELLE TENSIONI DIALETTICHE
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('tensions-modal')">✕</button>
+      </div>
+      <div class="modal-content">
+        <p style="color:var(--text-muted); margin-bottom:14px; font-family:var(--font-mono); font-size:10.5px;">
+          STEELMANNING MATRIX: Analisi di compromessi e tensioni attive tra decisioni architetturali opposte.
+        </p>
+        <div class="tactical-grid-cards" id="tensions-cards-container"></div>
+      </div>
+      <div class="modal-foot">
+        <button class="fui-btn" onclick="addLogLine('[SIGINT]', 'Scansione nuove contraddizioni avviata...'); closeModal('tensions-modal')">🔍 SCANSIONA NUOVE</button>
+        <button class="fui-btn fui-btn-primary" onclick="closeModal('tensions-modal')">CHIUDI</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Weave Link Engine -->
+  <div class="c2-modal-overlay" id="weave-modal" onclick="closeModalOnBackdrop(event, 'weave-modal')">
+    <div class="c2-modal-window">
+      <div class="modal-head">
+        <div class="modal-title-text">
+          <span>🕸️</span> WEAVE LINK ENGINE // AUTO-PONTI ORFANI
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('weave-modal')">✕</button>
+      </div>
+      <div class="modal-content">
+        <p style="color:var(--text-muted); margin-bottom:14px; font-family:var(--font-mono); font-size:10.5px;">
+          TESSITURA SINAPTICA: Proposte di collegamento automatico per nodi orfani ad alta affinità semantica.
+        </p>
+        <div class="tactical-grid-cards" id="weave-cards-container"></div>
+      </div>
+      <div class="modal-foot">
+        <button class="fui-btn fui-btn-primary" onclick="applyAllMockWeave()">✨ APPLICA TUTTI I PONTI</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: 9 Firmware Mental Models -->
+  <div class="c2-modal-overlay" id="firmware-modal" onclick="closeModalOnBackdrop(event, 'firmware-modal')">
+    <div class="c2-modal-window">
+      <div class="modal-head">
+        <div class="modal-title-text">
+          <span>🧭</span> I 9 FIRMWARE COGNITIVI // LENTI DECISIONALI
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('firmware-modal')">✕</button>
+      </div>
+      <div class="modal-content">
+        <p style="color:var(--text-muted); margin-bottom:14px; font-family:var(--font-mono); font-size:10.5px;">
+          LENTI MENTALI: Modelli di pensiero rigorosi attraverso cui filtrare architetture e strategie.
+        </p>
+        <div class="tactical-grid-cards" id="firmware-cards-container"></div>
+      </div>
+      <div class="modal-foot">
+        <button class="fui-btn fui-btn-primary" onclick="closeModal('firmware-modal')">CHIUDI</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Ingest Payload AI -->
+  <div class="c2-modal-overlay" id="ingest-modal" onclick="closeModalOnBackdrop(event, 'ingest-modal')">
+    <div class="c2-modal-window">
+      <div class="modal-head">
+        <div class="modal-title-text">
+          <span>📥</span> INGESTIONE ATOMICA PAYLOAD JSON (DIRETTIVA GRAPHIFY)
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('ingest-modal')">✕</button>
+      </div>
+      <div class="modal-content">
+        <div class="c2-dropzone" onclick="document.getElementById('mock-file-input').click()">
+          <input type="file" id="mock-file-input" style="display:none;" onchange="handleMockFile(event)">
+          <div style="font-size:22px; margin-bottom:6px;">📁</div>
+          <div style="font-weight:700; color:var(--text-primary);">TRASCINA FILE .JSON OPPURE CLICCA PER SELEZIONARE</div>
+          <div style="color:var(--text-muted); font-size:10.5px; margin-top:4px;">Compatibile con output Claude 3.7 / ChatGPT 4o / Gemini 2.0 Flash</div>
+        </div>
+
+        <div style="margin-top:14px;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:4px; font-family:var(--font-mono); font-size:10.5px;">
+            <span>OPPURE INCOLLA PAYLOAD RAW:</span>
+            <span style="color:var(--accent-primary);" id="json-detect-status">In attesa di input...</span>
+          </div>
+          <textarea class="c2-textarea" id="json-paste-box" rows="6" placeholder='{
+  "nodes": [
+    {
+      "id": "norad-fui-spec",
+      "label": "NORAD FUI Specification",
+      "hemisphere": "LEFT",
+      "primary_label": "ARCHITECTURE",
+      "tags": ["fui", "hud", "norad"],
+      "summary": "Specifiche del sistema di comando Hollywood FUI."
+    }
+  ],
+  "edges": []
+}'></textarea>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="fui-btn" onclick="closeModal('ingest-modal')">ANNULLA</button>
+        <button class="fui-btn fui-btn-primary" onclick="submitMockIngest()">🚀 INVIA POST /api/memory/ingest</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       HOLYWOOD FUI ENGINE: RADAR, OSCILLOSCOPE, OBSIDIAN PHYSICS & 3D GLOBE
+       ========================================================================== */ -->
+  <script>
+    // Audio Synthesizer (Zero External Dependencies)
+    let audioCtx = null;
+    let audioEnabled = false;
+
+    function toggleTacticalAudio() {
+      audioEnabled = !audioEnabled;
+      const icon = document.getElementById('sound-icon');
+      if (audioEnabled) {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        icon.innerText = '🔊';
+        playTacticalSound(880, 0.05, 'sine');
+        addLogLine('[AUDIO]', 'Audio feedback tattico attivato.');
+      } else {
+        icon.innerText = '🔇';
+        addLogLine('[AUDIO]', 'Audio feedback disattivato.');
+      }
+    }
+
+    function playTacticalSound(freq, duration, type='sine') {
+      if (!audioEnabled || !audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    // Theme Switcher Engine (SKUNKWORKS, DARPA, STRATCOM)
+    function setTacticalTheme(themeName) {
+      document.body.setAttribute('data-theme', themeName);
+      document.querySelectorAll('.theme-pill-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(`btn-theme-${themeName}`);
+      if (activeBtn) activeBtn.classList.add('active');
+      
+      playTacticalSound(540, 0.08);
+      addLogLine('[THEME-SWITCH]', `FUI Direction: ${themeName.toUpperCase()}`);
+      if (currentCanvasMode === 'globe') {
+        rebuildGlobeMaterials();
+      }
+    }
+
+    // Modal Manager
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+      playTacticalSound(640, 0.06);
+    }
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+      playTacticalSound(420, 0.05);
+    }
+    function closeModalOnBackdrop(e, modalId) {
+      if (e.target.id === modalId) closeModal(modalId);
+    }
+
+    // Terminal Drawer Manager
+    function toggleTerminalDrawer() {
+      const term = document.getElementById('tactical-terminal');
+      const icon = document.getElementById('term-toggle-icon');
+      term.classList.toggle('collapsed');
+      icon.innerText = term.classList.contains('collapsed') ? '▲' : '▼';
+    }
+
+    function addLogLine(tag, message) {
+      const logs = document.getElementById('terminal-logs');
+      if (!logs) return;
+      const now = new Date();
+      const timeStr = `[${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}]`;
+      
+      const line = document.createElement('div');
+      line.className = 'log-line';
+      line.innerHTML = `
+        <span class="log-time">${timeStr}</span>
+        <span class="log-tag-sigint">${tag}</span>
+        <span>${message}</span>
+      `;
+      logs.appendChild(line);
+      logs.scrollTop = logs.scrollHeight;
+    }
+
+    function clearTerminalLogs() {
+      const logs = document.getElementById('terminal-logs');
+      if (logs) logs.innerHTML = '';
+      addLogLine('[SYSTEM]', 'Buffer log ripulito.');
+    }
+
+    function handleTerminalCommand(e) {
+      if (e.key === 'Enter') {
+        const val = e.target.value.trim().toLowerCase();
+        e.target.value = '';
+        if (!val) return;
+        addLogLine('[CMD]', `> ${val}`);
+        
+        if (val === 'clear') {
+          clearTerminalLogs();
+        } else if (val === 'resurface') {
+          openModal('resurface-modal');
+        } else if (val === 'tensions') {
+          openModal('tensions-modal');
+        } else if (val === 'weave') {
+          openModal('weave-modal');
+        } else if (val === 'firmware') {
+          openModal('firmware-modal');
+        } else if (val === 'stats') {
+          addLogLine('[STATS]', `Nodi: ${nodesData.length} · Sinapsi: ${edgesData.length}`);
+        } else if (val === 'fit') {
+          fitGraphView();
+        } else if (val === 'globe') {
+          setCanvasMode('globe');
+        } else if (val === 'radar') {
+          setCanvasMode('tactical');
+        } else {
+          addLogLine('[ERR]', `Comando non riconosciuto: "${val}". Comandi: fit, scan, resurface, tensions, weave, firmware, stats, globe, radar, clear.`);
+        }
+      }
+    }
+
+    // Keyboard Shortcuts
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        document.getElementById('graph-search-input').focus();
+      }
+      if ((e.metaKey || e.ctrlKey) && e.key === '`') {
+        e.preventDefault();
+        toggleTerminalDrawer();
+      }
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.c2-modal-overlay').forEach(m => m.classList.remove('active'));
+      }
+    });
+
+    // ==========================================================================
+    // OSCILLOSCOPE & TELEMETRY SPECTROGRAM ANIMATION ENGINE
+    // ==========================================================================
+    const oscCanvas = document.getElementById('oscilloscope-canvas');
+    const oscCtx = oscCanvas.getContext('2d');
+    let oscPhase = 0;
+
+    function resizeOscilloscope() {
+      oscCanvas.width = oscCanvas.clientWidth * window.devicePixelRatio;
+      oscCanvas.height = oscCanvas.clientHeight * window.devicePixelRatio;
+      oscCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+
+    function renderOscilloscope() {
+      const w = oscCanvas.width / window.devicePixelRatio;
+      const h = oscCanvas.height / window.devicePixelRatio;
+      oscCtx.clearRect(0, 0, w, h);
+
+      const theme = document.body.getAttribute('data-theme') || 'skunkworks';
+      let strokeColor = '#ffb800';
+      if (theme === 'darpa') strokeColor = '#00ff9d';
+      if (theme === 'stratcom') strokeColor = '#38bdf8';
+
+      oscCtx.beginPath();
+      oscCtx.strokeStyle = strokeColor;
+      oscCtx.lineWidth = 1.2;
+
+      oscPhase += 0.08;
+      for (let x = 0; x < w; x++) {
+        const y = h/2 + Math.sin(x * 0.08 + oscPhase) * 10 + Math.sin(x * 0.2 - oscPhase * 1.5) * 4;
+        if (x === 0) oscCtx.moveTo(x, y);
+        else oscCtx.lineTo(x, y);
+      }
+      oscCtx.stroke();
+
+      // Randomize Spectrogram Bars periodically
+      if (Math.random() < 0.2) {
+        document.querySelectorAll('.spec-bar').forEach(bar => {
+          bar.style.height = `${Math.floor(20 + Math.random() * 75)}%`;
+        });
+      }
+
+      // Fast Hex Stream Ticker
+      const hexEl = document.getElementById('hex-waterfall');
+      if (hexEl && Math.random() < 0.3) {
+        const rndHex = Math.floor(Math.random()*0xFFFFFF).toString(16).toUpperCase().padStart(6,'0');
+        hexEl.innerText = `0x${rndHex} // SYNAPSE_PULSE_${Math.floor(Math.random()*99)} // LATENCY: 0.${Math.floor(10+Math.random()*80)}ms // DEFCON: 1`;
+      }
+
+      requestAnimationFrame(renderOscilloscope);
+    }
+
+    // ==========================================================================
+    // DATASET MANAGEMENT (575 NODES & 1325 EDGES FROM EMBEDDED / BACKEND)
+    // ==========================================================================
+    let nodesData = [];
+    let edgesData = [];
+    let selectedNode = null;
+    let hoveredNode = null;
+    let connectedNodeIds = new Set();
+    let currentFilter = 'all';
+    let currentFloor = 'all';
+    let currentCanvasMode = 'tactical'; // 'tactical', 'hemispheres', 'bridges', 'globe'
+
+    // Caricamento Dati: Supporta sia file:// che http://
+    async function loadBrainDataset() {
+      let rawData = null;
+
+      if (window.EMBEDDED_BRAIN_DATA && window.EMBEDDED_BRAIN_DATA.nodes && window.EMBEDDED_BRAIN_DATA.nodes.length > 0) {
+        rawData = window.EMBEDDED_BRAIN_DATA;
+        addLogLine('[EMBEDDED]', `Caricati con successo tutti i ${rawData.nodes.length} nodi e ${rawData.edges.length} sinapsi dal connettoma.`);
+      }
+
+      if (window.location.protocol.startsWith('http')) {
+        try {
+          const res = await fetch('/brain.json');
+          if (res.ok) {
+            const json = await res.json();
+            if (json.nodes && json.nodes.length > 0) {
+              rawData = json;
+              addLogLine('[LIVE-SYNC]', `Sincronizzazione attiva con backend FastAPI: ${json.nodes.length} nodi.`);
+            }
+          }
+        } catch (e) {}
+      }
+
+      if (!rawData || !rawData.nodes || rawData.nodes.length === 0) return;
+
+      const degreeMap = new Map();
+      (rawData.edges || []).forEach(e => {
+        degreeMap.set(e.source, (degreeMap.get(e.source) || 0) + 1);
+        degreeMap.set(e.target, (degreeMap.get(e.target) || 0) + 1);
+      });
+
+      // Inizializzazione Spaziosa dei Nodi (Stile Costellazione Obsidian)
+      nodesData = rawData.nodes.map((n, i) => {
+        const isLeft = n.hemisphere === 'LEFT';
+        const degree = degreeMap.get(n.id) || 1;
+        const radius = n.id.startsWith('domain-') ? 14 : Math.max(3.5, Math.min(11, 2.8 + Math.sqrt(degree) * 1.6));
+        const floorLevel = n.id.startsWith('domain-') ? 'P0' : (degree > 5 ? 'P1' : 'P2');
+
+        // Distribuzione iniziale ampia a spirale/costellazione divisa per emisfero
+        const angle = (i / rawData.nodes.length) * Math.PI * 4;
+        const baseRadius = 250 + (i % 20) * 45 + Math.random() * 120;
+        const posX = (isLeft ? -1 : 1) * (baseRadius * Math.cos(angle) + (isLeft ? -180 : 180));
+        const posY = baseRadius * Math.sin(angle);
+
+        return {
+          id: n.id,
+          label: n.label || n.id,
+          hemisphere: n.hemisphere || (isLeft ? 'LEFT' : 'RIGHT'),
+          category: n.primary_label || 'GENERAL',
+          floor: floorLevel,
+          tags: n.tags || [],
+          summary: n.summary || 'Nessuna sintesi inserita.',
+          x: posX,
+          y: posY,
+          vx: 0,
+          vy: 0,
+          degree: degree,
+          radius: radius,
+          isFixed: false
+        };
+      });
+
+      edgesData = (rawData.edges || []).map(e => ({
+        source: e.source,
+        target: e.target,
+        relation: e.relation || 'CONNECTS',
+        isBridge: e.relation === 'CALLOSUM_BRIDGE' || e.relation === 'BRIDGES' || e.is_callosum || (e.relation && e.relation.includes('BRIDGE'))
+      }));
+
+      updateStatsHUD();
+
+      // Warm-up di 80 cicli per stabilizzare il grafo prima del primo frame (Zero collasso!)
+      simAlpha = 1.0;
+      for (let step = 0; step < 80; step++) {
+        stepForcePhysics();
+      }
+
+      // Adatta automaticamente la vista all'intero connettoma
+      setTimeout(() => fitGraphView(), 50);
+
+      if (currentCanvasMode === 'globe') initOrUpdateGlobe3D();
+    }
+
+    function updateStatsHUD() {
+      const left = nodesData.filter(n => n.hemisphere === 'LEFT').length;
+      const right = nodesData.filter(n => n.hemisphere === 'RIGHT').length;
+      const bridges = edgesData.filter(e => e.isBridge).length;
+
+      const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
+      setTxt('stat-left-count', left);
+      setTxt('stat-right-count', right);
+      setTxt('stat-bridge-count', bridges);
+      setTxt('dock-count-all', nodesData.length);
+      setTxt('dock-edge-count', edgesData.length);
+      setTxt('telemetry-nodes-edges', `CONNECTOME: ${nodesData.length} NODI · ${edgesData.length} ARCHI`);
+    }
+
+    // ==========================================================================
+    // OBSIDIAN FORCE PHYSICS ENGINE (AMPIO, SPAZIOSO, ZERO COLLASSO)
+    // ==========================================================================
+    const canvas = document.getElementById('tactical-canvas');
+    const ctx = canvas.getContext('2d');
+    const tooltip = document.getElementById('reticle-tooltip');
+
+    let camera = { x: 0, y: 0, zoom: 0.55 };
+    let isDraggingCanvas = false;
+    let draggedNode = null;
+    let dragStart = { x: 0, y: 0 };
+    let simAlpha = 1.0;
+    let radarAngle = 0;
+
+    function resizeCanvas() {
+      const container = document.getElementById('viewport-container');
+      if (!container) return;
+      const w = container.clientWidth || (window.innerWidth - 580);
+      const h = container.clientHeight || (window.innerHeight - 220);
+      if (w > 0 && h > 0) {
+        canvas.width = w * window.devicePixelRatio;
+        canvas.height = h * window.devicePixelRatio;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      }
+      if (currentCanvasMode === 'globe' && window.resizeGlobe3D) window.resizeGlobe3D();
+      resizeOscilloscope();
+    }
+    window.addEventListener('resize', resizeCanvas);
+
+    function reheatSimulation() {
+      simAlpha = 1.0;
+    }
+
+    // Parametri dinamici di forza (Regolabili in stile Obsidian)
+    let customRepelMultiplier = 1.0;
+    let customDistanceMultiplier = 1.0;
+
+    function expandGraphSpacing() {
+      customRepelMultiplier *= 1.35;
+      customDistanceMultiplier *= 1.25;
+      nodesData.forEach(n => {
+        n.x *= 1.2;
+        n.y *= 1.2;
+      });
+      reheatSimulation();
+      playTacticalSound(750, 0.06);
+      addLogLine('[FORCE-GRAPH]', `Spaziatura allargata (Repulsione: x${customRepelMultiplier.toFixed(1)})`);
+    }
+
+    function compactGraphSpacing() {
+      customRepelMultiplier = Math.max(0.4, customRepelMultiplier * 0.75);
+      customDistanceMultiplier = Math.max(0.5, customDistanceMultiplier * 0.8);
+      nodesData.forEach(n => {
+        n.x *= 0.85;
+        n.y *= 0.85;
+      });
+      reheatSimulation();
+      playTacticalSound(600, 0.05);
+      addLogLine('[FORCE-GRAPH]', `Spaziatura compattata (Repulsione: x${customRepelMultiplier.toFixed(1)})`);
+    }
+
+    // Fisica a forze anti-collasso con raggio di collisione rigoroso
+    function stepForcePhysics() {
+      if (simAlpha < 0.002 && !draggedNode) return;
+
+      const nodeMap = new Map(nodesData.map(n => [n.id, n]));
+      const kRepel = 3200 * customRepelMultiplier;     // Repulsione ad alta energia per distanziare i nodi
+      const kSpring = 0.018;                            // Molle elastiche morbide
+      const defaultDist = 110 * customDistanceMultiplier;  // Distanza a riposo confortevole
+      const damping = 0.88;                             // Inerzia fluida
+
+      const len = nodesData.length;
+
+      // 1. Repulsione Many-Body e Collision Radius rigoroso (Evita categoricamente sovrapposizioni)
+      for (let i = 0; i < len; i++) {
+        const n1 = nodesData[i];
+        for (let j = i + 1; j < len; j++) {
+          const n2 = nodesData[j];
+          const dx = n2.x - n1.x;
+          const dy = n2.y - n1.y;
+          let distSq = dx * dx + dy * dy;
+          if (distSq < 1) distSq = 1;
+          const dist = Math.sqrt(distSq);
+
+          // Raggio di collisione anti-sovrapposizione (Buffer minimo)
+          const minDist = n1.radius + n2.radius + 18;
+          if (dist < minDist) {
+            const overlap = (minDist - dist) * 0.5;
+            const nx = (dx / dist) * overlap;
+            const ny = (dy / dist) * overlap;
+            if (!n1.isFixed) { n1.x -= nx; n1.y -= ny; }
+            if (!n2.isFixed) { n2.x += nx; n2.y += ny; }
+          }
+
+          // Repulsione elettrostatica ad ampio raggio (fino a 650px)
+          if (dist < 650) {
+            const force = (kRepel / (dist + 30)) * simAlpha * 0.12;
+            const fx = (dx / dist) * force;
+            const fy = (dy / dist) * force;
+
+            if (!n1.isFixed) { n1.vx -= fx; n1.vy -= fy; }
+            if (!n2.isFixed) { n2.vx += fx; n2.vy += fy; }
+          }
+        }
+      }
+
+      // 2. Attrazione Molle (Archi)
+      edgesData.forEach(e => {
+        const src = nodeMap.get(e.source);
+        const tgt = nodeMap.get(e.target);
+        if (!src || !tgt) return;
+
+        const dx = tgt.x - src.x;
+        const dy = tgt.y - src.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const displacement = dist - (e.isBridge ? 160 : defaultDist);
+        const force = displacement * kSpring * simAlpha;
+
+        const fx = (dx / dist) * force;
+        const fy = (dy / dist) * force;
+
+        if (!src.isFixed) { src.vx += fx; src.vy += fy; }
+        if (!tgt.isFixed) { tgt.vx += fx; tgt.vy += fy; }
+      });
+
+      // 3. Gravità dolce (0.00025) per mantenere il baricentro senza schiacciare il grafo
+      nodesData.forEach(n => {
+        if (n.isFixed) return;
+
+        let targetCenter = { x: 0, y: 0 };
+        if (currentCanvasMode === 'hemispheres') {
+          targetCenter = n.hemisphere === 'LEFT' ? { x: -450, y: 0 } : { x: 450, y: 0 };
+        }
+
+        const dx = targetCenter.x - n.x;
+        const dy = targetCenter.y - n.y;
+        n.vx += dx * 0.00025 * simAlpha;
+        n.vy += dy * 0.00025 * simAlpha;
+
+        n.vx *= damping;
+        n.vy *= damping;
+        n.x += n.vx;
+        n.y += n.vy;
+      });
+
+      simAlpha *= 0.994;
+    }
+
+    function fitGraphView() {
+      if (nodesData.length === 0) return;
+      let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+      nodesData.forEach(n => {
+        if (n.x < minX) minX = n.x;
+        if (n.x > maxX) maxX = n.x;
+        if (n.y < minY) minY = n.y;
+        if (n.y > maxY) maxY = n.y;
+      });
+
+      const w = canvas.width / window.devicePixelRatio;
+      const h = canvas.height / window.devicePixelRatio;
+      const spanX = Math.max(maxX - minX + 240, 500);
+      const spanY = Math.max(maxY - minY + 240, 500);
+
+      camera.zoom = Math.min(w / spanX, h / spanY, 1.0) * 0.88;
+      camera.x = - (minX + maxX) / 2 * camera.zoom;
+      camera.y = - (minY + maxY) / 2 * camera.zoom;
+
+      playTacticalSound(600, 0.06);
+      addLogLine('[FIT-VIEW]', 'Visuale centrata con spaziatura ottimale su tutti i nodi.');
+    }
+
+    function setCanvasMode(mode) {
+      currentCanvasMode = mode;
+      document.querySelectorAll('.fui-mode-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById(`mode-btn-${mode}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const globeContainer = document.getElementById('globe-3d-container');
+      const globeHUD = document.getElementById('globe-hud-controls');
+
+      if (mode === 'globe') {
+        canvas.style.display = 'none';
+        globeContainer.style.display = 'block';
+        globeHUD.style.display = 'flex';
+        initOrUpdateGlobe3D();
+        playTacticalSound(820, 0.08);
+        addLogLine('[VIEW-MODE]', 'Mappamondo Neurale 3D WebGL attivato.');
+      } else {
+        canvas.style.display = 'block';
+        globeContainer.style.display = 'none';
+        globeHUD.style.display = 'none';
+
+        reheatSimulation();
+
+        if (mode === 'hemispheres') {
+          playTacticalSound(700, 0.07);
+          addLogLine('[VIEW-MODE]', 'Modalità BI-EMISFERICA: Gravità sdoppiata e canale Corpo Calloso armato.');
+        } else if (mode === 'bridges') {
+          playTacticalSound(900, 0.08);
+          addLogLine('[VIEW-MODE]', 'Modalità PONTI CALLOSI: Spotlight su tutti i 148 ponti inter-emisferici.');
+        } else {
+          playTacticalSound(600, 0.06);
+          addLogLine('[VIEW-MODE]', 'Modalità RADAR TATTICO 2D ripristinata.');
+        }
+      }
+    }
+
+    // Render Canvas Loop (60 FPS)
+    function renderTacticalGraph() {
+      if (currentCanvasMode === 'globe') {
+        requestAnimationFrame(renderTacticalGraph);
+        return;
+      }
+
+      stepForcePhysics();
+
+      const w = canvas.width / window.devicePixelRatio;
+      const h = canvas.height / window.devicePixelRatio;
+
+      ctx.clearRect(0, 0, w, h);
+      ctx.save();
+
+      // Applica camera trasform
+      ctx.translate(w/2 + camera.x, h/2 + camera.y);
+      ctx.scale(camera.zoom, camera.zoom);
+
+      // Colori coordinati con il tema selezionato
+      const theme = document.body.getAttribute('data-theme') || 'skunkworks';
+      let reticleColor = '#ffb800';
+      let bridgeColor = '#c084fc';
+      let leftColor = '#00e5ff';
+      let rightColor = '#ff2a5f';
+      let radarGridColor = 'rgba(255, 184, 0, 0.06)';
+      let linkDefaultColor = 'rgba(255, 255, 255, 0.12)';
+
+      if (theme === 'darpa') {
+        reticleColor = '#00ff9d';
+        leftColor = '#38bdf8';
+        rightColor = '#f43f5e';
+        radarGridColor = 'rgba(0, 255, 157, 0.06)';
+        linkDefaultColor = 'rgba(0, 255, 157, 0.12)';
+      } else if (theme === 'stratcom') {
+        reticleColor = '#38bdf8';
+        bridgeColor = '#a855f7';
+        leftColor = '#38bdf8';
+        rightColor = '#ec4899';
+        radarGridColor = 'rgba(59, 130, 246, 0.07)';
+        linkDefaultColor = 'rgba(59, 130, 246, 0.14)';
+      }
+
+      // 1. Hollywood FUI Concentric Radar Rings & Azimuth Graticule
+      ctx.strokeStyle = radarGridColor;
+      ctx.lineWidth = 1;
+      [140, 280, 440, 620, 840, 1100].forEach((r, idx) => {
+        ctx.beginPath();
+        ctx.arc(0, 0, r, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Range ring label
+        ctx.font = "8.5px 'JetBrains Mono'";
+        ctx.fillStyle = radarGridColor;
+        ctx.fillText(`R:${r*2}km`, r + 4, -4);
+      });
+
+      // Assi Cartesiani Radar con tacche millimetriche
+      ctx.beginPath();
+      ctx.moveTo(-1300, 0); ctx.lineTo(1300, 0);
+      ctx.moveTo(0, -1300); ctx.lineTo(0, 1300);
+      ctx.stroke();
+
+      // 2. Radar Sweep Beam
+      radarAngle += 0.015;
+      const deg = Math.floor((radarAngle * (180 / Math.PI)) % 360);
+      const azEl = document.getElementById('hud-azimuth');
+      if (azEl) azEl.innerText = `${String(deg).padStart(3,'0')}°`;
+
+      const sweepGrad = ctx.createRadialGradient(0, 0, 10, 0, 0, 750);
+      sweepGrad.addColorStop(0, 'rgba(0,0,0,0)');
+      sweepGrad.addColorStop(1, radarGridColor);
+      ctx.save();
+      ctx.rotate(radarAngle);
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.arc(0, 0, 750, 0, Math.PI / 4.5);
+      ctx.closePath();
+      ctx.fillStyle = sweepGrad;
+      ctx.fill();
+      ctx.restore();
+
+      // 3. Canale Centrale del Corpo Calloso
+      if (currentCanvasMode === 'hemispheres' || currentCanvasMode === 'bridges') {
+        ctx.save();
+        ctx.strokeStyle = 'rgba(192, 132, 252, 0.2)';
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([6, 6]);
+        ctx.beginPath();
+        ctx.moveTo(-60, -900); ctx.lineTo(-60, 900);
+        ctx.moveTo(60, -900); ctx.lineTo(60, 900);
+        ctx.stroke();
+
+        ctx.font = "700 9.5px 'JetBrains Mono'";
+        ctx.fillStyle = bridgeColor;
+        ctx.textAlign = "center";
+        ctx.fillText("CORPUS CALLOSUM CHANNEL", 0, -440);
+        ctx.restore();
+      }
+
+      const activeFocusNode = hoveredNode || selectedNode;
+      const isSpotlightActive = !!activeFocusNode;
+      const isBridgeMode = currentCanvasMode === 'bridges';
+
+      // 4. Disegna Sinapsi (Linee stile Obsidian)
+      const nodeMap = new Map(nodesData.map(n => [n.id, n]));
+      edgesData.forEach(e => {
+        const src = nodeMap.get(e.source);
+        const tgt = nodeMap.get(e.target);
+        if (!src || !tgt) return;
+
+        // Filtro piano
+        if (currentFloor !== 'all' && src.floor !== currentFloor && tgt.floor !== currentFloor) return;
+
+        const isConnectedToFocus = isSpotlightActive && (src.id === activeFocusNode.id || tgt.id === activeFocusNode.id);
+
+        if (isSpotlightActive) {
+          if (isConnectedToFocus) {
+            ctx.strokeStyle = reticleColor;
+            ctx.lineWidth = 1.8;
+          } else {
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
+            ctx.lineWidth = 0.5;
+          }
+        } else if (isBridgeMode) {
+          if (e.isBridge) {
+            ctx.strokeStyle = bridgeColor;
+            ctx.lineWidth = 2.2;
+          } else {
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
+            ctx.lineWidth = 0.5;
+          }
+        } else {
+          if (e.isBridge) {
+            ctx.strokeStyle = 'rgba(192, 132, 252, 0.45)';
+            ctx.lineWidth = 1.2;
+          } else {
+            ctx.strokeStyle = linkDefaultColor;
+            ctx.lineWidth = 0.7;
+          }
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(src.x, src.y);
+        ctx.lineTo(tgt.x, tgt.y);
+        ctx.stroke();
+      });
+
+      // 5. Disegna Nodi Tattici
+      nodesData.forEach(node => {
+        if (currentFloor !== 'all' && node.floor !== currentFloor) return;
+        if (currentFilter !== 'all') {
+          if (currentFilter === 'bridges' && !node.id.includes('bridge') && !node.id.includes('spec')) return;
+          if (currentFilter === 'ai' && !node.tags.includes('ai')) return;
+          if (currentFilter === 'swift' && !node.tags.includes('swift')) return;
+          if (currentFilter === 'arch' && !node.tags.includes('arch')) return;
+          if (currentFilter === 'design' && !node.tags.includes('design')) return;
+        }
+
+        const isLeft = node.hemisphere === 'LEFT';
+        const isSelected = selectedNode && selectedNode.id === node.id;
+        const isHovered = hoveredNode && hoveredNode.id === node.id;
+        const isConnectedNeighbor = isSpotlightActive && connectedNodeIds.has(node.id);
+
+        let alpha = 1.0;
+        if (isSpotlightActive) {
+          alpha = (isSelected || isHovered || isConnectedNeighbor) ? 1.0 : 0.1;
+        } else if (isBridgeMode) {
+          const isBridgeNode = edgesData.some(e => e.isBridge && (e.source === node.id || e.target === node.id));
+          alpha = isBridgeNode ? 1.0 : 0.12;
+        }
+
+        let nodeFill = isLeft ? leftColor : rightColor;
+        if (isSelected || isHovered) nodeFill = reticleColor;
+
+        ctx.save();
+        ctx.translate(node.x, node.y);
+        ctx.globalAlpha = alpha;
+
+        // FUI Lock-on Bracket Reticle
+        if (isSelected || isHovered) {
+          ctx.beginPath();
+          ctx.arc(0, 0, node.radius + 6, 0, Math.PI * 2);
+          ctx.strokeStyle = reticleColor;
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+
+          // 4-corner brackets
+          const b = node.radius + 10;
+          ctx.beginPath();
+          // Top-left
+          ctx.moveTo(-b, -b+3); ctx.lineTo(-b, -b); ctx.lineTo(-b+3, -b);
+          // Top-right
+          ctx.moveTo(b, -b+3); ctx.lineTo(b, -b); ctx.lineTo(b-3, -b);
+          // Bottom-left
+          ctx.moveTo(-b, b-3); ctx.lineTo(-b, b); ctx.lineTo(-b+3, b);
+          // Bottom-right
+          ctx.moveTo(b, b-3); ctx.lineTo(b, b); ctx.lineTo(b-3, b);
+          ctx.strokeStyle = reticleColor;
+          ctx.lineWidth = 1.4;
+          ctx.stroke();
+        }
+
+        // Nodo
+        ctx.beginPath();
+        ctx.arc(0, 0, node.radius, 0, Math.PI * 2);
+        ctx.fillStyle = nodeFill;
+        ctx.fill();
+
+        // Label testo
+        const showLabel = (node.radius >= 8.5) || isSelected || isHovered || isConnectedNeighbor || (camera.zoom > 1.3);
+        if (showLabel) {
+          ctx.font = `${node.radius >= 11 ? '700 10.5px' : '500 9px'} 'JetBrains Mono'`;
+          ctx.fillStyle = isSelected ? reticleColor : '#ffffff';
+          ctx.textAlign = 'center';
+          ctx.fillText(node.label, 0, node.radius + 11);
+        }
+
+        ctx.restore();
+      });
+
+      ctx.restore();
+      requestAnimationFrame(renderTacticalGraph);
+    }
+
+    // Interazioni Mouse Canvas
+    canvas.addEventListener('mousedown', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      const w = canvas.width / window.devicePixelRatio;
+      const h = canvas.height / window.devicePixelRatio;
+
+      const worldX = (mouseX - (w/2 + camera.x)) / camera.zoom;
+      const worldY = (mouseY - (h/2 + camera.y)) / camera.zoom;
+
+      let clicked = null;
+      for (const node of nodesData) {
+        const dx = worldX - node.x;
+        const dy = worldY - node.y;
+        if (Math.sqrt(dx*dx + dy*dy) < node.radius + 6) {
+          clicked = node;
+          break;
+        }
+      }
+
+      if (clicked) {
+        draggedNode = clicked;
+        draggedNode.isFixed = true;
+        reheatSimulation();
+        selectDossierNode(clicked);
+        playTacticalSound(720, 0.08, 'triangle');
+      } else {
+        isDraggingCanvas = true;
+        dragStart = { x: e.clientX, y: e.clientY };
+      }
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (draggedNode) {
+        draggedNode.isFixed = false;
+        draggedNode = null;
+      }
+      isDraggingCanvas = false;
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      const w = canvas.width / window.devicePixelRatio;
+      const h = canvas.height / window.devicePixelRatio;
+
+      const worldX = (mouseX - (w/2 + camera.x)) / camera.zoom;
+      const worldY = (mouseY - (h/2 + camera.y)) / camera.zoom;
+
+      if (draggedNode) {
+        draggedNode.x = worldX;
+        draggedNode.y = worldY;
+        draggedNode.vx = 0;
+        draggedNode.vy = 0;
+        reheatSimulation();
+        return;
+      }
+
+      if (isDraggingCanvas) {
+        camera.x += (e.clientX - dragStart.x) / camera.zoom;
+        camera.y += (e.clientY - dragStart.y) / camera.zoom;
+        dragStart = { x: e.clientX, y: e.clientY };
+        return;
+      }
+
+      let found = null;
+      for (const node of nodesData) {
+        const dx = worldX - node.x;
+        const dy = worldY - node.y;
+        if (Math.sqrt(dx*dx + dy*dy) < node.radius + 6) {
+          found = node;
+          break;
+        }
+      }
+
+      hoveredNode = found;
+      if (found) {
+        connectedNodeIds.clear();
+        connectedNodeIds.add(found.id);
+        edgesData.forEach(e => {
+          if (e.source === found.id) connectedNodeIds.add(e.target);
+          if (e.target === found.id) connectedNodeIds.add(e.source);
+        });
+
+        tooltip.style.display = 'block';
+        tooltip.style.left = `${mouseX}px`;
+        tooltip.style.top = `${mouseY}px`;
+        document.getElementById('ret-target-id').innerText = `#${found.id.slice(0,12)}`;
+        document.getElementById('ret-target-title').innerText = found.label;
+        document.getElementById('ret-target-meta').innerText = `${found.hemisphere} · ${found.floor} · [${found.category}] · ${found.degree} connessioni`;
+      } else {
+        connectedNodeIds.clear();
+        if (!selectedNode) tooltip.style.display = 'none';
+      }
+    });
+
+    canvas.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const zoomFactor = e.deltaY < 0 ? 1.15 : 0.88;
+      adjustZoom(zoomFactor);
+    });
+
+    function adjustZoom(factor) {
+      camera.zoom = Math.min(Math.max(camera.zoom * factor, 0.2), 3.5);
+    }
+
+    function resetCanvasCamera() {
+      camera = { x: 0, y: 0, zoom: 0.85 };
+      reheatSimulation();
+      playTacticalSound(440, 0.05);
+    }
+
+    // ==========================================================================
+    // MOVIE-GRADE 3D THREE.JS CELESTIAL NEURAL GLOBE
+    // ==========================================================================
+    let globeScene, globeCamera, globeRenderer, globeNodesGroup, globeEdgesGroup, globeGridGroup;
+    let globeRaycaster, globeMouse, globeIntersectedNode = null;
+    let globeNodeMeshMap = new Map();
+    let globeTargetRotationX = 0, globeTargetRotationY = 0;
+    let globeRotationX = 0, globeRotationY = 0;
+    let globeIsDragging = false, globePrevMouse = { x: 0, y: 0 };
+    let globeCameraDistance = 850;
+    let isGlobeAutoSpin = true;
+    let isGlobeInitialized = false;
+
+    function initOrUpdateGlobe3D() {
+      const container = document.getElementById('globe-3d-container');
+      if (!container) return;
+      if (!isGlobeInitialized) {
+        initGlobe3D(container);
+      } else {
+        rebuildGlobeNodesAndEdges();
+      }
+    }
+
+    function initGlobe3D(container) {
+      if (typeof THREE === 'undefined') return;
+
+      const rect = container.getBoundingClientRect();
+      const width = rect.width || container.clientWidth || 800;
+      const height = rect.height || container.clientHeight || 600;
+
+      globeScene = new THREE.Scene();
+      globeCamera = new THREE.PerspectiveCamera(45, width / height, 1, 5000);
+      globeCamera.position.set(0, 0, globeCameraDistance);
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.4);
+      globeScene.add(ambientLight);
+
+      const centerLight = new THREE.PointLight(0x00f0ff, 2.0, 1200);
+      centerLight.position.set(0, 0, 0);
+      globeScene.add(centerLight);
+
+      globeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      globeRenderer.setSize(width, height);
+      globeRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      const oldCanvas = container.querySelector('canvas');
+      if (oldCanvas) oldCanvas.remove();
+      container.appendChild(globeRenderer.domElement);
+
+      const starGeo = new THREE.BufferGeometry();
+      const starCount = 350;
+      const starPos = new Float32Array(starCount * 3);
+      for (let i = 0; i < starCount * 3; i++) {
+        starPos[i] = (Math.random() - 0.5) * 2000;
+      }
+      starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+      const starMat = new THREE.PointsMaterial({ color: 0x64748b, size: 2, transparent: true, opacity: 0.4 });
+      globeScene.add(new THREE.Points(starGeo, starMat));
+
+      globeGridGroup = new THREE.Group();
+      globeScene.add(globeGridGroup);
+      rebuildGlobeGrid();
+
+      globeNodesGroup = new THREE.Group();
+      globeEdgesGroup = new THREE.Group();
+      globeScene.add(globeNodesGroup);
+      globeScene.add(globeEdgesGroup);
+
+      globeRaycaster = new THREE.Raycaster();
+      globeMouse = new THREE.Vector2(-999, -999);
+
+      setupGlobeMouseControls(container);
+      rebuildGlobeNodesAndEdges();
+
+      isGlobeInitialized = true;
+      animateGlobe3D();
+    }
+
+    function rebuildGlobeGrid() {
+      if (!globeGridGroup) return;
+      while (globeGridGroup.children.length > 0) globeGridGroup.remove(globeGridGroup.children[0]);
+
+      const radius = 330;
+      const theme = document.body.getAttribute('data-theme') || 'skunkworks';
+      let ringColor = 0xffb800;
+      if (theme === 'darpa') ringColor = 0x00ff9d;
+      if (theme === 'stratcom') ringColor = 0x38bdf8;
+
+      const sphereGeo = new THREE.SphereGeometry(radius, 20, 14);
+      const sphereMat = new THREE.MeshBasicMaterial({ color: 0x111b2b, wireframe: true, transparent: true, opacity: 0.15 });
+      globeGridGroup.add(new THREE.Mesh(sphereGeo, sphereMat));
+
+      const ringGeo = new THREE.RingGeometry(radius - 2, radius + 2, 64);
+      const ringMat = new THREE.MeshBasicMaterial({ color: ringColor, side: THREE.DoubleSide, transparent: true, opacity: 0.25 });
+      const eqMesh = new THREE.Mesh(ringGeo, ringMat);
+      eqMesh.rotation.x = Math.PI / 2;
+      globeGridGroup.add(eqMesh);
+
+      const merMat = new THREE.MeshBasicMaterial({ color: 0xc084fc, side: THREE.DoubleSide, transparent: true, opacity: 0.3 });
+      const merMesh = new THREE.Mesh(ringGeo, merMat);
+      merMesh.rotation.y = Math.PI / 2;
+      globeGridGroup.add(merMesh);
+    }
+
+    function rebuildGlobeMaterials() {
+      rebuildGlobeGrid();
+      rebuildGlobeNodesAndEdges();
+    }
+
+    function rebuildGlobeNodesAndEdges() {
+      if (!globeNodesGroup || !nodesData || nodesData.length === 0) return;
+      while (globeNodesGroup.children.length > 0) globeNodesGroup.remove(globeNodesGroup.children[0]);
+      while (globeEdgesGroup.children.length > 0) globeEdgesGroup.remove(globeEdgesGroup.children[0]);
+      globeNodeMeshMap.clear();
+
+      const radius = 330;
+      const theme = document.body.getAttribute('data-theme') || 'skunkworks';
+      let leftColor = 0x00e5ff, rightColor = 0xff2a5f, bridgeColor = 0xc084fc;
+      if (theme === 'darpa') { leftColor = 0x38bdf8; rightColor = 0xf43f5e; }
+      if (theme === 'stratcom') { leftColor = 0x38bdf8; rightColor = 0xec4899; bridgeColor = 0xa855f7; }
+
+      nodesData.forEach((node, i) => {
+        const isLeft = node.hemisphere === 'LEFT';
+        const phi = Math.acos(-1 + (2 * i) / nodesData.length);
+        const theta = Math.sqrt(nodesData.length * Math.PI) * phi + (isLeft ? Math.PI : 0);
+
+        const x = radius * Math.cos(theta) * Math.sin(phi);
+        const y = radius * Math.sin(theta) * Math.sin(phi);
+        const z = radius * Math.cos(phi);
+
+        node.globePos = new THREE.Vector3(x, y, z);
+
+        const geo = new THREE.SphereGeometry(node.radius >= 10 ? 6.5 : 3.5, 10, 10);
+        const mat = new THREE.MeshBasicMaterial({ color: isLeft ? leftColor : rightColor });
+        const mesh = new THREE.Mesh(geo, mat);
+        mesh.position.set(x, y, z);
+        mesh.userData = { node };
+
+        globeNodesGroup.add(mesh);
+        globeNodeMeshMap.set(node.id, mesh);
+      });
+
+      edgesData.forEach(e => {
+        const srcMesh = globeNodeMeshMap.get(e.source);
+        const tgtMesh = globeNodeMeshMap.get(e.target);
+        if (!srcMesh || !tgtMesh) return;
+
+        const p1 = srcMesh.position;
+        const p2 = tgtMesh.position;
+        const mid = new THREE.Vector3().addVectors(p1, p2).multiplyScalar(0.5);
+        const dist = p1.distanceTo(p2);
+        mid.normalize().multiplyScalar(radius + Math.min(dist * 0.25, 120));
+
+        const curve = new THREE.QuadraticBezierCurve3(p1, mid, p2);
+        const points = curve.getPoints(16);
+        const edgeGeo = new THREE.BufferGeometry().setFromPoints(points);
+        const edgeMat = new THREE.LineBasicMaterial({
+          color: e.isBridge ? bridgeColor : 0x475569,
+          transparent: true,
+          opacity: e.isBridge ? 0.6 : 0.12
+        });
+        globeEdgesGroup.add(new THREE.Line(edgeGeo, edgeMat));
+      });
+    }
+
+    function setupGlobeMouseControls(container) {
+      container.addEventListener('mousedown', (e) => {
+        globeIsDragging = true;
+        globePrevMouse = { x: e.clientX, y: e.clientY };
+      });
+      window.addEventListener('mouseup', () => globeIsDragging = false);
+
+      container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        globeMouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+        globeMouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+
+        if (globeIsDragging) {
+          const deltaX = e.clientX - globePrevMouse.x;
+          const deltaY = e.clientY - globePrevMouse.y;
+          globeTargetRotationY += deltaX * 0.005;
+          globeTargetRotationX += deltaY * 0.005;
+          globePrevMouse = { x: e.clientX, y: e.clientY };
+        }
+      });
+
+      container.addEventListener('click', () => {
+        if (globeIntersectedNode) {
+          selectDossierNode(globeIntersectedNode.userData.node);
+          playTacticalSound(720, 0.08, 'triangle');
+        }
+      });
+
+      container.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        globeCameraDistance = Math.min(Math.max(globeCameraDistance + e.deltaY * 0.5, 450), 1600);
+        globeCamera.position.z = globeCameraDistance;
+      });
+    }
+
+    function toggleGlobeSpin() {
+      isGlobeAutoSpin = !isGlobeAutoSpin;
+      document.getElementById('btn-globe-spin').innerText = `🔄 AUTO-SPIN: ${isGlobeAutoSpin ? 'ON' : 'OFF'}`;
+      playTacticalSound(500, 0.05);
+    }
+
+    function resetGlobeCamera() {
+      globeTargetRotationX = 0;
+      globeTargetRotationY = 0;
+      globeCameraDistance = 850;
+      globeCamera.position.set(0, 0, globeCameraDistance);
+      playTacticalSound(440, 0.05);
+    }
+
+    function resizeGlobe3D() {
+      const container = document.getElementById('globe-3d-container');
+      if (!container || !globeRenderer || !globeCamera) return;
+      const rect = container.getBoundingClientRect();
+      const width = rect.width || container.clientWidth;
+      const height = rect.height || container.clientHeight;
+      if (width > 0 && height > 0) {
+        globeCamera.aspect = width / height;
+        globeCamera.updateProjectionMatrix();
+        globeRenderer.setSize(width, height);
+      }
+    }
+
+    function animateGlobe3D() {
+      if (currentCanvasMode === 'globe') {
+        if (isGlobeAutoSpin && !globeIsDragging) {
+          globeTargetRotationY += 0.002;
+        }
+
+        globeRotationX += (globeTargetRotationX - globeRotationX) * 0.1;
+        globeRotationY += (globeTargetRotationY - globeRotationY) * 0.1;
+
+        if (globeNodesGroup) {
+          globeNodesGroup.rotation.x = globeRotationX;
+          globeNodesGroup.rotation.y = globeRotationY;
+        }
+        if (globeEdgesGroup) {
+          globeEdgesGroup.rotation.x = globeRotationX;
+          globeEdgesGroup.rotation.y = globeRotationY;
+        }
+        if (globeGridGroup) {
+          globeGridGroup.rotation.x = globeRotationX;
+          globeGridGroup.rotation.y = globeRotationY;
+        }
+
+        if (globeRaycaster && globeNodesGroup) {
+          globeRaycaster.setFromCamera(globeMouse, globeCamera);
+          const intersects = globeRaycaster.intersectObjects(globeNodesGroup.children);
+          if (intersects.length > 0) {
+            globeIntersectedNode = intersects[0].object;
+            const n = globeIntersectedNode.userData.node;
+            tooltip.style.display = 'block';
+            tooltip.style.left = `${(globeMouse.x + 1) * 0.5 * canvas.width / window.devicePixelRatio}px`;
+            tooltip.style.top = `${(-globeMouse.y + 1) * 0.5 * canvas.height / window.devicePixelRatio}px`;
+            document.getElementById('ret-target-id').innerText = `#${n.id.slice(0,12)}`;
+            document.getElementById('ret-target-title').innerText = n.label;
+            document.getElementById('ret-target-meta').innerText = `${n.hemisphere} · ${n.floor} · [${n.category}]`;
+          } else {
+            globeIntersectedNode = null;
+            tooltip.style.display = 'none';
+          }
+        }
+
+        globeRenderer.render(globeScene, globeCamera);
+      }
+      requestAnimationFrame(animateGlobe3D);
+    }
+
+    // ==========================================================================
+    // CLASSIFIED DOSSIER INSPECTOR
+    // ==========================================================================
+    function selectDossierNode(node) {
+      selectedNode = node;
+      const container = document.getElementById('dossier-content');
+      const actions = document.getElementById('dossier-footer-actions');
+      actions.style.display = 'grid';
+
+      const connectedEdges = edgesData.filter(e => e.source === node.id || e.target === node.id);
+      const synapseHTML = connectedEdges.map(e => {
+        const otherId = e.source === node.id ? e.target : e.source;
+        const otherNode = nodesData.find(n => n.id === otherId);
+        const label = otherNode ? otherNode.label : otherId;
+        return `
+          <div class="synapse-item" onclick="jumpToNode('${otherId}')">
+            <span>↳ ${label}</span>
+            <span class="synapse-item-rel">${e.relation}</span>
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = `
+        <div class="dossier-hero">
+          <div class="dossier-id-hash">
+            <span>ID: ${node.id}</span>
+            <span>HASH: #${Math.abs(hashCode(node.id)).toString(16).toUpperCase()}</span>
+          </div>
+          <div class="dossier-title">${node.label}</div>
+          <div class="dossier-meta-grid">
+            <div>
+              <div class="meta-item-label">EMISFERO:</div>
+              <div class="meta-item-val" style="color:${node.hemisphere==='LEFT'?'var(--accent-left)':'var(--accent-right)'}">${node.hemisphere}</div>
+            </div>
+            <div>
+              <div class="meta-item-label">PIANO PALAZZO:</div>
+              <div class="meta-item-val">${node.floor}</div>
+            </div>
+            <div>
+              <div class="meta-item-label">AFFINITÀ SYNAPSE:</div>
+              <div class="meta-item-val">${connectedEdges.length} connessioni</div>
+            </div>
+            <div>
+              <div class="meta-item-label">STATUS:</div>
+              <div class="meta-item-val" style="color:var(--accent-success)">VERIFICATO</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="dossier-section-title">
+            <span>■</span> INTELLIGENCE SUMMARY
+          </div>
+          <div class="dossier-summary-box">
+            ${node.summary}
+          </div>
+        </div>
+
+        <div>
+          <div class="dossier-section-title">
+            <span>■</span> SINAPSI E PONTI ATTIVI (${connectedEdges.length})
+          </div>
+          <div class="dossier-synapse-list">
+            ${synapseHTML || '<div style="color:var(--text-muted); font-size:10px;">Nessuna sinapsi diretta</div>'}
+          </div>
+        </div>
+      `;
+
+      addLogLine('[DOSSIER]', `Fascicolo aperto: <strong>${node.label}</strong> (${node.id})`);
+    }
+
+    function jumpToNode(nodeId) {
+      const node = nodesData.find(n => n.id === nodeId);
+      if (node) {
+        selectDossierNode(node);
+        if (currentCanvasMode !== 'globe') {
+          camera.x = -node.x * camera.zoom;
+          camera.y = -node.y * camera.zoom;
+          camera.zoom = 1.3;
+        }
+        playTacticalSound(820, 0.07);
+      }
+    }
+
+    function focusSelectedNodeSynapses() {
+      if (!selectedNode) return;
+      if (currentCanvasMode !== 'globe') {
+        camera.x = -selectedNode.x * camera.zoom;
+        camera.y = -selectedNode.y * camera.zoom;
+        camera.zoom = 1.6;
+      }
+      playTacticalSound(960, 0.1);
+      addLogLine('[TACTICAL-LOCK]', `Aggancio radar su bersaglio ${selectedNode.id}`);
+    }
+
+    function copyDossierMarkdown() {
+      if (!selectedNode) return;
+      const md = `### [DOSSIER: ${selectedNode.label}]\n- **ID**: \`${selectedNode.id}\`\n- **Emisfero**: ${selectedNode.hemisphere}\n- **Piano**: ${selectedNode.floor}\n- **Sintesi**: ${selectedNode.summary}`;
+      navigator.clipboard.writeText(md);
+      addLogLine('[CLIPBOARD]', `Dossier ${selectedNode.id} copiato.`);
+      playTacticalSound(1100, 0.05);
+    }
+
+    function hashCode(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = (hash << 5) - hash + str.charCodeAt(i);
+        hash |= 0;
+      }
+      return hash;
+    }
+
+    // Filter Controls
+    function setFloorFilter(floor, btn) {
+      currentFloor = floor;
+      document.querySelectorAll('.dock-floor-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      reheatSimulation();
+      playTacticalSound(500, 0.05);
+      addLogLine('[FILTER]', `Profondità Silo: ${floor.toUpperCase()}`);
+    }
+
+    function setCategoryFilter(cat, btn) {
+      currentFilter = cat;
+      document.querySelectorAll('.radar-tag-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      reheatSimulation();
+      playTacticalSound(520, 0.05);
+      addLogLine('[RADAR]', `Spettro filtrato su: ${cat.toUpperCase()}`);
+    }
+
+    function onSearchQuery(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) return;
+      const match = nodesData.find(n => n.label.toLowerCase().includes(q) || n.id.toLowerCase().includes(q));
+      if (match) {
+        selectDossierNode(match);
+        if (currentCanvasMode !== 'globe') {
+          camera.x = -match.x * camera.zoom;
+          camera.y = -match.y * camera.zoom;
+        }
+      }
+    }
+
+    function populateMockModals() {
+      const resContainer = document.getElementById('resurface-cards-container');
+      const resurfaceItems = [
+        { title: "First Principles Thinking", tag: "FIRMWARE // SX", desc: "Scomporre i problemi fino alle verità fondamentali senza ragionare per analogia." },
+        { title: "Ebbinghaus Spaced Repetition", tag: "AI MEMORY // SX", desc: "Algoritmo matematico per prevenire l'oblio delle nozioni ad alta priorità." },
+        { title: "Anti-Slop Visual Design", tag: "DESIGN TASTE // DX", desc: "Regole di layout millimetriche per evitare il tipico look generico da AI." },
+        { title: "SQLite WAL Zero-Cost", tag: "ARCHITECTURE // SX", desc: "Architettura ad altissime performance a costo infrastrutturale zero." }
+      ];
+      resContainer.innerHTML = resurfaceItems.map(item => `
+        <div class="tactical-card" onclick="addLogLine('[RESURFACE]', 'Concetto: ${item.title}')">
+          <div class="tactical-card-tag">${item.tag}</div>
+          <div class="tactical-card-title">${item.title}</div>
+          <div class="tactical-card-desc">${item.desc}</div>
+        </div>
+      `).join('');
+
+      const tenContainer = document.getElementById('tensions-cards-container');
+      const tensionItems = [
+        { title: "Velocità di Ingestion vs Rigore Tassonomico", tag: "DIALETTICA", desc: "Tensione tra aggiungere rapidamente nodi non strutturati o forzare la classificazione ontologica." },
+        { title: "Visualizzazione 3D Sferica vs Usabilità 2D", tag: "UX TENSION", desc: "Il Mappamondo 3D ha altissimo impatto visivo ma la vista 2D cartesiana è più rapida per l'ispezione." },
+        { title: "Persistenza SQLite Locale vs Sincronia Cloud", tag: "DATA INTEGRITY", desc: "Privacy totale e zero costi vs accessibilità immediata da dispositivi remoti multipli." }
+      ];
+      tenContainer.innerHTML = tensionItems.map(item => `
+        <div class="tactical-card">
+          <div class="tactical-card-tag">${item.tag}</div>
+          <div class="tactical-card-title">${item.title}</div>
+          <div class="tactical-card-desc">${item.desc}</div>
+        </div>
+      `).join('');
+
+      const weaveContainer = document.getElementById('weave-cards-container');
+      const weaveItems = [
+        { title: "Ponte: SwiftUI Metal ↔ Tactical HUD", tag: "PROPOSTA PONTE", desc: "Affinità semantica 94%: Collegamento tra rendering GPU a 120fps e interfaccia stealth." },
+        { title: "Ponte: Dijkstra ↔ Ebbinghaus Engine", tag: "PROPOSTA PONTE", desc: "Affinità semantica 88%: Navigazione su percorsi minimi per memoria a ripetizione spaziata." }
+      ];
+      weaveContainer.innerHTML = weaveItems.map(item => `
+        <div class="tactical-card">
+          <div class="tactical-card-tag">${item.tag}</div>
+          <div class="tactical-card-title">${item.title}</div>
+          <div class="tactical-card-desc">${item.desc}</div>
+        </div>
+      `).join('');
+
+      const firmContainer = document.getElementById('firmware-cards-container');
+      const firmwareItems = [
+        { title: "1. First Principles", tag: "FIRMWARE-01", desc: "Isola i mattoni fondamentali di verità fisica/logica prima di costruire soluzioni." },
+        { title: "2. Inversion (Jacobi)", tag: "FIRMWARE-02", desc: "Inverti sempre: identifica tutti i modi in cui il progetto può fallire ed eliminali." },
+        { title: "3. Opportunity Cost", tag: "FIRMWARE-03", desc: "Ogni ora o feature aggiunta costa il valore della migliore alternativa ignorata." },
+        { title: "4. Steelmanning", tag: "FIRMWARE-04", desc: "Costruisci la versione più forte e intelligente possibile della tesi avversa." }
+      ];
+      firmContainer.innerHTML = firmwareItems.map(item => `
+        <div class="tactical-card">
+          <div class="tactical-card-tag">${item.tag}</div>
+          <div class="tactical-card-title">${item.title}</div>
+          <div class="tactical-card-desc">${item.desc}</div>
+        </div>
+      `).join('');
+    }
+
+    function applyAllMockWeave() {
+      addLogLine('[WEAVE]', 'Tutti i ponti sinaptici proposti sono stati tessuti con successo.');
+      closeModal('weave-modal');
+      playTacticalSound(1200, 0.1);
+    }
+
+    function handleMockFile(e) {
+      const file = e.target.files[0];
+      if (file) {
+        document.getElementById('json-detect-status').innerText = `File caricato: ${file.name} (Pronto all'ingestion)`;
+        playTacticalSound(600, 0.05);
+      }
+    }
+
+    function submitMockIngest() {
+      addLogLine('[INGEST]', 'Payload JSON inviato a <code>/api/memory/ingest</code>: nodi e sinapsi integrate nel catalogo.');
+      closeModal('ingest-modal');
+      playTacticalSound(990, 0.1);
+    }
+
+    // Zulu Clock Live Update
+    setInterval(() => {
+      const now = new Date();
+      const zulu = `${String(now.getUTCHours()).padStart(2,'0')}:${String(now.getUTCMinutes()).padStart(2,'0')}:${String(now.getUTCSeconds()).padStart(2,'0')}Z`;
+      const el = document.getElementById('telemetry-zulu-time');
+      if (el) el.innerText = `ZULU: ${zulu}`;
+    }, 1000);
+
+    // Startup Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      resizeCanvas();
+      resizeOscilloscope();
+      loadBrainDataset();
+      populateMockModals();
+      requestAnimationFrame(renderTacticalGraph);
+      requestAnimationFrame(renderOscilloscope);
+      addLogLine('[BOOT]', 'Hollywood FUI Tactical Command Center operativo a 60 FPS.');
+
+      setTimeout(() => {
+        resizeCanvas();
+        fitGraphView();
+      }, 150);
+    });
+
+    window.addEventListener('load', () => {
+      resizeCanvas();
+      fitGraphView();
+    });
+  </script>
+</body>
+</html>

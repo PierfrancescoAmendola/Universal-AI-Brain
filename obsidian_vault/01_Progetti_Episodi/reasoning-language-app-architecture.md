@@ -23,10 +23,10 @@ Proposta di architettura basata su motore Spaced Repetition (FSRS/SM-2), Web Spe
 - **raw:** `core_components`: ['FSRS Engine', 'Local SQLite', 'Web Speech API', 'LLM Contextual Tutor'], `privacy_tier`: Local/Self-hosted, `model`: AI Assistant
 
 ## 🔗 Connessioni Uscenti
-- [[episode-language-app-architecture]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[episode-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[intent-personal-language-learning-app]] (`SOLVES`) — _Restored from history_
+- [[episode-language-app-architecture]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[episode-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[intent-personal-language-learning-app]] (`SOLVES`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[episode-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[reasoning-analisi-fattibilita-language-app]] (`OPTIMIZES`) — _Restored from history_
+- [[episode-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

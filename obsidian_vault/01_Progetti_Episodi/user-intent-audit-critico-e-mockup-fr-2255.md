@@ -24,8 +24,8 @@ Intento espresso da Pierfrancesco: Audit critico e mockup frontend del Universal
 - **context:** Sessione su Audit critico e mockup frontend del Universal AI Brain
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Riferito al progetto universal-ai-brain_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[reasoning-audit-critico-e-mockup-fr-2255]] (`FULFILLS`) — _Soddisfa la richiesta utente_

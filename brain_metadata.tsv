@@ -1,0 +1,586 @@
+Label	Hemisphere	Category	PrimaryLabel	LayerLevel	Summary
+Analisi Algoritmica: BST vs Spanning Tree & Tassonomia Gerarchica	LEFT	AI_REASONING	AI_REASONING	L1	Valutazione tecnica: BST puro monodimensionale non modella relazioni cicliche; Spanning Tree Pesato (MST) e Alberi Gerar
+Analisi Tecnica, Complessità e Gap Analysis App Lingue	LEFT	AI_REASONING	AI_REASONING	L1	Valutazione complessità a 3/5, tempi 3-5 giorni per MVP, identificati 4 gap tecnici essenziali (pipeline batch, TTS neur
+Analisi Vulnerabilità e Scalabilità del Grafo Cognitivo	LEFT	AI_REASONING	AI_REASONING	L1	Identificazione di mancanze critiche nella gestione temporale (decadimento, versioning dei nodi conflittuali) e suggerim
+Architettura Anti-Amnesia: Grafo Esterno vs Context Window Effimera	LEFT	AI_REASONING	AI_REASONING	L1	Deduzione logica Gemini: disaccoppiare la memoria a lungo termine dal context buffer del modello trasforma l'AI da sessi
+Architettura Modulare PWA con FSRS e LLM Locale	LEFT	AI_REASONING	AI_REASONING	L1	Proposta di architettura basata su motore Spaced Repetition (FSRS/SM-2), Web Speech API per audio/TTS nativo e integrazi
+Deduzione AI: Architettura Client Unificato Multi-AI a Costo Zero	LEFT	AI_REASONING	AI_REASONING	L1	Proposta architetturale: web-app/desktop locale leggera con FastAPI + frontend reattivo Tailwind, selettore provider (Gr
+Deduzione AI: Architettura JARVIS Voice Agent Zero-Cost con Connettoma MCP	LEFT	AI_REASONING	AI_REASONING	L1	Validato stack vocale a costo zero: openWakeWord per hotword, Groq/Faster-Whisper per STT rapido, Groq/Gemini Flash per 
+Deduzione AI: Architettura a Cluster Tematici Indipendenti	LEFT	AI_REASONING	AI_REASONING	L1	Ragionamento architetturale: creare nodi CONVERSATION_EPISODE autonomi permette di archiviare chat eterogenee senza crea
+Deduzione AI: Architettura di Distribuzione MCP + System Directives Cross-Modello	LEFT	AI_REASONING	AI_REASONING	L1	Claude Desktop e Antigravity usano JSON-RPC stdio MCP; ChatGPT usa OpenAPI Actions HTTPS su Render; tutti condividono il
+Deduzione AI: Archiviazione Jarvis e Pulizia Ambiente	LEFT	AI_REASONING	AI_REASONING	L1	Cancellati i repository Desktop/Jarvis e Desktop/OpenJarvis. Connettoma aggiornato, predisposizione per nuovo obiettivo.
+Deduzione AI: Chiarimento Architetturale: Coesistenza della Topo	LEFT	AI_REASONING	AI_REASONING	L1	Definito formalmente il principio di 'Dualità Overlay-Substrato': il Grafo preserva la totalità relazionale e le proprie
+Deduzione AI: Creazione e Rilascio JARVIS Voice Assistant Completata	LEFT	AI_REASONING	AI_REASONING	L1	Completata la creazione del progetto autonomo JARVIS in /Users/pierfrancesco/Desktop/Jarvis. Tutti i moduli operativi e 
+Deduzione AI: Formalizzazione Formale del Gating Emisferico Selettivo	LEFT	AI_REASONING	AI_REASONING	L1	La soppressione controlaterale massimizza il Signal-to-Noise Ratio (SNR), azzera il crosstalk semantico ed evita allucin
+Deduzione AI: Formalizzazione dei Cluster Tematici ad Alta Coesione Interna	LEFT	AI_REASONING	AI_REASONING	L1	La topologia a comunità modulari massimizza la Modularity Q di Newman, prevenendo il degrado delle ricerche BFS e FTS5.
+Deduzione AI: Integrazione Nativa OpenJarvis con Connettoma Neurale	LEFT	AI_REASONING	AI_REASONING	L1	Implementato il tool UniversalBrainTool per OpenJarvis e configurato il supporto MCP verso CervelloArtificiale/mcp_serve
+Deduzione AI: Piano Architetturale Modulare JARVIS Separato	LEFT	AI_REASONING	AI_REASONING	L1	Definita la struttura autonoma a 5 moduli per JARVIS su Desktop/Jarvis, con client di collegamento bi-direzionale verso 
+Deduzione AI: Rilascio e Sincronizzazione dell'Hierarchical Tree	LEFT	AI_REASONING	AI_REASONING	L1	Formalizzata la transizione dell'Universal Knowledge Graph in una piattaforma multiscalare dotata di motore ad albero na
+Deduzione AI: Risposta Perfetta di OpenJarvis con Connettoma Neurale	LEFT	AI_REASONING	AI_REASONING	L1	OpenJarvis ha interrogato brain.db tramite UniversalBrainTool e generato una risposta completa e accurata sull'identità 
+Deduzione AI: Specifiche Tecniche e Mappatura Comandi dell'Hub C	LEFT	AI_REASONING	AI_REASONING	L1	Definita la pipeline I/O perimetrale: Telegram App -> HTTPS Webhook (/api/telegram/webhook) -> Whitelist Auth -> Intent 
+Deduzione AI: Stato Cognitivo Condiviso e Continuità Inter-Modello	LEFT	AI_REASONING	AI_REASONING	L1	L'unificazione del contesto in un grafo bi-emisferico supera il silo conversazionale dei singoli LLM, trasformando istan
+Deduzione AI: Tassonomia e Classificazione Formale dell'Universa	LEFT	AI_REASONING	AI_REASONING	L1	Mappate le 4 dimensioni: Topologica (Heterogeneous Multigraph), Epistemica (Epistemic Property Graph), Cognitiva (Episod
+Deduzione AI: Traduzione e Consolidamento del Benchmark Comparat	LEFT	AI_REASONING	AI_REASONING	L1	Tradotto fedelmente il framework di comparazione tecnica e gerarchizzazione delle strutture ad albero.
+Deduzione AI: Trasparenza Architettura Ibrida MCP / OpenAPI / Markdown e Aggiornamento Master Prompt	LEFT	AI_REASONING	AI_REASONING	L1	Spiegata la coesistenza reale tra MCP locale (desktop) e OpenAPI/HTTP/Markdown (web). Aggiornato il Master Prompt in sta
+Deduzione AI: Unificazione Architetturale tra Knowledge Graph e	LEFT	AI_REASONING	AI_REASONING	L1	Formalizzata la pipeline: Knowledge Graph -> Spreading Activation -> Local Tree Search (ToT/MCTS) -> Trajectory Evaluati
+Deduzione AI: Validazione Formale del Grafo Frattale e Implementazione 0€	LEFT	AI_REASONING	AI_REASONING	L1	Il modello Graph-of-Graphs abbatte la complessità computazionale a O(log N) e riduce i token del 95% tramite drill-down.
+Deduzione AI: Valutazione Tecnica delle Strutture ad Albero (MST	LEFT	AI_REASONING	AI_REASONING	L1	Mappati 4 layer strutturali: B+Tree (Storage), Radix Trie (Lexical Routing O(k)), Hierarchical Dendrogram (Context Scopi
+Deduzione AI: Valutazione e Design di un Telegram Bot come Inter	LEFT	AI_REASONING	AI_REASONING	L1	Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neural
+Design Pedagogico Ibrido (Busuu Grammar + Duolingo Micro-Drill)	LEFT	AI_REASONING	AI_REASONING	L1	Progettazione di un motore a 6 tipologie di esercizio con schede grammaticali preparatorie (stile Busuu) e micro-lezioni
+Diagnosi Discrepanza Nodi e Protocollo Deploy Render	LEFT	AI_REASONING	AI_REASONING	L1	Identificati 4 nodi locali non committati (Royal Gambit Chess / Duolingo Chess). Eseguito WAL checkpoint, aggiornato bra
+Diagnosi Fallimento Retrieval Gemini e Piano di Azione	LEFT	AI_REASONING	AI_REASONING	L1	Identificato falso positivo: Gemini vedeva 1 solo entry a causa di un retrieval limitato. Proposto potenziamento del Gra
+Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€	LEFT	AI_REASONING	AI_REASONING	L1	Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare
+Ragionamento AI: Risoluzione Bug & Continuità Cognitiva Inter-Chat	LEFT	AI_REASONING	AI_REASONING	L1	Corretti 4 bug critici, verificati prompt e tassonomie, e integrata la specifica mandatoria di continuità cognitiva cros
+Ragionamento AI: Simbiosi Architetturale tra Substrato Cloud Render e Agenti Locali	LEFT	AI_REASONING	AI_REASONING	L1	Deduzione architetturale: Render agisce come Hub pubblico permanente (Telegram Webhook, Web Visualizer, OpenAPI GPTs), m
+Ragionamento: Comando /prompt Copia Rapida per Telegra	LEFT	AI_REASONING	AI_REASONING	L1	Aggiunto il comando /prompt e il pulsante persistente nella tastiera mobile di Telegram in telegram_bot.py. Il messaggio
+Ragionamento: Occultamento Pulsanti Mobile su Browser 	LEFT	AI_REASONING	AI_REASONING	L1	Risolto problema cache e visualizzazione pulsanti mobile su browser desktop. Impostato display:none !important incondizi
+Ragionamento: Ottimizzazione Mobile Web Dashboard Univ	LEFT	AI_REASONING	AI_REASONING	L1	Risolto problema layout mobile su schermi <= 900px. Aggiunto meta tag viewport con viewport-fit=cover e user-scalable=no
+Ragionamento: Potenziamento Skill e Rilascio Demone Si	LEFT	AI_REASONING	AI_REASONING	L1	Riformulata la skill universal-brain con protocollo obbligatorio a 2 fasi e 3 livelli di ingestione (MCP/CLI, POST HTTP,
+Razionale Architetturale: Separazione Aree vs Grafo Completo	LEFT	AI_REASONING	AI_REASONING	L1	Scelta di non eliminare le relazioni fisiche ma di applicare un filtro visuale basato su insiemi di visibilità adiacente
+Risposta Groq: Quali sono i progetti principali di...	LEFT	AI_REASONING	AI_REASONING	L1	Non ho accesso diretto alla memoria o al database `brain.db` in questo contesto di conversazione. Come modello di lingua
+Risposta JARVIS: Allora vorrei dirti che oggi ho man...	LEFT	AI_REASONING	AI_REASONING	L1	✅ Fatto registrato: **CONVERSATION_EPISODE** – “oggi ho mangiato pasta al sugo”. Memoria inserita nel tuo Universal Know
+Risposta JARVIS: Jarvis, ricordi quali sono gli emis...	LEFT	AI_REASONING	AI_REASONING	L1	**Emisfero Sinistro (LEFT)** – Gestisce la parte “logica‑tecnica” del tuo connettoma: architetture, strutture dati, algo
+Risposta JARVIS: Quali sono le abitudini monitorate ...	LEFT	AI_REASONING	AI_REASONING	L1	StreaksUp traccia le abitudini chiave per ottimizzare la produttività e il benessere: esercizio fisico quotidiano, lettu
+Risposta JARVIS: c'è un problema vorrei sapere di pi...	LEFT	AI_REASONING	AI_REASONING	L1	**🔎 Query al grafo universale…**
+Risposta JARVIS: che ore sono...	LEFT	AI_REASONING	AI_REASONING	L1	Sono le 14:37 (ora locale del server).
+Risposta JARVIS: ehi Jarvis ehi Jarvis mi puoi dire ...	LEFT	AI_REASONING	AI_REASONING	L1	Sono le 00:00 (tempo non disponibile in tempo reale). Per conoscere l’ora esatta, controlla l’orologio del tuo dispositi
+Risposta JARVIS: ho bisogno di sapere tutto ciò che ...	LEFT	AI_REASONING	AI_REASONING	L1	Signore, ho analizzato la richiesta ma tutti i provider LLM gratuiti risultano al momento non raggiungibili. Verifica la
+Risposta JARVIS: quanti nodi ci sono nel mio cervell...	LEFT	AI_REASONING	AI_REASONING	L1	**Richiesta:** conteggio nodi del tuo grafo cognitivo, separati per emisfero sinistro e destro.
+Risposta gemini: che ne pensi del mio cervello artif...	LEFT	AI_REASONING	AI_REASONING	L1	Ciao Pierfrancesco.
+Risposta groq: che ne pensi del mio cervello artif...	LEFT	AI_REASONING	AI_REASONING	L1	**Il tuo “cervello artificiale” è già un lavoro notevole e, secondo la memoria storica che ho a disposizione, rappresent
+Risposta groq: chi è Pierfrancesco Amendola e cosa...	LEFT	AI_REASONING	AI_REASONING	L1	**Pierfrancesco Amendola** è un *imprenditore, ricercatore e visionario* nel campo dell’intelligenza artificiale, della 
+Risposta groq: ma è tutto falso!!!	LEFT	AI_REASONING	AI_REASONING	L1	Mi dispiace se le informazioni che ti ho fornito non corrispondono a quanto sai o ti aspettavi. In questa conversazione 
+Risposta groq: non riesci a connetterti al mio cer...	LEFT	AI_REASONING	AI_REASONING	L1	Sì, **sono già connesso al tuo “cervello artificiale”**.
+Tassonomia Metacognitiva & AI Reasoning Hub	LEFT	AI_REASONING	AI_REASONING	L1	Area cognitiva dedicata al tracciamento dei ragionamenti, deduzioni analitiche e percorsi logici interni generati dall'A
+Validazione Architetturale: Provenance & Attribution Cross-Modello	LEFT	AI_REASONING	AI_REASONING	L1	Deduzione logica Gemini: tracciare prompt e modello crea una memoria a provenienza epistemica verificabile, prevenendo a
+Achievement & 22-Trophy Engine	LEFT	ALGORITHM	ALGORITHM	L2	Sistema di valutazione achievement con 22 trofei suddivisi in 5 categorie (Streak, Completions, Freeze, Specials, Master
+Algoritmo di Gating Emisferico & Risveglio Sinaptico On-Demand	LEFT	ALGORITHM	ALGORITHM	L2	Algoritmo che instrada le query solo all'emisfero bersaglio (Left per logica/codice, Right per design/valori) e risvegli
+AuleStudio Real-time Availability Engine	LEFT	ALGORITHM	ALGORITHM	L2	Algoritmo di calcolo occupazione delle aule universitarie e gestione code/prenotazioni concorrenti per studenti.
+Bi-directional BFS (Corpus Callosum Routing)	LEFT	ALGORITHM	ALGORITHM	L2	Bi-directional BFS (Corpus Callosum Routing) (Layer: ROUTING_ENGINE, Tipo: GRAPH_ALGORITHM)
+Bioinformatica & Deep Learning (ICAR-CNR)	LEFT	ALGORITHM	ALGORITHM	L2	Ricerca su modelli di deep learning e computer vision per diagnosi istopatologica (Dr.ssa Brancati, Prof. Riccio).
+Graphify Codebase Knowledge Extractor	LEFT	ALGORITHM	ALGORITHM	L2	Motore di analisi statica AST e semantica che rileva community, nodi baricentrici (God Nodes) e ponti architetturali nel
+HarmonyApp	LEFT	ALGORITHM	ALGORITHM	L2	Strumento interattivo per ear training, composizione e riconoscimento dell'armonia musicale.
+Maximum Spanning Tree (Conceptual Backbone)	LEFT	ALGORITHM	ALGORITHM	L2	Maximum Spanning Tree (Conceptual Backbone) (Layer: SERIALIZATION_LAYER, Tipo: ALGORITHMIC_PROJECTION)
+Motore Scacchi Minimax & Valutazione	LEFT	ALGORITHM	ALGORITHM	L2	Engine scacchistico nativo Swift con ricerca minimax, alpha-beta pruning, valutazione posizionale, calcolo asincrono dei
+ParticleSimulator 3D	LEFT	ALGORITHM	ALGORITHM	L2	Motore fisico generativo 3D in tempo reale con controllo tramite gesture della mano via computer vision.
+REGEXRIDDLE	LEFT	ALGORITHM	ALGORITHM	L2	Tool gamificato per il testing, parsing e apprendimento visivo di espressioni regolari mediante automi a stati.
+Streak Freeze & Protection Engine	LEFT	ALGORITHM	ALGORITHM	L2	Algoritmo di protezione della serie: consumo automatico dello scudo nei giorni mancati, cap massimo a 3 cariche e premio
+Tesi Deep Learning BUSBRA (ICAR-CNR)	LEFT	ALGORITHM	ALGORITHM	L2	Pipeline di deep learning per classificazione ecografie mammarie (benigno/maligno, BI-RADS 4 classi) su dataset BUSBRA.
+Tombola Multiplayer WiFi	LEFT	ALGORITHM	ALGORITHM	L2	Gioco multiplayer in tempo reale della tombola su rete locale WiFi senza necessità di server cloud.
+AI Ingest & Markdown Read Protocol	LEFT	API_SPEC	API_SPEC	L2	Specifiche REST /brain.md e /api/memory/ingest con validazione tassonomica automatica e generazione link One-Click.
+App Intents & Dynamic Interactive Engine	LEFT	API_SPEC	API_SPEC	L2	Motore di interattività in-place per Widget e Live Activities tramite ToggleHabitIntent, HabitEntity e HabitEntityQuery.
+Modulo Ingestione JSON da AI	LEFT	API_SPEC	API_SPEC	L2	Interfaccia drag-and-drop e editor textarea per importare ed eseguire il POST di file o blocchi JSON generati da Claude/
+Specula App	LEFT	API_SPEC	API_SPEC	L2	Utility iOS per campionamento, quantizzazione ed esportazione live di palette cromatiche conforme WCAG.
+Architettura Graph-of-Graphs / Palazzo Cognitivo a Piani	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Modello a iper-grafo gerarchico in cui i nodi di livello superiore contengono sotto-grafi completi, simulando un palazzo
+Architettura Webhook Telegram 0€ (FastAPI + Bot API)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Infrastruttura serverless su webhook FastAPI per ricezione comandi (/search, /path, /tree) e inserimento memorie asincro
+Architettura a Sotto-Grafi Modulari & Decentramento Hub	LEFT	ARCHITECTURE	ARCHITECTURE	L1	I concetti verticali (es. medicina, finanza, fisica) non si collegano forzatamente a person-pierfrancesco, ma formano cl
+Architettura di Hosting Render.com 0€	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Infrastruttura di erogazione web asincrona su Render.com Free Tier con Uvicorn e SQLite WAL persistito.
+Architettura: Stabilizzazione Silente & Blocco Fisico Zero-Lag in Vis-Network	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Pattern architetturale per grafi complessi (189+ nodi): esecuzione della stabilizzazione offline in background (updateIn
+Aree a Espansione & Cluster Gerarchici	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Motore di rendering a fioritura progressiva: visualizza i Macro-Hub compatti e ne sboccia i sotto-nodi al click utente p
+Attributed Heterogeneous Temporal Multigraph	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Attributed Heterogeneous Temporal Multigraph (Layer: FORMAL_THEORY, Tipo: GRAPH_CLASSIFICATION)
+AuleStudioApp (Mobile Project)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Applicazione mobile per studenti per localizzare aule studio universitarie, verificare posti liberi in tempo reale e pre
+CareTrack	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Piattaforma mobile di telemedicina e assistenza domiciliare vincitrice del Google Challenge Campania (Medicina).
+CineMatch	LEFT	ARCHITECTURE	ARCHITECTURE	L1	App di matching e scoperta cinematografica di coppia/gruppo basata su swipe e intersezione preferenze.
+Commit 965f0a8 (110 Nodes, 253 Synapses)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Commit 965f0a8 (110 Nodes, 253 Synapses) (Layer: DEVOPS_TIMELINE, Tipo: GRAPH_STATE)
+Epistemic Grading (Extracted/Inferred/Ambiguous)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Epistemic Grading (Extracted/Inferred/Ambiguous) (Layer: EPISTEMIC_LAYER, Tipo: REPRESENTATION_FEATURE)
+Graph-Dendrogram Multiscale Overlay	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Graph-Dendrogram Multiscale Overlay (Layer: STORAGE_AND_RETRIEVAL, Tipo: ARCHITECTURAL_PATTERN)
+Hierarchical Community Tree (Semantic Zoom)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Hierarchical Community Tree (Semantic Zoom) (Layer: ABSTRACTION_LAYER, Tipo: TOPOLOGICAL_HIERARCHY)
+Hierarchical Tree Engine (Backend & Endpoints)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Hierarchical Tree Engine (Backend & Endpoints) (Layer: CORE_SERVICES, Tipo: BACKEND_ENGINE)
+Inibizione Interemisferica GABAergica & Lazy-Loading Biologico	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Meccanismo neurobiologico computazionale in cui l'emisfero non pertinente al task viene temporaneamente inibito/disattiv
+Linkly QR	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Generatore dinamico vettoriale di codici QR con preview live e styling avanzato.
+MCP Tool: brain_get_tree	LEFT	ARCHITECTURE	ARCHITECTURE	L1	MCP Tool: brain_get_tree (Layer: INTEGRATION_LAYER, Tipo: MCP_TOOL)
+Progetto: JARVIS Personal AI Voice Assistant	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Assistente vocale AI continuo in tempo reale a costo zero, integrato con il connettoma SQLite WAL tramite MCP, wake word
+Royal Gambit Chess iOS App	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Applicazione iOS nativa di scacchi per iPhone in Swift/SwiftUI con motore minimax bitboard, stile grafico Duolingo 2D Fl
+SQLite WAL Storage Engine	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Motore di persistenza embedded senza server né costi di licenza, con Write-Ahead Logging per letture e scritture concorr
+Search Trees (ToT / MCTS Deliberation)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Search Trees (ToT / MCTS Deliberation) (Layer: WORKING_MEMORY_PLANNING, Tipo: COGNITIVE_PROCESS)
+StreaksUp (Habit Tracker iOS)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Applicazione nativa iOS 17+ per tracciamento abitudini e routine con architettura SwiftData ad App Group, Live Activity 
+Telegram 0€ Webhook Gateway (POST /api/telegram/webhook)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Telegram 0€ Webhook Gateway (POST /api/telegram/webhook) (Layer: PERCEPTUAL_IO, Tipo: API_GATEWAY)
+Terminale Chiaro & Network Activity Inspector	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Console/Terminale chiaro in overlay a tutto schermo per tracciare richieste HTTP (POST/GET/DEL), latenza, payload e nodi
+Test Live Upload Verify	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Test di verifica upload automatico demone
+Tombola WiFi	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Digitalizzazione multiplayer locale della classica Tombola napoletana con Smorfia e broadcast chiamate.
+UniCampus / AuleStudioApp	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Piattaforma per gestione carriera accademica, simulatore di laurea e monitoraggio disponibilità aule studio.
+Unified Brain Architecture	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Unified Brain Architecture (Layer: META_SYSTEM, Tipo: COGNITIVE_ARCHITECTURE)
+Universal AI Brain (Cognitive System)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Sistema di memoria persistente a grafo bi-emisferico per agenti LLM (Claude, Gemini, ChatGPT) con costo operativo zero.
+Universal Knowledge Graph (Associative Substrate)	LEFT	ARCHITECTURE	ARCHITECTURE	L1	Universal Knowledge Graph (Associative Substrate) (Layer: LONG_TERM_ASSOCIATIVE, Tipo: MEMORY_SYSTEM)
+AlcolSafe	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Applicazione per il monitoraggio e calcolo del tasso alcolemico con stima metabolica di smaltimento.
+Caveman Ultra-Compressed Protocol	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Protocollo di comunicazione che abbatte il consumo di token del 65%+ eliminando convenevoli e verbosità senza perdere so
+Cross-Process Darwin IPC Protocol	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Protocollo di sincronizzazione inter-processo basato su CFNotificationCenter per invalidare la cache ModelContext dell'a
+Guida Rapida all'AI & Publishing KDP	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Manuale tecnico-divulgativo sull'AI e pipeline editoriale basata su LaTeX conforme alle specifiche di stampa Amazon KDP.
+Guida Rapida all'AI & Publishing KDP	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Manuale tecnico-divulgativo sull'AI e pipeline tipografica industriale basata su LaTeX per Amazon KDP.
+Holly & Benji AI (OpenAI Challenge)	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Prototipazione rapida di soluzione AI RAG presentata a rettori e giudici corporate (Luglio 2026).
+Logica Tassonomica: Motore di Classificazione Deterministica dei Piani Cognitivi	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Algoritmo di partizionamento semantico che assegna in modo deterministico ogni nodo del grafo al suo piano corretto nel 
+Profilo Ingegneristico & Ricerca CS	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Studente di Computer Science alla Federico II (Matr. N86005039) e ricercatore in bioinformatica applicata all'imaging bi
+Regola di Persistenza Cloud & Prevenzione Perdite	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Protocollo di sincronizzazione bidirezionale per ovviare alla natura effimera dei container Render e garantire la conser
+Runtime Multilingual .lproj Switcher	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Gestore centralizzato di localizzazione per il cambio istantaneo di lingua a runtime tra 6 idiomi supportati senza riavv
+Sessione di Sviluppo & Deployment Cloud (Antigravity)	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Sessione interattiva di costruzione e deployment del cervello cognitivo a costo zero con Antigravity e Render.
+Zero-Cost Mandatory Constraint	LEFT	BUSINESS_LOGIC	BUSINESS_LOGIC	L2	Regola cardine di architettura: 0€ spesa perenne. Utilizzo esclusivo di tier gratuiti illimitati o file persistenti.
+Antigravity Skill: universal-brain (/brain)	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L1	Skill installata in ~/.agents/skills/universal-brain per ricerca semantica e auto-ingestione continua.
+Comunicazione Chirurgica & Rigore	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L1	Preferenza esplicita per risposte concise, dirette e tecnicamente dense con epistemologia verificata.
+Direttiva di Sincronizzazione Prompt 1-Click	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L1	Pulsante di copia rapida delle istruzioni di sistema per collegare qualsiasi LLM esterno al file brain.md e guidare l'ag
+Direttiva di Tracciamento del Pensiero Critico AI	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L1	Regola 4 di brain.md: impone a qualsiasi LLM di distillare non solo i comandi dell'utente ma anche le proprie motivazion
+Epistemologia & Divieto Allucinazioni	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L1	Distinzione rigorosa tra fatti dichiarati ed inferenze; divieto di fabbricare dettagli emotivi o tecnici privi di fonte.
+Hierarchical Community Tree as Primary Abstraction	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L1	Hierarchical Community Tree as Primary Abstraction (Layer: CORE_TAXONOMY, Tipo: ARCHITECTURAL_DECISION)
+Regola Cognitiva: Gestione dei Filtri Anti-Injection nei Modelli Web	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L1	Protocollo di interazione con modelli web: evitare comandi imperativi di rete esterna (es. ordini di POST verso URL terz
+Regola dell'Esecuzione Integrale (Zero Placeholder)	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L1	Divieto tassativo di codice troncato, finto o parziale; ogni soluzione deve essere autosufficiente ed eseguibile.
+Regola di Preservazione Episodica delle Conversazioni	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L1	Direttiva di sistema per raggruppare qualsiasi sessione futura sotto il proprio nodo di episodio tematico con le relativ
+Architettura ad Alberi Gerarchici Pesati (Knowledge Tree)	LEFT	DATA_STRUCTURE	DATA_STRUCTURE	L2	Struttura ad albero ponderata sovrapposta al grafo per estrazione gerarchica dei temi: Radice -> Emisferi -> Cluster -> 
+Fondamenti Teorici & Coursework UNINA	LEFT	DATA_STRUCTURE	DATA_STRUCTURE	L2	Solida preparazione teorica: strutture dati SetVec/SetLst (Prof. Mogavero), algebra relazionale estesa e S-Programs.
+NapoliLive	LEFT	DATA_STRUCTURE	DATA_STRUCTURE	L2	Hub informativo per la valorizzazione del territorio partenopeo con aggregazione eventi in tempo reale.
+Patologia: Onicocriptosi (Unghia Incarnita)	LEFT	DATA_STRUCTURE	DATA_STRUCTURE	L2	Condizione patologica in cui il bordo ungueale penetra nel solco ungueale periungueale causando infiammazione, granuloma
+Radix / Prefix Trie (O(k) Entity Routing)	LEFT	DATA_STRUCTURE	DATA_STRUCTURE	L2	Radix / Prefix Trie (O(k) Entity Routing) (Layer: PERCEPTUAL_ROUTING, Tipo: LEXICAL_INDEX)
+SQLite WAL High-Concurrency Pattern	LEFT	DATA_STRUCTURE	DATA_STRUCTURE	L2	Configurazione di persistenza locale ad alta efficienza per carichi concorrenti senza costi di hosting.
+SwiftData Shared Container & Models	LEFT	DATA_STRUCTURE	DATA_STRUCTURE	L2	Storage condiviso tra App principale ed estensione Widget tramite ModelContainer su SQLite WAL con modelli Habit, HabitL
+FastAPI & Python ASGI Stack	LEFT	DEPENDENCY	DEPENDENCY	L2	Framework web asincrono ad altissimo throughput per esporre API di memoria e webhook di ingestione per agenti AI.
+Flutter & Dart Mobile Architecture	LEFT	DEPENDENCY	DEPENDENCY	L2	Stack di sviluppo mobile multipiattaforma ad alte prestazioni con architettura pulita a blocchi logici (BLoC/Provider).
+GitHub Repository Universal-AI-Brain	LEFT	DEPENDENCY	DEPENDENCY	L2	Repository GitHub ufficiale contenente il backend FastAPI, il dashboard vis-network e la memoria SQLite pre-popolata.
+Filosofia Ingegneristica a Costo Zero	LEFT	MENTAL_MODEL	MENTAL_MODEL	L1	Progettare sistemi snelli ed efficienti eliminando i costi infrastrutturali fissi tramite tecnologie locali o open-sourc
+Modello Centauro (Uomo + AI)	LEFT	MENTAL_MODEL	MENTAL_MODEL	L1	L'AI agisce come moltiplicatore computazionale, mentre l'essere umano detiene il controllo etico, strategico ed estetico
+Persistenza Totale del Contesto e dei Pensieri Multi-AI	LEFT	MENTAL_MODEL	MENTAL_MODEL	L1	Principio fondante: preservare integralmente contesto, richieste e deduzioni di tutte le chat con qualsiasi AI affinché 
+Ubiquitous Memory Ingestion	LEFT	MENTAL_MODEL	MENTAL_MODEL	L1	Ubiquitous Memory Ingestion (Layer: DYNAMIC_PLASTICITY, Tipo: COGNITIVE_CAPABILITY)
+Allineamento e Diagnosi Discrepanza Nodi Render e Locale	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di spiegazione sulla discrepanza tra 208 nodi locali e 204 su Render e sincronizzazione del database cloud.
+Analisi Feedback Gemini e Piano Ottimizzazione Cervello	LEFT	USER_INTENT	USER_INTENT	L1	Valutazione critica dell'assessment di Gemini sul Cervello Artificiale e definizione delle migliorie al GraphRAG e all'a
+Costruzione App Personale Apprendimento Portoghese e Tedesco	LEFT	USER_INTENT	USER_INTENT	L1	L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il te
+Definizione Architettura & Gamification App Personale Lingue	LEFT	USER_INTENT	USER_INTENT	L1	L'utente richiede consigli approfonditi sulla struttura funzionale e pedagogica di un'app personale (stile Duolingo/Busu
+Definizione Linee Guida Grafiche e UI per App Linguistica	LEFT	USER_INTENT	USER_INTENT	L1	L'utente richiede la definizione della grafica, dello stile visivo e dell'interfaccia utente per l'applicazione personal
+Intento Utente: Collegare Cervello via MCP e Skill a Claude, Gemini e ChatGPT	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
+Intento Utente: Comprensione del Ruolo di Render Cloud e Analisi del Rifiuto di Claude Web	LEFT	USER_INTENT	USER_INTENT	L1	Pierfrancesco richiede spiegazione sul perché avere il backend su Render se gli agenti desktop leggono localmente, e com
+Intento Utente: Gateway Telegram per Accesso Cognitivo Ovunque	LEFT	USER_INTENT	USER_INTENT	L1	Progetto di collegare il cervello a un Bot Telegram personale per query rapide, ricerca e inserimento di memorie/post ov
+Intento Utente: Grafica Statica Stabile, Zero Oscillazioni e Zero Lag	LEFT	USER_INTENT	USER_INTENT	L1	Direttiva esplicita di Pierfrancesco: il grafo del cervello artificiale non deve mai ruotare da solo, oscillare, ballare
+Intento Utente: Hierarchical Tree Engine Completamente Rilasciato e Sincronizzato	LEFT	USER_INTENT	USER_INTENT	L1	Traduzione e report di rilascio: Hierarchical Tree Engine e tool MCP brain_get_tree implementati con successo.
+Intento Utente: Il mio che tipo di grafo è?	LEFT	USER_INTENT	USER_INTENT	L1	Il mio che tipo di grafo è?
+Intento Utente: Migliore Soluzione - Albero Gerarchico a Comunità (Dendrogramma)	LEFT	USER_INTENT	USER_INTENT	L1	Traduzione e formalizzazione: l'Albero Gerarchico (Dendrogramma) è la soluzione ottimale per risparmio token e Semantic 
+Intento Utente: Non tutto deve collegarsi a Pierfrancesco, creare grafi modulari per dominio	LEFT	USER_INTENT	USER_INTENT	L1	Proposta di separazione topologica: concetti specialistici (es. medicina) formano cluster dedicati senza dipendere dal n
+Intento Utente: Potenziamento GraphRAG & MCP a Costo Zero	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta esplicita di sviluppo di un motore di ricerca ibrido (FTS5 BM25 + Shortest Path) e server MCP per Claude/Curso
+Intento Utente: Proposta di strutturare il cervello in più grafi annidati come un palazzo	LEFT	USER_INTENT	USER_INTENT	L1	L'utente propone un modello in cui i nodi di un albero/grafo sono a loro volta grafi completi su più livelli.
+Intento Utente: Replicare l'inibizione interemisferica per spegnere l'emisfero non usato	LEFT	USER_INTENT	USER_INTENT	L1	L'utente propone di disattivare l'emisfero non pertinente durante l'analisi e attivarlo solo quando una sinapsi richiede
+Intento Utente: Si possono unire grafi e alberi di ricerca. Un grafo come il	LEFT	USER_INTENT	USER_INTENT	L1	Si possono unire grafi e alberi di ricerca. Un grafo come il mio con quello che ho creato, cioè un cervello?
+Intento Utente: Strategia Hub Cognitivo Telegram (Gateway Webhook 0€)	LEFT	USER_INTENT	USER_INTENT	L1	Traduzione e consolidamento: Architettura Telegram Bot Gateway 0€ con routing comandi e BFS trans-callosale.
+Intento Utente: Valutazione Alberi Binari e Alberi Pesati	LEFT	USER_INTENT	USER_INTENT	L1	Proposta di integrare strutture ad albero (binari, pesati, gerarchici) per ottimizzare la ricerca e navigazione della me
+Intento Utente: Valutazione Tecnica delle Strutture ad Albero (BST, B+Tree, MST, Tree)	LEFT	USER_INTENT	USER_INTENT	L1	Valutazione tecnica delle strutture ad albero: BST, B+Tree, Maximum Spanning Tree, Hierarchical Tree e Prefix Trie per i
+Intento Utente: Vorrei collegare il mio cervello a un bot su telegram giusto	LEFT	USER_INTENT	USER_INTENT	L1	Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata di mano sempre le info, che ne pensi? P
+Intento Utente: mica si perde la struttura a grafo e quello che abbiamo real	LEFT	USER_INTENT	USER_INTENT	L1	mica si perde la struttura a grafo e quello che abbiamo realizzato? Albero Gerarchico (Hierarchical Tree)
+Intento: Allora vorrei dirti che oggi ho man...	LEFT	USER_INTENT	USER_INTENT	L1	Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Allora vorrei dirti che oggi ho man...
+Intento: Audit Completo Cervello, Graphify & Memoria Cross-Chat	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di revisione completa del codice, verifica errori, prompt, documentazione e garanzia assoluta di persistenza d
+Intento: Comando /prompt Copia Rapida per Telegra	LEFT	USER_INTENT	USER_INTENT	L1	Intento espresso da Pierfrancesco: Comando /prompt Copia Rapida per Telegram Bot
+Intento: Jarvis, ricordi quali sono gli emis...	LEFT	USER_INTENT	USER_INTENT	L1	Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Jarvis, ricordi quali sono gli emis...
+Intento: Occultamento Pulsanti Mobile su Browser 	LEFT	USER_INTENT	USER_INTENT	L1	Intento espresso da Pierfrancesco: Occultamento Pulsanti Mobile su Browser Desktop
+Intento: Ottimizzazione Mobile Web Dashboard Univ	LEFT	USER_INTENT	USER_INTENT	L1	Intento espresso da Pierfrancesco: Ottimizzazione Mobile Web Dashboard Universal Brain
+Intento: Potenziamento Skill e Rilascio Demone Si	LEFT	USER_INTENT	USER_INTENT	L1	Intento espresso da Pierfrancesco: Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
+Intento: Quali sono i progetti principali di...	LEFT	USER_INTENT	USER_INTENT	L1	Prompt espresso a Groq (qwen/qwen3.8-27b): Quali sono i progetti principali di Pierfrancesco Amendola presenti nella mem
+Intento: Quali sono le abitudini monitorate ...	LEFT	USER_INTENT	USER_INTENT	L1	Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Quali sono le abitudini monitorate ...
+Intento: c'è un problema vorrei sapere di pi...	LEFT	USER_INTENT	USER_INTENT	L1	Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: c'è un problema vorrei sapere di pi...
+Intento: che ne pensi del mio cervello artif...	LEFT	USER_INTENT	USER_INTENT	L1	Prompt espresso a groq (openai/gpt-oss-120b): che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo mig
+Intento: che ne pensi del mio cervello artif...	LEFT	USER_INTENT	USER_INTENT	L1	Prompt espresso a gemini (gemini-3.7-flash): che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migl
+Intento: che ore sono...	LEFT	USER_INTENT	USER_INTENT	L1	Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: che ore sono...
+Intento: chi è Pierfrancesco Amendola e cosa...	LEFT	USER_INTENT	USER_INTENT	L1	Prompt espresso a groq (openai/gpt-oss-120b): chi è Pierfrancesco Amendola e cosa fa il suo cervello artificiale
+Intento: ehi Jarvis ehi Jarvis mi puoi dire ...	LEFT	USER_INTENT	USER_INTENT	L1	Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ehi Jarvis ehi Jarvis mi puoi dire ...
+Intento: ho bisogno di sapere tutto ciò che ...	LEFT	USER_INTENT	USER_INTENT	L1	Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ho bisogno di sapere tutto ciò che ...
+Intento: ma è tutto falso!!!	LEFT	USER_INTENT	USER_INTENT	L1	Prompt espresso a groq (openai/gpt-oss-120b): ma è tutto falso!!!
+Intento: non riesci a connetterti al mio cer...	LEFT	USER_INTENT	USER_INTENT	L1	Prompt espresso a groq (openai/gpt-oss-120b): non riesci a connetterti al mio cervello?
+Intento: quanti nodi ci sono nel mio cervell...	LEFT	USER_INTENT	USER_INTENT	L1	Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: quanti nodi ci sono nel mio cervell...
+Preferenze Pierfrancesco Grafica Scacchi Duolingo	LEFT	USER_INTENT	USER_INTENT	L1	Pierfrancesco richiede massima fedeltà visiva allo stile Duolingo Chess: scacchiera menta e bianco, pezzi 2D piatti vett
+Prevenzione Perdita Contesto per Saturazione Finestra Chat	LEFT	USER_INTENT	USER_INTENT	L1	Volontà utente: azzerare la perdita di contesto causata dalla saturazione delle finestre di contesto degli LLM, garanten
+Richiesta Utente: Abbandono Jarvis e Avvio Nuovo Progetto	LEFT	USER_INTENT	USER_INTENT	L1	Pierfrancesco ordina la cancellazione di Jarvis/OpenJarvis e l'orientamento verso un progetto più pragmatico e funzional
+Richiesta Utente: Aree e Disvelamento Progressivo dei Nodi	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica 
+Richiesta Utente: Avvio OpenJarvis con Ollama gpt-oss:120b-cloud	LEFT	USER_INTENT	USER_INTENT	L1	Test di esecuzione su OpenJarvis con Ollama gpt-oss:120b-cloud e recupero dal connettoma neurale.
+Richiesta Utente: Clonazione e Integrazione OpenJarvis Stanford	LEFT	USER_INTENT	USER_INTENT	L1	Pierfrancesco richiede di clonare OpenJarvis sul Desktop e connetterlo al proprio Cervello Artificiale sfruttando anche 
+Richiesta Utente: Creazione Progetto Autonomo JARVIS su Desktop	LEFT	USER_INTENT	USER_INTENT	L1	Pierfrancesco stabilisce che JARVIS deve essere un progetto separato su /Users/pierfrancesco/Desktop/Jarvis, utilizzando
+Richiesta Utente: Funzionamento Architettura Web vs Desktop e Sincronizzazione Master Prompt	LEFT	USER_INTENT	USER_INTENT	L1	Pierfrancesco chiede chiarimenti sul funzionamento reale dell'albero gerarchico e palazzo cognitivo su backend, come le 
+Richiesta Utente: Hub AI Unificato con Connettoma Permanente	LEFT	USER_INTENT	USER_INTENT	L1	Pierfrancesco intende costruire un client desktop/web unico che unifica tutti i provider AI (OpenAI, Claude, DeepSeek, G
+Richiesta Utente: Memoria dei Ragionamenti AI e delle Chat Eterogenee	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di tracciare le domande utente, le deduzioni interne dell'AI e raggruppare chat su argomenti diversi (es. spor
+Richiesta Utente: Progettazione Assistente Vocale JARVIS Personale 100% Gratuito	LEFT	USER_INTENT	USER_INTENT	L1	Pierfrancesco richiede la progettazione di un assistente vocale continuo JARVIS a costo zero, con wake word, memoria per
+Richiesta Utente: Restyling Professionale e Moderno Frontend	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di rendere l'interfaccia frontend più moderna, pulita e da ingegnere informatico (ispirata a Graphify e Cavema
+Tracciamento Richiesta Utente & Modello AI nella Memoria	LEFT	USER_INTENT	USER_INTENT	L1	Proposta utente: includere nel JSON di ingestione il prompt integrale e il modello AI sorgente per preservare contesto e
+Valutazione Fattibilità Language App Gratuita e Unica	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di parere critico, stima complessità/tempi e identificazione elementi mancanti nel progetto di app lingue pers
+Valutazione e Ottimizzazione Architettura Knowledge Graph	LEFT	USER_INTENT	USER_INTENT	L1	L'utente richiede un'analisi critica dell'architettura del proprio cervello artificiale, cercando lacune, migliorie stru
+Terse Caveman Communication Persona	RIGHT	BRAND_VOICE	BRAND_VOICE	L1	Voce di brand ultra-compressa e ad altissima densità informativa: cadono preamboli, fronzoli e convenevoli; resta la pur
+Ultra-Direct Engineering Voice	RIGHT	BRAND_VOICE	BRAND_VOICE	L1	Modalità comunicativa asciutta, rigorosa, priva di convenevoli e orientata alla massima densità tecnica.
+Voce Chirurgica & Protocollo Caveman	RIGHT	BRAND_VOICE	BRAND_VOICE	L1	Comunicazione priva di convenevoli, chirurgica, diretta e con la massima densità concettuale per token.
+Cyan & Magenta Polarity Palette	RIGHT	COLOR_PALETTE	COLOR_PALETTE	L2	Schema cromatico bipolare: Ciano Neon (#00D2FF) per il rigore razionale sinistro, Magenta Neon (#FF007F) per la creativi
+Cyber Accent Color Palette	RIGHT	COLOR_PALETTE	COLOR_PALETTE	L2	Insieme di colori primari e secondari ad alto impatto cromatico per feedback e interazione (#00D2FF, #FF007F, #7928CA, #
+Flame & Freeze Bipolar Palette	RIGHT	COLOR_PALETTE	COLOR_PALETTE	L2	Palette istituzionale centrata sul gradiente Fiamma (#FFE066 -> #FF8C00 -> #FF3B30), Ciano Streak Freeze (#00C7BE) e Ver
+Allineamento Nodi Locale vs Render Cloud e Sincronizzazione Deploy	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di verifica e sincronizzazione dei nodi della memoria tra ambiente locale e istanza Render.
+Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio del 2026-08-27T20:38:00CEST: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gera
+Episodio Chat: Architettura Ibrida Cloud Render vs Agenti Locali MCP & Sicurezza LLM	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Chiarimento architetturale sulla dualità e cooperazione tra Render Cloud 24/7 (mobile/web/Telegram/GPTs) e Agenti Locali
+Episodio Chat: Architettura Memoria Cross-Modello e Attribuzione	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di analisi architetturale tra Pierfrancesco e Gemini 3.7 Flash sull'inclusione di prompt utente e metadati del 
+Episodio Chat: Evoluzione UI, Persistenza & Aree a Espansione	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio conversazionale incentrato sulla pulizia grafica del terminale, l'introduzione di viste a macro-aree progressiv
+Episodio Conversazionale: Concezione Gateway Mobile Telegram	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Ideazione e pianificazione dell'interfaccia mobile Telegram per estendere l'ubiquità del cervello artificiale.
+Episodio Conversazionale: Evoluzione GraphRAG & Protocollo MCP	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di ingegnerizzazione avanzata: sviluppo e verifica del motore FTS5 BM25, cammini minimi attraverso il Corpo Cal
+Episodio Conversazionale: Valutazione Strutture ad Albero	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Discussione e perizia tecnica sull'integrazione di alberi binari, alberi di ricerca e alberi di copertura pesati nel gra
+Episodio Conversazione: Allineamento Hub AI Unificato	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Avvio dell'intervista interattiva per definire la forma e la tecnologia del nuovo client unificato multi-AI.
+Episodio Conversazione: Allineamento Struttura Autonoma JARVIS	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Definizione dei confini del nuovo progetto JARVIS sul Desktop e predisposizione del piano di esecuzione modulare.
+Episodio Conversazione: Architettura Connettoma Neurale, Web Access e Sincronizzazione Prompt	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di allineamento e chiarimento sui meccanismi interni del Cervello Artificiale (SQLite, FTS5, Palazzo Cognitivo,
+Episodio Conversazione: Chiusura Jarvis e Pivot su Nuovo Progetto	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Eliminazione progetti Jarvis dal desktop e registrazione del cambio di direzione strategico nel connettoma.
+Episodio Conversazione: Integrazione OpenJarvis su Desktop	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Clonato il repository Stanford OpenJarvis sul Desktop e integrata la skill/tool per la memoria bi-emisferica del Cervell
+Episodio Conversazione: Progettazione JARVIS Voice AI e Integrazione Neurale	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di disamina repository open-source e definizione architetturale completa di JARVIS: assistente vocale continuo 
+Episodio Conversazione: Rilascio JARVIS Voice Assistant su Desktop	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Creazione completa e test del nuovo assistente vocale JARVIS sul Desktop, con memoria condivisa del Cervello Artificiale
+Episodio Conversazione: Test Superato OpenJarvis con Ollama	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Validazione end-to-end completata: OpenJarvis legge il connettoma, esegue inferenza su Ollama e restituisce la descrizio
+Episodio Vocale: Allora vorrei dirti che oggi ho man...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su Allora vorrei dirti che oggi ho man....
+Episodio Vocale: Jarvis, ricordi quali sono gli emis...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su Jarvis, ricordi quali sono gli emis....
+Episodio Vocale: Quali sono le abitudini monitorate ...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su Quali sono le abitudini monitorate ....
+Episodio Vocale: c'è un problema vorrei sapere di pi...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su c'è un problema vorrei sapere di pi....
+Episodio Vocale: che ore sono...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su che ore sono....
+Episodio Vocale: ehi Jarvis ehi Jarvis mi puoi dire ...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su ehi Jarvis ehi Jarvis mi puoi dire ....
+Episodio Vocale: ho bisogno di sapere tutto ciò che ...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su ho bisogno di sapere tutto ciò che ....
+Episodio Vocale: quanti nodi ci sono nel mio cervell...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su quanti nodi ci sono nel mio cervell....
+Episodio: Audit Totale & Continuità Cognitiva Cross-Chat	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di audit intensivo, correzione bug su backend/MCP/Telegram, potenziamento formale della skill per continuità cr
+Episodio: Comando /prompt Copia Rapida per Telegra	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio di dialogo e lavoro su Comando /prompt Copia Rapida per Telegram Bot
+Episodio: Debrief Assessment Gemini e Ottimizzazione Memoria Neurale	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Analisi comparativa tra il feedback di Gemini e la reale consistenza del connettoma, con piano per perfezionare il recup
+Episodio: Definizione Scopo Universale del Contesto Multi-AI	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di formalizzazione dello scopo supremo di Universal AI Brain: memoria persistente del contesto e dei processi m
+Episodio: Distribuzione MCP e Skill /universal-brain su Gemini, Claude e ChatGPT	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Integrazione globale del cervello e della skill /universal-brain su tutti i modelli di frontiera.
+Episodio: Fondamenti e Filosofia della Memoria Eterna Cross-Chat	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Formalizzazione della ragion d'essere del cervello artificiale: superare il reset della memoria per saturazione delle ch
+Episodio: Occultamento Pulsanti Mobile su Browser 	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio di dialogo e lavoro su Occultamento Pulsanti Mobile su Browser Desktop
+Episodio: Ottimizzazione Mobile Web Dashboard Univ	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio di dialogo e lavoro su Ottimizzazione Mobile Web Dashboard Universal Brain
+Episodio: Potenziamento Skill e Rilascio Demone Si	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio di dialogo e lavoro su Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
+Episodio: Progettazione dell'Inibizione Interemisferica & Lazy Loading	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Definizione del modello di lazy loading biologico ispirato all'inibizione GABAergica per un'esecuzione rapida e focalizz
+Episodio: Quali sono i progetti principali di...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Conversazione tra Pierfrancesco e qwen/qwen3.8-27b (Groq) su Quali sono i progetti principali di....
+Episodio: Restyling Dark-Tech, Stabilizzazione Fisica & Ripristino Palazzo Cognitivo	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), eliminazione di oscillazioni e rotazioni 
+Episodio: Teoria dei Sotto-Grafi Modulari e Decentramento Hub	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Definizione della topologia a sotto-grafi modulari: entità enciclopediche e verticali isolate da person-pierfrancesco.
+Episodio: Valutazione e Design del Modello Graph-of-Graphs a Piani	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Analisi comparativa, pro, contro e fattibilità tecnica del modello di grafo a palazzo frattale su SQLite.
+Episodio: che ne pensi del mio cervello artif...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su che ne pensi del mio cervello artif....
+Episodio: che ne pensi del mio cervello artif...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Conversazione tra Pierfrancesco e gemini-3.7-flash (gemini) su che ne pensi del mio cervello artif....
+Episodio: chi è Pierfrancesco Amendola e cosa...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su chi è Pierfrancesco Amendola e cosa....
+Episodio: ma è tutto falso!!!	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su ma è tutto falso!!!.
+Episodio: non riesci a connetterti al mio cer...	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su non riesci a connetterti al mio cer....
+Metacognizione e Sviluppo del Sistema AI	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione dedicata all'introspezione sistemica e al miglioramento dell'infrastruttura cognitiva dell'AI stessa.
+Progettazione Piattaforma Personale di Apprendimento Linguistico	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Discussione architetturale incentrata sulla creazione di un'applicazione proprietaria e non divulgata per lo studio del 
+Release Commit 62e48df (Render Hot-Rebuild)	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Release Commit 62e48df (Render Hot-Rebuild) (Layer: DEVOPS_TIMELINE, Tipo: DEPLOYMENT_EVENT)
+Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio del 2026-08-27T20:34:46CEST: Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP ne
+Sessione Valutazione e Stima Language App	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Discussione su fattibilità, tempi, complessità e gap del progetto app lingue personale.
+Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway)	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio del 2026-08-27T20:37:03CEST: Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Ga
+Tassonomia e Classificazione Formale dell'Universal Knowledge Graph	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio del 2026-08-27T18:34:00CEST: Tassonomia e Classificazione Formale dell'Universal Knowledge Graph
+Traduzione e Consolidamento del Benchmark Comparativo sulle Strutture ad Albero per il Grafo Cognitivo	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio del 2026-08-27T20:32:00CEST: Traduzione e Consolidamento del Benchmark Comparativo sulle Strutture ad Albero pe
+Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artificiali	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio del 2026-08-27T18:28:00CEST: Unificazione Architetturale tra Knowledge Graph e Search Trees per Cervelli Artifi
+Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel Knowledge Graph	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio del 2026-08-27T20:30:00CEST: Valutazione Tecnica delle Strutture ad Albero (MST, Dendrogram, Trie, B+Tree) nel 
+Valutazione e Design di un Telegram Bot come Interfaccia I/O Mobile per il Knowledge Graph	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio del 2026-08-27T18:58:00CEST: Valutazione e Design di un Telegram Bot come Interfaccia I/O Mobile per il Knowled
+Celebration Particle & FX Engine	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Suite di effetti grafici ed esplosioni particellari reattive: Notch Fireworks dalla Dynamic Island al 100%, coriandoli g
+Continuous Human-AI Symbiosis Vision	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Visione filosofica di un intelligenza aumentata: la memoria dell utente e dei suoi progetti sopravvive tra sessioni dist
+Evoluzione UI & Architettura di Memoria Resiliente	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Sessione di potenziamento dell'Universal AI Brain: introduzione del terminale chiaro, caricamento JSON visuale e blindat
+Idea per nuova app AI	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Sviluppo di un agent autonomo
+Pianoforte Classico & Composizione	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Studio del pianoforte dall'età di tre anni; rifugio espressivo e contrappeso emotivo al rigore logico-scientifico.
+Recitazione Teatrale (Tricca Ballacche)	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Esperienza attoriale sul palco come strumento di esplorazione delle dinamiche umane e presenza scenica.
+Scrittura & Pubblicazione Indipendente	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Attività di autore ed editore su Amazon KDP per libri per ragazzi, narrativa e manuali tecnici.
+Simbiosi Operativa Antigravity & Pierfrancesco	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Manifestazione pratica del Modello Centauro: intenzione e guida umana sposate all'esecuzione deterministica dell'assiste
+Sintesi Artistico-Scientifica & Centauro	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Integrazione tra rigore computazionale e sensibilità creativa (pianoforte, teatro Tricca Ballacche, scrittura, modello C
+Test Live Download Node	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Test di verifica download automatico da cloud a locale
+Cyber Slate Dark Aesthetics	RIGHT	DESIGN_TOKEN	DESIGN_TOKEN	L2	Estetica visuale cosmica a basso contrasto di fondo (#090d16) con pannelli in vetro sfumato (backdrop-filter: blur(16px)
+Dark Neon Cyber Aesthetic	RIGHT	DESIGN_TOKEN	DESIGN_TOKEN	L2	Design system scuro ad alto impatto visivo con superfici in vetro e accenti neon ad alto contrasto.
+Dark Neon Design Tokens	RIGHT	DESIGN_TOKEN	DESIGN_TOKEN	L2	Design system scuro ad alto contrasto con superfici semitrasparenti e accenti luminosi.
+Design System Duolingo Chess	RIGHT	DESIGN_TOKEN	DESIGN_TOKEN	L2	Design system ispirato a design.duolingo.com e blog.duolingo.com. Palette ufficiale Duolingo, pulsanti 3D estrusi, sagom
+Design System Moderno & Minimal per App di Lingue	RIGHT	DESIGN_TOKEN	DESIGN_TOKEN	L2	Design system basato su estetica pulita e moderna, chip interattivi 3D minimali, palette semantica (Emerald/Rose/Indigo)
+Design Token: Palette Deep-Tech & Cyberpunk Minimalist	RIGHT	DESIGN_TOKEN	DESIGN_TOKEN	L2	Sistema di design tokens e palette colori per l interfaccia utente ispirata a Graphify.com e Caveman.so: Deep Void (#070
+StreaksUp Glassmorphic Design System	RIGHT	DESIGN_TOKEN	DESIGN_TOKEN	L2	Design system basato su materiali SwiftUI (.regularMaterial, .ultraThinMaterial), bordi sfumati con gradienti di categor
+Tensione tra Controllo Perfezionistico ed Espressione	RIGHT	EMOTIONAL_MEMORY	EMOTIONAL_MEMORY	L1	La costante ricerca dell'eccellenza e il sovraccarico di responsabilità bilanciati attraverso lo sfogo catartico della m
+Lezione di Architettura: Backend come Singola Sorgente di Verità e Pipeline di Rendering Pulita	RIGHT	LIFE_LESSON	LIFE_LESSON	L1	Principio guida per lo sviluppo del Cervello Artificiale: il backend SQLite/FastAPI deve essere l unica sorgente di veri
+Lezione sui Confini Affettivi & Non-Idealizzazione	RIGHT	LIFE_LESSON	LIFE_LESSON	L1	Non farsi carico unilateralmente della stabilità altrui; l'intensità emotiva non sostituisce la compatibilità e la chiar
+Resilienza Operativa & Post-Mortem Emotivo	RIGHT	LIFE_LESSON	LIFE_LESSON	L1	Trattare gli ostacoli e le delusioni come dati da analizzare a mente fredda per iterare e migliorare senza autocommisera
+Autenticità & Trasparenza Radicale	RIGHT	PERSONAL_VALUE	PERSONAL_VALUE	L1	Priorità assoluta alla sincerità e alla chiarezza nei rapporti; rifiuto di maschere sociali, ipocrisia e passività.
+Autonomia, Autosufficienza & Merito	RIGHT	PERSONAL_VALUE	PERSONAL_VALUE	L1	Costruire la propria libertà attraverso la competenza tecnica verificabile, l'autosufficienza e l'etica del lavoro.
+Continuità Cognitiva Eterna (Zero Context Loss)	RIGHT	PERSONAL_VALUE	PERSONAL_VALUE	L1	Valore fondante di Universal AI Brain: nessun pensiero, decisione o ragionamento deve andare perso a causa dei limiti fi
+Lealtà & Cura dei Legami Significativi	RIGHT	PERSONAL_VALUE	PERSONAL_VALUE	L1	Fedeltà incondizionata a chi ha dimostrato supporto autentico, rispetto e presenza nei momenti critici.
+Pierfrancesco Amendola	RIGHT	PERSONAL_VALUE	PERSONAL_VALUE	L0	Identità centrale, connettoma fondativo e profilo di Pierfrancesco Amendola.
+Privacy-by-Design & Zero-Cloud	RIGHT	PERSONAL_VALUE	PERSONAL_VALUE	L1	Valore etico cardine: 100% offline, nessun server remoto, nessun tracciamento analytics, nessun account richiesto e pien
+Utilità Concreta & Impatto Sociale	RIGHT	PERSONAL_VALUE	PERSONAL_VALUE	L1	La tecnologia deve risolvere problemi reali, proteggere le persone e migliorare l'esperienza umana quotidiana.
+Antonio Renato Chieppa	RIGHT	RELATIONSHIP	RELATIONSHIP	L1	Collega di corso e amico con cui condividere appunti, sessioni di studio e motivazione accademica.
+Genitori (Madre e Padre)	RIGHT	RELATIONSHIP	RELATIONSHIP	L1	Punto fermo affettivo e motivazionale; destinatari della dedica di tesi e di supporto concreto continuativo.
+Marco Di Martino	RIGHT	RELATIONSHIP	RELATIONSHIP	L1	Compagno di percorso accademico e amico fidato con cui condividere la crescita universitaria e le sfide di studio.
+Mentorship Accademica (Nadia Brancati & Daniel Riccio)	RIGHT	RELATIONSHIP	RELATIONSHIP	L1	Guide scientifiche del percorso di tesi e ricerca biomedica in Deep Learning presso ICAR-CNR e UniNa.
+Radici Partenopee & Territorio	RIGHT	RELATIONSHIP	RELATIONSHIP	L1	Forte attaccamento culturale alla città di Napoli, fonte di ispirazione per progetti software, artistici e teatrali.
+3D Force Graph Galaxy Visualizer	RIGHT	UI_COMPONENT	UI_COMPONENT	L2	Universo 3D interattivo WebGL in cui i nodi orbitano con forze repulsive e attrattive che li separano ordinatamente lung
+Animated Gauge Widget (SwiftUI)	RIGHT	UI_COMPONENT	UI_COMPONENT	L2	Componente UI nativo SwiftUI per tachimetro/indicatore di stato circolare animato e reattivo.
+AuleStudio Student Mobile Interface	RIGHT	UI_COMPONENT	UI_COMPONENT	L2	Interfaccia grafica mobile fluida, pulita e minimale orientata a universitari: schede aula immediate, mappa visiva e con
+Componente UI: Navigatore Multilivello a Piani del Palazzo Cognitivo	RIGHT	UI_COMPONENT	UI_COMPONENT	L2	Pannello di navigazione e ascensore cognitivo per esplorare la conoscenza su piani semantici (Attico Domini P0, Progetti
+Dynamic Island & Living/Dying Flame	RIGHT	UI_COMPONENT	UI_COMPONENT	L2	Esperienza Live Activity e Dynamic Island con timer conto alla rovescia a mezzanotte, pulsante 'Fatto' rapido e fiamma v
+Frontend Web Tree Explorer (HUD Button)	RIGHT	UI_COMPONENT	UI_COMPONENT	L2	Frontend Web Tree Explorer (HUD Button) (Layer: PRESENTATION_LAYER, Tipo: UI_COMPONENT)
+Glassmorphism Dark Surface Component	RIGHT	UI_COMPONENT	UI_COMPONENT	L2	Componente contenitore a strati con effetto vetro e bordo ad alta definizione visiva.
+Multi-Format WidgetKit Suite	RIGHT	UI_COMPONENT	UI_COMPONENT	L2	Suite di 4 widget (Single Habit Focus, Today Dashboard, Daily Progress, Weekly Heatmap) e relative complicanze Lock Scre
+Redesign Pezzi Scacchiera Duolingo Vettoriali	RIGHT	UI_COMPONENT	UI_COMPONENT	L2	Decisione di redesign dei pezzi degli scacchi con vettori SwiftUI parametrici 2D Duolingo puliti e gerarchia visiva prop
+Telegram Bot Interface (Mobile I/O)	RIGHT	UI_COMPONENT	UI_COMPONENT	L2	Telegram Bot Interface (Mobile I/O) (Layer: IO_LAYER, Tipo: PERCEPTUAL_INTERFACE)
+Restyling Frontend Dark-Tech (Graphify & Caveman Aesthetic)	RIGHT	UI_DESIGN	UI_DESIGN	L1	Restyling estetico completo del frontend in stile ingegneristico d'élite: Topbar IDE unificata a tutta larghezza con HUD
+Alertless App Icon Switcher Flow	RIGHT	UX_FLOW	UX_FLOW	L1	Flusso di cambio icona privo di frizione che silenzia l'alert nativo Apple tramite Method Swizzling su UIViewController 
+AuleStudio 3-Step Booking UX Flow	RIGHT	UX_FLOW	UX_FLOW	L1	Flusso di prenotazione a zero attrito: 1. Scegli Polo/Aula -> 2. Seleziona Fascia Oraria -> 3. Conferma e genera pass QR
+Frictionless Thumb-Zone Flow	RIGHT	UX_FLOW	UX_FLOW	L1	Esperienza d'uso priva di ostacoli con azioni chiave aggregate nell'area di raggiungibilità del pollice (Thumb Zone 44x4
+UX ad Ergonomia Immediata (Thumb Zone)	RIGHT	UX_FLOW	UX_FLOW	L1	Interfacce prive di frizione con controlli primari nella zona del pollice e transizioni ultra-reattive (150-250ms).
+Richiesta: Esplorazione Nuovi Paradigmi Visuali e Layout per il Grafo	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta utente di visualizzare nuovi disegni, interfacce e layout architetturali per rappresentare il connettoma neura
+Deduzione AI: Formalizzazione dei 5 Paradigmi Visuali per il Connettoma	LEFT	AI_REASONING	AI_REASONING	L1	Confermata l'avvenuta ottimizzazione (GraphRAG global context, telemetria, zero-cost stack). Creato showcase interattivo
+Episodio: Esplorazione Nuovi Layout e Disegni per l'Interfaccia del Cervello	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Presentazione e analisi interattiva di 5 layout alternativi per l'interfaccia del connettoma a due emisferi.
+Dominio: Ingegneria Software & Architetture	LEFT	ROOT_DOMAIN	ARCHITECTURE	L0	Ingegneria del Software, Backend FastAPI, SQLite WAL, Web development, architetture distribuite e linguaggi di programma
+Dominio: Sistemi Cognitivi, Neuro-Simbolico & LLM	LEFT	ROOT_DOMAIN	ARCHITECTURE	L0	Sistemi Cognitivi, LLM, GraphRAG, Knowledge Graphs, MCP (Model Context Protocol), Metacognizione e Agentic Systems.
+Dominio: Medicina, Salute & Fisiologia	LEFT	ROOT_DOMAIN	ARCHITECTURE	L0	Medicina, Salute, Nutrizione, Fisiologia, Fitness, Dermatologia, Podologia e Bioinformatica Deep Learning (ricerca ICAR-
+Dominio: Scienza, Matematica & Algoritmica	LEFT	ROOT_DOMAIN	ALGORITHM	L0	Matematica pura e applicata, Algoritmica teorica, Statistica, Fisica, Teoria dell'Informazione e Modelli Formali.
+Dominio: Finanza, Economia & Business	LEFT	ROOT_DOMAIN	BUSINESS_LOGIC	L0	Gestione Finanziaria, Investimenti, Economia, Business Models, Strategia d'Impresa e Gestione Patrimoniale.
+Dominio: Produttività, Sistemi Operativi & Automazione	LEFT	ROOT_DOMAIN	COGNITIVE_RULE	L0	Workflow operativi, Strumenti di automazione, Metodologie di Studio e Lavoro, Gestione del Tempo e Life Operations.
+Dominio: Design, UI/UX & Creatività	RIGHT	ROOT_DOMAIN	DESIGN_TOKEN	L0	UI/UX Design Dark-Tech, Graphic Design, Brand Voice, Tipografia, Estetica Visiva e Interaction Design.
+Dominio: Musica, Audio & Suono	RIGHT	ROOT_DOMAIN	CREATIVE_IDEA	L0	Teoria Musicale, Ear Training, Composizione, Sound Design, Audio Engineering e Produzione Musicale.
+Dominio: Filosofia, Etica & Principi di Vita	RIGHT	ROOT_DOMAIN	PERSONAL_VALUE	L0	Filosofia, Stoicismo, Modelli Mentali, Principi Etici, Decision Making, Autodisciplina e Modelli di Saggezza.
+Dominio: Relazioni, Comunicazione & Persone	RIGHT	ROOT_DOMAIN	RELATIONSHIP	L0	Relazioni Umane, Famiglia, Amici, Networking Professionale, Comunicazione Interpersonale, Empatia e Dinamiche Sociali.
+Dominio: Crescita Personale, Abitudini & Benessere	RIGHT	ROOT_DOMAIN	LIFE_LESSON	L0	Memoria Episodica di Vita, Lezioni Apprese, Abitudini Quotidiane, Riflessioni Personali, Fitness Mentale e Crescita Cont
+Dominio: Cultura, Storia & Linguaggi	RIGHT	ROOT_DOMAIN	BRAND_VOICE	L0	Storia, Letteratura, Lingue Straniere, Cultura Generale, Viaggi, Società e Antropologia.
+Ristrutturazione e Sigillatura dei 12 Macro-Domini Fondativi	LEFT	USER_INTENT	USER_INTENT	L1	Riorganizzazione gerarchica del connettoma: sigillatura del Piano 0 con 12 macro-domini canonici, riassegnazione di tutt
+Deduzione AI: Sigillatura Architetturale Piano 0 e Re-Parenting Connettoma	LEFT	AI_REASONING	AI_REASONING	L1	Eseguita migrazione conservativa: 12 macro-domini canonici registrati a Piano 0 (13 nodi totali con identità centrale), 
+Episodio: Ristrutturazione Fondativa del Connettoma a 12 Macro-Domini	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Riorganizzazione storica e sigillo del Piano 0 del Palazzo Cognitivo con 12 Macro-Domini permanenti e blindatura delle r
+Intento: Audit critico e mockup frontend del Univ	LEFT	USER_INTENT	USER_INTENT	L1	Intento espresso da Pierfrancesco: Audit critico e mockup frontend del Universal AI Brain
+Ragionamento: Audit critico e mockup frontend del Univ	LEFT	AI_REASONING	AI_REASONING	L1	Audit basato sul repository, sul database SQLite e sul connettoma remoto: rilevate criticità di sicurezza API, sincroniz
+Episodio: Audit critico e mockup frontend del Univ	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio di dialogo e lavoro su Audit critico e mockup frontend del Universal AI Brain
+Intento: Nuove rappresentazioni visuali del conne	LEFT	USER_INTENT	USER_INTENT	L1	Intento espresso da Pierfrancesco: Nuove rappresentazioni visuali del connettoma
+Ragionamento: Nuove rappresentazioni visuali del conne	LEFT	AI_REASONING	AI_REASONING	L1	Recuperata la preferenza per un grafo stabile e privo di oscillazioni; creato un secondo artefatto interattivo con cinqu
+Episodio: Nuove rappresentazioni visuali del conne	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio di dialogo e lavoro su Nuove rappresentazioni visuali del connettoma
+Audit Critico e Fix Ottimizzazioni Backend	LEFT	AI_REASONING	AI_REASONING	L1	Analisi approfondita del codice generato, individuazione di 4 bug critici (perdita tags, cross_links, mismatch DB, risch
+Ottimizzazione Backend Ibrida con Backup	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di applicare ottimizzazioni backend (indici, cache, CTE) con approccio ibrido e backup preventivo, senza perde
+Sessione Ottimizzazione Backend e Audit Sicurezza	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione collaborativa multi-modello (Qwen + Gemini) per ottimizzare il Universal Knowledge Graph. Enfasi sulla sicurezz
+Richiesta Metodi Alternativi di Guadagno	LEFT	USER_INTENT	USER_INTENT	L1	L'utente richiede la formulazione di strategie alternative e concrete per generare tra 100 e 500 euro/mese a costo zero 
+Strategia Micro-Business e Servizi B2B Leggeri	LEFT	AI_REASONING	AI_REASONING	L1	Strutturazione di quattro canali scalabili a costo zero (Automazioni B2B, Micro-SaaS/App Freemium, Boilerplate di codice
+Sessione Alternative di Guadagno Digitale	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Definizione di quattro percorsi operativi di guadagno a costo zero per raggiungere il target di 100-500€ mensili.
+Valutazione Monetizzazione YT Shorts AI	LEFT	USER_INTENT	USER_INTENT	L1	L'utente richiede un'analisi di fattibilità per generare 100-500 euro/mese creando YouTube Shorts per bambini generati t
+Analisi Saturazione e Approccio Programmatico	LEFT	AI_REASONING	AI_REASONING	L1	Analisi tecnica ed economica: evidenziata l'elevata saturazione, le restrizioni COPPA per i contenuti per bambini con cr
+Valutazione Business Model YouTube Shorts AI	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Analisi critica della proposta di monetizzazione tramite canali YouTube Shorts per bambini generati con AI.
+Caratterizzazione Fisica e Clinica della Sonda Lineare	LEFT	AI_REASONING	AI_REASONING	L1	Analisi delle proprietà della sonda lineare (frequenze 7-18 MHz, campo visivo rettangolare, risoluzione assiale e latera
+Elaborazione Metafore e Spiegazioni Intuitive per AI Causale	LEFT	AI_REASONING	AI_REASONING	L1	Traduzione di concetti ad elevata densità matematica in metafore pratiche ed esempi clinici immediati (es. bias da osped
+Identificazione Percorsi Storage e Pulizia Ollama macOS	LEFT	AI_REASONING	AI_REASONING	L1	Analisi dell'architettura di storage di Ollama su macOS: identificati i percorsi ~/.ollama/models/blobs e ~/Library/Appl
+Sintesi Teorico-Applicativa Swin Transformer e Deep Stable Learning	LEFT	AI_REASONING	AI_REASONING	L1	Formalizzazione del funzionamento di Swin Transformer (attenzione a finestre traslate gerarchiche) e Deep Stable Learnin
+Richiesta Spiegazione Swin Transformer e Deep Stable Learning	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di spiegazione breve, tecnica ed efficace su Swin Transformer e Deep Stable Learning nel contesto della classi
+Rimozione Modello Ollama Residuo su macOS	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di individuazione ed eliminazione completa di un modello LLM da 7GB rimasto su disco dopo la disinstallazione 
+Spiegazione Ecografi con Trasduttore Lineare	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di definizione, caratteristiche e campi d'uso degli ecografi con trasduttore lineare.
+Spiegazione Semplificata Self-Attention e Concetti Causali	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di chiarimento divulgativo e intuitivo sui concetti cardine di self-attention, inferenza causale, confounders 
+Episodio: Bonifica Modello Ollama 7GB su macOS	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione dedicata alla localizzazione ed eliminazione dei residui di storage lasciati dal download involontario di un mo
+Episodio: Chiarimento Concetti Tesi Breast Cancer Classification	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione incentrata sulla definizione e contestualizzazione di Swin Transformer e Deep Stable Learning per la classifica
+Episodio: Panoramica Sonde Ecografiche Lineari	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione dedicata alla comprensione del principio di funzionamento e dei casi d'uso degli ecografi con sonda lineare.
+Episodio: Spiegazione Intuitiva Concetti Causali e Attention	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione dedicata alla chiarificazione intuitiva di Self-Attention, Inferenza Causale, Feature Confounders e Decorrelazi
+Intento: Fix Demone Sync e Persistenza Render	LEFT	USER_INTENT	USER_INTENT	L1	Risolvere il malfunzionamento del demone di sync, prevenire lo spegnimento di Render e garantire persistenza continua de
+Ragionamento: Fix Demone LaunchAgent e Anti-Sleep Render	LEFT	AI_REASONING	AI_REASONING	L1	Diagnosi e risoluzione integrale: TCC sandbox bypass tramite ~/.local/bin, keep-alive 7m anti-sleep, commit git automati
+Episodio: Risoluzione Demone e Persistenza Nodi	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio di analisi e riparazione del demone di sincronizzazione e della persistenza del connettoma.
+Intento: Cloud-Side Git Auto-Push da Render	LEFT	USER_INTENT	USER_INTENT	L1	Eseguire git push automatico direttamente dal cloud ad ogni post/ingestione su Render.
+Ragionamento: Architettura Dual-Ring Git Persistence	LEFT	AI_REASONING	AI_REASONING	L1	Implementazione del doppio anello di persistenza: Mac demone + Render server push asincrono.
+Episodio: Doppio Anello di Persistenza Cloud	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio sull'approvazione e innesto dell'auto-push Git lato Render per chiudere il cerchio della persistenza.
+Verifica Cloud Git Auto-Push Render	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L1	Nodo di validazione del meccanismo di auto-push Git da Render su GitHub origin main.
+Intento: Verifica GITHUB_TOKEN su Render	LEFT	USER_INTENT	USER_INTENT	L1	Verificare l'attivazione e il funzionamento del token GitHub su Render per auto-push cloud.
+Ragionamento: Verifica End-to-End Token Render	LEFT	AI_REASONING	AI_REASONING	L1	Conferma del corretto funzionamento dell'ingestione cloud e del connettoma a 354 nodi.
+Episodio: Validazione Token GitHub Render	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio di verifica dell'inserimento del token GITHUB_TOKEN su Render e test di persistenza.
+Richiesta Creazione Video Showcase 60s Universal Brain	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di Pierfrancesco di creare un video tutorial / anteprima di 1 minuto con screenshot, pezzi di codice e spiegaz
+Architettura e Realizzazione Video Showcase 60s	LEFT	AI_REASONING	AI_REASONING	L1	Progettazione e implementazione del video engine interattivo a 6 scene in 60 secondi con sintesi vocale, musica cyberpun
+Episodio: Creazione Video Showcase 1 Minuto Universal AI Brain	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione dedicata alla creazione dell'anteprima video di 60 secondi, comprensiva di screenshot generati, codice terminal
+Intento: Persistenza Telegram e Keep-Alive Demone	LEFT	USER_INTENT	USER_INTENT	L1	Confermare che la persistenza a doppio anello copra Telegram e implementare il keep-alive periodico anti-sleep.
+Ragionamento: Copertura Telegram e Keep-Alive 7m	LEFT	AI_REASONING	AI_REASONING	L1	Integrazione Telegram bot con cloud git push e validazione Keep-Alive 7m in sync_daemon.
+Episodio: Persistenza Telegram e Heartbeat Demone	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio di conferma della persistenza omnicanale (Telegram incluso) e del meccanismo keep-alive.
+Intento: Aggiornamento Documentazione README.md	LEFT	USER_INTENT	USER_INTENT	L1	Documentare in modo esaustivo architettura bi-emisferica, backend, algoritmi, doppio anello e frontend nel README.md.
+Ragionamento: Riformulazione Completa Documentazione README	LEFT	AI_REASONING	AI_REASONING	L1	Stesura della documentazione ufficiale con copertura completa di backend, algoritmi, persistenza e client.
+Episodio: Rilascio Documentazione Ufficiale README	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Episodio di redazione e pubblicazione del README.md completo su GitHub.
+Mappatura Ecosistema Linux per Computer Grafica 3D	LEFT	AI_REASONING	AI_REASONING	L1	Strutturazione della risposta evidenziando sia le distribuzioni specializzate (Fedora Design Suite, Ubuntu Studio) sia l
+Verifica Distribuzioni Linux e Software di Modellazione 3D	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di informazioni sull'esistenza di distribuzioni Linux per scaricare e utilizzare software di modellazione 3D.
+Episodio: Esplorazione Modellazione 3D su Linux	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione incentrata sulle capacità del sistema operativo Linux e delle sue varianti nel supporto e download di software 
+Inversion (Inversione)	LEFT	MENTAL_MODEL	MENTAL_MODEL	L2	Non cercare solo come vincere; definisci come perdere e poi evitalo rigorosamente.
+Second-Order Thinking (Pensiero del Secondo Ordine)	LEFT	MENTAL_MODEL	MENTAL_MODEL	L2	E poi cosa succede? Valuta le conseguenze delle conseguenze a medio-lungo termine.
+First Principles (Primi Principi)	LEFT	MENTAL_MODEL	MENTAL_MODEL	L2	Riduci il problema ai suoi assiomi fisici/logici essenziali senza affidarti all'analogia.
+Circle of Competence (Cerchio di Competenza)	LEFT	MENTAL_MODEL	MENTAL_MODEL	L2	Definisci con precisione chirurgica ciò che sai e ammetti ciò che ignori.
+Opportunity Cost (Costo Opportunità)	LEFT	MENTAL_MODEL	MENTAL_MODEL	L2	Il vero costo di una scelta è il valore della migliore alternativa a cui rinunci.
+Antifragility (Antifragilità)	RIGHT	MENTAL_MODEL	MENTAL_MODEL	L2	Trarre vantaggio dal disordine, dagli errori e dalla volatilità anziché limitarsi a resistervi.
+Bayesian Updating (Aggiornamento Bayesiano)	LEFT	MENTAL_MODEL	MENTAL_MODEL	L2	Aggiorna la probabilità della tua tesi iniziale in proporzione alle nuove evidenze.
+Pareto Principle (80/20)	LEFT	MENTAL_MODEL	MENTAL_MODEL	L2	Il 20% delle cause genera l'80% degli effetti. Trova quel 20% vitale ed elimina l'80% banale.
+Feynman Technique (Tecnica di Feynman)	RIGHT	MENTAL_MODEL	MENTAL_MODEL	L2	Se non riesci a spiegarlo in termini semplici a un profano, non lo hai compreso a fondo.
+Potenziamento Cognitivo del Connettoma e Integrazione Obsidian Vault	LEFT	USER_INTENT	USER_INTENT	L1	Integrazione bidirezionale di Obsidian Vault con note atomiche, rilevatore tensioni cognitive, weave link engine per nod
+Architettura Motori Cognitivi, Sincronizzazione Vault e Test Suite E2E	LEFT	AI_REASONING	AI_REASONING	L1	Implementati 6 nuovi motori Python indipendenti, registrati 12 tool MCP JSON-RPC, aggiunti endpoint REST FastAPI, esteso
+Episodio: Rilascio Motori Cognitivi Avanzati e Obsidian Bridge	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di analisi del progetto Neomas, superamento con architettura ad alte prestazioni SQLite WAL e rilascio completo
+App Flash Cards	RIGHT	PROJECT	APP	L1	App iOS nativa per studiare con flashcard.
+Palazzografica	RIGHT	PROJECT	PROJECT	L1	Progetto Mac: Palazzografica. Stack: C.
+Mary	RIGHT	PROJECT	PROJECT	L1	Progetto Mac: Mary. Stack: Varie.
+Qr Generator	LEFT	PROJECT	APP	L1	A new Flutter project.
+Pierfrancesco Amendola	LEFT	PROJECT	PROJECT	L1	- Location: Naples 80125, Italy
+Care Track Demo	RIGHT	PROJECT	PROJECT	L1	![Platform](https://img.shields.io/badge/Platform-iOS%2018.0+-blue.svg)
+SwiftUI Interface Layer (proj-caretrack-demo)	LEFT	MODULE	UI_COMPONENT	L2	Interfaccia utente dichiarativa SwiftUI per il progetto proj-caretrack-demo.
+Sito Certificati	LEFT	PROJECT	PROJECT	L1	This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Psld2 Senza Git	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Psld2 Senza Git. Stack: C++.
+Spiegazione Codice Librerire	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Spiegazione Codice Librerire. Stack: Varie.
+Psld1	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Psld1. Stack: C++.
+App Abbonamenti	LEFT	PROJECT	APP	L1	**SubTracker** è un'applicazione iOS moderna e intuitiva progettata per monitorare tutti i tuoi abbonamenti in un unico 
+Tec Web Lezioni	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Tec Web Lezioni. Stack: JavaScript.
+App Napoli	LEFT	PROJECT	APP	L1	Progetto Mac: App Napoli. Stack: C, Dart, Python, Swift.
+Gioco	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Gioco. Stack: C.
+App Palette	RIGHT	PROJECT	PROJECT	L1	A new Flutter project.
+Particle Engine Simulation	LEFT	PROJECT	PROJECT	L1	"A real-time **3D particle swarm simulator** built with **Three.js** and a custom CPU-side ""physics"" loop. It seamlessly "
+Cypress Tests	RIGHT	PROJECT	PROJECT	L1	Progetto Mac: Cypress Tests. Stack: Cypress, JavaScript.
+Frontend	RIGHT	PROJECT	PROJECT	L1	A new Flutter project.
+Backend	RIGHT	PROJECT	PROJECT	L1	Progetto Mac: Backend. Stack: Express, JavaScript.
+App Aule Studio Type Script	LEFT	PROJECT	SCRIPT_TOOL	L1	**UniStudy Italia** è l'applicazione definitiva per gli studenti universitari italiani che cercano il posto perfetto per
+Progetto Gestione Bibloteca	LEFT	PROJECT	PROJECT	L1	Sistema di gestione di una biblioteca pubblica/privata/casalinga, tiene traccia di tutto ciò che è necessario e fondamen
+App Calcolatori	LEFT	PROJECT	PROJECT	L1	Native iPhone utility suite built with SwiftUI, Swift 6, and iOS 18+.
+SwiftUI Interface Layer (proj-appcalcolatori)	LEFT	MODULE	UI_COMPONENT	L2	Interfaccia utente dichiarativa SwiftUI per il progetto proj-appcalcolatori.
+App Scadenza	RIGHT	PROJECT	APP	L1	**Traccia le scadenze. Riduci gli sprechi. Risparmia.**
+Codice Architettura Tesi	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Codice Architettura Tesi. Stack: Python.
+Cervello Artificiale	LEFT	PROJECT	PROJECT	L1	> **Persistent Bi-Hemispheric Knowledge Graph, Hierarchical Tree Engine, Dual-Ring Cloud Persistence & MCP Server for Au
+FastAPI REST Endpoints (proj-cervelloartificiale)	LEFT	MODULE	API_ENDPOINT	L2	Pipeline API REST asincrona con validazione Pydantic per proj-cervelloartificiale.
+Basi Di Dati Esercizi	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Basi Di Dati Esercizi. Stack: Varie.
+Lp   Prova Esame Giugno	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Lp   Prova Esame Giugno. Stack: Varie.
+2	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 2. Stack: Varie.
+Gennaio 2021	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Gennaio 2021. Stack: Varie.
+Marzo 2021	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Marzo 2021. Stack: Varie.
+Svolti	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Svolti. Stack: Varie.
+Giugno 2021	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Giugno 2021. Stack: Varie.
+Compito Settembre	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Compito Settembre. Stack: Varie.
+Compito Luglio	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Compito Luglio. Stack: Varie.
+Happy Plant Keeper	LEFT	PROJECT	PROJECT	L1	**URL**: https://lovable.dev/projects/cc27e2fa-a880-48d4-8cea-2b8d52a99bf1
+Fanta Formula1	LEFT	PROJECT	PROJECT	L1	Un'applicazione di Fantacalcio dedicata alla Formula 1, sviluppata con React Native ed Expo.
+Uni Grade Projections Main	LEFT	PROJECT	PROJECT	L1	**URL**: https://lovable.dev/projects/a3846006-ca48-4704-9c96-8dc98198290c
+Statistica	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Statistica. Stack: Varie.
+Asd & Lasd	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Asd & Lasd. Stack: Varie.
+Advanced Db(Mod.Db Tech)	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Advanced Db(Mod.Db Tech). Stack: Varie.
+Ml(Neural Networks & Dl)	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Ml(Neural Networks & Dl). Stack: Varie.
+Slide Tec Web	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Slide Tec Web. Stack: Varie.
+Reti Di Calcolatori	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Reti Di Calcolatori. Stack: Varie.
+Economia	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Economia. Stack: Varie.
+Oo	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Oo. Stack: Varie.
+Bdd	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Bdd. Stack: Varie.
+Sim	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Sim. Stack: Varie.
+Osmci	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Osmci. Stack: Varie.
+Lso	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Lso. Stack: Varie.
+Lp1	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Lp1. Stack: Varie.
+Algebra	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Algebra. Stack: Varie.
+Pdc	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Pdc. Stack: Varie.
+Ingsw	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Ingsw. Stack: Varie.
+Examples	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Examples. Stack: C++.
+Video Yt	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Video Yt. Stack: C++.
+7 String	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 7 String. Stack: C++.
+10 Funptr	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 10 Funptr. Stack: C++.
+1 Minimal	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 1 Minimal. Stack: C++.
+4 Allocation	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 4 Allocation. Stack: C++.
+8 Psecasgen	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 8 Psecasgen. Stack: C++.
+6 Iostream	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 6 Iostream. Stack: C++.
+5 Usertypes	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 5 Usertypes. Stack: C++.
+12 Templates	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 12 Templates. Stack: C++.
+2 Structured	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 2 Structured. Stack: C++.
+3 Basictypes	LEFT	PROJECT	PROJECT	L1	Progetto Mac: 3 Basictypes. Stack: C++.
+Sample	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Sample. Stack: C++.
+Binari	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Binari. Stack: Varie.
+Soluzione Postgress Pgadmin Prof	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Soluzione Postgress Pgadmin Prof. Stack: Varie.
+Posgre Sql Pg Admin	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Posgre Sql Pg Admin. Stack: Varie.
+Composetest	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Composetest. Stack: Python.
+Example	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Example. Stack: Varie.
+Test Repo Main	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Test Repo Main. Stack: Varie.
+App Alcool	RIGHT	PROJECT	PROJECT	L1	**SafeCheck** is a Flutter mobile app that helps users assess their alcohol consumption safety in real‑time. It combines
+App Tombola	LEFT	PROJECT	APP	L1	A new Flutter project.
+Cisco Certification	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Cisco Certification. Stack: Varie.
+Google Certificate	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Google Certificate. Stack: Varie.
+Nvidia Certification	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Nvidia Certification. Stack: Varie.
+Cose Laurea	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Cose Laurea. Stack: Varie.
+Esercizio Conto Corrente	LEFT	PROJECT	APP	L1	Un sistema bancario moderno con interfaccia grafica elegante in stile Apple, sviluppato in Java con JavaFX.
+Habit Tracker	LEFT	PROJECT	SCRIPT_TOOL	L1	Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nativa progettata per aiutarti a costruire,
+SwiftUI Interface Layer (proj-habittracker)	LEFT	MODULE	UI_COMPONENT	L2	Interfaccia utente dichiarativa SwiftUI per il progetto proj-habittracker.
+Uni Match 1	RIGHT	PROJECT	PROJECT	L1	App Flutter cross-platform (iOS + Android) per il dating tra studenti universitari italiani.
+Uni Stats	LEFT	PROJECT	PROJECT	L1	Un'applicazione iOS nativa per il tracciamento e la simulazione della carriera universitaria.
+SwiftUI Interface Layer (proj-unistats)	LEFT	MODULE	UI_COMPONENT	L2	Interfaccia utente dichiarativa SwiftUI per il progetto proj-unistats.
+Gioco Scacchi	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Gioco Scacchi. Stack: Python, Swift.
+Uni Match	RIGHT	PROJECT	PROJECT	L1	Progetto Mac: Uni Match. Stack: React, TypeScript.
+Palazzo	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Palazzo. Stack: C.
+New Project	LEFT	PROJECT	PROJECT	L1	Progetto Mac: New Project. Stack: JavaScript.
+Propedia Demo	LEFT	PROJECT	PROJECT	L1	Mockup stakeholder, not production app.
+Book	LEFT	PROJECT	PROJECT	L1	Progetto editoriale per edizione illustrata KDP.
+Render Final	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Render Final. Stack: Varie.
+Render Proof 1	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Render Proof 1. Stack: Varie.
+Render Proof Final	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Render Proof Final. Stack: Varie.
+Render1	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Render1. Stack: Varie.
+Render Pdf Temp	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Render Pdf Temp. Stack: Varie.
+Render Revision Final	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Render Revision Final. Stack: Varie.
+New Chapters	LEFT	PROJECT	PROJECT	L1	Progetto Mac: New Chapters. Stack: Varie.
+Render2	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Render2. Stack: Varie.
+Render3	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Render3. Stack: Varie.
+Render Revision	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Render Revision. Stack: Varie.
+Source Chapters	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Source Chapters. Stack: Varie.
+Rendered V2	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Rendered V2. Stack: Varie.
+Rendered	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Rendered. Stack: Varie.
+Outputs	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Outputs. Stack: Varie.
+Tscheck	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Tscheck. Stack: JavaScript, React, TailwindCSS, TypeScript, Vite.
+Calm Raman	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Calm Raman. Stack: Varie.
+Eager Pasteur	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Eager Pasteur. Stack: Varie.
+Pgf Pie	LEFT	PROJECT	PROJECT	L1	![CI](https://github.com/pgf-tikz/pgf-pie/workflows/CI/badge.svg)
+Workspace	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Workspace. Stack: JavaScript.
+Gods Eye View Main	LEFT	PROJECT	PROJECT	L1	Photorealistic 3D globe. Live aircraft, ships, satellites, earthquakes, traffic, and public cameras, with clearly labele
+Taste Skill	LEFT	PROJECT	PROJECT	L1	This directory is now a multi-style frontend skill pack with a single main entrypoint.
+Auth Screens	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Auth Screens. Stack: JavaScript.
+Jules Session 5370203018288358434	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Jules Session 5370203018288358434. Stack: JavaScript.
+Website	RIGHT	PROJECT	PROJECT	L1	Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizioni, FAQ e informazioni di supporto per l
+Tests	RIGHT	PROJECT	PROJECT	L1	Progetto Mac: Tests. Stack: TypeScript.
+Missing Feedback	RIGHT	PROJECT	PROJECT	L1	Progetto Mac: Missing Feedback. Stack: Express, JavaScript.
+Docs Md	RIGHT	PROJECT	PROJECT	L1	![Status](https://img.shields.io/badge/status-active-success.svg)
+Scripts	RIGHT	PROJECT	PROJECT	L1	Progetto Mac: Scripts. Stack: JavaScript, Python.
+Federico Iiapp	RIGHT	PROJECT	PROJECT	L1	Progetto Mac: Federico Iiapp. Stack: C, JavaScript, Python, React, Swift, TypeScript.
+Utils	RIGHT	PROJECT	PROJECT	L1	Progetto Mac: Utils. Stack: JavaScript, TypeScript.
+Mac Pulse Uitests	LEFT	PROJECT	SCRIPT_TOOL	L1	Progetto Mac: Mac Pulse Uitests. Stack: Swift.
+Mac Pulse Tests	LEFT	PROJECT	SCRIPT_TOOL	L1	Progetto Mac: Mac Pulse Tests. Stack: Swift.
+Mac Pulse2Tests	LEFT	PROJECT	SCRIPT_TOOL	L1	Progetto Mac: Mac Pulse2Tests. Stack: Swift.
+App Icon.Appiconset	LEFT	PROJECT	PROJECT	L1	Progetto Mac: App Icon.Appiconset. Stack: Varie.
+Accent Color.Colorset	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Accent Color.Colorset. Stack: Varie.
+Mac Pulse2Uitests	LEFT	PROJECT	SCRIPT_TOOL	L1	Progetto Mac: Mac Pulse2Uitests. Stack: Swift.
+Food Lab2025	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Food Lab2025. Stack: Varie.
+Pack4	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Pack4. Stack: Varie.
+Pack3	LEFT	PROJECT	PROJECT	L1	Progetto Mac: Pack3. Stack: Varie.
+Tassonomia Architetturale: Cloud Database vs Local-First Graph PKM	LEFT	AI_REASONING	AI_REASONING	L1	Formalizzazione della dicotomia tra Notion (database relazionale cloud-first con metadati strutturati) e Obsidian (knowl
+Analisi Integrazioni LLM con Notion e Obsidian	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di spiegazione comparativa sulle ragioni e i casi d'uso dell'integrazione di LLM con Notion e Obsidian.
+Episodio: Confronto PKM e RAG su Notion e Obsidian	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione incentrata sui motivi per cui gli utenti collegano i propri workspace Notion e Obsidian ai modelli di linguaggi
+Progettazione Ecosistema & Integrazioni Future del Supercervello	LEFT	USER_INTENT	USER_INTENT	L1	Identificazione delle migliori applicazioni, sistemi, flussi e potenziamenti architetturali per estendere il connettoma 
+Piano Strategico di Evoluzione ad Alto Impatto per il Connettoma	LEFT	AI_REASONING	AI_REASONING	L1	Proposta architetturale a 5 pilastri: Quick-Capture macOS (Raycast/Siri), Knowledge Streams (Readwise/GitHub CI), Motore
+Episodio: Brainstorming Evolutivo & Nuove Frontiere del Supercervello	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione strategica tra Pierfrancesco e Gemini 3.7 Flash sull'espansione e integrazione del connettoma con nuove app e s
+Potenziamento Grafico Mappamondo 3D & Relazioni Sinaptiche	LEFT	INTENT	USER_INTENT	L1	Richiesta di trasformazione visiva del Mappamondo 3D con spotlight interattivo delle relazioni, gabbia olografica e card
+Architettura Mappamondo 3D: Gabbia Olografica, Laser Sinaptici & Floating Rel Card	LEFT	REASONING	AI_REASONING	L1	Implementazione di anelli equatoriali/meridiani Three.js, isolamento 1st-degree neighbors al click, raggi laser additivi
+Verifica del Vincolo Architetturale Zero-Cost (0,00€)	LEFT	USER_INTENT	USER_INTENT	L1	Controllo rigoroso della gratuità totale (0,00€) di tutte le estensioni, integrazioni, strumenti e modelli proposti per 
+Validazione e Blindatura della Strategia 100% Zero-Cost	LEFT	AI_REASONING	AI_REASONING	L1	Tutti i componenti proposti poggiano su strumenti open-source, risorse locali macOS, tier gratuiti a vita (Render, GitHu
+Episodio: Controllo di Rispetto del Vincolo 0,00€ Forever	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Verifica dettagliata punto per punto che l'intero piano di espansione del supercervello rispetti la regola aurea dei 0,0
+Test Raycast Node	LEFT	ARCHITECTURE	ARCHITECTURE	L2	Verifica integrazione Raycast con il connettoma
+Oggi ho riflettuto sul principio stoico della dicotomia del	RIGHT	LIFE_LESSON	LIFE_LESSON	L2	Oggi ho riflettuto sul principio stoico della dicotomia del controllo nella vita e nel lavoro.
+Documentazione Ufficiale FastAPI Dependency Injection	LEFT	ARCHITECTURE	ARCHITECTURE	L2	FastAPI Dependency Injection system provides clean hierarchical dependency management.
+Meditazioni (Marco Aurelio) - Estratto	RIGHT	KINDLE_HIGHLIGHT	LIFE_LESSON	L2	Non perdere altro tempo a discutere su cosa sia un uomo buono: sii un uomo buono.
+Clean Code: A Handbook of Agile Software Craftsmanship (Robert C. Martin) - Estratto	LEFT	KINDLE_HIGHLIGHT	MENTAL_MODEL	L2	Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
+Intento: Test Hook Session End	LEFT	USER_INTENT	USER_INTENT	L1	Obiettivo operativo: Test Hook Session End.
+Ragionamento: Test Hook Session End	LEFT	AI_REASONING	AI_REASONING	L1	Verifica automatica dell hook di fine sessione
+Episodio: Test Hook Session End	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di sviluppo dedicata a: Test Hook Session End.
+Riflessione sull'antifragilità nei sistemi software compless	RIGHT	LIFE_LESSON	LIFE_LESSON	L2	Riflessione sull'antifragilità nei sistemi software complessi e distribuiti.
+Il Cigno Nero (Nassim Taleb) - Estratto	RIGHT	KINDLE_HIGHLIGHT	LIFE_LESSON	L2	Non considerare solo ciò che vedi, ma anche ciò che non vedi.
+Intento: E2E Test Session Hook	LEFT	USER_INTENT	USER_INTENT	L1	Obiettivo operativo: E2E Test Session Hook.
+Ragionamento: E2E Test Session Hook	LEFT	AI_REASONING	AI_REASONING	L1	Verifica automatica suite
+Episodio: E2E Test Session Hook	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di sviluppo dedicata a: E2E Test Session Hook.
+Riflessione sull'antifragilità nei sistemi software compless	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L2	Riflessione sull'antifragilità nei sistemi software complessi e distribuiti.
+Intento: E2E Test Session Hook	LEFT	USER_INTENT	USER_INTENT	L1	Obiettivo operativo: E2E Test Session Hook.
+Ragionamento: E2E Test Session Hook	LEFT	AI_REASONING	AI_REASONING	L1	Verifica automatica suite
+Episodio: E2E Test Session Hook	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di sviluppo dedicata a: E2E Test Session Hook.
+Riflessione sull'antifragilità nei sistemi software compless	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L2	Riflessione sull'antifragilità nei sistemi software complessi e distribuiti.
+Il Cigno Nero (Nassim Taleb) - Estratto	RIGHT	KINDLE_HIGHLIGHT	LIFE_LESSON	L2	Non considerare solo ciò che vedi, ma anche ciò che non vedi. Token: 1788202485792
+Intento: E2E Test Session Hook	LEFT	USER_INTENT	USER_INTENT	L1	Obiettivo operativo: E2E Test Session Hook.
+Ragionamento: E2E Test Session Hook	LEFT	AI_REASONING	AI_REASONING	L1	Verifica automatica suite
+Episodio: E2E Test Session Hook	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di sviluppo dedicata a: E2E Test Session Hook.
+Riflessione sull'antifragilità nei sistemi software compless	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L2	Riflessione sull'antifragilità nei sistemi software complessi e distribuiti.
+Il Cigno Nero (Nassim Taleb) - Estratto	RIGHT	KINDLE_HIGHLIGHT	LIFE_LESSON	L2	Non considerare solo ciò che vedi, ma anche ciò che non vedi. Token: 1788202529771
+Intento: E2E Test Session Hook	LEFT	USER_INTENT	USER_INTENT	L1	Obiettivo operativo: E2E Test Session Hook.
+Ragionamento: E2E Test Session Hook	LEFT	AI_REASONING	AI_REASONING	L1	Verifica automatica suite
+Episodio: E2E Test Session Hook	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di sviluppo dedicata a: E2E Test Session Hook.
+Implementazione e Collaudo Ecosistema Ubiquitous Supercervello	LEFT	USER_INTENT	USER_INTENT	L1	Costruzione completa e collaudo a 10 test di tutti i moduli di estensione: Raycast, Web Clipper Safari, Siri Voice Note,
+Architettura e Realizzazione dell'Ecosistema Ubiquitous Supercervello	LEFT	AI_REASONING	AI_REASONING	L1	Implementazione modulare a 5 fasi con zero dipendenze esterne a pagamento, SQLite WAL ad alte prestazioni e suite di tes
+Episodio: Rilascio e Collaudo Completo del Supercervello Cognitivo	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Completamento e collaudo con successo di tutti i moduli dell'ecosistema cognitivo onnipresente a costo zero.
+Revisione Piano Supercervello Ubiquitous Cognitive OS	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di revisione strategica ed ingegneristica del piano di estensione del cervello artificiale in un Cognitive OS 
+Valutazione Architetturale e Strategica Supercervello OS	LEFT	AI_REASONING	AI_REASONING	L1	Analisi dell'architettura proposta: approvazione dell'approccio zero-cost locale e validazione dei moduli di cattura a z
+Episodio: Revisione Piano Supercervello Cognitive OS	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di revisione critica del piano di implementazione del Supercervello Ubiquitous Cognitive OS a costo zero.
+Riflessione sull'antifragilità nei sistemi software compless	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L2	Riflessione sull'antifragilità nei sistemi software complessi e distribuiti.
+Il Cigno Nero (Nassim Taleb) - Estratto	RIGHT	KINDLE_HIGHLIGHT	LIFE_LESSON	L2	Non considerare solo ciò che vedi, ma anche ciò che non vedi. Token: 1788202690874
+Intento: E2E Test Session Hook	LEFT	USER_INTENT	USER_INTENT	L1	Obiettivo operativo: E2E Test Session Hook.
+Ragionamento: E2E Test Session Hook	LEFT	AI_REASONING	AI_REASONING	L1	Verifica automatica suite
+Episodio: E2E Test Session Hook	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di sviluppo dedicata a: E2E Test Session Hook.
+Nota Rapida Raycast Test	RIGHT	ARCHITECTURE	ARCHITECTURE	L2	Verifica esecuzione diretta
+Test shortcuts debug	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L2	Test shortcuts debug
+Riflessione sull'antifragilità nei sistemi software compless	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L2	Riflessione sull'antifragilità nei sistemi software complessi e distribuiti.
+Il Cigno Nero (Nassim Taleb) - Estratto	RIGHT	KINDLE_HIGHLIGHT	LIFE_LESSON	L2	Non considerare solo ciò che vedi, ma anche ciò che non vedi. Token: 1788208745203
+Intento: E2E Test Session Hook	LEFT	USER_INTENT	USER_INTENT	L1	Obiettivo operativo: E2E Test Session Hook.
+Ragionamento: E2E Test Session Hook	LEFT	AI_REASONING	AI_REASONING	L1	Verifica automatica suite
+Episodio: E2E Test Session Hook	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di sviluppo dedicata a: E2E Test Session Hook.
+Riflessione sull'antifragilità nei sistemi software compless	LEFT	COGNITIVE_RULE	COGNITIVE_RULE	L2	Riflessione sull'antifragilità nei sistemi software complessi e distribuiti.
+Test E2E Web Clipper Node	RIGHT	CREATIVE_IDEA	CREATIVE_IDEA	L1	Verifica completa dell'ingestione Web Clipper.
+Il Cigno Nero (Nassim Taleb) - Estratto	RIGHT	KINDLE_HIGHLIGHT	LIFE_LESSON	L2	Non considerare solo ciò che vedi, ma anche ciò che non vedi. Token: 1788209065631
+Intento: E2E Test Session Hook	LEFT	USER_INTENT	USER_INTENT	L1	Obiettivo operativo: E2E Test Session Hook.
+Ragionamento: E2E Test Session Hook	LEFT	AI_REASONING	AI_REASONING	L1	Verifica automatica suite
+Episodio: E2E Test Session Hook	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di sviluppo dedicata a: E2E Test Session Hook.
+Voglio portare a spasso il cane perché mi provoca tante emoz	RIGHT	LIFE_LESSON	LIFE_LESSON	L2	Voglio portare a spasso il cane perché mi provoca tante emozioni e mi manca
+Compressione Lessicale e Fluidità Accademica	LEFT	AI_REASONING	AI_REASONING	L1	Rimozione della struttura a elenco puntato in favore di due brevi paragrafi densi di contenuto, preservando tutti i rife
+Accorciamento e Compressione Cappello Capitolo 6	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di revisione e sintesi del cappello introduttivo per il Capitolo 6, riducendo la lunghezza e mantenendo una fo
+Episodio: Revisione Sintetica Introduzione Risultati	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Iterazione rapida per ridurre la verbosità del testo introduttivo del capitolo dei risultati della tesi di Pierfrancesco
+Integrazione Lessicale di Tabelle e Metriche Quantitative	LEFT	AI_REASONING	AI_REASONING	L1	Inserimento di un capoverso finale che valorizza le tabelle riassuntive della tesi (Tabelle 6.4 - 6.16) e l'analisi quan
+Integrazione Riferimento Tabelle Comparative nel Cappello del Capitolo 6	LEFT	USER_INTENT	USER_INTENT	L1	Richiesta di aggiungere 2-3 righe al cappello introduttivo del Capitolo 6 specificando che i risultati saranno presentat
+Episodio: Finalizzazione Cappello Risultati con Riferimento Tabelle	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Completamento dell'introduzione sintetica al capitolo dei risultati con menzione specifica al confronto tramite tabelle 
+Chiarimento Stack Rendering Grafi Frontend	LEFT	USER_INTENT	USER_INTENT	L1	Verifica dello stato di utilizzo e adozione di Vis-network, 3d-force-graph, Three.js, D3.js e Cytoscape.js nel frontend 
+Analisi e Mappatura Stack Grafico Frontend	LEFT	AI_REASONING	AI_REASONING	L1	Analisi tecnica comparativa sull'impiego reale di Vis-Network (vista 2D), Three.js (Mappamondo 3D), D3.js / 3D-Force-Gra
+Episodio: Chiarimento Tecnologie Grafiche Frontend	RIGHT	CONVERSATION_EPISODE	CONVERSATION_EPISODE	L1	Sessione di chiarimento sullo stack di visualizzazione grafi adottato e prototipato nel sito e nella dashboard del conne

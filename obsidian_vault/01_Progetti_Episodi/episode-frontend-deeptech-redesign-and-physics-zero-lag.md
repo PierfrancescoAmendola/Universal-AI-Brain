@@ -25,6 +25,6 @@ Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), e
 ## 🔗 Connessioni Uscenti
 - [[architecture-vis-network-silent-stabilization-zero-lag]] (`PRODUCED_ARCHITECTURE`) — _Restored from history_
 - [[design-token-cyberpunk-minimalist-palette]] (`APPLIED_DESIGN_SYSTEM`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`INVOLVES_USER`) — _Restored from history_
 - [[ui-component-palazzo-cognitivo-multi-layer-navigator]] (`REFINED_COMPONENT`) — _Restored from history_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`INVOLVES_USER`) — _Disegnato su Obsidian Canvas_

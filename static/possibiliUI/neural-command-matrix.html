@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>UNIVERSAL AI BRAIN // CYBER-COMMAND MATRIX v3.0</title>
+  
+  <!-- Elite Sci-Fi & Tactical Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,800;1,400&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Data & Three.js 3D WebGL Library -->
+  <script src="./brain_data.js"></script>
+  <script src="./vendor/three.min.js"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+      document.head.appendChild(s);
+    }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       1. CYBER-COMMAND DESIGN SYSTEM & TOKENS
+       ========================================================================== */
+    :root {
+      /* Theme 1: AURA TRON CYBER (Default - Cyan / Neon Violet / Deep Space) */
+      --bg-space: #02040a;
+      --bg-panel: rgba(4, 9, 20, 0.88);
+      --bg-panel-solid: #060e1d;
+      --bg-surface: rgba(10, 22, 44, 0.7);
+      --bg-surface-hover: rgba(18, 38, 75, 0.85);
+      --bg-glass: rgba(6, 18, 36, 0.65);
+      
+      --accent-main: #00f0ff;       /* Cyber Cyan */
+      --accent-sec: #bd00ff;        /* Neon Purple */
+      --accent-left: #00d2ff;       /* Left Logic */
+      --accent-right: #ff0055;      /* Right Creative */
+      --accent-bridge: #bd00ff;     /* Corpus Callosum */
+      --accent-alert: #ff1e56;      /* DEFCON Red */
+      --accent-warn: #ffaa00;       /* Warning Amber */
+      --accent-matrix: #00ff88;     /* Matrix Green */
+
+      --border-subtle: rgba(0, 240, 255, 0.18);
+      --border-bright: rgba(0, 240, 255, 0.55);
+      --border-glow: #00f0ff;
+      --grid-line: rgba(0, 240, 255, 0.05);
+
+      --text-white: #f0f6fc;
+      --text-dim: #7d96b8;
+      --text-muted: #425875;
+      --text-glow: #00f0ff;
+
+      --glow-box: 0 0 20px rgba(0, 240, 255, 0.25);
+      --glow-text: 0 0 10px rgba(0, 240, 255, 0.6);
+
+      --font-display: 'Orbitron', -apple-system, sans-serif;
+      --font-tech: 'Rajdhani', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    /* THEME 2: WAR-OPS PHOSPHOR (Amber Plasma / Stealth Carbon) */
+    body[data-theme="amber"] {
+      --bg-space: #050402;
+      --bg-panel: rgba(16, 12, 4, 0.9);
+      --bg-panel-solid: #150f05;
+      --bg-surface: rgba(35, 25, 10, 0.7);
+      --bg-surface-hover: rgba(55, 40, 15, 0.85);
+      --bg-glass: rgba(25, 18, 7, 0.65);
+
+      --accent-main: #ff9900;
+      --accent-sec: #ff3c00;
+      --accent-left: #ffaa00;
+      --accent-right: #ff2255;
+      --accent-bridge: #ffdd00;
+      --accent-alert: #ff1133;
+      --accent-warn: #ffcc00;
+      --accent-matrix: #99ff00;
+
+      --border-subtle: rgba(255, 153, 0, 0.2);
+      --border-bright: rgba(255, 153, 0, 0.6);
+      --border-glow: #ff9900;
+      --grid-line: rgba(255, 153, 0, 0.05);
+
+      --text-white: #fff8eb;
+      --text-dim: #b89870;
+      --text-muted: #6e5538;
+      --text-glow: #ff9900;
+
+      --glow-box: 0 0 20px rgba(255, 153, 0, 0.25);
+      --glow-text: 0 0 10px rgba(255, 153, 0, 0.6);
+    }
+
+    /* THEME 3: DEFCON TITANIUM (Crimson Battle Station) */
+    body[data-theme="crimson"] {
+      --bg-space: #070103;
+      --bg-panel: rgba(18, 4, 8, 0.9);
+      --bg-panel-solid: #1c060d;
+      --bg-surface: rgba(45, 10, 20, 0.7);
+      --bg-surface-hover: rgba(70, 16, 32, 0.85);
+      --bg-glass: rgba(30, 7, 14, 0.65);
+
+      --accent-main: #ff1e56;
+      --accent-sec: #ff7b00;
+      --accent-left: #ff3366;
+      --accent-right: #00e5ff;
+      --accent-bridge: #ff77aa;
+      --accent-alert: #ff0033;
+      --accent-warn: #ffbb00;
+      --accent-matrix: #00ffaa;
+
+      --border-subtle: rgba(255, 30, 86, 0.22);
+      --border-bright: rgba(255, 30, 86, 0.65);
+      --border-glow: #ff1e56;
+      --grid-line: rgba(255, 30, 86, 0.05);
+
+      --text-white: #fff0f3;
+      --text-dim: #c28392;
+      --text-muted: #733c49;
+      --text-glow: #ff1e56;
+
+      --glow-box: 0 0 20px rgba(255, 30, 86, 0.3);
+      --glow-text: 0 0 10px rgba(255, 30, 86, 0.7);
+    }
+
+    /* THEME 4: QUANTUM MATRIX (Emerald EMP & Cyber Rain) */
+    body[data-theme="matrix"] {
+      --bg-space: #010804;
+      --bg-panel: rgba(3, 16, 8, 0.9);
+      --bg-panel-solid: #05200b;
+      --bg-surface: rgba(10, 40, 20, 0.7);
+      --bg-surface-hover: rgba(16, 65, 32, 0.85);
+      --bg-glass: rgba(7, 28, 14, 0.65);
+
+      --accent-main: #00ff88;
+      --accent-sec: #00e5ff;
+      --accent-left: #00ffaa;
+      --accent-right: #ff3366;
+      --accent-bridge: #66ffcc;
+      --accent-alert: #ff1e56;
+      --accent-warn: #ffaa00;
+      --accent-matrix: #00ff88;
+
+      --border-subtle: rgba(0, 255, 136, 0.2);
+      --border-bright: rgba(0, 255, 136, 0.6);
+      --border-glow: #00ff88;
+      --grid-line: rgba(0, 255, 136, 0.05);
+
+      --text-white: #ebfff4;
+      --text-dim: #73b38c;
+      --text-muted: #3a6b4c;
+      --text-glow: #00ff88;
+
+      --glow-box: 0 0 20px rgba(0, 255, 136, 0.25);
+      --glow-text: 0 0 10px rgba(0, 255, 136, 0.6);
+    }
+
+    /* ==========================================================================
+       2. GLOBAL RESET & SCI-FI ENVIRONMENT
+       ========================================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      outline: none;
+    }
+
+    body {
+      background-color: var(--bg-space);
+      color: var(--text-white);
+      font-family: var(--font-tech);
+      font-size: 14px;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      position: relative;
+    }
+
+    /* Holographic Hexagonal & Cartesian Grid */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Vignette & CRT Scanlines */
+    body::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.85) 100%),
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Tactical Chamfer Helper */
+    .tactical-box {
+      background: var(--bg-panel);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .tactical-box::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid var(--accent-main);
+      border-left: 2px solid var(--accent-main);
+      pointer-events: none;
+    }
+
+    .tactical-box::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 8px;
+      height: 8px;
+      border-bottom: 2px solid var(--accent-main);
+      border-right: 2px solid var(--accent-main);
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       3. TOP CLASSIFICATION & SITUATION BAR
+       ========================================================================== */
+    .c2-classified-bar {
+      height: 26px;
+      background: #000000;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      z-index: 20;
+      position: relative;
+    }
+
+    .c2-classified-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-main);
+      font-weight: 700;
+    }
+
+    .c2-defcon-badge {
+      background: rgba(255, 30, 86, 0.2);
+      border: 1px solid var(--accent-alert);
+      color: var(--accent-alert);
+      padding: 1px 6px;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      animation: defcon-pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes defcon-pulse {
+      0%, 100% { box-shadow: 0 0 2px var(--accent-alert); opacity: 1; }
+      50% { box-shadow: 0 0 10px var(--accent-alert); opacity: 0.8; }
+    }
+
+    .c2-ticker-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--text-dim);
+    }
+
+    .c2-ticker-group span strong {
+      color: var(--text-white);
+    }
+
+    .c2-theme-pills {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .c2-theme-btn {
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 2px 7px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .c2-theme-btn:hover {
+      border-color: var(--accent-main);
+      color: var(--text-white);
+    }
+
+    .c2-theme-btn.active {
+      background: var(--accent-main);
+      color: #000;
+      font-weight: 800;
+      border-color: var(--accent-main);
+      box-shadow: 0 0 8px var(--accent-main);
+    }
+
+    /* ==========================================================================
+       4. MASTER CYBER-COMMAND TOPBAR (HUD CONTROLLER)
+       ========================================================================== */
+    .c2-master-topbar {
+      height: 52px;
+      background: var(--bg-panel);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-bright);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      z-index: 20;
+      position: relative;
+    }
+
+    .c2-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .c2-hologram-emitter {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--accent-main);
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--glow-box);
+    }
+
+    .c2-emitter-beam {
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      border-top: 2px solid var(--accent-main);
+      border-bottom: 2px solid transparent;
+      animation: emitter-spin 2s linear infinite;
+    }
+
+    @keyframes emitter-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .c2-brand-titles {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .c2-brand-title {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      color: #ffffff;
+      text-shadow: var(--glow-text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .c2-brand-title span.ver {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      padding: 1px 4px;
+      background: rgba(0, 240, 255, 0.15);
+      border: 1px solid var(--accent-main);
+      color: var(--accent-main);
+      font-weight: 700;
+    }
+
+    .c2-brand-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+
+    /* Synaptic Telemetry HUD Counters */
+    .c2-hud-counters {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .c2-stat-pod {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 4px 10px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      position: relative;
+    }
+
+    .c2-stat-pod::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: var(--accent-main);
+    }
+
+    .c2-stat-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .c2-stat-dot.left { background: var(--accent-left); box-shadow: 0 0 6px var(--accent-left); }
+    .c2-stat-dot.right { background: var(--accent-right); box-shadow: 0 0 6px var(--accent-right); }
+    .c2-stat-dot.bridge { background: var(--accent-bridge); box-shadow: 0 0 6px var(--accent-bridge); }
+
+    .c2-stat-val {
+      font-weight: 800;
+      color: var(--text-white);
+    }
+
+    /* Action Controls Bar */
+    .c2-top-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .c2-action-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      font-family: var(--font-tech);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 5px 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .c2-action-btn:hover {
+      background: var(--bg-surface-hover);
+      border-color: var(--accent-main);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    }
+
+    .c2-action-btn.primary {
+      background: rgba(0, 240, 255, 0.15);
+      border-color: var(--accent-main);
+      color: var(--accent-main);
+      font-weight: 700;
+    }
+
+    .c2-action-btn.primary:hover {
+      background: var(--accent-main);
+      color: #000;
+      box-shadow: var(--glow-box);
+    }
+
+    .c2-sound-btn {
+      width: 32px;
+      height: 30px;
+      padding: 0;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* ==========================================================================
+       5. MAIN COMBAT WORKSPACE
+       ========================================================================== */
+    .c2-workspace {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    /* LEFT SENSOR WING (Telemetry, Brainwaves, Domain Silos) */
+    .c2-left-wing {
+      width: 240px;
+      height: 100%;
+      background: var(--bg-panel);
+      backdrop-filter: blur(14px);
+      border-right: 1px solid var(--border-bright);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      z-index: 15;
+    }
+
+    .c2-wing-section {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .c2-section-header {
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--accent-main);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-transform: uppercase;
+    }
+
+    /* Oscilloscope / Brainwave Box */
+    #oscilloscope-canvas {
+      width: 100%;
+      height: 55px;
+      background: rgba(0,0,0,0.5);
+      border: 1px solid var(--border-subtle);
+      display: block;
+    }
+
+    /* Quick Filter Silos */
+    .c2-silo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    .c2-silo-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid transparent;
+      padding: 4px 8px;
+      font-family: var(--font-tech);
+      font-size: 12px;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .c2-silo-item:hover {
+      background: var(--bg-surface);
+      border-color: var(--border-subtle);
+      color: var(--text-white);
+    }
+
+    .c2-silo-item.active {
+      background: rgba(0, 240, 255, 0.12);
+      border-color: var(--accent-main);
+      color: var(--accent-main);
+      font-weight: 700;
+    }
+
+    .c2-silo-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      background: rgba(255,255,255,0.06);
+      padding: 1px 5px;
+      color: var(--text-dim);
+    }
+
+    /* Cognitive Floors Panel (Palazzo Cognitivo) */
+    .c2-floor-group {
+      display: flex;
+      gap: 4px;
+      margin-top: 6px;
+    }
+
+    .c2-floor-btn {
+      flex: 1;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 5px 0;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s ease;
+    }
+
+    .c2-floor-btn:hover {
+      border-color: var(--accent-main);
+      color: var(--text-white);
+    }
+
+    .c2-floor-btn.active {
+      background: var(--accent-main);
+      color: #000;
+      border-color: var(--accent-main);
+    }
+
+    /* ==========================================================================
+       6. CENTRAL HOLO-VIEWPORT (GRAPH & 3D CYBERSPACE)
+       ========================================================================== */
+    .c2-center-viewport {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    #tactical-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: crosshair;
+    }
+
+    #threejs-3d-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 5;
+    }
+
+    /* Floating Viewport HUD Controls */
+    .c2-floating-hud {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 12;
+      background: var(--bg-panel);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      padding: 4px;
+    }
+
+    .c2-mode-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-dim);
+      font-family: var(--font-tech);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+    }
+
+    .c2-mode-btn:hover {
+      color: var(--text-white);
+      background: var(--bg-surface);
+    }
+
+    .c2-mode-btn.active {
+      background: var(--accent-main);
+      color: #000000;
+      font-weight: 800;
+      box-shadow: 0 0 10px var(--accent-main);
+    }
+
+    /* Search & Target Acquisition Field */
+    .c2-floating-search {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 12;
+      background: var(--bg-panel);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      padding: 4px 8px;
+      width: 280px;
+    }
+
+    .c2-search-input {
+      background: transparent;
+      border: none;
+      color: var(--text-white);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      width: 100%;
+    }
+
+    .c2-search-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .c2-search-kbd {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border-subtle);
+      padding: 1px 4px;
+      color: var(--text-dim);
+    }
+
+    /* Target Acquisition Reticle Overlay Tooltip */
+    #target-reticle-tooltip {
+      position: absolute;
+      pointer-events: none;
+      display: none;
+      z-index: 25;
+      background: rgba(2, 6, 14, 0.92);
+      border: 1px solid var(--accent-main);
+      padding: 6px 10px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      transform: translate(18px, -50%);
+      box-shadow: 0 0 14px rgba(0, 240, 255, 0.3);
+      max-width: 280px;
+    }
+
+    #target-reticle-tooltip::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid var(--accent-main);
+    }
+
+    .ret-target-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--accent-main);
+      font-weight: 800;
+      margin-bottom: 3px;
+    }
+
+    .ret-target-name {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 11.5px;
+      margin-bottom: 2px;
+    }
+
+    .ret-target-sub {
+      color: var(--text-dim);
+      font-size: 9.5px;
+    }
+
+    /* Bottom Zoom & View Controls */
+    .c2-viewport-tools {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 12;
+      background: var(--bg-panel);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      padding: 3px;
+    }
+
+    .c2-tool-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      width: 28px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .c2-tool-btn:hover {
+      background: var(--bg-surface);
+      color: var(--text-white);
+      border-color: var(--border-subtle);
+    }
+
+    /* ==========================================================================
+       7. RIGHT INTELLIGENCE DOSSIER (TARGET INTEL & GRAPH TRAVERSAL)
+       ========================================================================== */
+    .c2-right-dossier {
+      width: 330px;
+      height: 100%;
+      background: var(--bg-panel);
+      backdrop-filter: blur(16px);
+      border-left: 1px solid var(--border-bright);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      z-index: 15;
+    }
+
+    .c2-dossier-banner {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .c2-target-lock-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      color: var(--accent-main);
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .c2-target-title {
+      font-family: var(--font-tech);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .c2-target-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .c2-tag-pill {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid var(--border-subtle);
+      color: var(--accent-main);
+      padding: 1px 6px;
+    }
+
+    /* Dossier Tab Selector */
+    .c2-dossier-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(0,0,0,0.4);
+    }
+
+    .c2-tab-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-dim);
+      font-family: var(--font-tech);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 0;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s ease;
+    }
+
+    .c2-tab-btn:hover {
+      color: var(--text-white);
+    }
+
+    .c2-tab-btn.active {
+      color: var(--accent-main);
+      border-bottom-color: var(--accent-main);
+      background: rgba(0, 240, 255, 0.05);
+    }
+
+    /* Dossier Content Body */
+    .c2-dossier-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .c2-intel-block {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border-subtle);
+      padding: 10px 12px;
+    }
+
+    .c2-intel-label {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.1em;
+      color: var(--accent-main);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .c2-intel-val {
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--text-white);
+    }
+
+    /* Synaptic Connections List */
+    .c2-link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      max-height: 190px;
+      overflow-y: auto;
+    }
+
+    .c2-link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border-subtle);
+      padding: 5px 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .c2-link-item:hover {
+      background: var(--bg-surface);
+      border-color: var(--accent-main);
+      color: var(--accent-main);
+    }
+
+    /* Pathfinding Box */
+    .c2-path-box {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .c2-path-select {
+      background: #060e1d;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 6px 8px;
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       8. BOTTOM CYBER-OPS TERMINAL DRAWER (SIGINT & COMMAND LINE)
+       ========================================================================== */
+    .c2-terminal-drawer {
+      height: 150px;
+      background: rgba(1, 4, 10, 0.96);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid var(--border-bright);
+      display: flex;
+      flex-direction: column;
+      z-index: 20;
+      transition: height 0.25s ease;
+      position: relative;
+    }
+
+    .c2-terminal-drawer.collapsed {
+      height: 28px;
+    }
+
+    .c2-terminal-top {
+      height: 28px;
+      background: #000000;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      cursor: pointer;
+    }
+
+    .c2-term-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-main);
+      font-weight: 700;
+    }
+
+    .c2-term-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-main);
+      box-shadow: 0 0 6px var(--accent-main);
+      animation: pulse-dot 1.2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.8); }
+    }
+
+    .c2-terminal-logs {
+      flex: 1;
+      padding: 8px 14px;
+      overflow-y: auto;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #94a3b8;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .c2-log-line {
+      display: flex;
+      gap: 8px;
+    }
+
+    .c2-log-time { color: var(--text-muted); }
+    .c2-log-sig { color: var(--accent-main); font-weight: 700; }
+
+    .c2-terminal-prompt {
+      height: 28px;
+      background: #040812;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 8px;
+    }
+
+    .c2-prompt-sym {
+      color: var(--accent-main);
+      font-family: var(--font-mono);
+      font-weight: 900;
+    }
+
+    .c2-prompt-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-white);
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+
+    /* ==========================================================================
+       9. COGNITIVE MODALS (RESURFACE, TENSIONS, WEAVE, FIRMWARE)
+       ========================================================================== */
+    .c2-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 20px;
+    }
+
+    .c2-modal-overlay.active {
+      display: flex;
+    }
+
+    .c2-modal-window {
+      width: 720px;
+      max-width: 95vw;
+      max-height: 85vh;
+      background: var(--bg-panel-solid);
+      border: 1px solid var(--border-bright);
+      box-shadow: 0 0 35px rgba(0, 240, 255, 0.25);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .c2-modal-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .c2-modal-title {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .c2-modal-close {
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .c2-modal-close:hover {
+      color: #fff;
+      border-color: var(--accent-alert);
+      background: rgba(255, 30, 86, 0.2);
+    }
+
+    .c2-modal-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .c2-modal-card {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border-subtle);
+      padding: 12px 14px;
+    }
+
+    .c2-modal-card-tag {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      color: var(--accent-main);
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .c2-modal-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .c2-modal-card-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body data-theme="tron">
+
+  <!-- 1. TOP CLASSIFIED TELEMETRY BAR -->
+  <div class="c2-classified-bar">
+    <div class="c2-classified-tag">
+      <span>🛰️ TOP SECRET // NORAD-C4ISR CYBER COMMAND</span>
+      <span class="c2-defcon-badge">DEFCON 1</span>
+    </div>
+
+    <div class="c2-ticker-group">
+      <span>ZULU: <strong id="c2-zulu-clock">00:00:00Z</strong></span>
+      <span>MEMORY INTEGRITY: <strong id="c2-integrity-val">100% NOMINAL</strong></span>
+      <span>ACTIVE RADAR: <strong id="c2-radar-azimuth">045° AZ</strong></span>
+    </div>
+
+    <div class="c2-theme-pills">
+      <button class="c2-theme-btn active" id="btn-th-tron" onclick="setCyberTheme('tron')">AURA TRON</button>
+      <button class="c2-theme-btn" id="btn-th-amber" onclick="setCyberTheme('amber')">WAR-OPS</button>
+      <button class="c2-theme-btn" id="btn-th-crimson" onclick="setCyberTheme('crimson')">TITANIUM</button>
+      <button class="c2-theme-btn" id="btn-th-matrix" onclick="setCyberTheme('matrix')">MATRIX</button>
+    </div>
+  </div>
+
+  <!-- 2. MASTER COMMAND TOPBAR -->
+  <header class="c2-master-topbar">
+    <div class="c2-brand">
+      <div class="c2-hologram-emitter">
+        <div class="c2-emitter-beam"></div>
+        <span>🧠</span>
+      </div>
+      <div class="c2-brand-titles">
+        <div class="c2-brand-title">
+          <span>UNIVERSAL AI BRAIN</span>
+          <span class="ver">CYBER-C2 v3.0</span>
+        </div>
+        <div class="c2-brand-sub">Holographic Bi-Hemispheric Connectome Interface</div>
+      </div>
+    </div>
+
+    <!-- Live Telemetry Counters -->
+    <div class="c2-hud-counters">
+      <div class="c2-stat-pod" title="Emisfero Sinistro: Architettura, Algoritmi, Logica">
+        <span class="c2-stat-dot left"></span>
+        <span>SX CORTEX:</span>
+        <strong id="stat-left-val" class="c2-stat-val">0</strong>
+      </div>
+      <div class="c2-stat-pod" title="Emisfero Destro: Design, Emozioni, Episodi">
+        <span class="c2-stat-dot right"></span>
+        <span>DX CORTEX:</span>
+        <strong id="stat-right-val" class="c2-stat-val">0</strong>
+      </div>
+      <div class="c2-stat-pod" title="Ponti Inter-Emisferici">
+        <span class="c2-stat-dot bridge"></span>
+        <span>PONTI:</span>
+        <strong id="stat-bridge-val" class="c2-stat-val">0</strong>
+      </div>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="c2-top-actions">
+      <button class="c2-action-btn primary" onclick="openCyberModal('modal-resurface')">
+        <span>🔄</span>
+        <span>90s Resurface</span>
+      </button>
+      <button class="c2-action-btn" onclick="openCyberModal('modal-tensions')">
+        <span>⚡</span>
+        <span>Tensioni</span>
+      </button>
+      <button class="c2-action-btn" onclick="openCyberModal('modal-weave')">
+        <span>🕸️</span>
+        <span>Weave Links</span>
+      </button>
+      <button class="c2-action-btn" onclick="openCyberModal('modal-firmware')">
+        <span>🧭</span>
+        <span>9 Firmware</span>
+      </button>
+      <button class="c2-action-btn c2-sound-btn" id="btn-audio-toggle" onclick="toggleCyberAudio()" title="Attiva/Disattiva Audio Tattico">
+        <span id="audio-icon">🔇</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 3. MAIN COMBAT WORKSPACE -->
+  <main class="c2-workspace">
+    
+    <!-- LEFT SENSOR WING -->
+    <aside class="c2-left-wing">
+      <div class="c2-wing-section">
+        <div class="c2-section-header">
+          <span>🧠 EEG Synaptic Stream</span>
+          <span style="font-family: var(--font-mono); font-size: 9px;">60 FPS</span>
+        </div>
+        <canvas id="oscilloscope-canvas"></canvas>
+      </div>
+
+      <div class="c2-wing-section">
+        <div class="c2-section-header">
+          <span>🏢 Palazzo Cognitivo</span>
+        </div>
+        <div class="c2-floor-group">
+          <button class="c2-floor-btn active" onclick="setCognitiveFloor('all')">TUTTI</button>
+          <button class="c2-floor-btn" onclick="setCognitiveFloor('P0')">P0 DOMINI</button>
+          <button class="c2-floor-btn" onclick="setCognitiveFloor('P1')">P1 PROGETTI</button>
+          <button class="c2-floor-btn" onclick="setCognitiveFloor('P2')">P2 MODULI</button>
+        </div>
+      </div>
+
+      <div class="c2-wing-section" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
+        <div class="c2-section-header">
+          <span>🎯 Macro-Domini Tattici</span>
+        </div>
+        <div class="c2-silo-list" id="dom-silo-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </aside>
+
+    <!-- CENTER HOLO-VIEWPORT -->
+    <section class="c2-center-viewport" id="center-viewport">
+      
+      <!-- 2D Canvas Radar -->
+      <canvas id="tactical-canvas"></canvas>
+
+      <!-- 3D Three.js WebGL Hologram Dome -->
+      <div id="threejs-3d-container"></div>
+
+      <!-- Mode Selector HUD -->
+      <div class="c2-floating-hud tactical-box">
+        <button class="c2-mode-btn active" id="btn-mode-radar" onclick="setGraphViewportMode('radar')">
+          <span>🎯</span>
+          <span>Radar 2D</span>
+        </button>
+        <button class="c2-mode-btn" id="btn-mode-3d" onclick="setGraphViewportMode('3d')">
+          <span>🌐</span>
+          <span>Holo-Dome 3D</span>
+        </button>
+        <button class="c2-mode-btn" id="btn-mode-split" onclick="setGraphViewportMode('split')">
+          <span>⚡</span>
+          <span>Split SX/DX</span>
+        </button>
+        <button class="c2-mode-btn" id="btn-mode-bridges" onclick="setGraphViewportMode('bridges')">
+          <span>🌉</span>
+          <span>Ponti Callosi</span>
+        </button>
+      </div>
+
+      <!-- Search Field -->
+      <div class="c2-floating-search tactical-box">
+        <span style="color: var(--accent-main);">🔍</span>
+        <input type="text" id="target-search-input" class="c2-search-input" placeholder="Acquisisci bersaglio (⌘+K)..." oninput="handleTargetSearch(this.value)">
+        <span class="c2-search-kbd">⌘K</span>
+      </div>
+
+      <!-- Viewport Tool Buttons -->
+      <div class="c2-viewport-tools tactical-box">
+        <button class="c2-tool-btn" onclick="zoomTacticalGraph(1.2)" title="Zoom In">+</button>
+        <button class="c2-tool-btn" onclick="zoomTacticalGraph(0.8)" title="Zoom Out">-</button>
+        <button class="c2-tool-btn" onclick="fitAllNodesView()" title="Centra Tutto">⛶</button>
+        <button class="c2-tool-btn" onclick="expandGraphPhysics(1.3)" title="Espandi Spaziatura">⇄</button>
+        <button class="c2-tool-btn" onclick="expandGraphPhysics(0.75)" title="Compatta Spaziatura">⇆</button>
+      </div>
+
+      <!-- Reticle Target Tooltip -->
+      <div id="target-reticle-tooltip">
+        <div class="ret-target-header">
+          <span id="tooltip-id">#ID</span>
+          <span id="tooltip-floor">P0</span>
+        </div>
+        <div class="ret-target-name" id="tooltip-title">TARGET_NODE</div>
+        <div class="ret-target-sub" id="tooltip-meta">LEFT · AI_REASONING · 12 LINKS</div>
+      </div>
+    </section>
+
+    <!-- RIGHT TARGET DOSSIER -->
+    <aside class="c2-right-dossier" id="right-dossier">
+      <div class="c2-dossier-banner">
+        <div class="c2-target-lock-badge">
+          <span>🎯 TARGET LOCKED // CLASSIFIED</span>
+        </div>
+        <div class="c2-target-title" id="dossier-title">Seleziona un nodo bersaglio</div>
+        <div class="c2-target-tags" id="dossier-tags">
+          <span class="c2-tag-pill">STANDBY</span>
+        </div>
+      </div>
+
+      <div class="c2-dossier-tabs">
+        <button class="c2-tab-btn active" onclick="switchDossierTab('intel')">INTELLIGENCE</button>
+        <button class="c2-tab-btn" onclick="switchDossierTab('synapses')">SINAPSI (<span id="dossier-link-count">0</span>)</button>
+        <button class="c2-tab-btn" onclick="switchDossierTab('pathfinder')">PATHFINDER</button>
+      </div>
+
+      <div class="c2-dossier-body" id="dossier-body-intel">
+        <div class="c2-intel-block">
+          <div class="c2-intel-label">Sintesi Cognitiva</div>
+          <div class="c2-intel-val" id="dossier-summary">Clicca su qualsiasi nodo nel radar o nel mappamondo 3D per declassificare il dossier completo.</div>
+        </div>
+
+        <div class="c2-intel-block">
+          <div class="c2-intel-label">Specifiche Tassonomiche</div>
+          <div class="c2-intel-val" id="dossier-taxonomy">Emisfero: - · Categoria Primaria: - · Grado Connessioni: -</div>
+        </div>
+
+        <div class="c2-intel-block">
+          <div class="c2-intel-label">Azioni Tattiche</div>
+          <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 6px;">
+            <button class="c2-action-btn primary" onclick="tracePathFromSelectedNode()" style="width: 100%; justify-content: center;">
+              <span>⚡</span>
+              <span>Traccia Cammino Minimo (GraphRAG)</span>
+            </button>
+            <button class="c2-action-btn" onclick="copySelectedNodeId()" style="width: 100%; justify-content: center;">
+              <span>📋</span>
+              <span>Copia ID Nodo</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="c2-dossier-body" id="dossier-body-synapses" style="display: none;">
+        <div class="c2-intel-label">Connessioni Sinaptiche Attive</div>
+        <div class="c2-link-list" id="dossier-links-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="c2-dossier-body" id="dossier-body-pathfinder" style="display: none;">
+        <div class="c2-intel-label">Calcolatore Balistico di Ragionamento</div>
+        <div class="c2-path-box">
+          <label style="font-size: 11px; color: var(--text-dim);">Nodo di Origine (Source):</label>
+          <select id="path-source-select" class="c2-path-select"></select>
+          <label style="font-size: 11px; color: var(--text-dim); margin-top: 4px;">Nodo di Destinazione (Target):</label>
+          <select id="path-target-select" class="c2-path-select"></select>
+          <button class="c2-action-btn primary" onclick="computeShortestTrajectory()" style="margin-top: 8px; justify-content: center;">
+            <span>🚀</span>
+            <span>Calcola Traiettoria BFS / Dijkstra</span>
+          </button>
+        </div>
+        <div class="c2-intel-block" id="path-result-box" style="margin-top: 10px; display: none;">
+          <div class="c2-intel-label">Traiettoria Risolta</div>
+          <div class="c2-intel-val" id="path-result-text" style="font-family: var(--font-mono); font-size: 11px;"></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- 4. BOTTOM CYBER-OPS TERMINAL DRAWER -->
+  <div class="c2-terminal-drawer collapsed" id="terminal-drawer">
+    <div class="c2-terminal-top" onclick="toggleTerminalDrawer()">
+      <div class="c2-term-title">
+        <div class="c2-term-pulse"></div>
+        <span>CYBER-OPS REAL-TIME SIGINT TERMINAL & CONSOLE</span>
+      </div>
+      <div style="color: var(--text-dim); font-size: 10px;">
+        <span id="term-toggle-indicator">▲ APRI CONSOLE (⌘`)</span>
+      </div>
+    </div>
+    
+    <div class="c2-terminal-logs" id="terminal-logs">
+      <!-- Populated with real-time logs -->
+    </div>
+
+    <div class="c2-terminal-prompt">
+      <span class="c2-prompt-sym">CYBER-C2 &gt;</span>
+      <input type="text" class="c2-prompt-input" id="terminal-cmd-input" placeholder="Digita comando (es: help, stats, 3d, radar, fit, clear, resurface)..." onkeydown="handleTerminalCommand(event)">
+    </div>
+  </div>
+
+  <!-- 5. COGNITIVE MODALS -->
+  <div class="c2-modal-overlay" id="modal-resurface" onclick="closeModalOnBackdrop(event, 'modal-resurface')">
+    <div class="c2-modal-window tactical-box">
+      <div class="c2-modal-header">
+        <div class="c2-modal-title">🔄 90-SECOND DAILY RESURFACE BRIEFING</div>
+        <button class="c2-modal-close" onclick="closeCyberModal('modal-resurface')">✕</button>
+      </div>
+      <div class="c2-modal-body" id="modal-body-resurface">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <div class="c2-modal-overlay" id="modal-tensions" onclick="closeModalOnBackdrop(event, 'modal-tensions')">
+    <div class="c2-modal-window tactical-box">
+      <div class="c2-modal-header">
+        <div class="c2-modal-title">⚡ MATRICE DELLE TENSIONI COGNITIVE & CONTRADDIZIONI</div>
+        <button class="c2-modal-close" onclick="closeCyberModal('modal-tensions')">✕</button>
+      </div>
+      <div class="c2-modal-body" id="modal-body-tensions">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <div class="c2-modal-overlay" id="modal-weave" onclick="closeModalOnBackdrop(event, 'modal-weave')">
+    <div class="c2-modal-window tactical-box">
+      <div class="c2-modal-header">
+        <div class="c2-modal-title">🕸️ WEAVE LINK: AUTO-PONTI PER NODI ORFANI</div>
+        <button class="c2-modal-close" onclick="closeCyberModal('modal-weave')">✕</button>
+      </div>
+      <div class="c2-modal-body" id="modal-body-weave">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <div class="c2-modal-overlay" id="modal-firmware" onclick="closeModalOnBackdrop(event, 'modal-firmware')">
+    <div class="c2-modal-window tactical-box">
+      <div class="c2-modal-header">
+        <div class="c2-modal-title">🧭 9 FIRMWARE COGNITIVI (MODELLI MENTALI OPERATIVI)</div>
+        <button class="c2-modal-close" onclick="closeCyberModal('modal-firmware')">✕</button>
+      </div>
+      <div class="c2-modal-body" id="modal-body-firmware">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       10. CYBER-COMMAND SCRIPT ENGINE (AUDIO, RADAR, 3D WEBGL, FORCE PHYSICS)
+       ========================================================================== -->
+  <script>
+    // --------------------------------------------------------------------------
+    // A. AUDIO SYNTHESIZER (ZERO EXTERNAL DEPENDENCIES)
+    // --------------------------------------------------------------------------
+    let audioCtx = null;
+    let audioActive = false;
+
+    function toggleCyberAudio() {
+      audioActive = !audioActive;
+      const icon = document.getElementById('audio-icon');
+      if (audioActive) {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        icon.innerText = '🔊';
+        playLaserChirp(920, 0.08, 'sawtooth');
+        addTerminalLog('[AUDIO]', 'Audio feedback tattico olografico abilitato.');
+      } else {
+        icon.innerText = '🔇';
+        addTerminalLog('[AUDIO]', 'Audio disabilitato.');
+      }
+    }
+
+    function playLaserChirp(freq, duration, type='sine') {
+      if (!audioActive || !audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(freq * 0.4, audioCtx.currentTime + duration);
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    // --------------------------------------------------------------------------
+    // B. THEME MANAGER
+    // --------------------------------------------------------------------------
+    function setCyberTheme(th) {
+      document.body.setAttribute('data-theme', th);
+      document.querySelectorAll('.c2-theme-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById(`btn-th-${th}`);
+      if (activeBtn) activeBtn.classList.add('active');
+      playLaserChirp(780, 0.06);
+      addTerminalLog('[THEME]', `Cambio profilo FUI: ${th.toUpperCase()}`);
+      if (currentMode === '3d') update3DGlobeMaterials();
+    }
+
+    // --------------------------------------------------------------------------
+    // C. EEG OSCILLOSCOPE STREAM
+    // --------------------------------------------------------------------------
+    const oscCanvas = document.getElementById('oscilloscope-canvas');
+    const oscCtx = oscCanvas.getContext('2d');
+    let oscTime = 0;
+
+    function resizeOscilloscope() {
+      oscCanvas.width = oscCanvas.clientWidth * window.devicePixelRatio;
+      oscCanvas.height = oscCanvas.clientHeight * window.devicePixelRatio;
+      oscCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+
+    function animateOscilloscope() {
+      const w = oscCanvas.width / window.devicePixelRatio;
+      const h = oscCanvas.height / window.devicePixelRatio;
+      oscCtx.clearRect(0, 0, w, h);
+
+      const theme = document.body.getAttribute('data-theme') || 'tron';
+      let strokeCol = '#00f0ff';
+      if (theme === 'amber') strokeCol = '#ff9900';
+      if (theme === 'crimson') strokeCol = '#ff1e56';
+      if (theme === 'matrix') strokeCol = '#00ff88';
+
+      oscCtx.beginPath();
+      oscCtx.strokeStyle = strokeCol;
+      oscCtx.lineWidth = 1.4;
+
+      oscTime += 0.09;
+      for (let x = 0; x < w; x++) {
+        const y = h/2 + Math.sin(x * 0.08 + oscTime) * 11 + Math.sin(x * 0.22 - oscTime * 1.4) * 5;
+        if (x === 0) oscCtx.moveTo(x, y);
+        else oscCtx.lineTo(x, y);
+      }
+      oscCtx.stroke();
+      requestAnimationFrame(animateOscilloscope);
+    }
+
+    // --------------------------------------------------------------------------
+    // D. DATASET LOADING & MANAGEMENT (575+ NODES & 1325+ EDGES)
+    // --------------------------------------------------------------------------
+    let nodes = [];
+    let edges = [];
+    let selectedNode = null;
+    let hoveredNode = null;
+    let activePathNodes = new Set();
+    let currentFilterDomain = 'all';
+    let currentFloor = 'all';
+    let currentMode = 'radar'; // 'radar', '3d', 'split', 'bridges'
+
+    async function loadDataset() {
+      let data = null;
+
+      if (window.EMBEDDED_BRAIN_DATA && window.EMBEDDED_BRAIN_DATA.nodes && window.EMBEDDED_BRAIN_DATA.nodes.length > 0) {
+        data = window.EMBEDDED_BRAIN_DATA;
+        addTerminalLog('[DATASET]', `Caricamento memoria integrata: ${data.nodes.length} nodi, ${data.edges.length} sinapsi.`);
+      }
+
+      if (window.location.protocol.startsWith('http')) {
+        try {
+          const res = await fetch('/brain.json');
+          if (res.ok) {
+            const liveData = await res.json();
+            if (liveData.nodes && liveData.nodes.length > 0) {
+              data = liveData;
+              addTerminalLog('[LIVE-SYNC]', `Connessione attiva al backend: ${liveData.nodes.length} nodi sincroni.`);
+            }
+          }
+        } catch (e) {}
+      }
+
+      if (!data || !data.nodes) return;
+
+      const degMap = new Map();
+      (data.edges || []).forEach(e => {
+        degMap.set(e.source, (degMap.get(e.source) || 0) + 1);
+        degMap.set(e.target, (degMap.get(e.target) || 0) + 1);
+      });
+
+      // Spatialized initial distribution (Obsidian-Style galaxy layout)
+      nodes = data.nodes.map((n, idx) => {
+        const isLeft = n.hemisphere === 'LEFT';
+        const degree = degMap.get(n.id) || 1;
+        const isDomain = n.id.startsWith('domain-') || n.id === 'person-pierfrancesco' || n.id === 'universal-ai-brain';
+        const radius = isDomain ? 15 : Math.max(4, Math.min(12, 3.2 + Math.sqrt(degree) * 1.5));
+        const floor = isDomain ? 'P0' : (degree > 5 ? 'P1' : 'P2');
+
+        const angle = (idx / data.nodes.length) * Math.PI * 4;
+        const rDist = 220 + (idx % 22) * 45 + Math.random() * 100;
+        const initX = (isLeft ? -1 : 1) * (rDist * Math.cos(angle) + (isLeft ? -160 : 160));
+        const initY = rDist * Math.sin(angle);
+
+        return {
+          id: n.id,
+          label: n.label || n.id,
+          hemisphere: n.hemisphere || (isLeft ? 'LEFT' : 'RIGHT'),
+          category: n.primary_label || 'GENERAL',
+          floor: floor,
+          tags: n.tags || [],
+          summary: n.summary || 'Nessun sommario declassificato.',
+          x: initX,
+          y: initY,
+          vx: 0,
+          vy: 0,
+          degree: degree,
+          radius: radius,
+          isFixed: false
+        };
+      });
+
+      edges = (data.edges || []).map(e => ({
+        source: e.source,
+        target: e.target,
+        relation: e.relation || 'CONNECTS',
+        isBridge: e.relation === 'CALLOSUM_BRIDGE' || e.relation === 'BRIDGES' || e.is_callosum || (e.relation && e.relation.includes('BRIDGE'))
+      }));
+
+      updateCountersHUD();
+      populateDomainSilos();
+      populatePathSelects();
+
+      // Warm-up physics steps
+      physicsAlpha = 1.0;
+      for (let i = 0; i < 70; i++) stepPhysicsSimulation();
+
+      setTimeout(() => fitAllNodesView(), 50);
+    }
+
+    function updateCountersHUD() {
+      const leftCount = nodes.filter(n => n.hemisphere === 'LEFT').length;
+      const rightCount = nodes.filter(n => n.hemisphere === 'RIGHT').length;
+      const bridgeCount = edges.filter(e => e.isBridge).length;
+
+      document.getElementById('stat-left-val').innerText = leftCount;
+      document.getElementById('stat-right-val').innerText = rightCount;
+      document.getElementById('stat-bridge-val').innerText = bridgeCount;
+    }
+
+    function populateDomainSilos() {
+      const domContainer = document.getElementById('dom-silo-container');
+      if (!domContainer) return;
+
+      const domains = [
+        { id: 'all', name: '⚡ TUTTI I DOMINI', count: nodes.length },
+        { id: 'ai-cognitive', name: '🤖 AI & Cognitive Systems', tag: 'ai' },
+        { id: 'software', name: '💻 Software Engineering', tag: 'software' },
+        { id: 'medicina', name: '🧬 Medicina & Salute', tag: 'medicina' },
+        { id: 'finanza', name: '📈 Finanza & Economia', tag: 'finanza' },
+        { id: 'creativita', name: '🎨 Design & Creatività', tag: 'design' },
+        { id: 'filosofia', name: '🏛️ Filosofia & Valori', tag: 'filosofia' },
+        { id: 'crescita', name: '🌱 Crescita Personale', tag: 'crescita' },
+        { id: 'musica', name: '🎵 Musica & Audio', tag: 'musica' },
+        { id: 'produttivita', name: '⚡ Produttività & Sistemi', tag: 'produttivita' }
+      ];
+
+      domContainer.innerHTML = domains.map(d => `
+        <div class="c2-silo-item ${d.id === 'all' ? 'active' : ''}" onclick="filterByDomain('${d.id}', this)">
+          <span>${d.name}</span>
+          <span class="c2-silo-badge">${d.count !== undefined ? d.count : 'DOM'}</span>
+        </div>
+      `).join('');
+    }
+
+    function filterByDomain(domId, el) {
+      currentFilterDomain = domId;
+      document.querySelectorAll('.c2-silo-item').forEach(i => i.classList.remove('active'));
+      if (el) el.classList.add('active');
+      physicsAlpha = 0.8;
+      playLaserChirp(600, 0.05);
+      addTerminalLog('[FILTER]', `Filtro dominio applicato: ${domId.toUpperCase()}`);
+    }
+
+    function setCognitiveFloor(floor) {
+      currentFloor = floor;
+      document.querySelectorAll('.c2-floor-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      physicsAlpha = 0.8;
+      playLaserChirp(650, 0.05);
+      addTerminalLog('[FLOOR]', `Filtro piano cognitivo: ${floor}`);
+    }
+
+    // --------------------------------------------------------------------------
+    // E. 2D CANVAS RADAR & FORCE PHYSICS ENGINE
+    // --------------------------------------------------------------------------
+    const canvas = document.getElementById('tactical-canvas');
+    const ctx = canvas.getContext('2d');
+    const tooltip = document.getElementById('target-reticle-tooltip');
+
+    let camera = { x: 0, y: 0, zoom: 0.65 };
+    let isPanning = false;
+    let draggedNode = null;
+    let panStart = { x: 0, y: 0 };
+    let physicsAlpha = 1.0;
+    let radarSweep = 0;
+    let repelStrength = 3200;
+    let springDist = 110;
+
+    function resizeTacticalCanvas() {
+      const container = document.getElementById('center-viewport');
+      if (!container) return;
+      canvas.width = container.clientWidth * window.devicePixelRatio;
+      canvas.height = container.clientHeight * window.devicePixelRatio;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      resizeOscilloscope();
+      if (currentMode === '3d' && window.resizeThreeJS) window.resizeThreeJS();
+    }
+    window.addEventListener('resize', resizeTacticalCanvas);
+
+    function expandGraphPhysics(factor) {
+      repelStrength *= factor;
+      springDist *= factor;
+      nodes.forEach(n => { n.x *= factor; n.y *= factor; });
+      physicsAlpha = 1.0;
+      playLaserChirp(700, 0.06);
+    }
+
+    function stepPhysicsSimulation() {
+      if (physicsAlpha < 0.002 && !draggedNode) return;
+
+      const nodeMap = new Map(nodes.map(n => [n.id, n]));
+      const len = nodes.length;
+
+      // 1. Repulsione ad alta intensità anti-collasso
+      for (let i = 0; i < len; i++) {
+        const n1 = nodes[i];
+        for (let j = i + 1; j < len; j++) {
+          const n2 = nodes[j];
+          const dx = n2.x - n1.x;
+          const dy = n2.y - n1.y;
+          let distSq = dx * dx + dy * dy;
+          if (distSq < 1) distSq = 1;
+          const dist = Math.sqrt(distSq);
+
+          // Buffer anti-sovrapposizione assoluto
+          const minD = n1.radius + n2.radius + 16;
+          if (dist < minD) {
+            const overlap = (minD - dist) * 0.5;
+            const nx = (dx / dist) * overlap;
+            const ny = (dy / dist) * overlap;
+            if (!n1.isFixed) { n1.x -= nx; n1.y -= ny; }
+            if (!n2.isFixed) { n2.x += nx; n2.y += ny; }
+          }
+
+          if (dist < 600) {
+            const force = (repelStrength / (dist + 30)) * physicsAlpha * 0.12;
+            const fx = (dx / dist) * force;
+            const fy = (dy / dist) * force;
+            if (!n1.isFixed) { n1.vx -= fx; n1.vy -= fy; }
+            if (!n2.isFixed) { n2.vx += fx; n2.vy += fy; }
+          }
+        }
+      }
+
+      // 2. Molle Elastiche (Sinapsi)
+      edges.forEach(e => {
+        const src = nodeMap.get(e.source);
+        const tgt = nodeMap.get(e.target);
+        if (!src || !tgt) return;
+
+        const dx = tgt.x - src.x;
+        const dy = tgt.y - src.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const displacement = dist - (e.isBridge ? 150 : springDist);
+        const force = displacement * 0.016 * physicsAlpha;
+
+        const fx = (dx / dist) * force;
+        const fy = (dy / dist) * force;
+
+        if (!src.isFixed) { src.vx += fx; src.vy += fy; }
+        if (!tgt.isFixed) { tgt.vx += fx; tgt.vy += fy; }
+      });
+
+      // 3. Gravità soffice
+      nodes.forEach(n => {
+        if (n.isFixed) return;
+        let targetX = 0;
+        if (currentMode === 'split') {
+          targetX = n.hemisphere === 'LEFT' ? -420 : 420;
+        }
+
+        n.vx += (targetX - n.x) * 0.00025 * physicsAlpha;
+        n.vy += (0 - n.y) * 0.00025 * physicsAlpha;
+
+        n.vx *= 0.88;
+        n.vy *= 0.88;
+        n.x += n.vx;
+        n.y += n.vy;
+      });
+
+      physicsAlpha *= 0.993;
+    }
+
+    function fitAllNodesView() {
+      if (nodes.length === 0) return;
+      let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+      nodes.forEach(n => {
+        if (n.x < minX) minX = n.x;
+        if (n.x > maxX) maxX = n.x;
+        if (n.y < minY) minY = n.y;
+        if (n.y > maxY) maxY = n.y;
+      });
+
+      const w = canvas.width / window.devicePixelRatio;
+      const h = canvas.height / window.devicePixelRatio;
+      const spanX = Math.max(maxX - minX + 260, 500);
+      const spanY = Math.max(maxY - minY + 260, 500);
+
+      camera.zoom = Math.min(w / spanX, h / spanY, 1.0) * 0.85;
+      camera.x = - (minX + maxX) / 2 * camera.zoom;
+      camera.y = - (minY + maxY) / 2 * camera.zoom;
+      playLaserChirp(600, 0.05);
+    }
+
+    function renderTactical2DGraph() {
+      if (currentMode === '3d') {
+        requestAnimationFrame(renderTactical2DGraph);
+        return;
+      }
+
+      stepPhysicsSimulation();
+
+      const w = canvas.width / window.devicePixelRatio;
+      const h = canvas.height / window.devicePixelRatio;
+
+      ctx.clearRect(0, 0, w, h);
+      ctx.save();
+      ctx.translate(w/2 + camera.x, h/2 + camera.y);
+      ctx.scale(camera.zoom, camera.zoom);
+
+      const theme = document.body.getAttribute('data-theme') || 'tron';
+      let mainAcc = '#00f0ff';
+      let leftAcc = '#00d2ff';
+      let rightAcc = '#ff0055';
+      let bridgeAcc = '#bd00ff';
+      let radarGrid = 'rgba(0, 240, 255, 0.05)';
+
+      if (theme === 'amber') {
+        mainAcc = '#ff9900'; leftAcc = '#ffaa00'; rightAcc = '#ff2255'; bridgeAcc = '#ffdd00'; radarGrid = 'rgba(255, 153, 0, 0.05)';
+      } else if (theme === 'crimson') {
+        mainAcc = '#ff1e56'; leftAcc = '#ff3366'; rightAcc = '#00e5ff'; bridgeAcc = '#ff77aa'; radarGrid = 'rgba(255, 30, 86, 0.05)';
+      } else if (theme === 'matrix') {
+        mainAcc = '#00ff88'; leftAcc = '#00ffaa'; rightAcc = '#ff3366'; bridgeAcc = '#66ffcc'; radarGrid = 'rgba(0, 255, 136, 0.05)';
+      }
+
+      // 1. Radar Graticule Rings
+      ctx.strokeStyle = radarGrid;
+      ctx.lineWidth = 1;
+      [150, 300, 480, 680, 920, 1200].forEach(r => {
+        ctx.beginPath();
+        ctx.arc(0, 0, r, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+
+      // Axis crosshairs
+      ctx.beginPath();
+      ctx.moveTo(-1500, 0); ctx.lineTo(1500, 0);
+      ctx.moveTo(0, -1500); ctx.lineTo(0, 1500);
+      ctx.stroke();
+
+      // 2. Radar Sweep Beam
+      radarSweep += 0.015;
+      const deg = Math.floor((radarSweep * (180 / Math.PI)) % 360);
+      const azEl = document.getElementById('c2-radar-azimuth');
+      if (azEl) azEl.innerText = `${String(deg).padStart(3,'0')}° AZ`;
+
+      ctx.save();
+      ctx.rotate(radarSweep);
+      const sweepGrad = ctx.createRadialGradient(0, 0, 10, 0, 0, 800);
+      sweepGrad.addColorStop(0, 'rgba(0,0,0,0)');
+      sweepGrad.addColorStop(1, radarGrid);
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.arc(0, 0, 800, 0, Math.PI / 4);
+      ctx.closePath();
+      ctx.fillStyle = sweepGrad;
+      ctx.fill();
+      ctx.restore();
+
+      // 3. Central GABAergic Conduit (Split & Bridges Mode)
+      if (currentMode === 'split' || currentMode === 'bridges') {
+        ctx.save();
+        ctx.strokeStyle = bridgeAcc;
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([8, 8]);
+        ctx.beginPath();
+        ctx.moveTo(-50, -900); ctx.lineTo(-50, 900);
+        ctx.moveTo(50, -900); ctx.lineTo(50, 900);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      const activeTarget = hoveredNode || selectedNode;
+      const nodeMap = new Map(nodes.map(n => [n.id, n]));
+
+      // 4. Draw Synaptic Links
+      edges.forEach(e => {
+        const src = nodeMap.get(e.source);
+        const tgt = nodeMap.get(e.target);
+        if (!src || !tgt) return;
+
+        if (currentFloor !== 'all' && src.floor !== currentFloor && tgt.floor !== currentFloor) return;
+
+        const isPathLink = activePathNodes.has(src.id) && activePathNodes.has(tgt.id);
+        const isTargetLink = activeTarget && (src.id === activeTarget.id || tgt.id === activeTarget.id);
+
+        if (isPathLink) {
+          ctx.strokeStyle = '#00ff88';
+          ctx.lineWidth = 2.8;
+        } else if (isTargetLink) {
+          ctx.strokeStyle = mainAcc;
+          ctx.lineWidth = 1.8;
+        } else if (currentMode === 'bridges') {
+          ctx.strokeStyle = e.isBridge ? bridgeAcc : 'rgba(255,255,255,0.02)';
+          ctx.lineWidth = e.isBridge ? 2.0 : 0.5;
+        } else {
+          ctx.strokeStyle = e.isBridge ? 'rgba(189, 0, 255, 0.4)' : 'rgba(255,255,255,0.09)';
+          ctx.lineWidth = 0.8;
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(src.x, src.y);
+        ctx.lineTo(tgt.x, tgt.y);
+        ctx.stroke();
+      });
+
+      // 5. Draw Tactical Nodes
+      nodes.forEach(n => {
+        if (currentFloor !== 'all' && n.floor !== currentFloor) return;
+        if (currentFilterDomain !== 'all') {
+          if (!n.tags.some(t => t.includes(currentFilterDomain))) return;
+        }
+
+        const isLeft = n.hemisphere === 'LEFT';
+        const isSel = selectedNode && selectedNode.id === n.id;
+        const isHov = hoveredNode && hoveredNode.id === n.id;
+        const isPath = activePathNodes.has(n.id);
+
+        let nodeColor = isLeft ? leftAcc : rightAcc;
+        if (isSel || isHov) nodeColor = mainAcc;
+        if (isPath) nodeColor = '#00ff88';
+
+        ctx.save();
+        ctx.translate(n.x, n.y);
+
+        // Lock-on Bracket Reticle on hover/select
+        if (isSel || isHov || isPath) {
+          ctx.beginPath();
+          ctx.arc(0, 0, n.radius + 6, 0, Math.PI * 2);
+          ctx.strokeStyle = isPath ? '#00ff88' : mainAcc;
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+
+          const b = n.radius + 10;
+          ctx.beginPath();
+          ctx.moveTo(-b, -b+4); ctx.lineTo(-b, -b); ctx.lineTo(-b+4, -b);
+          ctx.moveTo(b, -b+4); ctx.lineTo(b, -b); ctx.lineTo(b-4, -b);
+          ctx.moveTo(-b, b-4); ctx.lineTo(-b, b); ctx.lineTo(-b+4, b);
+          ctx.moveTo(b, b-4); ctx.lineTo(b, b); ctx.lineTo(b-4, b);
+          ctx.strokeStyle = isPath ? '#00ff88' : mainAcc;
+          ctx.lineWidth = 1.4;
+          ctx.stroke();
+        }
+
+        // Core Node
+        ctx.beginPath();
+        ctx.arc(0, 0, n.radius, 0, Math.PI * 2);
+        ctx.fillStyle = nodeColor;
+        ctx.fill();
+
+        // Label
+        const showLabel = n.radius >= 8.5 || isSel || isHov || isPath || camera.zoom > 1.2;
+        if (showLabel) {
+          ctx.font = `${n.radius >= 12 ? '700 11px' : '500 9.5px'} 'Rajdhani', sans-serif`;
+          ctx.fillStyle = isSel ? mainAcc : '#ffffff';
+          ctx.textAlign = 'center';
+          ctx.fillText(n.label, 0, n.radius + 12);
+        }
+
+        ctx.restore();
+      });
+
+      ctx.restore();
+      requestAnimationFrame(renderTactical2DGraph);
+    }
+
+    // --------------------------------------------------------------------------
+    // F. MOUSE & INTERACTION ENGINE
+    // --------------------------------------------------------------------------
+    canvas.addEventListener('mousedown', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      const w = canvas.width / window.devicePixelRatio;
+      const h = canvas.height / window.devicePixelRatio;
+
+      const worldX = (mouseX - (w/2 + camera.x)) / camera.zoom;
+      const worldY = (mouseY - (h/2 + camera.y)) / camera.zoom;
+
+      let found = null;
+      for (const n of nodes) {
+        const dx = worldX - n.x;
+        const dy = worldY - n.y;
+        if (Math.sqrt(dx*dx + dy*dy) < n.radius + 7) {
+          found = n;
+          break;
+        }
+      }
+
+      if (found) {
+        draggedNode = found;
+        draggedNode.isFixed = true;
+        physicsAlpha = 1.0;
+        selectTargetNode(found);
+        playLaserChirp(840, 0.07, 'triangle');
+      } else {
+        isPanning = true;
+        panStart = { x: e.clientX, y: e.clientY };
+      }
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (draggedNode) {
+        draggedNode.isFixed = false;
+        draggedNode = null;
+      }
+      isPanning = false;
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      const w = canvas.width / window.devicePixelRatio;
+      const h = canvas.height / window.devicePixelRatio;
+
+      const worldX = (mouseX - (w/2 + camera.x)) / camera.zoom;
+      const worldY = (mouseY - (h/2 + camera.y)) / camera.zoom;
+
+      if (draggedNode) {
+        draggedNode.x = worldX;
+        draggedNode.y = worldY;
+        draggedNode.vx = 0;
+        draggedNode.vy = 0;
+        physicsAlpha = 1.0;
+        return;
+      }
+
+      if (isPanning) {
+        camera.x += (e.clientX - panStart.x) / camera.zoom;
+        camera.y += (e.clientY - panStart.y) / camera.zoom;
+        panStart = { x: e.clientX, y: e.clientY };
+        return;
+      }
+
+      let found = null;
+      for (const n of nodes) {
+        const dx = worldX - n.x;
+        const dy = worldY - n.y;
+        if (Math.sqrt(dx*dx + dy*dy) < n.radius + 7) {
+          found = n;
+          break;
+        }
+      }
+
+      hoveredNode = found;
+      if (found) {
+        tooltip.style.display = 'block';
+        tooltip.style.left = `${mouseX}px`;
+        tooltip.style.top = `${mouseY}px`;
+        document.getElementById('tooltip-id').innerText = `#${found.id.slice(0, 14)}`;
+        document.getElementById('tooltip-floor').innerText = found.floor;
+        document.getElementById('tooltip-title').innerText = found.label;
+        document.getElementById('tooltip-meta').innerText = `${found.hemisphere} · ${found.category} · ${found.degree} LINKS`;
+      } else {
+        if (!selectedNode) tooltip.style.display = 'none';
+      }
+    });
+
+    canvas.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      zoomTacticalGraph(e.deltaY < 0 ? 1.15 : 0.88);
+    });
+
+    function zoomTacticalGraph(factor) {
+      camera.zoom = Math.min(Math.max(camera.zoom * factor, 0.15), 3.5);
+    }
+
+    function selectTargetNode(node) {
+      selectedNode = node;
+      activePathNodes.clear();
+
+      document.getElementById('dossier-title').innerText = node.label;
+      document.getElementById('dossier-summary').innerText = node.summary;
+      document.getElementById('dossier-taxonomy').innerText = `Emisfero: ${node.hemisphere} · Categoria: [${node.category}] · Floor: ${node.floor} · Grado: ${node.degree}`;
+
+      const tagsEl = document.getElementById('dossier-tags');
+      tagsEl.innerHTML = (node.tags || []).map(t => `<span class="c2-tag-pill">${t}</span>`).join('') || '<span class="c2-tag-pill">TAG_LESS</span>';
+
+      // Synapses tab
+      const linkList = document.getElementById('dossier-links-list');
+      const directLinks = edges.filter(e => e.source === node.id || e.target === node.id);
+      document.getElementById('dossier-link-count').innerText = directLinks.length;
+
+      linkList.innerHTML = directLinks.map(e => {
+        const neighborId = e.source === node.id ? e.target : e.source;
+        const neighbor = nodes.find(n => n.id === neighborId);
+        const name = neighbor ? neighbor.label : neighborId;
+        return `
+          <div class="c2-link-item" onclick="focusOnNodeId('${neighborId}')">
+            <span>${name}</span>
+            <span style="font-size: 9.5px; color: var(--accent-main);">${e.relation}</span>
+          </div>
+        `;
+      }).join('') || '<div style="color: var(--text-muted); font-size: 11px;">Nessuna sinapsi diretta.</div>';
+
+      addTerminalLog('[TARGET-LOCK]', `Acquisito bersaglio: ${node.id} (${node.label})`);
+    }
+
+    function focusOnNodeId(id) {
+      const node = nodes.find(n => n.id === id);
+      if (!node) return;
+      selectTargetNode(node);
+      camera.x = - node.x * camera.zoom;
+      camera.y = - node.y * camera.zoom;
+      physicsAlpha = 0.8;
+      playLaserChirp(900, 0.08);
+    }
+
+    function switchDossierTab(tab) {
+      document.querySelectorAll('.c2-tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.getElementById('dossier-body-intel').style.display = tab === 'intel' ? 'flex' : 'none';
+      document.getElementById('dossier-body-synapses').style.display = tab === 'synapses' ? 'flex' : 'none';
+      document.getElementById('dossier-body-pathfinder').style.display = tab === 'pathfinder' ? 'flex' : 'none';
+    }
+
+    function handleTargetSearch(q) {
+      if (!q.trim()) return;
+      const lower = q.toLowerCase();
+      const match = nodes.find(n => n.label.toLowerCase().includes(lower) || n.id.toLowerCase().includes(lower));
+      if (match) {
+        focusOnNodeId(match.id);
+      }
+    }
+
+    function copySelectedNodeId() {
+      if (!selectedNode) return;
+      navigator.clipboard.writeText(selectedNode.id);
+      addTerminalLog('[CLIPBOARD]', `Copiato ID: ${selectedNode.id}`);
+      playLaserChirp(1100, 0.06);
+    }
+
+    // --------------------------------------------------------------------------
+    // G. PATHFINDING TRAJECTORY SOLVER (BFS / GRAPHRAG)
+    // --------------------------------------------------------------------------
+    function populatePathSelects() {
+      const srcSelect = document.getElementById('path-source-select');
+      const tgtSelect = document.getElementById('path-target-select');
+      if (!srcSelect || !tgtSelect) return;
+
+      const opts = nodes.map(n => `<option value="${n.id}">${n.label} (#${n.id.slice(0,10)})</option>`).join('');
+      srcSelect.innerHTML = opts;
+      tgtSelect.innerHTML = opts;
+
+      if (nodes.length > 5) {
+        srcSelect.selectedIndex = 0;
+        tgtSelect.selectedIndex = Math.min(15, nodes.length - 1);
+      }
+    }
+
+    function tracePathFromSelectedNode() {
+      if (!selectedNode) return;
+      switchDossierTab('pathfinder');
+      document.getElementById('path-source-select').value = selectedNode.id;
+    }
+
+    function computeShortestTrajectory() {
+      const srcId = document.getElementById('path-source-select').value;
+      const tgtId = document.getElementById('path-target-select').value;
+      if (!srcId || !tgtId || srcId === tgtId) return;
+
+      // BFS Shortest Path
+      const adj = new Map();
+      nodes.forEach(n => adj.set(n.id, []));
+      edges.forEach(e => {
+        if (adj.has(e.source)) adj.get(e.source).push(e.target);
+        if (adj.has(e.target)) adj.get(e.target).push(e.source);
+      });
+
+      const queue = [[srcId]];
+      const visited = new Set([srcId]);
+      let shortestPath = null;
+
+      while (queue.length > 0) {
+        const path = queue.shift();
+        const curr = path[path.length - 1];
+
+        if (curr === tgtId) {
+          shortestPath = path;
+          break;
+        }
+
+        for (const neighbor of (adj.get(curr) || [])) {
+          if (!visited.has(neighbor)) {
+            visited.add(neighbor);
+            queue.push([...path, neighbor]);
+          }
+        }
+      }
+
+      const resBox = document.getElementById('path-result-box');
+      const resText = document.getElementById('path-result-text');
+      resBox.style.display = 'block';
+
+      if (shortestPath) {
+        activePathNodes = new Set(shortestPath);
+        resText.innerHTML = shortestPath.map((id, i) => {
+          const n = nodes.find(node => node.id === id);
+          return `<strong>${i + 1}.</strong> ${n ? n.label : id}`;
+        }).join('<br>↓<br>');
+
+        playLaserChirp(1300, 0.12, 'sawtooth');
+        addTerminalLog('[TRAJECTORY-SOLVED]', `Percorso balistico calcolato: ${shortestPath.length} salti da ${srcId} a ${tgtId}.`);
+      } else {
+        resText.innerText = "Nessuna traiettoria sinaptica trovata tra i due nodi selezionati.";
+        activePathNodes.clear();
+      }
+    }
+
+    // --------------------------------------------------------------------------
+    // H. 3D CYBERSPACE THREE.JS HOLOGRAM ENGINE
+    // --------------------------------------------------------------------------
+    let scene3D, camera3D, renderer3D, nodes3DGroup, edges3DGroup, rings3DGroup;
+    let is3DInit = false;
+    let is3DDragging = false, prevMouse3D = { x: 0, y: 0 };
+    let rot3DX = 0, rot3DY = 0;
+
+    function setGraphViewportMode(mode) {
+      currentMode = mode;
+      document.querySelectorAll('.c2-mode-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById(`btn-mode-${mode}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const canvas2D = document.getElementById('tactical-canvas');
+      const container3D = document.getElementById('threejs-3d-container');
+
+      if (mode === '3d') {
+        canvas2D.style.display = 'none';
+        container3D.style.display = 'block';
+        if (!is3DInit) initThreeJS3D();
+        playLaserChirp(950, 0.09);
+        addTerminalLog('[VIEWPORT]', 'Holo-Dome 3D WebGL Cyberspace attivato.');
+      } else {
+        canvas2D.style.display = 'block';
+        container3D.style.display = 'none';
+        physicsAlpha = 1.0;
+        playLaserChirp(650, 0.06);
+        addTerminalLog('[VIEWPORT]', `Modalità ${mode.toUpperCase()} attivata.`);
+      }
+    }
+
+    function initThreeJS3D() {
+      if (typeof THREE === 'undefined') return;
+      const container = document.getElementById('threejs-3d-container');
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+
+      scene3D = new THREE.Scene();
+      camera3D = new THREE.PerspectiveCamera(45, w / h, 1, 4000);
+      camera3D.position.set(0, 0, 950);
+
+      const ambLight = new THREE.AmbientLight(0xffffff, 1.5);
+      scene3D.add(ambLight);
+
+      const ptLight = new THREE.PointLight(0x00f0ff, 2.5, 1400);
+      scene3D.add(ptLight);
+
+      renderer3D = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer3D.setSize(w, h);
+      renderer3D.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer3D.domElement);
+
+      // Starfield background
+      const starGeo = new THREE.BufferGeometry();
+      const starPos = new Float32Array(400 * 3);
+      for (let i = 0; i < 400 * 3; i++) starPos[i] = (Math.random() - 0.5) * 2200;
+      starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+      const starMat = new THREE.PointsMaterial({ color: 0x425875, size: 2, transparent: true, opacity: 0.5 });
+      scene3D.add(new THREE.Points(starGeo, starMat));
+
+      nodes3DGroup = new THREE.Group();
+      edges3DGroup = new THREE.Group();
+      rings3DGroup = new THREE.Group();
+      scene3D.add(nodes3DGroup);
+      scene3D.add(edges3DGroup);
+      scene3D.add(rings3DGroup);
+
+      build3DGlobeMesh();
+      setup3DControls(container);
+
+      is3DInit = true;
+      animate3DScene();
+    }
+
+    function build3DGlobeMesh() {
+      // Orbital telemetry rings
+      const ringGeo = new THREE.RingGeometry(380, 381, 64);
+      const ringMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff, side: THREE.DoubleSide, transparent: true, opacity: 0.15 });
+      const ring1 = new THREE.Mesh(ringGeo, ringMat);
+      ring1.rotation.x = Math.PI / 2;
+      rings3DGroup.add(ring1);
+
+      // 3D Nodes
+      const sphereGeo = new THREE.SphereGeometry(1, 16, 16);
+      const leftMat = new THREE.MeshBasicMaterial({ color: 0x00d2ff });
+      const rightMat = new THREE.MeshBasicMaterial({ color: 0xff0055 });
+
+      nodes.forEach((n, i) => {
+        const phi = Math.acos(-1 + (2 * i) / nodes.length);
+        const theta = Math.sqrt(nodes.length * Math.PI) * phi;
+        const rad = 380;
+
+        const mesh = new THREE.Mesh(sphereGeo, n.hemisphere === 'LEFT' ? leftMat : rightMat);
+        mesh.scale.setScalar(n.radius * 0.85);
+        mesh.position.set(
+          rad * Math.cos(theta) * Math.sin(phi),
+          rad * Math.sin(theta) * Math.sin(phi),
+          rad * Math.cos(phi)
+        );
+        mesh.userData = n;
+        nodes3DGroup.add(mesh);
+      });
+    }
+
+    function setup3DControls(container) {
+      container.addEventListener('mousedown', (e) => {
+        is3DDragging = true;
+        prevMouse3D = { x: e.clientX, y: e.clientY };
+      });
+      window.addEventListener('mouseup', () => { is3DDragging = false; });
+      container.addEventListener('mousemove', (e) => {
+        if (!is3DDragging) return;
+        const dx = e.clientX - prevMouse3D.x;
+        const dy = e.clientY - prevMouse3D.y;
+        rot3DY += dx * 0.005;
+        rot3DX += dy * 0.005;
+        prevMouse3D = { x: e.clientX, y: e.clientY };
+      });
+      container.addEventListener('wheel', (e) => {
+        camera3D.position.z = Math.min(Math.max(camera3D.position.z + e.deltaY * 0.8, 400), 2000);
+      });
+    }
+
+    function animate3DScene() {
+      requestAnimationFrame(animate3DScene);
+      if (currentMode !== '3d' || !renderer3D) return;
+
+      if (!is3DDragging) {
+        rot3DY += 0.002;
+      }
+
+      nodes3DGroup.rotation.x = rot3DX;
+      nodes3DGroup.rotation.y = rot3DY;
+      rings3DGroup.rotation.x = rot3DX;
+      rings3DGroup.rotation.y = rot3DY;
+
+      renderer3D.render(scene3D, camera3D);
+    }
+
+    // --------------------------------------------------------------------------
+    // I. TERMINAL COMMAND INTERPRETER & LOGS
+    // --------------------------------------------------------------------------
+    function toggleTerminalDrawer() {
+      const term = document.getElementById('terminal-drawer');
+      const ind = document.getElementById('term-toggle-indicator');
+      term.classList.toggle('collapsed');
+      ind.innerText = term.classList.contains('collapsed') ? '▲ APRI CONSOLE (⌘`)' : '▼ CHIUDI CONSOLE';
+    }
+
+    function addTerminalLog(tag, msg) {
+      const logs = document.getElementById('terminal-logs');
+      if (!logs) return;
+      const now = new Date();
+      const timeStr = `[${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}]`;
+      const div = document.createElement('div');
+      div.className = 'c2-log-line';
+      div.innerHTML = `<span class="c2-log-time">${timeStr}</span><span class="c2-log-sig">${tag}</span><span>${msg}</span>`;
+      logs.appendChild(div);
+      logs.scrollTop = logs.scrollHeight;
+    }
+
+    function handleTerminalCommand(e) {
+      if (e.key === 'Enter') {
+        const val = e.target.value.trim().toLowerCase();
+        e.target.value = '';
+        if (!val) return;
+        addTerminalLog('[CMD]', `&gt; ${val}`);
+
+        if (val === 'help') {
+          addTerminalLog('[SYS]', 'Comandi supportati: stats, 3d, radar, split, bridges, fit, resurface, tensions, weave, firmware, clear');
+        } else if (val === 'stats') {
+          addTerminalLog('[STATS]', `Connettoma Neurale: ${nodes.length} nodi, ${edges.length} sinapsi.`);
+        } else if (val === '3d') {
+          setGraphViewportMode('3d');
+        } else if (val === 'radar') {
+          setGraphViewportMode('radar');
+        } else if (val === 'split') {
+          setGraphViewportMode('split');
+        } else if (val === 'bridges') {
+          setGraphViewportMode('bridges');
+        } else if (val === 'fit') {
+          fitAllNodesView();
+        } else if (val === 'clear') {
+          document.getElementById('terminal-logs').innerHTML = '';
+        } else if (val === 'resurface') {
+          openCyberModal('modal-resurface');
+        } else if (val === 'tensions') {
+          openCyberModal('modal-tensions');
+        } else if (val === 'weave') {
+          openCyberModal('modal-weave');
+        } else if (val === 'firmware') {
+          openCyberModal('modal-firmware');
+        } else {
+          addTerminalLog('[ERR]', `Comando '${val}' non riconosciuto. Digita 'help'.`);
+        }
+      }
+    }
+
+    // --------------------------------------------------------------------------
+    // J. MODAL POPULATION & LOGIC
+    // --------------------------------------------------------------------------
+    function openCyberModal(id) {
+      document.getElementById(id).classList.add('active');
+      playLaserChirp(750, 0.06);
+    }
+
+    function closeCyberModal(id) {
+      document.getElementById(id).classList.remove('active');
+      playLaserChirp(450, 0.05);
+    }
+
+    function closeModalOnBackdrop(e, id) {
+      if (e.target.id === id) closeCyberModal(id);
+    }
+
+    function populateModalContent() {
+      // 1. Resurface
+      document.getElementById('modal-body-resurface').innerHTML = `
+        <div class="c2-modal-card">
+          <div class="c2-modal-card-tag">PRIORITÀ ALTA // DEEP RECALL</div>
+          <div class="c2-modal-card-title">Dualità Overlay-Substrato (Grafo vs Albero)</div>
+          <div class="c2-modal-card-desc">Il Grafo preserva la totalità relazionale senza perdita semantica; l'Albero ottimizza il context routing per l'LLM.</div>
+        </div>
+        <div class="c2-modal-card">
+          <div class="c2-modal-card-tag">CONTINUITÀ COGNITIVA // RECENTE</div>
+          <div class="c2-modal-card-title">Cross-Process Darwin IPC & WidgetKit</div>
+          <div class="c2-modal-card-desc">Protocollo CFNotificationCenter per invalidazione cache ModelContext in StreaksUp con zero latenza.</div>
+        </div>
+      `;
+
+      // 2. Tensions
+      document.getElementById('modal-body-tensions').innerHTML = `
+        <div class="c2-modal-card">
+          <div class="c2-modal-card-tag">TENSIONE DIALETTICA</div>
+          <div class="c2-modal-card-title">Velocità di Ingestione vs Rigore Tassonomico</div>
+          <div class="c2-modal-card-desc">Equilibrio tra annotazione ultra-rapida da smartphone e classificazione ontologica coerente per GraphRAG.</div>
+        </div>
+        <div class="c2-modal-card">
+          <div class="c2-modal-card-tag">UX TENSION</div>
+          <div class="c2-modal-card-title">Visualizzazione 3D Sferica vs Usabilità 2D</div>
+          <div class="c2-modal-card-desc">Il 3D offre impatto visivo hollywoodiano, mentre il 2D cartesiano è ottimizzato per l'ispezione ad alta densità.</div>
+        </div>
+      `;
+
+      // 3. Weave
+      document.getElementById('modal-body-weave').innerHTML = `
+        <div class="c2-modal-card">
+          <div class="c2-modal-card-tag">AUTO-PONTE PROPOSTO (94% AFFINITÀ)</div>
+          <div class="c2-modal-card-title">SwiftUI Metal GPU ↔ Tactical HUD Reticle</div>
+          <div class="c2-modal-card-desc">Sinapsi consigliata tra rendering GPU a 120fps nativo e shader olografici.</div>
+        </div>
+      `;
+
+      // 4. Firmware
+      document.getElementById('modal-body-firmware').innerHTML = `
+        <div class="c2-modal-card">
+          <div class="c2-modal-card-tag">FIRMWARE 01 // FIRST PRINCIPLES</div>
+          <div class="c2-modal-card-title">Ragionamento da Principi Primi</div>
+          <div class="c2-modal-card-desc">Scomponi ogni problema nei mattoni fisici e logici fondamentali prima di dedurre conclusioni.</div>
+        </div>
+        <div class="c2-modal-card">
+          <div class="c2-modal-card-tag">FIRMWARE 02 // INVERSION (JACOBI)</div>
+          <div class="c2-modal-card-title">Inversione Sistematica</div>
+          <div class="c2-modal-card-desc">Inverti sempre: definisci tutti i modi in cui l'obiettivo può fallire ed eliminali uno ad uno.</div>
+        </div>
+      `;
+    }
+
+    // --------------------------------------------------------------------------
+    // K. KEYBOARD SHORTCUTS & INITIALIZATION
+    // --------------------------------------------------------------------------
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        document.getElementById('target-search-input').focus();
+      }
+      if ((e.metaKey || e.ctrlKey) && e.key === '`') {
+        e.preventDefault();
+        toggleTerminalDrawer();
+      }
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.c2-modal-overlay').forEach(m => m.classList.remove('active'));
+      }
+    });
+
+    setInterval(() => {
+      const now = new Date();
+      const zulu = `${String(now.getUTCHours()).padStart(2,'0')}:${String(now.getUTCMinutes()).padStart(2,'0')}:${String(now.getUTCSeconds()).padStart(2,'0')}Z`;
+      const el = document.getElementById('c2-zulu-clock');
+      if (el) el.innerText = zulu;
+    }, 1000);
+
+    window.addEventListener('DOMContentLoaded', () => {
+      resizeTacticalCanvas();
+      resizeOscilloscope();
+      loadDataset();
+      populateModalContent();
+      requestAnimationFrame(renderTactical2DGraph);
+      requestAnimationFrame(animateOscilloscope);
+      addTerminalLog('[INIT]', 'Cyber-Command Matrix v3.0 avviata con successo.');
+    });
+  </script>
+</body>
+</html>

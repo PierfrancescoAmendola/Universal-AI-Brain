@@ -25,9 +25,9 @@ Mappati 4 layer strutturali: B+Tree (Storage), Radix Trie (Lexical Routing O(k))
 ## 🔗 Connessioni Uscenti
 - [[ep-20260827-tree-structures-evaluation]] (`ANALYZES_EPISODE`) — _Restored from history_
 - [[node-mst-conceptual-backbone]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
-- [[node-hierarchical-dendrogram]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
 - [[node-prefix-radix-trie]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
+- [[node-hierarchical-dendrogram]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[intent-ep-20260827-tree-structures-evaluation]] (`GENERATES_REASONING`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[intent-ep-20260827-tree-structures-evaluation]] (`GENERATES_REASONING`) — _Disegnato su Obsidian Canvas_

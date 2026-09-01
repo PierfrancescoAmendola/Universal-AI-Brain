@@ -24,8 +24,8 @@ Traduzione e consolidamento: Architettura Telegram Bot Gateway 0€ con routing 
 
 ## 🔗 Connessioni Uscenti
 - [[ep-20260827-telegram-cognitive-hub-spec]] (`PART_OF_EPISODE`) — _Restored from history_
-- [[reason-ep-20260827-telegram-cognitive-hub-spec]] (`GENERATES_REASONING`) — _Restored from history_
+- [[reason-ep-20260827-telegram-cognitive-hub-spec]] (`GENERATES_REASONING`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`EXPRESSED`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`EXPRESSED`) — _Disegnato su Obsidian Canvas_

@@ -27,10 +27,6 @@ Medicina, Salute, Nutrizione, Fisiologia, Fitness, Dermatologia, Podologia e Bio
 - [[medical-onicocriptosi-unghia-incarnita]] (`CONTAINS_PATHOLOGY`) — _Restored from history_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Restored from history_
-- [[concept-modular-domain-subgraphs]] (`GOVERNS_PARTITIONING`) — _Restored from history_
-- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
-- [[proj-caretrack]] (`BELONGS_TO_DOMAIN`) — _Il progetto proj-caretrack appartiene al dominio domain-medicina-salute_
 - [[proj-caretrack-demo]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-appalcool]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-website]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
@@ -40,3 +36,7 @@ Medicina, Salute, Nutrizione, Fisiologia, Fitness, Dermatologia, Podologia e Bio
 - [[proj-scripts]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-federicoiiapp]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-utils]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[concept-modular-domain-subgraphs]] (`GOVERNS_PARTITIONING`) — _Disegnato su Obsidian Canvas_
+- [[proj-caretrack]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_

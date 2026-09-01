@@ -24,8 +24,8 @@ Verificare l'attivazione e il funzionamento del token GitHub su Render per auto-
 - **user_prompt:** ho fatto, ho aggiunto ghp_... al mio enviroment di render, puoi controllare che si andato a buon fine
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[reasoning-verify-github-token-render]] (`FULFILLS`) — _Soddisfa la richiesta utente_

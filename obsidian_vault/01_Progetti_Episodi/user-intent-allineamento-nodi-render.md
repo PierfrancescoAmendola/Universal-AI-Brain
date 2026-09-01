@@ -23,8 +23,8 @@ Richiesta di spiegazione sulla discrepanza tra 208 nodi locali e 204 su Render e
 - **raw:** `user_prompt`: /universal-brain /graphify aggiorna i nodi su render. qui ne 208 su render 204, perchè??, `context`: Discrepanza di 4 nodi tra ambiente locale e istanza Render cloud dovuta a commit pendente.
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-allineamento-nodi-render-cloud]] (`RECORDS_INTENT`) — _Restored from history_

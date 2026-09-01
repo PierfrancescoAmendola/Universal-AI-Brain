@@ -23,9 +23,9 @@ Modello a iper-grafo gerarchico in cui i nodi di livello superiore contengono so
 - **raw:** `levels`: L0 (Macro-Domini) -> L1 (Progetti/Aree) -> L2 (Moduli/Sistemi) -> L3 (Entità Atomiche), `formal_name`: Hierarchical Clustered Hypergraph / Multi-Layer Network
 
 ## 🔗 Connessioni Uscenti
-- [[concept-modular-domain-subgraphs]] (`EXTENDS_MODULARITY`) — _Restored from history_
+- [[concept-modular-domain-subgraphs]] (`EXTENDS_MODULARITY`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[architecture-vis-network-silent-stabilization-zero-lag]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[user-intent-hierarchical-multi-layer-graph-design]] (`PROPOSES_CONCEPT`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_

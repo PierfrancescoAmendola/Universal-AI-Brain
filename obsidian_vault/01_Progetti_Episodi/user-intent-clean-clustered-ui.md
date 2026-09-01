@@ -23,9 +23,9 @@ Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto
 - **raw:** `user`: Pierfrancesco Amendola, `priority`: HIGH, `aesthetic_goal`: Eliminare il disordine visivo preservando 100% le relazioni, `user_prompt`: Richiesta di organizzare il grafo in macro-aree pulite, con espansione dei sotto-nodi al click e conservazione tematica indipendente delle chat.
 
 ## 🔗 Connessioni Uscenti
-- [[chat-session-2026-08-27-ui-evolution]] (`DISCUSSED_IN`) — _Restored from history_
-- [[feat-progressive-areas]] (`DRIVES_IMPLEMENTATION`) — _Restored from history_
+- [[chat-session-2026-08-27-ui-evolution]] (`DISCUSSED_IN`) — _Disegnato su Obsidian Canvas_
+- [[feat-progressive-areas]] (`DRIVES_IMPLEMENTATION`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`REQUESTED`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`REQUESTED`) — _Disegnato su Obsidian Canvas_

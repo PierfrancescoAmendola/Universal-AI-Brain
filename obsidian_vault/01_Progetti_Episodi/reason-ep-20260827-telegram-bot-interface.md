@@ -25,8 +25,8 @@ Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction La
 ## 🔗 Connessioni Uscenti
 - [[ep-20260827-telegram-bot-interface]] (`ANALYZES_EPISODE`) — _Restored from history_
 - [[node-telegram-bot-interface]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
-- [[node-ubiquitous-ingestion]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
+- [[node-ubiquitous-ingestion]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[intent-ep-20260827-telegram-bot-interface]] (`GENERATES_REASONING`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[intent-ep-20260827-telegram-bot-interface]] (`GENERATES_REASONING`) — _Disegnato su Obsidian Canvas_

@@ -23,8 +23,8 @@ Prompt espresso a groq (openai/gpt-oss-120b): non riesci a connetterti al mio ce
 - **raw:** `user_prompt`: non riesci a connetterti al mio cervello?, `provider`: groq
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-non-riesci-a-connetterti-al-mio-cer-8486]] (`RECORDS_INTENT`) — _Restored from history_

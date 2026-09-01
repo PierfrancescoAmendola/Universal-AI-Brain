@@ -1,0 +1,420 @@
+/* ==========================================================================
+   Universal AI Brain - 3D Cognitive Embedding Projector Stylesheet
+   ========================================================================== */
+
+#projector-3d-container {
+  position: absolute;
+  top: 48px; /* Below master topbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, #0c101a 0%, #06070a 100%);
+  overflow: hidden;
+  user-select: none;
+  z-index: 20;
+}
+
+#proj-canvas-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Left Floating Control Panel */
+.proj-controls-panel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 320px;
+  max-height: calc(100% - 32px);
+  background: rgba(10, 13, 20, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 50;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(0, 210, 255, 0.06);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.proj-controls-panel::-webkit-scrollbar {
+  width: 4px;
+}
+.proj-controls-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+}
+
+/* Panel Header & Titles */
+.proj-section-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+/* Search Box */
+.proj-search-wrap {
+  position: relative;
+  width: 100%;
+}
+.proj-search-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 12px 8px 32px;
+  border-radius: 8px;
+  color: #f8fafc;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.proj-search-input:focus {
+  border-color: #00d2ff;
+  box-shadow: 0 0 12px rgba(0, 210, 255, 0.25);
+  background: rgba(0, 0, 0, 0.75);
+}
+.proj-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: #64748b;
+  pointer-events: none;
+}
+
+/* Dimension View Switcher (3D vs 2D) */
+.proj-dim-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.proj-dim-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  padding: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+.proj-dim-btn:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+.proj-dim-btn.active {
+  background: rgba(168, 85, 247, 0.18);
+  border-color: #a855f7;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.25);
+}
+
+/* Algorithm Tabs (t-SNE, UMAP, PCA, Bi-Polar) */
+.proj-algo-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.proj-algo-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  padding: 6px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+.proj-algo-btn:hover {
+  color: #f8fafc;
+}
+.proj-algo-btn.active {
+  background: rgba(0, 210, 255, 0.18);
+  color: #00d2ff;
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  box-shadow: 0 0 8px rgba(0, 210, 255, 0.2);
+}
+
+/* t-SNE Live Simulation Box */
+.proj-tsne-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(0, 210, 255, 0.16);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.proj-tsne-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+}
+.proj-tsne-actions {
+  display: flex;
+  gap: 6px;
+}
+.proj-btn-action {
+  flex: 1;
+  background: rgba(0, 210, 255, 0.14);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  color: #00d2ff;
+  padding: 6px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.proj-btn-action:hover {
+  background: rgba(0, 210, 255, 0.25);
+  color: #fff;
+}
+.proj-btn-action.btn-pause {
+  background: rgba(255, 0, 127, 0.16);
+  border-color: rgba(255, 0, 127, 0.35);
+  color: #ff007f;
+}
+.proj-btn-action.btn-pause:hover {
+  background: rgba(255, 0, 127, 0.28);
+}
+
+/* Sliders */
+.proj-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.proj-slider-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #64748b;
+}
+.proj-slider-header strong {
+  color: #00d2ff;
+}
+input[type="range"].proj-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  outline: none;
+}
+input[type="range"].proj-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00d2ff;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00d2ff;
+  transition: transform 0.1s ease;
+}
+input[type="range"].proj-range::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+/* Hemisphere & Domain Filter Chips */
+.proj-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.proj-chip {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.proj-chip:hover, .proj-chip.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Right Floating Node Inspector */
+.proj-node-inspector {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 350px;
+  max-height: calc(100% - 32px);
+  background: rgba(10, 13, 20, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  padding: 18px;
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 50;
+  box-shadow: -10px 20px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(0, 210, 255, 0.06);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.proj-node-inspector.open {
+  display: flex;
+}
+
+.proj-inspector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+}
+.proj-node-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+}
+.proj-node-id {
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #64748b;
+  margin-top: 2px;
+  word-break: break-all;
+}
+.proj-hemi-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.proj-hemi-left {
+  background: rgba(0, 210, 255, 0.15);
+  color: #00d2ff;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+}
+.proj-hemi-right {
+  background: rgba(255, 0, 127, 0.15);
+  color: #ff007f;
+  border: 1px solid rgba(255, 0, 127, 0.3);
+}
+
+.proj-node-summary {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 2px solid #00d2ff;
+}
+
+/* k-NN & Synaptic Links List */
+.proj-knn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.proj-knn-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.proj-knn-item:hover {
+  background: rgba(0, 210, 255, 0.12);
+  border-color: rgba(0, 210, 255, 0.3);
+  transform: translateX(2px);
+}
+.proj-knn-name {
+  font-size: 11px;
+  color: #f8fafc;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.proj-knn-sim {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #00d2ff;
+  font-weight: 700;
+}
+
+/* Tooltip */
+#proj-tooltip {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  background: rgba(8, 11, 18, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #fff;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 210, 255, 0.2);
+  max-width: 260px;
+}
+
+/* Crosshair Center */
+.proj-hud-crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}

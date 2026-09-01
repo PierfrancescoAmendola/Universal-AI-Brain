@@ -24,8 +24,8 @@ Richiesta di Pierfrancesco di creare un video tutorial / anteprima di 1 minuto c
 - **user_prompt:** potresti crearmi un video tutorial, anteprima, un piccolo video di un minuto che spiega tramite scrrenshot presi da internt del mio cervello e tutto, anche con pezzi di codice, il mio cervello artificiale?? /universal-brain così da poterlo postare e far vedere a tutti, presentare un pò il mio cervello,
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco Amendola_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Riferito al progetto Universal AI Brain_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[reasoning-creazione-video-showcase-universal-brain]] (`FULFILLS`) — _Soddisfa la richiesta utente di generare video showcase e kit social_

@@ -23,12 +23,12 @@ Hierarchical Tree Engine (Backend & Endpoints) (Layer: CORE_SERVICES, Tipo: BACK
 - **raw:** `id`: node_hierarchical_tree_engine_impl, `label`: Hierarchical Tree Engine (Backend & Endpoints), `type`: BACKEND_ENGINE, `layer`: CORE_SERVICES
 
 ## 🔗 Connessioni Uscenti
-- [[node-knowledge-graph-memory]] (`PROVIDES_HIERARCHICAL_VIEW_FOR`) — _Restored from history_
+- [[node-knowledge-graph-memory]] (`PROVIDES_HIERARCHICAL_VIEW_FOR`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[node-commit-62e48df]] (`DEPLOYS_TO_PRODUCTION`) — _Restored from history_
 - [[node-web-tree-explorer]] (`VISUALIZES_AND_FOCUSES`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[reason-ep-20260827-hierarchical-tree-deployment-sync]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
-- [[node-telegram-webhook-gateway]] (`EXECUTES_VIA_COMMAND_TREE`) — _Restored from history_
 - [[node-mcp-brain-get-tree]] (`INTERROGATES`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[node-telegram-webhook-gateway]] (`EXECUTES_VIA_COMMAND_TREE`) — _Disegnato su Obsidian Canvas_
+- [[reason-ep-20260827-hierarchical-tree-deployment-sync]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_

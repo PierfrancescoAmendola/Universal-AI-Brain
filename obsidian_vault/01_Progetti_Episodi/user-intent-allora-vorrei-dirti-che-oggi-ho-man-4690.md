@@ -23,8 +23,8 @@ Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Allora vorrei dirti
 - **raw:** `user_prompt`: Allora vorrei dirti che oggi ho mangiato pasta al sugo, `channel`: JARVIS Voice Core
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-allora-vorrei-dirti-che-oggi-ho-man-4690]] (`RECORDS_INTENT`) — _Restored from history_

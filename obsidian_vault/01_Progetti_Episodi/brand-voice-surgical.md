@@ -23,13 +23,13 @@ Comunicazione priva di convenevoli, chirurgica, diretta e con la massima densit�
 - **raw:** `style`: Tecnico, asciutto, analitico, orientato all'azione
 
 ## 🔗 Connessioni Uscenti
-- [[rule-zero-placeholder]] (`COMPLEMENTS`) — _Restored from history_
-- [[rule-zero-placeholder]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[rule-zero-placeholder]] (`COMPLEMENTS`) — _Disegnato su Obsidian Canvas_
+- [[rule-zero-placeholder]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[rigore-informativo]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[rule-zero-placeholder]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[rigore-informativo]] (`SYNONYM_OF`) — _Restored from history_
-- [[domain-design-creativita]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[antigravity-centaur-collaboration]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-authenticity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[antigravity-centaur-collaboration]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[domain-design-creativita]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[rigore-informativo]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[rigore-informativo]] (`SYNONYM_OF`) — _Disegnato su Obsidian Canvas_
+- [[rule-zero-placeholder]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-authenticity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

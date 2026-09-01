@@ -23,10 +23,10 @@ Unified Brain Architecture (Layer: META_SYSTEM, Tipo: COGNITIVE_ARCHITECTURE)
 - **raw:** `id`: node_neuro_symbolic_brain, `label`: Unified Brain Architecture, `type`: COGNITIVE_ARCHITECTURE, `layer`: META_SYSTEM
 
 ## 🔗 Connessioni Uscenti
-- [[node-universal-ai-brain-taxonomy]] (`FORMALLY_CLASSIFIED_AS`) — _Restored from history_
-- [[node-knowledge-graph-memory]] (`USES_AS_CEREBRAL_CORTEX`) — _Restored from history_
-- [[node-search-tree-deliberation]] (`USES_AS_PREFRONTAL_DELIBERATION`) — _Restored from history_
+- [[node-knowledge-graph-memory]] (`USES_AS_CEREBRAL_CORTEX`) — _Disegnato su Obsidian Canvas_
+- [[node-search-tree-deliberation]] (`USES_AS_PREFRONTAL_DELIBERATION`) — _Disegnato su Obsidian Canvas_
+- [[node-universal-ai-brain-taxonomy]] (`FORMALLY_CLASSIFIED_AS`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[reason-ep-20260827-graph-tree-unification]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[reason-ep-20260827-graph-tree-unification]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_

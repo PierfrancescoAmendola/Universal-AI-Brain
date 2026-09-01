@@ -23,8 +23,8 @@ Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Jarvis, ricordi qua
 - **raw:** `user_prompt`: Jarvis, ricordi quali sono gli emisferi del mio connettoma e il loro scopo?, `channel`: JARVIS Voice Core
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-jarvis-ricordi-quali-sono-gli-emis-3117]] (`RECORDS_INTENT`) — _Restored from history_

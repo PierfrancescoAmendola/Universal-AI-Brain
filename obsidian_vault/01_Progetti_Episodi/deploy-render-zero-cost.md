@@ -23,10 +23,10 @@ Infrastruttura di erogazione web asincrona su Render.com Free Tier con Uvicorn e
 - **raw:** `build_command`: pip install -r requirements.txt, `start_command`: uvicorn main:app --host 0.0.0.0 --port , `cost`: 0€ lifetime
 
 ## 🔗 Connessioni Uscenti
-- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[repo-github-universal-ai-brain]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[session-continuous-evolution]] (`DEPLOYS_TO`) — _Restored from history_
 - [[repo-github-universal-ai-brain]] (`FEEDS_DEPLOY`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_

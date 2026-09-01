@@ -23,8 +23,8 @@ Pierfrancesco richiede di clonare OpenJarvis sul Desktop e connetterlo al propri
 - **raw:** `action`: Clonazione di OpenJarvis sul Desktop e collegamento diretto al Universal AI Brain, `repo`: https://github.com/open-jarvis/OpenJarvis, `user_prompt`: Pierfrancesco richiede di clonare OpenJarvis sul Desktop e connetterlo al proprio Cervello Artificiale sfruttando anche la desktop app.
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-20260829-integrazione-openjarvis-desktop]] (`RECORDS_INTENT`) — _Restored from history_

@@ -27,5 +27,5 @@ Definito formalmente il principio di 'Dualità Overlay-Substrato': il Grafo pres
 - [[node-multiscale-overlay-pattern]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[intent-ep-20260827-hierarchical-overlay-reassurance]] (`GENERATES_REASONING`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[intent-ep-20260827-hierarchical-overlay-reassurance]] (`GENERATES_REASONING`) — _Disegnato su Obsidian Canvas_

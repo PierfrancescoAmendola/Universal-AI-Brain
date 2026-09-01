@@ -23,12 +23,12 @@ Priorità assoluta alla sincerità e alla chiarezza nei rapporti; rifiuto di mas
 - **raw:** `standard`: Comunicazione limpida, rispetto dei patti, integrità morale
 
 ## 🔗 Connessioni Uscenti
-- [[brand-voice-surgical]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[lesson-boundaries-clarity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[brand-voice-surgical]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[lesson-boundaries-clarity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[lesson-boundaries-clarity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`EMBODIES`) — _Restored from history_
-- [[lesson-boundaries-clarity]] (`REINFORCES`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[lesson-boundaries-clarity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[lesson-boundaries-clarity]] (`REINFORCES`) — _Disegnato su Obsidian Canvas_
+- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`EMBODIES`) — _Disegnato su Obsidian Canvas_

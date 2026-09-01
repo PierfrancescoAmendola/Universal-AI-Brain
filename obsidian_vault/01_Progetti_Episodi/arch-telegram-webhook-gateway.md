@@ -23,9 +23,9 @@ Infrastruttura serverless su webhook FastAPI per ricezione comandi (/search, /pa
 - **raw:** `endpoint`: POST /api/telegram/webhook, `auth`: Telegram Secret Token / Authorized User ID whitelist, `cost`: 0€ illimitato
 
 ## 🔗 Connessioni Uscenti
-- [[episode-2026-08-27-telegram-omnipresence]] (`PART_OF`) — _Restored from history_
-- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[episode-2026-08-27-telegram-omnipresence]] (`PART_OF`) — _Disegnato su Obsidian Canvas_
+- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[user-intent-telegram-bot-gateway]] (`DEFINES`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-telegram-bot-gateway]] (`DEFINES`) — _Disegnato su Obsidian Canvas_

@@ -24,9 +24,9 @@ Telegram 0€ Webhook Gateway (POST /api/telegram/webhook) (Layer: PERCEPTUAL_IO
 
 ## 🔗 Connessioni Uscenti
 - [[node-bidirectional-bfs-pathfinding]] (`EXECUTES_VIA_COMMAND_PATH`) — _Restored from history_
-- [[node-hierarchical-tree-engine-impl]] (`EXECUTES_VIA_COMMAND_TREE`) — _Restored from history_
+- [[node-hierarchical-tree-engine-impl]] (`EXECUTES_VIA_COMMAND_TREE`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[reason-ep-20260827-telegram-cognitive-hub-spec]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
 - [[node-commit-965f0a8]] (`RECORDS_ARCHITECTURE_INTENT`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[reason-ep-20260827-telegram-cognitive-hub-spec]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_

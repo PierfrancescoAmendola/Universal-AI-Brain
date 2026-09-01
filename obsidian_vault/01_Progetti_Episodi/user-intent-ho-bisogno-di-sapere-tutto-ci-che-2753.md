@@ -23,8 +23,8 @@ Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: ho bisogno di saper
 - **raw:** `user_prompt`: ho bisogno di sapere tutto ciò che sai sul mio cervello artificiale, `channel`: JARVIS Voice Core
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-ho-bisogno-di-sapere-tutto-ci-che-2753]] (`RECORDS_INTENT`) — _Restored from history_

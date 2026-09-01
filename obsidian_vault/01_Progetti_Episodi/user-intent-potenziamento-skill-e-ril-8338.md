@@ -23,8 +23,8 @@ Intento espresso da Pierfrancesco: Potenziamento Skill e Rilascio Demone Sincron
 - **raw:** `user_prompt`: /universal-brain procedi con il piano da te implementato, procedi a step, controlla ogni passaggio e prima di andare avanti con il prossimo punto ricontrolla !!, `context`: Sessione su Potenziamento Skill e Rilascio Demone Sincronizzazione macOS
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-potenziamento-skill-e-ril-8338]] (`RECORDS_INTENT`) — _Restored from history_

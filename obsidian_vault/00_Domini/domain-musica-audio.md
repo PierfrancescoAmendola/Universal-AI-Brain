@@ -23,4 +23,4 @@ Teoria Musicale, Ear Training, Composizione, Sound Design, Audio Engineering e P
 - **scope:** Music theory, ear training, sound synthesis, composition
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
+- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_

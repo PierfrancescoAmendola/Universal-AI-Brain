@@ -24,10 +24,10 @@ Discussione e perizia tecnica sull'integrazione di alberi binari, alberi di rice
 
 ## 🔗 Connessioni Uscenti
 - [[session-continuous-evolution]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[idea-hierarchical-weighted-trees]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[user-intent-tree-search-enhancement]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[idea-hierarchical-weighted-trees]] (`PART_OF`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-tree-search-enhancement]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

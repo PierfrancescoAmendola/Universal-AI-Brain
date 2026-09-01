@@ -23,10 +23,10 @@ Search Trees (ToT / MCTS Deliberation) (Layer: WORKING_MEMORY_PLANNING, Tipo: CO
 - **raw:** `id`: node_search_tree_deliberation, `label`: Search Trees (ToT / MCTS Deliberation), `type`: COGNITIVE_PROCESS, `layer`: WORKING_MEMORY_PLANNING
 
 ## 🔗 Connessioni Uscenti
-- [[node-knowledge-graph-memory]] (`CONSOLIDATES_DISCOVERED_PATHS_INTO`) — _Restored from history_
+- [[node-knowledge-graph-memory]] (`CONSOLIDATES_DISCOVERED_PATHS_INTO`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[reason-ep-20260827-graph-tree-unification]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
-- [[node-knowledge-graph-memory]] (`PROVIDES_STATE_SPACE_AND_CONSTRAINTS`) — _Restored from history_
-- [[node-neuro-symbolic-brain]] (`USES_AS_PREFRONTAL_DELIBERATION`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[node-knowledge-graph-memory]] (`PROVIDES_STATE_SPACE_AND_CONSTRAINTS`) — _Disegnato su Obsidian Canvas_
+- [[node-neuro-symbolic-brain]] (`USES_AS_PREFRONTAL_DELIBERATION`) — _Disegnato su Obsidian Canvas_
+- [[reason-ep-20260827-graph-tree-unification]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_

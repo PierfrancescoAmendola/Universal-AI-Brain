@@ -337,14 +337,36 @@ function setGraphViewMode(mode) {
   const btnAreas = document.getElementById('mode-btn-areas');
   const btnFull = document.getElementById('mode-btn-full');
   const btnGlobe = document.getElementById('mode-btn-globe');
+  const btnProjector = document.getElementById('mode-btn-projector');
   const actionsPill = document.getElementById('areas-action-pill');
   const palazzoElevator = document.getElementById('palazzo-elevator');
   const graphContainer = document.getElementById('graph');
   const globeContainer = document.getElementById('globe-3d-container');
+  const projectorContainer = document.getElementById('projector-3d-container');
 
-  [btnAreas, btnFull, btnGlobe].forEach(b => b && b.classList.remove('active'));
+  [btnAreas, btnFull, btnGlobe, btnProjector].forEach(b => b && b.classList.remove('active'));
 
-  if (mode === 'globe') {
+  if (mode === 'projector') {
+    if (btnProjector) btnProjector.classList.add('active');
+    if (actionsPill) actionsPill.style.display = 'none';
+    if (palazzoElevator) palazzoElevator.style.display = 'none';
+    if (graphContainer) graphContainer.style.display = 'none';
+    if (globeContainer) {
+      globeContainer.style.display = 'none';
+      isGlobeLoopRunning = false;
+    }
+    if (projectorContainer) {
+      projectorContainer.style.display = 'block';
+    }
+
+    if (window.EmbeddingProjector) {
+      window.EmbeddingProjector.init(projectorContainer);
+      window.EmbeddingProjector.setData(rawNodes, rawEdges);
+      window.EmbeddingProjector.start();
+    }
+  } else if (mode === 'globe') {
+    if (window.EmbeddingProjector) window.EmbeddingProjector.stop();
+    if (projectorContainer) projectorContainer.style.display = 'none';
     if (btnGlobe) btnGlobe.classList.add('active');
     if (actionsPill) actionsPill.style.display = 'none';
     if (palazzoElevator) palazzoElevator.style.display = 'none';
@@ -359,6 +381,8 @@ function setGraphViewMode(mode) {
       animateGlobe3D();
     }
   } else {
+    if (window.EmbeddingProjector) window.EmbeddingProjector.stop();
+    if (projectorContainer) projectorContainer.style.display = 'none';
     isGlobeLoopRunning = false;
     if (globeContainer) globeContainer.style.display = 'none';
     if (graphContainer) graphContainer.style.display = 'block';
@@ -450,6 +474,9 @@ async function fetchBrainData() {
     }
 
     renderGraphData();
+    if (graphViewMode === 'projector' && window.EmbeddingProjector) {
+      window.EmbeddingProjector.setData(rawNodes, rawEdges);
+    }
     updateStatsHUD();
     buildLegend();
     populateLinkDropdown();

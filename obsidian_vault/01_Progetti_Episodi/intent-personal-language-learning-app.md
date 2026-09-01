@@ -23,10 +23,10 @@ L'utente desidera sviluppare un software o web app strettamente personale e priv
 - **raw:** `target_languages`: ['Portoghese', 'Tedesco'], `motivation`: Superamento paywall/energia di Duolingo, `scope`: Uso esclusivo personale e privato, `user_prompt`: L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
 
 ## 🔗 Connessioni Uscenti
-- [[episode-language-app-architecture]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[episode-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[episode-language-app-architecture]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[episode-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[episode-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[user-intent-valutazione-progetto-language-app]] (`RELATES_TO`) — _Restored from history_
-- [[reasoning-language-app-architecture]] (`SOLVES`) — _Restored from history_
+- [[episode-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[reasoning-language-app-architecture]] (`SOLVES`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-valutazione-progetto-language-app]] (`RELATES_TO`) — _Disegnato su Obsidian Canvas_

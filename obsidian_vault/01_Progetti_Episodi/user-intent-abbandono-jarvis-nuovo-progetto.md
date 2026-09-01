@@ -23,8 +23,8 @@ Pierfrancesco ordina la cancellazione di Jarvis/OpenJarvis e l'orientamento vers
 - **raw:** `action`: Cancellazione totale di Desktop/Jarvis e Desktop/OpenJarvis. Svolta verso nuovo progetto più semplice, realistico e funzionale., `user_prompt`: purtropo jarvis e i progetti a loro associati non vanno bene cancelliamo tutto e abbandoniamo il progetto jarvis per il momento, ora pensiamo ad un altro progetto, più semplice, realistico, e forse funzionale!!!!
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[proj-jarvis-voice-assistant]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[proj-jarvis-voice-assistant]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-20260829-chiusura-jarvis-nuovo-progetto]] (`RECORDS_INTENT`) — _Restored from history_

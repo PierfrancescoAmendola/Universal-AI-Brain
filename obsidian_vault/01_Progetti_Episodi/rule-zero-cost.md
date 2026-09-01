@@ -23,16 +23,16 @@ Progettare sistemi snelli ed efficienti eliminando i costi infrastrutturali fiss
 - **raw:** `practices`: ['SQLite WAL invece di server DB pesanti', 'Client-side processing', 'Static/Serverless hosting']
 
 ## 🔗 Connessioni Uscenti
-- [[val-independence]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[val-independence]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`APPLIES`) — _Restored from history_
-- [[val-independence]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[proj-streaksup-app]] (`ALIGNED_WITH`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[ai-reasoning-hybrid-search-mcp]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[analysis-bst-vs-graph-taxonomy]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[arch-telegram-webhook-gateway]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[deploy-render-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[proj-unicampus]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[session-continuous-evolution]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[ai-reasoning-hybrid-search-mcp]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[analysis-bst-vs-graph-taxonomy]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[arch-telegram-webhook-gateway]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[deploy-render-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-independence]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`APPLIES`) — _Disegnato su Obsidian Canvas_
+- [[proj-streaksup-app]] (`ALIGNED_WITH`) — _Disegnato su Obsidian Canvas_

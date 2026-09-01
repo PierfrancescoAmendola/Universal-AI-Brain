@@ -23,11 +23,11 @@ Punto fermo affettivo e motivazionale; destinatari della dedica di tesi e di sup
 - **raw:** `bonds`: Supporto tecnologico madre, dedica formale tesi di laurea padre e madre
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-transparency-loyalty]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-transparency-loyalty]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[person-pierfrancesco]] (`CHERISHES`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-transparency-loyalty]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CHERISHES`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-transparency-loyalty]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

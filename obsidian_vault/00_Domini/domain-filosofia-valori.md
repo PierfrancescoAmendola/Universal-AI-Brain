@@ -24,22 +24,8 @@ Filosofia, Stoicismo, Modelli Mentali, Principi Etici, Decision Making, Autodisc
 
 ## 🔗 Connessioni Uscenti
 - [[session-evolution-ui-persistence]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[art-theatre-acting]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[art-creative-writing]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[antigravity-centaur-collaboration]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[creative-multidisciplinary]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[memory-perfectionism-tension]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[lesson-boundaries-clarity]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[lesson-stoic-resilience]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[val-authenticity]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[val-independence]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[val-transparency-loyalty]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[val-impact-utility]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[rel-antonio-chieppa]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[rel-parents]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[rel-marco-di-martino]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[rel-academic-mentors]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[rel-napoli-culture]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[tg-idea-per-nuova-app-ai]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[ep-20260827-graph-tree-unification]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[ep-20260827-graph-taxonomy-classification]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
@@ -50,8 +36,22 @@ Filosofia, Stoicismo, Modelli Mentali, Principi Etici, Decision Making, Autodisc
 - [[ep-20260827-hierarchical-tree-deployment-sync]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[node-commit-62e48df]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
 - [[ep-20260827-telegram-cognitive-hub-spec]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[antigravity-centaur-collaboration]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[art-creative-writing]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[art-theatre-acting]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[creative-multidisciplinary]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[lesson-boundaries-clarity]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[lesson-stoic-resilience]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[memory-perfectionism-tension]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[rel-marco-di-martino]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[rel-napoli-culture]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[rel-parents]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[val-authenticity]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[val-impact-utility]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[val-independence]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[val-transparency-loyalty]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[concept-interhemispheric-inhibition-gating]] (`CROSS_CALLOSAL_INHIBITION`) — _Restored from history_
-- [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Restored from history_
-- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
+- [[concept-interhemispheric-inhibition-gating]] (`CROSS_CALLOSAL_INHIBITION`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`ARCHITECT_AND_CREATOR`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_

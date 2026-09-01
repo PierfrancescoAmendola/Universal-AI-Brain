@@ -23,8 +23,8 @@ Intento espresso da Pierfrancesco: Ottimizzazione Mobile Web Dashboard Universal
 - **raw:** `user_prompt`: /caveman wenyan-ultra. assicurati di rendere la schermata online del sito ottimizzata anche epr mobile. ora devi lavorare solo sulla parte mobile, non cambiare l'interfaccia del sito come si vede sul pc. quando apro il sito sul mio telefono non vedo nulla....o almeno vedo solo il riquadro di destra che compare sul sito quando lo apro dal computer. chiaro??? usa i tag @ meta o viewport non so ma quelli usati per rendere le schermata ottimizzate per i vari dispositivi. /universal-brain /graphify, `context`: Sessione su Ottimizzazione Mobile Web Dashboard Universal Brain
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-ottimizzazione-mobile-web-8880]] (`RECORDS_INTENT`) — _Restored from history_

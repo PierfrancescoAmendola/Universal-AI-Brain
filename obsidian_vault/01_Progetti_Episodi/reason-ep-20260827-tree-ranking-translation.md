@@ -24,8 +24,8 @@ Tradotto fedelmente il framework di comparazione tecnica e gerarchizzazione dell
 
 ## 🔗 Connessioni Uscenti
 - [[ep-20260827-tree-ranking-translation]] (`ANALYZES_EPISODE`) — _Restored from history_
-- [[node-tree-architecture-verdict]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
+- [[node-tree-architecture-verdict]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[intent-ep-20260827-tree-ranking-translation]] (`GENERATES_REASONING`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[intent-ep-20260827-tree-ranking-translation]] (`GENERATES_REASONING`) — _Disegnato su Obsidian Canvas_

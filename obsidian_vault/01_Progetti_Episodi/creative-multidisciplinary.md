@@ -28,5 +28,5 @@ Integrazione tra rigore computazionale e sensibilità creativa (pianoforte, teat
 ## 📥 Connessioni Entranti (Backlinks)
 - [[proj-kdp-ai-book]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[identity-cs-researcher]] (`HARMONIZES`) — _Restored from history_
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[person-pierfrancesco]] (`EXPRESSES_SYNTHESIS`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`EXPRESSES_SYNTHESIS`) — _Disegnato su Obsidian Canvas_

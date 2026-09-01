@@ -26,7 +26,7 @@ Suite di effetti grafici ed esplosioni particellari reattive: Notch Fireworks da
 - [[streaksup-gamification-engine]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[proj-streaksup-app]] (`CONTAINS_MODULE`) — _Restored from history_
 - [[streaksup-gamification-engine]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[proj-streaksup-app]] (`RENDERS_FX`) — _Restored from history_
 - [[streaksup-gamification-engine]] (`TRIGGERS_CELEBRATION`) — _Restored from history_
+- [[proj-streaksup-app]] (`CONTAINS_MODULE`) — _Disegnato su Obsidian Canvas_
+- [[proj-streaksup-app]] (`RENDERS_FX`) — _Disegnato su Obsidian Canvas_

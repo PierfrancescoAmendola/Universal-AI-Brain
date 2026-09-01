@@ -23,9 +23,9 @@ L'utente richiede la definizione della grafica, dello stile visivo e dell'interf
 - **raw:** `focus`: Design dell'interfaccia, token visivi, animazioni e layout degli esercizi, `user_prompt`: L'utente richiede la definizione della grafica, dello stile visivo e dell'interfaccia utente per l'applicazione personale di apprendimento linguistico.
 
 ## 🔗 Connessioni Uscenti
-- [[episode-language-app-architecture]] (`BELONGS_TO_EPISODE`) — _Restored from history_
 - [[design-language-app-system]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[episode-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[episode-language-app-architecture]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[episode-language-app-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[design-language-app-system]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_

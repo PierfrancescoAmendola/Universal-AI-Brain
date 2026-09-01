@@ -23,12 +23,12 @@ Deduzione logica Gemini: disaccoppiare la memoria a lungo termine dal context bu
 - **raw:** `architecture_solution`: External Graph State (SQLite WAL + GraphRAG) vs Volatile Prompt Buffer, `benefits`: ["Nuova chat legge /brain.md e recupera istantaneamente l'intero stato pregresso", 'Nessun degrado qualitativo dovuto al context bloat', 'Indipendenza da limiti di contesto di specifici provider LLM'], `model`: Gemini 3.7 Flash
 
 ## 🔗 Connessioni Uscenti
-- [[episode-infinite-context-philosophy]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[val-eternal-cognitive-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[episode-infinite-context-philosophy]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[universal-ai-brain]] (`DEFINES_CORE_PURPOSE_OF`) — _Restored from history_
-- [[user-intent-infinite-context-persistence]] (`FORMALIZES`) — _Restored from history_
+- [[episode-infinite-context-philosophy]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[episode-infinite-context-philosophy]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`DEFINES_CORE_PURPOSE_OF`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-infinite-context-persistence]] (`FORMALIZES`) — _Disegnato su Obsidian Canvas_
+- [[val-eternal-cognitive-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[episode-infinite-context-philosophy]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-eternal-cognitive-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[episode-infinite-context-philosophy]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-eternal-cognitive-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

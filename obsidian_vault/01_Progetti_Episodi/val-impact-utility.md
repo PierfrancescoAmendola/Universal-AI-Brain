@@ -23,13 +23,13 @@ La tecnologia deve risolvere problemi reali, proteggere le persone e migliorare 
 - **raw:** `mission`: Salute digitale, prevenzione, accessibilità ed educazione
 
 ## 🔗 Connessioni Uscenti
-- [[proj-caretrack]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[proj-alcolsafe]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[proj-caretrack]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[proj-alcolsafe]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[proj-caretrack]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[proj-alcolsafe]] (`FULFILLS`) — _Restored from history_
-- [[proj-caretrack]] (`FULFILLS`) — _Restored from history_
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[person-pierfrancesco]] (`STRIVES_FOR`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`STRIVES_FOR`) — _Disegnato su Obsidian Canvas_
+- [[proj-caretrack]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[proj-caretrack]] (`FULFILLS`) — _Disegnato su Obsidian Canvas_

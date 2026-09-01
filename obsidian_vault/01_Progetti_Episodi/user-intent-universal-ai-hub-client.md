@@ -23,8 +23,8 @@ Pierfrancesco intende costruire un client desktop/web unico che unifica tutti i 
 - **raw:** `action`: Creazione di una web/desktop app unificata (stile ChatGPT/Claude/DeepSeek) con memoria bi-emisferica fissa e provider multipli gratuiti., `user_prompt`: voglio creare un interfaccia desktop uguale a chatgpt, claude, deepseek, e quant'altro che ha come skill fissa a prescindere da tutto, senza da dover inserire ogni volta, /universal-brain. c'è una barra dove inseriamo la nostra richiesta, poi un pulsante per scegliere il provider ai... tutto gratis!
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-20260829-avvio-intervista-universal-ai-hub]] (`RECORDS_INTENT`) — _Restored from history_

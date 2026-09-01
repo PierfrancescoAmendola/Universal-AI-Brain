@@ -24,9 +24,9 @@ Mappate le 4 dimensioni: Topologica (Heterogeneous Multigraph), Epistemica (Epis
 
 ## 🔗 Connessioni Uscenti
 - [[ep-20260827-graph-taxonomy-classification]] (`ANALYZES_EPISODE`) — _Restored from history_
-- [[node-universal-ai-brain-taxonomy]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
 - [[node-epistemic-grading-system]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
+- [[node-universal-ai-brain-taxonomy]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[intent-ep-20260827-graph-taxonomy-classification]] (`GENERATES_REASONING`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[intent-ep-20260827-graph-taxonomy-classification]] (`GENERATES_REASONING`) — _Disegnato su Obsidian Canvas_

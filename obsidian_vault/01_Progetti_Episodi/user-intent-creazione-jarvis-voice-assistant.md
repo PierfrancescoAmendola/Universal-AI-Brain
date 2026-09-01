@@ -23,8 +23,8 @@ Pierfrancesco richiede la progettazione di un assistente vocale continuo JARVIS 
 - **raw:** `context`: Creazione assistente vocale tipo Iron Man a costo zero (0€), con wake word, LLM gratuiti, TTS neurale, collegato al Persistent Knowledge Graph., `user_prompt`: ho intenzione di creare JARVIS come quello di IronMan... assistente personale vocale, collegato al mio cervello... gratis sia realizzazione che chiamate API
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[proj-jarvis-voice-assistant]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[proj-jarvis-voice-assistant]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-20260829-progettazione-jarvis-voice-ai]] (`RECORDS_INTENT`) — _Restored from history_

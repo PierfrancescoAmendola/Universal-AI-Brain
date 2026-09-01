@@ -23,11 +23,11 @@ Sessione di formalizzazione dello scopo supremo di Universal AI Brain: memoria p
 - **raw:** `topic`: Scopo Fondante della Persistenza del Contesto Multi-AI, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `date`: 2026-08-27
 
 ## 🔗 Connessioni Uscenti
-- [[goal-multi-ai-shared-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[ai-reasoning-shared-cognitive-state-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[ai-reasoning-shared-cognitive-state-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[goal-multi-ai-shared-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[ai-reasoning-shared-cognitive-state-continuity]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[goal-multi-ai-shared-context-persistence]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[ai-reasoning-shared-cognitive-state-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[goal-multi-ai-shared-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[ai-reasoning-shared-cognitive-state-continuity]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[ai-reasoning-shared-cognitive-state-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[goal-multi-ai-shared-context-persistence]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[goal-multi-ai-shared-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

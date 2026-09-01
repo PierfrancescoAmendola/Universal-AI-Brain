@@ -23,10 +23,10 @@ L'utente richiede un'analisi critica dell'architettura del proprio cervello arti
 - **raw:** `focus_areas`: ['Architecture', 'Prompt', 'Missing Features'], `ingested_via`: telegram_json_post, `user`: Pierfrancesco
 
 ## 🔗 Connessioni Uscenti
-- [[episode-system-metacognition]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[episode-system-metacognition]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[episode-system-metacognition]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[episode-system-metacognition]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[episode-system-metacognition]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[reasoning-brain-architecture-analysis]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[reasoning-brain-architecture-analysis]] (`EVALUATES`) — _Restored from history_
+- [[episode-system-metacognition]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

@@ -24,8 +24,8 @@ Eseguire git push automatico direttamente dal cloud ad ogni post/ingestione su R
 - **user_prompt:** però potremmo fare che ogni volta che facciamo un post tramite sito web, o qualsiasi altra parte, questo post che contiene le nostre info, i nodi, archi, ecc... faccia anche un git push, quindi carichi tutto su github, in modo tale che se render si spegne e si riavvia non andrà a prendere il vecchio db, ma sarà sempre aggiornato, che ne pensi??
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[reasoning-cloud-git-auto-push]] (`FULFILLS`) — _Soddisfa la richiesta utente_

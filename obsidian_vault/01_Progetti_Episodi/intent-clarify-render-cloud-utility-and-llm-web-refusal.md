@@ -23,9 +23,9 @@ Pierfrancesco richiede spiegazione sul perché avere il backend su Render se gli
 - **raw:** `user_prompt`: una domanda, ma se claude desktop, antigravity ecc...leggono i file dal mio pc allora che senso ha avere tutto su render?? spiegami?? lo scopo era che le ai leggessero da internet il mio sito, la mia memoria e poi creassero dei file json che avrei aggiunto al mio cervello per mantenere il contesto, e memoria della chat. spiega non agire !!!, `analysis`: Richiesta di formalizzazione della pipeline omnicanale (Cloud API vs Local Stdio vs Web Chat Attachment)
 
 ## 🔗 Connessioni Uscenti
-- [[ep-20260827-render-cloud-vs-local-hybrid-architecture]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
+- [[ep-20260827-render-cloud-vs-local-hybrid-architecture]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[concept-llm-indirect-injection-safeguard]] (`RESOLVES_ISSUE_OF`) — _Restored from history_
-- [[ai-reasoning-hybrid-cloud-local-symbiosis]] (`RESPONDS_TO_INTENT`) — _Restored from history_
+- [[ai-reasoning-hybrid-cloud-local-symbiosis]] (`RESPONDS_TO_INTENT`) — _Disegnato su Obsidian Canvas_
+- [[concept-llm-indirect-injection-safeguard]] (`RESOLVES_ISSUE_OF`) — _Disegnato su Obsidian Canvas_

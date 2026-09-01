@@ -23,9 +23,9 @@ L'unificazione del contesto in un grafo bi-emisferico supera il silo conversazio
 - **raw:** `model`: Gemini 3.7 Flash, `paradigm`: Decentralized Sovereign AI Memory, `architectural_impact`: La memoria risiede nel grafo dell'utente, non nei database isolati dei provider proprietari.
 
 ## 🔗 Connessioni Uscenti
-- [[episode-2026-08-27-universal-context-definition]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[episode-2026-08-27-universal-context-definition]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[goal-multi-ai-shared-context-persistence]] (`VALIDATES`) — _Restored from history_
+- [[episode-2026-08-27-universal-context-definition]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[episode-2026-08-27-universal-context-definition]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[goal-multi-ai-shared-context-persistence]] (`VALIDATES`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[episode-2026-08-27-universal-context-definition]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[episode-2026-08-27-universal-context-definition]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

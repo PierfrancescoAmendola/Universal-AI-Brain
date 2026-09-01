@@ -23,12 +23,12 @@ Piattaforma mobile di telemedicina e assistenza domiciliare vincitrice del Googl
 - **raw:** `stack`: Flutter, Dart, Firebase, SQLite, `pattern`: Clean Architecture + BLoC (Offline-first), `status`: Awarded / Functional Prototype
 
 ## 🔗 Connessioni Uscenti
-- [[val-impact-utility]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-impact-utility]] (`FULFILLS`) — _Restored from history_
-- [[domain-medicina-salute]] (`BELONGS_TO_DOMAIN`) — _Il progetto proj-caretrack appartiene al dominio domain-medicina-salute_
+- [[domain-medicina-salute]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[val-impact-utility]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-impact-utility]] (`FULFILLS`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[ux-frictionless]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-impact-utility]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`DEVELOPED`) — _Restored from history_
-- [[domain-software-engineering]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-software-engineering]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`DEVELOPED`) — _Disegnato su Obsidian Canvas_
+- [[ux-frictionless]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-impact-utility]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

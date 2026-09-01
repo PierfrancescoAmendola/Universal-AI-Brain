@@ -23,11 +23,11 @@ Fedeltà incondizionata a chi ha dimostrato supporto autentico, rispetto e prese
 - **raw:** `expression`: Presenza attiva, riconoscenza esplicita e protezione dei rapporti veri
 
 ## 🔗 Connessioni Uscenti
-- [[rel-parents]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[rel-marco-di-martino]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[rel-marco-di-martino]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[rel-parents]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[rel-parents]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`UPHOLDS`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`UPHOLDS`) — _Disegnato su Obsidian Canvas_
+- [[rel-parents]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

@@ -24,8 +24,8 @@ Vorrei collegare il mio cervello a un bot su telegram giusto per avere a portata
 
 ## 🔗 Connessioni Uscenti
 - [[ep-20260827-telegram-bot-interface]] (`PART_OF_EPISODE`) — _Restored from history_
-- [[reason-ep-20260827-telegram-bot-interface]] (`GENERATES_REASONING`) — _Restored from history_
+- [[reason-ep-20260827-telegram-bot-interface]] (`GENERATES_REASONING`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`EXPRESSED`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`EXPRESSED`) — _Disegnato su Obsidian Canvas_

@@ -24,8 +24,8 @@ Intento espresso da Pierfrancesco: Nuove rappresentazioni visuali del connettoma
 - **context:** Sessione su Nuove rappresentazioni visuali del connettoma
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Riferito al progetto universal-ai-brain_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[reasoning-nuove-rappresentazioni-vi-2874]] (`FULFILLS`) — _Soddisfa la richiesta utente_

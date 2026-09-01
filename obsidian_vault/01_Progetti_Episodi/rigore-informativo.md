@@ -23,10 +23,10 @@ Preferenza esplicita per risposte concise, dirette e tecnicamente dense con epis
 - **raw:** `communication_preferences`: ['Minimi convenevoli', 'Informazione ad alta densità', 'Struttura esplicita', 'Precisione']
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[brand-voice-surgical]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[brand-voice-surgical]] (`SYNONYM_OF`) — _Restored from history_
+- [[brand-voice-surgical]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[brand-voice-surgical]] (`SYNONYM_OF`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`PREFERS`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`PREFERS`) — _Disegnato su Obsidian Canvas_

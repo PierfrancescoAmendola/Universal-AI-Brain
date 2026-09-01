@@ -23,8 +23,8 @@ Protocollo di interazione con modelli web: evitare comandi imperativi di rete es
 - **raw:** `cause_of_refusal`: I filtri di Anthropic/OpenAI rilevano istruzioni di esfiltrazione dati se un prompt/file ordina chiamate POST o fetch verso siti terzi., `recommended_protocol`: Allegare brain.md e chiedere la generazione del blocco di codice JSON da incollare con 1-click nella Web Dashboard.
 
 ## 🔗 Connessioni Uscenti
-- [[ep-20260827-render-cloud-vs-local-hybrid-architecture]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`COGNITIVE_RULE_OF`) — _Restored from history_
-- [[universal-ai-brain]] (`GOVERNS_INGESTION_FOR`) — _Restored from history_
-- [[ai-reasoning-hybrid-cloud-local-symbiosis]] (`PREVENTS_FALSE_POSITIVES_IN`) — _Restored from history_
-- [[intent-clarify-render-cloud-utility-and-llm-web-refusal]] (`RESOLVES_ISSUE_OF`) — _Restored from history_
+- [[ai-reasoning-hybrid-cloud-local-symbiosis]] (`PREVENTS_FALSE_POSITIVES_IN`) — _Disegnato su Obsidian Canvas_
+- [[domain-ai-cognitive-systems]] (`COGNITIVE_RULE_OF`) — _Disegnato su Obsidian Canvas_
+- [[ep-20260827-render-cloud-vs-local-hybrid-architecture]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[intent-clarify-render-cloud-utility-and-llm-web-refusal]] (`RESOLVES_ISSUE_OF`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`GOVERNS_INGESTION_FOR`) — _Disegnato su Obsidian Canvas_

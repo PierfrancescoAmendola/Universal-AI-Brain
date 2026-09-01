@@ -24,8 +24,8 @@ L'utente richiede un'analisi di fattibilità per generare 100-500 euro/mese crea
 - **context:** Valutazione critica di un modello di business virale, saturazione del mercato video AI per bambini, policy COPPA e calcolo metriche RPM reali.
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`)
-- [[domain-finanza-economia]] (`TARGETS_PROJECT`)
+- [[domain-finanza-economia]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[ai-reasoning-market-analysis-automation]] (`FULFILLS`)

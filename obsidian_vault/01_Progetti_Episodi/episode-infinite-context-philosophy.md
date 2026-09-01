@@ -23,12 +23,12 @@ Formalizzazione della ragion d'essere del cervello artificiale: superare il rese
 - **raw:** `date`: 2026-08-27, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Infinite Context & Anti-Amnesia Philosophy
 
 ## 🔗 Connessioni Uscenti
-- [[user-intent-infinite-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[ai-reasoning-infinite-context-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[ai-reasoning-infinite-context-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-infinite-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[ai-reasoning-infinite-context-architecture]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[user-intent-infinite-context-persistence]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[ai-reasoning-infinite-context-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[user-intent-infinite-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-eternal-cognitive-continuity]] (`BELONGS_TO_EPISODE`) — _Restored from history_
+- [[ai-reasoning-infinite-context-architecture]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[ai-reasoning-infinite-context-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-infinite-context-persistence]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-infinite-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-eternal-cognitive-continuity]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_

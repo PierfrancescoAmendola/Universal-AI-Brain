@@ -24,14 +24,14 @@ Studio del pianoforte dall'età di tre anni; rifugio espressivo e contrappeso em
 
 ## 🔗 Connessioni Uscenti
 - [[proj-harmonyapp]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[memory-perfectionism-tension]] (`CHANNELS_AND_HEALS`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[memory-perfectionism-tension]] (`CHANNELS_AND_HEALS`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[proj-harmonyapp]] (`BRIDGES_TO`) — _Restored from history_
 - [[proj-harmonyapp]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[proj-particlesimulator]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[domain-design-creativita]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[memory-perfectionism-tension]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`PRACTICES`) — _Restored from history_
+- [[domain-design-creativita]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[memory-perfectionism-tension]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`PRACTICES`) — _Disegnato su Obsidian Canvas_

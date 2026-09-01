@@ -23,8 +23,8 @@ Prompt espresso a gemini (gemini-3.7-flash): che ne pensi del mio cervello artif
 - **raw:** `user_prompt`: che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare, `provider`: gemini
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-che-ne-pensi-del-mio-cervello-artif-8793]] (`RECORDS_INTENT`) — _Restored from history_

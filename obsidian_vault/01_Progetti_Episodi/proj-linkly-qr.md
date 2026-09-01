@@ -23,10 +23,10 @@ Generatore dinamico vettoriale di codici QR con preview live e styling avanzato.
 - **raw:** `platform`: Apple App Store, `engine`: Client-side SVG/PNG Vector Engine
 
 ## 🔗 Connessioni Uscenti
-- [[ux-frictionless]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[ux-frictionless]] (`IMPLEMENTS`) — _Restored from history_
+- [[ux-frictionless]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[ux-frictionless]] (`IMPLEMENTS`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[ux-frictionless]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`DEPLOYED`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`DEPLOYED`) — _Disegnato su Obsidian Canvas_
+- [[ux-frictionless]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

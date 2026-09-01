@@ -23,8 +23,8 @@ Prompt espresso a groq (openai/gpt-oss-120b): che ne pensi del mio cervello arti
 - **raw:** `user_prompt`: che ne pensi del mio cervello artificiale?? c'è qualcosaa che possiamo migliorare, `provider`: groq
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-che-ne-pensi-del-mio-cervello-artif-8743]] (`RECORDS_INTENT`) — _Restored from history_

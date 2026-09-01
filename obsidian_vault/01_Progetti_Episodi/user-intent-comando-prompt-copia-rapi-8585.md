@@ -23,8 +23,8 @@ Intento espresso da Pierfrancesco: Comando /prompt Copia Rapida per Telegram Bot
 - **raw:** `user_prompt`: /universal-brain aggiungi ai comandi su telegram la possibilità che richiamato il comando /prompt si copi sul telefono il prompt che deve poi incollare l'utente nei vari software ai online chiaro??, `context`: Sessione su Comando /prompt Copia Rapida per Telegram Bot
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-comando-prompt-copia-rapi-8585]] (`RECORDS_INTENT`) — _Restored from history_

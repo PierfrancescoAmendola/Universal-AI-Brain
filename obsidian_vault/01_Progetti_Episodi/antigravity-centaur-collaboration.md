@@ -23,10 +23,10 @@ Manifestazione pratica del Modello Centauro: intenzione e guida umana sposate al
 - **raw:** `modality`: Caveman Protocol + Graph Knowledge Persistence, `synergy`: Strategia & Anima (Pierfrancesco) + Implementazione & Sintesi (Antigravity)
 
 ## 🔗 Connessioni Uscenti
-- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[mental-centaur-model]] (`VALIDATES_EMPIRICALLY`) — _Restored from history_
-- [[brand-voice-surgical]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[brand-voice-surgical]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[mental-centaur-model]] (`VALIDATES_EMPIRICALLY`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[session-continuous-evolution]] (`INSTANTIATES`) — _Restored from history_
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_

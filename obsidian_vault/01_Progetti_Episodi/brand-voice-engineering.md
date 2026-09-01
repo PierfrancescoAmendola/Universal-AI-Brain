@@ -28,4 +28,4 @@ Modalità comunicativa asciutta, rigorosa, priva di convenevoli e orientata alla
 ## 📥 Connessioni Entranti (Backlinks)
 - [[identity-cs-researcher]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[proj-holly-benji-ai]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[domain-design-creativita]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-design-creativita]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_

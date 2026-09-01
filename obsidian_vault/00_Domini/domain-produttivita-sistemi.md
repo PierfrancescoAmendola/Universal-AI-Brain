@@ -23,11 +23,11 @@ Workflow operativi, Strumenti di automazione, Metodologie di Studio e Lavoro, Ge
 - **scope:** Productivity workflows, time management, automation tools, habits
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Pilastro fondativo della vita di Pierfrancesco_
-- [[proj-streaksup-app]] (`BELONGS_TO_DOMAIN`) — _Il progetto proj-streaksup-app appartiene al dominio domain-produttivita-sistemi_
 - [[proj-appaulestudiotypescript]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-habittracker]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-macpulseuitests]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-macpulsetests]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-macpulse2tests]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
 - [[proj-macpulse2uitests]] (`BELONGS_TO_DOMAIN`) — _Progetto Mac catalogato nel suo macro-dominio di riferimento_
+- [[person-pierfrancesco]] (`FOUNDATIONAL_PILLAR`) — _Disegnato su Obsidian Canvas_
+- [[proj-streaksup-app]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_

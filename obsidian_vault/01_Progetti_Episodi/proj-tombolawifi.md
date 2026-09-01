@@ -23,10 +23,10 @@ Digitalizzazione multiplayer locale della classica Tombola napoletana con Smorfi
 - **raw:** `stack`: Node.js, WebSockets, HTML5 Canvas / Flutter, `protocol`: Event-driven real-time local network
 
 ## 🔗 Connessioni Uscenti
-- [[rel-napoli-culture]] (`CELEBRATES`) — _Restored from history_
-- [[rel-napoli-culture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[rel-napoli-culture]] (`CELEBRATES`) — _Disegnato su Obsidian Canvas_
+- [[rel-napoli-culture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[rel-napoli-culture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`CREATED`) — _Restored from history_
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CREATED`) — _Disegnato su Obsidian Canvas_
+- [[rel-napoli-culture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

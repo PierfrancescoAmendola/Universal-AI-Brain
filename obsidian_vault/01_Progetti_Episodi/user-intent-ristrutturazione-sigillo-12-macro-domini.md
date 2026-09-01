@@ -24,8 +24,8 @@ Riorganizzazione gerarchica del connettoma: sigillatura del Piano 0 con 12 macro
 - **user_prompt:** si assolutamente ristruttura così. però non voglio eprdere i nodi o i loro contenuti dobbiamo solo riorganizzarre. salva tutto il contesto nel cervello mi raccomando !!!
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Espresso da Pierfrancesco_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Riferito al progetto target_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[reasoning-ristrutturazione-sigillo-12-domini-completata]] (`FULFILLS`) — _Soddisfa la richiesta di ristrutturazione domini_

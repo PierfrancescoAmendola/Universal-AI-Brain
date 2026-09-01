@@ -23,9 +23,9 @@ Costruire la propria libertà attraverso la competenza tecnica verificabile, l'a
 - **raw:** `ethos`: Nessuna scorciatoia, padronanza dei fondamentali, indipendenza creativa
 
 ## 🔗 Connessioni Uscenti
-- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[person-pierfrancesco]] (`VALUES`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`VALUES`) — _Disegnato su Obsidian Canvas_
+- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

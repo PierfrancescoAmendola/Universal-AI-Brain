@@ -30,8 +30,8 @@ Applicazione mobile per studenti per localizzare aule studio universitarie, veri
 - [[flutter-dart-ecosystem]] (`BUILT_WITH`) — _Restored from history_
 - [[aule-studio-backend-arch]] (`CONTAINS_MODULE`) — _Restored from history_
 - [[aule-studio-backend-arch]] (`IMPLEMENTS_LOGIC`) — _Restored from history_
-- [[domain-software-engineering]] (`BELONGS_TO_DOMAIN`) — _Il progetto aule-studio-app appartiene al dominio domain-software-engineering_
+- [[domain-software-engineering]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`CREATOR_OF`) — _Restored from history_
-- [[domain-software-engineering]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
+- [[domain-software-engineering]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`CREATOR_OF`) — _Disegnato su Obsidian Canvas_

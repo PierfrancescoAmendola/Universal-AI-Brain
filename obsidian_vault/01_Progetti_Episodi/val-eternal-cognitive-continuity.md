@@ -23,12 +23,12 @@ Valore fondante di Universal AI Brain: nessun pensiero, decisione o ragionamento
 - **raw:** `anti_pattern_blocked`: Reset amnesico della chat e perdita del filo logico, `principle`: Ogni sessione AI è un frammento transitorio; il grafo è la coscienza persistente unificata., `temporal_scope`: Passato, presente e futuro
 
 ## 🔗 Connessioni Uscenti
-- [[user-intent-infinite-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[ai-reasoning-infinite-context-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[episode-infinite-context-philosophy]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[person-pierfrancesco]] (`HELD_BY`) — _Restored from history_
+- [[ai-reasoning-infinite-context-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[episode-infinite-context-philosophy]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`HELD_BY`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-infinite-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[ai-reasoning-infinite-context-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[user-intent-infinite-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[user-intent-infinite-context-persistence]] (`EXPRESSES`) — _Restored from history_
+- [[ai-reasoning-infinite-context-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-infinite-context-persistence]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-infinite-context-persistence]] (`EXPRESSES`) — _Disegnato su Obsidian Canvas_

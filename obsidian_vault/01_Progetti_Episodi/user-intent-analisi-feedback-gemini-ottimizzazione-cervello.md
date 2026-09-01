@@ -23,8 +23,8 @@ Valutazione critica dell'assessment di Gemini sul Cervello Artificiale e definiz
 - **raw:** `context`: Diagnosi discrepanza tra percezione esterna di Gemini e stato reale del Knowledge Graph (304 nodi, 789 archi), `user_prompt`: vedi cosa mi ha detto gemini, secondo te che dobbiamo fare, cosa possiamo migliorare??
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-20260829-debrief-assessment-gemini]] (`RECORDS_INTENT`) — _Restored from history_

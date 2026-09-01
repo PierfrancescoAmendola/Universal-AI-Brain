@@ -11,8 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/static/style.css?v=20260831_1730">
+  <link rel="stylesheet" href="/static/embedding_projector.css?v=20260901_1235">
   <script src="/static/vendor/vis-network.min.js"></script>
   <script src="/static/vendor/three.min.js"></script>
+  <script src="/static/vendor/OrbitControls.js"></script>
+  <script src="/static/vendor/tween.umd.js"></script>
+  <script src="/static/embedding_projector.js?v=20260901_1235"></script>
 </head>
 <body class="dark-tech-theme">
 
@@ -166,6 +170,9 @@
           <button class="mode-tab" id="mode-btn-globe" onclick="setGraphViewMode('globe')" title="Mappamondo Neurale 3D: Costellazione sferica bi-emisferica interattiva">
             <span class="mode-icon">🌌</span> Mappamondo 3D
           </button>
+          <button class="mode-tab" id="mode-btn-projector" onclick="setGraphViewMode('projector')" title="3D Cognitive Embedding Projector: Proiezione vettoriale semantica con t-SNE, UMAP, PCA e k-NN Lasers">
+            <span class="mode-icon">✨</span> Projector 3D
+          </button>
         </div>
         
         <div class="view-actions-pill" id="areas-action-pill">
@@ -229,6 +236,148 @@
           <div class="globe-rel-actions">
             <button class="globe-rel-btn-inspect" onclick="openSidebarDossierFromGlobe()">📖 Apri Dossier Completo</button>
             <button class="globe-rel-btn-reset" onclick="clearGlobeSelection()">Chiudi Focus</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Cognitive Embedding Projector Container -->
+      <div id="projector-3d-container" style="display:none;">
+        <div id="proj-canvas-wrapper"></div>
+        <div class="proj-hud-crosshair"></div>
+        <div id="proj-tooltip"></div>
+
+        <!-- Left Floating Control Panel -->
+        <div class="proj-controls-panel">
+          <!-- Search Box -->
+          <div class="proj-search-wrap">
+            <span class="proj-search-icon">🔍</span>
+            <input type="text" id="proj-search-input" class="proj-search-input" placeholder="Cerca concetto vettoriale (es. CareTrack)..." oninput="EmbeddingProjector.searchNode(this.value)">
+          </div>
+
+          <!-- Dimension View Switcher -->
+          <div>
+            <div class="proj-section-title">Visualizzazione Spaziale</div>
+            <div class="proj-dim-grid">
+              <button class="proj-dim-btn active" id="proj-btn-view-3d" onclick="EmbeddingProjector.setDimension('3D')">
+                <span>🌐</span> 3D Volumetrico
+              </button>
+              <button class="proj-dim-btn" id="proj-btn-view-2d" onclick="EmbeddingProjector.setDimension('2D')">
+                <span>🗺️</span> 2D Planare
+              </button>
+            </div>
+          </div>
+
+          <!-- Projection Algorithm Picker -->
+          <div>
+            <div class="proj-section-title">
+              <span>Algoritmo di Riduzione</span>
+              <span id="proj-algo-tag" style="color:#00d2ff;">t-SNE</span>
+            </div>
+            <div class="proj-algo-tabs">
+              <button class="proj-algo-btn active" id="proj-tab-tsne" onclick="EmbeddingProjector.setAlgorithm('tsne')">t-SNE</button>
+              <button class="proj-algo-btn" id="proj-tab-umap" onclick="EmbeddingProjector.setAlgorithm('umap')">UMAP</button>
+              <button class="proj-algo-btn" id="proj-tab-pca" onclick="EmbeddingProjector.setAlgorithm('pca')">PCA</button>
+              <button class="proj-algo-btn" id="proj-tab-bipolar" onclick="EmbeddingProjector.setAlgorithm('bipolar')">Bi-Polar</button>
+            </div>
+          </div>
+
+          <!-- t-SNE Live Simulation Controls -->
+          <div class="proj-tsne-box" id="proj-tsne-controls">
+            <div class="proj-tsne-status-row">
+              <span style="color:#94a3b8;">Iterazione (Epoch):</span>
+              <strong id="proj-tsne-step-counter" style="color:#00d2ff;">0</strong>
+            </div>
+            <div class="proj-tsne-actions">
+              <button class="proj-btn-action" id="proj-btn-tsne-toggle" onclick="EmbeddingProjector.toggleTsne()">
+                <span id="proj-tsne-play-icon">▶</span> <span id="proj-tsne-play-text">Esegui Iterazione</span>
+              </button>
+              <button class="proj-btn-action" style="flex:0.6; background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.1); color:#94a3b8;" onclick="EmbeddingProjector.resetTsne()">
+                <span>↺</span> Reset
+              </button>
+            </div>
+            <div class="proj-slider-row" style="margin-top:4px;">
+              <div class="proj-slider-header">
+                <span>Perplessità (Perplexity)</span>
+                <strong id="proj-perp-val">18</strong>
+              </div>
+              <input type="range" class="proj-range" min="5" max="50" value="18" oninput="document.getElementById('proj-perp-val').innerText=this.value; EmbeddingProjector.setPerplexity(this.value);">
+            </div>
+            <div class="proj-slider-row">
+              <div class="proj-slider-header">
+                <span>Learning Rate (Passo)</span>
+                <strong id="proj-lr-val">120</strong>
+              </div>
+              <input type="range" class="proj-range" min="10" max="300" value="120" oninput="document.getElementById('proj-lr-val').innerText=this.value; EmbeddingProjector.setLearningRate(this.value);">
+            </div>
+          </div>
+
+          <!-- Synaptic Overlays -->
+          <div>
+            <div class="proj-section-title">Sinapsi &amp; Raggi Laser</div>
+            <div class="proj-slider-row">
+              <div class="proj-slider-header">
+                <span>k-Nearest Neighbors (k-NN)</span>
+                <strong id="proj-knn-val">6</strong>
+              </div>
+              <input type="range" class="proj-range" min="0" max="15" value="6" oninput="document.getElementById('proj-knn-val').innerText=this.value; EmbeddingProjector.setKnn(this.value);">
+            </div>
+            <div style="margin-top:8px; display:flex; gap:6px;">
+              <button class="proj-dim-btn active" id="proj-btn-toggle-edges" style="flex:1;" onclick="EmbeddingProjector.toggleGraphEdges()">
+                <span>🕸️</span> Archi Grafo
+              </button>
+              <button class="proj-dim-btn active" id="proj-btn-toggle-labels" style="flex:1;" onclick="EmbeddingProjector.toggleLabels()">
+                <span>🏷️</span> Etichette
+              </button>
+            </div>
+          </div>
+
+          <!-- Hemisphere & Domain Filters -->
+          <div>
+            <div class="proj-section-title">Filtri Emisferici</div>
+            <div class="proj-filter-chips">
+              <span class="proj-chip active" onclick="EmbeddingProjector.filterHemisphere('ALL', this)">Tutti</span>
+              <span class="proj-chip" onclick="EmbeddingProjector.filterHemisphere('LEFT', this)">Sinistro (Tech)</span>
+              <span class="proj-chip" onclick="EmbeddingProjector.filterHemisphere('RIGHT', this)">Destro (Vision)</span>
+              <span class="proj-chip" onclick="EmbeddingProjector.filterHemisphere('L0', this)">Domini L0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Floating Node Inspector -->
+        <div class="proj-node-inspector" id="proj-node-inspector">
+          <div class="proj-inspector-header">
+            <div>
+              <div class="proj-node-title" id="proj-insp-title">Titolo Concetto</div>
+              <div class="proj-node-id" id="proj-insp-id">id-del-nodo</div>
+            </div>
+            <span class="proj-hemi-badge proj-hemi-left" id="proj-insp-hemi">LEFT</span>
+          </div>
+
+          <div>
+            <div class="proj-section-title">Sommario Cognitivo</div>
+            <div class="proj-node-summary" id="proj-insp-summary">Descrizione del concetto...</div>
+          </div>
+
+          <div>
+            <div class="proj-section-title">
+              <span>Vicini Semantici Più Prossimi (k-NN)</span>
+              <span style="color:#00d2ff;">Cos-Sim</span>
+            </div>
+            <div class="proj-knn-list" id="proj-insp-knn-list"></div>
+          </div>
+
+          <div>
+            <div class="proj-section-title">Archi Strutturali Connessi</div>
+            <div class="proj-knn-list" id="proj-insp-edges-list"></div>
+          </div>
+
+          <div style="display:flex; gap:6px; margin-top:4px;">
+            <button class="proj-btn-action" onclick="EmbeddingProjector.focusCameraOnNode()">
+              <span>🎯</span> Centra Camera
+            </button>
+            <button class="proj-btn-action" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.1); color:#94a3b8;" onclick="EmbeddingProjector.closeInspector()">
+              <span>✕</span> Chiudi
+            </button>
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ Applicazione iOS nativa di scacchi per iPhone in Swift/SwiftUI con motore minima
 - [[design-duolingo-chess-system]] (`IMPLEMENTS`) — _Restored from history_
 - [[user-intent-duolingo-chess-preference]] (`SATISFIES`) — _Restored from history_
 - [[tech-minimax-chess-engine]] (`USES`) — _Restored from history_
-- [[domain-software-engineering]] (`BELONGS_TO_DOMAIN`) — _Il progetto project-royal-gambit-chess appartiene al dominio domain-software-engineering_
+- [[domain-software-engineering]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[person-pierfrancesco]] (`OWNS`) — _Restored from history_
+- [[person-pierfrancesco]] (`OWNS`) — _Disegnato su Obsidian Canvas_

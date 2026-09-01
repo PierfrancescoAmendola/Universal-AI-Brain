@@ -23,8 +23,8 @@ Pierfrancesco stabilisce che JARVIS deve essere un progetto separato su /Users/p
 - **raw:** `context`: Creazione repository autonoma /Users/pierfrancesco/Desktop/Jarvis separata da CervelloArtificiale ma collegata ad esso per la memoria a lungo termine., `user_prompt`: il progetto jarvis dovrebbe essere un nuovo progetto in una nuova cartella sul desktop. non deve entrare nel progetto CervelloArtificiale. userà come memoria quella del mio cervello aritificiale. dopo queste premesse partiamo con la creazione di jarvis.
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[proj-jarvis-voice-assistant]] (`TARGETS_PROJECT`) — _Restored from history_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
+- [[proj-jarvis-voice-assistant]] (`TARGETS_PROJECT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-20260829-completamento-rilascio-jarvis-desktop]] (`RECORDS_INTENT`) — _Restored from history_

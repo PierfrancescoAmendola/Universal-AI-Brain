@@ -23,11 +23,11 @@ Interfacce prive di frizione con controlli primari nella zona del pollice e tran
 - **raw:** `touch_target_min`: 44x44pt, `animation_easing`: cubic-bezier(0.4, 0.0, 0.2, 1), `onboarding_style`: Zero-friction, affordance-guided
 
 ## 🔗 Connessioni Uscenti
-- [[proj-linkly-qr]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[proj-caretrack]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[proj-caretrack]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[proj-linkly-qr]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-software-engineering]] (`CONTAINS_MODULE`) — _Restored from history_
 - [[proj-cinematch]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[proj-linkly-qr]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[proj-linkly-qr]] (`IMPLEMENTS`) — _Restored from history_
+- [[domain-software-engineering]] (`CONTAINS_MODULE`) — _Disegnato su Obsidian Canvas_
+- [[proj-linkly-qr]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[proj-linkly-qr]] (`IMPLEMENTS`) — _Disegnato su Obsidian Canvas_

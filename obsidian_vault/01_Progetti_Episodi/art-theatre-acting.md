@@ -23,9 +23,9 @@ Esperienza attoriale sul palco come strumento di esplorazione delle dinamiche um
 - **raw:** `troupe`: Compagnia Teatrale Tricca Ballacche, `skills`: Comunicazione paraverbale, gestione emotiva dal vivo
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[person-pierfrancesco]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[rel-napoli-culture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[person-pierfrancesco]] (`PERFORMS_IN`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`PERFORMS_IN`) — _Disegnato su Obsidian Canvas_
+- [[rel-napoli-culture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

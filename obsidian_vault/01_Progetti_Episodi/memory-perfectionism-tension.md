@@ -23,10 +23,10 @@ La costante ricerca dell'eccellenza e il sovraccarico di responsabilità bilanci
 - **raw:** `tension`: Rigore ingegneristico assoluto vs bisogno viscerale di espressione emotiva libera
 
 ## 🔗 Connessioni Uscenti
-- [[rule-zero-placeholder]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[art-piano-composition]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[art-piano-composition]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[rule-zero-placeholder]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[art-piano-composition]] (`CHANNELS_AND_HEALS`) — _Restored from history_
-- [[lesson-stoic-resilience]] (`MITIGATES`) — _Restored from history_
+- [[art-piano-composition]] (`CHANNELS_AND_HEALS`) — _Disegnato su Obsidian Canvas_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[lesson-stoic-resilience]] (`MITIGATES`) — _Disegnato su Obsidian Canvas_

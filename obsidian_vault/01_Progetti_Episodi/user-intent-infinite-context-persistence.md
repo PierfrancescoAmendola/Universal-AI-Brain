@@ -23,12 +23,12 @@ Volontà utente: azzerare la perdita di contesto causata dalla saturazione delle
 - **raw:** `core_vision`: Memoria eterna, coerente e non volatile per passato, presente e futuro., `problem_solved`: Saturazione della context window e perdita della cronologia decisionale nei cambi di sessione., `user_prompt`: lo scopo è che venga salvato il contesto e memorizzato il contesto delle chat con le ai in modo tale che si sa sempre cosa è stato detto, pensato, eccc...quante volte magari si deve cambiare chat perchè alcuni modelli saturano il contesto di una chat e si deve ricominciare da zero, come si fa??? si eprde tutto?? no quindi lo scopo è quello, non perdere mai il contesto e avere sempre memoria, per il passato, presente e futuro.
 
 ## 🔗 Connessioni Uscenti
-- [[episode-infinite-context-philosophy]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[val-eternal-cognitive-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[episode-infinite-context-philosophy]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-eternal-cognitive-continuity]] (`EXPRESSES`) — _Restored from history_
+- [[episode-infinite-context-philosophy]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[episode-infinite-context-philosophy]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-eternal-cognitive-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-eternal-cognitive-continuity]] (`EXPRESSES`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[episode-infinite-context-philosophy]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[val-eternal-cognitive-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[ai-reasoning-infinite-context-architecture]] (`FORMALIZES`) — _Restored from history_
+- [[ai-reasoning-infinite-context-architecture]] (`FORMALIZES`) — _Disegnato su Obsidian Canvas_
+- [[episode-infinite-context-philosophy]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[val-eternal-cognitive-continuity]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_

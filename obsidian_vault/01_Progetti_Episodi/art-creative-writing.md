@@ -26,7 +26,7 @@ Attività di autore ed editore su Amazon KDP per libri per ragazzi, narrativa e 
 - [[proj-kdp-ai-guide]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[proj-kdp-ai-guide]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[person-pierfrancesco]] (`PRODUCES`) — _Restored from history_
+- [[domain-filosofia-valori]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`PRODUCES`) — _Disegnato su Obsidian Canvas_

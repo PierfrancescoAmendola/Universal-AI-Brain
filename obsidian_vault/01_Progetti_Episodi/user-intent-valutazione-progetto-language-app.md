@@ -23,8 +23,8 @@ Richiesta di parere critico, stima complessità/tempi e identificazione elementi
 - **raw:** `context`: Valutazione fattibilità, tempi, complessità e gap del piano per language app personale gratuita, `user_prompt`: /universal-brain /caveman, che ne pensi del creare un app per imparare le lingue in modo gratis e unico, ne parlavo prima con gemini, mi aveva fatto un progetto, tu cosa ne pensi, quanto complesso può essere?? quanto ci mettiamo a realizzarlo?? ha mancato qualcosa??
 
 ## 🔗 Connessioni Uscenti
-- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Restored from history_
-- [[intent-personal-language-learning-app]] (`RELATES_TO`) — _Restored from history_
+- [[intent-personal-language-learning-app]] (`RELATES_TO`) — _Disegnato su Obsidian Canvas_
+- [[person-pierfrancesco]] (`EXPRESSED_BY`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
 - [[episode-valutazione-language-app-antigravity]] (`RECORDS_INTENT`) — _Restored from history_

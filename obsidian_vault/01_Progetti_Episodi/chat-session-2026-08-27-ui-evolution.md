@@ -23,8 +23,8 @@ Episodio conversazionale incentrato sulla pulizia grafica del terminale, l'intro
 - **raw:** `date`: 2026-08-27, `topics`: ['terminal-overlay-fix', 'progressive-areas', 'lossless-sync', 'ai-reasoning-tracking', 'episodic-chat-memory'], `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Episodio Chat: Evoluzione UI, Persistenza & Aree a Espansione
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[user-intent-clean-clustered-ui]] (`DISCUSSED_IN`) — _Restored from history_
-- [[user-intent-reasoning-and-chat-memory]] (`DISCUSSED_IN`) — _Restored from history_
 - [[ai-reasoning-episodic-memory-architecture]] (`REASONED_DURING`) — _Restored from history_
-- [[universal-ai-brain]] (`RECORDED_EPISODE`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[universal-ai-brain]] (`RECORDED_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-clean-clustered-ui]] (`DISCUSSED_IN`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-reasoning-and-chat-memory]] (`DISCUSSED_IN`) — _Disegnato su Obsidian Canvas_

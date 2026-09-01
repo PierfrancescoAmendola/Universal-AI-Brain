@@ -24,10 +24,10 @@ Formalizzata la pipeline: Knowledge Graph -> Spreading Activation -> Local Tree 
 
 ## 🔗 Connessioni Uscenti
 - [[ep-20260827-graph-tree-unification]] (`ANALYZES_EPISODE`) — _Restored from history_
-- [[node-knowledge-graph-memory]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
-- [[node-search-tree-deliberation]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
-- [[node-neuro-symbolic-brain]] (`ESTABLISHES_CONCEPT`) — _Restored from history_
+- [[node-knowledge-graph-memory]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_
+- [[node-neuro-symbolic-brain]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_
+- [[node-search-tree-deliberation]] (`ESTABLISHES_CONCEPT`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[intent-ep-20260827-graph-tree-unification]] (`GENERATES_REASONING`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[intent-ep-20260827-graph-tree-unification]] (`GENERATES_REASONING`) — _Disegnato su Obsidian Canvas_

@@ -23,9 +23,9 @@ I concetti verticali (es. medicina, finanza, fisica) non si collegano forzatamen
 - **raw:** `pattern`: Domain-Driven Cognitive Clusters, `benefit`: Previene l'over-centrality e l'inquinamento topologico dello star-graph
 
 ## 🔗 Connessioni Uscenti
-- [[domain-medicina-salute]] (`GOVERNS_PARTITIONING`) — _Restored from history_
+- [[domain-medicina-salute]] (`GOVERNS_PARTITIONING`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[concept-graph-of-graphs-hypergraph]] (`EXTENDS_MODULARITY`) — _Restored from history_
 - [[user-intent-modular-cluster-decentralization]] (`ORIGINATES_RULE`) — _Restored from history_
+- [[concept-graph-of-graphs-hypergraph]] (`EXTENDS_MODULARITY`) — _Disegnato su Obsidian Canvas_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_

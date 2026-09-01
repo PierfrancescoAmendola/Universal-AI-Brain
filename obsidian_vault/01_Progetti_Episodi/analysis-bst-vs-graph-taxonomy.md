@@ -23,10 +23,10 @@ Valutazione tecnica: BST puro monodimensionale non modella relazioni cicliche; S
 - **raw:** `pure_bst`: Monodimensionale (già coperto da B-Tree SQLite O(log N)), `optimal_tree_models`: ['Maximum Spanning Tree (MST / Kruskal) per spina dorsale concettuale', 'Hierarchical Community Tree (Dendrogramma) per navigazione a zoom semantico', 'Prefix Trie / Radix Tree per lookup istantaneo O(k)'], `model`: LLM Assistant (Historical Session)
 
 ## 🔗 Connessioni Uscenti
-- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
-- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[idea-hierarchical-weighted-trees]] (`RECOMMENDS`) — _Restored from history_
+- [[mental-centaur-model]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
+- [[rule-zero-cost]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Restored from history_
-- [[user-intent-tree-search-enhancement]] (`EVALUATED_BY`) — _Restored from history_
+- [[domain-ai-cognitive-systems]] (`BELONGS_TO_DOMAIN`) — _Disegnato su Obsidian Canvas_
+- [[user-intent-tree-search-enhancement]] (`EVALUATED_BY`) — _Disegnato su Obsidian Canvas_

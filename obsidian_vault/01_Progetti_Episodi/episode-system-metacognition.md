@@ -23,9 +23,9 @@ Sessione dedicata all'introspezione sistemica e al miglioramento dell'infrastrut
 - **raw:** `date`: 2026-08-29, `topic`: System Metacognition & Graphify Protocol, `ingested_via`: telegram_json_post, `user`: Pierfrancesco
 
 ## 🔗 Connessioni Uscenti
-- [[intent-evaluate-ai-brain-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
 - [[reasoning-brain-architecture-analysis]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[intent-evaluate-ai-brain-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
 
 ## 📥 Connessioni Entranti (Backlinks)
-- [[intent-evaluate-ai-brain-architecture]] (`BELONGS_TO_EPISODE`) — _Restored from history_
-- [[intent-evaluate-ai-brain-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Restored from history_
+- [[intent-evaluate-ai-brain-architecture]] (`BELONGS_TO_EPISODE`) — _Disegnato su Obsidian Canvas_
+- [[intent-evaluate-ai-brain-architecture]] (`CORPUS_CALLOSUM_LINK`) — _Disegnato su Obsidian Canvas_
