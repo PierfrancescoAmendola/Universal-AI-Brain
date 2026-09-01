@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-01 14:48:34 UTC | **Nodi Restituiti:** 601 (SX: 413 · DX: 188) | **Sinapsi Restituite:** 1380
-> **Consistenza Reale Connettoma:** 601 Nodi Totali nel Database | 1380 Sinapsi Totali
+> **Data Generazione:** 2026-09-01 14:48:46 UTC | **Nodi Restituiti:** 606 (SX: 415 · DX: 191) | **Sinapsi Restituite:** 1394
+> **Consistenza Reale Connettoma:** 606 Nodi Totali nel Database | 1394 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -373,6 +373,10 @@
   - **Tags:** `#architecture-rationale` `#cognitive-load` `#graph-physics` `#scalability`
   - **Sintesi:** Scelta di non eliminare le relazioni fisiche ma di applicare un filtro visuale basato su insiemi di visibilità adiacente, massimizzando ordine e densità semantica.
   - **Dettagli:** `raw`: `approach`: Visual filter on vis.DataSet without schema mutilation, `benefits`: ['zero-data-loss', 'uncluttered-ui', 'instant-subgraph-expansion'], `model`: LLM Assistant (Historical Session)
+- **Riprogettazione Motore Gestuale Naturale e Architettura Terminale a 4 Schede** (`reasoning-gesture-zoom-terminal-dock-tabs`)
+  - **Tags:** `#ai-reasoning` `#mediapipe` `#threejs` `#terminal-engine` `#fetch-interceptor`
+  - **Sintesi:** Risoluzione del tracciamento gestuale eliminando il vincolo del pinch e introducendo lo zoom naturale a 2 mani, il gesto 2 dita (peace) e lo zoom in profondità con palmo aperto. Integrazione di una barra terminale fissa in basso nella vista 2D con live ticker reattivo e consolidamento della console a 4 schede indipendenti (Terminale CLI, Tutti i Log, Richieste HTTP con inspector JSON, Nodi & Sinapsi).
+  - **Dettagli:** `actions_taken`: ['Implementazione zoom a 2 mani (allarga/avvicina)', 'Implementazione zoom naturale in profondità e gesto 2 dita (peace) senza pinch', 'Creazione dock fisso in basso con prompt synapse:~$ e live ticker in tempo reale', 'Riorganizzazione console con 4 tab e inspector REST API JSON espandibile', 'Aggiornamento layout CSS workspace per evitare sovrapposizioni'], `layer_level`: 1, `model`: Antigravity / Gemini 2.5 Flash, `outcome`: Controllo gestuale 3D fluido e immediato senza pinch; console e terminale developer perfettamente integrati., `parent_graph_id`: universal-ai-brain
 - **Risposta Groq: Quali sono i progetti principali di...** (`reasoning-quali-sono-i-progetti-principali-di-8169`)
   - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
   - **Sintesi:** Non ho accesso diretto alla memoria o al database `brain.db` in questo contesto di conversazione. Come modello di linguaggio, non posso eseguire query in tempo reale su archivi esterni o database pers
@@ -2275,6 +2279,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#backend` `#performance` `#sqlite` `#optimization` `#safety`
   - **Sintesi:** Richiesta di applicare ottimizzazioni backend (indici, cache, CTE) con approccio ibrido e backup preventivo, senza perdere dati o funzionalità.
   - **Dettagli:** `user_prompt`: voglio l'opzione c, ibrida con backup, non voglio perdere nulla!!! procedi con l'implementazione., `context`: Analisi critica di Gemini su bug (tags, cross_links) e necessità di integrare senza rompere il main.py esistente.
+- **Perfezionamento UX: Zoom Senza Pinch, Terminale Dock Persistente e 4 Schede Console** (`user-intent-gesture-zoom-terminal-dock-tabs`)
+  - **Tags:** `#user-intent` `#gesture-controls` `#terminal-dock` `#console-tabs` `#antigravity-session`
+  - **Sintesi:** Richiesta di Pierfrancesco di eliminare il vincolo del pinch per lo zoom gestuale 3D, inserire una barra terminale persistente a una linea in basso sulla schermata normale con ticker live, e organizzare la console a 4 schede dedicate.
+  - **Dettagli:** `context`: Universal AI Brain Web Dashboard & 3D Cognitive Embedding Projector, `layer_level`: 1, `parent_graph_id`: universal-ai-brain, `user_prompt`: non so perchè non va lo zooming con le mani... il terminale ora lo vedo ma devo cliccare su console io volevo che si vedesse in basso nella schermata normale di sempre una linea del terminale... elimina che per zoomare ci voglia il pinch
 - **Potenziamento Cognitivo del Connettoma e Integrazione Obsidian Vault** (`user-intent-potenziamento-cognitivo-obsidian-bridge`)
   - **Tags:** `#obsidian-vault` `#cognitive-enhancement` `#daily-resurface` `#tensions-matrix` `#weave-link` `#firmware-models`
   - **Sintesi:** Integrazione bidirezionale di Obsidian Vault con note atomiche, rilevatore tensioni cognitive, weave link engine per nodi orfani, daily resurface spaced repetition e 9 firmware mentali.
@@ -2705,6 +2713,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#ecografia` `#hardware` `#tesi`
   - **Sintesi:** Sessione dedicata alla comprensione del principio di funzionamento e dei casi d'uso degli ecografi con sonda lineare.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Tecnologia dei trasduttori lineari in ecografia clinica, `key_takeaways`: Le sonde lineari impiegano alte frequenze per fornire immagini rettangolari ad altissima risoluzione per tessuti superficiali come mammella e tiroide.
+- **Episodio: Perfezionamento UX Gestuale 3D e Console Terminale Unificata** (`episode-gesture-zoom-terminal-dock-tabs`)
+  - **Tags:** `#conversation-episode` `#continuità-cognitiva` `#ux-redesign` `#gestures` `#terminal`
+  - **Sintesi:** Sessione di sviluppo tra Pierfrancesco Amendola e Antigravity per eliminare l'obbligo del pinch dallo zoom 3D, inserire la linea del terminale dock persistente e completare l'inspector di log e richieste HTTP a 4 schede.
+  - **Dettagli:** `key_takeaways`: I gesti naturali a 2 mani e la profondità della mano aperta sono molto più intuitivi e immediati rispetto al pinch a 1 mano. La presenza di un mini dock terminale sempre visibile in 2D rende l'esplorazione del connettoma rapida e reattiva., `layer_level`: 1, `parent_graph_id`: root, `participants`: ['Pierfrancesco Amendola', 'Antigravity'], `pending_tasks`: Test su monitor e webcam differenti., `topic`: 3D Hand Gesture Zooming & Persistent Terminal Dock & 4-Tab Console
 - **Episodio: Persistenza Telegram e Heartbeat Demone** (`episode-telegram-keepalive-confirmation`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di conferma della persistenza omnicanale (Telegram incluso) e del meccanismo keep-alive.
@@ -3262,6 +3274,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
   - **Tags:** `#ui-component` `#palazzo-cognitivo` `#elevator-selector` `#multi-layer` `#bento-grid`
   - **Sintesi:** Pannello di navigazione e ascensore cognitivo per esplorare la conoscenza su piani semantici (Attico Domini P0, Progetti P1, Moduli Atomici P2) con pulsanti dedicati, contatori nodi in tempo reale e vista 3D stratificata.
   - **Dettagli:** `raw`: `floors`: {'P0': 'Piano 0: Attico Macro-Domini & Core Hubs (15 nodi)', 'P1': 'Piano 1: Progetti & Aree Tematiche (121 nodi)', 'P2': 'Piano 2: Moduli, Algoritmi & Dettagli Atomici (53 nodi)'}, `navigation_modes`: ['all (Tutti i Piani)', 'vertical (Vista 3D Piani)', '0', '1', '2'], `features`: ['Auto-fit immediato del viewport', 'Ascensori sinaptici evidenziati', 'Zero black-screen filtering']
+- **Dock Terminale Persistente & Live Activity Ticker** (`ui-bottom-terminal-dock`)
+  - **Tags:** `#ui-component` `#terminal` `#live-ticker` `#cyberpunk` `#dock`
+  - **Sintesi:** Barra fissa a fondo schermo nella vista 2D che integra un prompt interattivo 'synapse:~$' e un live ticker animato per visualizzare in tempo reale lo streaming degli eventi HTTP e delle mutazioni dei nodi.
+  - **Dettagli:** `features`: ['Inline Command Input', 'Live Activity Ticker', 'Pulsing Status', '1-Click Console Drawer'], `height`: 40px, `layer_level`: 2, `parent_graph_id`: universal-ai-brain, `prompt`: synapse:~$
 - **Dynamic Island & Living/Dying Flame** (`streaksup-dynamic-island-ui`)
   - **Tags:** `#dynamic-island` `#live-activity` `#countdown-timer` `#dying-flame`
   - **Sintesi:** Esperienza Live Activity e Dynamic Island con timer conto alla rovescia a mezzanotte, pulsante 'Fatto' rapido e fiamma vivente che si affievolisce con l'avvicinarsi della scadenza.
@@ -3305,6 +3321,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
   - **Tags:** `#ux` `#ergonomics` `#mobile-first` `#micro-interactions`
   - **Sintesi:** Esperienza d'uso priva di ostacoli con azioni chiave aggregate nell'area di raggiungibilità del pollice (Thumb Zone 44x44pt).
   - **Dettagli:** `raw`: `animation_duration`: 150ms-250ms, `easing`: cubic-bezier(0.4, 0.0, 0.2, 1), `min_touch_target`: 44x44pt
+- **Sistema di Controllo Gestuale Naturale 3D Senza Pinch** (`ux-natural-gesture-controls-3d`)
+  - **Tags:** `#ux-flow` `#mediapipe` `#gestures` `#hand-tracking` `#pinch-free`
+  - **Sintesi:** Flusso di interazione gestuale a mani libere per il 3D Projector basato su 2 mani (allarga/avvicina per lo zoom), palmo aperto (orbita 3D e zoom in profondità), gesto 2 dita ✌️ (zoom verticale), pugno chiuso ✊ (pan) e indice puntato ☝️ (laser raycast).
+  - **Dettagli:** `layer_level`: 2, `parent_graph_id`: universal-ai-brain, `supported_gestures`: ['2-Hands Zoom', 'Open Palm Orbit & Depth Zoom', 'Peace Sign Zoom', 'Closed Fist Pan', 'Index Laser Raycaster']
 - **UX ad Ergonomia Immediata (Thumb Zone)** (`ux-frictionless`)
   - **Tags:** `#ux` `#mobile-first` `#ergonomics` `#feedback`
   - **Sintesi:** Interfacce prive di frizione con controlli primari nella zona del pollice e transizioni ultra-reattive (150-250ms).
@@ -3336,6 +3356,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[ARCHITECT_OF]--> (`universal-ai-brain`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[AUTHORED]--> (`proj-kdp-ai-guide`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[AUTHOR_OF]--> (`proj-kdp-ai-book`) *(Corpo Calloso)*
+- (`ux-natural-gesture-controls-3d`) --[BELONGS_TO]--> (`domain-ai-cognitive-systems`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`continuous-ai-symbiosis`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-multi-llm-mcp-ecosystem`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-modular-domain-graph-topology`) *(Corpo Calloso)*
@@ -3603,6 +3624,8 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`proj-unistats`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`proj-videoyt`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`proj-workspace`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`reasoning-gesture-zoom-terminal-dock-tabs`) --[CREATES]--> (`ui-bottom-terminal-dock`) *(Corpo Calloso)*
+- (`reasoning-gesture-zoom-terminal-dock-tabs`) --[CREATES]--> (`ux-natural-gesture-controls-3d`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[CREATOR_OF]--> (`aule-studio-app`) *(Corpo Calloso)*
 - (`concept-interhemispheric-inhibition-gating`) --[CROSS_CALLOSAL_INHIBITION]--> (`domain-filosofia-valori`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[DECLARED]--> (`user-intent-zero-cost-graphrag`) *(Corpo Calloso)*
@@ -3679,6 +3702,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-espansione-supercervello-integrazioni`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-fix-daemon-render-persistence`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-gesture-zoom-terminal-dock-tabs`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-implementazione-ecosistema-supercervello`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-integrazione-openjarvis-stanford`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3745,6 +3769,8 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[OWNS]--> (`project-royal-gambit-chess`) *(Corpo Calloso)*
 - (`arch-telegram-webhook-gateway`) --[PART_OF]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`idea-hierarchical-weighted-trees`) --[PART_OF]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
+- (`ui-bottom-terminal-dock`) --[PART_OF]--> (`universal-ai-brain`) *(Corpo Calloso)*
+- (`ux-natural-gesture-controls-3d`) --[PART_OF]--> (`universal-ai-brain`) *(Corpo Calloso)*
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[PART_OF_EPISODE]--> (`ep-20260827-graph-taxonomy-classification`) *(Corpo Calloso)*
 - (`intent-ep-20260827-graph-tree-unification`) --[PART_OF_EPISODE]--> (`ep-20260827-graph-tree-unification`) *(Corpo Calloso)*
 - (`intent-ep-20260827-hierarchical-overlay-reassurance`) --[PART_OF_EPISODE]--> (`ep-20260827-hierarchical-overlay-reassurance`) *(Corpo Calloso)*
@@ -3811,6 +3837,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-espansione-ecosistema-supercervello`) --[RECORDS_INTENT]--> (`user-intent-espansione-supercervello-integrazioni`) *(Corpo Calloso)*
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_INTENT]--> (`user-intent-distro-linux-modellazione-3d`) *(Corpo Calloso)*
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_INTENT]--> (`user-intent-fix-daemon-render-persistence`) *(Corpo Calloso)*
+- (`episode-gesture-zoom-terminal-dock-tabs`) --[RECORDS_INTENT]--> (`user-intent-gesture-zoom-terminal-dock-tabs`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_INTENT]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_INTENT]--> (`user-intent-ma-tutto-falso-8462`) *(Corpo Calloso)*
@@ -3879,6 +3906,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-espansione-ecosistema-supercervello`) --[RECORDS_REASONING]--> (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) *(Corpo Calloso)*
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_REASONING]--> (`reasoning-mappatura-ecosistema-linux-3d`) *(Corpo Calloso)*
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_REASONING]--> (`reasoning-fix-daemon-render-persistence`) *(Corpo Calloso)*
+- (`episode-gesture-zoom-terminal-dock-tabs`) --[RECORDS_REASONING]--> (`reasoning-gesture-zoom-terminal-dock-tabs`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_REASONING]--> (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_REASONING]--> (`reasoning-ma-tutto-falso-8462`) *(Corpo Calloso)*
@@ -3936,6 +3964,8 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-design-creativita`)
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)
 - (`identity-cs-researcher`) --[AUTHORED]--> (`proj-kdp-ai-book`)
+- (`reasoning-gesture-zoom-terminal-dock-tabs`) --[BELONGS_TO]--> (`domain-software-engineering`)
+- (`ui-bottom-terminal-dock`) --[BELONGS_TO]--> (`domain-design-creativita`)
 - (`aule-studio-app`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-episodic-memory-architecture`)
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`ai-reasoning-clustering-decision`)
@@ -4400,6 +4430,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-eliminazione-jarvis-pulizia`) --[FULFILLS]--> (`user-intent-abbandono-jarvis-nuovo-progetto`)
 - (`reasoning-embedding-projector-globe-and-optics`) --[FULFILLS]--> (`user-intent-embedding-projector-globe-and-optics`)
 - (`reasoning-fix-daemon-render-persistence`) --[FULFILLS]--> (`user-intent-fix-daemon-render-persistence`)
+- (`reasoning-gesture-zoom-terminal-dock-tabs`) --[FULFILLS]--> (`user-intent-gesture-zoom-terminal-dock-tabs`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[FULFILLS]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
 - (`reasoning-integrazione-esplicita-tabelle-comparative`) --[FULFILLS]--> (`user-intent-integrazione-tabelle-cappello-capitolo-6`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[FULFILLS]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
@@ -4497,6 +4528,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-espansione-ecosistema-supercervello`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-esplorazione-linux-3d-modeling`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-fix-daemon-render-persistence`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-gesture-zoom-terminal-dock-tabs`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ma-tutto-falso-8462`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4560,6 +4592,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-embedding-projector-globe-and-optics`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-fix-daemon-render-persistence`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-gesture-zoom-terminal-dock-tabs`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-nuove-rappresentazioni-vi-2874`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -4662,6 +4695,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-espansione-supercervello-integrazioni`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-fix-daemon-render-persistence`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-gesture-zoom-terminal-dock-tabs`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-implementazione-ecosistema-supercervello`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-integrazione-openjarvis-stanford`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
