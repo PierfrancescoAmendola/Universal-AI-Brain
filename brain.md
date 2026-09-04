@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 14:56:24 UTC | **Nodi Restituiti:** 621 (SX: 426 · DX: 195) | **Sinapsi Restituite:** 1422
-> **Consistenza Reale Connettoma:** 621 Nodi Totali nel Database | 1422 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 14:57:16 UTC | **Nodi Restituiti:** 626 (SX: 429 · DX: 197) | **Sinapsi Restituite:** 1434
+> **Consistenza Reale Connettoma:** 626 Nodi Totali nel Database | 1434 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -145,6 +145,10 @@
   - **Tags:** `#architecture` `#swiftui` `#storekit` `#pdf-renderer` `#focus-state` `#xcode-build`
   - **Sintesi:** Approccio chirurgico end-to-end: risoluzione root-cause su localizzazione e valuta, eliminazione gesture conflicts della tastiera con FocusState nativo, sblocco di valore tangibile per gli abbonati Premium con PDF vettoriale e dashboard analytics, e risoluzione del bug Xcode su asset symbol extensions.
   - **Dettagli:** `actions_taken`: ["Creato modello AppCurrency con rilevamento automatico della valuta del dispositivo (Locale.current.currency) ed eliminazione di ogni simbolo '€' hardcoded", 'Sostituito fallback italiano forzato in SettingsManager e AppStrings con AppLanguage.detectDeviceLanguage()', 'Completata localizzazione integrale in 6 lingue (IT, EN, FR, DE, PT, ES) inclusi onboarding, StoreKit, termini legali e notifiche', 'Restyling header DashboardView: SubTracker bold a sinistra (topBarLeading) e Help + Settings raggruppati a destra (topBarTrailing)', 'Risolto problema tastiera: rimozione onTapGesture bloccante dal container, introduzione @FocusState sui campi e .scrollDismissesKeyboard(.interactively)', 'Implementata AnalyticsView con metriche chiave, frequenze e proiezioni future a 6 mesi, 1 anno, 3 anni e 5 anni', 'Implementato ReportGenerator con render vettoriale PDF UIGraphicsPDFRenderer, export CSV e ShareSheetView native', 'Aggiunto Rivedi Tutorial in Impostazioni con OnboardingView in modalità consultazione e tasto Chiudi rapido', 'Risolto errore di compilazione Xcode Failed to write Swift generated asset symbols disattivando ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS e user script sandboxing'], `model`: Antigravity / Gemini 3.8, `outcome`: Build Xcode terminata con esito BUILD SUCCEEDED; tutte le richieste di Pierfrancesco pienamente soddisfatte con preservazione architetturale e qualità production-grade., `responses_given`: Chiarimento puntuale del meccanismo di lingua del device, conduzione sessione /grill-me per definire layout e comportamento, implementazione di 8 step tecnici e risoluzione del build failure asset symbols.
+- **Architettura i18n Zero-Reload con Dizionario Nativo e Data-Attributes Dinamici** (`reasoning-subtracker-full-i18n-architecture`)
+  - **Tags:** `#i18n` `#architecture` `#dom-manipulation` `#javascript` `#localstorage`
+  - **Sintesi:** Progettazione e implementazione di un sistema di internazionalizzazione client-side istantaneo (zero reload) con persistenza localStorage, fallback browser e binding dichiarativo tramite data-i18n, data-i18n-placeholder e data-i18n-aria-label.
+  - **Dettagli:** `actions_taken`: ['Creazione ed esecuzione di build_i18n.py per generare assets/i18n.js', 'Aggiunta supporto a data-i18n, data-i18n-placeholder, data-i18n-aria-label e aggiornamento dinamico di document.title e html.lang', 'Tagging esaustivo di support.html (FAQ, Troubleshooting step, Contatti, Requisiti)', 'Tagging esaustivo di privacy-policy.html (Informativa Privacy Sezioni 1-8, Termini di Servizio Sezioni 1-7, Box di Sintesi)', 'Tagging e traduzione mockup interattivo iPhone 16 Pro e simulatore spese in index.html', 'Verifica automatizzata tramite Node.js che certifica 232/232 chiavi presenti e non vuote in tutte le 6 lingue'], `model`: Antigravity (Google DeepMind), `outcome`: 100% di copertura multilingua garantita. Zero testo italiano residuo quando viene selezionata una lingua straniera (EN, FR, DE, ES, PT)., `responses_given`: Analisi approfondita del disallineamento linguistico in support.html e privacy-policy.html, generazione automatizzata del bundle i18n con script Python compilato, integrazione di 232 chiavi per ciascuna delle 6 lingue (1392 stringhe totali verificate), tagging completo dei file HTML e test di conformità.
 - **Audit Critico e Fix Ottimizzazioni Backend** (`reasoning-backend-audit-and-fix`)
   - **Tags:** `#code-review` `#bug-fix` `#architecture` `#integration`
   - **Sintesi:** Analisi approfondita del codice generato, individuazione di 4 bug critici (perdita tags, cross_links, mismatch DB, rischio overwrite) e riscrittura sicura per integrazione nel main.py.
@@ -730,6 +734,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#mutation-import` `#working-memory-planning` `#cognitive-process`
   - **Sintesi:** Search Trees (ToT / MCTS Deliberation) (Layer: WORKING_MEMORY_PLANNING, Tipo: COGNITIVE_PROCESS)
   - **Dettagli:** `raw`: `id`: node_search_tree_deliberation, `label`: Search Trees (ToT / MCTS Deliberation), `type`: COGNITIVE_PROCESS, `layer`: WORKING_MEMORY_PLANNING
+- **Sistema di Internazionalizzazione Vanilla Declarative i18n** (`arch-subtracker-i18n-system`)
+  - **Tags:** `#i18n` `#vanilla-js` `#performance` `#subtracker`
+  - **Sintesi:** Architettura i18n ultra-leggera a zero dipendenze esterne. Bundle unico precompilato (i18n.js) con mappa O(1), dispatch di eventi subtracker:langchange e supporto ad attributi HTML ricchi (strong, em, link, codici).
+  - **Dettagli:** `bundle_file`: assets/i18n.js, `complexity`: O(1) dictionary lookup, `event_bus`: subtracker:langchange, `languages_supported`: ['it', 'en', 'fr', 'de', 'es', 'pt'], `total_keys_per_language`: 232
 - **StreaksUp (Habit Tracker iOS)** (`proj-streaksup-app`)
   - **Tags:** `#ios17` `#ios18` `#swiftui` `#swiftdata` `#widgetkit` `#streaksup` `#habittracker` `#zero-cloud`
   - **Sintesi:** Applicazione nativa iOS 17+ per tracciamento abitudini e routine con architettura SwiftData ad App Group, Live Activity e suite WidgetKit interattiva.
@@ -2408,6 +2416,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#macos` `#ollama` `#storage` `#cleanup` `#terminale`
   - **Sintesi:** Richiesta di individuazione ed eliminazione completa di un modello LLM da 7GB rimasto su disco dopo la disinstallazione di Ollama.
   - **Dettagli:** `user_prompt`: ho scaricato Ollama, e mentre ero sul terminale involontariamente ho installato un modello di intelligenza artificiale di 7GB sul mio Mac. ora ho disitintallato Ollama, ma il modello di intelligenza artificiale ora è, teoricamente, ancora sul mio Mac...dove lo trovo?? come lo elimino?? non voglio che ci sia, `context`: macOS; l'utente ha già rimosso l'eseguibile/app Ollama ma necessita di ripulire i file binari pesanti (~/.ollama).
+- **Risoluzione Definitiva i18n Support/Legal e Sincronizzazione Memoria Cervello** (`user-intent-subtracker-i18n-completion-and-brain-sync`)
+  - **Tags:** `#subtracker` `#i18n` `#support` `#privacy-policy` `#brain-sync` `#goal-complete`
+  - **Sintesi:** Rendere il 100% dei contenuti di support.html, privacy-policy.html e index.html traducibili nelle 6 lingue (IT, EN, FR, DE, ES, PT) eliminando ogni testo hardcoded in italiano e persistere l'intera memoria di sessione nel Cervello Artificiale.
+  - **Dettagli:** `context`: Progetto SubTracker (AppAbbonamenti) - Completamento i18n con 232 chiavi per 6 lingue native e memorizzazione persistente bi-emisferica, `user_prompt`: ci sono problemi nella scheramta pport.html se cambi lingua c'è ancora l'italiano /goal fino a quando tutto non è stato reso traducibile non finisci le task!!! + /universal-brain carica tutta lachat, contesto, memoria, ecc..sul nostro cervello artificiale
 - **Ristrutturazione e Sigillatura dei 12 Macro-Domini Fondativi** (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
   - **Tags:** `#macro-domini` `#palazzo-cognitivo` `#gerarchia` `#sigillo-piano-0`
   - **Sintesi:** Riorganizzazione gerarchica del connettoma: sigillatura del Piano 0 con 12 macro-domini canonici, riassegnazione di tutti i nodi orfani e divieto di creazione dinamica per le AI esterne.
@@ -2787,6 +2799,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#universal-hub` `#sessione-chat`
   - **Sintesi:** Conversazione tra Pierfrancesco e qwen/qwen3.8-27b (Groq) su Quali sono i progetti principali di....
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Groq (qwen/qwen3.8-27b)'], `topic`: Quali sono i progetti principali di...
+- **Episodio: Redesign Liquid Glassmorphism Dark-Luxe ed Internazionalizzazione SubTracker** (`episode-subtracker-redesign-and-multilingual-perfection`)
+  - **Tags:** `#subtracker` `#redesign` `#liquid-glassmorphism` `#i18n` `#session-memory`
+  - **Sintesi:** Sessione completa di ristrutturazione estetica del sito web dell'app iOS SubTracker (Apple-grade Liquid Glassmorphism, 3D CSS iPhone Mockup, Live Expense Calculator) e successiva internazionalizzazione integrale su 6 lingue conformemente ai rigorosi standard di Pierfrancesco.
+  - **Dettagli:** `key_takeaways`: Un'esperienza web per un'app iOS di alto livello richiede coerenza cromatica assoluta con l'app nativa SwiftUI, reattività istantanea nei cambi lingua senza reload di pagina, e totale trasparenza su privacy e costi., `participants`: ['Pierfrancesco Amendola', 'Antigravity (DeepMind)'], `pending_tasks`: Nessuna: obiettivo di traduzione integrale e persistenza nel cervello artificiale completato con successo., `topic`: Restyling Web & Complete i18n SubTracker
 - **Episodio: Restyling Dark-Tech, Stabilizzazione Fisica & Ripristino Palazzo Cognitivo** (`episode-frontend-deeptech-redesign-and-physics-zero-lag`)
   - **Tags:** `#session-recap` `#frontend-restyling` `#graphify-aesthetic` `#physics-freeze` `#palazzo-cognitivo` `#zero-lag`
   - **Sintesi:** Sessione approfondita di restyling frontend (stile Graphify.com e Caveman.so), eliminazione di oscillazioni e rotazioni continue della fisica su Vis-Network, correzione del bug di ispezione nodi e ripristino della gerarchia a piani del Palazzo Cognitivo (P0, P1, P2).
@@ -3352,6 +3368,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
   - **Tags:** `#glassmorphism` `#cards` `#ui-kit`
   - **Sintesi:** Componente contenitore a strati con effetto vetro e bordo ad alta definizione visiva.
   - **Dettagli:** `raw`: `backdrop_filter`: blur(16px) saturate(180%), `background`: rgba(15, 23, 42, 0.75), `border`: 1px solid rgba(0, 210, 255, 0.15)
+- **Language Switcher a Capsula Glassmorphic con Menu a Tendina Fluttuante** (`ui-subtracker-lang-switcher`)
+  - **Tags:** `#glassmorphism` `#dropdown` `#i18n` `#capsule` `#subtracker`
+  - **Sintesi:** Componente switcher lingua in stile pillola Apple con bandiera emoji, codice ISO, menu fluttuante con backdrop-filter blur 28px, spunta di selezione e chiusura all'outside click.
+  - **Dettagli:** `color`: rgba(255, 255, 255, 0.05) con blur 28px, `features`: ['Pillola compatta con bandiera e codice ISO', 'Menu a tendina posizionato in z-index 1000', 'Spunta attiva ✓ automatica', 'Transizioni cubic-bezier 0.16, 1, 0.3, 1']
 - **Multi-Format WidgetKit Suite** (`streaksup-widget-suite-ui`)
   - **Tags:** `#widgets` `#lock-screen-complications` `#heatmap` `#daily-progress`
   - **Sintesi:** Suite di 4 widget (Single Habit Focus, Today Dashboard, Daily Progress, Weekly Heatmap) e relative complicanze Lock Screen (circular, rectangular, inline).
@@ -3704,6 +3724,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-clean-clustered-ui`) --[DISCUSSED_IN]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`user-intent-reasoning-and-chat-memory`) --[DISCUSSED_IN]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[DISPLAYS_ON]--> (`streaksup-dynamic-island-ui`) *(Corpo Calloso)*
+- (`episode-subtracker-redesign-and-multilingual-perfection`) --[DOCUMENTED_IN]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[EMBODIES_PROFILE]--> (`identity-cs-researcher`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[EMBODIES_VALUE]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`node-telegram-bot-interface`) --[ENABLES]--> (`node-ubiquitous-ingestion`) *(Corpo Calloso)*
@@ -3788,6 +3809,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-telegram-keepalive-confirmation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-test-hook-session-end-2411`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3837,6 +3859,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`arch-telegram-webhook-gateway`) --[PART_OF]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`idea-hierarchical-weighted-trees`) --[PART_OF]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
 - (`ui-bottom-terminal-dock`) --[PART_OF]--> (`universal-ai-brain`) *(Corpo Calloso)*
+- (`ui-subtracker-lang-switcher`) --[PART_OF]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
 - (`ux-natural-gesture-controls-3d`) --[PART_OF]--> (`universal-ai-brain`) *(Corpo Calloso)*
 - (`intent-ep-20260827-graph-taxonomy-classification`) --[PART_OF_EPISODE]--> (`ep-20260827-graph-taxonomy-classification`) *(Corpo Calloso)*
 - (`intent-ep-20260827-graph-tree-unification`) --[PART_OF_EPISODE]--> (`ep-20260827-graph-tree-unification`) *(Corpo Calloso)*
@@ -3923,6 +3946,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_INTENT]--> (`user-intent-accorciamento-cappello-capitolo-6`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
+- (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_INTENT]--> (`user-intent-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-test-hook-session-end-2411`) --[RECORDS_INTENT]--> (`user-intent-test-hook-session-end-2411`) *(Corpo Calloso)*
 - (`episode-ui-declutter-projector-fullscreen`) --[RECORDS_INTENT]--> (`user-intent-ui-declutter-projector-fullscreen`) *(Corpo Calloso)*
@@ -3995,6 +4019,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-sintetica-testo`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_REASONING]--> (`reasoning-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
+- (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_REASONING]--> (`reasoning-subtracker-full-i18n-architecture`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_REASONING]--> (`reasoning-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-test-hook-session-end-2411`) --[RECORDS_REASONING]--> (`reasoning-test-hook-session-end-2411`) *(Corpo Calloso)*
 - (`episode-ui-declutter-projector-fullscreen`) --[RECORDS_REASONING]--> (`reasoning-ui-declutter-projector-fullscreen`) *(Corpo Calloso)*
@@ -4531,6 +4556,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[FULFILLS]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
 - (`reasoning-semplificazione-concettuale-causal-dl`) --[FULFILLS]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
+- (`reasoning-subtracker-full-i18n-architecture`) --[FULFILLS]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[FULFILLS]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`)
 - (`reasoning-tassonomia-pkm-rag-notion-obsidian`) --[FULFILLS]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`)
 - (`reasoning-telegram-keepalive-confirmation`) --[FULFILLS]--> (`user-intent-telegram-keepalive-confirmation`)
@@ -4559,8 +4585,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`session-continuous-evolution`) --[HOSTED_ON]--> (`repo-github-universal-ai-brain`)
 - (`concept-interhemispheric-inhibition-gating`) --[IMPLEMENTED_BY]--> (`algorithm-selective-hemispheric-activation`)
 - (`feat-subtracker-evolution`) --[IMPLEMENTS]--> (`proj-appabbonamenti`)
+- (`reasoning-subtracker-full-i18n-architecture`) --[IMPLEMENTS]--> (`arch-subtracker-i18n-system`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[IMPLEMENTS]--> (`feature-subtracker-premium-analytics-report`)
 - (`aule-studio-app`) --[IMPLEMENTS_LOGIC]--> (`aule-studio-backend-arch`)
+- (`episode-subtracker-redesign-and-multilingual-perfection`) --[INCLUDES_DESIGN]--> (`ui-subtracker-lang-switcher`)
 - (`universal-ai-brain`) --[INCORPORATES]--> (`tax-ai-reasoning`)
 - (`node-universal-ai-brain-taxonomy`) --[INCORPORATES_AS_CORE_FEATURE]--> (`node-epistemic-grading-system`)
 - (`universal-ai-brain`) --[INTEGRATES_AUDIT]--> (`graphify-knowledge-engine`)
@@ -4627,6 +4655,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-sintesi-cappello-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-subtracker-redesign-and-multilingual-perfection`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-telegram-keepalive-confirmation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-test-hook-session-end-2411`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ui-declutter-projector-fullscreen`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4690,6 +4719,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-redesign-sito-subtracker`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-subtracker-full-i18n-architecture`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-telegram-keepalive-confirmation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-test-hook-session-end-2411`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
@@ -4702,6 +4732,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-reasoning-and-chat-memory`) --[ORIGINATED]--> (`tax-ai-reasoning`)
 - (`user-intent-biological-lazy-loading-inhibition`) --[ORIGINATES_PARADIGM]--> (`concept-interhemispheric-inhibition-gating`)
 - (`user-intent-modular-cluster-decentralization`) --[ORIGINATES_RULE]--> (`concept-modular-domain-subgraphs`)
+- (`arch-subtracker-i18n-system`) --[PART_OF]--> (`proj-appabbonamenti`)
 - (`feature-subtracker-premium-analytics-report`) --[PART_OF]--> (`proj-appabbonamenti`)
 - (`proj-appcalcolatori-ui-layer`) --[PART_OF_PROJECT]--> (`proj-appcalcolatori`)
 - (`proj-cervelloartificiale-api-routes`) --[PART_OF_PROJECT]--> (`proj-cervelloartificiale`)
@@ -4801,6 +4832,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-redesign-sito-subtracker`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-review-piano-supercervello-os`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-telegram-keepalive-confirmation`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-test-hook-session-end-2411`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
