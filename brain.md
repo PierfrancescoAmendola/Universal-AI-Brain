@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 08:39:55 UTC | **Nodi Restituiti:** 613 (SX: 419 · DX: 194) | **Sinapsi Restituite:** 1410
-> **Consistenza Reale Connettoma:** 613 Nodi Totali nel Database | 1410 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 08:40:42 UTC | **Nodi Restituiti:** 614 (SX: 420 · DX: 194) | **Sinapsi Restituite:** 1411
+> **Consistenza Reale Connettoma:** 614 Nodi Totali nel Database | 1411 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -945,6 +945,12 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#github` `#repository` `#open-source` `#render-ready`
   - **Sintesi:** Repository GitHub ufficiale contenente il backend FastAPI, il dashboard vis-network e la memoria SQLite pre-popolata.
   - **Dettagli:** `raw`: `url`: https://github.com/PierfrancescoAmendola/Universal-AI-Brain, `owner`: PierfrancescoAmendola, `branch`: main, `visibility`: Public
+
+### [Macro-Label: `FEATURE`]
+- **SubTracker Full App Evolution** (`feat-subtracker-evolution`)
+  - **Tags:** `#ios` `#swiftui` `#swiftdata` `#subtracker` `#widgets` `#biometrics` `#swiftcharts`
+  - **Sintesi:** Completamento di tutte le 12 task evolutive per l'app SubTracker iOS
+  - **Dettagli:** `raw`: Completato piano di evoluzione SubTracker in 12 task: Splash screen animata con liquid glow e dissolve transition, architettura di navigazione a 4 tab (MainTabView), catalogo 35+ preset rapidi, prove gratuite con allarmi 24/48h, SubscriptionDetailView con spesa storica cumulativa, calendario dinamico rinnovi (CalendarView) con puntini cromatici per categoria, statistiche avanzate con Swift Charts (SectorMark ciambella, BarMark previsione a 12 mesi), protezione biometrica Face ID/Touch ID con tendina privacy per App Switcher, report PDF vettoriale e CSV con UTF-8 BOM, WidgetKit Small/Medium/Accessory per iOS, localizzazione integrale in 6 lingue. Zero errori, Quality Gate verificato con successo.
 
 ### [Macro-Label: `MENTAL_MODEL`]
 - **Bayesian Updating (Aggiornamento Bayesiano)** (`firmware-bayesian-updating`)
@@ -4518,6 +4524,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`val-eternal-cognitive-continuity`) --[HELD_BY]--> (`person-pierfrancesco`)
 - (`session-continuous-evolution`) --[HOSTED_ON]--> (`repo-github-universal-ai-brain`)
 - (`concept-interhemispheric-inhibition-gating`) --[IMPLEMENTED_BY]--> (`algorithm-selective-hemispheric-activation`)
+- (`feat-subtracker-evolution`) --[IMPLEMENTS]--> (`proj-appabbonamenti`)
 - (`aule-studio-app`) --[IMPLEMENTS_LOGIC]--> (`aule-studio-backend-arch`)
 - (`universal-ai-brain`) --[INCORPORATES]--> (`tax-ai-reasoning`)
 - (`node-universal-ai-brain-taxonomy`) --[INCORPORATES_AS_CORE_FEATURE]--> (`node-epistemic-grading-system`)
