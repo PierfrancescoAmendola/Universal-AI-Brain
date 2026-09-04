@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 10:27:26 UTC | **Nodi Restituiti:** 615 (SX: 421 · DX: 194) | **Sinapsi Restituite:** 1411
-> **Consistenza Reale Connettoma:** 615 Nodi Totali nel Database | 1411 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 10:28:28 UTC | **Nodi Restituiti:** 616 (SX: 422 · DX: 194) | **Sinapsi Restituite:** 1411
+> **Consistenza Reale Connettoma:** 616 Nodi Totali nel Database | 1411 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -730,6 +730,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#ios17` `#ios18` `#swiftui` `#swiftdata` `#widgetkit` `#streaksup` `#habittracker` `#zero-cloud`
   - **Sintesi:** Applicazione nativa iOS 17+ per tracciamento abitudini e routine con architettura SwiftData ad App Group, Live Activity e suite WidgetKit interattiva.
   - **Dettagli:** `raw`: `platform`: iOS 17.0+ / 18.0+, `language`: Swift 5.9, `ui_framework`: SwiftUI, `database`: SwiftData (SQLite WAL in App Group), `app_group`: group.com.pierfrancescoamendola.streaksup, `url_scheme`: streaksup://, `project_generator`: XcodeGen (project.yml)
+- **SubTracker Anti-Deformation, I18n, Keyboard & Export Fix** (`subtracker_antideformation_i18n_keyboard_export_fix`)
+  - **Tags:** `#subtracker` `#swiftui` `#i18n` `#layout` `#keyboard` `#export`
+  - **Sintesi:** Fixed SubTracker card anti-deformation, French/multilingual analytics reactivity, native PDF/CSV share presenter, and universal keyboard dismissal with Done button.
+  - **Dettagli:** `raw`: Fixed 4 critical issues: (1) Analytics & Calendar full reactive i18n in French and all 6 languages with localized month abbreviations; (2) Anti-deformation layout with non-breaking spaces (\u00A0), lineLimit(1), minimumScaleFactor and fixedSize preventing currency and long category strings (like 'Entertainment') from line-wrapping; (3) Native SharePresenter with iPad popover support fixing PDF and CSV export; (4) Non-blocking tap-to-dismiss keyboard on UIWindow, scrollDismissesKeyboard, and 'Fatto' Done button on decimalPad. Quality gate swiftc -parse verified 0 errors.
 - **SubTracker UI Gating & Splash Logo Fix** (`subtracker_ui_gating_splash_fix`)
   - **Tags:** `#subtracker` `#swiftui` `#storekit` `#ui` `#splash`
   - **Sintesi:** Fix SubTracker Home top title, clean top-right bar, add real logo on splash, gate Analytics and PDF/CSV behind StoreKit Premium.
