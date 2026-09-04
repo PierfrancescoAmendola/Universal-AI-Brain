@@ -70,7 +70,7 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 14:57:19 UTC | **Nodi Restituiti:** 626 (SX: 429 · DX: 197) | **Sinapsi Restituite:** 1434
+> **Data Generazione:** 2026-09-04 14:57:28 UTC | **Nodi Restituiti:** 626 (SX: 429 · DX: 197) | **Sinapsi Restituite:** 1434
 > **Consistenza Reale Connettoma:** 626 Nodi Totali nel Database | 1434 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
