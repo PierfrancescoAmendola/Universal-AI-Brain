@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 07:57:07 UTC | **Nodi Restituiti:** 606 (SX: 415 · DX: 191) | **Sinapsi Restituite:** 1394
-> **Consistenza Reale Connettoma:** 606 Nodi Totali nel Database | 1394 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 07:57:17 UTC | **Nodi Restituiti:** 610 (SX: 417 · DX: 193) | **Sinapsi Restituite:** 1403
+> **Consistenza Reale Connettoma:** 610 Nodi Totali nel Database | 1403 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -125,6 +125,10 @@
   - **Tags:** `#untagged`
   - **Sintesi:** Riprogettazione layout con Glassmorphism dropdowns e commutazione fullscreen per il 3D Projector
   - **Dettagli:** `actions_taken`: ['Raggruppati bottoni topbar in dropdown Strumenti ed Esporta', 'Configurato Projector 3D a schermo intero (100vw) con scomparsa automatica della sidebar destra', 'Eliminato il codice legacy del Mappamondo 3D'], `model`: Antigravity, `outcome`: Interfaccia ultra-pulita, zero disordine e Projector 3D a tutto schermo
+- **Architettura e Design System per il Sito Web di SubTracker** (`reasoning-redesign-sito-subtracker`)
+  - **Tags:** `#liquid-glassmorphism` `#design-system` `#apple-style` `#subtracker` `#css3`
+  - **Sintesi:** Estrazione dei token grafici da SwiftUI (HeroCardView indaco-viola #5959F2-#8C59E6, PaywallView arancio-rosa #FF9500-#FF2D55, Dark OLED #06070B), creazione di una landing page index.html con mockup 3D iPhone 16 Pro e calcolatore spese live, e refactoring radicale di support.html e privacy-policy.html con assets unificati.
+  - **Dettagli:** `actions_taken`: ['Analisi approfondita palette e componenti SwiftUI (HeroCardView, PaywallView, SubscriptionCardView)', 'Creazione design system unificato in assets/style.css e assets/app.js', 'Creazione master landing page index.html con mockup iPhone 16 Pro e calcolatore spese live', 'Rifacimento totale di support.html con ricerca live e privacy-policy.html con tab interattivi', 'Verifica sintassi JS e test navigazione incrociata'], `model`: Gemini 3.8 Flash, `outcome`: Presenza web completa, elegante e interattiva perfettamente allineata all'app iOS, `responses_given`: Analisi, piano approvato ed esecuzione con creazione di landing page e refactoring delle sottopagine
 - **Architettura e Realizzazione Video Showcase 60s** (`reasoning-creazione-video-showcase-universal-brain`)
   - **Tags:** `#video-engine` `#multimedia` `#canvas-1080p` `#web-audio` `#media-recorder`
   - **Sintesi:** Progettazione e implementazione del video engine interattivo a 6 scene in 60 secondi con sintesi vocale, musica cyberpunk procedurale, export video 1080p e kit promozionale.
@@ -2370,6 +2374,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#macro-domini` `#palazzo-cognitivo` `#gerarchia` `#sigillo-piano-0`
   - **Sintesi:** Riorganizzazione gerarchica del connettoma: sigillatura del Piano 0 con 12 macro-domini canonici, riassegnazione di tutti i nodi orfani e divieto di creazione dinamica per le AI esterne.
   - **Dettagli:** `context`: Chiusura della tassonomia di Piano 0 e ri-parenting semantico a costo zero e zero perdita dati, `user_prompt`: si assolutamente ristruttura così. però non voglio eprdere i nodi o i loro contenuti dobbiamo solo riorganizzarre. salva tutto il contesto nel cervello mi raccomando !!!
+- **Ristrutturazione ed Elevazione Estetica del Sito SubTracker** (`user-intent-redesign-sito-subtracker`)
+  - **Tags:** `#subtracker` `#landing-page` `#web-design` `#aesthetic` `#redesign`
+  - **Sintesi:** Richiesta di ristrutturare da capo il sito web dell'applicazione SubTracker, elevandone l'estetica basandosi sulle palette cromatiche, lo stile e il flusso UX dell'app iOS.
+  - **Dettagli:** `context`: Workspace AppAbbonamenti (SubTracker), transizione da pagine statiche a landing page e help center in Liquid Glassmorphism dark-luxe, `user_prompt`: /universal-brain. nel progetto di questa applicazione abbiamo creato un sito web, ristrutturalo, cambia tutto, lo voglio more aestetich, più bello. analizza le palette dell'app, il flow, lo stile e crea la pagina da capo
 - **Spiegazione Ecografi con Trasduttore Lineare** (`user-intent-definizione-ecografo-trasduttore-lineare`)
   - **Tags:** `#ecografia` `#hardware-medico` `#trasduttore-lineare` `#breast-imaging` `#ultrasound`
   - **Sintesi:** Richiesta di definizione, caratteristiche e campi d'uso degli ecografi con trasduttore lineare.
@@ -2761,6 +2769,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#rilascio` `#collaudo` `#supercervello` `#successo`
   - **Sintesi:** Completamento e collaudo con successo di tutti i moduli dell'ecosistema cognitivo onnipresente a costo zero.
   - **Dettagli:** `key_takeaways`: L'intero ecosistema è ora operativo e integrato a 360 gradi su Mac, Safari, iPhone, Telegram, IDE e Obsidian., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Abilitare gli script su Raycast e il Web Clipper in Safari, `topic`: Costruzione e rilascio dell'ecosistema completo Supercervello
+- **Episodio: Riprogettazione Estetica del Sito Web di SubTracker** (`episode-redesign-sito-subtracker`)
+  - **Tags:** `#chat` `#continuità-cognitiva` `#subtracker` `#web-elevation`
+  - **Sintesi:** Interazione con Pierfrancesco per ridefinire radicalmente la presenza web di SubTracker, trasformandola in una vetrina premium dark-luxe sincronizzata con l'app iOS.
+  - **Dettagli:** `key_takeaways`: Sincronizzazione coerente tra SwiftUI design tokens e modern web CSS (mesh gradients, glassmorphism, responsive mockups), `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `pending_tasks`: Deploy su GitHub Pages o hosting dedicato, `topic`: Redesign estetico e ristrutturazione totale del sito web di SubTracker
 - **Episodio: Risoluzione Demone e Persistenza Nodi** (`episode-fix-daemon-render-persistence`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di analisi e riparazione del demone di sincronizzazione e della persistenza del connettoma.
@@ -2940,6 +2952,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#palette` `#typography` `#tokens` `#dark-mode` `#micro-interactions`
   - **Sintesi:** Design system basato su estetica pulita e moderna, chip interattivi 3D minimali, palette semantica (Emerald/Rose/Indigo) e transizioni fluide a basso attrito cognitivo.
   - **Dettagli:** `raw`: `style`: Modern Minimalist / Clean Tech, `feedback_loop`: Scale transition, gentle shake on error, persistent bottom actions
+- **Design System Web SubTracker (Liquid Glassmorphism)** (`design-system-subtracker-web`)
+  - **Tags:** `#design-token` `#subtracker` `#color-palette` `#glassmorphism`
+  - **Sintesi:** Token visivi e palette del sito web derivati fedelmente dai componenti SwiftUI di SubTracker.
+  - **Dettagli:** `accent_gradient`: #FF9500 -> #FF2D55, `bg_base`: #06070B, `components`: ['Mockup iPhone 16 Pro CSS', 'Expense Calculator', 'Bento Grid', 'Searchable Help Center'], `glass_blur`: 28px, `hero_gradient`: #5959F2 -> #8C59E6
 - **Design Token: Palette Deep-Tech & Cyberpunk Minimalist** (`design-token-cyberpunk-minimalist-palette`)
   - **Tags:** `#design-system` `#color-palette` `#dark-tech` `#cyberpunk` `#bento-grid`
   - **Sintesi:** Sistema di design tokens e palette colori per l interfaccia utente ispirata a Graphify.com e Caveman.so: Deep Void (#07080c), Neon Cyan (#00D2FF), Cyber Magenta (#FF007F) e Electric Purple (#A855F7).
@@ -3630,6 +3646,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`concept-interhemispheric-inhibition-gating`) --[CROSS_CALLOSAL_INHIBITION]--> (`domain-filosofia-valori`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[DECLARED]--> (`user-intent-zero-cost-graphrag`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[DEFINED]--> (`feat-copy-ai-prompt`) *(Corpo Calloso)*
+- (`design-system-subtracker-web`) --[DEFINES_STYLE_FOR]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
 - (`caveman-communication-protocol`) --[DEFINES_VOICE]--> (`terse-caveman-brand-voice`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[DEPLOYED]--> (`proj-specula`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[DEPLOYED]--> (`proj-linkly-qr`) *(Corpo Calloso)*
@@ -3718,6 +3735,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-redesign-sito-subtracker`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-review-piano-supercervello-os`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-rimozione-modello-ollama-mac`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3757,6 +3775,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`proj-napolilive`) --[HONORS]--> (`rel-napoli-culture`) *(Corpo Calloso)*
 - (`proj-linkly-qr`) --[IMPLEMENTS]--> (`ux-frictionless`) *(Corpo Calloso)*
 - (`project-royal-gambit-chess`) --[IMPLEMENTS]--> (`design-duolingo-chess-system`) *(Corpo Calloso)*
+- (`reasoning-redesign-sito-subtracker`) --[IMPLEMENTS]--> (`design-system-subtracker-web`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[IMPLEMENTS_UI]--> (`feat-dark-tech-frontend-restyle`) *(Corpo Calloso)*
 - (`proj-alcolsafe`) --[INCORPORATES_UI]--> (`ui-gauge-widget-alcolsafe`) *(Corpo Calloso)*
 - (`user-intent-frontend-professional-restyle`) --[INSPIRED]--> (`feat-dark-tech-frontend-restyle`) *(Corpo Calloso)*
@@ -3851,6 +3870,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_INTENT]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
+- (`episode-redesign-sito-subtracker`) --[RECORDS_INTENT]--> (`user-intent-redesign-sito-subtracker`) *(Corpo Calloso)*
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_INTENT]--> (`user-intent-accorciamento-cappello-capitolo-6`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_INTENT]--> (`user-intent-telegram-keepalive-confirmation`) *(Corpo Calloso)*
@@ -3920,6 +3940,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_REASONING]--> (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
+- (`episode-redesign-sito-subtracker`) --[RECORDS_REASONING]--> (`reasoning-redesign-sito-subtracker`) *(Corpo Calloso)*
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-sintetica-testo`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_REASONING]--> (`reasoning-telegram-keepalive-confirmation`) *(Corpo Calloso)*
@@ -4449,6 +4470,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-quali-sono-i-progetti-principali-di-8169`) --[FULFILLS]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`)
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[FULFILLS]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[FULFILLS]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
+- (`reasoning-redesign-sito-subtracker`) --[FULFILLS]--> (`user-intent-redesign-sito-subtracker`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
 - (`reasoning-risoluzione-residui-ollama-mac`) --[FULFILLS]--> (`user-intent-rimozione-modello-ollama-mac`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[FULFILLS]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
@@ -4542,6 +4564,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-redesign-sito-subtracker`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-sintesi-cappello-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-telegram-keepalive-confirmation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4603,6 +4626,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-progettazione-5-paradigmi-visuali-connettoma`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-redesign-sito-subtracker`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-telegram-keepalive-confirmation`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -4710,6 +4734,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-redesign-sito-subtracker`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-review-piano-supercervello-os`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-telegram-keepalive-confirmation`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
