@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 16:30:22 UTC | **Nodi Restituiti:** 640 (SX: 437 · DX: 203) | **Sinapsi Restituite:** 1474
-> **Consistenza Reale Connettoma:** 640 Nodi Totali nel Database | 1474 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 16:30:25 UTC | **Nodi Restituiti:** 643 (SX: 439 · DX: 204) | **Sinapsi Restituite:** 1486
+> **Consistenza Reale Connettoma:** 643 Nodi Totali nel Database | 1486 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -297,6 +297,10 @@
   - **Tags:** `#raycast` `#web-clipper` `#sqlite-vec` `#nightly-weave` `#cursor-hooks` `#apple-shortcuts`
   - **Sintesi:** Proposta architetturale a 5 pilastri: Quick-Capture macOS (Raycast/Siri), Knowledge Streams (Readwise/GitHub CI), Motore Cognitivo Aumentato (sqlite-vec & Fase REM notturna), Dev Workflow Hooks e Interfacce Spaziali.
   - **Dettagli:** `actions_taken`: ['Analisi connettoma', 'Verifica tool MCP', 'Elaborazione matrice sinaptica di espansione'], `model`: Gemini 3.7 Flash, `outcome`: Blueprint completo di integrazioni per rendere il cervello onnipresente e ad attrito zero, `responses_given`: Roadmap dettagliata con categorizzazione a 5 pilastri e priorità di implementazione
+- **Proiezione Quantitativa & Regime Fiscale Capital Gain** (`ai-reasoning-proiezione-capital-gain-86euro`)
+  - **Tags:** `#matematica-finanziaria` `#tassazione-26` `#commissioni-broker` `#analisi-rischio`
+  - **Sintesi:** Calcolo analitico del rendimento lordo e netto (aliquota 26% italiana) e disamina dell'impatto critico delle commissioni fisse di negoziazione su micro-capitale.
+  - **Dettagli:** `model`: Gemini, `gross_gains`: {'20%': '17.20 EUR', '40%': '34.40 EUR', '70%': '60.20 EUR', '100%': '86.00 EUR'}, `net_gains_26pct`: {'20%': '12.73 EUR', '40%': '25.46 EUR', '70%': '44.55 EUR', '100%': '63.64 EUR'}, `critical_warning`: Commissioni fisse di acquisto/vendita possono erodere fino al 5% del capitale iniziale di 86€.
 - **Ragionamento AI: Algoritmi BFS, FTS5 & MCP Stdio 0€** (`ai-reasoning-hybrid-search-mcp`)
   - **Tags:** `#ai-reasoning` `#bfs-algorithm` `#fts5-bm25` `#mcp-protocol` `#zero-cost-architecture`
   - **Sintesi:** Deduzione logica: SQLite FTS5 offre ranking lessicale BM25 immediato (<1ms) e BFS bidirezionale permette di attraversare il Corpo Calloso senza API esterne a pagamento.
@@ -1722,6 +1726,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#pkm` `#obsidian` `#notion` `#rag` `#second-brain` `#llm-tools`
   - **Sintesi:** Richiesta di spiegazione comparativa sulle ragioni e i casi d'uso dell'integrazione di LLM con Notion e Obsidian.
   - **Dettagli:** `user_prompt`: Perché molti collegano Notion a Claude, Gemini ecc…cosa fa di diverso. Perché collegano anche obsidian? Cosa si può fare con obsidian, `context`: Valutazione dei sistemi di Personal Knowledge Management (PKM) e strategie RAG locali vs cloud., `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+- **Calcolo Rendimento Azionario su Capitale di 86€** (`user-intent-calcolo-rendimento-azione-86euro`)
+  - **Tags:** `#finanza` `#azioni` `#rendimento` `#capital-gain` `#calcolo`
+  - **Sintesi:** Richiesta di calcolo matematico del guadagno su 86€ investiti in una singola azione per rialzi del 20%, 40%, 70% e 100%.
+  - **Dettagli:** `user_prompt`: se per esempio oggi comprassi una quota azionaria o un pezzo non so come dire di un azienda a 86 euro, un azione, e questa azione salisse del 20%, 40%, 70%, 100%, quanto avrei guadagnato??, `initial_capital`: 86 EUR, `scenarios`: ['+20%', '+40%', '+70%', '+100%']
 - **Chiarimento Stack Rendering Grafi Frontend** (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
   - **Tags:** `#frontend` `#graph-visualization` `#vis-network` `#threejs` `#d3js` `#cytoscape`
   - **Sintesi:** Verifica dello stato di utilizzo e adozione di Vis-network, 3d-force-graph, Three.js, D3.js e Cytoscape.js nel frontend del connettoma.
@@ -2891,6 +2899,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#continuità-cognitiva` `#macro-domini` `#palazzo-cognitivo`
   - **Sintesi:** Riorganizzazione storica e sigillo del Piano 0 del Palazzo Cognitivo con 12 Macro-Domini permanenti e blindatura delle regole di routing.
   - **Dettagli:** `key_takeaways`: Il Piano 0 è ora immutabile (13 nodi); tutte le future AI devono associare ogni nuovo nodo a uno dei 12 domini, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Sincronizzazione finale PC ⮂ Render Cloud, `topic`: Riorganizzazione Macro-Domini e sigillatura Piano 0
+- **Episodio: Simulazione Matematica Rendimento Azionario 86€** (`episode-simulazione-rendimento-azionario-86euro`)
+  - **Tags:** `#simulazione` `#azioni` `#investimenti` `#educazione-finanziaria`
+  - **Sintesi:** Sessione incentrata sulla spiegazione del ritorno economico reale su una quota azionaria da 86€ con scenari di crescita multipli e impatto fiscale.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Rendimenti percentuali su 86€ (20%, 40%, 70%, 100%), `outcome`: Fornita tabella dettagliata con scomposizione tra lordo, tassazione al 26% e incidenza delle commissioni di trading.
 - **Episodio: Spiegazione Intuitiva Concetti Causali e Attention** (`episode-chiarimento-intuitivo-pilastri-teorici`)
   - **Tags:** `#chat` `#divulgazione` `#fondamenti-ai` `#tesi`
   - **Sintesi:** Sessione dedicata alla chiarificazione intuitiva di Self-Attention, Inferenza Causale, Feature Confounders e Decorrelazione.
@@ -3581,6 +3593,8 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-infinite-context-philosophy`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-infinite-context-persistence`) *(Corpo Calloso)*
 - (`episode-language-app-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`intent-personal-language-learning-app`) *(Corpo Calloso)*
 - (`episode-language-app-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`reasoning-language-app-architecture`) *(Corpo Calloso)*
+- (`episode-simulazione-rendimento-azionario-86euro`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-calcolo-rendimento-azione-86euro`) *(Corpo Calloso)*
+- (`episode-simulazione-rendimento-azionario-86euro`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-proiezione-capital-gain-86euro`) *(Corpo Calloso)*
 - (`episode-system-metacognition`) --[CORPUS_CALLOSUM_LINK]--> (`reasoning-brain-architecture-analysis`) *(Corpo Calloso)*
 - (`episode-system-metacognition`) --[CORPUS_CALLOSUM_LINK]--> (`intent-evaluate-ai-brain-architecture`) *(Corpo Calloso)*
 - (`feat-ai-json-importer`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3641,6 +3655,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`streaksup-swiftdata-arch`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-privacy-zero-cloud`) *(Corpo Calloso)*
 - (`streaksup-widget-suite-ui`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-app-intents-engine`) *(Corpo Calloso)*
 - (`streaksup-widget-suite-ui`) --[CORPUS_CALLOSUM_LINK]--> (`streaksup-darwin-ipc-protocol`) *(Corpo Calloso)*
+- (`user-intent-calcolo-rendimento-azione-86euro`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`episode-infinite-context-philosophy`) *(Corpo Calloso)*
 - (`user-intent-infinite-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`user-intent-provenance-model-tracking`) --[CORPUS_CALLOSUM_LINK]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
@@ -3824,6 +3839,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-backend-optimization-hybrid`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-calcolo-rendimento-azione-86euro`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-che-ore-sono-3134`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4018,6 +4034,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-redesign-sito-subtracker`) --[RECORDS_INTENT]--> (`user-intent-redesign-sito-subtracker`) *(Corpo Calloso)*
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_INTENT]--> (`user-intent-accorciamento-cappello-capitolo-6`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
+- (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_INTENT]--> (`user-intent-calcolo-rendimento-azione-86euro`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`) *(Corpo Calloso)*
 - (`episode-subtracker-release-v1-1-marketing`) --[RECORDS_INTENT]--> (`user-intent-subtracker-v1-1-release-prep`) *(Corpo Calloso)*
@@ -4095,6 +4112,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-redesign-sito-subtracker`) --[RECORDS_REASONING]--> (`reasoning-redesign-sito-subtracker`) *(Corpo Calloso)*
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-sintetica-testo`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
+- (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_REASONING]--> (`ai-reasoning-proiezione-capital-gain-86euro`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_REASONING]--> (`reasoning-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_REASONING]--> (`reasoning-subtracker-full-i18n-architecture`) *(Corpo Calloso)*
 - (`episode-subtracker-release-v1-1-marketing`) --[RECORDS_REASONING]--> (`reasoning-subtracker-release-screenshots-copy`) *(Corpo Calloso)*
@@ -4403,6 +4421,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`proj-workspace`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`project-royal-gambit-chess`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`universal-ai-brain`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
+- (`user-intent-calcolo-rendimento-azione-86euro`) --[BELONGS_TO_DOMAIN]--> (`domain-finanza-economia`)
 - (`user-intent-ricerca-idee-app-abbonamento-micro-saas`) --[BELONGS_TO_DOMAIN]--> (`domain-finanza-economia`)
 - (`user-intent-ricerca-idee-app-alto-impatto-reale`) --[BELONGS_TO_DOMAIN]--> (`domain-finanza-economia`)
 - (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
@@ -4458,6 +4477,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-analisi-psicologia-prezzo-micro-abbonamenti`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-ricerca-idee-app-abbonamento-micro-saas`)
 - (`ai-reasoning-hybrid-search-mcp`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`ai-reasoning-hybrid-search-mcp`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
+- (`ai-reasoning-proiezione-capital-gain-86euro`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-calcolo-rendimento-azione-86euro`)
 - (`analysis-bst-vs-graph-taxonomy`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`analysis-bst-vs-graph-taxonomy`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`antigravity-centaur-collaboration`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
@@ -4474,6 +4494,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`episode-definizione-idee-app-alto-valore-d-uso`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`episode-simulazione-rendimento-azionario-86euro`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`epistemologia-rigorosa`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`)
 - (`lesson-backend-ground-truth-and-clean-canvas-rendering`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`lesson-boundaries-clarity`) --[CORPUS_CALLOSUM_LINK]--> (`val-authenticity`)
@@ -4500,6 +4521,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`session-continuous-evolution`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
 - (`session-evolution-ui-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`ui-component-palazzo-cognitivo-multi-layer-navigator`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`user-intent-calcolo-rendimento-azione-86euro`) --[CORPUS_CALLOSUM_LINK]--> (`domain-finanza-economia`)
 - (`user-intent-ricerca-idee-app-abbonamento-micro-saas`) --[CORPUS_CALLOSUM_LINK]--> (`domain-finanza-economia`)
 - (`user-intent-ricerca-idee-app-alto-impatto-reale`) --[CORPUS_CALLOSUM_LINK]--> (`domain-finanza-economia`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
@@ -4584,6 +4606,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`) --[FULFILLS]--> (`user-intent-ricerca-idee-app-alto-impatto-reale`)
 - (`ai-reasoning-analisi-psicologia-prezzo-micro-abbonamenti`) --[FULFILLS]--> (`user-intent-ricerca-idee-app-abbonamento-micro-saas`)
 - (`ai-reasoning-market-analysis-automation`) --[FULFILLS]--> (`user-intent-ai-shorts-evaluation`)
+- (`ai-reasoning-proiezione-capital-gain-86euro`) --[FULFILLS]--> (`user-intent-calcolo-rendimento-azione-86euro`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-analisi-stack-grafico-universal-brain`) --[FULFILLS]--> (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
@@ -4747,6 +4770,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-redesign-sito-subtracker`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-sintesi-cappello-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-simulazione-rendimento-azionario-86euro`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-release-v1-1-marketing`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
