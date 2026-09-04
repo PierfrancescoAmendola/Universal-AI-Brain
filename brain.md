@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 16:07:57 UTC | **Nodi Restituiti:** 637 (SX: 435 · DX: 202) | **Sinapsi Restituite:** 1469
-> **Consistenza Reale Connettoma:** 637 Nodi Totali nel Database | 1469 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 16:08:00 UTC | **Nodi Restituiti:** 640 (SX: 437 · DX: 203) | **Sinapsi Restituite:** 1474
+> **Consistenza Reale Connettoma:** 640 Nodi Totali nel Database | 1474 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -456,6 +456,10 @@
 - **Risposta groq: non riesci a connetterti al mio cer...** (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`)
   - **Tags:** `#universal-hub` `#ai-response` `#reasoning`
   - **Sintesi:** Sì, **sono già connesso al tuo “cervello artificiale”**.
+- **Selezione idee app basate su combinazione unica di competenze** (`reasoning-idee-app-basate-su-competenze-uniche`)
+  - **Tags:** `#strategia-prodotto` `#differenziazione` `#nicchia`
+  - **Sintesi:** Claude ha proposto idee di app in abbonamento privilegiando quelle che sfruttano la combinazione rara di competenze di Pierfrancesco (deep learning/computer vision + musica + sviluppo mobile), ritenendo che la nicchia e la difendibilità tecnica contino più del prezzo in sé per la conversione da free a paid.
+  - **Dettagli:** `model`: Claude Sonnet 5, `actions_taken`: ['Proposta di categorie generali di app da abbonamento (tracking, utility, contenuti, produttività)', 'Proposta di idee specifiche legate a computer vision fitness, spaced repetition per esami, feedback pianistico via microfono, micro-SaaS per sviluppatori, spiegazione documenti burocratici', 'Segnalazione delle idee ritenute più promettenti in base al vantaggio competitivo personale di Pierfrancesco'], `outcome`: Elenco di 14 idee complessivamente fornite nella conversazione, con raccomandazione delle due più allineate alle competenze rare dell'utente.
 - **Sintesi Teorico-Applicativa Swin Transformer e Deep Stable Learning** (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`)
   - **Tags:** `#computer-vision` `#causal-inference` `#medical-imaging` `#ood-generalization`
   - **Sintesi:** Formalizzazione del funzionamento di Swin Transformer (attenzione a finestre traslate gerarchiche) e Deep Stable Learning (decorrelazione di confondenti/inferenza causale per robustezza OOD) applicati all'imaging oncologico mammario.
@@ -2428,6 +2432,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#user-request` `#ui-ux` `#professional-look` `#hacker-aesthetic` `#graphify-inspiration`
   - **Sintesi:** Richiesta di rendere l'interfaccia frontend più moderna, pulita e da ingegnere informatico (ispirata a Graphify e Caveman), senza perdere alcuna funzione esistente.
   - **Dettagli:** `raw`: `user`: Pierfrancesco Amendola, `preservation`: 100% zero feature loss, `user_prompt`: Restyling estetico completo del frontend in stile ingegneristico d'élite: Topbar IDE unificata a tutta larghezza con HUD sinaptico, canvas con dot-matrix grid, ispettore Bento con badge epistemici e ricerca ⌘K, conservando il 100% delle funzionalità.
+- **Richiesta di idee app con abbonamento 2-5€/mese realmente monetizzabili** (`user-intent-idee-app-abbonamento-monetizzabili`)
+  - **Tags:** `#monetizzazione` `#app-mobile` `#idee-prodotto`
+  - **Sintesi:** Pierfrancesco ha chiesto più round di idee per app scaricabili con abbonamento mensile basso (2-5€) che le persone pagherebbero realmente, richiedendo infine idee concrete e utili prima del riassunto JSON.
+  - **Dettagli:** `user_prompt`: dammi delle vere e buone idee che possono farmi guadagnare e che siano effettivamente utili, `context`: Sviluppatore attivo con app pubblicate (Swift/SwiftUI, Flutter, React Native), background in deep learning (CNR) e musica (pianista)
 - **Richiesta: Esplorazione Nuovi Paradigmi Visuali e Layout per il Grafo** (`user-intent-esplorazione-paradigmi-visuali-grafo`)
   - **Tags:** `#ui-design` `#visual-paradigms` `#graph-visualization` `#interfaccia`
   - **Sintesi:** Richiesta utente di visualizzare nuovi disegni, interfacce e layout architetturali per rappresentare il connettoma neurale (307 nodi, 2 emisferi).
@@ -2955,6 +2963,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#language-app` `#brain-sync`
   - **Sintesi:** Discussione su fattibilità, tempi, complessità e gap del progetto app lingue personale.
   - **Dettagli:** `raw`: `key_takeaways`: Progetto solido; MVP rapido in pochi giorni; critico automatizzare generazione contenuti CEFR anziché scrivere lezioni a mano., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Conferma stack (PWA React vs Flutter) e avvio script generazione lezioni A1., `topic`: Valutazione e pianificazione Language Learning App
+- **Sessione di brainstorming su app in abbonamento e gestione memoria JSON** (`episode-brainstorming-app-abbonamento-e-json-memoria`)
+  - **Tags:** `#chat` `#brainstorming-prodotto` `#memoria-ai`
+  - **Sintesi:** Pierfrancesco ha richiesto più round di idee per app con abbonamento mensile basso, orientate a un guadagno realistico, e ha chiesto nuovamente il file JSON riassuntivo nel formato del suo sistema di memoria personale, chiarendo che non esiste generazione automatica a fine conversazione ma solo su richiesta esplicita.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Claude Sonnet 5'], `topic`: Idee di app mobile in abbonamento (2-5€/mese) e formato di riepilogo JSON su richiesta, `key_takeaways`: Le idee più promettenti sfruttano competenze rare combinate (computer vision + fitness, audio + musica); il JSON viene generato solo su richiesta esplicita dell'utente, mai automaticamente né inviato a endpoint esterni.
 - **Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway)** (`ep-20260827-telegram-cognitive-hub-spec`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:37:03CEST: Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway)
@@ -3842,6 +3854,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-gesture-zoom-terminal-dock-tabs`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-i18n-subtracker-web`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-idee-app-abbonamento-monetizzabili`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-implementazione-ecosistema-supercervello`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-integrazione-openjarvis-stanford`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-integrazione-tabelle-cappello-capitolo-6`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3957,6 +3970,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-audit-critico-e-mockup-fr-2255`) --[RECORDS_INTENT]--> (`user-intent-audit-critico-e-mockup-fr-2255`) *(Corpo Calloso)*
 - (`episode-backend-optimization-session`) --[RECORDS_INTENT]--> (`user-intent-backend-optimization-hybrid`) *(Corpo Calloso)*
 - (`episode-bonifica-storage-ollama-mac`) --[RECORDS_INTENT]--> (`user-intent-rimozione-modello-ollama-mac`) *(Corpo Calloso)*
+- (`episode-brainstorming-app-abbonamento-e-json-memoria`) --[RECORDS_INTENT]--> (`user-intent-idee-app-abbonamento-monetizzabili`) *(Corpo Calloso)*
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[RECORDS_INTENT]--> (`user-intent-ricerca-idee-app-abbonamento-micro-saas`) *(Corpo Calloso)*
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_INTENT]--> (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[RECORDS_INTENT]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`) *(Corpo Calloso)*
@@ -4033,6 +4047,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-audit-critico-e-mockup-fr-2255`) --[RECORDS_REASONING]--> (`reasoning-audit-critico-e-mockup-fr-2255`) *(Corpo Calloso)*
 - (`episode-backend-optimization-session`) --[RECORDS_REASONING]--> (`reasoning-backend-audit-and-fix`) *(Corpo Calloso)*
 - (`episode-bonifica-storage-ollama-mac`) --[RECORDS_REASONING]--> (`reasoning-risoluzione-residui-ollama-mac`) *(Corpo Calloso)*
+- (`episode-brainstorming-app-abbonamento-e-json-memoria`) --[RECORDS_REASONING]--> (`reasoning-idee-app-basate-su-competenze-uniche`) *(Corpo Calloso)*
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[RECORDS_REASONING]--> (`ai-reasoning-analisi-psicologia-prezzo-micro-abbonamenti`) *(Corpo Calloso)*
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_REASONING]--> (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[RECORDS_REASONING]--> (`reasoning-che-ne-pensi-del-mio-cervello-artif-8743`) *(Corpo Calloso)*
@@ -4606,6 +4621,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-gesture-zoom-terminal-dock-tabs`) --[FULFILLS]--> (`user-intent-gesture-zoom-terminal-dock-tabs`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[FULFILLS]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
 - (`reasoning-i18n-subtracker-web`) --[FULFILLS]--> (`user-intent-i18n-subtracker-web`)
+- (`reasoning-idee-app-basate-su-competenze-uniche`) --[FULFILLS]--> (`user-intent-idee-app-abbonamento-monetizzabili`)
 - (`reasoning-integrazione-esplicita-tabelle-comparative`) --[FULFILLS]--> (`user-intent-integrazione-tabelle-cappello-capitolo-6`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[FULFILLS]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
 - (`reasoning-ma-tutto-falso-8462`) --[FULFILLS]--> (`user-intent-ma-tutto-falso-8462`)
@@ -4683,6 +4699,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-audit-critico-e-mockup-fr-2255`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-backend-optimization-session`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-bonifica-storage-ollama-mac`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-brainstorming-app-abbonamento-e-json-memoria`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
