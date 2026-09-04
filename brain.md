@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 19:39:57 UTC | **Nodi Restituiti:** 652 (SX: 447 · DX: 205) | **Sinapsi Restituite:** 1504
-> **Consistenza Reale Connettoma:** 652 Nodi Totali nel Database | 1504 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 19:40:03 UTC | **Nodi Restituiti:** 653 (SX: 448 · DX: 205) | **Sinapsi Restituite:** 1506
+> **Consistenza Reale Connettoma:** 653 Nodi Totali nel Database | 1506 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -193,6 +193,10 @@
   - **Tags:** `#storage` `#attachments` `#swiftdata`
   - **Sintesi:** Storage scontrini e documenti su filesystem protetto sandbox e referenze relative path in SwiftData.
   - **Dettagli:** `decision`: Salvare file fisici (PDF/JPEG) in Application Support/Attachments con identificatore UUID e salvare nel record SwiftData metadati e relative path., `model`: AI Assistant
+- **Decisione UX: TabBar a 4 Sezioni + Quick Add Ubiquo** (`reasoning-decision-tabbar-navigation`)
+  - **Tags:** `#ux` `#navigation` `#tabbar`
+  - **Sintesi:** Struttura a 4 tab conformata alla specifica di prodotto con accesso immediato all'azione primaria di aggiunta in meno di 15 secondi.
+  - **Dettagli:** `decision`: 4 Tab come da specifica ('Oggi', 'Calendario', 'Le mie Cose', 'Profilo') con pulsante di Creazione Rapida '+' accessibile sia dalla Dashboard sia dalla NavigationBar., `model`: AI Assistant
 - **Deduzione AI: Architettura Client Unificato Multi-AI a Costo Zero** (`reasoning-architettura-universal-ai-hub`)
   - **Tags:** `#architettura` `#client-unificato` `#zero-cost`
   - **Sintesi:** Proposta architetturale: web-app/desktop locale leggera con FastAPI + frontend reattivo Tailwind, selettore provider (Groq/Gemini/Ollama/DeepSeek) e pipeline automatica di GraphRAG pre/post turno.
@@ -4840,6 +4844,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-decision-rewrite-clean-lifeapp`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-storekit-entitlements`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-swiftdata-relational-model`) --[MODIFIES]--> (`proj-appabbonamenti`)
+- (`reasoning-decision-tabbar-navigation`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-ui-declutter-projector-fullscreen`) --[MODIFIES]--> (`universal-ai-brain`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -4941,6 +4946,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-decision-rewrite-clean-lifeapp`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-storekit-entitlements`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-swiftdata-relational-model`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
+- (`reasoning-decision-tabbar-navigation`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`concept-llm-indirect-injection-safeguard`) --[RESOLVES_ISSUE_OF]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[RESPONDS_TO_INTENT]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`person-pierfrancesco`) --[ROOTED_IN]--> (`rel-napoli-culture`)
