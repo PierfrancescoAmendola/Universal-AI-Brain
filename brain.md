@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 19:40:03 UTC | **Nodi Restituiti:** 653 (SX: 448 · DX: 205) | **Sinapsi Restituite:** 1506
-> **Consistenza Reale Connettoma:** 653 Nodi Totali nel Database | 1506 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 19:40:44 UTC | **Nodi Restituiti:** 654 (SX: 449 · DX: 205) | **Sinapsi Restituite:** 1508
+> **Consistenza Reale Connettoma:** 654 Nodi Totali nel Database | 1508 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -173,6 +173,10 @@
   - **Tags:** `#architecture` `#decision` `#life-registry`
   - **Sintesi:** Scelta di archiviare SubTracker ed eseguire una riscrittura pulita e modulare con nuova architettura LifeApp.
   - **Dettagli:** `decision`: Riscrivere da zero: archiviare il codice attuale di SubTracker in una cartella di backup/archivio e creare una struttura pulita LifeApp ripartendo da zero con i modelli LifeItem come da specifica., `model`: AI Assistant
+- **Decisione Configurazione: Nuovo Bundle ID Life Registry** (`reasoning-decision-bundle-id-liferegistry`)
+  - **Tags:** `#bundle-id` `#xcode` `#config`
+  - **Sintesi:** Aggiornamento del Bundle Identifier in com.amendolapierfrancesco.liferegistry per identificare ufficialmente la nuova applicazione Life Registry.
+  - **Dettagli:** `decision`: Rinominare anche il Bundle ID e il target Xcode ufficialmente in com.amendolapierfrancesco.liferegistry con nome Life Registry., `model`: AI Assistant
 - **Decisione Dati: Modello Relazionale Bidirezionale SwiftData** (`reasoning-decision-swiftdata-relational-model`)
   - **Tags:** `#swiftdata` `#data-model` `#architecture`
   - **Sintesi:** Scelta di entità separate LifeItem, OwnedItem e ItemAttachment con relazioni SwiftData bidirezionali pulite.
@@ -4839,6 +4843,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
 - (`reasoning-decision-attachment-storage`) --[MODIFIES]--> (`proj-appabbonamenti`)
+- (`reasoning-decision-bundle-id-liferegistry`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-eventkit-opt-in`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-ocr-vision-parser`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-rewrite-clean-lifeapp`) --[MODIFIES]--> (`proj-appabbonamenti`)
@@ -4941,6 +4946,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`identity-cs-researcher`) --[RESEARCHED]--> (`proj-bioinformatics-icar`)
 - (`identity-cs-researcher`) --[RESEARCHING_THESIS]--> (`proj-tesi-busbra-cnr`)
 - (`reasoning-decision-attachment-storage`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
+- (`reasoning-decision-bundle-id-liferegistry`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-eventkit-opt-in`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-ocr-vision-parser`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-rewrite-clean-lifeapp`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
