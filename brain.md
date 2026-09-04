@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 16:01:28 UTC | **Nodi Restituiti:** 634 (SX: 433 · DX: 201) | **Sinapsi Restituite:** 1457
-> **Consistenza Reale Connettoma:** 634 Nodi Totali nel Database | 1457 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 16:01:30 UTC | **Nodi Restituiti:** 637 (SX: 435 · DX: 202) | **Sinapsi Restituite:** 1469
+> **Consistenza Reale Connettoma:** 637 Nodi Totali nel Database | 1469 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -85,6 +85,10 @@
   - **Tags:** `#algorithm-analysis` `#graph-theory` `#mst` `#b-tree` `#hierarchical-tree`
   - **Sintesi:** Valutazione tecnica: BST puro monodimensionale non modella relazioni cicliche; Spanning Tree Pesato (MST) e Alberi Gerarchici di Comunità estraggono la spina dorsale concettuale.
   - **Dettagli:** `raw`: `pure_bst`: Monodimensionale (già coperto da B-Tree SQLite O(log N)), `optimal_tree_models`: ['Maximum Spanning Tree (MST / Kruskal) per spina dorsale concettuale', 'Hierarchical Community Tree (Dendrogramma) per navigazione a zoom semantico', 'Prefix Trie / Radix Tree per lookup istantaneo O(k)'], `model`: LLM Assistant (Historical Session)
+- **Analisi Problemi Critici: Salute Famigliare, Contratti e Sinistri** (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`)
+  - **Tags:** `#critical-utility` `#pain-point-analysis` `#caregiver` `#contract-defense` `#insurance-claims`
+  - **Sintesi:** Identificazione di 3 mercati in cui la disdetta dell'abbonamento è psicologicamente frenata: tutela della salute dei genitori anziani, blocco dei rincari contrattuali e protezione documentale immediata post-incidente.
+  - **Dettagli:** `model`: Gemini 3.8 Flash, `pillars`: ['Caregiver Sync & Pill Guardian (Health / Peace of Mind)', 'Scudo Bollette & Contratti (Financial Loss Prevention)', 'Diario Sinistri & Tutela Legale Pocket (Immediate Legal / Damage Defense)'], `psychological_lock_in`: La retention si basa sulla prevenzione di perdite economiche ingenti o sull'eliminazione dell'ansia quotidiana.
 - **Analisi Psicologia del Prezzo & Nicchie per Micro-Abbonamenti** (`ai-reasoning-analisi-psicologia-prezzo-micro-abbonamenti`)
   - **Tags:** `#pricing-psychology` `#subscription-mechanics` `#paywall-gating` `#market-fit`
   - **Sintesi:** Identificazione delle nicchie ad alta conversione per micro-abbonamenti (turni di lavoro, adempimenti fiscali, organizzazione scadenze) basate sul principio di ROI personale e prevenzione perdite.
@@ -2368,6 +2372,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#app-ideas` `#subscription-model` `#micro-saas` `#monetization` `#b2c-utility`
   - **Sintesi:** Richiesta di idee concrete per app mobili con utilità tangibile e alta propensione alla spesa per abbonamenti ricorrenti di 2-5€/mese.
   - **Dettagli:** `user_prompt`: ho bisogno di app che la gente scarica, utili, e che mi consentano di inserire un abbonamento al mese che varia tra i 2-5 euro che le persone sarebbero disposte a spendere realmente, `target_pricing`: 2-5 EUR/mese, `key_criteria`: Utilità reale, propensione al pagamento, retention ricorrente
+- **Ricerca Idee App Cruciali a Forte Utilità Pratica** (`user-intent-ricerca-idee-app-alto-impatto-reale`)
+  - **Tags:** `#high-utility` `#anti-anxiety` `#life-saving` `#financial-defense` `#b2c-saas`
+  - **Sintesi:** Richiesta di idee applicative che facciano realmente la differenza, basate su utilità concreta e indispensabile, per giustificare un abbonamento ricorrente di 2-5€/mese.
+  - **Dettagli:** `user_prompt`: altre idee non mi piacciono, ho bisogno di idee che facciano la differenza, utili, `requirement`: Impatto reale, risoluzione di problemi gravi/ansiosi, forte valore percepito, `monetization`: 2-5 EUR/mese
 - **Richiesta Creazione Video Showcase 60s Universal Brain** (`user-intent-creazione-video-showcase-universal-brain`)
   - **Tags:** `#video` `#showcase` `#social-media` `#tutorial` `#universal-brain`
   - **Sintesi:** Richiesta di Pierfrancesco di creare un video tutorial / anteprima di 1 minuto con screenshot, pezzi di codice e spiegazione del Cervello Artificiale per la condivisione social.
@@ -2715,6 +2723,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#continuità-cognitiva` `#gemini-feedback` `#connettoma`
   - **Sintesi:** Analisi comparativa tra il feedback di Gemini e la reale consistenza del connettoma, con piano per perfezionare il recupero di contesto per le AI esterne.
   - **Dettagli:** `raw`: `key_takeaways`: Il connettoma non è vuoto (304 nodi); il collo di bottiglia è l'iniezione del contesto iniziale verso LLM esterni, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Potenziare il prompt di retrieval / endpoint /brain.md per i client esterni, `topic`: Valutazione feedback Gemini e ottimizzazione connettoma
+- **Episodio: Definizione Idee App Cruciali e ad Alto Valore d'Uso** (`episode-definizione-idee-app-alto-valore-d-uso`)
+  - **Tags:** `#critical-utility` `#micro-saas` `#brainstorming-avanzato`
+  - **Sintesi:** Sessione incentrata sullo scarto di utility superficiali in favore di soluzioni software per bisogni non negoziabili (assistenza anziani, bollette/contratti, gestione sinistri).
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `topic`: Idee software ad altissimo valore d'uso e impatto quotidiano, `outcome`: Strutturati 3 casi d'uso ad alta ritenzione basati sulla rimozione dell'ansia e sulla protezione economica.
 - **Episodio: Definizione Scopo Universale del Contesto Multi-AI** (`episode-2026-08-27-universal-context-definition`)
   - **Tags:** `#conversation-episode` `#universal-brain` `#context-purpose` `#gemini-session`
   - **Sintesi:** Sessione di formalizzazione dello scopo supremo di Universal AI Brain: memoria persistente del contesto e dei processi mentali cross-AI.
@@ -3551,6 +3563,8 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-analisi-psicologia-prezzo-micro-abbonamenti`) *(Corpo Calloso)*
 - (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-cross-model-provenance-validation`) *(Corpo Calloso)*
 - (`episode-cross-model-memory-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-provenance-model-tracking`) *(Corpo Calloso)*
+- (`episode-definizione-idee-app-alto-valore-d-uso`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-ricerca-idee-app-alto-impatto-reale`) *(Corpo Calloso)*
+- (`episode-definizione-idee-app-alto-valore-d-uso`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`) *(Corpo Calloso)*
 - (`episode-infinite-context-philosophy`) --[CORPUS_CALLOSUM_LINK]--> (`ai-reasoning-infinite-context-architecture`) *(Corpo Calloso)*
 - (`episode-infinite-context-philosophy`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-infinite-context-persistence`) *(Corpo Calloso)*
 - (`episode-language-app-architecture`) --[CORPUS_CALLOSUM_LINK]--> (`intent-personal-language-learning-app`) *(Corpo Calloso)*
@@ -3619,6 +3633,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-infinite-context-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`val-eternal-cognitive-continuity`) *(Corpo Calloso)*
 - (`user-intent-provenance-model-tracking`) --[CORPUS_CALLOSUM_LINK]--> (`episode-cross-model-memory-architecture`) *(Corpo Calloso)*
 - (`user-intent-ricerca-idee-app-abbonamento-micro-saas`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-ricerca-idee-app-alto-impatto-reale`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-telegram-bot-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`user-intent-telegram-bot-gateway`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-tree-search-enhancement`) --[CORPUS_CALLOSUM_LINK]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
@@ -3844,6 +3859,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-redesign-sito-subtracker`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-review-piano-supercervello-os`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ricerca-idee-app-abbonamento-micro-saas`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-ricerca-idee-app-alto-impatto-reale`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-rimozione-modello-ollama-mac`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3953,6 +3969,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-cloud-git-auto-push`) --[RECORDS_INTENT]--> (`user-intent-cloud-git-auto-push`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-completamento-supercervello-ecosistema`) --[RECORDS_INTENT]--> (`user-intent-implementazione-ecosistema-supercervello`) *(Corpo Calloso)*
+- (`episode-definizione-idee-app-alto-valore-d-uso`) --[RECORDS_INTENT]--> (`user-intent-ricerca-idee-app-alto-impatto-reale`) *(Corpo Calloso)*
 - (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_INTENT]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_INTENT]--> (`user-intent-definizione-ecografo-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-2447`) --[RECORDS_INTENT]--> (`user-intent-e2e-test-session-hook-2447`) *(Corpo Calloso)*
@@ -4028,6 +4045,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-cloud-git-auto-push`) --[RECORDS_REASONING]--> (`reasoning-cloud-git-auto-push`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-completamento-supercervello-ecosistema`) --[RECORDS_REASONING]--> (`reasoning-costruzione-collaudo-ecosistema-supercervello`) *(Corpo Calloso)*
+- (`episode-definizione-idee-app-alto-valore-d-uso`) --[RECORDS_REASONING]--> (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`) *(Corpo Calloso)*
 - (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_REASONING]--> (`reasoning-tassonomia-pkm-rag-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_REASONING]--> (`reasoning-caratterizzazione-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-2447`) --[RECORDS_REASONING]--> (`reasoning-e2e-test-session-hook-2447`) *(Corpo Calloso)*
@@ -4371,6 +4389,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`project-royal-gambit-chess`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
 - (`universal-ai-brain`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
 - (`user-intent-ricerca-idee-app-abbonamento-micro-saas`) --[BELONGS_TO_DOMAIN]--> (`domain-finanza-economia`)
+- (`user-intent-ricerca-idee-app-alto-impatto-reale`) --[BELONGS_TO_DOMAIN]--> (`domain-finanza-economia`)
 - (`voice-oggi-ho-riflettuto-sul-principio-stoico-della-dico-2214`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2447`) --[BELONGS_TO_DOMAIN]--> (`domain-design-creativita`)
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2471`) --[BELONGS_TO_DOMAIN]--> (`domain-ai-cognitive-systems`)
@@ -4420,6 +4439,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`proj-streaksup-app`) --[CONTAINS_MODULE]--> (`streaksup-swiftdata-arch`)
 - (`domain-medicina-salute`) --[CONTAINS_PATHOLOGY]--> (`medical-onicocriptosi-unghia-incarnita`)
 - (`ep-20260827-render-cloud-vs-local-hybrid-architecture`) --[CONVERSATION_WITH]--> (`person-pierfrancesco`)
+- (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-ricerca-idee-app-alto-impatto-reale`)
 - (`ai-reasoning-analisi-psicologia-prezzo-micro-abbonamenti`) --[CORPUS_CALLOSUM_LINK]--> (`user-intent-ricerca-idee-app-abbonamento-micro-saas`)
 - (`ai-reasoning-hybrid-search-mcp`) --[CORPUS_CALLOSUM_LINK]--> (`mental-centaur-model`)
 - (`ai-reasoning-hybrid-search-mcp`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-cost`)
@@ -4437,6 +4457,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-2026-08-27-telegram-omnipresence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`episode-2026-08-27-tree-structures-evaluation`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
+- (`episode-definizione-idee-app-alto-valore-d-uso`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`epistemologia-rigorosa`) --[CORPUS_CALLOSUM_LINK]--> (`rule-zero-placeholder`)
 - (`lesson-backend-ground-truth-and-clean-canvas-rendering`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
@@ -4465,6 +4486,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`session-evolution-ui-persistence`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`ui-component-palazzo-cognitivo-multi-layer-navigator`) --[CORPUS_CALLOSUM_LINK]--> (`person-pierfrancesco`)
 - (`user-intent-ricerca-idee-app-abbonamento-micro-saas`) --[CORPUS_CALLOSUM_LINK]--> (`domain-finanza-economia`)
+- (`user-intent-ricerca-idee-app-alto-impatto-reale`) --[CORPUS_CALLOSUM_LINK]--> (`domain-finanza-economia`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`brand-voice-surgical`)
 - (`val-authenticity`) --[CORPUS_CALLOSUM_LINK]--> (`lesson-boundaries-clarity`)
 - (`val-transparency-loyalty`) --[CORPUS_CALLOSUM_LINK]--> (`rel-marco-di-martino`)
@@ -4544,6 +4566,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-musica-audio`)
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-relazioni-comunicazione`)
 - (`ai-reasoning-alternative-monetization-strategies`) --[FULFILLS]--> (`user-intent-alternative-income-generation`)
+- (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`) --[FULFILLS]--> (`user-intent-ricerca-idee-app-alto-impatto-reale`)
 - (`ai-reasoning-analisi-psicologia-prezzo-micro-abbonamenti`) --[FULFILLS]--> (`user-intent-ricerca-idee-app-abbonamento-micro-saas`)
 - (`ai-reasoning-market-analysis-automation`) --[FULFILLS]--> (`user-intent-ai-shorts-evaluation`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
@@ -4672,6 +4695,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-cloud-git-auto-push`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-completamento-supercervello-ecosistema`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-definizione-idee-app-alto-valore-d-uso`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-integrazioni-notion-obsidian`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-trasduttori-lineari`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-e2e-test-session-hook-2447`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
