@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 14:56:21 UTC | **Nodi Restituiti:** 616 (SX: 422 · DX: 194) | **Sinapsi Restituite:** 1411
-> **Consistenza Reale Connettoma:** 616 Nodi Totali nel Database | 1411 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 14:56:24 UTC | **Nodi Restituiti:** 621 (SX: 426 · DX: 195) | **Sinapsi Restituite:** 1422
+> **Consistenza Reale Connettoma:** 621 Nodi Totali nel Database | 1422 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -141,6 +141,10 @@
   - **Tags:** `#architettura` `#fastapi` `#sqlite-wal` `#testing` `#zero-cost`
   - **Sintesi:** Implementazione modulare a 5 fasi con zero dipendenze esterne a pagamento, SQLite WAL ad alte prestazioni e suite di test end-to-end con esito positivo al 100%.
   - **Dettagli:** `actions_taken`: ['Creazione script command Raycast (search, quick_add, capture)', 'Aggiunta endpoint REST /api/memory/voice-note in main.py', 'Integrazione Daily Pulse alle 08:00 nel demone e Telegram bot', 'Sviluppo Web Clipper Manifest V3 per Safari/Chrome', 'Creazione kindle_sync.py per importazione sottolineature', 'Creazione brain_rem_cycle.py per consolidamento notturno alle 03:00', 'Sviluppo brain_vectors.py con Reciprocal Rank Fusion lessicale/vettoriale', 'Sviluppo ide_hooks pre e post sessione', 'Creazione obsidian_canvas_sync.py con layout 2D bi-emisferico', 'Suite di test con 10/10 test superati'], `model`: Gemini 3.7 Flash, `outcome`: Tutti i 9 moduli costruiti, revisionati, testati e documentati a 0,00€ con successo, `responses_given`: Walkthrough dettagliato con istruzioni d'uso immediate
+- **Architettura ed Esecuzione: i18n, Tastiera, Dashboard, Premium Suite e Fix Asset Symbols** (`reasoning-subtracker-i18n-currency-ux-overhaul`)
+  - **Tags:** `#architecture` `#swiftui` `#storekit` `#pdf-renderer` `#focus-state` `#xcode-build`
+  - **Sintesi:** Approccio chirurgico end-to-end: risoluzione root-cause su localizzazione e valuta, eliminazione gesture conflicts della tastiera con FocusState nativo, sblocco di valore tangibile per gli abbonati Premium con PDF vettoriale e dashboard analytics, e risoluzione del bug Xcode su asset symbol extensions.
+  - **Dettagli:** `actions_taken`: ["Creato modello AppCurrency con rilevamento automatico della valuta del dispositivo (Locale.current.currency) ed eliminazione di ogni simbolo '€' hardcoded", 'Sostituito fallback italiano forzato in SettingsManager e AppStrings con AppLanguage.detectDeviceLanguage()', 'Completata localizzazione integrale in 6 lingue (IT, EN, FR, DE, PT, ES) inclusi onboarding, StoreKit, termini legali e notifiche', 'Restyling header DashboardView: SubTracker bold a sinistra (topBarLeading) e Help + Settings raggruppati a destra (topBarTrailing)', 'Risolto problema tastiera: rimozione onTapGesture bloccante dal container, introduzione @FocusState sui campi e .scrollDismissesKeyboard(.interactively)', 'Implementata AnalyticsView con metriche chiave, frequenze e proiezioni future a 6 mesi, 1 anno, 3 anni e 5 anni', 'Implementato ReportGenerator con render vettoriale PDF UIGraphicsPDFRenderer, export CSV e ShareSheetView native', 'Aggiunto Rivedi Tutorial in Impostazioni con OnboardingView in modalità consultazione e tasto Chiudi rapido', 'Risolto errore di compilazione Xcode Failed to write Swift generated asset symbols disattivando ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS e user script sandboxing'], `model`: Antigravity / Gemini 3.8, `outcome`: Build Xcode terminata con esito BUILD SUCCEEDED; tutte le richieste di Pierfrancesco pienamente soddisfatte con preservazione architetturale e qualità production-grade., `responses_given`: Chiarimento puntuale del meccanismo di lingua del device, conduzione sessione /grill-me per definire layout e comportamento, implementazione di 8 step tecnici e risoluzione del build failure asset symbols.
 - **Audit Critico e Fix Ottimizzazioni Backend** (`reasoning-backend-audit-and-fix`)
   - **Tags:** `#code-review` `#bug-fix` `#architecture` `#integration`
   - **Sintesi:** Analisi approfondita del codice generato, individuazione di 4 bug critici (perdita tags, cross_links, mismatch DB, rischio overwrite) e riscrittura sicura per integrazione nel main.py.
@@ -738,6 +742,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#subtracker` `#swiftui` `#storekit` `#ui` `#splash`
   - **Sintesi:** Fix SubTracker Home top title, clean top-right bar, add real logo on splash, gate Analytics and PDF/CSV behind StoreKit Premium.
   - **Dettagli:** `raw`: Fix UI issues and gating: restored large title 'SubTracker' on top-left of Dashboard; cleaned top-right toolbar completely; loaded real AppLogo in SplashScreenView; locked AnalyticsView and PDF/CSV report generation behind storeKit.isPremium with high-conversion teaser and paywall modal.
+- **Suite Premium SubTracker: Analisi Avanzata e Generatore Report Finanziari** (`feature-subtracker-premium-analytics-report`)
+  - **Tags:** `#subtracker` `#premium` `#pdf-generation` `#analytics` `#sharesheet`
+  - **Sintesi:** Architettura delle funzionalità Premium: schermata Analisi Dettagliata con Swift Charts/proiezioni ed esportatore report PDF vettoriale e CSV con supporto ShareSheet iOS.
+  - **Dettagli:** `components`: ['AnalyticsView.swift: panoramica metriche, split per frequenza, proiezioni temporali 6m-5y', 'ReportGenerator.swift: motore UIGraphicsPDFRenderer con paginazione automatica, tabella abbonamenti, riepilogo finanziario, esportatore CSV RFC 4180', 'ShareSheetView.swift: bridge SwiftUI UIViewControllerRepresentable per UIActivityViewController', 'Gating in SettingsView: visualizzazione badge lucchetto per utenti free con redirect su PaywallView, navigazione diretta per utenti premium'], `purpose`: Fornire utilità reale e alta percezione di valore all'abbonamento SubTracker Premium
 - **Telegram 0€ Webhook Gateway (POST /api/telegram/webhook)** (`node-telegram-webhook-gateway`)
   - **Tags:** `#mutation-import` `#perceptual-io` `#api-gateway`
   - **Sintesi:** Telegram 0€ Webhook Gateway (POST /api/telegram/webhook) (Layer: PERCEPTUAL_IO, Tipo: API_GATEWAY)
@@ -861,6 +869,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#cognitive-rule` `#prompt-injection` `#llm-safety` `#claude-ai-guardrails` `#memory-ingestion`
   - **Sintesi:** Protocollo di interazione con modelli web: evitare comandi imperativi di rete esterna (es. ordini di POST verso URL terzi) nei file allegati, preferendo il formato standard di blocco JSON in calce.
   - **Dettagli:** `raw`: `cause_of_refusal`: I filtri di Anthropic/OpenAI rilevano istruzioni di esfiltrazione dati se un prompt/file ordina chiamate POST o fetch verso siti terzi., `recommended_protocol`: Allegare brain.md e chiedere la generazione del blocco di codice JSON da incollare con 1-click nella Web Dashboard.
+- **Regola Cognitiva: Risoluzione Errore Build Xcode Asset Symbols & Sandboxing** (`cognitive-rule-xcode-asset-symbols-sandboxing`)
+  - **Tags:** `#xcode` `#build-fix` `#assets` `#sandboxing` `#cognitive-rule`
+  - **Sintesi:** In progetti Xcode 15/16, disabilitare la generazione dei simboli asset e il sandboxing degli script per prevenire blocchi di scrittura su DerivedData quando non si usano asset extensions generate.
+  - **Dettagli:** `context`: Xcode 15 e 16 su progetti iOS SwiftUI moderni, `problem`: Errore 'Failed to write Swift generated asset symbols', 'Failed to write Objective-C generated asset symbols', 'Failed to write generated asset symbol index data' causato da ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS combinato con sandbox script o cache DerivedData., `solution`: Impostare ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO, ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO e ENABLE_USER_SCRIPT_SANDBOXING = NO sia a livello di Project che di Target nel file project.pbxproj.
 - **Regola dell'Esecuzione Integrale (Zero Placeholder)** (`rule-zero-placeholder`)
   - **Tags:** `#strict-execution` `#code-integrity` `#no-shortcuts`
   - **Sintesi:** Divieto tassativo di codice troncato, finto o parziale; ogni soluzione deve essere autosufficiente ed eseguibile.
@@ -2301,6 +2313,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#subtracker` `#i18n` `#multilingual` `#internationalization`
   - **Sintesi:** Richiesta di rendere il sito web di SubTracker traducibile e fruibile a livello internazionale nelle diverse lingue supportate dall'applicazione.
   - **Dettagli:** `context`: Sito web SubTracker (AppAbbonamenti), internazionalizzazione globale sincronizzata con le 6 lingue dell'app iOS, `user_prompt`: poichè è un applicazione internazionale dobbiamo far si che il sito possa essere tradotto in altre lingue, comunque bellisima estetica mi piace!!!! fatto bene
+- **Internazionalizzazione USD, Restyling Home, Tastiera Rapida e Feature Premium SubTracker** (`user-intent-subtracker-i18n-currency-ux-overhaul`)
+  - **Tags:** `#subtracker` `#i18n` `#currency` `#usd` `#keyboard` `#analytics` `#pdf-report` `#grill-me`
+  - **Sintesi:** Risoluzione critica del supporto valute (USD/EUR/GBP) e localizzazione automatica del dispositivo, restyling toolbar Home, reattività istantanea tastiera senza bottoni orrendi, introduzione Analisi Dettagliata e Report PDF/CSV nelle impostazioni Premium e Rivedi Tutorial.
+  - **Dettagli:** `context`: App SubTracker iOS: recezione recensione negativa USA su lingua e valuta USD, richiesta restyling header Home, risoluzione lag/dismiss tastiera in aggiunta abbonamento, sblocco feature concrete Premium (Analisi Dettagliata, Report PDF/CSV) e Rivedi Tutorial in Impostazioni., `user_prompt`: nell'applicazione abbiamo implementato il supporto multilingua. ma quando una persona americana si scarica l'applicazione la lingua impostata è l'italiano o riconosce la lingua del telefono??? un utente su app store ha detto: Doesn’t translate all content to English - doesn’t use USD. Deleted immediately non va assolutamente bene!!!!! dobbiamo modificare!!!!! sicuro??? hai modificato anche le scritte nel tutorial?? sono state tradotte??? /grill-me vorrei un attimo rifare l'interfaccia grafica della home. non voglio cambiare chissà cosa, voglio solo spostare il nome SubTracker in alto a sinistra, il pulsante delle domande a destra sotto l'ingranaggio, cioè la schermata delle impostazioni. nelle impostazioni inseriamo sotto premium tutte le cose che una volta che hai pagato hai sbloccato, cioè l'analissi dettagliata nel tempo, quindi dobbiamo effettivamente dare qualcosa o mostrare qualcosa. la possibilità di scaricare un report sulle finanze. qundo creo un'abbonamento e clicco sui campi di testo non si apre subito la tastiera, quando si apre poi non scende se clicco altrove, per farla scendere c'è unn bottone orrendo con scritto fatto...non voglio. in impostazioni aggiungi la possibilità di rivedere il tutorial iniziale per capire come funziona.
 - **Ottimizzazione Backend Ibrida con Backup** (`user-intent-backend-optimization-hybrid`)
   - **Tags:** `#backend` `#performance` `#sqlite` `#optimization` `#safety`
   - **Sintesi:** Richiesta di applicare ottimizzazioni backend (indici, cache, CTE) con approccio ibrido e backup preventivo, senza perdere dati o funzionalità.
@@ -2711,6 +2727,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#ide-hook` `#dialogue-episode`
   - **Sintesi:** Sessione di sviluppo dedicata a: E2E Test Session Hook.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'IDE Assistant'], `topic`: E2E Test Session Hook, `key_takeaways`: Task implementato e verificato con successo.
+- **Episodio: Elevazione UX SubTracker, Suite Premium e Riconciliazione Globale i18n** (`episode-subtracker-i18n-currency-ux-overhaul`)
+  - **Tags:** `#chat` `#continuità-cognitiva` `#subtracker` `#ios-app` `#app-store-fix`
+  - **Sintesi:** Sessione completa in cui Pierfrancesco ha affrontato il feedback critico su App Store, guidato il restyling della Home, perfezionato l'input tastiera ed espanso le feature Premium con Analytics e Report Finanziari.
+  - **Dettagli:** `key_takeaways`: 1) Mai lasciare fallback rigidi in app globali: il locale del device deve sempre guidare lingua e valuta. 2) In SwiftUI evitare onTapGesture su Form/VStack perché intercettano i touch sui TextField; usare @FocusState e scrollDismissesKeyboard. 3) Il valore Premium deve essere concreto: grafici proiezioni e report PDF esportabili aumentano la conversione. 4) In Xcode 15/16 disattivare ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS se non si usano enum generate, per evitare fallimenti di compilazione DerivedData., `participants`: ['Pierfrancesco Amendola', 'Antigravity / Gemini 3.8'], `pending_tasks`: Test finale su simulatore/dispositivo fisico da parte di Pierfrancesco e rilascio aggiornamento su App Store., `topic`: Fix internazionalizzazione americana (USD/EN), restyling grafico Home, fluidità tastiera, feature concrete Premium e Rivedi Tutorial
 - **Episodio: Esplorazione Modellazione 3D su Linux** (`episode-esplorazione-linux-3d-modeling`)
   - **Tags:** `#chat` `#linux` `#3d` `#grafica`
   - **Sintesi:** Sessione incentrata sulle capacità del sistema operativo Linux e delle sue varianti nel supporto e download di software di modellazione 3D.
@@ -3768,6 +3788,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-telegram-keepalive-confirmation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-test-hook-session-end-2411`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ui-declutter-projector-fullscreen`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3901,6 +3922,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-redesign-sito-subtracker`) --[RECORDS_INTENT]--> (`user-intent-redesign-sito-subtracker`) *(Corpo Calloso)*
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_INTENT]--> (`user-intent-accorciamento-cappello-capitolo-6`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
+- (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_INTENT]--> (`user-intent-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-test-hook-session-end-2411`) --[RECORDS_INTENT]--> (`user-intent-test-hook-session-end-2411`) *(Corpo Calloso)*
 - (`episode-ui-declutter-projector-fullscreen`) --[RECORDS_INTENT]--> (`user-intent-ui-declutter-projector-fullscreen`) *(Corpo Calloso)*
@@ -3972,6 +3994,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-redesign-sito-subtracker`) --[RECORDS_REASONING]--> (`reasoning-redesign-sito-subtracker`) *(Corpo Calloso)*
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-sintetica-testo`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
+- (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_REASONING]--> (`reasoning-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_REASONING]--> (`reasoning-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-test-hook-session-end-2411`) --[RECORDS_REASONING]--> (`reasoning-test-hook-session-end-2411`) *(Corpo Calloso)*
 - (`episode-ui-declutter-projector-fullscreen`) --[RECORDS_REASONING]--> (`reasoning-ui-declutter-projector-fullscreen`) *(Corpo Calloso)*
@@ -4008,6 +4031,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`node-hierarchical-dendrogram`) --[ACTS_AS_INDEXING_OVERLAY_UPON]--> (`node-knowledge-graph-memory`)
 - (`proj-streaksup-app`) --[ALIGNED_WITH]--> (`rule-zero-cost`)
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[APPLIED_DESIGN_SYSTEM]--> (`design-token-cyberpunk-minimalist-palette`)
+- (`cognitive-rule-xcode-asset-symbols-sandboxing`) --[APPLIES_TO]--> (`proj-appabbonamenti`)
 - (`design-duolingo-chess-pieces`) --[APPLIES_TO]--> (`person-pierfrancesco`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[ARCHITECTURAL_DECISION_FOR]--> (`domain-software-engineering`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[ARCHITECTURAL_PILLAR_OF]--> (`universal-ai-brain`)
@@ -4394,6 +4418,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-infinite-context-architecture`) --[DEFINES_CORE_PURPOSE_OF]--> (`universal-ai-brain`)
 - (`goal-multi-ai-shared-context-persistence`) --[DEFINES_MISSION_OF]--> (`universal-ai-brain`)
 - (`session-continuous-evolution`) --[DEPLOYS_TO]--> (`deploy-render-zero-cost`)
+- (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[DERIVES]--> (`cognitive-rule-xcode-asset-symbols-sandboxing`)
 - (`identity-cs-researcher`) --[DEVELOPED]--> (`proj-tombola-wifi`)
 - (`user-intent-clean-clustered-ui`) --[DRIVES_IMPLEMENTATION]--> (`feat-progressive-areas`)
 - (`node-hierarchical-dendrogram`) --[ELECTED_AS_OPTIMAL_SOLUTION]--> (`node-tree-architecture-verdict`)
@@ -4506,6 +4531,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[FULFILLS]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
 - (`reasoning-semplificazione-concettuale-causal-dl`) --[FULFILLS]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
+- (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[FULFILLS]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`)
 - (`reasoning-tassonomia-pkm-rag-notion-obsidian`) --[FULFILLS]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`)
 - (`reasoning-telegram-keepalive-confirmation`) --[FULFILLS]--> (`user-intent-telegram-keepalive-confirmation`)
 - (`reasoning-test-hook-session-end-2411`) --[FULFILLS]--> (`user-intent-test-hook-session-end-2411`)
@@ -4533,6 +4559,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`session-continuous-evolution`) --[HOSTED_ON]--> (`repo-github-universal-ai-brain`)
 - (`concept-interhemispheric-inhibition-gating`) --[IMPLEMENTED_BY]--> (`algorithm-selective-hemispheric-activation`)
 - (`feat-subtracker-evolution`) --[IMPLEMENTS]--> (`proj-appabbonamenti`)
+- (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[IMPLEMENTS]--> (`feature-subtracker-premium-analytics-report`)
 - (`aule-studio-app`) --[IMPLEMENTS_LOGIC]--> (`aule-studio-backend-arch`)
 - (`universal-ai-brain`) --[INCORPORATES]--> (`tax-ai-reasoning`)
 - (`node-universal-ai-brain-taxonomy`) --[INCORPORATES_AS_CORE_FEATURE]--> (`node-epistemic-grading-system`)
@@ -4599,6 +4626,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-redesign-sito-subtracker`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-sintesi-cappello-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-subtracker-i18n-currency-ux-overhaul`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-telegram-keepalive-confirmation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-test-hook-session-end-2411`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ui-declutter-projector-fullscreen`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4662,6 +4690,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-redesign-sito-subtracker`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-telegram-keepalive-confirmation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-test-hook-session-end-2411`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-update-readme-architecture`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -4673,6 +4702,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-reasoning-and-chat-memory`) --[ORIGINATED]--> (`tax-ai-reasoning`)
 - (`user-intent-biological-lazy-loading-inhibition`) --[ORIGINATES_PARADIGM]--> (`concept-interhemispheric-inhibition-gating`)
 - (`user-intent-modular-cluster-decentralization`) --[ORIGINATES_RULE]--> (`concept-modular-domain-subgraphs`)
+- (`feature-subtracker-premium-analytics-report`) --[PART_OF]--> (`proj-appabbonamenti`)
 - (`proj-appcalcolatori-ui-layer`) --[PART_OF_PROJECT]--> (`proj-appcalcolatori`)
 - (`proj-cervelloartificiale-api-routes`) --[PART_OF_PROJECT]--> (`proj-cervelloartificiale`)
 - (`proj-habittracker-ui-layer`) --[PART_OF_PROJECT]--> (`proj-habittracker`)
@@ -4771,6 +4801,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-redesign-sito-subtracker`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-review-piano-supercervello-os`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-telegram-keepalive-confirmation`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-test-hook-session-end-2411`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ui-declutter-projector-fullscreen`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
