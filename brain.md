@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 08:00:22 UTC | **Nodi Restituiti:** 610 (SX: 417 · DX: 193) | **Sinapsi Restituite:** 1403
-> **Consistenza Reale Connettoma:** 610 Nodi Totali nel Database | 1403 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 08:01:20 UTC | **Nodi Restituiti:** 613 (SX: 419 · DX: 194) | **Sinapsi Restituite:** 1410
+> **Consistenza Reale Connettoma:** 613 Nodi Totali nel Database | 1410 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -117,6 +117,10 @@
   - **Tags:** `#architecture` `#fsrs` `#web-speech-api` `#sqlite` `#offline-first`
   - **Sintesi:** Proposta di architettura basata su motore Spaced Repetition (FSRS/SM-2), Web Speech API per audio/TTS nativo e integrazione LLM per generazione esercizi e roleplay senza dipendenze esterne bloccanti.
   - **Dettagli:** `raw`: `core_components`: ['FSRS Engine', 'Local SQLite', 'Web Speech API', 'LLM Contextual Tutor'], `privacy_tier`: Local/Self-hosted, `model`: AI Assistant
+- **Architettura Motore i18n per SubTracker Web** (`reasoning-i18n-subtracker-web`)
+  - **Tags:** `#i18n` `#architecture` `#localstorage` `#translation`
+  - **Sintesi:** Implementazione di un motore di internazionalizzazione leggero e reattivo (assets/i18n.js) con selettore visuale nella navbar, supporto per le 6 lingue native di SubTracker (IT, EN, FR, DE, ES, PT), persistenza in localStorage e aggiornamento DOM immediato.
+  - **Dettagli:** `actions_taken`: ['Creazione motore i18n in assets/i18n.js con 6 lingue native: IT, EN, FR, DE, ES, PT', 'Aggiunta pillola selettore lingua con menu a scomparsa in Liquid Glassmorphism nella navbar', 'Traduzione istantanea senza ricaricamento DOM tramite attributi data-i18n', 'Persistenza preferenza utente in localStorage e rilevamento lingua browser'], `model`: Gemini 3.8 Flash, `outcome`: Sito web completamente tradotto e fruibile istantaneamente in 6 lingue, `responses_given`: Implementazione completata con motore i18n reattivo e selettore lingua nella navbar
 - **Architettura Motori Cognitivi, Sincronizzazione Vault e Test Suite E2E** (`reasoning-potenziamento-cognitivo-obsidian-bridge`)
   - **Tags:** `#backend` `#fastapi` `#sqlite-wal` `#mcp` `#testing` `#architecture`
   - **Sintesi:** Implementati 6 nuovi motori Python indipendenti, registrati 12 tool MCP JSON-RPC, aggiunti endpoint REST FastAPI, esteso schema SQLite WAL con tabella tensions e 9 modelli permanenti, aggiornato frontend dark-tech con 5 modali e validata suite di 24 test (100% pass).
@@ -2279,6 +2283,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: quanti nodi ci sono nel mio cervell...
   - **Dettagli:** `raw`: `user_prompt`: quanti nodi ci sono nel mio cervello, voglio saperli per entrambi gli emisferi, `channel`: JARVIS Voice Core
+- **Internazionalizzazione Multilingua del Sito Web SubTracker** (`user-intent-i18n-subtracker-web`)
+  - **Tags:** `#subtracker` `#i18n` `#multilingual` `#internationalization`
+  - **Sintesi:** Richiesta di rendere il sito web di SubTracker traducibile e fruibile a livello internazionale nelle diverse lingue supportate dall'applicazione.
+  - **Dettagli:** `context`: Sito web SubTracker (AppAbbonamenti), internazionalizzazione globale sincronizzata con le 6 lingue dell'app iOS, `user_prompt`: poichè è un applicazione internazionale dobbiamo far si che il sito possa essere tradotto in altre lingue, comunque bellisima estetica mi piace!!!! fatto bene
 - **Ottimizzazione Backend Ibrida con Backup** (`user-intent-backend-optimization-hybrid`)
   - **Tags:** `#backend` `#performance` `#sqlite` `#optimization` `#safety`
   - **Sintesi:** Richiesta di applicare ottimizzazioni backend (indici, cache, CTE) con approccio ibrido e backup preventivo, senza perdere dati o funzionalità.
@@ -2705,6 +2713,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#conversation-episode` `#core-mission` `#context-saturation` `#gemini-session`
   - **Sintesi:** Formalizzazione della ragion d'essere del cervello artificiale: superare il reset della memoria per saturazione delle chat tramite grafo semantico unificato.
   - **Dettagli:** `raw`: `date`: 2026-08-27, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Infinite Context & Anti-Amnesia Philosophy
+- **Episodio: Internazionalizzazione Globale Sito SubTracker** (`episode-i18n-subtracker-web`)
+  - **Tags:** `#chat` `#i18n` `#subtracker` `#user-satisfaction`
+  - **Sintesi:** Pierfrancesco ha espresso grande soddisfazione per l'estetica del nuovo sito e ha richiesto il supporto multilingua per il pubblico internazionale. Implementato motore i18n per le 6 lingue.
+  - **Dettagli:** `key_takeaways`: Integrazione multilingua a zero dipendenze con sincronizzazione fluida alle 6 lingue dell'app iOS, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `pending_tasks`: Verifica finale ed eventuale deploy del sito, `topic`: Internazionalizzazione e traduzione multilingua del sito web di SubTracker
 - **Episodio: Nuove rappresentazioni visuali del conne** (`episode-nuove-rappresentazioni-vi-2874`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di dialogo e lavoro su Nuove rappresentazioni visuali del connettoma
@@ -3721,6 +3733,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-fix-daemon-render-persistence`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-gesture-zoom-terminal-dock-tabs`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-i18n-subtracker-web`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-implementazione-ecosistema-supercervello`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-integrazione-openjarvis-stanford`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-integrazione-tabelle-cappello-capitolo-6`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3858,6 +3871,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_INTENT]--> (`user-intent-fix-daemon-render-persistence`) *(Corpo Calloso)*
 - (`episode-gesture-zoom-terminal-dock-tabs`) --[RECORDS_INTENT]--> (`user-intent-gesture-zoom-terminal-dock-tabs`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
+- (`episode-i18n-subtracker-web`) --[RECORDS_INTENT]--> (`user-intent-i18n-subtracker-web`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_INTENT]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_INTENT]--> (`user-intent-ma-tutto-falso-8462`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_INTENT]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
@@ -3928,6 +3942,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_REASONING]--> (`reasoning-fix-daemon-render-persistence`) *(Corpo Calloso)*
 - (`episode-gesture-zoom-terminal-dock-tabs`) --[RECORDS_REASONING]--> (`reasoning-gesture-zoom-terminal-dock-tabs`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
+- (`episode-i18n-subtracker-web`) --[RECORDS_REASONING]--> (`reasoning-i18n-subtracker-web`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_REASONING]--> (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_REASONING]--> (`reasoning-ma-tutto-falso-8462`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_REASONING]--> (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
@@ -4453,6 +4468,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-fix-daemon-render-persistence`) --[FULFILLS]--> (`user-intent-fix-daemon-render-persistence`)
 - (`reasoning-gesture-zoom-terminal-dock-tabs`) --[FULFILLS]--> (`user-intent-gesture-zoom-terminal-dock-tabs`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[FULFILLS]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
+- (`reasoning-i18n-subtracker-web`) --[FULFILLS]--> (`user-intent-i18n-subtracker-web`)
 - (`reasoning-integrazione-esplicita-tabelle-comparative`) --[FULFILLS]--> (`user-intent-integrazione-tabelle-cappello-capitolo-6`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[FULFILLS]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
 - (`reasoning-ma-tutto-falso-8462`) --[FULFILLS]--> (`user-intent-ma-tutto-falso-8462`)
@@ -4552,6 +4568,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-fix-daemon-render-persistence`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-gesture-zoom-terminal-dock-tabs`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-i18n-subtracker-web`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ma-tutto-falso-8462`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4617,6 +4634,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-fix-daemon-render-persistence`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-gesture-zoom-terminal-dock-tabs`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-i18n-subtracker-web`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-nuove-rappresentazioni-vi-2874`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -4721,6 +4739,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-fix-daemon-render-persistence`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-gesture-zoom-terminal-dock-tabs`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-i18n-subtracker-web`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-implementazione-ecosistema-supercervello`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-integrazione-openjarvis-stanford`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
