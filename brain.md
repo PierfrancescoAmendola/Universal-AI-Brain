@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 19:39:38 UTC | **Nodi Restituiti:** 650 (SX: 445 · DX: 205) | **Sinapsi Restituite:** 1500
-> **Consistenza Reale Connettoma:** 650 Nodi Totali nel Database | 1500 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 19:39:57 UTC | **Nodi Restituiti:** 652 (SX: 447 · DX: 205) | **Sinapsi Restituite:** 1504
+> **Consistenza Reale Connettoma:** 652 Nodi Totali nel Database | 1504 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -177,6 +177,14 @@
   - **Tags:** `#swiftdata` `#data-model` `#architecture`
   - **Sintesi:** Scelta di entità separate LifeItem, OwnedItem e ItemAttachment con relazioni SwiftData bidirezionali pulite.
   - **Dettagli:** `decision`: Entità separate con relazione SwiftData bidirezionale: LifeItem ed entità OwnedItem collegate (1 OwnedItem possiede N LifeItem: garanzie, manutenzioni, scadenze) e allegati ItemAttachment., `model`: AI Assistant
+- **Decisione EventKit: Integrazione Privacy-First Opt-In** (`reasoning-decision-eventkit-opt-in`)
+  - **Tags:** `#eventkit` `#calendar` `#privacy`
+  - **Sintesi:** Integrazione con EventKit su richiesta esplicita (opt-in) sia in lettura che in scrittura per preservare privacy ed evitare sync background incontrollati.
+  - **Dettagli:** `decision`: Export selettivo opt-in + Scheda di importazione guidata: l'utente può esportare singoli LifeItem nel calendario iOS e importare eventi selezionati con consenso esplicito, rispettando privacy e stabilità., `model`: AI Assistant
+- **Decisione Monetizzazione: StoreKit 2 & Protocol-based EntitlementManager** (`reasoning-decision-storekit-entitlements`)
+  - **Tags:** `#storekit` `#monetization` `#entitlement` `#architecture`
+  - **Sintesi:** Architettura di entitlement separata dalla UI tramite protocollo, testabile con StoreKit Testing scheme e mock unit test.
+  - **Dettagli:** `decision`: StoreKit 2 nativo + LifeRegistry.storekit locale + EntitlementServiceProtocol: consente di testare sia lo stack StoreKit 2 reale sia mock per Unit Test e SwiftUI Previews (gating Free/Premium istantaneamente verificabile)., `model`: AI Assistant
 - **Decisione OCR: Apple Vision Framework On-Device** (`reasoning-decision-ocr-vision-parser`)
   - **Tags:** `#ocr` `#vision` `#on-device` `#apple`
   - **Sintesi:** Motore OCR on-device tramite VNRecognizeTextRequest con parsing euristico locale per scontrini e sheet di verifica pre-salvataggio.
@@ -4827,8 +4835,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
 - (`reasoning-decision-attachment-storage`) --[MODIFIES]--> (`proj-appabbonamenti`)
+- (`reasoning-decision-eventkit-opt-in`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-ocr-vision-parser`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-rewrite-clean-lifeapp`) --[MODIFIES]--> (`proj-appabbonamenti`)
+- (`reasoning-decision-storekit-entitlements`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-swiftdata-relational-model`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-ui-declutter-projector-fullscreen`) --[MODIFIES]--> (`universal-ai-brain`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -4926,8 +4936,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`identity-cs-researcher`) --[RESEARCHED]--> (`proj-bioinformatics-icar`)
 - (`identity-cs-researcher`) --[RESEARCHING_THESIS]--> (`proj-tesi-busbra-cnr`)
 - (`reasoning-decision-attachment-storage`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
+- (`reasoning-decision-eventkit-opt-in`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-ocr-vision-parser`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-rewrite-clean-lifeapp`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
+- (`reasoning-decision-storekit-entitlements`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-swiftdata-relational-model`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`concept-llm-indirect-injection-safeguard`) --[RESOLVES_ISSUE_OF]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[RESPONDS_TO_INTENT]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
