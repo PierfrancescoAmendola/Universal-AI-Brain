@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 19:40:51 UTC | **Nodi Restituiti:** 654 (SX: 449 · DX: 205) | **Sinapsi Restituite:** 1508
-> **Consistenza Reale Connettoma:** 654 Nodi Totali nel Database | 1508 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 19:41:05 UTC | **Nodi Restituiti:** 655 (SX: 450 · DX: 205) | **Sinapsi Restituite:** 1510
+> **Consistenza Reale Connettoma:** 655 Nodi Totali nel Database | 1510 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -775,6 +775,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#mutation-import` `#integration-layer` `#mcp-tool`
   - **Sintesi:** MCP Tool: brain_get_tree (Layer: INTEGRATION_LAYER, Tipo: MCP_TOOL)
   - **Dettagli:** `raw`: `id`: node_mcp_brain_get_tree, `label`: MCP Tool: brain_get_tree, `type`: MCP_TOOL, `layer`: INTEGRATION_LAYER
+- **Piano Architetturale Life Registry** (`plan-life-registry-kickoff`)
+  - **Tags:** `#plan` `#life-registry` `#swiftdata` `#storekit`
+  - **Sintesi:** Piano dettagliato di implementazione per Life Registry concordato via grill-me.
+  - **Dettagli:** `artifact_path`: /Users/pierfrancesco/.gemini/antigravity/brain/c348507d-97ef-4953-8429-7abeb8fe3ac4/implementation_plan.md, `scope`: Life Registry iOS nativa con SwiftData, StoreKit 2, EventKit, UserNotifications e Vision OCR on-device
 - **Progetto: JARVIS Personal AI Voice Assistant** (`proj-jarvis-voice-assistant`)
   - **Tags:** `#jarvis` `#voice-ai` `#mcp` `#whisper` `#kokoro-tts`
   - **Sintesi:** Assistente vocale AI continuo in tempo reale a costo zero, integrato con il connettoma SQLite WAL tramite MCP, wake word locale, STT Whisper ultra-rapido e sintesi vocale neurale.
@@ -4654,6 +4658,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-analisi-psicologia-prezzo-micro-abbonamenti`) --[FULFILLS]--> (`user-intent-ricerca-idee-app-abbonamento-micro-saas`)
 - (`ai-reasoning-market-analysis-automation`) --[FULFILLS]--> (`user-intent-ai-shorts-evaluation`)
 - (`ai-reasoning-proiezione-capital-gain-86euro`) --[FULFILLS]--> (`user-intent-calcolo-rendimento-azione-86euro`)
+- (`plan-life-registry-kickoff`) --[FULFILLS]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-analisi-stack-grafico-universal-brain`) --[FULFILLS]--> (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
@@ -4917,6 +4922,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[PERFORMS_IN]--> (`art-theatre-acting`)
 - (`universal-ai-brain`) --[PERSISTS_INTO]--> (`sqlite-wal-persistence`)
 - (`proj-streaksup-app`) --[PERSISTS_WITH]--> (`streaksup-swiftdata-arch`)
+- (`plan-life-registry-kickoff`) --[PLANS_FOR]--> (`proj-appabbonamenti`)
 - (`proj-streaksup-app`) --[POWERED_BY]--> (`streaksup-gamification-engine`)
 - (`universal-ai-brain`) --[POWERED_BY]--> (`fastapi-python-stack`)
 - (`person-pierfrancesco`) --[PRACTICES]--> (`art-piano-composition`)
