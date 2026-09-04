@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 19:37:21 UTC | **Nodi Restituiti:** 643 (SX: 439 · DX: 204) | **Sinapsi Restituite:** 1486
-> **Consistenza Reale Connettoma:** 643 Nodi Totali nel Database | 1486 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 19:38:07 UTC | **Nodi Restituiti:** 646 (SX: 441 · DX: 205) | **Sinapsi Restituite:** 1492
+> **Consistenza Reale Connettoma:** 646 Nodi Totali nel Database | 1492 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -313,6 +313,10 @@
   - **Tags:** `#ai-reasoning` `#hybrid-cloud` `#distributed-systems` `#cross-client-synergy` `#metacognition`
   - **Sintesi:** Deduzione architetturale: Render agisce come Hub pubblico permanente (Telegram Webhook, Web Visualizer, OpenAPI GPTs), mentre MCP agisce come bus a bassissima latenza per agenti IDE.
   - **Dettagli:** `raw`: `model`: Antigravity / Google DeepMind Agent, `key_pillars`: ['Render Cloud: Accessibilità universale mobile 24/7, Telegram bot webhook, integrazione OpenAI Actions HTTPS', 'Local MCP: Esecuzione a latenza zero (<1ms) su SQLite WAL durante il coding in IDE', 'Web Chat Workflow: Allegazione diretta di brain.md o endpoint /brain.md pubblico per AI con Web Search']
+- **Ragionamento Architetturale & Kickoff Grill-Me** (`reasoning-life-registry-architecture-grill`)
+  - **Tags:** `#architecture` `#grill-me` `#life-registry`
+  - **Sintesi:** Verifica workflow completata. Preparazione dell'albero delle decisioni architetturali per Life Registry.
+  - **Dettagli:** `actions_taken`: ['Scansione workflow legacy globali e di workspace (0 trovati, configurazione già pulita e migrata)', 'Ispezione configurazione Xcode SubTracker (iOS 17, bundle id com.amendolapierfrancesco.subtracker, SwiftData, StoreKit 2)', 'Attivazione protocollo grill-me per intervista decisionale architetturale ramo per ramo'], `model`: Gemini 3.8 Flash, `outcome`: Scansione completata, primo fork del design tree sottoposto all'utente
 - **Ragionamento: Architettura Dual-Ring Git Persistence** (`reasoning-cloud-git-auto-push`)
   - **Tags:** `#dual-ring` `#fastapi-background-tasks` `#github-token`
   - **Sintesi:** Implementazione del doppio anello di persistenza: Mac demone + Render server push asincrono.
@@ -2349,6 +2353,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#subtracker` `#i18n` `#currency` `#usd` `#keyboard` `#analytics` `#pdf-report` `#grill-me`
   - **Sintesi:** Risoluzione critica del supporto valute (USD/EUR/GBP) e localizzazione automatica del dispositivo, restyling toolbar Home, reattività istantanea tastiera senza bottoni orrendi, introduzione Analisi Dettagliata e Report PDF/CSV nelle impostazioni Premium e Rivedi Tutorial.
   - **Dettagli:** `context`: App SubTracker iOS: recezione recensione negativa USA su lingua e valuta USD, richiesta restyling header Home, risoluzione lag/dismiss tastiera in aggiunta abbonamento, sblocco feature concrete Premium (Analisi Dettagliata, Report PDF/CSV) e Rivedi Tutorial in Impostazioni., `user_prompt`: nell'applicazione abbiamo implementato il supporto multilingua. ma quando una persona americana si scarica l'applicazione la lingua impostata è l'italiano o riconosce la lingua del telefono??? un utente su app store ha detto: Doesn’t translate all content to English - doesn’t use USD. Deleted immediately non va assolutamente bene!!!!! dobbiamo modificare!!!!! sicuro??? hai modificato anche le scritte nel tutorial?? sono state tradotte??? /grill-me vorrei un attimo rifare l'interfaccia grafica della home. non voglio cambiare chissà cosa, voglio solo spostare il nome SubTracker in alto a sinistra, il pulsante delle domande a destra sotto l'ingranaggio, cioè la schermata delle impostazioni. nelle impostazioni inseriamo sotto premium tutte le cose che una volta che hai pagato hai sbloccato, cioè l'analissi dettagliata nel tempo, quindi dobbiamo effettivamente dare qualcosa o mostrare qualcosa. la possibilità di scaricare un report sulle finanze. qundo creo un'abbonamento e clicco sui campi di testo non si apre subito la tastiera, quando si apre poi non scende se clicco altrove, per farla scendere c'è unn bottone orrendo con scritto fatto...non voglio. in impostazioni aggiungi la possibilità di rivedere il tutorial iniziale per capire come funziona.
+- **Kickoff Life Registry e Migrazione Workflow** (`user-intent-migrate-and-life-registry-grill`)
+  - **Tags:** `#life-registry` `#subtracker` `#workflow` `#grill-me`
+  - **Sintesi:** Avvio del progetto Life Registry su repo SubTracker, verifica workflow e avvio allineamento grill-me.
+  - **Dettagli:** `context`: Migrazione workflow a skills e kickoff sviluppo Life Registry su repo SubTracker, `user_prompt`: /migrate-workflows migrate my existing workflows to skills /caveman wenyan-ultra, /grill-me /graphify /universal-brain /boost ...
 - **Ottimizzazione Backend Ibrida con Backup** (`user-intent-backend-optimization-hybrid`)
   - **Tags:** `#backend` `#performance` `#sqlite` `#optimization` `#safety`
   - **Sintesi:** Richiesta di applicare ottimizzazioni backend (indici, cache, CTE) con approccio ibrido e backup preventivo, senza perdere dati o funzionalità.
@@ -2659,6 +2667,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#openjarvis` `#continuità-cognitiva`
   - **Sintesi:** Validazione end-to-end completata: OpenJarvis legge il connettoma, esegue inferenza su Ollama e restituisce la descrizione accurata di Pierfrancesco.
   - **Dettagli:** `raw`: `key_takeaways`: OpenJarvis risponde perfettamente usando gpt-oss:120b-cloud via Ollama e il connettoma Universal AI Brain., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash', 'OpenJarvis gpt-oss:120b-cloud'], `pending_tasks`: Nessuno, sistema pronto all'uso vocale e interattivo, `topic`: Verifica Risposta OpenJarvis con Ollama e Cervello Artificiale
+- **Episodio Kickoff Life Registry & Grill-Me Interview** (`episode-life-registry-kickoff-alignment`)
+  - **Tags:** `#episode` `#life-registry` `#kickoff`
+  - **Sintesi:** Episodio di kickoff per la specifica Life Registry e prima domanda di design.
+  - **Dettagli:** `key_takeaways`: Workspace pulito dai vecchi workflow. SubTracker già strutturato con StoreKit e SwiftData; prima decisione cruciale riguarda l'integrazione o sostituzione del target., `participants`: ['Pierfrancesco Amendola', 'Antigravity'], `pending_tasks`: Intervista decisionale ramo per ramo (/grill-me) prima dell'avvio operativo dei task., `topic`: Workflow migration status & Life Registry architectural interview
 - **Episodio Vocale: Allora vorrei dirti che oggi ho man...** (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`)
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su Allora vorrei dirti che oggi ho man....
@@ -3876,6 +3888,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-integrazione-tabelle-cappello-capitolo-6`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ma-tutto-falso-8462`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-migrate-and-life-registry-grill`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-nuove-rappresentazioni-vi-2874`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4020,6 +4033,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-i18n-subtracker-web`) --[RECORDS_INTENT]--> (`user-intent-i18n-subtracker-web`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_INTENT]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
+- (`episode-life-registry-kickoff-alignment`) --[RECORDS_INTENT]--> (`user-intent-migrate-and-life-registry-grill`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_INTENT]--> (`user-intent-ma-tutto-falso-8462`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_INTENT]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
 - (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_INTENT]--> (`user-intent-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
@@ -4098,6 +4112,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-i18n-subtracker-web`) --[RECORDS_REASONING]--> (`reasoning-i18n-subtracker-web`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_REASONING]--> (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
+- (`episode-life-registry-kickoff-alignment`) --[RECORDS_REASONING]--> (`reasoning-life-registry-architecture-grill`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_REASONING]--> (`reasoning-ma-tutto-falso-8462`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_REASONING]--> (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
 - (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_REASONING]--> (`reasoning-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
@@ -4647,6 +4662,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-idee-app-basate-su-competenze-uniche`) --[FULFILLS]--> (`user-intent-idee-app-abbonamento-monetizzabili`)
 - (`reasoning-integrazione-esplicita-tabelle-comparative`) --[FULFILLS]--> (`user-intent-integrazione-tabelle-cappello-capitolo-6`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[FULFILLS]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
+- (`reasoning-life-registry-architecture-grill`) --[FULFILLS]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-ma-tutto-falso-8462`) --[FULFILLS]--> (`user-intent-ma-tutto-falso-8462`)
 - (`reasoning-mappatura-ecosistema-linux-3d`) --[FULFILLS]--> (`user-intent-distro-linux-modellazione-3d`)
 - (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) --[FULFILLS]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`)
@@ -4756,6 +4772,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-i18n-subtracker-web`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-life-registry-kickoff-alignment`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ma-tutto-falso-8462`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-nuove-rappresentazioni-vi-2874`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4939,6 +4956,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-integrazione-openjarvis-stanford`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ma-tutto-falso-8462`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-migrate-and-life-registry-grill`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-nuove-rappresentazioni-vi-2874`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
