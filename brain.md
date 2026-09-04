@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 19:57:18 UTC | **Nodi Restituiti:** 658 (SX: 452 · DX: 206) | **Sinapsi Restituite:** 1516
-> **Consistenza Reale Connettoma:** 658 Nodi Totali nel Database | 1516 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 19:57:40 UTC | **Nodi Restituiti:** 660 (SX: 454 · DX: 206) | **Sinapsi Restituite:** 1516
+> **Consistenza Reale Connettoma:** 660 Nodi Totali nel Database | 1516 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -806,6 +806,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#ios17` `#ios18` `#swiftui` `#swiftdata` `#widgetkit` `#streaksup` `#habittracker` `#zero-cloud`
   - **Sintesi:** Applicazione nativa iOS 17+ per tracciamento abitudini e routine con architettura SwiftData ad App Group, Live Activity e suite WidgetKit interattiva.
   - **Dettagli:** `raw`: `platform`: iOS 17.0+ / 18.0+, `language`: Swift 5.9, `ui_framework`: SwiftUI, `database`: SwiftData (SQLite WAL in App Group), `app_group`: group.com.pierfrancescoamendola.streaksup, `url_scheme`: streaksup://, `project_generator`: XcodeGen (project.yml)
+- **SubTracker & LifeRegistry Independent App Separation** (`app:dual_project_separation`)
+  - **Tags:** `#ios` `#swiftui` `#architecture` `#subtracker` `#liferegistry`
+  - **Sintesi:** SubTracker and LifeRegistry separated into isolated projects with independent xcodeproj files and successful builds.
+  - **Dettagli:** `raw`: SubTracker and LifeRegistry are now strictly separated into dedicated standalone folders and Xcode projects: SubTracker/ (SubTracker.xcodeproj, bundle ID: com.amendolapierfrancesco.subtracker) and LifeRegistry/ (LifeRegistry.xcodeproj, bundle ID: com.amendolapierfrancesco.liferegistry). Both build cleanly with xcodebuild on iOS 17.0 Simulator. All 37 automated unit tests pass.
 - **SubTracker Anti-Deformation, I18n, Keyboard & Export Fix** (`subtracker_antideformation_i18n_keyboard_export_fix`)
   - **Tags:** `#subtracker` `#swiftui` `#i18n` `#layout` `#keyboard` `#export`
   - **Sintesi:** Fixed SubTracker card anti-deformation, French/multilingual analytics reactivity, native PDF/CSV share presenter, and universal keyboard dismissal with Done button.
@@ -1734,6 +1738,12 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#mac-project` `#swift`
   - **Sintesi:** Progetto Mac: Mac Pulse2Uitests. Stack: Swift.
   - **Dettagli:** `local_path`: /Users/pierfrancesco/MacPulse2/MacPulse2UITests, `file_uri`: file:///Users/pierfrancesco/MacPulse2/MacPulse2UITests, `languages`: ['Swift'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 2, `last_modified`: 2025-10-23T07:32:02.398936+00:00, `key_dependencies`: [], `readme_excerpt`: 
+
+### [Macro-Label: `SOFTWARE`]
+- **Life Registry iOS Application** (`app:liferegistry`)
+  - **Tags:** `#ios` `#swiftdata` `#storekit` `#vision` `#liferegistry`
+  - **Sintesi:** Life Registry standalone iOS application for managing personal deadlines, warranties, and payments.
+  - **Dettagli:** `raw`: Life Registry iOS application: management of deadlines, recurring payments, warranties, maintenance, documents, and subscriptions. Includes on-device Vision OCR receipt scanning, EventKit calendar sync, StoreKit 2 paywall, Preparati financial rate calculator, and WidgetKit widgets. Dedicated xcodeproj at LifeRegistry.xcodeproj.
 
 ### [Macro-Label: `UI_COMPONENT`]
 - **SwiftUI Interface Layer (proj-appcalcolatori)** (`proj-appcalcolatori-ui-layer`)
