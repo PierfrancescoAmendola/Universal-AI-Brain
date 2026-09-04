@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 08:57:59 UTC | **Nodi Restituiti:** 614 (SX: 420 · DX: 194) | **Sinapsi Restituite:** 1411
-> **Consistenza Reale Connettoma:** 614 Nodi Totali nel Database | 1411 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 08:58:31 UTC | **Nodi Restituiti:** 615 (SX: 421 · DX: 194) | **Sinapsi Restituite:** 1411
+> **Consistenza Reale Connettoma:** 615 Nodi Totali nel Database | 1411 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -730,6 +730,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#ios17` `#ios18` `#swiftui` `#swiftdata` `#widgetkit` `#streaksup` `#habittracker` `#zero-cloud`
   - **Sintesi:** Applicazione nativa iOS 17+ per tracciamento abitudini e routine con architettura SwiftData ad App Group, Live Activity e suite WidgetKit interattiva.
   - **Dettagli:** `raw`: `platform`: iOS 17.0+ / 18.0+, `language`: Swift 5.9, `ui_framework`: SwiftUI, `database`: SwiftData (SQLite WAL in App Group), `app_group`: group.com.pierfrancescoamendola.streaksup, `url_scheme`: streaksup://, `project_generator`: XcodeGen (project.yml)
+- **SubTracker UI Gating & Splash Logo Fix** (`subtracker_ui_gating_splash_fix`)
+  - **Tags:** `#subtracker` `#swiftui` `#storekit` `#ui` `#splash`
+  - **Sintesi:** Fix SubTracker Home top title, clean top-right bar, add real logo on splash, gate Analytics and PDF/CSV behind StoreKit Premium.
+  - **Dettagli:** `raw`: Fix UI issues and gating: restored large title 'SubTracker' on top-left of Dashboard; cleaned top-right toolbar completely; loaded real AppLogo in SplashScreenView; locked AnalyticsView and PDF/CSV report generation behind storeKit.isPremium with high-conversion teaser and paywall modal.
 - **Telegram 0€ Webhook Gateway (POST /api/telegram/webhook)** (`node-telegram-webhook-gateway`)
   - **Tags:** `#mutation-import` `#perceptual-io` `#api-gateway`
   - **Sintesi:** Telegram 0€ Webhook Gateway (POST /api/telegram/webhook) (Layer: PERCEPTUAL_IO, Tipo: API_GATEWAY)
