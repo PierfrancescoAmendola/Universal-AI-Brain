@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 19:38:50 UTC | **Nodi Restituiti:** 647 (SX: 442 · DX: 205) | **Sinapsi Restituite:** 1494
-> **Consistenza Reale Connettoma:** 647 Nodi Totali nel Database | 1494 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 19:39:00 UTC | **Nodi Restituiti:** 648 (SX: 443 · DX: 205) | **Sinapsi Restituite:** 1496
+> **Consistenza Reale Connettoma:** 648 Nodi Totali nel Database | 1496 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -173,6 +173,10 @@
   - **Tags:** `#architecture` `#decision` `#life-registry`
   - **Sintesi:** Scelta di archiviare SubTracker ed eseguire una riscrittura pulita e modulare con nuova architettura LifeApp.
   - **Dettagli:** `decision`: Riscrivere da zero: archiviare il codice attuale di SubTracker in una cartella di backup/archivio e creare una struttura pulita LifeApp ripartendo da zero con i modelli LifeItem come da specifica., `model`: AI Assistant
+- **Decisione Dati: Modello Relazionale Bidirezionale SwiftData** (`reasoning-decision-swiftdata-relational-model`)
+  - **Tags:** `#swiftdata` `#data-model` `#architecture`
+  - **Sintesi:** Scelta di entità separate LifeItem, OwnedItem e ItemAttachment con relazioni SwiftData bidirezionali pulite.
+  - **Dettagli:** `decision`: Entità separate con relazione SwiftData bidirezionale: LifeItem ed entità OwnedItem collegate (1 OwnedItem possiede N LifeItem: garanzie, manutenzioni, scadenze) e allegati ItemAttachment., `model`: AI Assistant
 - **Deduzione AI: Architettura Client Unificato Multi-AI a Costo Zero** (`reasoning-architettura-universal-ai-hub`)
   - **Tags:** `#architettura` `#client-unificato` `#zero-cost`
   - **Sintesi:** Proposta architetturale: web-app/desktop locale leggera con FastAPI + frontend reattivo Tailwind, selettore provider (Groq/Gemini/Ollama/DeepSeek) e pipeline automatica di GraphRAG pre/post turno.
@@ -4815,6 +4819,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
 - (`reasoning-decision-rewrite-clean-lifeapp`) --[MODIFIES]--> (`proj-appabbonamenti`)
+- (`reasoning-decision-swiftdata-relational-model`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-ui-declutter-projector-fullscreen`) --[MODIFIES]--> (`universal-ai-brain`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -4911,6 +4916,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`identity-cs-researcher`) --[RESEARCHED]--> (`proj-bioinformatics-icar`)
 - (`identity-cs-researcher`) --[RESEARCHING_THESIS]--> (`proj-tesi-busbra-cnr`)
 - (`reasoning-decision-rewrite-clean-lifeapp`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
+- (`reasoning-decision-swiftdata-relational-model`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`concept-llm-indirect-injection-safeguard`) --[RESOLVES_ISSUE_OF]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[RESPONDS_TO_INTENT]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`person-pierfrancesco`) --[ROOTED_IN]--> (`rel-napoli-culture`)
