@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 19:39:22 UTC | **Nodi Restituiti:** 649 (SX: 444 · DX: 205) | **Sinapsi Restituite:** 1498
-> **Consistenza Reale Connettoma:** 649 Nodi Totali nel Database | 1498 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 19:39:32 UTC | **Nodi Restituiti:** 650 (SX: 445 · DX: 205) | **Sinapsi Restituite:** 1500
+> **Consistenza Reale Connettoma:** 650 Nodi Totali nel Database | 1500 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -177,6 +177,10 @@
   - **Tags:** `#swiftdata` `#data-model` `#architecture`
   - **Sintesi:** Scelta di entità separate LifeItem, OwnedItem e ItemAttachment con relazioni SwiftData bidirezionali pulite.
   - **Dettagli:** `decision`: Entità separate con relazione SwiftData bidirezionale: LifeItem ed entità OwnedItem collegate (1 OwnedItem possiede N LifeItem: garanzie, manutenzioni, scadenze) e allegati ItemAttachment., `model`: AI Assistant
+- **Decisione OCR: Apple Vision Framework On-Device** (`reasoning-decision-ocr-vision-parser`)
+  - **Tags:** `#ocr` `#vision` `#on-device` `#apple`
+  - **Sintesi:** Motore OCR on-device tramite VNRecognizeTextRequest con parsing euristico locale per scontrini e sheet di verifica pre-salvataggio.
+  - **Dettagli:** `decision`: Apple Vision VNRecognizeTextRequest (.accurate) + Rule-based Regex Parser (estrazione euristica date, totali, esercente) + Foglio SwiftUI di conferma/modifica pre-salvataggio. Zero dipendenze esterne o API a pagamento., `model`: AI Assistant
 - **Decisione Storage: Sandbox File System + Metadati SwiftData** (`reasoning-decision-attachment-storage`)
   - **Tags:** `#storage` `#attachments` `#swiftdata`
   - **Sintesi:** Storage scontrini e documenti su filesystem protetto sandbox e referenze relative path in SwiftData.
@@ -4823,6 +4827,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[MENTORED_BY]--> (`rel-academic-mentors`)
 - (`lesson-stoic-resilience`) --[MITIGATES]--> (`memory-perfectionism-tension`)
 - (`reasoning-decision-attachment-storage`) --[MODIFIES]--> (`proj-appabbonamenti`)
+- (`reasoning-decision-ocr-vision-parser`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-rewrite-clean-lifeapp`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-swiftdata-relational-model`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-ui-declutter-projector-fullscreen`) --[MODIFIES]--> (`universal-ai-brain`)
@@ -4921,6 +4926,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`identity-cs-researcher`) --[RESEARCHED]--> (`proj-bioinformatics-icar`)
 - (`identity-cs-researcher`) --[RESEARCHING_THESIS]--> (`proj-tesi-busbra-cnr`)
 - (`reasoning-decision-attachment-storage`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
+- (`reasoning-decision-ocr-vision-parser`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-rewrite-clean-lifeapp`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-swiftdata-relational-model`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`concept-llm-indirect-injection-safeguard`) --[RESOLVES_ISSUE_OF]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
