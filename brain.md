@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 19:50:11 UTC | **Nodi Restituiti:** 655 (SX: 450 · DX: 205) | **Sinapsi Restituite:** 1510
-> **Consistenza Reale Connettoma:** 655 Nodi Totali nel Database | 1510 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 19:51:14 UTC | **Nodi Restituiti:** 658 (SX: 452 · DX: 206) | **Sinapsi Restituite:** 1516
+> **Consistenza Reale Connettoma:** 658 Nodi Totali nel Database | 1516 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -117,6 +117,10 @@
   - **Tags:** `#threejs` `#webgl` `#architecture` `#matrix-transform`
   - **Sintesi:** Risolto bug di scaling ricorsivo unificando i mesh in constellationGroup; implementato calcolo spaziale Fibonacci/Golden Angle per gli emisferi ed emissione colore RGB per la luminosità.
   - **Dettagli:** `actions_taken`: ['Creato constellationGroup per gestione matriciale uniforme di punti, archi, laser, domini e labels', 'Implementato calcolo posizioni sferiche Emisferi Globo con polar crown per L0', 'Disaccoppiata luminosità dalla dimensione dei nodi tramite moltiplicatore sui vertici RGB', 'Stilizzato pulsante di uscita in rosso pieno brillante con bagliore neon'], `model`: Antigravity 2.0, `outcome`: Visualizzazione 3D ed Emisferi completata a 60 FPS con controllo ottico continuo e zero bug di coordinate
+- **Architettura Finale Life Registry & Test Suite** (`reasoning-life-registry-final-architecture`)
+  - **Tags:** `#architecture` `#swiftdata` `#storekit` `#tests`
+  - **Sintesi:** Architettura modulare pulita completata con 37 test unitari verificati e build Xcode pulita.
+  - **Dettagli:** `actions_taken`: ['Backup legacy SubTracker in LegacySubTracker_Archive/', 'Aggiornamento Bundle ID com.amendolapierfrancesco.liferegistry e Display Name Life Registry in project.pbxproj', 'Creazione modelli SwiftData relazionali LifeItem, OwnedItem, ItemAttachment ed enum tipizzate', 'Implementazione DashboardView con semaforo di urgenza e costi 30/90/12m', 'Implementazione QuickAddView per aggiunta rapida in meno di 15s con preset intelligenti', 'Implementazione CalendarTimelineView con Timeline mensile e supporto EventKit opt-in', 'Implementazione ThingsHubView con registro oggetti, calcolo garanzie e scansione OCR on-device Apple Vision', "Implementazione feature 'Preparati' per ammortizzazione costi futuri giorno per giorno", 'Implementazione StoreKit 2 con protocollo EntitlementServiceProtocol e configurazione Subscriptions.storekit', 'Esecuzione test automatici: 37 test passati su 37 (zero fallimenti)', 'Verifica build Xcode: BUILD SUCCEEDED su iOS Simulator'], `model`: Gemini 3.8 Flash, `outcome`: Tutti i requisiti della specifica e del Definition of Done soddisfatti al 100%
 - **Architettura Mappamondo 3D: Gabbia Olografica, Laser Sinaptici & Floating Rel Card** (`reasoning-architettura-mappamondo-spotlight-3d`)
   - **Tags:** `#threejs` `#laser-synapses` `#hud-card` `#bi-hemispheric`
   - **Sintesi:** Implementazione di anelli equatoriali/meridiani Three.js, isolamento 1st-degree neighbors al click, raggi laser additivi ad alta intensità e pannello HUD Glassmorphism con link di navigazione sinaptica.
@@ -1774,6 +1778,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#frontend` `#graph-visualization` `#vis-network` `#threejs` `#d3js` `#cytoscape`
   - **Sintesi:** Verifica dello stato di utilizzo e adozione di Vis-network, 3d-force-graph, Three.js, D3.js e Cytoscape.js nel frontend del connettoma.
   - **Dettagli:** `context`: Richiesta chiarimenti sull'uso di Cytoscape.js, Vis-network, 3d-force-graph e D3.js nel frontend di Universal AI Brain, `user_prompt`: /universal-brain per la rappresentazione grafica dei grafi nel nostro frontend/sito, usiamo queste cose?? Cytoscape.js, Vis-network, 3d-force-graph, D3.js
+- **Completamento Sviluppo Life Registry** (`user-intent-life-registry-implementation`)
+  - **Tags:** `#life-registry` `#swiftdata` `#storekit` `#ios`
+  - **Sintesi:** Completamento di tutte le componenti e viste di Life Registry come da specifica concordata.
+  - **Dettagli:** `context`: Sviluppo app Life Registry nativa iOS su workspace AppAbbonamenti, `user_prompt`: Sviluppo Life Registry: scadenze, pagamenti, garanzie, documenti, manutenzione, abbonamenti, oggetti posseduti, preparati, OCR.
 - **Costruzione App Personale Apprendimento Portoghese e Tedesco** (`intent-personal-language-learning-app`)
   - **Tags:** `#language-learning` `#portuguese` `#german` `#personal-software` `#srs`
   - **Sintesi:** L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
@@ -2647,6 +2655,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:38:00CEST: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay
   - **Dettagli:** `raw`: `session_id`: ep_20260827_hierarchical_overlay_reassurance, `timestamp`: 2026-08-27T20:38:00CEST, `topic`: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Consegna Life Registry iOS MVP** (`episode-life-registry-delivery`)
+  - **Tags:** `#delivery` `#life-registry` `#milestone`
+  - **Sintesi:** Episodio finale di completamento e verifica dell'applicazione Life Registry.
+  - **Dettagli:** `key_takeaways`: Life Registry è pronta e funzionante. Modello relazionale completo, 37 unit test superati, compilazione Xcode iOS Simulator SUCCEEDED, StoreKit 2 configurato con piano Free (10 item) e Premium., `participants`: ['Pierfrancesco Amendola', 'Antigravity'], `pending_tasks`: Test manuale su dispositivo reale / TestFlight quando Pierfrancesco desidera eseguire lo scheme con StoreKit Testing., `topic`: Life Registry Full Implementation Delivery
 - **Episodio Chat: Architettura Ibrida Cloud Render vs Agenti Locali MCP & Sicurezza LLM** (`ep-20260827-render-cloud-vs-local-hybrid-architecture`)
   - **Tags:** `#chat-episode` `#render-cloud` `#local-mcp` `#prompt-injection-defense` `#hybrid-architecture`
   - **Sintesi:** Chiarimento architetturale sulla dualità e cooperazione tra Render Cloud 24/7 (mobile/web/Telegram/GPTs) e Agenti Locali MCP (Antigravity/Cursor/Claude Desktop) per persistenza contestuale.
@@ -3923,6 +3935,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-integrazione-openjarvis-stanford`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-integrazione-tabelle-cappello-capitolo-6`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-life-registry-implementation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ma-tutto-falso-8462`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-migrate-and-life-registry-grill`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4069,6 +4082,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-i18n-subtracker-web`) --[RECORDS_INTENT]--> (`user-intent-i18n-subtracker-web`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_INTENT]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
+- (`episode-life-registry-delivery`) --[RECORDS_INTENT]--> (`user-intent-life-registry-implementation`) *(Corpo Calloso)*
 - (`episode-life-registry-kickoff-alignment`) --[RECORDS_INTENT]--> (`user-intent-migrate-and-life-registry-grill`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_INTENT]--> (`user-intent-ma-tutto-falso-8462`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_INTENT]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
@@ -4148,6 +4162,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-i18n-subtracker-web`) --[RECORDS_REASONING]--> (`reasoning-i18n-subtracker-web`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_REASONING]--> (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
+- (`episode-life-registry-delivery`) --[RECORDS_REASONING]--> (`reasoning-life-registry-final-architecture`) *(Corpo Calloso)*
 - (`episode-life-registry-kickoff-alignment`) --[RECORDS_REASONING]--> (`reasoning-life-registry-architecture-grill`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_REASONING]--> (`reasoning-ma-tutto-falso-8462`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_REASONING]--> (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
@@ -4700,6 +4715,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-integrazione-esplicita-tabelle-comparative`) --[FULFILLS]--> (`user-intent-integrazione-tabelle-cappello-capitolo-6`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[FULFILLS]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`)
 - (`reasoning-life-registry-architecture-grill`) --[FULFILLS]--> (`user-intent-migrate-and-life-registry-grill`)
+- (`reasoning-life-registry-final-architecture`) --[FULFILLS]--> (`user-intent-life-registry-implementation`)
 - (`reasoning-ma-tutto-falso-8462`) --[FULFILLS]--> (`user-intent-ma-tutto-falso-8462`)
 - (`reasoning-mappatura-ecosistema-linux-3d`) --[FULFILLS]--> (`user-intent-distro-linux-modellazione-3d`)
 - (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) --[FULFILLS]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`)
@@ -4809,6 +4825,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-i18n-subtracker-web`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-life-registry-delivery`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-life-registry-kickoff-alignment`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ma-tutto-falso-8462`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4888,6 +4905,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-i18n-subtracker-web`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-life-registry-final-architecture`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-nuove-rappresentazioni-vi-2874`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[OPTIMIZES]--> (`universal-ai-brain`)
