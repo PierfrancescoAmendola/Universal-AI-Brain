@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-04 14:57:28 UTC | **Nodi Restituiti:** 626 (SX: 429 · DX: 197) | **Sinapsi Restituite:** 1434
-> **Consistenza Reale Connettoma:** 626 Nodi Totali nel Database | 1434 Sinapsi Totali
+> **Data Generazione:** 2026-09-04 14:57:31 UTC | **Nodi Restituiti:** 631 (SX: 431 · DX: 200) | **Sinapsi Restituite:** 1445
+> **Consistenza Reale Connettoma:** 631 Nodi Totali nel Database | 1445 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -377,6 +377,10 @@
   - **Tags:** `#docs` `#github` `#architettura` `#dual-ring`
   - **Sintesi:** Stesura della documentazione ufficiale con copertura completa di backend, algoritmi, persistenza e client.
   - **Dettagli:** `actions_taken`: ['Riscritto integralmente README.md con 10 capitoli tecnici approfonditi', 'Inclusi diagrammi ASCII e Mermaid per modello bi-emisferico e Dual-Ring Persistence', 'Documentati algoritmi (Bidirectional BFS, Recursive CTE, GraphRAG BM25) e ottimizzazioni SQLite WAL', 'Eseguito commit e push su GitHub origin main'], `model`: Gemini 3.7 Flash, `outcome`: README.md aggiornato al 100% e pubblicato su GitHub origin/main, `responses_given`: README.md riscritto e pubblicato su GitHub con dettagli esaustivi su tutti i moduli.
+- **Ragionamento: Rilascio SubTracker 1.1 e Pipeline Grafica** (`reasoning-subtracker-release-screenshots-copy`)
+  - **Tags:** `#swiftui` `#app-store-connect` `#screenshot-editor` `#i18n` `#copywriting`
+  - **Sintesi:** Risoluzione di layout e tastiera su iOS, strutturazione del deck screenshot in Next.js con risoluzione dinamica {locale} e formulazione del copy App Store Connect con vincolo 170 caratteri.
+  - **Dettagli:** `actions_taken`: ['Rimozione ToolbarItemGroup keyboard da AddSubscriptionView ed EditSubscriptionView preservando dismissKeyboardOnTap e scrollDismissesKeyboard', 'Verifica sintassi swiftc -parse con exit code 0', "Redazione testo App Store in Italiano e Inglese con What's New v1.1", 'Configurazione screenshot_editor con 8 slide per SubTracker, mapping screenshot IT e EN (IMG_9171-9178 e IMG_9179-9186)', 'Avvio dev server Next.js porta 3000 con supporto selettore bilingue IT/EN', 'Redazione testi promozionali App Store Connect (limite 170 caratteri) con 3 opzioni per lingua'], `model`: Gemini 3.8 Flash, `outcome`: App compilabile senza errori, screenshot editor funzionante bilingue su localhost:3000, copy App Store pronto per submission, `responses_given`: Codice aggiornato, descrizioni complete, istruzioni operative per visualizzazione ed esportazione screenshot
 - **Ragionamento: Test Hook Session End** (`reasoning-test-hook-session-end-2411`)
   - **Tags:** `#ide-hook` `#ai-reasoning` `#test-hook-session-end`
   - **Sintesi:** Verifica automatica dell hook di fine sessione
@@ -2412,6 +2416,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#ui-design` `#visual-paradigms` `#graph-visualization` `#interfaccia`
   - **Sintesi:** Richiesta utente di visualizzare nuovi disegni, interfacce e layout architetturali per rappresentare il connettoma neurale (307 nodi, 2 emisferi).
   - **Dettagli:** `context`: Richiesta di vedere nuovi layout, disegni e stili d'interfaccia per il grafo a due emisferi, `user_prompt`: adesso abbiamo avuto un miglioramento e potenziamento??? ora voglio vedere altri esempi di rappresentare il nostro grafo, voglio vedere altri modi, altri 'disegni', deve rimanere così, ma voglio che cambi l'interfaccia chapito che intendo?
+- **Rifinitura SubTracker 1.1 e Asset App Store IT/EN** (`user-intent-subtracker-v1-1-release-prep`)
+  - **Tags:** `#subtracker` `#app-store` `#release-1.1` `#marketing` `#screenshots`
+  - **Sintesi:** Preparazione al rilascio di SubTracker v1.1: rifinitura UI, rimozione keyboard toolbar, allestimento screenshot editor per screenshot IT/EN e creazione copy App Store completo.
+  - **Dettagli:** `context`: Preparazione rilascio SubTracker 1.1 su App Store Connect dopo chiusura build train 1.0, `user_prompt`: rimuovi pulsante fatto sopra tastiera, scrivi descrizione app e novità, allestisci screenshot editor per screenshot italiani e inglesi, scrivi testo promozionale in IT e EN
 - **Rimozione Modello Ollama Residuo su macOS** (`user-intent-rimozione-modello-ollama-mac`)
   - **Tags:** `#macos` `#ollama` `#storage` `#cleanup` `#terminale`
   - **Sintesi:** Richiesta di individuazione ed eliminazione completa di un modello LLM da 7GB rimasto su disco dopo la disinstallazione di Ollama.
@@ -2519,6 +2527,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Dettagli:** `source`: raycast_quick_add, `created_by`: Pierfrancesco Amendola
 
 ### [Macro-Label: `BRAND_VOICE`]
+- **Asset di Testo App Store Connect SubTracker v1.1** (`app-store-marketing-assets-subtracker`)
+  - **Tags:** `#brand-voice` `#app-store` `#subtracker` `#copywriting` `#i18n`
+  - **Sintesi:** Testi promozionali ufficiali, sottotitoli, parole chiave e descrizioni bilingue (IT/EN) per App Store Connect conformi alle linee guida Apple.
+  - **Dettagli:** `keywords_en`: subscriptions,expenses,tracker,budget,renewal,netflix,spotify,savings,finance,bills, `keywords_it`: abbonamenti,spese,subscription,tracker,budget,rinnovo,netflix,spotify,risparmio,finanze, `promo_text_en_170`: Take full control of your subscriptions! Track recurring expenses, get renewal reminders, and stop unwanted charges. Start saving money today with SubTracker., `promo_text_it_170`: Prendi il controllo dei tuoi abbonamenti! Monitora le spese ricorrenti, ricevi avvisi di rinnovo ed elimina i costi inutili. Inizia a risparmiare subito con SubTracker., `subtitle_en`: Track • Save • Master, `subtitle_it`: Monitora, Risparmia, Controlla
 - **Dominio: Cultura, Storia & Linguaggi** (`domain-cultura-storia`)
   - **Tags:** `#domain-hub` `#cultura` `#storia` `#lingue` `#letteratura` `#viaggi` `#antropologia`
   - **Sintesi:** Storia, Letteratura, Lingue Straniere, Cultura Generale, Viaggi, Società e Antropologia.
@@ -2819,6 +2831,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#tesi` `#refining`
   - **Sintesi:** Iterazione rapida per ridurre la verbosità del testo introduttivo del capitolo dei risultati della tesi di Pierfrancesco.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Sintesi testo introduttivo Capitolo 6, `key_takeaways`: Generata versione compatta di due paragrafi pronta per il codice sorgente LaTeX.
+- **Episodio: Rifinitura SubTracker 1.1 e Materiali Promozionali** (`episode-subtracker-release-v1-1-marketing`)
+  - **Tags:** `#subtracker` `#marketing` `#screenshots` `#app-store` `#continuità-cognitiva`
+  - **Sintesi:** Interazione incentrata sulla rimozione del tasto fine tastiera, preparazione del copy per App Store e allestimento dello screenshot editor sia per la lingua italiana che inglese.
+  - **Dettagli:** `key_takeaways`: 1) Toolbar tastiera rimossa mantenendo gesture touch dismiss; 2) Screenshot editor Next.js configurato per gestire screenshot IT ed EN in parallelo con {locale}; 3) Limite testo promozionale App Store a 170 caratteri rispettato con 3 varianti mirate; 4) Codice promozionale proprietario verificato e protetto con SHA-256., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `pending_tasks`: Esportazione PNG da localhost:3000 e upload su App Store Connect per la review v1.1, `topic`: Finalizzazione rilascio SubTracker v1.1: UI fix, screenshot editor IT/EN e copy promozionale
 - **Episodio: Rilascio Documentazione Ufficiale README** (`episode-update-readme-architecture`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di redazione e pubblicazione del README.md completo su GitHub.
@@ -3352,6 +3368,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
   - **Tags:** `#ui-component` `#palazzo-cognitivo` `#elevator-selector` `#multi-layer` `#bento-grid`
   - **Sintesi:** Pannello di navigazione e ascensore cognitivo per esplorare la conoscenza su piani semantici (Attico Domini P0, Progetti P1, Moduli Atomici P2) con pulsanti dedicati, contatori nodi in tempo reale e vista 3D stratificata.
   - **Dettagli:** `raw`: `floors`: {'P0': 'Piano 0: Attico Macro-Domini & Core Hubs (15 nodi)', 'P1': 'Piano 1: Progetti & Aree Tematiche (121 nodi)', 'P2': 'Piano 2: Moduli, Algoritmi & Dettagli Atomici (53 nodi)'}, `navigation_modes`: ['all (Tutti i Piani)', 'vertical (Vista 3D Piani)', '0', '1', '2'], `features`: ['Auto-fit immediato del viewport', 'Ascensori sinaptici evidenziati', 'Zero black-screen filtering']
+- **Deck Screenshot Editor SubTracker (IT & EN)** (`screenshot-editor-bilingual-deck`)
+  - **Tags:** `#screenshot-editor` `#nextjs` `#app-store-screenshots` `#subtracker`
+  - **Sintesi:** Ambiente Next.js locale pre-configurato per rendering e download di 8 frame pubblicitari iPhone ad alta risoluzione con mockup e testi sincronizzati in italiano e inglese.
+  - **Dettagli:** `device`: iphone, `locales`: ['it', 'en'], `mockup_image`: public/mockup.png, `port`: 3000, `resolution_native`: 1320x2868, `slides_count`: 8, `tech_stack`: Next.js 15, Tailwind, html-to-image, Radix UI
 - **Dock Terminale Persistente & Live Activity Ticker** (`ui-bottom-terminal-dock`)
   - **Tags:** `#ui-component` `#terminal` `#live-ticker` `#cyberpunk` `#dock`
   - **Sintesi:** Barra fissa a fondo schermo nella vista 2D che integra un prompt interattivo 'synapse:~$' e un live ticker animato per visualizzare in tempo reale lo streaming degli eventi HTTP e delle mutazioni dei nodi.
@@ -3438,6 +3458,8 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[ARCHITECT_OF]--> (`universal-ai-brain`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[AUTHORED]--> (`proj-kdp-ai-guide`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[AUTHOR_OF]--> (`proj-kdp-ai-book`) *(Corpo Calloso)*
+- (`app-store-marketing-assets-subtracker`) --[BELONGS_TO]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
+- (`screenshot-editor-bilingual-deck`) --[BELONGS_TO]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
 - (`ux-natural-gesture-controls-3d`) --[BELONGS_TO]--> (`domain-ai-cognitive-systems`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`continuous-ai-symbiosis`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-multi-llm-mcp-ecosystem`) *(Corpo Calloso)*
@@ -3708,6 +3730,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`proj-workspace`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`reasoning-gesture-zoom-terminal-dock-tabs`) --[CREATES]--> (`ui-bottom-terminal-dock`) *(Corpo Calloso)*
 - (`reasoning-gesture-zoom-terminal-dock-tabs`) --[CREATES]--> (`ux-natural-gesture-controls-3d`) *(Corpo Calloso)*
+- (`reasoning-subtracker-release-screenshots-copy`) --[CREATES]--> (`screenshot-editor-bilingual-deck`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[CREATOR_OF]--> (`aule-studio-app`) *(Corpo Calloso)*
 - (`concept-interhemispheric-inhibition-gating`) --[CROSS_CALLOSAL_INHIBITION]--> (`domain-filosofia-valori`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[DECLARED]--> (`user-intent-zero-cost-graphrag`) *(Corpo Calloso)*
@@ -3811,6 +3834,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-subtracker-v1-1-release-prep`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-telegram-keepalive-confirmation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-test-hook-session-end-2411`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ui-declutter-projector-fullscreen`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3878,6 +3902,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`taxonomy-deterministic-floor-classification-engine`) --[POWERS_HIERARCHY]--> (`ui-component-palazzo-cognitivo-multi-layer-navigator`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PREFERS]--> (`rigore-informativo`) *(Corpo Calloso)*
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[PRODUCED_ARCHITECTURE]--> (`architecture-vis-network-silent-stabilization-zero-lag`) *(Corpo Calloso)*
+- (`reasoning-subtracker-release-screenshots-copy`) --[PRODUCES]--> (`app-store-marketing-assets-subtracker`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PROPOSED]--> (`user-intent-tree-search-enhancement`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[PROVIDES_FLOW]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
 - (`kindle-c962fde43767`) --[READ_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -3947,6 +3972,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`) *(Corpo Calloso)*
+- (`episode-subtracker-release-v1-1-marketing`) --[RECORDS_INTENT]--> (`user-intent-subtracker-v1-1-release-prep`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_INTENT]--> (`user-intent-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-test-hook-session-end-2411`) --[RECORDS_INTENT]--> (`user-intent-test-hook-session-end-2411`) *(Corpo Calloso)*
 - (`episode-ui-declutter-projector-fullscreen`) --[RECORDS_INTENT]--> (`user-intent-ui-declutter-projector-fullscreen`) *(Corpo Calloso)*
@@ -4020,6 +4046,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_REASONING]--> (`reasoning-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_REASONING]--> (`reasoning-subtracker-full-i18n-architecture`) *(Corpo Calloso)*
+- (`episode-subtracker-release-v1-1-marketing`) --[RECORDS_REASONING]--> (`reasoning-subtracker-release-screenshots-copy`) *(Corpo Calloso)*
 - (`episode-telegram-keepalive-confirmation`) --[RECORDS_REASONING]--> (`reasoning-telegram-keepalive-confirmation`) *(Corpo Calloso)*
 - (`episode-test-hook-session-end-2411`) --[RECORDS_REASONING]--> (`reasoning-test-hook-session-end-2411`) *(Corpo Calloso)*
 - (`episode-ui-declutter-projector-fullscreen`) --[RECORDS_REASONING]--> (`reasoning-ui-declutter-projector-fullscreen`) *(Corpo Calloso)*
@@ -4558,6 +4585,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[FULFILLS]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[FULFILLS]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`)
+- (`reasoning-subtracker-release-screenshots-copy`) --[FULFILLS]--> (`user-intent-subtracker-v1-1-release-prep`)
 - (`reasoning-tassonomia-pkm-rag-notion-obsidian`) --[FULFILLS]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`)
 - (`reasoning-telegram-keepalive-confirmation`) --[FULFILLS]--> (`user-intent-telegram-keepalive-confirmation`)
 - (`reasoning-test-hook-session-end-2411`) --[FULFILLS]--> (`user-intent-test-hook-session-end-2411`)
@@ -4656,6 +4684,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-subtracker-release-v1-1-marketing`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-telegram-keepalive-confirmation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-test-hook-session-end-2411`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ui-declutter-projector-fullscreen`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4721,6 +4750,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
+- (`reasoning-subtracker-release-screenshots-copy`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-telegram-keepalive-confirmation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-test-hook-session-end-2411`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-update-readme-architecture`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -4834,6 +4864,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
+- (`user-intent-subtracker-v1-1-release-prep`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-telegram-keepalive-confirmation`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-test-hook-session-end-2411`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ui-declutter-projector-fullscreen`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
