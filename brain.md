@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-05 00:08:47 UTC | **Nodi Restituiti:** 660 (SX: 454 · DX: 206) | **Sinapsi Restituite:** 1516
-> **Consistenza Reale Connettoma:** 660 Nodi Totali nel Database | 1516 Sinapsi Totali
+> **Data Generazione:** 2026-09-05 00:09:18 UTC | **Nodi Restituiti:** 663 (SX: 456 · DX: 207) | **Sinapsi Restituite:** 1523
+> **Consistenza Reale Connettoma:** 663 Nodi Totali nel Database | 1523 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -333,6 +333,10 @@
   - **Tags:** `#raycast` `#web-clipper` `#sqlite-vec` `#nightly-weave` `#cursor-hooks` `#apple-shortcuts`
   - **Sintesi:** Proposta architetturale a 5 pilastri: Quick-Capture macOS (Raycast/Siri), Knowledge Streams (Readwise/GitHub CI), Motore Cognitivo Aumentato (sqlite-vec & Fase REM notturna), Dev Workflow Hooks e Interfacce Spaziali.
   - **Dettagli:** `actions_taken`: ['Analisi connettoma', 'Verifica tool MCP', 'Elaborazione matrice sinaptica di espansione'], `model`: Gemini 3.7 Flash, `outcome`: Blueprint completo di integrazioni per rendere il cervello onnipresente e ad attrito zero, `responses_given`: Roadmap dettagliata con categorizzazione a 5 pilastri e priorità di implementazione
+- **Preparazione, Pulizia e Push Git SubTracker v1.1** (`reasoning-github-sync-subtracker-release-v1-1`)
+  - **Tags:** `#git` `#github` `#release` `#subtracker` `#clean-repo`
+  - **Sintesi:** Configurato .gitignore mirato per escludere file utente/cache (DerivedData, userstate, DS_Store, node_modules, sandbox LifeRegistry), rimossi file non necessari dall'indice git, creato commit Conventional Commits (7761e5e) e completato con successo il git push sul branch main del remote PierfrancescoAmendola/SubTracker.
+  - **Dettagli:** `actions_taken`: ['Verificato stato del repository e confermata corrispondenza di SubTracker rispetto a HabitTracker (chiarito refuso utente)', 'Aggiornato .gitignore per proteggere da node_modules del screenshot editor, DerivedData, .DS_Store, userstate e LifeRegistry sandbox', 'Rimosso dal tracking git .DS_Store e UserInterfaceState.xcuserstate', 'Verificata assenza di file binari >50MB prima del push', 'Eseguito git commit con messaggio Conventional Commits descrittivo di tutte le novità v1.1 (7761e5e)', 'Effettuato push verso origin/main (https://github.com/PierfrancescoAmendola/SubTracker.git) concluso con successo', "Persistita l'intera sessione e continuità cognitiva nel Universal AI Brain"], `commit_hash`: 7761e5e08accb296903f8c6cf52f279c1f213f8e, `model`: Gemini 3.8 Flash, `outcome`: Repository GitHub perfettamente allineato e pulito con l'applicazione rilasciata su App Store; memoria registrata nel cervello., `remote_target`: https://github.com/PierfrancescoAmendola/SubTracker.git
 - **Proiezione Quantitativa & Regime Fiscale Capital Gain** (`ai-reasoning-proiezione-capital-gain-86euro`)
   - **Tags:** `#matematica-finanziaria` `#tassazione-26` `#commissioni-broker` `#analisi-rischio`
   - **Sintesi:** Calcolo analitico del rendimento lordo e netto (aliquota 26% italiana) e disamina dell'impatto critico delle commissioni fisse di negoziazione su micro-capitale.
@@ -2530,6 +2534,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#subtracker` `#landing-page` `#web-design` `#aesthetic` `#redesign`
   - **Sintesi:** Richiesta di ristrutturare da capo il sito web dell'applicazione SubTracker, elevandone l'estetica basandosi sulle palette cromatiche, lo stile e il flusso UX dell'app iOS.
   - **Dettagli:** `context`: Workspace AppAbbonamenti (SubTracker), transizione da pagine statiche a landing page e help center in Liquid Glassmorphism dark-luxe, `user_prompt`: /universal-brain. nel progetto di questa applicazione abbiamo creato un sito web, ristrutturalo, cambia tutto, lo voglio more aestetich, più bello. analizza le palette dell'app, il flow, lo stile e crea la pagina da capo
+- **Sincronizzazione GitHub Release SubTracker v1.1 su App Store** (`user-intent-github-sync-subtracker-release-v1-1`)
+  - **Tags:** `#subtracker` `#github` `#git-push` `#release-1.1` `#app-store`
+  - **Sintesi:** Caricamento completo su GitHub (repo PierfrancescoAmendola/SubTracker) di tutte le modifiche e novità implementate per il rilascio su App Store della versione 1.1 di SubTracker.
+  - **Dettagli:** `context`: Workspace AppAbbonamenti, applicazione iOS SubTracker rilasciata su App Store, allineamento commit e push a GitHub con pulizia repository e salvataggio nel connettoma cognitivo., `user_prompt`: carica su github le modifiche che abbiamo apportato oggi pomeriggio all'applicazione. applicazione che abbiamo rilasciato su AppStore. https://github.com/PierfrancescoAmendola/HabitTracker.git SubTracker è l'applicazione /universal-brain carica il contesto e la chat
 - **Spiegazione Ecografi con Trasduttore Lineare** (`user-intent-definizione-ecografo-trasduttore-lineare`)
   - **Tags:** `#ecografia` `#hardware-medico` `#trasduttore-lineare` `#breast-imaging` `#ultrasound`
   - **Sintesi:** Richiesta di definizione, caratteristiche e campi d'uso degli ecografi con trasduttore lineare.
@@ -2973,6 +2981,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#simulazione` `#azioni` `#investimenti` `#educazione-finanziaria`
   - **Sintesi:** Sessione incentrata sulla spiegazione del ritorno economico reale su una quota azionaria da 86€ con scenari di crescita multipli e impatto fiscale.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Rendimenti percentuali su 86€ (20%, 40%, 70%, 100%), `outcome`: Fornita tabella dettagliata con scomposizione tra lordo, tassazione al 26% e incidenza delle commissioni di trading.
+- **Episodio: Sincronizzazione GitHub e Chiusura Ciclo Rilascio SubTracker 1.1** (`episode-github-sync-subtracker-release-v1-1`)
+  - **Tags:** `#chat` `#continuità-cognitiva` `#subtracker` `#github-release`
+  - **Sintesi:** Interazione di chiusura ciclo di rilascio di SubTracker v1.1 su App Store: sincronizzazione totale del codice su GitHub e persistenza dello stato nel connettoma cognitivo.
+  - **Dettagli:** `key_takeaways`: Le modifiche di rilascio App Store (versione 1.1, suite Premium Analytics con PDF/CSV, WidgetKit, Face ID, calendario rinnovi, 35+ preset, internazionalizzazione a 6 lingue, e sito web con landing page e Help Center) sono ora archiviate in sicurezza su GitHub e sincronizzate nel cervello., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `pending_tasks`: Nessuna: codice sorgente pubblicato, app rilasciata su App Store e memoria persistita., `topic`: Caricamento su GitHub delle modifiche pomeridiane dell'app SubTracker rilasciata su App Store
 - **Episodio: Spiegazione Intuitiva Concetti Causali e Attention** (`episode-chiarimento-intuitivo-pilastri-teorici`)
   - **Tags:** `#chat` `#divulgazione` `#fondamenti-ai` `#tesi`
   - **Sintesi:** Sessione dedicata alla chiarificazione intuitiva di Self-Attention, Inferenza Causale, Feature Confounders e Decorrelazione.
@@ -3938,6 +3950,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-fix-daemon-render-persistence`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-gesture-zoom-terminal-dock-tabs`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-github-sync-subtracker-release-v1-1`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-i18n-subtracker-web`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-idee-app-abbonamento-monetizzabili`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4089,6 +4102,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_INTENT]--> (`user-intent-distro-linux-modellazione-3d`) *(Corpo Calloso)*
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_INTENT]--> (`user-intent-fix-daemon-render-persistence`) *(Corpo Calloso)*
 - (`episode-gesture-zoom-terminal-dock-tabs`) --[RECORDS_INTENT]--> (`user-intent-gesture-zoom-terminal-dock-tabs`) *(Corpo Calloso)*
+- (`episode-github-sync-subtracker-release-v1-1`) --[RECORDS_INTENT]--> (`user-intent-github-sync-subtracker-release-v1-1`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_INTENT]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-i18n-subtracker-web`) --[RECORDS_INTENT]--> (`user-intent-i18n-subtracker-web`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_INTENT]--> (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
@@ -4169,6 +4183,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-esplorazione-linux-3d-modeling`) --[RECORDS_REASONING]--> (`reasoning-mappatura-ecosistema-linux-3d`) *(Corpo Calloso)*
 - (`episode-fix-daemon-render-persistence`) --[RECORDS_REASONING]--> (`reasoning-fix-daemon-render-persistence`) *(Corpo Calloso)*
 - (`episode-gesture-zoom-terminal-dock-tabs`) --[RECORDS_REASONING]--> (`reasoning-gesture-zoom-terminal-dock-tabs`) *(Corpo Calloso)*
+- (`episode-github-sync-subtracker-release-v1-1`) --[RECORDS_REASONING]--> (`reasoning-github-sync-subtracker-release-v1-1`) *(Corpo Calloso)*
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[RECORDS_REASONING]--> (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) *(Corpo Calloso)*
 - (`episode-i18n-subtracker-web`) --[RECORDS_REASONING]--> (`reasoning-i18n-subtracker-web`) *(Corpo Calloso)*
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[RECORDS_REASONING]--> (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) *(Corpo Calloso)*
@@ -4719,6 +4734,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-embedding-projector-globe-and-optics`) --[FULFILLS]--> (`user-intent-embedding-projector-globe-and-optics`)
 - (`reasoning-fix-daemon-render-persistence`) --[FULFILLS]--> (`user-intent-fix-daemon-render-persistence`)
 - (`reasoning-gesture-zoom-terminal-dock-tabs`) --[FULFILLS]--> (`user-intent-gesture-zoom-terminal-dock-tabs`)
+- (`reasoning-github-sync-subtracker-release-v1-1`) --[FULFILLS]--> (`user-intent-github-sync-subtracker-release-v1-1`)
 - (`reasoning-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[FULFILLS]--> (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`)
 - (`reasoning-i18n-subtracker-web`) --[FULFILLS]--> (`user-intent-i18n-subtracker-web`)
 - (`reasoning-idee-app-basate-su-competenze-uniche`) --[FULFILLS]--> (`user-intent-idee-app-abbonamento-monetizzabili`)
@@ -4832,6 +4848,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-esplorazione-linux-3d-modeling`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-fix-daemon-render-persistence`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-gesture-zoom-terminal-dock-tabs`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-github-sync-subtracker-release-v1-1`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-i18n-subtracker-web`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-jarvis-ricordi-quali-sono-gli-emis-3117`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4882,6 +4899,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-decision-storekit-entitlements`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-swiftdata-relational-model`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-decision-tabbar-navigation`) --[MODIFIES]--> (`proj-appabbonamenti`)
+- (`reasoning-github-sync-subtracker-release-v1-1`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-ui-declutter-projector-fullscreen`) --[MODIFIES]--> (`universal-ai-brain`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -5032,6 +5050,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-esplorazione-paradigmi-visuali-grafo`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-fix-daemon-render-persistence`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-gesture-zoom-terminal-dock-tabs`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-github-sync-subtracker-release-v1-1`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-ho-bisogno-di-sapere-tutto-ci-che-2753`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-i18n-subtracker-web`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-implementazione-ecosistema-supercervello`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
