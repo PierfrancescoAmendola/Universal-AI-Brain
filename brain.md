@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-05 19:31:33 UTC | **Nodi Restituiti:** 666 (SX: 458 · DX: 208) | **Sinapsi Restituite:** 1530
-> **Consistenza Reale Connettoma:** 666 Nodi Totali nel Database | 1530 Sinapsi Totali
+> **Data Generazione:** 2026-09-05 19:32:37 UTC | **Nodi Restituiti:** 667 (SX: 459 · DX: 208) | **Sinapsi Restituite:** 1531
+> **Consistenza Reale Connettoma:** 667 Nodi Totali nel Database | 1531 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -1602,6 +1602,10 @@ The React Compiler is not enabled on this template because of its impact on dev 
   - **Tags:** `#mac-project`
   - **Sintesi:** Progetto Mac: Soluzione Postgress Pgadmin Prof. Stack: Varie.
   - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/soluzionePOSTGRESS_PGADMIN_PROF, `file_uri`: file:///Users/pierfrancesco/Desktop/UNI/LSO/TestDockerIMG/soluzionePOSTGRESS_PGADMIN_PROF, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 1, `last_modified`: 2025-11-06T10:27:19.787392+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **SomaWave (iOS Biofeedback & Vagus Nerve App)** (`proj-somawave-app`)
+  - **Tags:** `#ios` `#swift` `#swiftui` `#storekit2` `#biofeedback` `#zero-cloud` `#vagus-nerve` `#monetization`
+  - **Sintesi:** Applicazione iOS nativa per biofeedback ottico PPG, regolazione del nervo vago e onde binaurali procedurali, orientata alla monetizzazione tramite abbonamenti StoreKit 2 senza costi di infrastruttura cloud.
+  - **Dettagli:** `frameworks`: ['SwiftUI', 'AVFoundation', 'StoreKit', 'CoreHaptics', 'AVAudioEngine', 'XcodeGen'], `local_path`: /Users/pierfrancesco/Documents/antigravity/bold-hubble, `monetization`: StoreKit 2 native subscriptions (Weekly $6.99 with 3-day trial, Annual $39.99), `operating_costs`: 0.00 EUR/month (100% on-device PPG, AVAudioEngine procedural DSP, CoreHaptics)
 - **Source Chapters** (`proj-source_chapters`)
   - **Tags:** `#mac-project`
   - **Sintesi:** Progetto Mac: Source Chapters. Stack: Varie.
@@ -4980,6 +4984,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-modular-cluster-decentralization`) --[ORIGINATES_RULE]--> (`concept-modular-domain-subgraphs`)
 - (`arch-subtracker-i18n-system`) --[PART_OF]--> (`proj-appabbonamenti`)
 - (`feature-subtracker-premium-analytics-report`) --[PART_OF]--> (`proj-appabbonamenti`)
+- (`proj-somawave-app`) --[PART_OF]--> (`domain-software-engineering`)
 - (`proj-appcalcolatori-ui-layer`) --[PART_OF_PROJECT]--> (`proj-appcalcolatori`)
 - (`proj-cervelloartificiale-api-routes`) --[PART_OF_PROJECT]--> (`proj-cervelloartificiale`)
 - (`proj-habittracker-ui-layer`) --[PART_OF_PROJECT]--> (`proj-habittracker`)
