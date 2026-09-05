@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-05 10:14:23 UTC | **Nodi Restituiti:** 663 (SX: 456 · DX: 207) | **Sinapsi Restituite:** 1523
-> **Consistenza Reale Connettoma:** 663 Nodi Totali nel Database | 1523 Sinapsi Totali
+> **Data Generazione:** 2026-09-05 10:15:00 UTC | **Nodi Restituiti:** 666 (SX: 458 · DX: 208) | **Sinapsi Restituite:** 1530
+> **Consistenza Reale Connettoma:** 666 Nodi Totali nel Database | 1530 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -121,6 +121,10 @@
   - **Tags:** `#architecture` `#swiftdata` `#storekit` `#tests`
   - **Sintesi:** Architettura modulare pulita completata con 37 test unitari verificati e build Xcode pulita.
   - **Dettagli:** `actions_taken`: ['Backup legacy SubTracker in LegacySubTracker_Archive/', 'Aggiornamento Bundle ID com.amendolapierfrancesco.liferegistry e Display Name Life Registry in project.pbxproj', 'Creazione modelli SwiftData relazionali LifeItem, OwnedItem, ItemAttachment ed enum tipizzate', 'Implementazione DashboardView con semaforo di urgenza e costi 30/90/12m', 'Implementazione QuickAddView per aggiunta rapida in meno di 15s con preset intelligenti', 'Implementazione CalendarTimelineView con Timeline mensile e supporto EventKit opt-in', 'Implementazione ThingsHubView con registro oggetti, calcolo garanzie e scansione OCR on-device Apple Vision', "Implementazione feature 'Preparati' per ammortizzazione costi futuri giorno per giorno", 'Implementazione StoreKit 2 con protocollo EntitlementServiceProtocol e configurazione Subscriptions.storekit', 'Esecuzione test automatici: 37 test passati su 37 (zero fallimenti)', 'Verifica build Xcode: BUILD SUCCEEDED su iOS Simulator'], `model`: Gemini 3.8 Flash, `outcome`: Tutti i requisiti della specifica e del Definition of Done soddisfatti al 100%
+- **Architettura IAP TypeScript per AppScadenza** (`reasoning-appscadenza-in-app-subscriptions`)
+  - **Tags:** `#revenuecat` `#storekit` `#react-native-purchases` `#in-app-purchases`
+  - **Sintesi:** Analisi tecnica: IAP StoreKit nativo integrabile in TypeScript via react-native-purchases (RevenueCat). Zero riscrittura Swift.
+  - **Dettagli:** `actions_taken`: ['brain_search proj-appscadenza', 'Verifica package.json e stack Expo 54 React Native 0.81.5', 'Analisi architettura StoreKit e RevenueCat react-native-purchases'], `model`: Gemini 3.8 Flash, `outcome`: Fattibilità confermata al 100%. Nessuna riscrittura in Swift. Soluzione standard: RevenueCat react-native-purchases., `responses_given`: Nessuna riscrittura necessaria. StoreKit obbligatorio per Apple Guideline 3.1.1. Integrabile via react-native-purchases in TypeScript in poche ore.
 - **Architettura Mappamondo 3D: Gabbia Olografica, Laser Sinaptici & Floating Rel Card** (`reasoning-architettura-mappamondo-spotlight-3d`)
   - **Tags:** `#threejs` `#laser-synapses` `#hud-card` `#bi-hemispheric`
   - **Sintesi:** Implementazione di anelli equatoriali/meridiani Three.js, isolamento 1st-degree neighbors al click, raggi laser additivi ad alta intensità e pannello HUD Glassmorphism con link di navigazione sinaptica.
@@ -1812,6 +1816,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#ui-design` `#design-system` `#ux-flow` `#graphic-style` `#frontend`
   - **Sintesi:** L'utente richiede la definizione della grafica, dello stile visivo e dell'interfaccia utente per l'applicazione personale di apprendimento linguistico.
   - **Dettagli:** `raw`: `focus`: Design dell'interfaccia, token visivi, animazioni e layout degli esercizi, `user_prompt`: L'utente richiede la definizione della grafica, dello stile visivo e dell'interfaccia utente per l'applicazione personale di apprendimento linguistico.
+- **Fattibilità e Integrazione Abbonamenti In-App in App TypeScript Expo** (`user-intent-appscadenza-in-app-subscriptions`)
+  - **Tags:** `#iap` `#subscriptions` `#typescript` `#react-native` `#expo` `#app-store`
+  - **Sintesi:** Richiesta di fattibilità per abbonamenti premium In-App Purchase su App Store per app React Native/Expo in TypeScript senza riscrivere in Swift.
+  - **Dettagli:** `context`: AppScadenza (FreshCheck) React Native TypeScript su App Store, `user_prompt`: allora voglio sapere una cosa. io voglio un attimo modificare quest'app che si trova adesso sull'appstore. è un app scritta non in swift ma in Typescript. voglio sapere se posso inserire all'interno dell'applicazione la funzione per gli abbonamentim cioè che un utente paga per avere cose premium, nonostatne non sia apple. voglio sapere se si può fare come si fa per le app apple con gli acquisti in app o si deve totalmente cambiare o è troppo difficile
 - **Implementazione e Collaudo Ecosistema Ubiquitous Supercervello** (`user-intent-implementazione-ecosistema-supercervello`)
   - **Tags:** `#supercervello` `#raycast` `#safari-clipper` `#siri` `#rem-cycle` `#obsidian-canvas` `#zero-cost`
   - **Sintesi:** Costruzione completa e collaudo a 10 test di tutti i moduli di estensione: Raycast, Web Clipper Safari, Siri Voice Note, Daily Pulse Telegram, Kindle Sync, REM Cycle, Ricerca Ibrida RRF, IDE Hooks e Obsidian Canvas.
@@ -2677,6 +2685,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#delivery` `#life-registry` `#milestone`
   - **Sintesi:** Episodio finale di completamento e verifica dell'applicazione Life Registry.
   - **Dettagli:** `key_takeaways`: Life Registry è pronta e funzionante. Modello relazionale completo, 37 unit test superati, compilazione Xcode iOS Simulator SUCCEEDED, StoreKit 2 configurato con piano Free (10 item) e Premium., `participants`: ['Pierfrancesco Amendola', 'Antigravity'], `pending_tasks`: Test manuale su dispositivo reale / TestFlight quando Pierfrancesco desidera eseguire lo scheme con StoreKit Testing., `topic`: Life Registry Full Implementation Delivery
+- **Consulenza Abbonamenti IAP AppScadenza** (`episode-appscadenza-in-app-subscriptions`)
+  - **Tags:** `#freshcheck` `#appscadenza` `#monetizzazione` `#app-store`
+  - **Sintesi:** Sessione su fattibilità abbonamenti In-App Purchase su iOS per app React Native Expo in TypeScript.
+  - **Dettagli:** `key_takeaways`: StoreKit nativo funziona perfettamente in TypeScript con RevenueCat; obbligatorio per linee guida Apple; nessun refactor Swift necessario., `participants`: ['Pierfrancesco Amendola', 'Antigravity'], `pending_tasks`: Configurare App Store Connect e installare react-native-purchases se si desidera procedere., `topic`: Integrazione abbonamenti premium in AppScadenza TypeScript
 - **Episodio Chat: Architettura Ibrida Cloud Render vs Agenti Locali MCP & Sicurezza LLM** (`ep-20260827-render-cloud-vs-local-hybrid-architecture`)
   - **Tags:** `#chat-episode` `#render-cloud` `#local-mcp` `#prompt-injection-defense` `#hybrid-architecture`
   - **Sintesi:** Chiarimento architetturale sulla dualità e cooperazione tra Render Cloud 24/7 (mobile/web/Telegram/GPTs) e Agenti Locali MCP (Antigravity/Cursor/Claude Desktop) per persistenza contestuale.
@@ -3916,6 +3928,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-alternative-income-generation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-appscadenza-in-app-subscriptions`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-audit-critico-e-mockup-fr-2255`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4024,6 +4037,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[MANDATES]--> (`rule-cloud-persistence`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[MASTERS_STACK]--> (`flutter-dart-ecosystem`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[MASTERS_STACK]--> (`fastapi-python-stack`) *(Corpo Calloso)*
+- (`reasoning-appscadenza-in-app-subscriptions`) --[OPTIMIZES]--> (`proj-appscadenza`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-continuous-evolution`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[OWNS]--> (`project-royal-gambit-chess`) *(Corpo Calloso)*
 - (`arch-telegram-webhook-gateway`) --[PART_OF]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
@@ -4068,6 +4082,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_INTENT]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
 - (`episode-alternative-monetization-brainstorming`) --[RECORDS_INTENT]--> (`user-intent-alternative-income-generation`) *(Corpo Calloso)*
+- (`episode-appscadenza-in-app-subscriptions`) --[RECORDS_INTENT]--> (`user-intent-appscadenza-in-app-subscriptions`) *(Corpo Calloso)*
 - (`episode-audit-critico-e-mockup-fr-2255`) --[RECORDS_INTENT]--> (`user-intent-audit-critico-e-mockup-fr-2255`) *(Corpo Calloso)*
 - (`episode-backend-optimization-session`) --[RECORDS_INTENT]--> (`user-intent-backend-optimization-hybrid`) *(Corpo Calloso)*
 - (`episode-bonifica-storage-ollama-mac`) --[RECORDS_INTENT]--> (`user-intent-rimozione-modello-ollama-mac`) *(Corpo Calloso)*
@@ -4149,6 +4164,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_REASONING]--> (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
 - (`episode-alternative-monetization-brainstorming`) --[RECORDS_REASONING]--> (`ai-reasoning-alternative-monetization-strategies`) *(Corpo Calloso)*
+- (`episode-appscadenza-in-app-subscriptions`) --[RECORDS_REASONING]--> (`reasoning-appscadenza-in-app-subscriptions`) *(Corpo Calloso)*
 - (`episode-audit-critico-e-mockup-fr-2255`) --[RECORDS_REASONING]--> (`reasoning-audit-critico-e-mockup-fr-2255`) *(Corpo Calloso)*
 - (`episode-backend-optimization-session`) --[RECORDS_REASONING]--> (`reasoning-backend-audit-and-fix`) *(Corpo Calloso)*
 - (`episode-bonifica-storage-ollama-mac`) --[RECORDS_REASONING]--> (`reasoning-risoluzione-residui-ollama-mac`) *(Corpo Calloso)*
@@ -4231,6 +4247,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`proj-streaksup-app`) --[STYLED_BY]--> (`streaksup-glassmorphism-system`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[STYLED_BY]--> (`bi-hemispheric-polarity-palette`) *(Corpo Calloso)*
 - (`rigore-informativo`) --[SYNONYM_OF]--> (`brand-voice-surgical`) *(Corpo Calloso)*
+- (`user-intent-appscadenza-in-app-subscriptions`) --[TARGETS_PROJECT]--> (`proj-appscadenza`) *(Corpo Calloso)*
 - (`streaksup-gamification-engine`) --[TRIGGERS_CELEBRATION]--> (`streaksup-particle-fx`) *(Corpo Calloso)*
 - (`streaksup-app-intents-engine`) --[TRIGGERS_RELOAD_ON]--> (`streaksup-widget-suite-ui`) *(Corpo Calloso)*
 - (`proj-streaksup-app`) --[USES_PALETTE]--> (`streaksup-flame-palette`) *(Corpo Calloso)*
@@ -4702,6 +4719,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-analisi-stack-grafico-universal-brain`) --[FULFILLS]--> (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
+- (`reasoning-appscadenza-in-app-subscriptions`) --[FULFILLS]--> (`user-intent-appscadenza-in-app-subscriptions`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
 - (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) --[FULFILLS]--> (`user-intent-espansione-supercervello-integrazioni`)
 - (`reasoning-architettura-jarvis-zero-cost`) --[FULFILLS]--> (`user-intent-creazione-jarvis-voice-assistant`)
@@ -4814,6 +4832,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-alternative-monetization-brainstorming`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-appscadenza-in-app-subscriptions`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-audit-critico-e-mockup-fr-2255`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-backend-optimization-session`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-bonifica-storage-ollama-mac`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
