@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-06 20:21:53 UTC | **Nodi Restituiti:** 670 (SX: 461 · DX: 209) | **Sinapsi Restituite:** 1538
-> **Consistenza Reale Connettoma:** 670 Nodi Totali nel Database | 1538 Sinapsi Totali
+> **Data Generazione:** 2026-09-06 20:22:43 UTC | **Nodi Restituiti:** 673 (SX: 463 · DX: 210) | **Sinapsi Restituite:** 1545
+> **Consistenza Reale Connettoma:** 673 Nodi Totali nel Database | 1545 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -169,6 +169,10 @@
   - **Tags:** `#code-review` `#bug-fix` `#architecture` `#integration`
   - **Sintesi:** Analisi approfondita del codice generato, individuazione di 4 bug critici (perdita tags, cross_links, mismatch DB, rischio overwrite) e riscrittura sicura per integrazione nel main.py.
   - **Dettagli:** `model`: Qwen 2.5 Max (con audit Gemini), `actions_taken`: ['Audit riga-per-riga di optimized_brain_db.py vs main.py', "Identificazione perdita campo 'tags' in bulk_ingest", "Rilevamento assenza logica 'cross_links' e metadati cognitivi", 'Riscrittura funzioni ottimizzate con fix inclusi', 'Creazione snippet di integrazione sicura per main.py'], `outcome`: Backend ottimizzato pronto per produzione: 50-100x più veloce, zero perdita dati, tutte le funzionalità cognitive preservate.
+- **Audit e Rifinitura Feature Gating PRO e Localizzazione Schermate** (`reasoning-apppalette-pro-i18n-audit-fix`)
+  - **Tags:** `#code-audit` `#riverpod` `#localization` `#unit-tests`
+  - **Sintesi:** Completata la localizzazione esaustiva di PaletteScreen, LegalScreen e HistoryScreen; implementato e validato il ripristino acquisti basato su ricevute persistenti; estesa la suite di test automatizzati portandola a 39 test passanti al 100% con 0 warning analyzer.
+  - **Dettagli:** `actions_taken`: ['Localizzate tutte le stringhe residue in palette_screen.dart (tooltip, dialog, campionatore, pulsanti)', 'Aggiornato legal_screen.dart con supporto multilingua e branding AppPalette', 'Aggiunto test di ripristino ricevuta in pro_test.dart', 'Aggiunti test widget multilingua in localization_test.dart', 'Verificato 100% pass rate con flutter test (39 test passanti) e zero errori di analisi statiche'], `model`: Antigravity Reviewer, `outcome`: Codice pulito, zero regressioni, architettura solida e pronta al rilascio
 - **Caratterizzazione Fisica e Clinica della Sonda Lineare** (`reasoning-caratterizzazione-trasduttore-lineare`)
   - **Tags:** `#fisica-ultrasuoni` `#frequenze-alte` `#risoluzione-spaziale` `#imaging-senologico`
   - **Sintesi:** Analisi delle proprietà della sonda lineare (frequenze 7-18 MHz, campo visivo rettangolare, risoluzione assiale e laterale) con focus applicativo sull'imaging mammario e la rilevazione di lesioni.
@@ -1828,6 +1832,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#iap` `#subscriptions` `#typescript` `#react-native` `#expo` `#app-store`
   - **Sintesi:** Richiesta di fattibilità per abbonamenti premium In-App Purchase su App Store per app React Native/Expo in TypeScript senza riscrivere in Swift.
   - **Dettagli:** `context`: AppScadenza (FreshCheck) React Native TypeScript su App Store, `user_prompt`: allora voglio sapere una cosa. io voglio un attimo modificare quest'app che si trova adesso sull'appstore. è un app scritta non in swift ma in Typescript. voglio sapere se posso inserire all'interno dell'applicazione la funzione per gli abbonamentim cioè che un utente paga per avere cose premium, nonostatne non sia apple. voglio sapere se si può fare come si fa per le app apple con gli acquisti in app o si deve totalmente cambiare o è troppo difficile
+- **Implementazione Versione PRO e Internazionalizzazione Completa** (`user-intent-apppalette-pro-multilingua-perfezionamento`)
+  - **Tags:** `#apppalette` `#pro` `#paywall` `#i18n` `#flutter`
+  - **Sintesi:** Rendere AppPalette multilingua (IT, EN, ES, FR, DE) con fallback dinamico, introdurre versione PRO con paywall a 3 piani (Mensile €2.99, Annuale €19.99, A vita €39.99), feature gating su WCAG, Armonie e Codice Pro, ripristino acquisti e pulsante PRO nelle impostazioni.
+  - **Dettagli:** `context`: Flutter Riverpod, AppPalette, SharedPreferences, `user_prompt`: dobbiamo rendere l'applicazione internazionale, quindi deve essere multilingua. dobbiamo inserire una versione PRO. la versione normale può fare tutto tranne il Contrasto WCAG, Armonie Colore, Codice Pro...
 - **Implementazione e Collaudo Ecosistema Ubiquitous Supercervello** (`user-intent-implementazione-ecosistema-supercervello`)
   - **Tags:** `#supercervello` `#raycast` `#safari-clipper` `#siri` `#rem-cycle` `#obsidian-canvas` `#zero-cost`
   - **Sintesi:** Costruzione completa e collaudo a 10 test di tutti i moduli di estensione: Raycast, Web Clipper Safari, Siri Voice Note, Daily Pulse Telegram, Kindle Sync, REM Cycle, Ricerca Ibrida RRF, IDE Hooks e Obsidian Canvas.
@@ -2981,6 +2989,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di redazione e pubblicazione del README.md completo su GitHub.
   - **Dettagli:** `key_takeaways`: Il README.md è ora la fonte di verità tecnica completa per l'architettura, il funzionamento del demone, il backend FastAPI e il frontend., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Nessun task pendente. Repository e connettoma allineati al 100%., `topic`: Aggiornamento Documentazione e Architettura README.md
+- **Episodio: Rilascio Feature PRO e Supporto Multilingua Internazionale** (`episode-apppalette-pro-i18n-completamento`)
+  - **Tags:** `#apppalette` `#pro-version` `#internationalization` `#testing`
+  - **Sintesi:** Sessione di verifica e completamento per la versione PRO e il supporto multilingua di AppPalette, con feature gating reattivo su Contrasto WCAG, Armonie Colore ed Esportazione Codice.
+  - **Dettagli:** `key_takeaways`: Separazione netta tra stato PRO reattivo (Riverpod) e persistenza (SharedPreferences), localizzazione centralizzata con fallback a cascata robusto, `participants`: ['Pierfrancesco Amendola', 'Antigravity'], `pending_tasks`: Integrazione chiavi store native StoreKit per build App Store, `topic`: PRO paywall, ripristino acquisti e internazionalizzazione AppPalette
 - **Episodio: Rilascio Motori Cognitivi Avanzati e Obsidian Bridge** (`episode-potenziamento-cognitivo-obsidian-bridge`)
   - **Tags:** `#chat` `#connettoma` `#obsidian` `#continuità-cognitiva`
   - **Sintesi:** Sessione di analisi del progetto Neomas, superamento con architettura ad alte prestazioni SQLite WAL e rilascio completo del ponte Obsidian con briefing giornaliero e matrici dialettiche.
@@ -3944,6 +3956,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-alternative-income-generation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-apppalette-pro-multilingua-perfezionamento`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-appscadenza-in-app-subscriptions`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-audit-critico-e-mockup-fr-2255`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4099,6 +4112,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_INTENT]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
 - (`episode-alternative-monetization-brainstorming`) --[RECORDS_INTENT]--> (`user-intent-alternative-income-generation`) *(Corpo Calloso)*
+- (`episode-apppalette-pro-i18n-completamento`) --[RECORDS_INTENT]--> (`user-intent-apppalette-pro-multilingua-perfezionamento`) *(Corpo Calloso)*
 - (`episode-appscadenza-in-app-subscriptions`) --[RECORDS_INTENT]--> (`user-intent-appscadenza-in-app-subscriptions`) *(Corpo Calloso)*
 - (`episode-audit-critico-e-mockup-fr-2255`) --[RECORDS_INTENT]--> (`user-intent-audit-critico-e-mockup-fr-2255`) *(Corpo Calloso)*
 - (`episode-backend-optimization-session`) --[RECORDS_INTENT]--> (`user-intent-backend-optimization-hybrid`) *(Corpo Calloso)*
@@ -4182,6 +4196,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_REASONING]--> (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
 - (`episode-alternative-monetization-brainstorming`) --[RECORDS_REASONING]--> (`ai-reasoning-alternative-monetization-strategies`) *(Corpo Calloso)*
+- (`episode-apppalette-pro-i18n-completamento`) --[RECORDS_REASONING]--> (`reasoning-apppalette-pro-i18n-audit-fix`) *(Corpo Calloso)*
 - (`episode-appscadenza-in-app-subscriptions`) --[RECORDS_REASONING]--> (`reasoning-appscadenza-in-app-subscriptions`) *(Corpo Calloso)*
 - (`episode-audit-critico-e-mockup-fr-2255`) --[RECORDS_REASONING]--> (`reasoning-audit-critico-e-mockup-fr-2255`) *(Corpo Calloso)*
 - (`episode-backend-optimization-session`) --[RECORDS_REASONING]--> (`reasoning-backend-audit-and-fix`) *(Corpo Calloso)*
@@ -4738,6 +4753,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-analisi-stack-grafico-universal-brain`) --[FULFILLS]--> (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
+- (`reasoning-apppalette-pro-i18n-audit-fix`) --[FULFILLS]--> (`user-intent-apppalette-pro-multilingua-perfezionamento`)
 - (`reasoning-appscadenza-in-app-subscriptions`) --[FULFILLS]--> (`user-intent-appscadenza-in-app-subscriptions`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
 - (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) --[FULFILLS]--> (`user-intent-espansione-supercervello-integrazioni`)
@@ -4852,6 +4868,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-alternative-monetization-brainstorming`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-apppalette-pro-i18n-completamento`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-appscadenza-in-app-subscriptions`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-audit-critico-e-mockup-fr-2255`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-backend-optimization-session`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4945,6 +4962,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-analisi-fattibilita-language-app`) --[OPTIMIZES]--> (`reasoning-language-app-architecture`)
 - (`reasoning-analisi-stack-grafico-universal-brain`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-apppalette-pro-i18n-audit-fix`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-architettura-jarvis-zero-cost`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
@@ -5062,6 +5080,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-alternative-income-generation`) --[TARGETS_PROJECT]--> (`domain-finanza-economia`)
 - (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-apppalette-pro-multilingua-perfezionamento`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-audit-critico-e-mockup-fr-2255`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
