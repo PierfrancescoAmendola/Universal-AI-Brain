@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-06 20:19:31 UTC | **Nodi Restituiti:** 667 (SX: 459 · DX: 208) | **Sinapsi Restituite:** 1531
-> **Consistenza Reale Connettoma:** 667 Nodi Totali nel Database | 1531 Sinapsi Totali
+> **Data Generazione:** 2026-09-06 20:19:46 UTC | **Nodi Restituiti:** 670 (SX: 461 · DX: 209) | **Sinapsi Restituite:** 1538
+> **Consistenza Reale Connettoma:** 670 Nodi Totali nel Database | 1538 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -441,6 +441,10 @@
   - **Tags:** `#swiftui` `#app-store-connect` `#screenshot-editor` `#i18n` `#copywriting`
   - **Sintesi:** Risoluzione di layout e tastiera su iOS, strutturazione del deck screenshot in Next.js con risoluzione dinamica {locale} e formulazione del copy App Store Connect con vincolo 170 caratteri.
   - **Dettagli:** `actions_taken`: ['Rimozione ToolbarItemGroup keyboard da AddSubscriptionView ed EditSubscriptionView preservando dismissKeyboardOnTap e scrollDismissesKeyboard', 'Verifica sintassi swiftc -parse con exit code 0', "Redazione testo App Store in Italiano e Inglese con What's New v1.1", 'Configurazione screenshot_editor con 8 slide per SubTracker, mapping screenshot IT e EN (IMG_9171-9178 e IMG_9179-9186)', 'Avvio dev server Next.js porta 3000 con supporto selettore bilingue IT/EN', 'Redazione testi promozionali App Store Connect (limite 170 caratteri) con 3 opzioni per lingua'], `model`: Gemini 3.8 Flash, `outcome`: App compilabile senza errori, screenshot editor funzionante bilingue su localhost:3000, copy App Store pronto per submission, `responses_given`: Codice aggiornato, descrizioni complete, istruzioni operative per visualizzazione ed esportazione screenshot
+- **Ragionamento: Sessione di Lavoro** (`reasoning-sessione-di-lavoro-5986`)
+  - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
+  - **Sintesi:** Elaborazione AI
+  - **Dettagli:** `model`: AI Assistant, `responses_given`: Elaborazione AI, `actions_taken`: ['Elaborazione e risposta al prompt'], `outcome`: Completato con successo
 - **Ragionamento: Test Hook Session End** (`reasoning-test-hook-session-end-2411`)
   - **Tags:** `#ide-hook` `#ai-reasoning` `#test-hook-session-end`
   - **Sintesi:** Verifica automatica dell hook di fine sessione
@@ -2363,6 +2367,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#jarvis` `#voice-command` `#user-intent`
   - **Sintesi:** Comando vocale/richiesta espresso a JARVIS da Pierfrancesco: Quali sono le abitudini monitorate ...
   - **Dettagli:** `raw`: `user_prompt`: Quali sono le abitudini monitorate in StreaksUp?, `channel`: JARVIS Voice Core
+- **Intento: Sessione di Lavoro** (`user-intent-sessione-di-lavoro-5986`)
+  - **Tags:** `#user-intent` `#chat` `#sessione-di-lavoro`
+  - **Sintesi:** Intento espresso da Pierfrancesco: Sessione di Lavoro
+  - **Dettagli:** `user_prompt`: Richiesta utente, `context`: Sessione su Sessione di Lavoro
 - **Intento: Test Hook Session End** (`user-intent-test-hook-session-end-2411`)
   - **Tags:** `#ide-hook` `#session-intent` `#test-hook-session-end`
   - **Sintesi:** Obiettivo operativo: Test Hook Session End.
@@ -2993,6 +3001,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#continuità-cognitiva` `#macro-domini` `#palazzo-cognitivo`
   - **Sintesi:** Riorganizzazione storica e sigillo del Piano 0 del Palazzo Cognitivo con 12 Macro-Domini permanenti e blindatura delle regole di routing.
   - **Dettagli:** `key_takeaways`: Il Piano 0 è ora immutabile (13 nodi); tutte le future AI devono associare ogni nuovo nodo a uno dei 12 domini, `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `pending_tasks`: Sincronizzazione finale PC ⮂ Render Cloud, `topic`: Riorganizzazione Macro-Domini e sigillatura Piano 0
+- **Episodio: Sessione di Lavoro** (`episode-sessione-di-lavoro-5986`)
+  - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
+  - **Sintesi:** Episodio di dialogo e lavoro su Sessione di Lavoro
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'AI Assistant'], `topic`: Sessione di Lavoro, `key_takeaways`: Risoluzione e decisioni per Sessione di Lavoro, `pending_tasks`: Nessun task pendente
 - **Episodio: Simulazione Matematica Rendimento Azionario 86€** (`episode-simulazione-rendimento-azionario-86euro`)
   - **Tags:** `#simulazione` `#azioni` `#investimenti` `#educazione-finanziaria`
   - **Sintesi:** Sessione incentrata sulla spiegazione del ritorno economico reale su una quota azionaria da 86€ con scenari di crescita multipli e impatto fiscale.
@@ -3993,6 +4005,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-ricerca-idee-app-alto-impatto-reale`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-rimozione-modello-ollama-mac`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-sessione-di-lavoro-5986`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4141,6 +4154,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-redesign-sito-subtracker`) --[RECORDS_INTENT]--> (`user-intent-redesign-sito-subtracker`) *(Corpo Calloso)*
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_INTENT]--> (`user-intent-accorciamento-cappello-capitolo-6`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
+- (`episode-sessione-di-lavoro-5986`) --[RECORDS_INTENT]--> (`user-intent-sessione-di-lavoro-5986`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_INTENT]--> (`user-intent-calcolo-rendimento-azione-86euro`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`) *(Corpo Calloso)*
@@ -4223,6 +4237,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-redesign-sito-subtracker`) --[RECORDS_REASONING]--> (`reasoning-redesign-sito-subtracker`) *(Corpo Calloso)*
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-sintetica-testo`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
+- (`episode-sessione-di-lavoro-5986`) --[RECORDS_REASONING]--> (`reasoning-sessione-di-lavoro-5986`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_REASONING]--> (`ai-reasoning-proiezione-capital-gain-86euro`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_REASONING]--> (`reasoning-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_REASONING]--> (`reasoning-subtracker-full-i18n-architecture`) *(Corpo Calloso)*
@@ -4784,6 +4799,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-risoluzione-residui-ollama-mac`) --[FULFILLS]--> (`user-intent-rimozione-modello-ollama-mac`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[FULFILLS]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
 - (`reasoning-semplificazione-concettuale-causal-dl`) --[FULFILLS]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
+- (`reasoning-sessione-di-lavoro-5986`) --[FULFILLS]--> (`user-intent-sessione-di-lavoro-5986`)
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[FULFILLS]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[FULFILLS]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`)
@@ -4891,6 +4907,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-redesign-sito-subtracker`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-sintesi-cappello-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-sessione-di-lavoro-5986`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-simulazione-rendimento-azionario-86euro`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -4968,6 +4985,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-redesign-sito-subtracker`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-sessione-di-lavoro-5986`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-subtracker-release-screenshots-copy`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
@@ -5094,6 +5112,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-redesign-sito-subtracker`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-review-piano-supercervello-os`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-sessione-di-lavoro-5986`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-subtracker-v1-1-release-prep`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
