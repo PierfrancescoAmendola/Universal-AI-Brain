@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-07 21:48:34 UTC | **Nodi Restituiti:** 677 (SX: 467 · DX: 210) | **Sinapsi Restituite:** 1549
-> **Consistenza Reale Connettoma:** 677 Nodi Totali nel Database | 1549 Sinapsi Totali
+> **Data Generazione:** 2026-09-07 21:49:29 UTC | **Nodi Restituiti:** 681 (SX: 469 · DX: 212) | **Sinapsi Restituite:** 1558
+> **Consistenza Reale Connettoma:** 681 Nodi Totali nel Database | 1558 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -421,6 +421,10 @@
   - **Tags:** `#launchd` `#tcc-bypass` `#keepalive` `#git-sync`
   - **Sintesi:** Diagnosi e risoluzione integrale: TCC sandbox bypass tramite ~/.local/bin, keep-alive 7m anti-sleep, commit git automatico preventivo.
   - **Dettagli:** `actions_taken`: ['Identificato blocco TCC di macOS LaunchAgent sui file in Desktop (errore 78/126)', "Spostato l'esecutore in ~/.local/bin/universal-brain-daemon con log su /tmp/", 'Aggiunto pinger Keep-Alive /health ogni 7m per prevenire idle spin-down di Render', 'Disaccoppiato il commit/push Git da Render: ogni modifica locale va subito su GitHub', 'Verificata integrità del connettoma (347 nodi e 880 archi perfettamente allineati)'], `model`: Gemini 3.7 Flash, `outcome`: Demone attivo con PID reale, Render mantenuto vivo 24/7, memoria salvata su GitHub e sincronizzata al 100%, `responses_given`: Spiegazione causa 335 vs 347 nodi (ephemeral disk Render e mancato push Git per blocco demone), blocco TCC Desktop risolto, keep-alive attivo
+- **Ragionamento: Implementazione Smart Rating Gate Robusto** (`reasoning-smart-rating-gate-implementation`)
+  - **Tags:** `#swiftui` `#storekit` `#skstorereviewcontroller` `#appstore-review` `#rating-gate`
+  - **Sintesi:** Architettura del RatingManager reattiva senza conflitti modali: gestione asincrona onDismiss, rispetto delle quote Apple (3 volte in 365 giorni), fallback App Store e protezione del punteggio pubblico.
+  - **Dettagli:** `actions_taken`: ['Ispezione PaywallView.swift con individuazione chiave pierfrancescoAmendolaSubTrackerApp e hash SHA-256', 'Implementazione RatingManager.swift con limite rolling 3 recensioni native ogni 365 giorni e fallback openStoreListing', 'Implementazione SmartRatingGateView.swift con instradamento positivo vs critico', 'Salvataggio locale feedback 1-3 stelle in UserDefaults senza contatti con App Store', 'Integrazione in MainTabView.swift (sheet centralizzata con onDismiss) e SettingsView.swift (trigger manuale)', 'Verifica con 53 asserzioni automatiche e swiftc -parse exit 0'], `model`: Gemini 3.8 Flash, `outcome`: Codice promozionale identificato, Smart Rating Gate operativo senza race condition e convalidato dal compilatore Swift, `responses_given`: Codice promo fornito e spiegazione dettagliata del funzionamento dello Smart Rating Gate
 - **Ragionamento: Nuove rappresentazioni visuali del conne** (`reasoning-nuove-rappresentazioni-vi-2874`)
   - **Tags:** `#ai-reasoning` `#decisioni` `#universal-ai-brain`
   - **Sintesi:** Recuperata la preferenza per un grafo stabile e privo di oscillazioni; creato un secondo artefatto interattivo con cinque viste deterministiche: due sfere, palazzo, matrice, radar bi-polare e territor
@@ -2486,6 +2490,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#ecosistema` `#architettura` `#integrazioni` `#obsidian` `#automazioni` `#supercervello`
   - **Sintesi:** Identificazione delle migliori applicazioni, sistemi, flussi e potenziamenti architetturali per estendere il connettoma oltre Obsidian e massimizzarne l'efficacia operativa.
   - **Dettagli:** `context`: Evoluzione del connettoma bi-emisferico verso un Cognitive OS onnipresente, `user_prompt`: abbiamo collegato obsidian al nostro cervello e abbiamo creato questo supercervello. ma che altro possiamo fare per migliorare, quali altri applicazioni, sistemi possiamo sfruttare per miglioare e rendere tutto più efficace e migliore
+- **Recupero Codice Segreto e Smart Rating Gate Apple** (`user-intent-smart-rating-gate-promo-code`)
+  - **Tags:** `#subtracker` `#rating-gate` `#storekit` `#promo-code` `#app-store`
+  - **Sintesi:** Recupero della chiave segreta Pro ('pierfrancescoAmendolaSubTrackerApp') e implementazione dello Smart Rating Gate a due vie (4-5 stelle su StoreKit/App Store con limite 3/anno, 1-3 stelle salvate in locale).
+  - **Dettagli:** `context`: Richiesta codice segreto promo per SubTracker Pro e implementazione Smart Rating Gate ufficiale Apple con filtro 4-5 stelle verso App Store e 1-3 stelle salvate in locale, `user_prompt`: la prima dimmi qual'è la chiave segreta, il codice che bisogna inserire per sbloccare il pro??? poi inserisci questa feature: Smart Rating Gate Ufficiale Apple...
 - **Revisione Piano Supercervello Ubiquitous Cognitive OS** (`user-intent-review-piano-supercervello-os`)
   - **Tags:** `#piano-implementazione` `#supercervello` `#architettura` `#zero-cost` `#knowledge-graph`
   - **Sintesi:** Richiesta di revisione strategica ed ingegneristica del piano di estensione del cervello artificiale in un Cognitive OS ubiquo a costo zero.
@@ -3041,6 +3049,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#continuità-cognitiva` `#subtracker` `#github-release`
   - **Sintesi:** Interazione di chiusura ciclo di rilascio di SubTracker v1.1 su App Store: sincronizzazione totale del codice su GitHub e persistenza dello stato nel connettoma cognitivo.
   - **Dettagli:** `key_takeaways`: Le modifiche di rilascio App Store (versione 1.1, suite Premium Analytics con PDF/CSV, WidgetKit, Face ID, calendario rinnovi, 35+ preset, internazionalizzazione a 6 lingue, e sito web con landing page e Help Center) sono ora archiviate in sicurezza su GitHub e sincronizzate nel cervello., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `pending_tasks`: Nessuna: codice sorgente pubblicato, app rilasciata su App Store e memoria persistita., `topic`: Caricamento su GitHub delle modifiche pomeridiane dell'app SubTracker rilasciata su App Store
+- **Episodio: Smart Rating Gate e Chiave Segreta Pro** (`episode-smart-rating-gate`)
+  - **Tags:** `#subtracker` `#storekit` `#app-store` `#rating-gate` `#continuità-cognitiva`
+  - **Sintesi:** Completamento del sistema di recensioni intelligenti per SubTracker a tutela della reputazione pubblica e documentazione del codice promozionale proprietario.
+  - **Dettagli:** `key_takeaways`: 1) Codice sblocco Pro: pierfrancescoAmendolaSubTrackerApp; 2) Rating gate operativo: 4-5 stelle invocano SKStoreReviewController o fallback App Store (dopo 3 richieste annue); 3) 1-3 stelle salvate esclusivamente in locale; 4) Eliminata ogni race condition tramite hook onDismiss in MainTabView., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `pending_tasks`: Inserimento ID App Store reale al posto del placeholder prima della release su App Store Connect, `topic`: Codice segreto Pro e Smart Rating Gate Apple SubTracker
 - **Episodio: Spiegazione Intuitiva Concetti Causali e Attention** (`episode-chiarimento-intuitivo-pilastri-teorici`)
   - **Tags:** `#chat` `#divulgazione` `#fondamenti-ai` `#tesi`
   - **Sintesi:** Sessione dedicata alla chiarificazione intuitiva di Self-Attention, Inferenza Causale, Feature Confounders e Decorrelazione.
@@ -3550,6 +3562,10 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
   - **Tags:** `#mobile-ui` `#clean-design` `#cards` `#seat-map` `#badges` `#student-experience`
   - **Sintesi:** Interfaccia grafica mobile fluida, pulita e minimale orientata a universitari: schede aula immediate, mappa visiva e contatori posti cromatici.
   - **Dettagli:** `raw`: `ui_style`: Modern Minimalist Card-Based, `colors`: {'available': '#10b981', 'crowded': '#f59e0b', 'full': '#ef4444'}
+- **Componente SmartRatingGateView** (`ui-component-smart-rating-gate`)
+  - **Tags:** `#swiftui` `#ui-component` `#smart-rating-gate` `#subtracker`
+  - **Sintesi:** Vista SwiftUI modale per la raccolta guidata delle recensioni utente con logica di protezione rating integrata.
+  - **Dettagli:** `component`: SmartRatingGateView, `features`: ['Selettore 5 stelle con feedback aptico', 'Ramo 4-5 stelle con messaggio e submit verso StoreKit', 'Ramo 1-3 stelle con casella di testo per feedback critico e salvataggio locale', 'Schermata di ringraziamento e auto-dismiss', 'Supporto multilingua completo in 6 lingue'], `file`: SubTracker/Views/SmartRatingGateView.swift
 - **Componente UI: Navigatore Multilivello a Piani del Palazzo Cognitivo** (`ui-component-palazzo-cognitivo-multi-layer-navigator`)
   - **Tags:** `#ui-component` `#palazzo-cognitivo` `#elevator-selector` `#multi-layer` `#bento-grid`
   - **Sintesi:** Pannello di navigazione e ascensore cognitivo per esplorare la conoscenza su piani semantici (Attico Domini P0, Progetti P1, Moduli Atomici P2) con pulsanti dedicati, contatori nodi in tempo reale e vista 3D stratificata.
@@ -3646,6 +3662,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[AUTHOR_OF]--> (`proj-kdp-ai-book`) *(Corpo Calloso)*
 - (`app-store-marketing-assets-subtracker`) --[BELONGS_TO]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
 - (`screenshot-editor-bilingual-deck`) --[BELONGS_TO]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
+- (`ui-component-smart-rating-gate`) --[BELONGS_TO]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
 - (`ux-natural-gesture-controls-3d`) --[BELONGS_TO]--> (`domain-ai-cognitive-systems`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`continuous-ai-symbiosis`) *(Corpo Calloso)*
 - (`domain-ai-cognitive-systems`) --[BELONGS_TO_DOMAIN]--> (`episode-2026-08-27-multi-llm-mcp-ecosystem`) *(Corpo Calloso)*
@@ -4037,6 +4054,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-rimozione-modello-ollama-mac`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-sessione-di-lavoro-5986`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-smart-rating-gate-promo-code`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4110,6 +4128,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`taxonomy-deterministic-floor-classification-engine`) --[POWERS_HIERARCHY]--> (`ui-component-palazzo-cognitivo-multi-layer-navigator`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PREFERS]--> (`rigore-informativo`) *(Corpo Calloso)*
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[PRODUCED_ARCHITECTURE]--> (`architecture-vis-network-silent-stabilization-zero-lag`) *(Corpo Calloso)*
+- (`reasoning-smart-rating-gate-implementation`) --[PRODUCES]--> (`ui-component-smart-rating-gate`) *(Corpo Calloso)*
 - (`reasoning-subtracker-release-screenshots-copy`) --[PRODUCES]--> (`app-store-marketing-assets-subtracker`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[PROPOSED]--> (`user-intent-tree-search-enhancement`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[PROVIDES_FLOW]--> (`student-booking-ux-flow`) *(Corpo Calloso)*
@@ -4188,6 +4207,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
 - (`episode-sessione-di-lavoro-5986`) --[RECORDS_INTENT]--> (`user-intent-sessione-di-lavoro-5986`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_INTENT]--> (`user-intent-calcolo-rendimento-azione-86euro`) *(Corpo Calloso)*
+- (`episode-smart-rating-gate`) --[RECORDS_INTENT]--> (`user-intent-smart-rating-gate-promo-code`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`) *(Corpo Calloso)*
 - (`episode-subtracker-release-v1-1-marketing`) --[RECORDS_INTENT]--> (`user-intent-subtracker-v1-1-release-prep`) *(Corpo Calloso)*
@@ -4272,6 +4292,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
 - (`episode-sessione-di-lavoro-5986`) --[RECORDS_REASONING]--> (`reasoning-sessione-di-lavoro-5986`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_REASONING]--> (`ai-reasoning-proiezione-capital-gain-86euro`) *(Corpo Calloso)*
+- (`episode-smart-rating-gate`) --[RECORDS_REASONING]--> (`reasoning-smart-rating-gate-implementation`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_REASONING]--> (`reasoning-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_REASONING]--> (`reasoning-subtracker-full-i18n-architecture`) *(Corpo Calloso)*
 - (`episode-subtracker-release-v1-1-marketing`) --[RECORDS_REASONING]--> (`reasoning-subtracker-release-screenshots-copy`) *(Corpo Calloso)*
@@ -4837,6 +4858,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-semplificazione-concettuale-causal-dl`) --[FULFILLS]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
 - (`reasoning-sessione-di-lavoro-5986`) --[FULFILLS]--> (`user-intent-sessione-di-lavoro-5986`)
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
+- (`reasoning-smart-rating-gate-implementation`) --[FULFILLS]--> (`user-intent-smart-rating-gate-promo-code`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[FULFILLS]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[FULFILLS]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`)
 - (`reasoning-subtracker-release-screenshots-copy`) --[FULFILLS]--> (`user-intent-subtracker-v1-1-release-prep`)
@@ -4946,6 +4968,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-sessione-di-lavoro-5986`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-simulazione-rendimento-azionario-86euro`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-smart-rating-gate`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-release-v1-1-marketing`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5024,6 +5047,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-sessione-di-lavoro-5986`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-smart-rating-gate-implementation`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-subtracker-release-screenshots-copy`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
@@ -5152,6 +5176,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-review-piano-supercervello-os`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-sessione-di-lavoro-5986`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-smart-rating-gate-promo-code`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-subtracker-v1-1-release-prep`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
