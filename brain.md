@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-07 07:49:43 UTC | **Nodi Restituiti:** 673 (SX: 463 · DX: 210) | **Sinapsi Restituite:** 1545
-> **Consistenza Reale Connettoma:** 673 Nodi Totali nel Database | 1545 Sinapsi Totali
+> **Data Generazione:** 2026-09-07 07:50:36 UTC | **Nodi Restituiti:** 675 (SX: 465 · DX: 210) | **Sinapsi Restituite:** 1547
+> **Consistenza Reale Connettoma:** 675 Nodi Totali nel Database | 1547 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -548,6 +548,10 @@
   - **Tags:** `#analisi-architetturale` `#pkm` `#fastembed` `#sqlite-wal` `#rem-cycle`
   - **Sintesi:** Analisi dell'architettura proposta: approvazione dell'approccio zero-cost locale e validazione dei moduli di cattura a zero-friction, consolidamento notturno REM e integrazione IDE. Evidenziati accorgimenti su concurrency SQLite e modelli multilingua.
   - **Dettagli:** `actions_taken`: ['Verifica vincoli 0,00€ e assenza dipendenze esterne a pagamento', 'Analisi robustezza moduli Fase 1-5 (Raycast, Web Clipper, FastEmbed, Canvas Sync, IDE Hooks)', 'Formulazione raccomandazioni tecniche (busy_timeout SQLite WAL, embedding multilingua)'], `model`: Gemini, `outcome`: Piano validato come pienamente idoneo alla transizione verso un Cognitive OS autonomo.
+- **Verifica Completa Chicche UX e Sicurezza Codice Segreto** (`reasoning-apppalette-chicche-ux-verification`)
+  - **Tags:** `#testing` `#obfuscation` `#code-review`
+  - **Sintesi:** Validazione funzionale e architetturale per le tre nuove feature, 61/61 test passati e app riavviata con successo su simulatore iPhone 15.
+  - **Dettagli:** `actions_taken`: ['Refactoring selettore lingua in ProfileScreen con card compatta e modal bottom sheet fluido', 'Creazione componente RateAppDialog a 5 stelle con salvataggio su StorageService ed entry dedicata nelle Impostazioni', 'Implementazione codice segreto con verifica XOR offuscata e sblocco immediato a vita nel paywall', 'Esecuzione e passaggio del 100% dei test (61/61 test passati, 0 warning)'], `model`: Antigravity Reviewer, `outcome`: Tutti i requisiti implementati con cura, sicurezza aumentata contro reverse engineering e test completati con successo
 
 ### [Macro-Label: `ALGORITHM`]
 - **Achievement & 22-Trophy Engine** (`streaksup-gamification-engine`)
@@ -1808,6 +1812,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#frontend` `#graph-visualization` `#vis-network` `#threejs` `#d3js` `#cytoscape`
   - **Sintesi:** Verifica dello stato di utilizzo e adozione di Vis-network, 3d-force-graph, Three.js, D3.js e Cytoscape.js nel frontend del connettoma.
   - **Dettagli:** `context`: Richiesta chiarimenti sull'uso di Cytoscape.js, Vis-network, 3d-force-graph e D3.js nel frontend di Universal AI Brain, `user_prompt`: /universal-brain per la rappresentazione grafica dei grafi nel nostro frontend/sito, usiamo queste cose?? Cytoscape.js, Vis-network, 3d-force-graph, D3.js
+- **Chicche UX: Modal Lingua, Rating Stelle e Codice Segreto PRO** (`user-intent-apppalette-chicche-ux-secret-code`)
+  - **Tags:** `#apppalette` `#ux` `#i18n` `#rate-app` `#secret-code`
+  - **Sintesi:** Migliorata la selezione lingua con un modal bottom sheet compatto; implementato popup interattivo di recensione a 5 stelle con persistenza e trigger a milestone; aggiunto codice segreto promozionale offuscato nel paywall per sblocco PRO illimitato.
+  - **Dettagli:** `context`: Flutter, AppPalette, ProfileScreen, ProPaywallScreen, RateAppDialog, `user_prompt`: allora aggiungiamo due piccole chicce. la prima nelle impostazioni è brutto scegliere così la lingua... poi seconda cosa da aggiungere popup lascia una recensione con numero di stelle... poi ultima cosa codice per accedere alla parte pro senza pagare: SpeculaPierfrancescoAmendola
 - **Completamento Sviluppo Life Registry** (`user-intent-life-registry-implementation`)
   - **Tags:** `#life-registry` `#swiftdata` `#storekit` `#ios`
   - **Sintesi:** Completamento di tutte le componenti e viste di Life Registry come da specifica concordata.
@@ -3956,6 +3964,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-alternative-income-generation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-apppalette-chicche-ux-secret-code`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-apppalette-pro-multilingua-perfezionamento`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-appscadenza-in-app-subscriptions`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4753,6 +4762,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-analisi-stack-grafico-universal-brain`) --[FULFILLS]--> (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
+- (`reasoning-apppalette-chicche-ux-verification`) --[FULFILLS]--> (`user-intent-apppalette-chicche-ux-secret-code`)
 - (`reasoning-apppalette-pro-i18n-audit-fix`) --[FULFILLS]--> (`user-intent-apppalette-pro-multilingua-perfezionamento`)
 - (`reasoning-appscadenza-in-app-subscriptions`) --[FULFILLS]--> (`user-intent-appscadenza-in-app-subscriptions`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
