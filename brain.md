@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-07 08:15:53 UTC | **Nodi Restituiti:** 675 (SX: 465 · DX: 210) | **Sinapsi Restituite:** 1547
-> **Consistenza Reale Connettoma:** 675 Nodi Totali nel Database | 1547 Sinapsi Totali
+> **Data Generazione:** 2026-09-07 08:20:46 UTC | **Nodi Restituiti:** 677 (SX: 467 · DX: 210) | **Sinapsi Restituite:** 1549
+> **Consistenza Reale Connettoma:** 677 Nodi Totali nel Database | 1549 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -552,6 +552,10 @@
   - **Tags:** `#testing` `#obfuscation` `#code-review`
   - **Sintesi:** Validazione funzionale e architetturale per le tre nuove feature, 61/61 test passati e app riavviata con successo su simulatore iPhone 15.
   - **Dettagli:** `actions_taken`: ['Refactoring selettore lingua in ProfileScreen con card compatta e modal bottom sheet fluido', 'Creazione componente RateAppDialog a 5 stelle con salvataggio su StorageService ed entry dedicata nelle Impostazioni', 'Implementazione codice segreto con verifica XOR offuscata e sblocco immediato a vita nel paywall', 'Esecuzione e passaggio del 100% dei test (61/61 test passati, 0 warning)'], `model`: Antigravity Reviewer, `outcome`: Tutti i requisiti implementati con cura, sicurezza aumentata contro reverse engineering e test completati con successo
+- **Verifica Smart Rating Gate e ReviewService** (`reasoning-apppalette-in-app-review-verification`)
+  - **Tags:** `#storekit` `#in-app-review` `#flutter-tests`
+  - **Sintesi:** Architettura di recensione validata con 16 test mirati, re-entrancy guard, gestione web safety e test suite completa a 74 test passati.
+  - **Dettagli:** `actions_taken`: ['Aggiunto pacchetto in_app_review in pubspec.yaml', 'Creato ReviewService reattivo con dependency injection su Riverpod e RateAppDialog', 'Configurato filtro a due vie (4-5 stelle attivano StoreKit review ufficiale, 1-3 feedback privato)', '74/74 test passati al 100% con 0 warning analyzer e hot restart effettuato sul simulatore iPhone 15'], `model`: Antigravity Reviewer, `outcome`: Piena conformità Apple App Store e protezione del rating pubblico dell'app
 
 ### [Macro-Label: `ALGORITHM`]
 - **Achievement & 22-Trophy Engine** (`streaksup-gamification-engine`)
@@ -1856,6 +1860,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#tesi-laurea` `#tabelle-comparative` `#latex` `#metodologia`
   - **Sintesi:** Richiesta di aggiungere 2-3 righe al cappello introduttivo del Capitolo 6 specificando che i risultati saranno presentati e comparati sistematicamente tramite tabelle riassuntive.
   - **Dettagli:** `user_prompt`: perfetto aggiungi solo che vedremo i risultati ottenuti, e potremo compararli tramite le tabelle ecc..giusto altre due/tre righe, `context`: Perfezionamento finale del testo introduttivo del Capitolo 6 (Risultati e Discussione) per la tesi di laurea triennale.
+- **Integrazione Ufficiale App Store Review (Smart Rating Gate)** (`user-intent-apppalette-in-app-review-gate`)
+  - **Tags:** `#apppalette` `#app-store` `#in-app-review` `#rating-gate`
+  - **Sintesi:** Collegato il popup di valutazione direttamente all'App Store di Apple tramite in_app_review: se l'utente vota 4 o 5 stelle, scatta automaticamente la richiesta ufficiale Apple SKStoreReviewController per registrare la recensione su App Store.
+  - **Dettagli:** `context`: Flutter, AppPalette, in_app_review, RateAppDialog, ReviewService, `user_prompt`: si però se l'utente inserisce la valutazione, quest'ultima viene effettivamente registrata nell'AppStore?? -> si
 - **Intento Utente: Collegare Cervello via MCP e Skill a Claude, Gemini e ChatGPT** (`user-intent-connect-gemini-claude-chatgpt-mcp`)
   - **Tags:** `#user-intent` `#mcp-integration` `#multi-model-sync`
   - **Sintesi:** Richiesta di configurazione MCP e binding della skill /universal-brain su Claude, Gemini e ChatGPT.
@@ -3965,6 +3973,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-alternative-income-generation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-apppalette-chicche-ux-secret-code`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-apppalette-in-app-review-gate`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-apppalette-pro-multilingua-perfezionamento`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-appscadenza-in-app-subscriptions`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-architettura-connettoma-web-vs-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4763,6 +4772,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-analisi-stack-grafico-universal-brain`) --[FULFILLS]--> (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
 - (`reasoning-apppalette-chicche-ux-verification`) --[FULFILLS]--> (`user-intent-apppalette-chicche-ux-secret-code`)
+- (`reasoning-apppalette-in-app-review-verification`) --[FULFILLS]--> (`user-intent-apppalette-in-app-review-gate`)
 - (`reasoning-apppalette-pro-i18n-audit-fix`) --[FULFILLS]--> (`user-intent-apppalette-pro-multilingua-perfezionamento`)
 - (`reasoning-appscadenza-in-app-subscriptions`) --[FULFILLS]--> (`user-intent-appscadenza-in-app-subscriptions`)
 - (`reasoning-architettura-connettoma-web-vs-desktop`) --[FULFILLS]--> (`user-intent-architettura-connettoma-web-vs-desktop`)
