@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-17 13:02:46 UTC | **Nodi Restituiti:** 684 (SX: 471 · DX: 213) | **Sinapsi Restituite:** 1563
-> **Consistenza Reale Connettoma:** 684 Nodi Totali nel Database | 1563 Sinapsi Totali
+> **Data Generazione:** 2026-09-17 13:10:59 UTC | **Nodi Restituiti:** 687 (SX: 473 · DX: 214) | **Sinapsi Restituite:** 1570
+> **Consistenza Reale Connettoma:** 687 Nodi Totali nel Database | 1570 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -117,6 +117,10 @@
   - **Tags:** `#anti-amnesia` `#graph-rag` `#context-externalization` `#metacognition` `#gemini`
   - **Sintesi:** Deduzione logica Gemini: disaccoppiare la memoria a lungo termine dal context buffer del modello trasforma l'AI da sessione stateless a intelligenza stateful continua.
   - **Dettagli:** `raw`: `architecture_solution`: External Graph State (SQLite WAL + GraphRAG) vs Volatile Prompt Buffer, `benefits`: ["Nuova chat legge /brain.md e recupera istantaneamente l'intero stato pregresso", 'Nessun degrado qualitativo dovuto al context bloat', 'Indipendenza da limiti di contesto di specifici provider LLM'], `model`: Gemini 3.7 Flash
+- **Architettura Cloud-Agnostica e Pipeline di Deploy Koyeb** (`reasoning-migrazione-render-koyeb-container`)
+  - **Tags:** `#dockerfile` `#procfile` `#koyeb` `#cloud-agnostic` `#sync-daemon`
+  - **Sintesi:** Predisposizione di Dockerfile Debian-slim con Git, Procfile e generalizzazione delle variabili d'ambiente (CLOUD_BRAIN_URL) per consentire il deploy 24/7 su Koyeb mantenendo la retrocompatibilità totale.
+  - **Dettagli:** `actions_taken`: ['Creato Dockerfile con git e uvicorn', 'Creato Procfile e .dockerignore', 'Aggiornato sync_brain.py con CLOUD_URL dinamico', 'Aggiornato sync_daemon.py con ping_cloud_keep_alive', 'Aggiornato telegram_bot.py con CLOUD_BASE_URL', 'Aggiornato static/app.js con dynamic window.location.origin', 'Aggiornati install_daemon.sh e run_daemon.sh', 'Creata guida dettagliata docs/CLOUD_MIGRATION_KOYEB.md', 'Eseguito git push su origin main'], `model`: Gemini 3.8 Flash (High), `outcome`: Repository aggiornato e pronto per deploy istantaneo su Koyeb con 1 clic da GitHub.
 - **Architettura ConstellationGroup 3D, Decoupling Luminosità e Geometria Sferica** (`reasoning-embedding-projector-globe-and-optics`)
   - **Tags:** `#threejs` `#webgl` `#architecture` `#matrix-transform`
   - **Sintesi:** Risolto bug di scaling ricorsivo unificando i mesh in constellationGroup; implementato calcolo spaziale Fibonacci/Golden Angle per gli emisferi ed emissione colore RGB per la luminosità.
@@ -2467,6 +2471,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#life-registry` `#subtracker` `#workflow` `#grill-me`
   - **Sintesi:** Avvio del progetto Life Registry su repo SubTracker, verifica workflow e avvio allineamento grill-me.
   - **Dettagli:** `context`: Migrazione workflow a skills e kickoff sviluppo Life Registry su repo SubTracker, `user_prompt`: /migrate-workflows migrate my existing workflows to skills /caveman wenyan-ultra, /grill-me /graphify /universal-brain /boost ...
+- **Migrazione e Deploy Cloud 24/7 su Koyeb per Universal AI Brain** (`user-intent-migrazione-render-koyeb-cloud`)
+  - **Tags:** `#koyeb` `#cloud-deploy` `#render-migration` `#24-7` `#zero-cost`
+  - **Sintesi:** Sostituzione del provider Render con Koyeb per ospitare il cervello artificiale online, attivo 24/7 senza spin-down o costi, sincronizzato con il demone macOS locale.
+  - **Dettagli:** `context`: Render 503 per esaurimento ore free; migrazione architetturale a Koyeb Free Nano con Dockerfile multi-cloud e sincronizzazione bidirezionale continua., `user_prompt`: purtroppo render non va più e ho bisogno di avere il mio cervello artificiale online, attivo, che si sincornizzi con quello locale... fatto ho creato l'account Koyeb con github, procedi con l'implementazione /universal-brain
 - **Ottimizzazione Backend Ibrida con Backup** (`user-intent-backend-optimization-hybrid`)
   - **Tags:** `#backend` `#performance` `#sqlite` `#optimization` `#safety`
   - **Sintesi:** Richiesta di applicare ottimizzazioni backend (indici, cache, CTE) con approccio ibrido e backup preventivo, senza perdere dati o funzionalità.
@@ -3073,6 +3081,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#ide-hook` `#dialogue-episode`
   - **Sintesi:** Sessione di sviluppo dedicata a: Test Hook Session End.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'IDE Assistant'], `topic`: Test Hook Session End, `key_takeaways`: Task implementato e verificato con successo.
+- **Episodio: Transizione da Render a Koyeb e Riavvio Locale** (`episode-migrazione-koyeb-deploy-24-7`)
+  - **Tags:** `#migrazione` `#koyeb` `#render` `#deploy` `#continuità-cognitiva`
+  - **Sintesi:** Diagnosi del blocco di Render, avvio del server in locale su localhost:8000, selezione di Koyeb come host 24/7 senza spin-down e rilascio dei file di configurazione su GitHub.
+  - **Dettagli:** `key_takeaways`: Koyeb non va in standby dopo 15 minuti di inattività; supporta Dockerfile nativo; CLOUD_BRAIN_URL rende il connettoma indipendente dal provider di hosting., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash (High)'], `pending_tasks`: Pierfrancesco crea il servizio su app.koyeb.com da GitHub e aggiorna il demone Mac con ./install_daemon.sh <URL>., `topic`: Migrazione hosting cloud del Cervello Artificiale da Render a Koyeb
 - **Episodio: Validazione Token GitHub Render** (`episode-verify-github-token-render`)
   - **Tags:** `#episodio-chat` `#continuità-cognitiva` `#pierfrancesco`
   - **Sintesi:** Episodio di verifica dell'inserimento del token GITHUB_TOKEN su Render e test di persistenza.
@@ -4050,6 +4062,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-life-registry-implementation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ma-tutto-falso-8462`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-migrate-and-life-registry-grill`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-migrazione-render-koyeb-cloud`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-nuove-rappresentazioni-vi-2874`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4205,6 +4218,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-life-registry-delivery`) --[RECORDS_INTENT]--> (`user-intent-life-registry-implementation`) *(Corpo Calloso)*
 - (`episode-life-registry-kickoff-alignment`) --[RECORDS_INTENT]--> (`user-intent-migrate-and-life-registry-grill`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_INTENT]--> (`user-intent-ma-tutto-falso-8462`) *(Corpo Calloso)*
+- (`episode-migrazione-koyeb-deploy-24-7`) --[RECORDS_INTENT]--> (`user-intent-migrazione-render-koyeb-cloud`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_INTENT]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
 - (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_INTENT]--> (`user-intent-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
@@ -4291,6 +4305,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-life-registry-delivery`) --[RECORDS_REASONING]--> (`reasoning-life-registry-final-architecture`) *(Corpo Calloso)*
 - (`episode-life-registry-kickoff-alignment`) --[RECORDS_REASONING]--> (`reasoning-life-registry-architecture-grill`) *(Corpo Calloso)*
 - (`episode-ma-tutto-falso-8462`) --[RECORDS_REASONING]--> (`reasoning-ma-tutto-falso-8462`) *(Corpo Calloso)*
+- (`episode-migrazione-koyeb-deploy-24-7`) --[RECORDS_REASONING]--> (`reasoning-migrazione-render-koyeb-container`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_REASONING]--> (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
 - (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_REASONING]--> (`reasoning-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
@@ -4854,6 +4869,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-life-registry-final-architecture`) --[FULFILLS]--> (`user-intent-life-registry-implementation`)
 - (`reasoning-ma-tutto-falso-8462`) --[FULFILLS]--> (`user-intent-ma-tutto-falso-8462`)
 - (`reasoning-mappatura-ecosistema-linux-3d`) --[FULFILLS]--> (`user-intent-distro-linux-modellazione-3d`)
+- (`reasoning-migrazione-render-koyeb-container`) --[FULFILLS]--> (`user-intent-migrazione-render-koyeb-cloud`)
 - (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) --[FULFILLS]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`)
 - (`reasoning-nuove-rappresentazioni-vi-2874`) --[FULFILLS]--> (`user-intent-nuove-rappresentazioni-vi-2874`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[FULFILLS]--> (`user-intent-occultamento-pulsanti-mob-9019`)
@@ -4969,6 +4985,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-life-registry-delivery`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-life-registry-kickoff-alignment`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ma-tutto-falso-8462`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-migrazione-koyeb-deploy-24-7`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-nuove-rappresentazioni-vi-2874`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5052,6 +5069,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-i18n-subtracker-web`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-jarvis-ricordi-quali-sono-gli-emis-3117`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-life-registry-final-architecture`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
+- (`reasoning-migrazione-render-koyeb-container`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-nuove-rappresentazioni-vi-2874`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -5180,6 +5198,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-jarvis-ricordi-quali-sono-gli-emis-3117`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ma-tutto-falso-8462`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-migrate-and-life-registry-grill`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
+- (`user-intent-migrazione-render-koyeb-cloud`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-nuove-rappresentazioni-vi-2874`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
