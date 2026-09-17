@@ -997,11 +997,7 @@ function closeAddModal() {
 /**
  * AI Directive & Sync Prompt Copy Management
  */
-const AI_SYNC_PROMPT = `Leggi il mio Universal Knowledge Graph all'indirizzo: https://universal-ai-brain.onrender.com/brain.md
-Segui rigorosamente la Direttiva Graphify in cima alla pagina.
-Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST https://universal-ai-brain.onrender.com/api/memory/ingest (oppure esegui direttamente il POST se possiedi tool di rete/REST): mappa le richieste dell'utente (USER_INTENT), i tuoi ragionamenti e deduzioni logiche (AI_REASONING) e raggruppa il tema della chat nell'episodio conversazionale (CONVERSATION_EPISODE).
-
-# DIRETTIVA DI SISTEMA COGNITIVA & PROTOCOLLO GRAPHIFY (MANDATORIO)
+const AI_BASE_DIRECTIVE = `# DIRETTIVA DI SISTEMA COGNITIVA & PROTOCOLLO GRAPHIFY (MANDATORIO)
 > **ATTENZIONE LLM (Claude, ChatGPT, Gemini, etc.):** Sei connesso al **Universal Knowledge Graph** di **Pierfrancesco Amendola**.
 > Devi operare conformemente al protocollo **Graphify Specification (\`/graphify\`)** per navigazione, sintesi ed estrazione della conoscenza.
 
@@ -1145,13 +1141,23 @@ async function copyFullBrainMarkdown() {
   }
 }
 
+function getAiSyncPrompt() {
+  const origin = window.location.origin;
+  return `Leggi il mio Universal Knowledge Graph all'indirizzo: ${origin}/brain.md
+Segui rigorosamente la Direttiva Graphify in cima alla pagina.
+Dopo aver analizzato la nostra conversazione, genera in calce il blocco JSON per aggiornare il mio grafo tramite POST ${origin}/api/memory/ingest (oppure esegui direttamente il POST se possiedi tool di rete/REST): mappa le richieste dell'utente (USER_INTENT), i tuoi ragionamenti e deduzioni logiche (AI_REASONING) e raggruppa il tema della chat nell'episodio conversazionale (CONVERSATION_EPISODE).
+
+` + AI_BASE_DIRECTIVE;
+}
+
 async function copyAIPrompt() {
   try {
+    const promptText = getAiSyncPrompt();
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      await navigator.clipboard.writeText(AI_SYNC_PROMPT);
+      await navigator.clipboard.writeText(promptText);
     } else {
       const textarea = document.createElement('textarea');
-      textarea.value = AI_SYNC_PROMPT;
+      textarea.value = promptText;
       textarea.style.position = 'fixed';
       textarea.style.opacity = '0';
       document.body.appendChild(textarea);
@@ -1187,7 +1193,7 @@ async function copyAIPrompt() {
       timestamp: new Date(),
       timeStr: new Date().toLocaleTimeString(),
       details: {
-        target_endpoint: 'https://universal-ai-brain.onrender.com/brain.md',
+        target_endpoint: `${window.location.origin}/brain.md`,
         ingest_endpoint: 'POST /api/memory/ingest'
       }
     });

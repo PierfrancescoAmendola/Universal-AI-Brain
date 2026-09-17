@@ -17,7 +17,7 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PROJECT_DIR)
 
 import urllib.request
-from sync_brain import sync_bidirectional, LOCAL_DB, RENDER_URL
+from sync_brain import sync_bidirectional, LOCAL_DB, CLOUD_URL, RENDER_URL
 
 LOG_FILE = os.path.join(PROJECT_DIR, "sync_daemon.log")
 
@@ -84,18 +84,21 @@ def rotate_log_if_needed(max_bytes: int = 1_000_000):
             pass
 
 
-def ping_render_keep_alive() -> bool:
-    """Pings Render health check to prevent free tier from sleeping (spin-down after 15m)."""
-    health_url = f"{RENDER_URL}/health"
+def ping_cloud_keep_alive() -> bool:
+    """Pings Cloud health check to maintain server active and verified 24/7."""
+    health_url = f"{CLOUD_URL}/health"
     try:
         req = urllib.request.Request(health_url, headers={"User-Agent": "UniversalBrainKeepAlive/2.0"})
         with urllib.request.urlopen(req, timeout=25) as resp:
             if resp.status == 200:
-                logging.info("💓 Render Cloud Keep-Alive: OK (Server attivo 24/7)")
+                logging.info("💓 Cloud Server Keep-Alive: OK (Server attivo 24/7)")
                 return True
     except Exception as e:
-        logging.info(f"⏳ Render Cloud Keep-Alive wake-up ping inviato ({e})")
+        logging.info(f"⏳ Cloud Server Keep-Alive wake-up ping inviato ({e})")
     return False
+
+
+ping_render_keep_alive = ping_cloud_keep_alive
 
 
 def main():
@@ -105,7 +108,7 @@ def main():
     logging.info(f"📁 Directory Progetto: {PROJECT_DIR}")
     logging.info(f"🗄️ Database Locale: {LOCAL_DB}")
     logging.info(f"💎 Obsidian Vault: {os.path.join(PROJECT_DIR, 'obsidian_vault')}")
-    logging.info(f"🌐 Cloud Endpoint: {RENDER_URL}")
+    logging.info(f"🌐 Cloud Endpoint: {CLOUD_URL}")
     logging.info("=======================================================")
 
     # 1. Sincronizzazione immediata all'avvio del computer
@@ -208,7 +211,7 @@ def main():
                 rotate_log_if_needed()
 
             if keepalive_due:
-                ping_render_keep_alive()
+                ping_cloud_keep_alive()
                 last_keepalive_ping = time.time()
 
         except Exception as e:

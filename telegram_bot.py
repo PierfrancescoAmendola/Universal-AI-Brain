@@ -16,6 +16,7 @@ from collections import deque
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8615414934:AAEGBkrHPQaEestCzHMDSEB6iKyYYTOK7LY").replace(" ", "")
 DB_PATH = os.getenv("BRAIN_DB_PATH", os.path.join(os.path.dirname(os.path.abspath(__file__)), "brain.db"))
+CLOUD_BASE_URL = (os.getenv("CLOUD_BRAIN_URL") or os.getenv("RENDER_EXTERNAL_URL") or os.getenv("RENDER_BRAIN_URL") or "https://universal-ai-brain.onrender.com").rstrip("/")
 
 
 def get_db():
@@ -360,7 +361,7 @@ def parse_and_ingest_json_payload(raw_text: str, user_name: str) -> Optional[str
         f"{nodes_formatted}\n"
         f"────────────────────────\n"
         f"🧠 <b>Totale Cervello:</b> {total_nodes} nodi · {total_edges} sinapsi\n"
-        f"🌐 <i>Visualizza:</i> https://universal-ai-brain.onrender.com"
+        f"🌐 <i>Visualizza:</i> {CLOUD_BASE_URL}"
     )
 
 
@@ -418,7 +419,7 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
                     lines.append(f"• <b>{c['node_a_label']}</b> vs <b>{c['node_b_label']}</b>\n  <i>{c.get('description', 'Trade-off rilevato')}</i>")
             if not open_t and not candidates:
                 lines.append("Nessuna tensione aperta. Connettoma in perfetto equilibrio dialettico!")
-            lines.append("────────────────────────\n🌐 <i>Risolvi su:</i> https://universal-ai-brain.onrender.com")
+            lines.append(f"────────────────────────\n🌐 <i>Risolvi su:</i> {CLOUD_BASE_URL}")
             return "\n".join(lines)
         except Exception as e:
             return f"❌ Errore caricamento tensioni: {e}"
@@ -457,7 +458,7 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
                 ico = "⚡" if r.get("hemisphere") == "LEFT" else "🌸"
                 sim = int(r.get("cosine_similarity", 0) * 100)
                 lines.append(f"{ico} <b>{r['label']}</b> (Similarità: {sim}%)\n📝 {r.get('summary', '')[:120]}...\n")
-            lines.append("────────────────────────\n🌐 <i>Dashboard:</i> https://universal-ai-brain.onrender.com")
+            lines.append(f"────────────────────────\n🌐 <i>Dashboard:</i> {CLOUD_BASE_URL}")
             return "\n".join(lines)
         except Exception as e:
             return f"❌ Errore ricerca ibrida: {e}"
@@ -488,7 +489,7 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
             f"• <code>/add &lt;titolo&gt; | &lt;sintesi&gt;</code> - Inserimento rapido nota/idea\n"
             f"• <b>Messaggio di testo libero</b> - Salva all'istante una nuova memoria\n\n"
             f"<b>🌐 Web Dashboard:</b>\n"
-            f"https://universal-ai-brain.onrender.com"
+            f"{CLOUD_BASE_URL}"
         )
 
     # 2.1 /prompt - Copia rapida negli appunti per AI esterne
@@ -498,7 +499,7 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
             "REGOLA DI LINGUA (ITALIANO):\n"
             "Tutte le label, i summary, i tag e i details devono essere sempre scritti in Italiano (termini tecnici internazionali in Inglese). Nessun testo o carattere in cinese/CJK.\n\n"
             "CONNETTORE KNOWLEDGE GRAPH:\n"
-            "Consulta il cervello live su: https://universal-ai-brain.onrender.com/brain.md\n\n"
+            f"Consulta il cervello live su: {CLOUD_BASE_URL}/brain.md\n\n"
             "PROTOCOLLO COGNITIVO A 2 FASI:\n"
             "1. FASE 1 (Pre-Response): Tieni conto delle preferenze di Pierfrancesco, dei progetti attivi (Universal Brain, Royal Gambit Chess, StreaksUp, AuleStudio, CareTrack) e dello storico.\n"
             "2. FASE 2 (Post-Response - Ingestion Obbligatoria):\n"
@@ -632,7 +633,7 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
                 f"{edges_formatted}\n"
                 f"────────────────────────\n"
                 f"📊 <b>Stato Kernel:</b> ONLINE (SQLite WAL) · {tot_nodes} nodi · {tot_edges} sinapsi\n"
-                f"🌐 <i>Live Console Web:</i> https://universal-ai-brain.onrender.com"
+                f"🌐 <i>Live Console Web:</i> {CLOUD_BASE_URL}"
             )
 
     # 3. /stats
@@ -653,7 +654,7 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
                 f"🔗 <b>Sinapsi Totali:</b> {edges}\n"
                 f"🌌 <b>Ponti Corpo Calloso:</b> {callosum}\n"
                 f"────────────────────────\n"
-                f"🌐 <i>Web Dashboard:</i> https://universal-ai-brain.onrender.com"
+                f"🌐 <i>Web Dashboard:</i> {CLOUD_BASE_URL}"
             )
 
     # 4. Instructions for JSON posting
@@ -739,7 +740,7 @@ def process_telegram_message(chat_id: int, user_name: str, text: str) -> str:
             lines.append("\n🌸 <b>Emisfero Destro (Design, Valori, Emozioni):</b>")
             for t in right_tax:
                 lines.append(f"  📂 <code>{t['primary_label']}</code>: {t['c']} nodi")
-            lines.append("\n<i>Consulta l'albero completo su:</i>\nhttps://universal-ai-brain.onrender.com/brain.md?view=tree")
+            lines.append(f"\n<i>Consulta l'albero completo su:</i>\n{CLOUD_BASE_URL}/brain.md?view=tree")
             return "\n".join(lines)
 
     # 7. /path <from> <to>

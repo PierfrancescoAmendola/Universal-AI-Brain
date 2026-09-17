@@ -11,6 +11,8 @@ PLIST_NAME="com.universalbrain.sync.plist"
 PLIST_PATH="$PLIST_DIR/$PLIST_NAME"
 PYTHON_BIN="$REPO_DIR/.venv/bin/python3"
 
+CLOUD_URL="${1:-${CLOUD_BRAIN_URL:-${RENDER_BRAIN_URL:-https://universal-ai-brain.onrender.com}}}"
+
 RUNNER_BIN="$HOME/.local/bin/universal-brain-daemon"
 mkdir -p "$HOME/.local/bin"
 
@@ -21,7 +23,8 @@ cd "\$REPO_DIR" || exit 1
 export HOME="$HOME"
 export USER="\$(whoami)"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:\$HOME/.local/bin"
-export RENDER_BRAIN_URL="https://universal-ai-brain.onrender.com"
+export CLOUD_BRAIN_URL="$CLOUD_URL"
+export RENDER_BRAIN_URL="$CLOUD_URL"
 export PYTHONUNBUFFERED="1"
 
 PYTHON_BIN="\$REPO_DIR/.venv/bin/python3"
@@ -69,8 +72,10 @@ cat << EOF > "$PLIST_PATH"
         <string>$(whoami)</string>
         <key>PATH</key>
         <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$HOME/.local/bin</string>
+        <key>CLOUD_BRAIN_URL</key>
+        <string>$CLOUD_URL</string>
         <key>RENDER_BRAIN_URL</key>
-        <string>https://universal-ai-brain.onrender.com</string>
+        <string>$CLOUD_URL</string>
         <key>PYTHONUNBUFFERED</key>
         <string>1</string>
     </dict>

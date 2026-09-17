@@ -17,7 +17,8 @@ import subprocess
 from datetime import datetime, timezone
 from typing import Dict, Any, List, Optional, Tuple
 
-RENDER_URL = os.getenv("RENDER_BRAIN_URL", "https://universal-ai-brain.onrender.com")
+CLOUD_URL = os.getenv("CLOUD_BRAIN_URL") or os.getenv("RENDER_BRAIN_URL") or "https://universal-ai-brain.onrender.com"
+RENDER_URL = CLOUD_URL
 LOCAL_DIR = os.path.dirname(os.path.abspath(__file__))
 LOCAL_DB = os.path.join(LOCAL_DIR, "brain.db")
 BRAIN_MD = os.path.join(LOCAL_DIR, "brain.md")
@@ -40,7 +41,7 @@ def slugify(text: str) -> str:
 
 
 def fetch_render_data(timeout: int = 35, retries: int = 3) -> Optional[Dict[str, Any]]:
-    url = f"{RENDER_URL}/brain.json"
+    url = f"{CLOUD_URL}/brain.json"
     for attempt in range(1, retries + 1):
         try:
             req = urllib.request.Request(
@@ -53,9 +54,12 @@ def fetch_render_data(timeout: int = 35, retries: int = 3) -> Optional[Dict[str,
             if attempt < retries:
                 time.sleep(4)
             else:
-                print(f"⚠️ Impossibile raggiungere Render ({url}) dopo {retries} tentativi: {e}")
+                print(f"⚠️ Impossibile raggiungere il server cloud ({url}) dopo {retries} tentativi: {e}")
                 return None
     return None
+
+
+fetch_cloud_data = fetch_render_data
 
 
 def push_to_render(payload: Dict[str, Any], timeout: int = 35, retries: int = 2) -> bool:
@@ -79,9 +83,12 @@ def push_to_render(payload: Dict[str, Any], timeout: int = 35, retries: int = 2)
             if attempt < retries:
                 time.sleep(3)
             else:
-                print(f"⚠️ Errore durante il push verso Render ({url}): {e}")
+                print(f"⚠️ Errore durante il push verso il cloud ({url}): {e}")
                 return False
     return False
+
+
+push_to_cloud = push_to_render
 
 
 def export_brain_markdown():
@@ -145,7 +152,7 @@ def sync_bidirectional(verbose: bool = True) -> Dict[str, Any]:
     4. Flushes WAL, updates brain.md, and pushes to Git repository.
     """
     if verbose:
-        print("🔄 Inizio Sincronizzazione Bidirezionale (PC ⮂ Render Cloud)...")
+        print("🔄 Inizio Sincronizzazione Bidirezionale (PC ⮂ Cloud Server)...")
 
     # Step 0: Assicura che le modifiche locali non committate vadano subito su Git
     git_commit_and_push("feat(sync): salvataggio locale automatico connettoma")
@@ -153,7 +160,7 @@ def sync_bidirectional(verbose: bool = True) -> Dict[str, Any]:
     render_data = fetch_render_data()
     if not render_data:
         if verbose:
-            print("⚠️ Connessione a Render non disponibile (in standby o offline). Opero solo su database locale e Git.")
+            print("⚠️ Connessione al Cloud Server non disponibile (in standby o offline). Opero solo su database locale e Git.")
         with get_local_connection() as conn:
             curr_nodes = conn.execute("SELECT COUNT(*) FROM nodes").fetchone()[0]
             curr_edges = conn.execute("SELECT COUNT(*) FROM edges").fetchone()[0]
@@ -163,7 +170,7 @@ def sync_bidirectional(verbose: bool = True) -> Dict[str, Any]:
             "edges_count": curr_edges,
             "pulled_nodes": 0,
             "pushed_nodes": 0,
-            "warning": "Render in standby"
+            "warning": "Cloud in standby"
         }
 
     render_nodes = {n["id"]: n for n in render_data.get("nodes", [])}
