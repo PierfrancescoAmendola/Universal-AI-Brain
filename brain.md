@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-17 10:07:39 UTC | **Nodi Restituiti:** 681 (SX: 469 · DX: 212) | **Sinapsi Restituite:** 1558
-> **Consistenza Reale Connettoma:** 681 Nodi Totali nel Database | 1558 Sinapsi Totali
+> **Data Generazione:** 2026-09-17 10:10:44 UTC | **Nodi Restituiti:** 684 (SX: 471 · DX: 213) | **Sinapsi Restituite:** 1563
+> **Consistenza Reale Connettoma:** 684 Nodi Totali nel Database | 1563 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -105,6 +105,10 @@
   - **Tags:** `#versioning` `#vector-embeddings` `#data-volatility` `#conflict-resolution`
   - **Sintesi:** Identificazione di mancanze critiche nella gestione temporale (decadimento, versioning dei nodi conflittuali) e suggerimento di integrazione vettoriale per la ricerca semantica ibrida.
   - **Dettagli:** `raw`: `proposed_edge`: SUPERSEDES, `proposed_fields`: ['timestamp_updated', 'volatility', 'embedding_vector'], `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+- **Analisi didattica e algoritmica degli heap** (`reasoning-analisi-struttura-heap`)
+  - **Tags:** `#didattica` `#analisi-complessita` `#data-structure`
+  - **Sintesi:** Formalizzazione della struttura ad albero quasi completo, mappatura indicizzata in array e analisi delle complessità asintotiche O(log n) e O(n).
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ["Definizione proprietà di forma e proprietà d'ordine (Max-Heap vs Min-Heap)", 'Formulazione mapping vettoriale (genitore/figli) per layout compatto', 'Analisi complessità temporale di inserimento, estrazione e build-heap lineare', 'Recupero schema visivo albero-array'], `outcome`: Spiegazione esaustiva con schema visivo e allineamento al protocollo Graphify.
 - **Analisi e Mappatura Stack Grafico Frontend** (`reasoning-analisi-stack-grafico-universal-brain`)
   - **Tags:** `#architecture` `#frontend` `#vis-network` `#threejs` `#d3` `#cytoscape`
   - **Sintesi:** Analisi tecnica comparativa sull'impiego reale di Vis-Network (vista 2D), Three.js (Mappamondo 3D), D3.js / 3D-Force-Graph (mockup prototipali) e Cytoscape.js nel progetto Universal AI Brain.
@@ -2562,6 +2566,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#monetizzazione` `#app-mobile` `#idee-prodotto`
   - **Sintesi:** Pierfrancesco ha chiesto più round di idee per app scaricabili con abbonamento mensile basso (2-5€) che le persone pagherebbero realmente, richiedendo infine idee concrete e utili prima del riassunto JSON.
   - **Dettagli:** `user_prompt`: dammi delle vere e buone idee che possono farmi guadagnare e che siano effettivamente utili, `context`: Sviluppatore attivo con app pubblicate (Swift/SwiftUI, Flutter, React Native), background in deep learning (CNR) e musica (pianista)
+- **Richiesta spiegazione alberi Heap** (`user-intent-spiegazione-alberi-heap`)
+  - **Tags:** `#algoritmi` `#strutture-dati` `#heap` `#cs-theory`
+  - **Sintesi:** Richiesta di spiegazione teorica e architetturale degli alberi heap binari.
+  - **Dettagli:** `user_prompt`: spiegami gli alberi heap, `context`: Richiesta concettuale integrata con direttiva Graphify e protocollo a due emisferi.
 - **Richiesta: Esplorazione Nuovi Paradigmi Visuali e Layout per il Grafo** (`user-intent-esplorazione-paradigmi-visuali-grafo`)
   - **Tags:** `#ui-design` `#visual-paradigms` `#graph-visualization` `#interfaccia`
   - **Sintesi:** Richiesta utente di visualizzare nuovi disegni, interfacce e layout architetturali per rappresentare il connettoma neurale (307 nodi, 2 emisferi).
@@ -3129,6 +3137,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#brainstorming-prodotto` `#memoria-ai`
   - **Sintesi:** Pierfrancesco ha richiesto più round di idee per app con abbonamento mensile basso, orientate a un guadagno realistico, e ha chiesto nuovamente il file JSON riassuntivo nel formato del suo sistema di memoria personale, chiarendo che non esiste generazione automatica a fine conversazione ma solo su richiesta esplicita.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Claude Sonnet 5'], `topic`: Idee di app mobile in abbonamento (2-5€/mese) e formato di riepilogo JSON su richiesta, `key_takeaways`: Le idee più promettenti sfruttano competenze rare combinate (computer vision + fitness, audio + musica); il JSON viene generato solo su richiesta esplicita dell'utente, mai automaticamente né inviato a endpoint esterni.
+- **Sessione studio alberi Heap e Priority Queue** (`episode-sessione-spiegazione-heap`)
+  - **Tags:** `#chat` `#sessione-studio` `#algoritmi`
+  - **Sintesi:** Interazione formativa focalizzata sui principi teorico-pratici dei binary heap e sulla loro implementazione in memoria continua.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Alberi Heap e strutture dati correlate, `key_takeaways`: Relazione tra forma quasi-completa e array flat; efficienza O(log n) per code con priorità e O(n) per build-heap.
 - **Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway)** (`ep-20260827-telegram-cognitive-hub-spec`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:37:03CEST: Specifiche Tecniche e Mappatura Comandi dell'Hub Cognitivo Telegram (0€ Webhook Gateway)
@@ -4055,6 +4067,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-sessione-di-lavoro-5986`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-smart-rating-gate-promo-code`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-spiegazione-alberi-heap`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4206,6 +4219,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_INTENT]--> (`user-intent-accorciamento-cappello-capitolo-6`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
 - (`episode-sessione-di-lavoro-5986`) --[RECORDS_INTENT]--> (`user-intent-sessione-di-lavoro-5986`) *(Corpo Calloso)*
+- (`episode-sessione-spiegazione-heap`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-alberi-heap`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_INTENT]--> (`user-intent-calcolo-rendimento-azione-86euro`) *(Corpo Calloso)*
 - (`episode-smart-rating-gate`) --[RECORDS_INTENT]--> (`user-intent-smart-rating-gate-promo-code`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
@@ -4291,6 +4305,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-sintetica-testo`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
 - (`episode-sessione-di-lavoro-5986`) --[RECORDS_REASONING]--> (`reasoning-sessione-di-lavoro-5986`) *(Corpo Calloso)*
+- (`episode-sessione-spiegazione-heap`) --[RECORDS_REASONING]--> (`reasoning-analisi-struttura-heap`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_REASONING]--> (`ai-reasoning-proiezione-capital-gain-86euro`) *(Corpo Calloso)*
 - (`episode-smart-rating-gate`) --[RECORDS_REASONING]--> (`reasoning-smart-rating-gate-implementation`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_REASONING]--> (`reasoning-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
@@ -4792,6 +4807,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-analisi-stack-grafico-universal-brain`) --[FULFILLS]--> (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
+- (`reasoning-analisi-struttura-heap`) --[FULFILLS]--> (`user-intent-spiegazione-alberi-heap`)
 - (`reasoning-apppalette-chicche-ux-verification`) --[FULFILLS]--> (`user-intent-apppalette-chicche-ux-secret-code`)
 - (`reasoning-apppalette-in-app-review-verification`) --[FULFILLS]--> (`user-intent-apppalette-in-app-review-gate`)
 - (`reasoning-apppalette-pro-i18n-audit-fix`) --[FULFILLS]--> (`user-intent-apppalette-pro-multilingua-perfezionamento`)
@@ -4967,6 +4983,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-sintesi-cappello-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-sessione-di-lavoro-5986`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-sessione-spiegazione-heap`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-simulazione-rendimento-azionario-86euro`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-smart-rating-gate`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
