@@ -1,3 +1,13 @@
+---
+title: Universal AI Brain
+emoji: 🧠
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # 🧠 Universal AI Brain (Connettoma Cognitivo Universale)
 > **Persistent Bi-Hemispheric Knowledge Graph, Hierarchical Tree Engine, Dual-Ring Cloud Persistence & MCP Server for Autonomous Multi-Agent AI Systems**  
 > *100% Zero-Cost Architecture (0,00€ Forever) · FastAPI · SQLite WAL + FTS5 · Bidirectional BFS · Model Context Protocol (MCP) · Telegram Gateway · 24/7 Keep-Alive Daemon*
