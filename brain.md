@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-23 17:04:29 UTC | **Nodi Restituiti:** 687 (SX: 473 · DX: 214) | **Sinapsi Restituite:** 1570
-> **Consistenza Reale Connettoma:** 687 Nodi Totali nel Database | 1570 Sinapsi Totali
+> **Data Generazione:** 2026-09-23 17:04:48 UTC | **Nodi Restituiti:** 688 (SX: 474 · DX: 214) | **Sinapsi Restituite:** 1570
+> **Consistenza Reale Connettoma:** 688 Nodi Totali nel Database | 1570 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -1083,6 +1083,18 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#ios` `#swiftui` `#swiftdata` `#subtracker` `#widgets` `#biometrics` `#swiftcharts`
   - **Sintesi:** Completamento di tutte le 12 task evolutive per l'app SubTracker iOS
   - **Dettagli:** `raw`: Completato piano di evoluzione SubTracker in 12 task: Splash screen animata con liquid glow e dissolve transition, architettura di navigazione a 4 tab (MainTabView), catalogo 35+ preset rapidi, prove gratuite con allarmi 24/48h, SubscriptionDetailView con spesa storica cumulativa, calendario dinamico rinnovi (CalendarView) con puntini cromatici per categoria, statistiche avanzate con Swift Charts (SectorMark ciambella, BarMark previsione a 12 mesi), protezione biometrica Face ID/Touch ID con tendina privacy per App Switcher, report PDF vettoriale e CSV con UTF-8 BOM, WidgetKit Small/Medium/Accessory per iOS, localizzazione integrale in 6 lingue. Zero errori, Quality Gate verificato con successo.
+
+### [Macro-Label: `FIX`]
+- **AppPalette Screenshot Editor Export Fix** (`apppalette_screenshot_export_fix`)
+  - **Tags:** `#screenshot_editor` `#html-to-image` `#apppalette` `#mockups` `#export`
+  - **Sintesi:** Resolved missing screenshots in AppPalette screenshot_editor export bundle by switching device frame screenshots to <img> tags and preloading localized assets.
+  - **Dettagli:** `raw`: Fixed screenshot export in AppPalette/screenshot_editor where exported bundles lacked app screenshots inside phone frames:
+1. Root cause: ScreenshotImage rendered as a <div> with CSS backgroundImage: url(...). In html-to-image, getComputedStyle includes background shorthand which clobbers background-size to auto, skips embedProp('background-image'), and prevents SVG ForeignObject from drawing relative/external images. Moreover, querySelectorAll('img') in waitUntilImagesLoaded skipped it.
+2. Solution:
+   - Converted ScreenshotImage in device-frames.tsx to use an <img> tag with object-fit: cover, object-position: top center, and display: block, with isolation: isolate on parent container.
+   - Pre-loaded all localized screenshot data URLs for all deck slides in exportAll prior to starting capture.
+   - Updated image-cache.ts to properly resolve and return fallback data URLs.
+   - Localized all slide badges for all languages (it, en, es, fr, de).
 
 ### [Macro-Label: `MENTAL_MODEL`]
 - **Bayesian Updating (Aggiornamento Bayesiano)** (`firmware-bayesian-updating`)
