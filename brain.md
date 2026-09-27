@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-27 15:46:02 UTC | **Nodi Restituiti:** 697 (SX: 480 · DX: 217) | **Sinapsi Restituite:** 1591
-> **Consistenza Reale Connettoma:** 697 Nodi Totali nel Database | 1591 Sinapsi Totali
+> **Data Generazione:** 2026-09-27 15:47:01 UTC | **Nodi Restituiti:** 698 (SX: 481 · DX: 217) | **Sinapsi Restituite:** 1594
+> **Consistenza Reale Connettoma:** 698 Nodi Totali nel Database | 1594 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -598,6 +598,10 @@
   - **Tags:** `#domain-hub` `#matematica` `#algoritmi` `#statistica` `#fisica` `#teoria-informazione`
   - **Sintesi:** Matematica pura e applicata, Algoritmica teorica, Statistica, Fisica, Teoria dell'Informazione e Modelli Formali.
   - **Dettagli:** `scope`: Mathematical modeling, algorithms, statistics, complexity theory
+- **Framework di Logging Sperimentale e CSV Dual-Table** (`pipeline-experiment-logging-framework`)
+  - **Tags:** `#logging` `#csv-report` `#5fold-cv` `#mg-dvon`
+  - **Sintesi:** Sistema automatizzato di directory esperimento timestamped, telemetria real-time su terminale e generazione file CSV unificato a due tabelle.
+  - **Dettagli:** `csv_format`: 2 tabelle: Valori ottimali per fold ed epoca + Statistiche aggregate (Media, Dev.Std, Min, Max), `experiment_structure`: ['models/', 'heatmaps/', 'plots/', 'metrics/'], `runner`: research/run_5fold_cv.py, `unbuffered_logging`: True
 - **Graphify Codebase Knowledge Extractor** (`graphify-knowledge-engine`)
   - **Tags:** `#graphify` `#ast` `#knowledge-graph` `#god-nodes` `#community-detection`
   - **Sintesi:** Motore di analisi statica AST e semantica che rileva community, nodi baricentrici (God Nodes) e ponti architetturali nel repository.
@@ -3777,6 +3781,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[COMMITTED_TO]--> (`zero-debt-cost-rule`) *(Corpo Calloso)*
 - (`brand-voice-surgical`) --[COMPLEMENTS]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
 - (`architecture-mg-dvon-busbra`) --[CONCEIVED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`pipeline-experiment-logging-framework`) --[CONFIGURED_FOR]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[CONTAINS_MODULE]--> (`aule-studio-mobile-ui`) *(Corpo Calloso)*
 - (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`3d-force-galaxy-view`) *(Corpo Calloso)*
 - (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ui-gauge-widget-alcolsafe`) *(Corpo Calloso)*
@@ -4428,6 +4433,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`identity-cs-researcher`) --[AUTHORED]--> (`proj-kdp-ai-book`)
 - (`architecture-mg-dvon-busbra`) --[BELONGS_TO]--> (`domain-medicina-salute`)
 - (`dataset-birads-structured-busbra`) --[BELONGS_TO]--> (`domain-medicina-salute`)
+- (`pipeline-experiment-logging-framework`) --[BELONGS_TO]--> (`domain-medicina-salute`)
 - (`reasoning-gesture-zoom-terminal-dock-tabs`) --[BELONGS_TO]--> (`domain-software-engineering`)
 - (`ui-bottom-terminal-dock`) --[BELONGS_TO]--> (`domain-design-creativita`)
 - (`aule-studio-app`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
@@ -4857,6 +4863,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2447`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`voice-voglio-portare-a-spasso-il-cane-perch-mi-provoca-t-1518`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`)
+- (`pipeline-experiment-logging-framework`) --[EXTENDS]--> (`pipeline-mg-dvon-busbra-research`)
 - (`user-intent-provenance-model-tracking`) --[EXTENDS]--> (`ai-memory-ingest-spec`)
 - (`proj-jarvis-voice-assistant`) --[EXTENDS_BRAIN]--> (`universal-ai-brain`)
 - (`concept-graph-of-graphs-hypergraph`) --[EXTENDS_MODULARITY]--> (`concept-modular-domain-subgraphs`)
