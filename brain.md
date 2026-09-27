@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-27 15:12:40 UTC | **Nodi Restituiti:** 688 (SX: 474 · DX: 214) | **Sinapsi Restituite:** 1570
-> **Consistenza Reale Connettoma:** 688 Nodi Totali nel Database | 1570 Sinapsi Totali
+> **Data Generazione:** 2026-09-27 15:13:29 UTC | **Nodi Restituiti:** 691 (SX: 476 · DX: 215) | **Sinapsi Restituite:** 1577
+> **Consistenza Reale Connettoma:** 691 Nodi Totali nel Database | 1577 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -157,6 +157,10 @@
   - **Tags:** `#liquid-glassmorphism` `#design-system` `#apple-style` `#subtracker` `#css3`
   - **Sintesi:** Estrazione dei token grafici da SwiftUI (HeroCardView indaco-viola #5959F2-#8C59E6, PaywallView arancio-rosa #FF9500-#FF2D55, Dark OLED #06070B), creazione di una landing page index.html con mockup 3D iPhone 16 Pro e calcolatore spese live, e refactoring radicale di support.html e privacy-policy.html con assets unificati.
   - **Dettagli:** `actions_taken`: ['Analisi approfondita palette e componenti SwiftUI (HeroCardView, PaywallView, SubscriptionCardView)', 'Creazione design system unificato in assets/style.css e assets/app.js', 'Creazione master landing page index.html con mockup iPhone 16 Pro e calcolatore spese live', 'Rifacimento totale di support.html con ricerca live e privacy-policy.html con tab interattivi', 'Verifica sintassi JS e test navigazione incrociata'], `model`: Gemini 3.8 Flash, `outcome`: Presenza web completa, elegante e interattiva perfettamente allineata all'app iOS, `responses_given`: Analisi, piano approvato ed esecuzione con creazione di landing page e refactoring delle sottopagine
+- **Architettura e Metodologia Paper BUSBRA Mask-Guided** (`reasoning-busbra-multitask-paper-architecture`)
+  - **Tags:** `#multitask-learning` `#ordinal-classification` `#dual-view` `#busbra` `#foundation-model`
+  - **Sintesi:** Proposta metodologica per superare i limiti della tesi: Multi-Task Learning con maschere, Ordinal Classification per BI-RADS, Dual-View Cross-Attention e LoRA/PEFT su Foundation Model.
+  - **Dettagli:** `actions_taken`: ['Analisi capitoli tesi (_capitoli)', 'Audit dataset BUSBRA (1875 immagini, 1878 maschere, 1064 casi, 811 dual-view)', 'Ricerca letteratura SOTA 2024-2026 (ordinal BI-RADS, mask-guided learning, foundation model PEFT)', 'Progettazione architettura MG-DVON (Mask-Guided Dual-View Ordinal Network)', 'Strutturazione blueprint paper per journal Q1 (MedIA/IEEE TMI/CMPB)'], `model`: Gemini 3.8 Flash, `outcome`: Pipeline metodologica pronta con formulazione matematica, design sperimentale, ablation study e cross-dataset validation., `responses_given`: Analisi critica tesi, 5 pilastri metodologici di miglioramento, paper blueprint strutturato e protocollo validazione clinica.
 - **Architettura e Realizzazione Video Showcase 60s** (`reasoning-creazione-video-showcase-universal-brain`)
   - **Tags:** `#video-engine` `#multimedia` `#canvas-1080p` `#web-audio` `#media-recorder`
   - **Sintesi:** Progettazione e implementazione del video engine interattivo a 6 scene in 60 secondi con sintesi vocale, musica cyberpunk procedurale, export video 1080p e kit promozionale.
@@ -2626,6 +2630,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#didattica` `#self-attention` `#causal-inference` `#confounders` `#decorrelation`
   - **Sintesi:** Richiesta di chiarimento divulgativo e intuitivo sui concetti cardine di self-attention, inferenza causale, confounders e decorrelazione delle feature.
   - **Dettagli:** `user_prompt`: mi spieghi cosa 'è la self attention, inferenza causale, decorrelazione delle feature, feature confounders. però in modo semplice, `context`: Necessità di comprensione concettuale e intuitiva dei pilastri matematico-statistici della tesi.
+- **Strategia Paper Scientifico BUSBRA e Maschere** (`user-intent-busbra-paper-strategy`)
+  - **Tags:** `#busbra` `#deep-learning` `#paper-research` `#breast-ultrasound`
+  - **Sintesi:** Evoluzione della tesi triennale/magistrale su BUSBRA in paper scientifico Q1 mediante integrazione maschere, ordinal classification e foundation models.
+  - **Dettagli:** `context`: Tesi sperimentale su BUS-BRA con ResNet-34, SimCLR e USF-MAE. Maschere finora inutilizzate. Necessità di scalare a pubblicazione scientifica di alto impatto con SOTA recente., `user_prompt`: considerando ciò che ho scritto nella mia tesi... maschere BUSBRA... letteratura recente... risultati migliori... strutturare studio di ricerca per Paper... aggiorna cervello
 - **Tracciamento Richiesta Utente & Modello AI nella Memoria** (`user-intent-provenance-model-tracking`)
   - **Tags:** `#user-intent` `#model-attribution` `#context-preservation` `#cross-model-memory` `#episodic-tracking`
   - **Sintesi:** Proposta utente: includere nel JSON di ingestione il prompt integrale e il modello AI sorgente per preservare contesto e consentire recall cross-modello.
@@ -2817,6 +2825,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#openjarvis` `#continuità-cognitiva`
   - **Sintesi:** Validazione end-to-end completata: OpenJarvis legge il connettoma, esegue inferenza su Ollama e restituisce la descrizione accurata di Pierfrancesco.
   - **Dettagli:** `raw`: `key_takeaways`: OpenJarvis risponde perfettamente usando gpt-oss:120b-cloud via Ollama e il connettoma Universal AI Brain., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash', 'OpenJarvis gpt-oss:120b-cloud'], `pending_tasks`: Nessuno, sistema pronto all'uso vocale e interattivo, `topic`: Verifica Risposta OpenJarvis con Ollama e Cervello Artificiale
+- **Episodio Evoluzione Tesi BUSBRA in Paper** (`episode-busbra-thesis-to-paper-evolution`)
+  - **Tags:** `#tesi` `#paper` `#busbra` `#brain-sync`
+  - **Sintesi:** Sessione di consultazione strategica per strutturare studio scientifico e pubblicazione su classificazione ecografica mammaria.
+  - **Dettagli:** `key_takeaways`: L'uso delle maschere come regularizzatore spaziale (MTL) e l'approccio ordinale per BI-RADS colmano il divario prestazionale della tesi; dual-view sfrutta l'86% dei dati a 2 viste., `participants`: ['Pierfrancesco Amendola', 'Antigravity (Gemini 3.8 Flash)'], `pending_tasks`: Implementazione modulo PyTorch multi-task mask-guided, test ordinal loss (CORAL/Wasserstein), estrazione dual-view e benchmark cross-dataset su BUSI., `topic`: Transizione Tesi -> Paper Scientifico su BUSBRA
 - **Episodio Kickoff Life Registry & Grill-Me Interview** (`episode-life-registry-kickoff-alignment`)
   - **Tags:** `#episode` `#life-registry` `#kickoff`
   - **Sintesi:** Episodio di kickoff per la specifica Life Registry e prima domanda di design.
@@ -4033,6 +4045,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-audit-critico-e-mockup-fr-2255`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-backend-optimization-hybrid`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-busbra-paper-strategy`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-calcolo-rendimento-azione-86euro`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4194,6 +4207,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-bonifica-storage-ollama-mac`) --[RECORDS_INTENT]--> (`user-intent-rimozione-modello-ollama-mac`) *(Corpo Calloso)*
 - (`episode-brainstorming-app-abbonamento-e-json-memoria`) --[RECORDS_INTENT]--> (`user-intent-idee-app-abbonamento-monetizzabili`) *(Corpo Calloso)*
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[RECORDS_INTENT]--> (`user-intent-ricerca-idee-app-abbonamento-micro-saas`) *(Corpo Calloso)*
+- (`episode-busbra-thesis-to-paper-evolution`) --[RECORDS_INTENT]--> (`user-intent-busbra-paper-strategy`) *(Corpo Calloso)*
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_INTENT]--> (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[RECORDS_INTENT]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`) *(Corpo Calloso)*
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8793`) --[RECORDS_INTENT]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) *(Corpo Calloso)*
@@ -4281,6 +4295,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-bonifica-storage-ollama-mac`) --[RECORDS_REASONING]--> (`reasoning-risoluzione-residui-ollama-mac`) *(Corpo Calloso)*
 - (`episode-brainstorming-app-abbonamento-e-json-memoria`) --[RECORDS_REASONING]--> (`reasoning-idee-app-basate-su-competenze-uniche`) *(Corpo Calloso)*
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[RECORDS_REASONING]--> (`ai-reasoning-analisi-psicologia-prezzo-micro-abbonamenti`) *(Corpo Calloso)*
+- (`episode-busbra-thesis-to-paper-evolution`) --[RECORDS_REASONING]--> (`reasoning-busbra-multitask-paper-architecture`) *(Corpo Calloso)*
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[RECORDS_REASONING]--> (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) *(Corpo Calloso)*
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[RECORDS_REASONING]--> (`reasoning-che-ne-pensi-del-mio-cervello-artif-8743`) *(Corpo Calloso)*
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8793`) --[RECORDS_REASONING]--> (`reasoning-che-ne-pensi-del-mio-cervello-artif-8793`) *(Corpo Calloso)*
@@ -4845,6 +4860,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-architettura-universal-ai-hub`) --[FULFILLS]--> (`user-intent-universal-ai-hub-client`)
 - (`reasoning-audit-critico-e-mockup-fr-2255`) --[FULFILLS]--> (`user-intent-audit-critico-e-mockup-fr-2255`)
 - (`reasoning-backend-audit-and-fix`) --[FULFILLS]--> (`user-intent-backend-optimization-hybrid`)
+- (`reasoning-busbra-multitask-paper-architecture`) --[FULFILLS]--> (`user-intent-busbra-paper-strategy`)
 - (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) --[FULFILLS]--> (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`)
 - (`reasoning-caratterizzazione-trasduttore-lineare`) --[FULFILLS]--> (`user-intent-definizione-ecografo-trasduttore-lineare`)
 - (`reasoning-che-ne-pensi-del-mio-cervello-artif-8743`) --[FULFILLS]--> (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`)
@@ -4961,6 +4977,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-bonifica-storage-ollama-mac`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-brainstorming-app-abbonamento-e-json-memoria`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-busbra-thesis-to-paper-evolution`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8793`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5056,6 +5073,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-architettura-jarvis-zero-cost`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-audit-critico-e-mockup-fr-2255`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-busbra-multitask-paper-architecture`) --[OPTIMIZES]--> (`domain-medicina-salute`)
 - (`reasoning-c-un-problema-vorrei-sapere-di-pi-3203`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-che-ore-sono-3134`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-cloud-git-auto-push`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -5176,6 +5194,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-audit-critico-e-mockup-fr-2255`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-backend-optimization-hybrid`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-busbra-paper-strategy`) --[TARGETS_PROJECT]--> (`domain-medicina-salute`)
 - (`user-intent-c-un-problema-vorrei-sapere-di-pi-3203`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-che-ne-pensi-del-mio-cervello-artif-8743`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-che-ne-pensi-del-mio-cervello-artif-8793`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
