@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-27 15:39:13 UTC | **Nodi Restituiti:** 694 (SX: 478 · DX: 216) | **Sinapsi Restituite:** 1584
-> **Consistenza Reale Connettoma:** 694 Nodi Totali nel Database | 1584 Sinapsi Totali
+> **Data Generazione:** 2026-09-27 15:40:15 UTC | **Nodi Restituiti:** 697 (SX: 480 · DX: 217) | **Sinapsi Restituite:** 1591
+> **Consistenza Reale Connettoma:** 697 Nodi Totali nel Database | 1591 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -783,6 +783,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#mutation-import` `#devops-timeline` `#graph-state`
   - **Sintesi:** Commit 965f0a8 (110 Nodes, 253 Synapses) (Layer: DEVOPS_TIMELINE, Tipo: GRAPH_STATE)
   - **Dettagli:** `raw`: `id`: node_commit_965f0a8, `label`: Commit 965f0a8 (110 Nodes, 253 Synapses), `type`: GRAPH_STATE, `layer`: DEVOPS_TIMELINE
+- **Documentazione Scientifica Master MG-DVON** (`doc-master-research-mg-dvon`)
+  - **Tags:** `#documentation` `#paper` `#mg-dvon` `#research`
+  - **Sintesi:** Documento esaustivo e approfondito che descrive ogni dettaglio matematico, clinico e ingegneristico della ricerca su BUSBRA per pubblicazione Q1.
+  - **Dettagli:** `file_path`: DOCUMENTAZIONE_RICERCA_MG_DVON.md, `sections`: ['Abstract e Visione', 'Analisi Forense Heatmap e Fix Maschere', 'Tassonomia Dataset 16 Directory', 'Data Augmentation Ultrasuoni', 'Architettura MG-DVON', 'Loss Multi-Task e CORAL', 'Protocollo 5-Fold CV', 'Blueprint Paper Q1', 'Comandi CLI']
 - **Documentazione Ufficiale FastAPI Dependency Injection** (`web-test-fastapi-docs`)
   - **Tags:** `#web-clipper` `#fastapi` `#python`
   - **Sintesi:** FastAPI Dependency Injection system provides clean hierarchical dependency management.
@@ -1051,6 +1055,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#data-structure` `#tree` `#mst` `#dendrogram` `#semantic-zoom`
   - **Sintesi:** Struttura ad albero ponderata sovrapposta al grafo per estrazione gerarchica dei temi: Radice -> Emisferi -> Cluster -> Nodi atomici.
   - **Dettagli:** `raw`: `application`: Zoom semantico da macro-concetti a micro-dettagli
+- **Dataset BUSBRA Strutturato BI-RADS x Patologia** (`dataset-birads-structured-busbra`)
+  - **Tags:** `#dataset` `#busbra` `#birads` `#data-organization`
+  - **Sintesi:** Partizionamento a 16 directory del dataset BUSBRA (4 classi BI-RADS x 2 classi patologiche x immagini e maschere separate).
+  - **Dettagli:** `birads_2`: {'benigna': 552, 'benigna_maschere': 552, 'maligna': 10, 'maligna_maschere': 10}, `birads_3`: {'benigna': 432, 'benigna_maschere': 432, 'maligna': 31, 'maligna_maschere': 31}, `birads_4`: {'benigna': 280, 'benigna_maschere': 280, 'maligna': 413, 'maligna_maschere': 413}, `birads_5`: {'benigna': 4, 'benigna_maschere': 4, 'maligna': 153, 'maligna_maschere': 153}, `path`: BUSBRA/BIRADS_DATASET, `total_images`: 1875, `total_masks`: 1875
 - **Fondamenti Teorici & Coursework UNINA** (`coursework-cs-federico2`)
   - **Tags:** `#unina` `#mogavero` `#setvec` `#relational-algebra` `#s-programs` `#theory-of-computation`
   - **Sintesi:** Solida preparazione teorica: strutture dati SetVec/SetLst (Prof. Mogavero), algebra relazionale estesa e S-Programs.
@@ -3169,6 +3177,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:34:46CEST: Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo
   - **Dettagli:** `raw`: `session_id`: ep_20260827_hierarchical_tree_deployment_sync, `timestamp`: 2026-08-27T20:34:46CEST, `topic`: Rilascio e Sincronizzazione dell'Hierarchical Tree Engine e degli Strumenti MCP nel Cervello Cognitivo, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Risoluzione Heatmap e Strutturazione BI-RADS** (`episode-busbra-birads-reorganization`)
+  - **Tags:** `#busbra` `#heatmaps` `#birads` `#documentation`
+  - **Sintesi:** Sessione correttiva e di potenziamento strutturale per BUSBRA: dataset ripartito, fix caricamento maschere, data augmentation e documentazione master.
+  - **Dettagli:** `key_takeaways`: Risolto bug di caricamento maschere (prefisso mask_ vs bus_), spiegata causa attivazione Grad-CAM su scritte ecografo, riorganizzato dataset in 16 cartelle BI-RADS, redatto documento master .md e predisposto runner 5-fold CV., `participants`: ['Pierfrancesco Amendola', 'Antigravity (Gemini 3.8 Flash)'], `pending_tasks`: Lancio esecuzione completa run_5fold_cv.py a 20-25 epoche per generazione tabella risultati aggregata per il paper., `topic`: Risoluzione Heatmap, Riorganizzazione BI-RADS e Redazione Documentazione Master
 - **Sessione Alternative di Guadagno Digitale** (`episode-alternative-monetization-brainstorming`)
   - **Tags:** `#chat` `#strategia` `#side-business` `#idee-monetizzazione`
   - **Sintesi:** Definizione di quattro percorsi operativi di guadagno a costo zero per raggiungere il target di 100-500€ mensili.
@@ -3719,6 +3731,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-software-engineering`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ARCHITECT_OF]--> (`universal-ai-brain`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[AUTHORED]--> (`proj-kdp-ai-guide`) *(Corpo Calloso)*
+- (`doc-master-research-mg-dvon`) --[AUTHORED_FOR]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[AUTHOR_OF]--> (`proj-kdp-ai-book`) *(Corpo Calloso)*
 - (`app-store-marketing-assets-subtracker`) --[BELONGS_TO]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
 - (`screenshot-editor-bilingual-deck`) --[BELONGS_TO]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
@@ -4169,6 +4182,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[MASTERS_STACK]--> (`fastapi-python-stack`) *(Corpo Calloso)*
 - (`reasoning-appscadenza-in-app-subscriptions`) --[OPTIMIZES]--> (`proj-appscadenza`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[ORCHESTRATED]--> (`session-continuous-evolution`) *(Corpo Calloso)*
+- (`dataset-birads-structured-busbra`) --[ORGANIZED_FOR]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[OWNS]--> (`project-royal-gambit-chess`) *(Corpo Calloso)*
 - (`arch-telegram-webhook-gateway`) --[PART_OF]--> (`episode-2026-08-27-telegram-omnipresence`) *(Corpo Calloso)*
 - (`idea-hierarchical-weighted-trees`) --[PART_OF]--> (`episode-2026-08-27-tree-structures-evaluation`) *(Corpo Calloso)*
@@ -4200,6 +4214,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-episodic-memory-architecture`) --[REASONED_DURING]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[RECORDED_EPISODE]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`episode-busbra-mg-dvon-implementation`) --[RECORDS_ARCHITECTURE]--> (`architecture-mg-dvon-busbra`) *(Corpo Calloso)*
+- (`episode-busbra-birads-reorganization`) --[RECORDS_DOCUMENTATION]--> (`doc-master-research-mg-dvon`) *(Corpo Calloso)*
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_INTENT]--> (`user-intent-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-avvio-intervista-universal-ai-hub`) --[RECORDS_INTENT]--> (`user-intent-universal-ai-hub-client`) *(Corpo Calloso)*
 - (`episode-20260829-chiusura-jarvis-nuovo-progetto`) --[RECORDS_INTENT]--> (`user-intent-abbandono-jarvis-nuovo-progetto`) *(Corpo Calloso)*
@@ -4412,6 +4427,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)
 - (`identity-cs-researcher`) --[AUTHORED]--> (`proj-kdp-ai-book`)
 - (`architecture-mg-dvon-busbra`) --[BELONGS_TO]--> (`domain-medicina-salute`)
+- (`dataset-birads-structured-busbra`) --[BELONGS_TO]--> (`domain-medicina-salute`)
 - (`reasoning-gesture-zoom-terminal-dock-tabs`) --[BELONGS_TO]--> (`domain-software-engineering`)
 - (`ui-bottom-terminal-dock`) --[BELONGS_TO]--> (`domain-design-creativita`)
 - (`aule-studio-app`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
@@ -4847,6 +4863,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`repo-github-universal-ai-brain`) --[FEEDS_DEPLOY]--> (`deploy-render-zero-cost`)
 - (`node-ubiquitous-ingestion`) --[FEEDS_REALTIME_DATA_INTO]--> (`node-knowledge-graph-memory`)
 - (`ai-reasoning-infinite-context-architecture`) --[FORMALIZES]--> (`user-intent-infinite-context-persistence`)
+- (`doc-master-research-mg-dvon`) --[FORMALIZES]--> (`architecture-mg-dvon-busbra`)
 - (`node-neuro-symbolic-brain`) --[FORMALLY_CLASSIFIED_AS]--> (`node-universal-ai-brain-taxonomy`)
 - (`ai-reasoning-episodic-memory-architecture`) --[FORMULATED_RULE]--> (`rule-episodic-chat-preservation`)
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-crescita-personale`)
@@ -4993,6 +5010,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-bonifica-storage-ollama-mac`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-brainstorming-app-abbonamento-e-json-memoria`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-busbra-birads-reorganization`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-busbra-mg-dvon-implementation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-busbra-thesis-to-paper-evolution`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5191,6 +5209,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-decision-storekit-entitlements`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-swiftdata-relational-model`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
 - (`reasoning-decision-tabbar-navigation`) --[RESOLVES]--> (`user-intent-migrate-and-life-registry-grill`)
+- (`doc-master-research-mg-dvon`) --[RESOLVES_DEFECT]--> (`pipeline-mg-dvon-busbra-research`)
 - (`concept-llm-indirect-injection-safeguard`) --[RESOLVES_ISSUE_OF]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[RESPONDS_TO_INTENT]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`person-pierfrancesco`) --[ROOTED_IN]--> (`rel-napoli-culture`)
