@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-27 15:28:08 UTC | **Nodi Restituiti:** 691 (SX: 476 · DX: 215) | **Sinapsi Restituite:** 1577
-> **Consistenza Reale Connettoma:** 691 Nodi Totali nel Database | 1577 Sinapsi Totali
+> **Data Generazione:** 2026-09-27 15:28:47 UTC | **Nodi Restituiti:** 694 (SX: 478 · DX: 216) | **Sinapsi Restituite:** 1584
+> **Consistenza Reale Connettoma:** 694 Nodi Totali nel Database | 1584 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -617,6 +617,10 @@
   - **Tags:** `#javascript` `#threejs` `#webgl` `#mediapipe` `#gesture-control`
   - **Sintesi:** Motore fisico generativo 3D in tempo reale con controllo tramite gesture della mano via computer vision.
   - **Dettagli:** `raw`: `stack`: Vanilla JS, Three.js, WebGL, MediaPipe Hand Landmarker, `performance`: 60 FPS rock-solid, `distribution`: GitHub Open Source
+- **Pipeline Sperimentale e Grad-CAM MG-DVON** (`pipeline-mg-dvon-busbra-research`)
+  - **Tags:** `#pipeline` `#evaluation` `#gradcam` `#busbra`
+  - **Sintesi:** Pipeline sperimentale autonoma per validazione 5-fold CV su BUSBRA con estrazione automatica di curve ROC, matrici di confusione e heatmap Grad-CAM cliniche.
+  - **Dettagli:** `components`: ['dataset.py (loader dual-view con maschere)', 'models.py (MG_DVON)', 'losses.py (MultiTaskLoss con Dice+BCE, Focal, CORAL)', 'metrics.py (B/M AUC e BI-RADS Quadratic Kappa)', 'explainability.py (Grad-CAM 4-panel visualizer)', 'train.py e evaluate.py'], `metrics_epoch_1`: {'birads_quadratic_kappa': 0.4692, 'bm_auc': 0.7961, 'bm_sensitivity': 0.7647}, `outputs_dir`: research/outputs
 - **REGEXRIDDLE** (`proj-regexriddle`)
   - **Tags:** `#regex` `#gamification` `#typescript` `#fsm`
   - **Sintesi:** Tool gamificato per il testing, parsing e apprendimento visivo di espressioni regolari mediante automi a stati.
@@ -735,6 +739,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#hypergraph` `#graph-of-graphs` `#multiscale` `#fractal-topology` `#semantic-drilldown`
   - **Sintesi:** Modello a iper-grafo gerarchico in cui i nodi di livello superiore contengono sotto-grafi completi, simulando un palazzo a più piani concettuali.
   - **Dettagli:** `raw`: `levels`: L0 (Macro-Domini) -> L1 (Progetti/Aree) -> L2 (Moduli/Sistemi) -> L3 (Entità Atomiche), `formal_name`: Hierarchical Clustered Hypergraph / Multi-Layer Network
+- **Architettura MG-DVON per Ecografia Mammaria** (`architecture-mg-dvon-busbra`)
+  - **Tags:** `#mg-dvon` `#busbra` `#multitask` `#ordinal` `#dual-view` `#grad-cam`
+  - **Sintesi:** Architettura deep learning unificata multi-task: segmentazione maschere lesionali, fusione viste ortogonali con cross-attention, classificazione ordinale CORAL per BI-RADS e binaria per malignità.
+  - **Dettagli:** `components`: ['Shared ResNet-34 multi-scale encoder', 'Lightweight U-Net segmentation decoder for lesion masks', 'Mask-Gated feature attention (intra-tumoral + margin)', 'Dual-View Cross-Attention module (orthogonal views)', 'Binary Focal Head for Benign/Malignant', 'CORAL Ordinal Head for BI-RADS 2-5'], `device`: Apple Silicon MPS and CUDA, `framework`: PyTorch 2.14, `model_name`: MG-DVON (Mask-Guided Dual-View Ordinal Network)
 - **Architettura Webhook Telegram 0€ (FastAPI + Bot API)** (`arch-telegram-webhook-gateway`)
   - **Tags:** `#telegram-bot` `#webhook` `#fastapi` `#zero-cost` `#mobile-gateway`
   - **Sintesi:** Infrastruttura serverless su webhook FastAPI per ricezione comandi (/search, /path, /tree) e inserimento memorie asincrono 0€.
@@ -3137,6 +3145,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#universal-hub` `#sessione-chat`
   - **Sintesi:** Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su non riesci a connetterti al mio cer....
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: non riesci a connetterti al mio cer...
+- **Implementazione Operativa MG-DVON e Heatmap** (`episode-busbra-mg-dvon-implementation`)
+  - **Tags:** `#implementation` `#mg-dvon` `#paper` `#brain-sync`
+  - **Sintesi:** Costruzione completa dell'ambiente virtuale, dell'architettura neurale, del modulo Grad-CAM e verifica end-to-end con checkpoint e figure salvate.
+  - **Dettagli:** `key_takeaways`: Ambiente .venv Python 3.12 creato, codice modulare scritto e testato con successo su Apple Silicon MPS. Generati primi checkpoint e prime heatmap Grad-CAM., `participants`: ['Pierfrancesco Amendola', 'Antigravity (Gemini 3.8 Flash)'], `pending_tasks`: Esecuzione train completo a 25-30 epoche sui 5 fold, benchmark OOD su BUSI e redazione manoscritto paper., `topic`: Costruzione architettura MG-DVON, pipeline esperimenti e Grad-CAM per Paper
 - **Metacognizione e Sviluppo del Sistema AI** (`episode-system-metacognition`)
   - **Tags:** `#system-evaluation` `#meta-conversation` `#ai-development`
   - **Sintesi:** Sessione dedicata all'introspezione sistemica e al miglioramento dell'infrastruttura cognitiva dell'AI stessa.
@@ -3751,6 +3763,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[COMMISSIONED]--> (`feat-progressive-areas`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[COMMITTED_TO]--> (`zero-debt-cost-rule`) *(Corpo Calloso)*
 - (`brand-voice-surgical`) --[COMPLEMENTS]--> (`rule-zero-placeholder`) *(Corpo Calloso)*
+- (`architecture-mg-dvon-busbra`) --[CONCEIVED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`aule-studio-app`) --[CONTAINS_MODULE]--> (`aule-studio-mobile-ui`) *(Corpo Calloso)*
 - (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`3d-force-galaxy-view`) *(Corpo Calloso)*
 - (`domain-software-engineering`) --[CONTAINS_MODULE]--> (`ui-gauge-widget-alcolsafe`) *(Corpo Calloso)*
@@ -4186,6 +4199,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`kindle-c962fde43767`) --[READ_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`ai-reasoning-episodic-memory-architecture`) --[REASONED_DURING]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
 - (`universal-ai-brain`) --[RECORDED_EPISODE]--> (`chat-session-2026-08-27-ui-evolution`) *(Corpo Calloso)*
+- (`episode-busbra-mg-dvon-implementation`) --[RECORDS_ARCHITECTURE]--> (`architecture-mg-dvon-busbra`) *(Corpo Calloso)*
 - (`episode-20260829-architettura-connettoma-e-sync-prompt`) --[RECORDS_INTENT]--> (`user-intent-architettura-connettoma-web-vs-desktop`) *(Corpo Calloso)*
 - (`episode-20260829-avvio-intervista-universal-ai-hub`) --[RECORDS_INTENT]--> (`user-intent-universal-ai-hub-client`) *(Corpo Calloso)*
 - (`episode-20260829-chiusura-jarvis-nuovo-progetto`) --[RECORDS_INTENT]--> (`user-intent-abbandono-jarvis-nuovo-progetto`) *(Corpo Calloso)*
@@ -4397,6 +4411,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-design-creativita`)
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)
 - (`identity-cs-researcher`) --[AUTHORED]--> (`proj-kdp-ai-book`)
+- (`architecture-mg-dvon-busbra`) --[BELONGS_TO]--> (`domain-medicina-salute`)
 - (`reasoning-gesture-zoom-terminal-dock-tabs`) --[BELONGS_TO]--> (`domain-software-engineering`)
 - (`ui-bottom-terminal-dock`) --[BELONGS_TO]--> (`domain-design-creativita`)
 - (`aule-studio-app`) --[BELONGS_TO_DOMAIN]--> (`domain-software-engineering`)
@@ -4948,6 +4963,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`val-eternal-cognitive-continuity`) --[HELD_BY]--> (`person-pierfrancesco`)
 - (`session-continuous-evolution`) --[HOSTED_ON]--> (`repo-github-universal-ai-brain`)
 - (`concept-interhemispheric-inhibition-gating`) --[IMPLEMENTED_BY]--> (`algorithm-selective-hemispheric-activation`)
+- (`architecture-mg-dvon-busbra`) --[IMPLEMENTS]--> (`reasoning-busbra-multitask-paper-architecture`)
 - (`feat-subtracker-evolution`) --[IMPLEMENTS]--> (`proj-appabbonamenti`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[IMPLEMENTS]--> (`arch-subtracker-i18n-system`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[IMPLEMENTS]--> (`feature-subtracker-premium-analytics-report`)
@@ -4977,6 +4993,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-bonifica-storage-ollama-mac`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-brainstorming-app-abbonamento-e-json-memoria`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-brainstorming-app-abbonamento-micro-saas`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-busbra-mg-dvon-implementation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-busbra-thesis-to-paper-evolution`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-c-un-problema-vorrei-sapere-di-pi-3203`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-che-ne-pensi-del-mio-cervello-artif-8743`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5183,6 +5200,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[STRIVES_FOR]--> (`val-impact-utility`)
 - (`identity-cs-researcher`) --[STUDIED]--> (`coursework-cs-federico2`)
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
+- (`pipeline-mg-dvon-busbra-research`) --[TARGETS_DOMAIN]--> (`domain-medicina-salute`)
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-ai-shorts-evaluation`) --[TARGETS_PROJECT]--> (`domain-finanza-economia`)
 - (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
@@ -5262,5 +5280,6 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`identity-cs-researcher`) --[UTILIZES]--> (`arch-sqlite-wal`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[VALIDATES]--> (`user-intent-provenance-model-tracking`)
 - (`ai-reasoning-shared-cognitive-state-continuity`) --[VALIDATES]--> (`goal-multi-ai-shared-context-persistence`)
+- (`pipeline-mg-dvon-busbra-research`) --[VALIDATES]--> (`architecture-mg-dvon-busbra`)
 - (`ai-reasoning-multi-llm-mcp-skill-distribution`) --[VALIDATES_IMPLEMENTATION]--> (`skill-universal-brain-installed`)
 - (`person-pierfrancesco`) --[VALUES]--> (`val-independence`)
