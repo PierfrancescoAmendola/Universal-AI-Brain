@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 09:41:34 UTC | **Nodi Restituiti:** 720 (SX: 497 · DX: 223) | **Sinapsi Restituite:** 1634
-> **Consistenza Reale Connettoma:** 720 Nodi Totali nel Database | 1634 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 09:41:59 UTC | **Nodi Restituiti:** 721 (SX: 498 · DX: 223) | **Sinapsi Restituite:** 1635
+> **Consistenza Reale Connettoma:** 721 Nodi Totali nel Database | 1635 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -947,6 +947,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#advanced-databases` `#dispensa-esame` `#alta-densita` `#obsidian`
   - **Sintesi:** Compressione ad alta densità didattica: 28 pagine A4 totali per lezioni 1-4, zero concetti persi.
   - **Dettagli:** `raw`: Riscritti tutti i capitoli (Lezioni 1-4) in stile discorsivo denso accademico. Eliminati aneddoti storici, preamboli prolissi e ripetizioni. Preservate al 100% tutte le formule matematiche, dimostrazioni, parametri e valori numerici esatti di Riccio (30.000 record, BARI, 701, tabella comparativa costi, write penalty RAID, POPCNT, ecc.). Pagine totali stimate: 28 pagine A4 (~7 pagine a lezione). Master document ridotto da 146KB a 49KB.
+- **Integrazione Piramide Memorie e Operazioni sui File** (`adb_lezione2_pyramid_and_file_ops`)
+  - **Tags:** `#lezione-02` `#memory-pyramid` `#file-operations` `#advanced-databases`
+  - **Sintesi:** Completamento Lezione 2: piramide memorie, memorie primaria/secondaria/terziaria e operazioni record/set-at-a-time.
+  - **Dettagli:** `raw`: Integrata la piramide delle memorie fedele a Slide 3 (diagramma Ryan J. Leng con 5 livelli da Registri a HDD), spiegazione dettagliata delle memorie primarie (SRAM, DRAM, In-Memory DB), secondarie (DASD, SSD, HDD, Heap/Hash/Alberi B) e terziarie (juke-box dischi ottici WORM, juke-box nastri sequenziali in Petabyte per Disaster Recovery). Aggiunta la sezione sulle Operazioni sui file da Slide 16, distinte in record-at-a-time (Open, Close, Reset, Find, FindNext, Read, Insert, Delete, Modify) e set-at-a-time (Find All, Find n, FindOrdered, Reorganize). Sincronizzato con master document (33 pagine A4 stimate).
 - **Rimpicciolimento e Linearizzazione Diagrammi Advanced Databases** (`adb_diagram_ultra_compact_scaling`)
   - **Tags:** `#mermaid` `#compact` `#css`
   - **Sintesi:** Linearizzazione orizzontale e cap dimensionale per diagrammi compatti.
@@ -4969,6 +4973,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`voice-riflessione-sullantifragilit-nei-sistemi-software-2447`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`voice-voglio-portare-a-spasso-il-cane-perch-mi-provoca-t-1518`) --[EXPRESSED_BY]--> (`person-pierfrancesco`)
 - (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`)
+- (`adb_exam_density_compression`) --[EXTENDS]--> (`adb_lezione2_pyramid_and_file_ops`)
 - (`pipeline-experiment-logging-framework`) --[EXTENDS]--> (`pipeline-mg-dvon-busbra-research`)
 - (`user-intent-provenance-model-tracking`) --[EXTENDS]--> (`ai-memory-ingest-spec`)
 - (`proj-jarvis-voice-assistant`) --[EXTENDS_BRAIN]--> (`universal-ai-brain`)
