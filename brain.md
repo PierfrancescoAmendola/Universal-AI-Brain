@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 08:59:30 UTC | **Nodi Restituiti:** 717 (SX: 495 · DX: 222) | **Sinapsi Restituite:** 1627
-> **Consistenza Reale Connettoma:** 717 Nodi Totali nel Database | 1627 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 09:00:15 UTC | **Nodi Restituiti:** 720 (SX: 497 · DX: 223) | **Sinapsi Restituite:** 1634
+> **Consistenza Reale Connettoma:** 720 Nodi Totali nel Database | 1634 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -349,6 +349,10 @@
   - **Tags:** `#ollama` `#filesystem` `#bash` `#diagnosi`
   - **Sintesi:** Analisi dell'architettura di storage di Ollama su macOS: identificati i percorsi ~/.ollama/models/blobs e ~/Library/Application Support/Ollama con relativi comandi di rimozione sicura.
   - **Dettagli:** `model`: Gemini, `actions_taken`: ['Mappatura directory predefinita modelli Ollama (~/.ollama/models/blobs)', 'Fornitura comando di verifica dimensione disco (du -sh)', 'Fornitura comando di eliminazione ricorsiva sicura (rm -rf)'], `outcome`: Istruzioni fornite per il recupero immediato di 7GB di spazio su disco.
+- **Implementazione Architettura Espansione MuseoApp** (`reasoning-digital-art-museum-expansion-implementation`)
+  - **Tags:** `#flutter` `#plusjakartasans` `#i18n-6languages` `#subscription-paywall` `#29-tests-passed`
+  - **Sintesi:** Architettura completa di i18n, paywall freemium, gestione stato salvati/impostazioni e tipografia moderna.
+  - **Dettagli:** `actions_taken`: ['Creazione sistema di localizzazione MuseumLocalizations per 6 lingue: Italiano, Inglese, Spagnolo, Portoghese, Tedesco, Francese.', 'Adozione tipografia GoogleFonts.plusJakartaSans per un look smooth, moderno e ultra-leggibile su mobile.', 'Implementazione SavedArtworksScreen per gestione preferiti con accesso rapido da Top Bar (icona segnalibro) e Drawer.', 'Implementazione SettingsScreen con selettore lingua in tempo reale, opzioni tema, audio e link legali.', 'Creazione PrivacyPolicyScreen e TermsConditionsScreen con articoli completi localizzati.', 'Creazione SubscriptionScreen con piani $5.99/mese, $39.99/anno, 7 giorni di prova gratuita e lista vantaggi VIP.', 'Aggiunta badge visivi FREE (verde/turchese) e PASS 07 VIP (oro con lucchetto) su tutte le opere, schede e menu drawer.', 'Risoluzione sfondi e ritaglio trasparente per le sculture (Winged Victory, The Thinker, Marble Bust).', 'Esecuzione e superamento di 29 test automatizzati con 0 warning analyzer.'], `model`: Gemini 3.8 Flash + DeepCoder, `outcome`: Applicazione completa con tutte le funzionalità richieste attiva e testata su iPhone 15 simulator., `responses_given`: Sintesi delle nuove schermate, del font e del sistema freemium/VIP.
 - **Integrazione Lessicale di Tabelle e Metriche Quantitative** (`reasoning-integrazione-esplicita-tabelle-comparative`)
   - **Tags:** `#struttura-tesi` `#sintesi-quantitativa` `#cross-validation`
   - **Sintesi:** Inserimento di un capoverso finale che valorizza le tabelle riassuntive della tesi (Tabelle 6.4 - 6.16) e l'analisi quantitativa della variabilità statistica nei fold di cross-validation, prima del dettaglio delle sezioni.
@@ -1933,6 +1937,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#ui-design` `#design-system` `#ux-flow` `#graphic-style` `#frontend`
   - **Sintesi:** L'utente richiede la definizione della grafica, dello stile visivo e dell'interfaccia utente per l'applicazione personale di apprendimento linguistico.
   - **Dettagli:** `raw`: `focus`: Design dell'interfaccia, token visivi, animazioni e layout degli esercizi, `user_prompt`: L'utente richiede la definizione della grafica, dello stile visivo e dell'interfaccia utente per l'applicazione personale di apprendimento linguistico.
+- **Espansione Digital Art Museum: Salvati, Impostazioni, i18n, Font Moderno e Paywall** (`user-intent-digital-art-museum-expansion`)
+  - **Tags:** `#flutter` `#i18n` `#paywall` `#settings` `#plus-jakarta-sans`
+  - **Sintesi:** Aggiunta di schermata Salvati, Impostazioni, Privacy e Termini, supporto a 6 lingue, tipografia Plus Jakarta Sans, Paywall Pass 07 VIP e badge Free vs Premium.
+  - **Dettagli:** `context`: Aggiunta sezione salvati, impostazioni, privacy policy, termini e condizioni, internazionalizzazione a 6 lingue (IT, EN, ES, PT, DE, FR), font smooth moderno (Plus Jakarta Sans), paywall/abbonamento VIP 07 e chiara distinzione visiva tra contenuti Free e Premium., `user_prompt`: dobbiamo inserire una parte per vedere i salvati, le impostazioni, ecc...dobbiamo inserire la parte delle privacy e condition, inoltre voglio che l'applicazione sia internazionale... modifica il font delle scritte vorrei un font più smooth, più moderno... crea la apgina per l'abbonamento. inoltre non si capisce quale sezione sia a pagamento e quale no???
 - **Fattibilità e Integrazione Abbonamenti In-App in App TypeScript Expo** (`user-intent-appscadenza-in-app-subscriptions`)
   - **Tags:** `#iap` `#subscriptions` `#typescript` `#react-native` `#expo` `#app-store`
   - **Sintesi:** Richiesta di fattibilità per abbonamenti premium In-App Purchase su App Store per app React Native/Expo in TypeScript senza riscrivere in Swift.
@@ -2910,6 +2918,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#museo-app` `#flutter` `#deepcoder` `#graphify`
   - **Sintesi:** Sessione di sviluppo autonomo, verifica ed ingestione nel connettoma dell'app Digital Art Museum.
   - **Dettagli:** `key_takeaways`: Completata app museo mobile zero-effort per utente: test passati, codice pulito, asset pronti., `participants`: ['Pierfrancesco Amendola', 'Antigravity Orchestrator', 'DeepCoder'], `pending_tasks`: Eventuale test su dispositivo hardware reale per haptic feedback., `topic`: Creazione e verifica automatica dell'app Digital Art Museum per iOS e Android da mockup visivo.
+- **Episodio Espansione Funzionalità e Internazionalizzazione** (`episode-digital-art-museum-expansion`)
+  - **Tags:** `#museo-app` `#i18n` `#settings` `#subscription`
+  - **Sintesi:** Completamento espansione MuseoApp con i18n, impostazioni, paywall e font smooth moderno.
+  - **Dettagli:** `key_takeaways`: Tutti i requisiti dell'utente implementati senza alcun attrito, test passati al 100%, aggiornamento a caldo sul simulatore., `participants`: ['Pierfrancesco Amendola', 'Antigravity Orchestrator', 'DeepCoder'], `pending_tasks`: Nessun task in sospeso. Applicazione pronta., `topic`: Integrazione Salvati, Impostazioni, Privacy, i18n 6 lingue, Font moderno, Paywall Pass 07 VIP.
 - **Episodio Evoluzione Tesi BUSBRA in Paper** (`episode-busbra-thesis-to-paper-evolution`)
   - **Tags:** `#tesi` `#paper` `#busbra` `#brain-sync`
   - **Sintesi:** Sessione di consultazione strategica per strutturare studio scientifico e pubblicazione su classificazione ecografica mammaria.
@@ -4171,6 +4183,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-creazione-video-showcase-universal-brain`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-definizione-ecografo-trasduttore-lineare`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-digital-art-museum-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-digital-art-museum-expansion`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-distro-linux-modellazione-3d`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-e2e-test-session-hook-2447`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-e2e-test-session-hook-2471`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4339,6 +4352,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-completamento-supercervello-ecosistema`) --[RECORDS_INTENT]--> (`user-intent-implementazione-ecosistema-supercervello`) *(Corpo Calloso)*
 - (`episode-definizione-idee-app-alto-valore-d-uso`) --[RECORDS_INTENT]--> (`user-intent-ricerca-idee-app-alto-impatto-reale`) *(Corpo Calloso)*
 - (`episode-digital-art-museum-app-creation`) --[RECORDS_INTENT]--> (`user-intent-digital-art-museum-app`) *(Corpo Calloso)*
+- (`episode-digital-art-museum-expansion`) --[RECORDS_INTENT]--> (`user-intent-digital-art-museum-expansion`) *(Corpo Calloso)*
 - (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_INTENT]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_INTENT]--> (`user-intent-definizione-ecografo-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-2447`) --[RECORDS_INTENT]--> (`user-intent-e2e-test-session-hook-2447`) *(Corpo Calloso)*
@@ -4431,6 +4445,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-completamento-supercervello-ecosistema`) --[RECORDS_REASONING]--> (`reasoning-costruzione-collaudo-ecosistema-supercervello`) *(Corpo Calloso)*
 - (`episode-definizione-idee-app-alto-valore-d-uso`) --[RECORDS_REASONING]--> (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`) *(Corpo Calloso)*
 - (`episode-digital-art-museum-app-creation`) --[RECORDS_REASONING]--> (`reasoning-digital-art-museum-flutter-implementation`) *(Corpo Calloso)*
+- (`episode-digital-art-museum-expansion`) --[RECORDS_REASONING]--> (`reasoning-digital-art-museum-expansion-implementation`) *(Corpo Calloso)*
 - (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_REASONING]--> (`reasoning-tassonomia-pkm-rag-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_REASONING]--> (`reasoning-caratterizzazione-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-2447`) --[RECORDS_REASONING]--> (`reasoning-e2e-test-session-hook-2447`) *(Corpo Calloso)*
@@ -5004,6 +5019,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-creazione-video-showcase-universal-brain`) --[FULFILLS]--> (`user-intent-creazione-video-showcase-universal-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
 - (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[FULFILLS]--> (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`)
+- (`reasoning-digital-art-museum-expansion-implementation`) --[FULFILLS]--> (`user-intent-digital-art-museum-expansion`)
 - (`reasoning-digital-art-museum-flutter-implementation`) --[FULFILLS]--> (`user-intent-digital-art-museum-app`)
 - (`reasoning-e2e-test-session-hook-2447`) --[FULFILLS]--> (`user-intent-e2e-test-session-hook-2447`)
 - (`reasoning-e2e-test-session-hook-2471`) --[FULFILLS]--> (`user-intent-e2e-test-session-hook-2471`)
@@ -5130,6 +5146,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-completamento-supercervello-ecosistema`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-definizione-idee-app-alto-valore-d-uso`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-digital-art-museum-app-creation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-digital-art-museum-expansion`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-integrazioni-notion-obsidian`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-trasduttori-lineari`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-e2e-test-session-hook-2447`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5226,6 +5243,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-creazione-video-showcase-universal-brain`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-digital-art-museum-expansion-implementation`) --[OPTIMIZES]--> (`domain-software-engineering`)
 - (`reasoning-digital-art-museum-flutter-implementation`) --[OPTIMIZES]--> (`domain-software-engineering`)
 - (`reasoning-e2e-test-session-hook-2447`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-e2e-test-session-hook-2471`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
@@ -5335,6 +5353,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`pipeline-mg-dvon-busbra-research`) --[TARGETS_DOMAIN]--> (`domain-medicina-salute`)
 - (`user-intent-advanced-databases-appunti-riccio`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
 - (`user-intent-digital-art-museum-app`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
+- (`user-intent-digital-art-museum-expansion`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
 - (`user-intent-obsidian-vault-setup`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-ai-shorts-evaluation`) --[TARGETS_PROJECT]--> (`domain-finanza-economia`)
