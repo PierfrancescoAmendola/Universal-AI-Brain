@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 08:02:08 UTC | **Nodi Restituiti:** 708 (SX: 488 · DX: 220) | **Sinapsi Restituite:** 1615
-> **Consistenza Reale Connettoma:** 708 Nodi Totali nel Database | 1615 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 08:03:09 UTC | **Nodi Restituiti:** 711 (SX: 490 · DX: 221) | **Sinapsi Restituite:** 1622
+> **Consistenza Reale Connettoma:** 711 Nodi Totali nel Database | 1622 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -129,6 +129,10 @@
   - **Tags:** `#architecture` `#swiftdata` `#storekit` `#tests`
   - **Sintesi:** Architettura modulare pulita completata con 37 test unitari verificati e build Xcode pulita.
   - **Dettagli:** `actions_taken`: ['Backup legacy SubTracker in LegacySubTracker_Archive/', 'Aggiornamento Bundle ID com.amendolapierfrancesco.liferegistry e Display Name Life Registry in project.pbxproj', 'Creazione modelli SwiftData relazionali LifeItem, OwnedItem, ItemAttachment ed enum tipizzate', 'Implementazione DashboardView con semaforo di urgenza e costi 30/90/12m', 'Implementazione QuickAddView per aggiunta rapida in meno di 15s con preset intelligenti', 'Implementazione CalendarTimelineView con Timeline mensile e supporto EventKit opt-in', 'Implementazione ThingsHubView con registro oggetti, calcolo garanzie e scansione OCR on-device Apple Vision', "Implementazione feature 'Preparati' per ammortizzazione costi futuri giorno per giorno", 'Implementazione StoreKit 2 con protocollo EntitlementServiceProtocol e configurazione Subscriptions.storekit', 'Esecuzione test automatici: 37 test passati su 37 (zero fallimenti)', 'Verifica build Xcode: BUILD SUCCEEDED su iOS Simulator'], `model`: Gemini 3.8 Flash, `outcome`: Tutti i requisiti della specifica e del Definition of Done soddisfatti al 100%
+- **Architettura Flutter e Viewer 3D per Digital Art Museum** (`reasoning-digital-art-museum-flutter-implementation`)
+  - **Tags:** `#flutter` `#sculpture-360` `#golden-frame` `#cormorant-garamond` `#tests-passed`
+  - **Sintesi:** Implementazione mobile cross-platform Flutter con gestione 3D interattiva, sfondi damascati, cornici dorate e tipografia Cormorant Garamond.
+  - **Dettagli:** `actions_taken`: ['Analisi mockup visivo: Starry Night in cornice dorata barocca, busto Atenea Partenos con anello orbitale 3D e cursore a punto luminoso, tab bar con icone personalizzate (tempio, busto, pass 07, cronologia/libro aperto).', 'Inizializzazione e implementazione architettura Flutter multipiattaforma in /Users/pierfrancesco/Desktop/MuseoApp.', 'Risoluzione bug coordinate touch atan2 nel viewer 3D orbitale e svincolo gesture del PageView.', 'Bundle offline di asset fotografici HD multi-angolo senza watermark ne anelli impressi.', 'Esecuzione e passaggio di 19 test unitari e di layout con zero warning di analisi.'], `model`: Gemini 3.8 Flash + DeepCoder, `outcome`: App Flutter completa, funzionante, testata al 100% per iPhone e Android con UI/UX identica al mockup., `responses_given`: Sintesi delle funzionalità implementate, verifica ed esecuzione test.
 - **Architettura IAP TypeScript per AppScadenza** (`reasoning-appscadenza-in-app-subscriptions`)
   - **Tags:** `#revenuecat` `#storekit` `#react-native-purchases` `#in-app-purchases`
   - **Sintesi:** Analisi tecnica: IAP StoreKit nativo integrabile in TypeScript via react-native-purchases (RevenueCat). Zero riscrittura Swift.
@@ -2681,6 +2685,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#busbra` `#deep-learning` `#paper-research` `#breast-ultrasound`
   - **Sintesi:** Evoluzione della tesi triennale/magistrale su BUSBRA in paper scientifico Q1 mediante integrazione maschere, ordinal classification e foundation models.
   - **Dettagli:** `context`: Tesi sperimentale su BUS-BRA con ResNet-34, SimCLR e USF-MAE. Maschere finora inutilizzate. Necessità di scalare a pubblicazione scientifica di alto impatto con SOTA recente., `user_prompt`: considerando ciò che ho scritto nella mia tesi... maschere BUSBRA... letteratura recente... risultati migliori... strutturare studio di ricerca per Paper... aggiorna cervello
+- **Sviluppo App Mobile Digital Art Museum** (`user-intent-digital-art-museum-app`)
+  - **Tags:** `#flutter` `#mobile` `#ios` `#android` `#museum` `#art`
+  - **Sintesi:** Creazione dell'app Digital Art Museum con fedeltà pixel-perfect ai mockup iPhone (Starry Night e busto 3D Atenea Partenos).
+  - **Dettagli:** `context`: Sviluppo app completa per iOS e Android basata su mockup fedele Phone 1 (Starry Night con cornice dorata) e Phone 2 (Atenea Partenos con ring 3D e knob luminoso), sfondi damascati scuri, audio guide e test automatizzati., `user_prompt`: ho trovato online un mockup molto interessante che vorrei realizzare... considera che voglio che sia per Iphone e android. voglio lo stile presente nella foto... non voglio fare nulla!
 - **Tracciamento Richiesta Utente & Modello AI nella Memoria** (`user-intent-provenance-model-tracking`)
   - **Tags:** `#user-intent` `#model-attribution` `#context-preservation` `#cross-model-memory` `#episodic-tracking`
   - **Sintesi:** Proposta utente: includere nel JSON di ingestione il prompt integrale e il modello AI sorgente per preservare contesto e consentire recall cross-modello.
@@ -2876,6 +2884,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#openjarvis` `#continuità-cognitiva`
   - **Sintesi:** Validazione end-to-end completata: OpenJarvis legge il connettoma, esegue inferenza su Ollama e restituisce la descrizione accurata di Pierfrancesco.
   - **Dettagli:** `raw`: `key_takeaways`: OpenJarvis risponde perfettamente usando gpt-oss:120b-cloud via Ollama e il connettoma Universal AI Brain., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash', 'OpenJarvis gpt-oss:120b-cloud'], `pending_tasks`: Nessuno, sistema pronto all'uso vocale e interattivo, `topic`: Verifica Risposta OpenJarvis con Ollama e Cervello Artificiale
+- **Episodio Creazione App Digital Art Museum** (`episode-digital-art-museum-app-creation`)
+  - **Tags:** `#museo-app` `#flutter` `#deepcoder` `#graphify`
+  - **Sintesi:** Sessione di sviluppo autonomo, verifica ed ingestione nel connettoma dell'app Digital Art Museum.
+  - **Dettagli:** `key_takeaways`: Completata app museo mobile zero-effort per utente: test passati, codice pulito, asset pronti., `participants`: ['Pierfrancesco Amendola', 'Antigravity Orchestrator', 'DeepCoder'], `pending_tasks`: Eventuale test su dispositivo hardware reale per haptic feedback., `topic`: Creazione e verifica automatica dell'app Digital Art Museum per iOS e Android da mockup visivo.
 - **Episodio Evoluzione Tesi BUSBRA in Paper** (`episode-busbra-thesis-to-paper-evolution`)
   - **Tags:** `#tesi` `#paper` `#busbra` `#brain-sync`
   - **Sintesi:** Sessione di consultazione strategica per strutturare studio scientifico e pubblicazione su classificazione ecografica mammaria.
@@ -4132,6 +4144,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-video-showcase-universal-brain`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-definizione-ecografo-trasduttore-lineare`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-digital-art-museum-app`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-distro-linux-modellazione-3d`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-e2e-test-session-hook-2447`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-e2e-test-session-hook-2471`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4298,6 +4311,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-completamento-supercervello-ecosistema`) --[RECORDS_INTENT]--> (`user-intent-implementazione-ecosistema-supercervello`) *(Corpo Calloso)*
 - (`episode-definizione-idee-app-alto-valore-d-uso`) --[RECORDS_INTENT]--> (`user-intent-ricerca-idee-app-alto-impatto-reale`) *(Corpo Calloso)*
+- (`episode-digital-art-museum-app-creation`) --[RECORDS_INTENT]--> (`user-intent-digital-art-museum-app`) *(Corpo Calloso)*
 - (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_INTENT]--> (`user-intent-confronto-integrazioni-llm-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_INTENT]--> (`user-intent-definizione-ecografo-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-2447`) --[RECORDS_INTENT]--> (`user-intent-e2e-test-session-hook-2447`) *(Corpo Calloso)*
@@ -4389,6 +4403,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-completamento-supercervello-ecosistema`) --[RECORDS_REASONING]--> (`reasoning-costruzione-collaudo-ecosistema-supercervello`) *(Corpo Calloso)*
 - (`episode-definizione-idee-app-alto-valore-d-uso`) --[RECORDS_REASONING]--> (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`) *(Corpo Calloso)*
+- (`episode-digital-art-museum-app-creation`) --[RECORDS_REASONING]--> (`reasoning-digital-art-museum-flutter-implementation`) *(Corpo Calloso)*
 - (`episode-disamina-integrazioni-notion-obsidian`) --[RECORDS_REASONING]--> (`reasoning-tassonomia-pkm-rag-notion-obsidian`) *(Corpo Calloso)*
 - (`episode-disamina-trasduttori-lineari`) --[RECORDS_REASONING]--> (`reasoning-caratterizzazione-trasduttore-lineare`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-2447`) --[RECORDS_REASONING]--> (`reasoning-e2e-test-session-hook-2447`) *(Corpo Calloso)*
@@ -4962,6 +4977,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-creazione-video-showcase-universal-brain`) --[FULFILLS]--> (`user-intent-creazione-video-showcase-universal-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
 - (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[FULFILLS]--> (`user-intent-analisi-feedback-gemini-ottimizzazione-cervello`)
+- (`reasoning-digital-art-museum-flutter-implementation`) --[FULFILLS]--> (`user-intent-digital-art-museum-app`)
 - (`reasoning-e2e-test-session-hook-2447`) --[FULFILLS]--> (`user-intent-e2e-test-session-hook-2447`)
 - (`reasoning-e2e-test-session-hook-2471`) --[FULFILLS]--> (`user-intent-e2e-test-session-hook-2471`)
 - (`reasoning-e2e-test-session-hook-2485`) --[FULFILLS]--> (`user-intent-e2e-test-session-hook-2485`)
@@ -5085,6 +5101,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-completamento-supercervello-ecosistema`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-definizione-idee-app-alto-valore-d-uso`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-digital-art-museum-app-creation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-integrazioni-notion-obsidian`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-disamina-trasduttori-lineari`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-e2e-test-session-hook-2447`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5180,6 +5197,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-creazione-video-showcase-universal-brain`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-retrieval-gemini-e-roadmap-potenziamento`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-digital-art-museum-flutter-implementation`) --[OPTIMIZES]--> (`domain-software-engineering`)
 - (`reasoning-e2e-test-session-hook-2447`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-e2e-test-session-hook-2471`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-e2e-test-session-hook-2485`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
@@ -5285,6 +5303,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
 - (`pipeline-mg-dvon-busbra-research`) --[TARGETS_DOMAIN]--> (`domain-medicina-salute`)
 - (`user-intent-advanced-databases-appunti-riccio`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
+- (`user-intent-digital-art-museum-app`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
 - (`user-intent-obsidian-vault-setup`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-ai-shorts-evaluation`) --[TARGETS_PROJECT]--> (`domain-finanza-economia`)
