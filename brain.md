@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 07:41:35 UTC | **Nodi Restituiti:** 698 (SX: 481 · DX: 217) | **Sinapsi Restituite:** 1594
-> **Consistenza Reale Connettoma:** 698 Nodi Totali nel Database | 1594 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 07:42:35 UTC | **Nodi Restituiti:** 699 (SX: 482 · DX: 217) | **Sinapsi Restituite:** 1595
+> **Consistenza Reale Connettoma:** 699 Nodi Totali nel Database | 1595 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -1330,6 +1330,9 @@ Progetto editoriale per edizione illustrata KDP.
   - **Tags:** `#mac-project`
   - **Sintesi:** Progetto Mac: Cose Laurea. Stack: Varie.
   - **Dettagli:** `local_path`: /Users/pierfrancesco/Desktop/Cose_Laurea, `file_uri`: file:///Users/pierfrancesco/Desktop/Cose_Laurea, `languages`: [], `frameworks`: [], `has_git`: False, `relevant_files_count`: 6, `last_modified`: 2026-08-07T20:03:53.078872+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **Digital Art Museum App** (`proj-digital-art-museum`)
+  - **Tags:** `#untagged`
+  - **Sintesi:** App mobile cross-platform iOS & Android per esplorazione arte classica con visualizzatore 3D 360 e audio guide
 - **Eager Pasteur** (`proj-eager-pasteur`)
   - **Tags:** `#mac-project`
   - **Sintesi:** Progetto Mac: Eager Pasteur. Stack: Varie.
@@ -3945,6 +3948,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`proj-compito-settembre`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`proj-composetest`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`proj-cose_laurea`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`proj-digital-art-museum`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`proj-eager-pasteur`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`proj-economia`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`proj-eserciziocontocorrente`) --[CREATED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
