@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 08:34:36 UTC | **Nodi Restituiti:** 714 (SX: 492 · DX: 222) | **Sinapsi Restituite:** 1625
-> **Consistenza Reale Connettoma:** 714 Nodi Totali nel Database | 1625 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 08:35:11 UTC | **Nodi Restituiti:** 715 (SX: 493 · DX: 222) | **Sinapsi Restituite:** 1625
+> **Consistenza Reale Connettoma:** 715 Nodi Totali nel Database | 1625 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -855,6 +855,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#mutation-import` `#integration-layer` `#mcp-tool`
   - **Sintesi:** MCP Tool: brain_get_tree (Layer: INTEGRATION_LAYER, Tipo: MCP_TOOL)
   - **Dettagli:** `raw`: `id`: node_mcp_brain_get_tree, `label`: MCP Tool: brain_get_tree, `type`: MCP_TOOL, `layer`: INTEGRATION_LAYER
+- **Ottimizzazione Grafica e Stampa A4 Appunti Advanced Databases** (`adb_diagram_print_optimization`)
+  - **Tags:** `#advanced-databases` `#obsidian` `#mermaid` `#print-optimization` `#a4`
+  - **Sintesi:** Diagrammi compatti e print-friendly per Obsidian vault Advanced Databases, eliminazione ASCII art.
+  - **Dettagli:** `raw`: Tutti i diagrammi Mermaid del vault Advanced Databases (Lezioni 1-4) sono stati ridisegnati con layout orizzontale compatto (flowchart LR / TB a 2 colonne). Eliminati tutti i grafici ASCII (gerarchia memorie, ISAM, pool di puntatori, mappa concettuale). Integrato snippet CSS print-compact.css per esportazione PDF e stampa A4 con page-break-inside avoid e max-height controllato.
 - **Piano Architetturale Life Registry** (`plan-life-registry-kickoff`)
   - **Tags:** `#plan` `#life-registry` `#swiftdata` `#storekit`
   - **Sintesi:** Piano dettagliato di implementazione per Life Registry concordato via grill-me.
