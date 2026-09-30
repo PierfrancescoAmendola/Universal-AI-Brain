@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 08:06:13 UTC | **Nodi Restituiti:** 711 (SX: 490 · DX: 221) | **Sinapsi Restituite:** 1622
-> **Consistenza Reale Connettoma:** 711 Nodi Totali nel Database | 1622 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 08:06:37 UTC | **Nodi Restituiti:** 714 (SX: 492 · DX: 222) | **Sinapsi Restituite:** 1625
+> **Consistenza Reale Connettoma:** 714 Nodi Totali nel Database | 1625 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -489,6 +489,10 @@
   - **Tags:** `#architecture-rationale` `#cognitive-load` `#graph-physics` `#scalability`
   - **Sintesi:** Scelta di non eliminare le relazioni fisiche ma di applicare un filtro visuale basato su insiemi di visibilità adiacente, massimizzando ordine e densità semantica.
   - **Dettagli:** `raw`: `approach`: Visual filter on vis.DataSet without schema mutilation, `benefits`: ['zero-data-loss', 'uncluttered-ui', 'instant-subgraph-expansion'], `model`: LLM Assistant (Historical Session)
+- **Redazione Dispensa Narrativa e Fluida Advanced Databases** (`reasoning-rewrite-narrative-appunti-riccio`)
+  - **Tags:** `#didattica` `#pedagogia-ingegneristica` `#database-storage`
+  - **Sintesi:** Trasformazione completa degli appunti da schemi a punti a un testo esplicativo, organico e coerente con dimostrazioni matematiche e spiegazioni di contesto.
+  - **Dettagli:** `actions_taken`: ['Riscrittura integrale delle Lezioni 1, 2, 3 e 4 in prosa accademica continua ad alta densità esplicativa', 'Introduzione del filo conduttore causale: problema del mondo reale -> fallimento soluzione ingenua -> architettura ingegneristica -> dimostrazione matematica', 'Espansione di tutte le formule con passaggi algebrici commentati e contestualizzazione con il manuale Elmasri-Navathe 7Ed', 'Aggiornamento del master file Appunti_Advanced_Databases.md (148 KB, oltre 1600 righe di testo fluido)'], `model`: Gemini 3.8 Flash, `outcome`: Vault Obsidian trasformato in dispensa universitaria narrativa completa
 - **Riprogettazione Motore Gestuale Naturale e Architettura Terminale a 4 Schede** (`reasoning-gesture-zoom-terminal-dock-tabs`)
   - **Tags:** `#ai-reasoning` `#mediapipe` `#threejs` `#terminal-engine` `#fetch-interceptor`
   - **Sintesi:** Risoluzione del tracciamento gestuale eliminando il vincolo del pinch e introducendo lo zoom naturale a 2 mani, il gesto 2 dita (peace) e lo zoom in profondità con palmo aperto. Integrazione di una barra terminale fissa in basso nella vista 2D con live ticker reattivo e consolidamento della console a 4 schede indipendenti (Terminale CLI, Tutti i Log, Richieste HTTP con inspector JSON, Nodi & Sinapsi).
@@ -2593,6 +2597,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#monetizzazione` `#side-hustle` `#business-models` `#proposte-alternative`
   - **Sintesi:** L'utente richiede la formulazione di strategie alternative e concrete per generare tra 100 e 500 euro/mese a costo zero iniziale.
   - **Dettagli:** `user_prompt`: allora propronimi un altro metodo perfavore, `context`: Transizione da modelli basati sulla viralità passiva a modelli ad alto valore aggiunto basati su sviluppo software e asset digitali.
+- **Richiesta Riscrittura Discorsiva Appunti Advanced Databases** (`user-intent-rewrite-narrative-appunti-riccio`)
+  - **Tags:** `#didattica` `#appunti-discorsivi` `#advanced-databases`
+  - **Sintesi:** Eliminare la natura sintetica ed elenchi puntati a favore di una vera dispensa accademica discorsiva, narrativa, con spiegazioni approfondite, filo logico e dimostrazioni.
+  - **Dettagli:** `user_prompt`: mi piacciono gli appunti ma sono troppo sintetici, puntati, non esplicativi, non ci sono dei discrosi, non c'è scrittura. sono come le slide trascritte alla fine. non c'è un filo logico!!!!
 - **Richiesta Spiegazione Swin Transformer e Deep Stable Learning** (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
   - **Tags:** `#tesi` `#breast-cancer` `#deep-learning` `#swin-transformer` `#stable-learning`
   - **Sintesi:** Richiesta di spiegazione breve, tecnica ed efficace su Swin Transformer e Deep Stable Learning nel contesto della classificazione del cancro al seno.
@@ -3244,6 +3252,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#sviluppo` `#collaborazione-ai` `#sicurezza-dati`
   - **Sintesi:** Sessione collaborativa multi-modello (Qwen + Gemini) per ottimizzare il Universal Knowledge Graph. Enfasi sulla sicurezza dei dati (backup), correzione bug critici e raggiungimento di performance estreme (pathfinding 0.05ms).
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Qwen 2.5 Max', 'Gemini'], `topic`: Implementazione Opzione C: Ottimizzazione backend ibrida con backup e fix critici, `key_takeaways`: Importanza dell'audit incrociato tra AI per individuare bug sottili; successo dell'approccio ibrido (cache RAM + SQL CTE); preservation totale della logica cognitiva esistente.
+- **Sessione Riscrittura Narrativa Appunti Riccio** (`episode-rewrite-narrative-appunti-riccio`)
+  - **Tags:** `#studio` `#obsidian`
+  - **Sintesi:** Eliminazione degli elenchi puntati e transizione a una scrittura narrativa ricca per lo studio dell esame.
+  - **Dettagli:** `key_takeaways`: Riscrittura discorsiva completata con successo; il testo si legge ora come un capitolo di libro/dispensa integrato con le slide., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `topic`: Riscrittura Narrativa Appunti Advanced Databases
 - **Sessione Valutazione e Stima Language App** (`episode-valutazione-language-app-antigravity`)
   - **Tags:** `#chat` `#language-app` `#brain-sync`
   - **Sintesi:** Discussione su fattibilità, tempi, complessità e gap del progetto app lingue personale.
@@ -4185,6 +4197,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-redesign-sito-subtracker`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-review-piano-supercervello-os`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-rewrite-narrative-appunti-riccio`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ricerca-idee-app-abbonamento-micro-saas`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ricerca-idee-app-alto-impatto-reale`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-rimozione-modello-ollama-mac`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -5018,6 +5031,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[FULFILLS]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[FULFILLS]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
 - (`reasoning-redesign-sito-subtracker`) --[FULFILLS]--> (`user-intent-redesign-sito-subtracker`)
+- (`reasoning-rewrite-narrative-appunti-riccio`) --[FULFILLS]--> (`user-intent-rewrite-narrative-appunti-riccio`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
 - (`reasoning-risoluzione-residui-ollama-mac`) --[FULFILLS]--> (`user-intent-rimozione-modello-ollama-mac`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[FULFILLS]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`)
@@ -5141,6 +5155,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-redesign-sito-subtracker`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-sintesi-cappello-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-rewrite-narrative-appunti-riccio`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-sessione-di-lavoro-4157`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-sessione-di-lavoro-5986`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-sessione-spiegazione-heap`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
