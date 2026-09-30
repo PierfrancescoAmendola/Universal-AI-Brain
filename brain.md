@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 11:16:40 UTC | **Nodi Restituiti:** 721 (SX: 498 · DX: 223) | **Sinapsi Restituite:** 1635
-> **Consistenza Reale Connettoma:** 721 Nodi Totali nel Database | 1635 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 11:17:44 UTC | **Nodi Restituiti:** 724 (SX: 500 · DX: 224) | **Sinapsi Restituite:** 1642
+> **Consistenza Reale Connettoma:** 724 Nodi Totali nel Database | 1642 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -353,6 +353,10 @@
   - **Tags:** `#flutter` `#plusjakartasans` `#i18n-6languages` `#subscription-paywall` `#29-tests-passed`
   - **Sintesi:** Architettura completa di i18n, paywall freemium, gestione stato salvati/impostazioni e tipografia moderna.
   - **Dettagli:** `actions_taken`: ['Creazione sistema di localizzazione MuseumLocalizations per 6 lingue: Italiano, Inglese, Spagnolo, Portoghese, Tedesco, Francese.', 'Adozione tipografia GoogleFonts.plusJakartaSans per un look smooth, moderno e ultra-leggibile su mobile.', 'Implementazione SavedArtworksScreen per gestione preferiti con accesso rapido da Top Bar (icona segnalibro) e Drawer.', 'Implementazione SettingsScreen con selettore lingua in tempo reale, opzioni tema, audio e link legali.', 'Creazione PrivacyPolicyScreen e TermsConditionsScreen con articoli completi localizzati.', 'Creazione SubscriptionScreen con piani $5.99/mese, $39.99/anno, 7 giorni di prova gratuita e lista vantaggi VIP.', 'Aggiunta badge visivi FREE (verde/turchese) e PASS 07 VIP (oro con lucchetto) su tutte le opere, schede e menu drawer.', 'Risoluzione sfondi e ritaglio trasparente per le sculture (Winged Victory, The Thinker, Marble Bust).', 'Esecuzione e superamento di 29 test automatizzati con 0 warning analyzer.'], `model`: Gemini 3.8 Flash + DeepCoder, `outcome`: Applicazione completa con tutte le funzionalità richieste attiva e testata su iPhone 15 simulator., `responses_given`: Sintesi delle nuove schermate, del font e del sistema freemium/VIP.
+- **Implementazione Rendering Completo per Obsidian e Rimozione Troncamenti** (`reasoning-contenuto-completo-obsidian`)
+  - **Tags:** `#obsidian` `#refactoring` `#verbatim` `#rendering-ricco`
+  - **Sintesi:** Analisi completa del codebase, identificazione di tutti i punti di troncamento e salvataggio come sintesi, e implementazione di un sistema di rendering ricco tipo-specifico per la Triade Cognitiva. Modificati 6 file: obsidian_vault_sync.py (7 nuove funzioni helper per rendering dedicato USER_INTENT/AI_REASONING/CONVERSATION_EPISODE con sezioni 💬 Domanda Originale, 🧠 Ragionamento Completo, 👥 Partecipanti, 📖 Argomento, ⚡ Azioni, 📊 Esito), sync_brain.py (rimosso [:200] troncamento su AI_REASONING, summary USER_INTENT ora contiene il prompt completo, summary EPISODE ora include key_takeaways), ide_hooks/session_end_ingest.py (rimosso [:300] troncamento), SKILL.md e prompt.md (istruzioni aggiornate per mandare contenuto INTEGRALE e VERBATIM, mai riassunti). Tutti i 10 test esistenti passano. Rigenerato il vault con 721 nodi nel nuovo formato.
+  - **Dettagli:** `actions_taken`: ['Analisi di obsidian_vault_sync.py, sync_brain.py, mcp_server.py, main.py, ide_hooks/session_end_ingest.py, SKILL.md, prompt.md', 'Aggiunta di 7 funzioni helper in obsidian_vault_sync.py per rendering tipo-specifico della Triade Cognitiva', 'Sostituzione del rendering inline generico con chiamata a _render_body_for_node', 'Rimozione troncamento [:200] su AI_REASONING summary in sync_brain.py', 'Cambio USER_INTENT summary da frase generica a prompt completo in sync_brain.py', 'Arricchimento CONVERSATION_EPISODE summary con key_takeaways in sync_brain.py', 'Rimozione troncamento [:300] su AI_REASONING in ide_hooks/session_end_ingest.py', "Aggiornamento SKILL.md con regola 'CONTENUTO COMPLETO, MAI RIASSUNTI' e nuovo JSON example", 'Copia speculare SKILL.md in ~/.gemini/config/skills/universal-brain/', 'Aggiornamento prompt.md con istruzioni per contenuto verbatim', 'Esecuzione test suite (10/10 passati)', 'Rigenerazione completa vault Obsidian con 721 nodi nel nuovo formato'], `model`: Claude Opus 4.6, `outcome`: Sistema completamente migrato da sintesi troncate a contenuto integrale. Tutti i file Obsidian ora mostrano domande, risposte e ragionamenti completi con sezioni dedicate e leggibili., `responses_given`: Ho modificato 6 file nel progetto Universal AI Brain per passare da un sistema di salvataggio a sintesi/riassunti a uno a contenuto completo e verbatim. Le modifiche principali sono: (1) obsidian_vault_sync.py: aggiunte 7 funzioni helper (_render_body_for_node, _render_user_intent, _render_ai_reasoning, _render_conversation_episode, _render_generic, _render_details_section) che rendono i nodi della Triade Cognitiva con sezioni dedicate ricche — USER_INTENT mostra '💬 Domanda Originale (Verbatim)' e '🎯 Contesto e Vincoli'; AI_REASONING mostra '🤖 Modello', '🧠 Ragionamento e Risposta Completa', '⚡ Azioni Eseguite', '📊 Esito'; CONVERSATION_EPISODE mostra '👥 Partecipanti', '📖 Argomento', '📝 Resoconto Completo', '🎯 Lezioni Chiave'. (2) sync_brain.py: rimosso il troncamento [:200] su AI_REASONING summary, cambiato USER_INTENT summary da frase generica al prompt completo, arricchito EPISODE summary con key_takeaways. (3) ide_hooks/session_end_ingest.py: rimosso [:300] troncamento. (4-5) SKILL.md e prompt.md: aggiornate tutte le istruzioni per mandare contenuto INTEGRALE. Test: 10/10 passati. Export: 721 nodi rigenerati.
 - **Integrazione Lessicale di Tabelle e Metriche Quantitative** (`reasoning-integrazione-esplicita-tabelle-comparative`)
   - **Tags:** `#struttura-tesi` `#sintesi-quantitativa` `#cross-validation`
   - **Sintesi:** Inserimento di un capoverso finale che valorizza le tabelle riassuntive della tesi (Tabelle 6.4 - 6.16) e l'analisi quantitativa della variabilità statistica nei fold di cross-validation, prima del dettaglio delle sezioni.
@@ -2568,6 +2572,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#life-registry` `#subtracker` `#workflow` `#grill-me`
   - **Sintesi:** Avvio del progetto Life Registry su repo SubTracker, verifica workflow e avvio allineamento grill-me.
   - **Dettagli:** `context`: Migrazione workflow a skills e kickoff sviluppo Life Registry su repo SubTracker, `user_prompt`: /migrate-workflows migrate my existing workflows to skills /caveman wenyan-ultra, /grill-me /graphify /universal-brain /boost ...
+- **Migrazione da Sintesi a Contenuto Completo per Obsidian** (`user-intent-contenuto-completo-obsidian`)
+  - **Tags:** `#obsidian` `#contenuto-completo` `#verbatim` `#no-troncamento`
+  - **Sintesi:** Poiché abbiamo integrato l'uso di Obsidian nel nostro cervello, vorrei cambiare la struttura su come vengono salvati i dati. Se prima venivano salvati sunti/riassunti, ora voglio tutto completamente — risposte, ragionamento e domanda — nei file e nelle risposte JSON, in modo tale che quando leggo i file su Obsidian è meglio.
+  - **Dettagli:** `context`: Il sistema Universal AI Brain è già integrato con un vault Obsidian locale. L'utente vuole che tutti i dati salvati nei nodi USER_INTENT, AI_REASONING e CONVERSATION_EPISODE contengano il testo integrale e verbatim invece di sintesi troncate, per una leggibilità ottimale quando naviga le note in Obsidian., `user_prompt`: poichè abbiamo integrato l'uso di obsidian nel nostro cervello, vorrei cambiare la struttura su come vengono salvati i dati, se prima venivano salvati sunti/riassunti, ora voglio tutto completamente, risposte, ragionamento e domanda, nei file e nelle risposte json. in modo tale che quando leggo i file su obssiian è meglio
 - **Migrazione e Deploy Cloud 24/7 su Koyeb per Universal AI Brain** (`user-intent-migrazione-render-koyeb-cloud`)
   - **Tags:** `#koyeb` `#cloud-deploy` `#render-migration` `#24-7` `#zero-cost`
   - **Sintesi:** Sostituzione del provider Render con Koyeb per ospitare il cervello artificiale online, attivo 24/7 senza spin-down o costi, sincronizzato con il demone macOS locale.
@@ -3250,6 +3258,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#system-evaluation` `#meta-conversation` `#ai-development`
   - **Sintesi:** Sessione dedicata all'introspezione sistemica e al miglioramento dell'infrastruttura cognitiva dell'AI stessa.
   - **Dettagli:** `raw`: `date`: 2026-08-29, `topic`: System Metacognition & Graphify Protocol, `ingested_via`: telegram_json_post, `user`: Pierfrancesco
+- **Migrazione Completa a Contenuto Verbatim per Obsidian** (`episode-contenuto-completo-obsidian`)
+  - **Tags:** `#obsidian` `#refactoring` `#contenuto-completo` `#continuità-cognitiva`
+  - **Sintesi:** Sessione di refactoring strutturale del sistema di salvataggio dati del Universal AI Brain. L'utente ha chiesto di passare da sintesi/riassunti a contenuto completo e verbatim per migliorare la leggibilità in Obsidian. Modificati 6 file core del progetto, aggiunte 7 funzioni di rendering ricco, rimossi tutti i troncamenti, aggiornate le istruzioni per tutte le AI. Tutti i 10 test passati, 721 nodi rigenerati nel nuovo formato. La sessione è stata interrotta dal cambio modello (da Gemini 3.8 Flash a Claude Opus 4.6) e poi ripresa su esplicita richiesta dell'utente.
+  - **Dettagli:** `key_takeaways`: Il sistema ora salva e visualizza contenuto completo: domande originali verbatim, ragionamenti integrali senza troncamenti, risposte complete con azioni e esiti. Le note Obsidian della Triade Cognitiva hanno sezioni dedicate (💬 Domanda, 🧠 Ragionamento, 👥 Partecipanti, 📊 Esito, ⚡ Azioni). Le istruzioni SKILL.md e prompt.md sono state aggiornate per tutte le AI future., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash (analisi iniziale)', 'Claude Opus 4.6 (implementazione)'], `pending_tasks`: Nessun task pendente. Migrazione completata., `topic`: Migrazione del sistema di salvataggio dati da sintesi troncate a contenuto integrale e verbatim, per ottimizzare la leggibilità dei file Obsidian nel vault del Cervello Artificiale
 - **Perfezionamento del 3D Cognitive Embedding Projector & Ottica Neurale** (`episode-embedding-projector-globe-and-optics`)
   - **Tags:** `#episode` `#projector3d` `#design` `#session`
   - **Sintesi:** Sessione di sviluppo per arricchire il visualizzatore neurale 3D con proiezione a globo, controllo di luminosità e spaziatura, e layout ergonomico.
@@ -4182,6 +4194,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-cloud-git-auto-push`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-confronto-integrazioni-llm-notion-obsidian`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-contenuto-completo-obsidian`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-jarvis-voice-assistant`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-repo-jarvis-desktop`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-creazione-video-showcase-universal-brain`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4354,6 +4367,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-cloud-git-auto-push`) --[RECORDS_INTENT]--> (`user-intent-cloud-git-auto-push`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_INTENT]--> (`user-intent-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-completamento-supercervello-ecosistema`) --[RECORDS_INTENT]--> (`user-intent-implementazione-ecosistema-supercervello`) *(Corpo Calloso)*
+- (`episode-contenuto-completo-obsidian`) --[RECORDS_INTENT]--> (`user-intent-contenuto-completo-obsidian`) *(Corpo Calloso)*
 - (`episode-definizione-idee-app-alto-valore-d-uso`) --[RECORDS_INTENT]--> (`user-intent-ricerca-idee-app-alto-impatto-reale`) *(Corpo Calloso)*
 - (`episode-digital-art-museum-app-creation`) --[RECORDS_INTENT]--> (`user-intent-digital-art-museum-app`) *(Corpo Calloso)*
 - (`episode-digital-art-museum-expansion`) --[RECORDS_INTENT]--> (`user-intent-digital-art-museum-expansion`) *(Corpo Calloso)*
@@ -4447,6 +4461,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-cloud-git-auto-push`) --[RECORDS_REASONING]--> (`reasoning-cloud-git-auto-push`) *(Corpo Calloso)*
 - (`episode-comando-prompt-copia-rapi-8585`) --[RECORDS_REASONING]--> (`reasoning-comando-prompt-copia-rapi-8585`) *(Corpo Calloso)*
 - (`episode-completamento-supercervello-ecosistema`) --[RECORDS_REASONING]--> (`reasoning-costruzione-collaudo-ecosistema-supercervello`) *(Corpo Calloso)*
+- (`episode-contenuto-completo-obsidian`) --[RECORDS_REASONING]--> (`reasoning-contenuto-completo-obsidian`) *(Corpo Calloso)*
 - (`episode-definizione-idee-app-alto-valore-d-uso`) --[RECORDS_REASONING]--> (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`) *(Corpo Calloso)*
 - (`episode-digital-art-museum-app-creation`) --[RECORDS_REASONING]--> (`reasoning-digital-art-museum-flutter-implementation`) *(Corpo Calloso)*
 - (`episode-digital-art-museum-expansion`) --[RECORDS_REASONING]--> (`reasoning-digital-art-museum-expansion-implementation`) *(Corpo Calloso)*
@@ -5020,6 +5035,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-chi-pierfrancesco-amendola-e-cosa-8426`) --[FULFILLS]--> (`user-intent-chi-pierfrancesco-amendola-e-cosa-8426`)
 - (`reasoning-cloud-git-auto-push`) --[FULFILLS]--> (`user-intent-cloud-git-auto-push`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[FULFILLS]--> (`user-intent-comando-prompt-copia-rapi-8585`)
+- (`reasoning-contenuto-completo-obsidian`) --[FULFILLS]--> (`user-intent-contenuto-completo-obsidian`)
 - (`reasoning-costruzione-collaudo-ecosistema-supercervello`) --[FULFILLS]--> (`user-intent-implementazione-ecosistema-supercervello`)
 - (`reasoning-creazione-video-showcase-universal-brain`) --[FULFILLS]--> (`user-intent-creazione-video-showcase-universal-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[FULFILLS]--> (`user-intent-allineamento-nodi-render`)
@@ -5149,6 +5165,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-cloud-git-auto-push`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-comando-prompt-copia-rapi-8585`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-completamento-supercervello-ecosistema`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-contenuto-completo-obsidian`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-definizione-idee-app-alto-valore-d-uso`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-digital-art-museum-app-creation`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-digital-art-museum-expansion`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5244,6 +5261,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-che-ore-sono-3134`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-cloud-git-auto-push`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-comando-prompt-copia-rapi-8585`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-contenuto-completo-obsidian`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-costruzione-collaudo-ecosistema-supercervello`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-creazione-video-showcase-universal-brain`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-diagnosi-discrepanza-deploy-render`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -5380,6 +5398,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-chiarimento-stack-rendering-grafi-frontend`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-cloud-git-auto-push`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-comando-prompt-copia-rapi-8585`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-contenuto-completo-obsidian`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-creazione-jarvis-voice-assistant`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-repo-jarvis-desktop`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-creazione-video-showcase-universal-brain`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
