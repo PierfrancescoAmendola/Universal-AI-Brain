@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 08:42:12 UTC | **Nodi Restituiti:** 715 (SX: 493 · DX: 222) | **Sinapsi Restituite:** 1626
-> **Consistenza Reale Connettoma:** 715 Nodi Totali nel Database | 1626 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 08:42:31 UTC | **Nodi Restituiti:** 716 (SX: 494 · DX: 222) | **Sinapsi Restituite:** 1627
+> **Consistenza Reale Connettoma:** 716 Nodi Totali nel Database | 1627 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -937,6 +937,12 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#mutation-import` `#long-term-associative` `#memory-system`
   - **Sintesi:** Universal Knowledge Graph (Associative Substrate) (Layer: LONG_TERM_ASSOCIATIVE, Tipo: MEMORY_SYSTEM)
   - **Dettagli:** `raw`: `id`: node_knowledge_graph_memory, `label`: Universal Knowledge Graph (Associative Substrate), `type`: MEMORY_SYSTEM, `layer`: LONG_TERM_ASSOCIATIVE
+
+### [Macro-Label: `ARTIFACT`]
+- **Compressione Densità Esame Dispensa Advanced Databases** (`adb_exam_density_compression`)
+  - **Tags:** `#advanced-databases` `#dispensa-esame` `#alta-densita` `#obsidian`
+  - **Sintesi:** Compressione ad alta densità didattica: 28 pagine A4 totali per lezioni 1-4, zero concetti persi.
+  - **Dettagli:** `raw`: Riscritti tutti i capitoli (Lezioni 1-4) in stile discorsivo denso accademico. Eliminati aneddoti storici, preamboli prolissi e ripetizioni. Preservate al 100% tutte le formule matematiche, dimostrazioni, parametri e valori numerici esatti di Riccio (30.000 record, BARI, 701, tabella comparativa costi, write penalty RAID, POPCNT, ecc.). Pagine totali stimate: 28 pagine A4 (~7 pagine a lezione). Master document ridotto da 146KB a 49KB.
 
 ### [Macro-Label: `BUSINESS_LOGIC`]
 - **AlcolSafe** (`proj-alcolsafe`)
@@ -5298,6 +5304,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`analysis-bst-vs-graph-taxonomy`) --[RECOMMENDS]--> (`idea-hierarchical-weighted-trees`)
 - (`node-commit-965f0a8`) --[RECORDS_ARCHITECTURE_INTENT]--> (`node-telegram-webhook-gateway`)
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[REFINED_COMPONENT]--> (`ui-component-palazzo-cognitivo-multi-layer-navigator`)
+- (`adb_diagram_print_optimization`) --[REFINES]--> (`adb_exam_density_compression`)
 - (`user-intent-advanced-databases-appunti-riccio`) --[REFINES]--> (`adb_diagram_print_optimization`)
 - (`lesson-boundaries-clarity`) --[REINFORCES]--> (`val-authenticity`)
 - (`user-intent-valutazione-progetto-language-app`) --[RELATES_TO]--> (`intent-personal-language-learning-app`)
