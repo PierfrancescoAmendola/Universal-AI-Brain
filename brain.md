@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 07:52:09 UTC | **Nodi Restituiti:** 702 (SX: 484 · DX: 218) | **Sinapsi Restituite:** 1602
-> **Consistenza Reale Connettoma:** 702 Nodi Totali nel Database | 1602 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 07:53:12 UTC | **Nodi Restituiti:** 705 (SX: 486 · DX: 219) | **Sinapsi Restituite:** 1609
+> **Consistenza Reale Connettoma:** 705 Nodi Totali nel Database | 1609 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -333,6 +333,10 @@
   - **Tags:** `#diagnosi-retrieval` `#graphrag-optimization` `#knowledge-graph` `#master-prompt`
   - **Sintesi:** Identificato falso positivo: Gemini vedeva 1 solo entry a causa di un retrieval limitato. Proposto potenziamento del GraphRAG (iniezione baseline Palazzo), telemetria e consolidamento nodi stack.
   - **Dettagli:** `raw`: `actions_taken`: ['Verifica metriche reali con brain_get_stats (304 nodi, 789 archi)', 'Analisi cause retrieval parziale su client esterni', 'Definizione interventi su GraphRAG pre-response, osservabilità e master prompt'], `model`: Gemini 3.7 Flash, `outcome`: Chiarezza architetturale ristabilita e roadmap attuabile
+- **Didattica e Strutturazione Fisica Storage e Indici DBMS** (`reasoning-advanced-databases-appunti-riccio`)
+  - **Tags:** `#storage-engine` `#indexing` `#extendible-hashing` `#cost-models`
+  - **Sintesi:** Elaborazione tecnica dei concetti di storage fisico, double buffering, file heap e ordinati, hashing estendibile e lineare, indici primari/cluster/secondari, ISAM, indici bitmap e modelli analitici di costo.
+  - **Dettagli:** `actions_taken`: ['Estrazione ed esame integrale di Lezione 1a, 1b, 2, 3, 4 (Slide del docente)', 'Mappatura con Capitoli 1, 2, e14 e 15 di Elmasri-Navathe 7Ed', 'Creazione Appunti_Advanced_Databases.md (file unico con dimostrazioni, esempi numerici e formule)', 'Creazione vault modulare Lezioni/ con note collegate e MOC Indice_Generale.md'], `model`: Gemini 3.8 Flash, `outcome`: Vault Obsidian completo e pronto allo studio con note atomiche e master file
 - **Elaborazione Metafore e Spiegazioni Intuitive per AI Causale** (`reasoning-semplificazione-concettuale-causal-dl`)
   - **Tags:** `#pedagogia-tecnica` `#metafore` `#inferenza-causale` `#attention`
   - **Sintesi:** Traduzione di concetti ad elevata densità matematica in metafore pratiche ed esempi clinici immediati (es. bias da ospedale/macchinario, relazione gelato-scottature).
@@ -1883,6 +1887,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#language-learning` `#portuguese` `#german` `#personal-software` `#srs`
   - **Sintesi:** L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
   - **Dettagli:** `raw`: `target_languages`: ['Portoghese', 'Tedesco'], `motivation`: Superamento paywall/energia di Duolingo, `scope`: Uso esclusivo personale e privato, `user_prompt`: L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
+- **Creazione Appunti Obsidian Advanced Databases** (`user-intent-advanced-databases-appunti-riccio`)
+  - **Tags:** `#advanced-databases` `#appunti` `#obsidian` `#unina`
+  - **Sintesi:** Generare appunti dettagliati ed esplicativi per l esame di Advanced Databases basati sulle slide del prof. Daniel Riccio e sul manuale Elmasri-Navathe 7Ed.
+  - **Dettagli:** `context`: Corso universitario Advanced Databases (Basi di Dati II) DIETI UniNA, prof. Daniel Riccio, `user_prompt`: creami un file di appunti molto sistemato, ben strutturato, sulla base delle slide e usa Obsidian per fare ciò. inoltre se vedi c'è allegato anche il libro che il professore ha consigliato a lezione, quindi usa anche quello per costruire il file di appunti. Il file di appunti deve essere strutturato a lezioni, quindi capitolo Lezione 1 e titolo di quella lezione tipo. vedi tu.
 - **De-cluttering UI & Projector 3D a Schermo Intero** (`user-intent-ui-declutter-projector-fullscreen`)
   - **Tags:** `#untagged`
   - **Sintesi:** Semplificazione radicale dell'interfaccia con dropdown e visualizzatore 3D full-page
@@ -3204,6 +3212,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#strategia` `#side-business` `#idee-monetizzazione`
   - **Sintesi:** Definizione di quattro percorsi operativi di guadagno a costo zero per raggiungere il target di 100-500€ mensili.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Strategie pratiche di monetizzazione alternativa: Automazioni B2B, Micro-SaaS, Boilerplate ed Editoria Tecnica., `key_takeaways`: Le automazioni per attività locali permettono monetizzazione immediata; micro-app e asset digitali garantiscono rendita scalabile nel tempo.
+- **Sessione Appunti Advanced Databases Riccio** (`episode-advanced-databases-appunti-riccio`)
+  - **Tags:** `#studio` `#basi-di-dati-2` `#riccio` `#obsidian`
+  - **Sintesi:** Configurazione del sistema di studio per Basi di Dati II con note Obsidian strutturate per lezioni ed esempi operativi.
+  - **Dettagli:** `key_takeaways`: Creazione di appunti integrati ad alta densità didattica e formule risolte (blocking factor, accesso dicotomico, altezze multilivello, cost comparison table)., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `pending_tasks`: Aggiornare gli appunti con i successivi pacchetti di slide rilasciati dal docente (B-Tree, B+-Tree, Query Optimization, Concorrenza)., `topic`: Studio e redazione appunti Advanced Databases per Obsidian
 - **Sessione Ottimizzazione Backend e Audit Sicurezza** (`episode-backend-optimization-session`)
   - **Tags:** `#chat` `#sviluppo` `#collaborazione-ai` `#sicurezza-dati`
   - **Sintesi:** Sessione collaborativa multi-modello (Qwen + Gemini) per ottimizzare il Universal Knowledge Graph. Enfasi sulla sicurezza dei dati (backup), correzione bug critici e raggiungimento di performance estreme (pathfinding 0.05ms).
@@ -4079,6 +4091,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`node-test-raycast-node`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-accorciamento-cappello-capitolo-6`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-advanced-databases-appunti-riccio`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ai-shorts-evaluation`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allineamento-nodi-render`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4248,6 +4261,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_INTENT]--> (`user-intent-creazione-jarvis-voice-assistant`) *(Corpo Calloso)*
 - (`episode-20260829-sigillatura-12-macro-domini`) --[RECORDS_INTENT]--> (`user-intent-ristrutturazione-sigillo-12-macro-domini`) *(Corpo Calloso)*
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[RECORDS_INTENT]--> (`user-intent-avvio-openjarvis-ollama-gpt-cloud`) *(Corpo Calloso)*
+- (`episode-advanced-databases-appunti-riccio`) --[RECORDS_INTENT]--> (`user-intent-advanced-databases-appunti-riccio`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_INTENT]--> (`user-intent-allineamento-nodi-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_INTENT]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
 - (`episode-alternative-monetization-brainstorming`) --[RECORDS_INTENT]--> (`user-intent-alternative-income-generation`) *(Corpo Calloso)*
@@ -4337,6 +4351,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[RECORDS_REASONING]--> (`reasoning-architettura-jarvis-zero-cost`) *(Corpo Calloso)*
 - (`episode-20260829-sigillatura-12-macro-domini`) --[RECORDS_REASONING]--> (`reasoning-ristrutturazione-sigillo-12-domini-completata`) *(Corpo Calloso)*
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[RECORDS_REASONING]--> (`reasoning-verifica-openjarvis-ollama-gpt-cloud`) *(Corpo Calloso)*
+- (`episode-advanced-databases-appunti-riccio`) --[RECORDS_REASONING]--> (`reasoning-advanced-databases-appunti-riccio`) *(Corpo Calloso)*
 - (`episode-allineamento-nodi-render-cloud`) --[RECORDS_REASONING]--> (`reasoning-diagnosi-discrepanza-deploy-render`) *(Corpo Calloso)*
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[RECORDS_REASONING]--> (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) *(Corpo Calloso)*
 - (`episode-alternative-monetization-brainstorming`) --[RECORDS_REASONING]--> (`ai-reasoning-alternative-monetization-strategies`) *(Corpo Calloso)*
@@ -4904,6 +4919,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`ai-reasoning-market-analysis-automation`) --[FULFILLS]--> (`user-intent-ai-shorts-evaluation`)
 - (`ai-reasoning-proiezione-capital-gain-86euro`) --[FULFILLS]--> (`user-intent-calcolo-rendimento-azione-86euro`)
 - (`plan-life-registry-kickoff`) --[FULFILLS]--> (`user-intent-migrate-and-life-registry-grill`)
+- (`reasoning-advanced-databases-appunti-riccio`) --[FULFILLS]--> (`user-intent-advanced-databases-appunti-riccio`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[FULFILLS]--> (`user-intent-allora-vorrei-dirti-che-oggi-ho-man-4690`)
 - (`reasoning-analisi-fattibilita-language-app`) --[FULFILLS]--> (`user-intent-valutazione-progetto-language-app`)
 - (`reasoning-analisi-stack-grafico-universal-brain`) --[FULFILLS]--> (`user-intent-chiarimento-stack-rendering-grafi-frontend`)
@@ -5027,6 +5043,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-20260829-progettazione-jarvis-voice-ai`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-sigillatura-12-macro-domini`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-20260829-test-openjarvis-ollama-successo`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-advanced-databases-appunti-riccio`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allineamento-nodi-render-cloud`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-alternative-monetization-brainstorming`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5128,6 +5145,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-github-sync-subtracker-release-v1-1`) --[MODIFIES]--> (`proj-appabbonamenti`)
 - (`reasoning-ui-declutter-projector-fullscreen`) --[MODIFIES]--> (`universal-ai-brain`)
 - (`ai-reasoning-cross-model-provenance-validation`) --[OPTIMIZES]--> (`universal-ai-brain`)
+- (`reasoning-advanced-databases-appunti-riccio`) --[OPTIMIZES]--> (`domain-software-engineering`)
 - (`reasoning-allora-vorrei-dirti-che-oggi-ho-man-4690`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-analisi-fattibilita-language-app`) --[OPTIMIZES]--> (`reasoning-language-app-architecture`)
 - (`reasoning-analisi-stack-grafico-universal-brain`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -5249,6 +5267,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`identity-cs-researcher`) --[STUDIED]--> (`coursework-cs-federico2`)
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
 - (`pipeline-mg-dvon-busbra-research`) --[TARGETS_DOMAIN]--> (`domain-medicina-salute`)
+- (`user-intent-advanced-databases-appunti-riccio`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-ai-shorts-evaluation`) --[TARGETS_PROJECT]--> (`domain-finanza-economia`)
 - (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
