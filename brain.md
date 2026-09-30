@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 08:35:11 UTC | **Nodi Restituiti:** 715 (SX: 493 · DX: 222) | **Sinapsi Restituite:** 1625
-> **Consistenza Reale Connettoma:** 715 Nodi Totali nel Database | 1625 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 08:35:30 UTC | **Nodi Restituiti:** 715 (SX: 493 · DX: 222) | **Sinapsi Restituite:** 1626
+> **Consistenza Reale Connettoma:** 715 Nodi Totali nel Database | 1626 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -5298,6 +5298,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`analysis-bst-vs-graph-taxonomy`) --[RECOMMENDS]--> (`idea-hierarchical-weighted-trees`)
 - (`node-commit-965f0a8`) --[RECORDS_ARCHITECTURE_INTENT]--> (`node-telegram-webhook-gateway`)
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[REFINED_COMPONENT]--> (`ui-component-palazzo-cognitivo-multi-layer-navigator`)
+- (`user-intent-advanced-databases-appunti-riccio`) --[REFINES]--> (`adb_diagram_print_optimization`)
 - (`lesson-boundaries-clarity`) --[REINFORCES]--> (`val-authenticity`)
 - (`user-intent-valutazione-progetto-language-app`) --[RELATES_TO]--> (`intent-personal-language-learning-app`)
 - (`identity-cs-researcher`) --[RESEARCHED]--> (`proj-bioinformatics-icar`)
