@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 07:56:23 UTC | **Nodi Restituiti:** 705 (SX: 486 · DX: 219) | **Sinapsi Restituite:** 1609
-> **Consistenza Reale Connettoma:** 705 Nodi Totali nel Database | 1609 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 07:56:58 UTC | **Nodi Restituiti:** 708 (SX: 488 · DX: 220) | **Sinapsi Restituite:** 1615
+> **Consistenza Reale Connettoma:** 708 Nodi Totali nel Database | 1615 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -544,6 +544,10 @@
   - **Tags:** `#strategia-prodotto` `#differenziazione` `#nicchia`
   - **Sintesi:** Claude ha proposto idee di app in abbonamento privilegiando quelle che sfruttano la combinazione rara di competenze di Pierfrancesco (deep learning/computer vision + musica + sviluppo mobile), ritenendo che la nicchia e la difendibilità tecnica contino più del prezzo in sé per la conversione da free a paid.
   - **Dettagli:** `model`: Claude Sonnet 5, `actions_taken`: ['Proposta di categorie generali di app da abbonamento (tracking, utility, contenuti, produttività)', 'Proposta di idee specifiche legate a computer vision fitness, spaced repetition per esami, feedback pianistico via microfono, micro-SaaS per sviluppatori, spiegazione documenti burocratici', 'Segnalazione delle idee ritenute più promettenti in base al vantaggio competitivo personale di Pierfrancesco'], `outcome`: Elenco di 14 idee complessivamente fornite nella conversazione, con raccomandazione delle due più allineate alle competenze rare dell'utente.
+- **Setup Tecnico e Avvio Vault Obsidian** (`reasoning-obsidian-vault-setup`)
+  - **Tags:** `#obsidian-vault` `#automation`
+  - **Sintesi:** Creazione file di configurazione Obsidian interni al workspace e lancio del processo Obsidian per il vault AppuntiDBRiccio.
+  - **Dettagli:** `actions_taken`: ['Generazione cartella .obsidian/ con app.json, appearance.json, core-plugins.json, graph.json, workspace.json', 'Impostazione apertura iniziale su Indice_Generale.md e visualizzatore a grafo colorato', "Avvio dell'applicazione Obsidian su macOS con il vault caricato"], `model`: Gemini 3.8 Flash, `outcome`: Vault configurato e aperto direttamente in Obsidian
 - **Sintesi Teorico-Applicativa Swin Transformer e Deep Stable Learning** (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`)
   - **Tags:** `#computer-vision` `#causal-inference` `#medical-imaging` `#ood-generalization`
   - **Sintesi:** Formalizzazione del funzionamento di Swin Transformer (attenzione a finestre traslate gerarchiche) e Deep Stable Learning (decorrelazione di confondenti/inferenza causale per robustezza OOD) applicati all'imaging oncologico mammario.
@@ -1883,6 +1887,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#life-registry` `#swiftdata` `#storekit` `#ios`
   - **Sintesi:** Completamento di tutte le componenti e viste di Life Registry come da specifica concordata.
   - **Dettagli:** `context`: Sviluppo app Life Registry nativa iOS su workspace AppAbbonamenti, `user_prompt`: Sviluppo Life Registry: scadenze, pagamenti, garanzie, documenti, manutenzione, abbonamenti, oggetti posseduti, preparati, OCR.
+- **Configurazione Vault Obsidian Advanced Databases** (`user-intent-obsidian-vault-setup`)
+  - **Tags:** `#obsidian` `#vault` `#study-setup`
+  - **Sintesi:** Configurare la cartella degli appunti come Vault nativo di Obsidian con layout a schede, colori per i tag del grafo e apertura automatica.
+  - **Dettagli:** `user_prompt`: creami il vault da aprire in obsidian, voglio poter vedere gli appunti lì e studiare grazie!!!
 - **Costruzione App Personale Apprendimento Portoghese e Tedesco** (`intent-personal-language-learning-app`)
   - **Tags:** `#language-learning` `#portuguese` `#german` `#personal-software` `#srs`
   - **Sintesi:** L'utente desidera sviluppare un software o web app strettamente personale e privato per apprendere il portoghese e il tedesco, superando le limitazioni di energia e monetizzazione di Duolingo.
@@ -2796,6 +2804,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#episodio-chat` `#render-sync` `#cloud-deploy` `#pierfrancesco`
   - **Sintesi:** Sessione di verifica e sincronizzazione dei nodi della memoria tra ambiente locale e istanza Render.
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'Gemini 3.7 Flash'], `topic`: Allineamento nodi e deploy Render per Universal Brain, `key_takeaways`: Render usa il repository Git per il deploy; qualsiasi modifica locale a brain.db richiede commit e push su origin/main per aggiornare il cloud., `pending_tasks`: Verifica del completamento del deploy su Render via endpoint /brain.json.
+- **Attivazione Vault Obsidian Advanced Databases** (`episode-obsidian-vault-setup`)
+  - **Tags:** `#obsidian` `#studio`
+  - **Sintesi:** Sessione di completamento configurazione ed esecuzione di Obsidian per gli appunti di Basi di Dati II.
+  - **Dettagli:** `key_takeaways`: Vault configurato con successo e aperto in background su macOS., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `pending_tasks`: Integrazione delle prossime lezioni man mano che vengono caricate., `topic`: Obsidian Vault Activation
 - **Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay** (`ep-20260827-hierarchical-overlay-reassurance`)
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:38:00CEST: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay
@@ -4150,6 +4162,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-migrazione-render-koyeb-cloud`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-nuove-rappresentazioni-vi-2874`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-obsidian-vault-setup`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-occultamento-pulsanti-mob-9019`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-cognitivo-obsidian-bridge`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4312,6 +4325,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-migrazione-koyeb-deploy-24-7`) --[RECORDS_INTENT]--> (`user-intent-migrazione-render-koyeb-cloud`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_INTENT]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
 - (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_INTENT]--> (`user-intent-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
+- (`episode-obsidian-vault-setup`) --[RECORDS_INTENT]--> (`user-intent-obsidian-vault-setup`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_INTENT]--> (`user-intent-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-perfezionamento-cappello-tabelle-cap-6`) --[RECORDS_INTENT]--> (`user-intent-integrazione-tabelle-cappello-capitolo-6`) *(Corpo Calloso)*
@@ -4402,6 +4416,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-migrazione-koyeb-deploy-24-7`) --[RECORDS_REASONING]--> (`reasoning-migrazione-render-koyeb-container`) *(Corpo Calloso)*
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[RECORDS_REASONING]--> (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) *(Corpo Calloso)*
 - (`episode-nuove-rappresentazioni-vi-2874`) --[RECORDS_REASONING]--> (`reasoning-nuove-rappresentazioni-vi-2874`) *(Corpo Calloso)*
+- (`episode-obsidian-vault-setup`) --[RECORDS_REASONING]--> (`reasoning-obsidian-vault-setup`) *(Corpo Calloso)*
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-perfezionamento-cappello-tabelle-cap-6`) --[RECORDS_REASONING]--> (`reasoning-integrazione-esplicita-tabelle-comparative`) *(Corpo Calloso)*
@@ -4974,6 +4989,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-migrazione-render-koyeb-container`) --[FULFILLS]--> (`user-intent-migrazione-render-koyeb-cloud`)
 - (`reasoning-non-riesci-a-connetterti-al-mio-cer-8486`) --[FULFILLS]--> (`user-intent-non-riesci-a-connetterti-al-mio-cer-8486`)
 - (`reasoning-nuove-rappresentazioni-vi-2874`) --[FULFILLS]--> (`user-intent-nuove-rappresentazioni-vi-2874`)
+- (`reasoning-obsidian-vault-setup`) --[FULFILLS]--> (`user-intent-obsidian-vault-setup`)
 - (`reasoning-occultamento-pulsanti-mob-9019`) --[FULFILLS]--> (`user-intent-occultamento-pulsanti-mob-9019`)
 - (`reasoning-openjarvis-collegamento-connettoma`) --[FULFILLS]--> (`user-intent-integrazione-openjarvis-stanford`)
 - (`reasoning-ottimizzazione-mobile-web-8880`) --[FULFILLS]--> (`user-intent-ottimizzazione-mobile-web-8880`)
@@ -5096,6 +5112,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-migrazione-koyeb-deploy-24-7`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-non-riesci-a-connetterti-al-mio-cer-8486`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-nuove-rappresentazioni-vi-2874`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-obsidian-vault-setup`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ottimizzazione-mobile-web-8880`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-perfezionamento-cappello-tabelle-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5268,6 +5285,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`epistemologia-rigorosa`) --[SUPPORTS]--> (`rule-zero-placeholder`)
 - (`pipeline-mg-dvon-busbra-research`) --[TARGETS_DOMAIN]--> (`domain-medicina-salute`)
 - (`user-intent-advanced-databases-appunti-riccio`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
+- (`user-intent-obsidian-vault-setup`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-ai-shorts-evaluation`) --[TARGETS_PROJECT]--> (`domain-finanza-economia`)
 - (`user-intent-allineamento-nodi-render`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
