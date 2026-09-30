@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 11:27:45 UTC | **Nodi Restituiti:** 724 (SX: 500 · DX: 224) | **Sinapsi Restituite:** 1642
-> **Consistenza Reale Connettoma:** 724 Nodi Totali nel Database | 1642 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 11:28:24 UTC | **Nodi Restituiti:** 727 (SX: 502 · DX: 225) | **Sinapsi Restituite:** 1647
+> **Consistenza Reale Connettoma:** 727 Nodi Totali nel Database | 1647 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -345,6 +345,10 @@
   - **Tags:** `#pedagogia-tecnica` `#metafore` `#inferenza-causale` `#attention`
   - **Sintesi:** Traduzione di concetti ad elevata densità matematica in metafore pratiche ed esempi clinici immediati (es. bias da ospedale/macchinario, relazione gelato-scottature).
   - **Dettagli:** `model`: Gemini, `actions_taken`: ['Scomposizione dei 4 concetti in coppie problema-soluzione', 'Applicazione di analogie visive e scenari clinici concreti', "Mantenimento del rigore concettuale eliminando l'overload notazionale"], `outcome`: Quadro concettuale accessibile e pronto per l'esposizione orale/discorsiva.
+- **Elaborazione Tassonomia e Fondamenti di Software Testing** (`reasoning-sintesi-tassonomia-testing`)
+  - **Tags:** `#testing-taxonomy` `#white-box` `#black-box` `#tdd` `#software-engineering`
+  - **Sintesi:** Strutturazione gerarchica del dominio del testing: terminologia di base (Error-Fault-Failure), livelli di astrazione, metriche di copertura strutturale e paradigmi di sviluppo TDD/BDD.
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ['Definizione ontologica di Error, Fault e Failure', 'Mappatura piramidale dei livelli di test (Unit, Integration, System, Acceptance)', 'Dettaglio dei criteri di partizionamento Black-Box e coperture White-Box (McCabe)', 'Formulazione del payload di ingestione conforme al protocollo Graphify'], `outcome`: Trattazione accademica dettagliata e generazione del blocco di memoria JSON integrabile.
 - **Identificazione Percorsi Storage e Pulizia Ollama macOS** (`reasoning-risoluzione-residui-ollama-mac`)
   - **Tags:** `#ollama` `#filesystem` `#bash` `#diagnosi`
   - **Sintesi:** Analisi dell'architettura di storage di Ollama su macOS: identificati i percorsi ~/.ollama/models/blobs e ~/Library/Application Support/Ollama con relativi comandi di rimozione sicura.
@@ -2635,6 +2639,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#didattica` `#appunti-discorsivi` `#advanced-databases`
   - **Sintesi:** Eliminare la natura sintetica ed elenchi puntati a favore di una vera dispensa accademica discorsiva, narrativa, con spiegazioni approfondite, filo logico e dimostrazioni.
   - **Dettagli:** `user_prompt`: mi piacciono gli appunti ma sono troppo sintetici, puntati, non esplicativi, non ci sono dei discrosi, non c'è scrittura. sono come le slide trascritte alla fine. non c'è un filo logico!!!!
+- **Richiesta Spiegazione Software Testing** (`user-intent-spiegazione-software-testing`)
+  - **Tags:** `#software-engineering` `#testing` `#qa` `#verification-validation`
+  - **Sintesi:** Richiesta di analisi accademica e metodologica completa sui principi, livelli e tecniche di testing in ingegneria del software.
+  - **Dettagli:** `user_prompt`: spiegami il testing in ingegneria softwaer, `context`: Richiesta di spiegazione tecnica con contestuale applicazione del protocollo Graphify e integrazione grafo di memoria.
 - **Richiesta Spiegazione Swin Transformer e Deep Stable Learning** (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
   - **Tags:** `#tesi` `#breast-cancer` `#deep-learning` `#swin-transformer` `#stable-learning`
   - **Sintesi:** Richiesta di spiegazione breve, tecnica ed efficace su Swin Transformer e Deep Stable Learning nel contesto della classificazione del cancro al seno.
@@ -3290,6 +3298,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#studio` `#basi-di-dati-2` `#riccio` `#obsidian`
   - **Sintesi:** Configurazione del sistema di studio per Basi di Dati II con note Obsidian strutturate per lezioni ed esempi operativi.
   - **Dettagli:** `key_takeaways`: Creazione di appunti integrati ad alta densità didattica e formule risolte (blocking factor, accesso dicotomico, altezze multilivello, cost comparison table)., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `pending_tasks`: Aggiornare gli appunti con i successivi pacchetti di slide rilasciati dal docente (B-Tree, B+-Tree, Query Optimization, Concorrenza)., `topic`: Studio e redazione appunti Advanced Databases per Obsidian
+- **Sessione Didattica Software Testing** (`episode-sessione-software-testing-ingegneria`)
+  - **Tags:** `#chat` `#software-engineering` `#graphify`
+  - **Sintesi:** Sessione focalizzata sui fondamenti metodologici del software testing e integrazione della conoscenza nel grafo cognitivo locale.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Testing in Ingegneria del Software, `key_takeaways`: Copertura sistematica di metodologie Black-Box, White-Box, livelli di testing e protocolli di memoria Graphify.
 - **Sessione Ottimizzazione Backend e Audit Sicurezza** (`episode-backend-optimization-session`)
   - **Tags:** `#chat` `#sviluppo` `#collaborazione-ai` `#sicurezza-dati`
   - **Sintesi:** Sessione collaborativa multi-modello (Qwen + Gemini) per ottimizzare il Universal Knowledge Graph. Enfasi sulla sicurezza dei dati (backup), correzione bug critici e raggiungimento di performance estreme (pathfinding 0.05ms).
@@ -4251,6 +4263,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-smart-rating-gate-promo-code`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-alberi-heap`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-spiegazione-software-testing`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4412,6 +4425,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
 - (`episode-sessione-di-lavoro-4157`) --[RECORDS_INTENT]--> (`user-intent-sessione-di-lavoro-4157`) *(Corpo Calloso)*
 - (`episode-sessione-di-lavoro-5986`) --[RECORDS_INTENT]--> (`user-intent-sessione-di-lavoro-5986`) *(Corpo Calloso)*
+- (`episode-sessione-software-testing-ingegneria`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-software-testing`) *(Corpo Calloso)*
 - (`episode-sessione-spiegazione-heap`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-alberi-heap`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_INTENT]--> (`user-intent-calcolo-rendimento-azione-86euro`) *(Corpo Calloso)*
 - (`episode-smart-rating-gate`) --[RECORDS_INTENT]--> (`user-intent-smart-rating-gate-promo-code`) *(Corpo Calloso)*
@@ -4506,6 +4520,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
 - (`episode-sessione-di-lavoro-4157`) --[RECORDS_REASONING]--> (`reasoning-sessione-di-lavoro-4157`) *(Corpo Calloso)*
 - (`episode-sessione-di-lavoro-5986`) --[RECORDS_REASONING]--> (`reasoning-sessione-di-lavoro-5986`) *(Corpo Calloso)*
+- (`episode-sessione-software-testing-ingegneria`) --[RECORDS_REASONING]--> (`reasoning-sintesi-tassonomia-testing`) *(Corpo Calloso)*
 - (`episode-sessione-spiegazione-heap`) --[RECORDS_REASONING]--> (`reasoning-analisi-struttura-heap`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_REASONING]--> (`ai-reasoning-proiezione-capital-gain-86euro`) *(Corpo Calloso)*
 - (`episode-smart-rating-gate`) --[RECORDS_REASONING]--> (`reasoning-smart-rating-gate-implementation`) *(Corpo Calloso)*
@@ -5089,6 +5104,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-semplificazione-concettuale-causal-dl`) --[FULFILLS]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
 - (`reasoning-sessione-di-lavoro-4157`) --[FULFILLS]--> (`user-intent-sessione-di-lavoro-4157`)
 - (`reasoning-sessione-di-lavoro-5986`) --[FULFILLS]--> (`user-intent-sessione-di-lavoro-5986`)
+- (`reasoning-sintesi-tassonomia-testing`) --[FULFILLS]--> (`user-intent-spiegazione-software-testing`)
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
 - (`reasoning-smart-rating-gate-implementation`) --[FULFILLS]--> (`user-intent-smart-rating-gate-promo-code`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[FULFILLS]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`)
@@ -5211,6 +5227,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-rewrite-narrative-appunti-riccio`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-sessione-di-lavoro-4157`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-sessione-di-lavoro-5986`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-sessione-software-testing-ingegneria`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-sessione-spiegazione-heap`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-simulazione-rendimento-azionario-86euro`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-smart-rating-gate`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
