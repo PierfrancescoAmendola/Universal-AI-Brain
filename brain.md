@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 08:45:38 UTC | **Nodi Restituiti:** 716 (SX: 494 · DX: 222) | **Sinapsi Restituite:** 1627
-> **Consistenza Reale Connettoma:** 716 Nodi Totali nel Database | 1627 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 08:45:57 UTC | **Nodi Restituiti:** 717 (SX: 495 · DX: 222) | **Sinapsi Restituite:** 1627
+> **Consistenza Reale Connettoma:** 717 Nodi Totali nel Database | 1627 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -943,6 +943,10 @@ samples, guidance on mobile development, and a full API reference.
   - **Tags:** `#advanced-databases` `#dispensa-esame` `#alta-densita` `#obsidian`
   - **Sintesi:** Compressione ad alta densità didattica: 28 pagine A4 totali per lezioni 1-4, zero concetti persi.
   - **Dettagli:** `raw`: Riscritti tutti i capitoli (Lezioni 1-4) in stile discorsivo denso accademico. Eliminati aneddoti storici, preamboli prolissi e ripetizioni. Preservate al 100% tutte le formule matematiche, dimostrazioni, parametri e valori numerici esatti di Riccio (30.000 record, BARI, 701, tabella comparativa costi, write penalty RAID, POPCNT, ecc.). Pagine totali stimate: 28 pagine A4 (~7 pagine a lezione). Master document ridotto da 146KB a 49KB.
+- **Rimpicciolimento e Linearizzazione Diagrammi Advanced Databases** (`adb_diagram_ultra_compact_scaling`)
+  - **Tags:** `#mermaid` `#compact` `#css`
+  - **Sintesi:** Linearizzazione orizzontale e cap dimensionale per diagrammi compatti.
+  - **Dettagli:** `raw`: Diagrammi ridisegnati in formato ultra-compatto orizzontale (flowchart LR). Dimensioni vincolate via CSS a max 180px su schermo e 130px in stampa A4. Altezza ridotta dell'80% mantenendo leggibilità e accuratezza concettuale.
 
 ### [Macro-Label: `BUSINESS_LOGIC`]
 - **AlcolSafe** (`proj-alcolsafe`)
