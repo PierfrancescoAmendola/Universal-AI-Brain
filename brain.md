@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-09-30 14:33:25 UTC | **Nodi Restituiti:** 727 (SX: 502 · DX: 225) | **Sinapsi Restituite:** 1647
-> **Consistenza Reale Connettoma:** 727 Nodi Totali nel Database | 1647 Sinapsi Totali
+> **Data Generazione:** 2026-09-30 14:34:30 UTC | **Nodi Restituiti:** 730 (SX: 504 · DX: 226) | **Sinapsi Restituite:** 1652
+> **Consistenza Reale Connettoma:** 730 Nodi Totali nel Database | 1652 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -85,6 +85,10 @@
   - **Tags:** `#algorithm-analysis` `#graph-theory` `#mst` `#b-tree` `#hierarchical-tree`
   - **Sintesi:** Valutazione tecnica: BST puro monodimensionale non modella relazioni cicliche; Spanning Tree Pesato (MST) e Alberi Gerarchici di Comunità estraggono la spina dorsale concettuale.
   - **Dettagli:** `raw`: `pure_bst`: Monodimensionale (già coperto da B-Tree SQLite O(log N)), `optimal_tree_models`: ['Maximum Spanning Tree (MST / Kruskal) per spina dorsale concettuale', 'Hierarchical Community Tree (Dendrogramma) per navigazione a zoom semantico', 'Prefix Trie / Radix Tree per lookup istantaneo O(k)'], `model`: LLM Assistant (Historical Session)
+- **Analisi Didattica Indici di Dispersione** (`reasoning-spiegazione-indici-dispersione`)
+  - **Tags:** `#analisi-didattica` `#statistica` `#formulazione`
+  - **Sintesi:** Strutturazione della risposta evidenziando il problema dell'annullamento algebrico degli scarti, la differenza dimensionale tra varianza e deviazione standard, la correzione di Bessel per campioni e l'interpretazione empirica gaussiana.
+  - **Dettagli:** `model`: Gemini, `actions_taken`: ['Definizione dello scarto quadratico medio per evitare la cancellazione dei segni', 'Distinzione tra formulazione su popolazione (N) e campione (n - 1)', 'Chiarimento del passaggio di unità di misura tramite radice quadrata', 'Fornitura di un calcolo numerico disaggregato passo-passo'], `outcome`: Concettualizzazione lineare e rigorosa dei due indici statistici.
 - **Analisi Problemi Critici: Salute Famigliare, Contratti e Sinistri** (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`)
   - **Tags:** `#critical-utility` `#pain-point-analysis` `#caregiver` `#contract-defense` `#insurance-claims`
   - **Sintesi:** Identificazione di 3 mercati in cui la disdetta dell'abbonamento è psicologicamente frenata: tutela della salute dei genitori anziani, blocco dei rincari contrattuali e protezione documentale immediata post-incidente.
@@ -2647,6 +2651,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#tesi` `#breast-cancer` `#deep-learning` `#swin-transformer` `#stable-learning`
   - **Sintesi:** Richiesta di spiegazione breve, tecnica ed efficace su Swin Transformer e Deep Stable Learning nel contesto della classificazione del cancro al seno.
   - **Dettagli:** `user_prompt`: puoi spiegarmi in modo breve, conciso ed efficace cosa è un Swim Transformers cos'è una o cosa fa la Deep Stable Learning. Sono concetti della mia tesi sulla classificazione tramite deep Learning di immagini di cancro al seno, `context`: Tesi di laurea sulla classificazione di immagini di cancro al seno tramite tecniche avanzate di Deep Learning.
+- **Richiesta Spiegazione Varianza e Deviazione Standard** (`user-intent-spiegazione-varianza-deviazione-standard`)
+  - **Tags:** `#statistica` `#matematica` `#fondamenti` `#data-analysis`
+  - **Sintesi:** Richiesta di spiegazione chiara e teorico-pratica dei concetti di varianza e deviazione standard, con formalizzazione matematica ed esempi.
+  - **Dettagli:** `user_prompt`: spiegami la variazione e la deviazione standard, `context`: Richiesta con vincolo di allineamento al protocollo Graphify e integrazione con Universal Knowledge Graph.
 - **Richiesta Utente: Abbandono Jarvis e Avvio Nuovo Progetto** (`user-intent-abbandono-jarvis-nuovo-progetto`)
   - **Tags:** `#abbandono-jarvis` `#pivot` `#nuovo-progetto` `#semplicità`
   - **Sintesi:** Pierfrancesco ordina la cancellazione di Jarvis/OpenJarvis e l'orientamento verso un progetto più pragmatico e funzionale.
@@ -3098,6 +3106,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#chat` `#tesi` `#finalizzazione`
   - **Sintesi:** Completamento dell'introduzione sintetica al capitolo dei risultati con menzione specifica al confronto tramite tabelle e matrici di confusione.
   - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Integrazione riferimento alle tabelle comparative nel Capitolo 6, `key_takeaways`: Generato il frammento definitivo in LaTeX pronto per la compilazione.
+- **Episodio: Fondamenti di Statistica Descrittiva** (`episode-statistica-descrittiva-dispersione`)
+  - **Tags:** `#sessione-apprendimento` `#statistica` `#varianza` `#deviazione-standard`
+  - **Sintesi:** Interazione focalizzata sulla comprensione analitica e concettuale della variabilità statistica e delle sue metriche fondamentali.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Gemini'], `topic`: Varianza e deviazione standard in statistica, `key_takeaways`: La varianza misura la dispersione quadratica media; la deviazione standard riconduce tale misura alla scala originale dei dati.
 - **Episodio: Fondamenti e Filosofia della Memoria Eterna Cross-Chat** (`episode-infinite-context-philosophy`)
   - **Tags:** `#conversation-episode` `#core-mission` `#context-saturation` `#gemini-session`
   - **Sintesi:** Formalizzazione della ragion d'essere del cervello artificiale: superare il reset della memoria per saturazione delle chat tramite grafo semantico unificato.
@@ -4265,6 +4277,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-software-testing`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-swin-transformer-deep-stable-learning`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-spiegazione-varianza-deviazione-standard`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-subtracker-v1-1-release-prep`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4429,6 +4442,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-sessione-spiegazione-heap`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-alberi-heap`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_INTENT]--> (`user-intent-calcolo-rendimento-azione-86euro`) *(Corpo Calloso)*
 - (`episode-smart-rating-gate`) --[RECORDS_INTENT]--> (`user-intent-smart-rating-gate-promo-code`) *(Corpo Calloso)*
+- (`episode-statistica-descrittiva-dispersione`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-varianza-deviazione-standard`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_INTENT]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`) *(Corpo Calloso)*
 - (`episode-subtracker-release-v1-1-marketing`) --[RECORDS_INTENT]--> (`user-intent-subtracker-v1-1-release-prep`) *(Corpo Calloso)*
@@ -4524,6 +4538,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-sessione-spiegazione-heap`) --[RECORDS_REASONING]--> (`reasoning-analisi-struttura-heap`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_REASONING]--> (`ai-reasoning-proiezione-capital-gain-86euro`) *(Corpo Calloso)*
 - (`episode-smart-rating-gate`) --[RECORDS_REASONING]--> (`reasoning-smart-rating-gate-implementation`) *(Corpo Calloso)*
+- (`episode-statistica-descrittiva-dispersione`) --[RECORDS_REASONING]--> (`reasoning-spiegazione-indici-dispersione`) *(Corpo Calloso)*
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[RECORDS_REASONING]--> (`reasoning-subtracker-i18n-currency-ux-overhaul`) *(Corpo Calloso)*
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[RECORDS_REASONING]--> (`reasoning-subtracker-full-i18n-architecture`) *(Corpo Calloso)*
 - (`episode-subtracker-release-v1-1-marketing`) --[RECORDS_REASONING]--> (`reasoning-subtracker-release-screenshots-copy`) *(Corpo Calloso)*
@@ -5107,6 +5122,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-sintesi-tassonomia-testing`) --[FULFILLS]--> (`user-intent-spiegazione-software-testing`)
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
 - (`reasoning-smart-rating-gate-implementation`) --[FULFILLS]--> (`user-intent-smart-rating-gate-promo-code`)
+- (`reasoning-spiegazione-indici-dispersione`) --[FULFILLS]--> (`user-intent-spiegazione-varianza-deviazione-standard`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[FULFILLS]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[FULFILLS]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`)
 - (`reasoning-subtracker-release-screenshots-copy`) --[FULFILLS]--> (`user-intent-subtracker-v1-1-release-prep`)
@@ -5231,6 +5247,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-sessione-spiegazione-heap`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-simulazione-rendimento-azionario-86euro`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-smart-rating-gate`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-statistica-descrittiva-dispersione`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-i18n-currency-ux-overhaul`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-redesign-and-multilingual-perfection`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-subtracker-release-v1-1-marketing`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
