@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-10-01 16:01:05 UTC | **Nodi Restituiti:** 733 (SX: 506 · DX: 227) | **Sinapsi Restituite:** 1659
-> **Consistenza Reale Connettoma:** 733 Nodi Totali nel Database | 1659 Sinapsi Totali
+> **Data Generazione:** 2026-10-01 16:02:09 UTC | **Nodi Restituiti:** 736 (SX: 508 · DX: 228) | **Sinapsi Restituite:** 1666
+> **Consistenza Reale Connettoma:** 736 Nodi Totali nel Database | 1666 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -333,6 +333,10 @@
   - **Tags:** `#ai-reasoning` `#epistemic-synthesis`
   - **Sintesi:** Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render.
   - **Dettagli:** `raw`: `epistemic_rubric`: {'extracted': ["L'utente valuta l'implementazione di un bot Telegram per interagire con il proprio Knowledge Graph", 'Richiesta di valutazione su utilità, gratuità e difficoltà implementativa'], 'inferred': ["L'integrazione riduce drasticamente l'attrito di inserimento dati (write) e consultazione (read)", "L'architettura Telegram agisce come livello di Input/Output percettivo del cervello artificiale"], 'ambiguous': []}, `architectural_synthesis`: Telegram funge da periferica I/O cognitiva mobile (Sensorimotor / Interaction Layer) collegata via API al backend neurale su Render., `model`: LLM Assistant (Historical Session)
+- **Deduzione Metrica Early Stopping Validation Loss** (`reasoning-early-stopping-validation-loss-thesis`)
+  - **Tags:** `#tesi` `#early-stopping` `#val-loss` `#usf-mae`
+  - **Sintesi:** Individuata la validation loss come metrica monitorata con patience=10 e min_delta=0.001 in 6_risultati_discussione.tex per USF-MAE.
+  - **Dettagli:** `metric`: validation loss, `min_delta`: 0.001, `model`: Gemini 3.8 Flash, `patience`: 10, `targets`: ['USFMAE-BM-ES', 'USFMAE-BI-ES']
 - **Design Pedagogico Ibrido (Busuu Grammar + Duolingo Micro-Drill)** (`reasoning-hybrid-pedagogy-engine`)
   - **Tags:** `#pedagogical-engine` `#cloze-test` `#word-bank` `#cefr-schema` `#sqlite-schema`
   - **Sintesi:** Progettazione di un motore a 6 tipologie di esercizio con schede grammaticali preparatorie (stile Busuu) e micro-lezioni a bolle interattive (stile Duolingo) supportate da SQLite e batch generation da corpora di frequenza.
@@ -2775,6 +2779,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#linux` `#3d-modeling` `#software` `#distribuzioni` `#open-source`
   - **Sintesi:** Richiesta di informazioni sull'esistenza di distribuzioni Linux per scaricare e utilizzare software di modellazione 3D.
   - **Dettagli:** `user_prompt`: Esistono distribuzioni Linux che permettono di scaricare software di modellazione 3D?, `context`: Analisi dell'ecosistema open source e professionale per la computer grafica 3D su ambiente Linux.
+- **Verifica Metrica Early Stopping Tesi** (`user-intent-early-stopping-metric-tesi`)
+  - **Tags:** `#tesi` `#early-stopping` `#deep-learning` `#validation-loss`
+  - **Sintesi:** Verifica della metrica monitorata per l'early stopping durante il training nella tesi di laurea.
+  - **Dettagli:** `context`: Capitoli tesi in PresentazioneTesi/_capitoli, `user_prompt`: nel mio lavoro di tesi, ho utilizzato l'early stopping, ma quale metrica monitorvao affinchè io poi blocassi l'addestramento dopo che non andava???
 - **Verifica del Vincolo Architetturale Zero-Cost (0,00€)** (`user-intent-verifica-vincolo-zero-costi`)
   - **Tags:** `#zero-cost` `#budget` `#architettura` `#sostenibilità` `#open-source`
   - **Sintesi:** Controllo rigoroso della gratuità totale (0,00€) di tutte le estensioni, integrazioni, strumenti e modelli proposti per il connettoma.
@@ -2886,6 +2894,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#conversation-episode` `#2026-08-27` `#cognitive-sync`
   - **Sintesi:** Episodio del 2026-08-27T20:38:00CEST: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay
   - **Dettagli:** `raw`: `session_id`: ep_20260827_hierarchical_overlay_reassurance, `timestamp`: 2026-08-27T20:38:00CEST, `topic`: Chiarimento Architetturale: Coesistenza della Topologia a Grafo e dell'Albero Gerarchico come Overlay, `status`: CONSOLIDATED, `participants`: ['Pierfrancesco Amendola', 'AI Assistant']
+- **Chiarimento Metrica Early Stopping Tesi** (`episode-early-stopping-thesis-query`)
+  - **Tags:** `#tesi` `#early-stopping` `#continuità-cognitiva`
+  - **Sintesi:** Recupero parametro di training della tesi: validation loss con patience 10 e min_delta 0.001.
+  - **Dettagli:** `key_takeaways`: Validation loss monitorata per bloccare addestramento di USF-MAE dopo 10 epoche senza riduzione di almeno 0.001., `participants`: ['Pierfrancesco Amendola', 'Gemini 3.8 Flash'], `topic`: Early stopping metric in thesis
 - **Consegna Life Registry iOS MVP** (`episode-life-registry-delivery`)
   - **Tags:** `#delivery` `#life-registry` `#milestone`
   - **Sintesi:** Episodio finale di completamento e verifica dell'applicazione Life Registry.
@@ -4248,6 +4260,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-e2e-test-session-hook-4060`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-e2e-test-session-hook-8745`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-e2e-test-session-hook-9065`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-early-stopping-metric-tesi`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-embedding-projector-globe-and-optics`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-espansione-supercervello-integrazioni`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4422,6 +4435,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-e2e-test-session-hook-4060`) --[RECORDS_INTENT]--> (`user-intent-e2e-test-session-hook-4060`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-8745`) --[RECORDS_INTENT]--> (`user-intent-e2e-test-session-hook-8745`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-9065`) --[RECORDS_INTENT]--> (`user-intent-e2e-test-session-hook-9065`) *(Corpo Calloso)*
+- (`episode-early-stopping-thesis-query`) --[RECORDS_INTENT]--> (`user-intent-early-stopping-metric-tesi`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_INTENT]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-embedding-projector-globe-and-optics`) --[RECORDS_INTENT]--> (`user-intent-embedding-projector-globe-and-optics`) *(Corpo Calloso)*
 - (`episode-espansione-ecosistema-supercervello`) --[RECORDS_INTENT]--> (`user-intent-espansione-supercervello-integrazioni`) *(Corpo Calloso)*
@@ -4519,6 +4533,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-e2e-test-session-hook-4060`) --[RECORDS_REASONING]--> (`reasoning-e2e-test-session-hook-4060`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-8745`) --[RECORDS_REASONING]--> (`reasoning-e2e-test-session-hook-8745`) *(Corpo Calloso)*
 - (`episode-e2e-test-session-hook-9065`) --[RECORDS_REASONING]--> (`reasoning-e2e-test-session-hook-9065`) *(Corpo Calloso)*
+- (`episode-early-stopping-thesis-query`) --[RECORDS_REASONING]--> (`reasoning-early-stopping-validation-loss-thesis`) *(Corpo Calloso)*
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[RECORDS_REASONING]--> (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) *(Corpo Calloso)*
 - (`episode-embedding-projector-globe-and-optics`) --[RECORDS_REASONING]--> (`reasoning-embedding-projector-globe-and-optics`) *(Corpo Calloso)*
 - (`episode-espansione-ecosistema-supercervello`) --[RECORDS_REASONING]--> (`reasoning-architettura-ecosistema-cognitivo-onnipresente`) *(Corpo Calloso)*
@@ -5097,6 +5112,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-e2e-test-session-hook-4060`) --[FULFILLS]--> (`user-intent-e2e-test-session-hook-4060`)
 - (`reasoning-e2e-test-session-hook-8745`) --[FULFILLS]--> (`user-intent-e2e-test-session-hook-8745`)
 - (`reasoning-e2e-test-session-hook-9065`) --[FULFILLS]--> (`user-intent-e2e-test-session-hook-9065`)
+- (`reasoning-early-stopping-validation-loss-thesis`) --[FULFILLS]--> (`user-intent-early-stopping-metric-tesi`)
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[FULFILLS]--> (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`)
 - (`reasoning-eliminazione-jarvis-pulizia`) --[FULFILLS]--> (`user-intent-abbandono-jarvis-nuovo-progetto`)
 - (`reasoning-embedding-projector-globe-and-optics`) --[FULFILLS]--> (`user-intent-embedding-projector-globe-and-optics`)
@@ -5229,6 +5245,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-e2e-test-session-hook-4060`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-e2e-test-session-hook-8745`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-e2e-test-session-hook-9065`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-early-stopping-thesis-query`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-embedding-projector-globe-and-optics`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-espansione-ecosistema-supercervello`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5329,6 +5346,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-e2e-test-session-hook-4060`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-e2e-test-session-hook-8745`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
 - (`reasoning-e2e-test-session-hook-9065`) --[OPTIMIZES]--> (`proj-cervelloartificiale`)
+- (`reasoning-early-stopping-validation-loss-thesis`) --[OPTIMIZES]--> (`proj-codice_architettura_tesi`)
 - (`reasoning-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-embedding-projector-globe-and-optics`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-fix-daemon-render-persistence`) --[OPTIMIZES]--> (`universal-ai-brain`)
@@ -5464,6 +5482,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-e2e-test-session-hook-4060`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-e2e-test-session-hook-8745`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-e2e-test-session-hook-9065`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
+- (`user-intent-early-stopping-metric-tesi`) --[TARGETS_PROJECT]--> (`proj-codice_architettura_tesi`)
 - (`user-intent-ehi-jarvis-ehi-jarvis-mi-puoi-dire-3176`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-embedding-projector-globe-and-optics`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-espansione-supercervello-integrazioni`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
