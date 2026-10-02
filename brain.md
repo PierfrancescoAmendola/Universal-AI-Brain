@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-10-02 10:55:21 UTC | **Nodi Restituiti:** 739 (SX: 510 · DX: 229) | **Sinapsi Restituite:** 1673
-> **Consistenza Reale Connettoma:** 739 Nodi Totali nel Database | 1673 Sinapsi Totali
+> **Data Generazione:** 2026-10-02 10:56:21 UTC | **Nodi Restituiti:** 742 (SX: 512 · DX: 230) | **Sinapsi Restituite:** 1680
+> **Consistenza Reale Connettoma:** 742 Nodi Totali nel Database | 1680 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -616,6 +616,10 @@
   - **Tags:** `#testing` `#obfuscation` `#code-review`
   - **Sintesi:** Validazione funzionale e architetturale per le tre nuove feature, 61/61 test passati e app riavviata con successo su simulatore iPhone 15.
   - **Dettagli:** `actions_taken`: ['Refactoring selettore lingua in ProfileScreen con card compatta e modal bottom sheet fluido', 'Creazione componente RateAppDialog a 5 stelle con salvataggio su StorageService ed entry dedicata nelle Impostazioni', 'Implementazione codice segreto con verifica XOR offuscata e sblocco immediato a vita nel paywall', 'Esecuzione e passaggio del 100% dei test (61/61 test passati, 0 warning)'], `model`: Antigravity Reviewer, `outcome`: Tutti i requisiti implementati con cura, sicurezza aumentata contro reverse engineering e test completati con successo
+- **Verifica MCP e Aggancio Skill Claude** (`reasoning-setup-claude-universal-brain`)
+  - **Tags:** `#claude-desktop` `#mcp-config` `#skill-linking`
+  - **Sintesi:** Confermata la connessione attiva del server MCP in Claude Desktop, collegata la skill e configurato CLAUDE.md.
+  - **Dettagli:** `actions_taken`: ['Verificato claude_desktop_config.json con mcpServers universal-ai-brain', 'Verificato processo attivo mcp_server.py in Claude.app', 'Creato symlink universal-brain in ~/.claude/skills/', 'Aggiornato ~/.claude/CLAUDE.md con trigger e protocollo'], `model`: Gemini 3.8 Flash, `outcome`: Claude Desktop collegato a brain.db con 20 tool MCP e skill pronta
 - **Verifica Smart Rating Gate e ReviewService** (`reasoning-apppalette-in-app-review-verification`)
   - **Tags:** `#storekit` `#in-app-review` `#flutter-tests`
   - **Sintesi:** Architettura di recensione validata con 16 test mirati, re-entrancy guard, gestione web safety e test suite completa a 74 test passati.
@@ -1985,6 +1989,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#supercervello` `#raycast` `#safari-clipper` `#siri` `#rem-cycle` `#obsidian-canvas` `#zero-cost`
   - **Sintesi:** Costruzione completa e collaudo a 10 test di tutti i moduli di estensione: Raycast, Web Clipper Safari, Siri Voice Note, Daily Pulse Telegram, Kindle Sync, REM Cycle, Ricerca Ibrida RRF, IDE Hooks e Obsidian Canvas.
   - **Dettagli:** `context`: Costruzione dell'intero ecosistema ad attrito zero su Safari, Mac, Mobile e demone notturno, `user_prompt`: allora procedi con l'implementazione del piano chiaro??? io utilizzo safari. va bene l'orario che hai stabilito. procedi, mi raaccomando, vai piano piano
+- **Installazione MCP e Skill Universal Brain su Claude Desktop** (`user-intent-setup-claude-universal-brain`)
+  - **Tags:** `#claude` `#mcp` `#setup` `#integrazione`
+  - **Sintesi:** Configurazione del connettoma bi-emisferico e della skill su Claude Desktop per macOS.
+  - **Dettagli:** `context`: Claude Desktop macOS, abbonamento Pro 20€ attivo, installazione MCP e skill universal brain, `user_prompt`: ho fatto l'abbonamento a claude 20 euro e ho scaricato l'app per mac installa su claude la skill e il mcp tool universal brain
 - **Integrazione Emisferi Globo, Ottica Spaziale e Refinements Projector 3D** (`user-intent-embedding-projector-globe-and-optics`)
   - **Tags:** `#ui` `#projector3d` `#webgl` `#threejs` `#optics`
   - **Sintesi:** Implementazione della modalità Mappamondo Sferico con distribuzione bi-emisferica, controlli slider GPU per distanza nodi, luminosità pura e opacità archi, e pulsante di uscita rosso in basso a sinistra.
@@ -3018,6 +3026,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#jarvis` `#voice-chat` `#continuità-cognitiva`
   - **Sintesi:** Dialogo vocale in tempo reale tra Pierfrancesco e JARVIS su quanti nodi ci sono nel mio cervell....
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'openai/gpt-oss-120b'], `topic`: quanti nodi ci sono nel mio cervell...
+- **Episodio: Attivazione Claude Desktop nel Connettoma** (`episode-setup-claude-universal-brain`)
+  - **Tags:** `#claude` `#universal-brain` `#mcp`
+  - **Sintesi:** Attivazione e verifica di Claude Desktop come secondo agente sincronizzato su Universal AI Brain.
+  - **Dettagli:** `key_takeaways`: Claude Desktop è ora un nodo attivo dell'ecosistema con accesso in lettura e scrittura a brain.db., `participants`: ['Pierfrancesco Amendola', 'Antigravity'], `pending_tasks`: Incollare istruzioni di sistema in Claude Desktop se necessario, `topic`: Setup Claude Desktop & Universal Brain
 - **Episodio: Audit Totale & Continuità Cognitiva Cross-Chat** (`episode-audit-completo-e-potenziamento-skill`)
   - **Tags:** `#sessione-audit` `#pierfrancesco` `#universal-brain` `#cross-chat-memory` `#metamemoria`
   - **Sintesi:** Sessione di audit intensivo, correzione bug su backend/MCP/Telegram, potenziamento formale della skill per continuità cross-chat e persistenza delle risposte fornite nel knowledge graph.
@@ -4311,6 +4323,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-sessione-di-lavoro-4157`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-sessione-di-lavoro-5986`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-setup-claude-universal-brain`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-smart-rating-gate-promo-code`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-alberi-heap`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-spiegazione-intuitiva-concetti-causali-attention`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4482,6 +4495,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-sessione-di-lavoro-5986`) --[RECORDS_INTENT]--> (`user-intent-sessione-di-lavoro-5986`) *(Corpo Calloso)*
 - (`episode-sessione-software-testing-ingegneria`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-software-testing`) *(Corpo Calloso)*
 - (`episode-sessione-spiegazione-heap`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-alberi-heap`) *(Corpo Calloso)*
+- (`episode-setup-claude-universal-brain`) --[RECORDS_INTENT]--> (`user-intent-setup-claude-universal-brain`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_INTENT]--> (`user-intent-calcolo-rendimento-azione-86euro`) *(Corpo Calloso)*
 - (`episode-smart-rating-gate`) --[RECORDS_INTENT]--> (`user-intent-smart-rating-gate-promo-code`) *(Corpo Calloso)*
 - (`episode-statistica-descrittiva-dispersione`) --[RECORDS_INTENT]--> (`user-intent-spiegazione-varianza-deviazione-standard`) *(Corpo Calloso)*
@@ -4581,6 +4595,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-sessione-di-lavoro-5986`) --[RECORDS_REASONING]--> (`reasoning-sessione-di-lavoro-5986`) *(Corpo Calloso)*
 - (`episode-sessione-software-testing-ingegneria`) --[RECORDS_REASONING]--> (`reasoning-sintesi-tassonomia-testing`) *(Corpo Calloso)*
 - (`episode-sessione-spiegazione-heap`) --[RECORDS_REASONING]--> (`reasoning-analisi-struttura-heap`) *(Corpo Calloso)*
+- (`episode-setup-claude-universal-brain`) --[RECORDS_REASONING]--> (`reasoning-setup-claude-universal-brain`) *(Corpo Calloso)*
 - (`episode-simulazione-rendimento-azionario-86euro`) --[RECORDS_REASONING]--> (`ai-reasoning-proiezione-capital-gain-86euro`) *(Corpo Calloso)*
 - (`episode-smart-rating-gate`) --[RECORDS_REASONING]--> (`reasoning-smart-rating-gate-implementation`) *(Corpo Calloso)*
 - (`episode-statistica-descrittiva-dispersione`) --[RECORDS_REASONING]--> (`reasoning-spiegazione-indici-dispersione`) *(Corpo Calloso)*
@@ -5066,6 +5081,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[EXPRESSES_SYNTHESIS]--> (`creative-multidisciplinary`)
 - (`adb_exam_density_compression`) --[EXTENDS]--> (`adb_lezione2_pyramid_and_file_ops`)
 - (`pipeline-experiment-logging-framework`) --[EXTENDS]--> (`pipeline-mg-dvon-busbra-research`)
+- (`reasoning-setup-claude-universal-brain`) --[EXTENDS]--> (`universal-ai-brain`)
 - (`user-intent-provenance-model-tracking`) --[EXTENDS]--> (`ai-memory-ingest-spec`)
 - (`proj-jarvis-voice-assistant`) --[EXTENDS_BRAIN]--> (`universal-ai-brain`)
 - (`concept-graph-of-graphs-hypergraph`) --[EXTENDS_MODULARITY]--> (`concept-modular-domain-subgraphs`)
@@ -5167,6 +5183,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-semplificazione-concettuale-causal-dl`) --[FULFILLS]--> (`user-intent-spiegazione-intuitiva-concetti-causali-attention`)
 - (`reasoning-sessione-di-lavoro-4157`) --[FULFILLS]--> (`user-intent-sessione-di-lavoro-4157`)
 - (`reasoning-sessione-di-lavoro-5986`) --[FULFILLS]--> (`user-intent-sessione-di-lavoro-5986`)
+- (`reasoning-setup-claude-universal-brain`) --[FULFILLS]--> (`user-intent-setup-claude-universal-brain`)
 - (`reasoning-sintesi-tassonomia-testing`) --[FULFILLS]--> (`user-intent-spiegazione-software-testing`)
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
 - (`reasoning-smart-rating-gate-implementation`) --[FULFILLS]--> (`user-intent-smart-rating-gate-promo-code`)
@@ -5297,6 +5314,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-sessione-di-lavoro-5986`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-sessione-software-testing-ingegneria`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-sessione-spiegazione-heap`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-setup-claude-universal-brain`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-simulazione-rendimento-azionario-86euro`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-smart-rating-gate`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-statistica-descrittiva-dispersione`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5531,6 +5549,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-sessione-di-lavoro-4157`) --[TARGETS_PROJECT]--> (`proj-digital-art-museum`)
 - (`user-intent-sessione-di-lavoro-5986`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
+- (`user-intent-setup-claude-universal-brain`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-smart-rating-gate-promo-code`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-subtracker-i18n-completion-and-brain-sync`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
 - (`user-intent-subtracker-i18n-currency-ux-overhaul`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
