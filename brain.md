@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-10-02 11:34:21 UTC | **Nodi Restituiti:** 742 (SX: 512 · DX: 230) | **Sinapsi Restituite:** 1680
-> **Consistenza Reale Connettoma:** 742 Nodi Totali nel Database | 1680 Sinapsi Totali
+> **Data Generazione:** 2026-10-02 11:34:50 UTC | **Nodi Restituiti:** 745 (SX: 514 · DX: 231) | **Sinapsi Restituite:** 1688
+> **Consistenza Reale Connettoma:** 745 Nodi Totali nel Database | 1688 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -612,6 +612,10 @@
   - **Tags:** `#analisi-architetturale` `#pkm` `#fastembed` `#sqlite-wal` `#rem-cycle`
   - **Sintesi:** Analisi dell'architettura proposta: approvazione dell'approccio zero-cost locale e validazione dei moduli di cattura a zero-friction, consolidamento notturno REM e integrazione IDE. Evidenziati accorgimenti su concurrency SQLite e modelli multilingua.
   - **Dettagli:** `actions_taken`: ['Verifica vincoli 0,00€ e assenza dipendenze esterne a pagamento', 'Analisi robustezza moduli Fase 1-5 (Raycast, Web Clipper, FastEmbed, Canvas Sync, IDE Hooks)', 'Formulazione raccomandazioni tecniche (busy_timeout SQLite WAL, embedding multilingua)'], `model`: Gemini, `outcome`: Piano validato come pienamente idoneo alla transizione verso un Cognitive OS autonomo.
+- **Valutazione: verbatim nei details, summary breve** (`reasoning-review-migrazione-verbatim`)
+  - **Tags:** `#review` `#embedding` `#fts5` `#verbatim`
+  - **Sintesi:** Il codice funziona (test full_suite 7/7 e obsidian_sync 3/3 passano con unittest; pytest non è installato nel python di sistema), ma non è ottimizzato. Il problema principale è che il summary viene usato come campo indice e anteprima: entra nell'embedding di LightweightDenseVectorizer (dim=256 con n-grammi 3/4 in hash), nell'indice FTS5, nei risultati di brain_search, in format_tree_as_markdown e nell'export brain.md. Un summary verbatim lungo satura i 256 bucket, appiattisce i vettori e degrada la ricerca semantica. Gonfia anche i token dei risultati MCP e duplica il testo (summary uguale a details.responses_given in AI_REASONING). Raccomandazione: tenere il testo verbatim solo nei details, perché il renderer Obsidian legge già i details; tenere il summary a 1-2 frasi dense o limitarlo, per esempio a circa 400 caratteri. Nel hook session_end_ingest ci sono valori hardcoded falsi ('Task implementato e verificato con successo', 'Session completed and verified'). Il parsing di git status si rompe sui path con spazi; meglio usare --porcelain -z. Il suffisso id di 4 cifre dell'epoch può collidere.
+  - **Dettagli:** `model`: Claude Opus 5.5, `actions_taken`: ['git diff dei file modificati', 'brain_search sul contesto precedente', 'analisi degli usi di summary in main.py, mcp_server.py e brain_vectors.py', 'esecuzione dei test con unittest', 'statistiche sulla lunghezza dei summary in brain.db'], `outcome`: Proposte: summary breve con verbatim nei details, embedding su label più summary breve, fix dell'hook. Nessuna modifica applicata.
 - **Verifica Completa Chicche UX e Sicurezza Codice Segreto** (`reasoning-apppalette-chicche-ux-verification`)
   - **Tags:** `#testing` `#obfuscation` `#code-review`
   - **Sintesi:** Validazione funzionale e architetturale per le tre nuove feature, 61/61 test passati e app riavviata con successo su simulatore iPhone 15.
@@ -2643,6 +2647,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#subtracker` `#rating-gate` `#storekit` `#promo-code` `#app-store`
   - **Sintesi:** Recupero della chiave segreta Pro ('pierfrancescoAmendolaSubTrackerApp') e implementazione dello Smart Rating Gate a due vie (4-5 stelle su StoreKit/App Store con limite 3/anno, 1-3 stelle salvate in locale).
   - **Dettagli:** `context`: Richiesta codice segreto promo per SubTracker Pro e implementazione Smart Rating Gate ufficiale Apple con filtro 4-5 stelle verso App Store e 1-3 stelle salvate in locale, `user_prompt`: la prima dimmi qual'è la chiave segreta, il codice che bisogna inserire per sbloccare il pro??? poi inserisci questa feature: Smart Rating Gate Ufficiale Apple...
+- **Review della migrazione a contenuto verbatim** (`user-intent-review-migrazione-verbatim`)
+  - **Tags:** `#review` `#verbatim` `#ottimizzazione`
+  - **Sintesi:** dimmi che ne pensi, dimmi se ci sono modifiche che dovremmo fare, se è otimizzato al massimo, se funziona. /universal-brain /caveman wenyan-ultra
+  - **Dettagli:** `user_prompt`: dimmi che ne pensi, dimmi se ci sono modifiche che dovremmo fare, se è otimizzato al massimo, se funziona. /universal-brain /caveman wenyan-ultra, `context`: Modifiche non committate a sync_brain.py, ide_hooks/session_end_ingest.py, SKILL.md e prompt.md che rimuovono i troncamenti e salvano contenuto integrale nel campo summary.
 - **Revisione Piano Supercervello Ubiquitous Cognitive OS** (`user-intent-review-piano-supercervello-os`)
   - **Tags:** `#piano-implementazione` `#supercervello` `#architettura` `#zero-cost` `#knowledge-graph`
   - **Sintesi:** Richiesta di revisione strategica ed ingegneristica del piano di estensione del cervello artificiale in un Cognitive OS ubiquo a costo zero.
@@ -3318,6 +3326,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#universal-hub` `#sessione-chat`
   - **Sintesi:** Conversazione tra Pierfrancesco e openai/gpt-oss-120b (groq) su non riesci a connetterti al mio cer....
   - **Dettagli:** `raw`: `participants`: ['Pierfrancesco Amendola', 'groq (openai/gpt-oss-120b)'], `topic`: non riesci a connetterti al mio cer...
+- **Episodio: review della migrazione verbatim** (`episode-review-migrazione-verbatim`)
+  - **Tags:** `#chat` `#review` `#continuità-cognitiva`
+  - **Sintesi:** Pierfrancesco ha chiesto una review delle modifiche che portano a salvare contenuto integrale. Esito: le modifiche funzionano, ma mettere il testo verbatim nel summary danneggia embedding, FTS e consumo di token. Il testo verbatim va nei details.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Claude Opus 5.5'], `topic`: Review della migrazione a contenuto verbatim, `key_takeaways`: Il summary è un campo indice e di anteprima e deve restare breve. Il contenuto integrale va nei details., `pending_tasks`: Decidere se applicare il refactoring: summary breve, verbatim nei details, fix dell'hook, installare pytest.
 - **Implementazione Operativa MG-DVON e Heatmap** (`episode-busbra-mg-dvon-implementation`)
   - **Tags:** `#implementation` `#mg-dvon` `#paper` `#brain-sync`
   - **Sintesi:** Costruzione completa dell'ambiente virtuale, dell'architettura neurale, del modulo Grad-CAM e verifica end-to-end con checkpoint e figure salvate.
@@ -4315,6 +4327,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-redesign-sito-subtracker`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-review-migrazione-verbatim`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-review-piano-supercervello-os`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-rewrite-narrative-appunti-riccio`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-ricerca-idee-app-abbonamento-micro-saas`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4489,6 +4502,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_INTENT]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-redesign-sito-subtracker`) --[RECORDS_INTENT]--> (`user-intent-redesign-sito-subtracker`) *(Corpo Calloso)*
+- (`episode-review-migrazione-verbatim`) --[RECORDS_INTENT]--> (`user-intent-review-migrazione-verbatim`) *(Corpo Calloso)*
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_INTENT]--> (`user-intent-accorciamento-cappello-capitolo-6`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_INTENT]--> (`user-intent-review-piano-supercervello-os`) *(Corpo Calloso)*
 - (`episode-sessione-di-lavoro-4157`) --[RECORDS_INTENT]--> (`user-intent-sessione-di-lavoro-4157`) *(Corpo Calloso)*
@@ -4589,6 +4603,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-le-abitudini-monitorate-2979`) *(Corpo Calloso)*
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[RECORDS_REASONING]--> (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) *(Corpo Calloso)*
 - (`episode-redesign-sito-subtracker`) --[RECORDS_REASONING]--> (`reasoning-redesign-sito-subtracker`) *(Corpo Calloso)*
+- (`episode-review-migrazione-verbatim`) --[RECORDS_REASONING]--> (`reasoning-review-migrazione-verbatim`) *(Corpo Calloso)*
 - (`episode-revisione-sintesi-cappello-cap-6`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-sintetica-testo`) *(Corpo Calloso)*
 - (`episode-revisione-supercervello-cognitive-os`) --[RECORDS_REASONING]--> (`reasoning-valutazione-architetturale-supercervello`) *(Corpo Calloso)*
 - (`episode-sessione-di-lavoro-4157`) --[RECORDS_REASONING]--> (`reasoning-sessione-di-lavoro-4157`) *(Corpo Calloso)*
@@ -5176,6 +5191,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[FULFILLS]--> (`user-intent-quali-sono-le-abitudini-monitorate-2979`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[FULFILLS]--> (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`)
 - (`reasoning-redesign-sito-subtracker`) --[FULFILLS]--> (`user-intent-redesign-sito-subtracker`)
+- (`reasoning-review-migrazione-verbatim`) --[FULFILLS]--> (`user-intent-review-migrazione-verbatim`)
 - (`reasoning-rewrite-narrative-appunti-riccio`) --[FULFILLS]--> (`user-intent-rewrite-narrative-appunti-riccio`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[FULFILLS]--> (`user-intent-creazione-repo-jarvis-desktop`)
 - (`reasoning-risoluzione-residui-ollama-mac`) --[FULFILLS]--> (`user-intent-rimozione-modello-ollama-mac`)
@@ -5307,6 +5323,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-quali-sono-le-abitudini-monitorate-2979`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-redesign-sito-subtracker`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-review-migrazione-verbatim`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-sintesi-cappello-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-revisione-supercervello-cognitive-os`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-rewrite-narrative-appunti-riccio`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5401,6 +5418,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-quali-sono-le-abitudini-monitorate-2979`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-redesign-sito-subtracker`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
+- (`reasoning-review-migrazione-verbatim`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-rilascio-jarvis-desktop-completato`) --[OPTIMIZES]--> (`proj-jarvis-voice-assistant`)
 - (`reasoning-ristrutturazione-sigillo-12-domini-completata`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-sessione-di-lavoro-4157`) --[OPTIMIZES]--> (`proj-digital-art-museum`)
@@ -5472,6 +5490,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`doc-master-research-mg-dvon`) --[RESOLVES_DEFECT]--> (`pipeline-mg-dvon-busbra-research`)
 - (`concept-llm-indirect-injection-safeguard`) --[RESOLVES_ISSUE_OF]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
 - (`ai-reasoning-hybrid-cloud-local-symbiosis`) --[RESPONDS_TO_INTENT]--> (`intent-clarify-render-cloud-utility-and-llm-web-refusal`)
+- (`reasoning-review-migrazione-verbatim`) --[REVIEWS]--> (`reasoning-contenuto-completo-obsidian`)
 - (`person-pierfrancesco`) --[ROOTED_IN]--> (`rel-napoli-culture`)
 - (`project-royal-gambit-chess`) --[SATISFIES]--> (`user-intent-duolingo-chess-preference`)
 - (`reasoning-hybrid-pedagogy-engine`) --[SOLVES]--> (`intent-personal-language-app-structure`)
@@ -5545,6 +5564,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-redesign-sito-subtracker`) --[TARGETS_PROJECT]--> (`proj-appabbonamenti`)
+- (`user-intent-review-migrazione-verbatim`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-review-piano-supercervello-os`) --[TARGETS_PROJECT]--> (`proj-cervelloartificiale`)
 - (`user-intent-ristrutturazione-sigillo-12-macro-domini`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-sessione-di-lavoro-4157`) --[TARGETS_PROJECT]--> (`proj-digital-art-museum`)
