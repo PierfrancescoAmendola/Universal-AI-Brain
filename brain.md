@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-10-02 13:26:19 UTC | **Nodi Restituiti:** 749 (SX: 517 · DX: 232) | **Sinapsi Restituite:** 1696
-> **Consistenza Reale Connettoma:** 749 Nodi Totali nel Database | 1696 Sinapsi Totali
+> **Data Generazione:** 2026-10-02 13:27:19 UTC | **Nodi Restituiti:** 750 (SX: 518 · DX: 232) | **Sinapsi Restituite:** 1696
+> **Consistenza Reale Connettoma:** 750 Nodi Totali nel Database | 1696 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -1339,6 +1339,10 @@ XcodeGen keeps project generation deterministic; generated `.xcodeproj` is commi
   - **Tags:** `#javascript` `#mac-project` `#web`
   - **Sintesi:** Progetto Mac: Auth Screens. Stack: JavaScript.
   - **Dettagli:** `local_path`: /Users/pierfrancesco/Downloads/Auth_Screens, `file_uri`: file:///Users/pierfrancesco/Downloads/Auth_Screens, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: False, `relevant_files_count`: 3, `last_modified`: 2026-05-04T03:18:18+00:00, `key_dependencies`: [], `readme_excerpt`: 
+- **BUS-BRA thesis to paper (MSCA prep)** (`project-busbra-thesis-paper`)
+  - **Tags:** `#thesis` `#breast-ultrasound` `#bus-bra` `#usf-mae` `#paper` `#msca`
+  - **Sintesi:** Pierfrancesco's master thesis (ICAR-CNR / Federico II): ResNet-34 ImageNet vs SimCLR vs USF-MAE on BUS-BRA, B/M and BI-RADS 2-5. Wants first publication for Marie Curie application.
+  - **Dettagli:** `raw`: Audit 2026-10-02: validation set = test fold ('Testing_validation') in CNN_Potenziata.py and usf_mae*.py -> early stopping/model selection/hyperparams chosen on test; official valid_k columns in 5-fold-cv.csv unused. Thesis tables report Last_Epoch rows. Whole image resized 224x224 (no ROI); official BUS-BRA baseline uses mask bbox+10px crop, contrast stretching, padding, mask as RGB channel (oracle) -> ResNet-50 AUC 0.944. Rotation 0-345 and vflip unrealistic. Focal loss computed on label-smoothed CE. USF-MAE fine-tune: CLS token, no LLRD/warmup/drop-path; USF-MAE paper reports F1 0.816 on BUS-BRA. USF-MAE pretraining (OpenUS) includes BrEaST, UDIAT, BUS-UC, BUS-UCLM. Devices: GE Logiq5 809, GE Logiq7 902, Toshiba 139, U-Systems 25. Proposed paper: leakage-free benchmark of ROI/oracle-mask effect + FM adaptation (LP/FT-LLRD/LoRA) + ordinal multitask BI-RADS + cross-device/external validation.
 - **Basi Di Dati Esercizi** (`proj-basi-di-dati-esercizi`)
   - **Tags:** `#mac-project`
   - **Sintesi:** Progetto Mac: Basi Di Dati Esercizi. Stack: Varie.
