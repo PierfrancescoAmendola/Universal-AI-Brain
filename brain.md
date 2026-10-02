@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-10-02 13:02:31 UTC | **Nodi Restituiti:** 745 (SX: 514 · DX: 231) | **Sinapsi Restituite:** 1688
-> **Consistenza Reale Connettoma:** 745 Nodi Totali nel Database | 1688 Sinapsi Totali
+> **Data Generazione:** 2026-10-02 13:03:27 UTC | **Nodi Restituiti:** 749 (SX: 517 · DX: 232) | **Sinapsi Restituite:** 1696
+> **Consistenza Reale Connettoma:** 749 Nodi Totali nel Database | 1696 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -592,6 +592,10 @@
   - **Tags:** `#analisi-strategica` `#micro-saas` `#automazione-b2b` `#asset-digitali` `#editoria-tecnica`
   - **Sintesi:** Strutturazione di quattro canali scalabili a costo zero (Automazioni B2B, Micro-SaaS/App Freemium, Boilerplate di codice, Editoria tecnica KDP/Gumroad) con stime di conversione unitarie per raggiungere il target 100-500€/mese.
   - **Dettagli:** `model`: Gemini, `actions_taken`: ['Mappatura delle competenze tecniche su modelli B2B e B2C a basso rischio.', 'Definizione dei 4 pilastri: Automazioni/Agenti per PMI, Micro-App su abbonamento, Vendita Boilerplate/Template, Editoria tecnica specializzata.', "Calcolo del volume di vendita necessario per ciascun canale per raggiungere l'obiettivo prefissato.", "Realizzazione della matrice comparativa di ritorno economico e barriera all'ingresso."], `outcome`: Presentazione di alternative concrete orientate alla creazione di valore diretto e asset riutilizzabili.
+- **Strategia: primo paper = tesi BUS-BRA rigorosa, poi side project AI4Science** (`reasoning-strategia-primo-paper-msca`)
+  - **Tags:** `#strategia-pubblicazione` `#leakage` `#ai4science` `#msca`
+  - **Sintesi:** Raccomandato: primo paper = rifacimento rigoroso tesi BUS-BRA (leakage-free benchmark, ROI, augmentation physics-aware, validazione esterna) con prof ICAR-CNR coautori; profilo coerente 'AI affidabile per dati scientifici/biomedici'. Secondo progetto opzionale: peptidi antimicrobici con ESM-2 e split per omologia, oppure proprietà molecolari con scaffold split. Canali: arXiv, workshop (MICCAI ASMUS, NeurIPS/ICLR AI4Science, MLSB), ML Reproducibility Challenge (TMLR). Segnalato requisito MSCA DN: titolo di accesso al dottorato, di solito laurea magistrale.
+  - **Dettagli:** `model`: Claude Opus 5.5, `responses_given`: Piano ottobre-dicembre paper tesi, da gennaio side project, ricerca bandi MSCA DN su EURAXESS, `actions_taken`: ['brain_search su memoria esistente', 'analisi strategica opzioni paper a costo zero'], `outcome`: Piano di pubblicazione proposto; in attesa conferma per correggere il leakage in train_resnet_busbra.py
 - **Tassonomia Architetturale: Cloud Database vs Local-First Graph PKM** (`reasoning-tassonomia-pkm-rag-notion-obsidian`)
   - **Tags:** `#graph-rag` `#local-first` `#markdown` `#relational-pkm` `#mcp`
   - **Sintesi:** Formalizzazione della dicotomia tra Notion (database relazionale cloud-first con metadati strutturati) e Obsidian (knowledge graph locale su file .md per privacy e GraphRAG).
@@ -1849,6 +1853,11 @@ Un'applicazione iOS nativa per il tracciamento e la simulazione della carriera u
   - **Sintesi:** Progetto Mac: Workspace. Stack: JavaScript.
   - **Dettagli:** `local_path`: /Users/pierfrancesco/Downloads/workspace, `file_uri`: file:///Users/pierfrancesco/Downloads/workspace, `languages`: ['JavaScript'], `frameworks`: [], `has_git`: True, `relevant_files_count`: 5, `last_modified`: 2026-08-30T14:35:35+00:00, `key_dependencies`: [], `readme_excerpt`: # Prova
 
+### [Macro-Label: `ROOT_DOMAIN`]
+- **Ricerca Scientifica e Pubblicazioni** (`domain-ricerca-scientifica`)
+  - **Tags:** `#ricerca` `#pubblicazioni` `#msca` `#dottorato`
+  - **Sintesi:** Macro-dominio per attività di ricerca accademica, paper e candidature a dottorato (es. Marie Skłodowska-Curie).
+
 ### [Macro-Label: `SCRIPT_TOOL`]
 - **App Aule Studio Type Script** (`proj-appaulestudiotypescript`)
   - **Tags:** `#c` `#c-lang` `#javascript` `#mac-project` `#react` `#swift` `#typescript` `#web`
@@ -2759,6 +2768,10 @@ Benvenuto nel repository ufficiale di **Habit Tracker**, un'applicazione iOS nat
   - **Tags:** `#subtracker` `#landing-page` `#web-design` `#aesthetic` `#redesign`
   - **Sintesi:** Richiesta di ristrutturare da capo il sito web dell'applicazione SubTracker, elevandone l'estetica basandosi sulle palette cromatiche, lo stile e il flusso UX dell'app iOS.
   - **Dettagli:** `context`: Workspace AppAbbonamenti (SubTracker), transizione da pagine statiche a landing page e help center in Liquid Glassmorphism dark-luxe, `user_prompt`: /universal-brain. nel progetto di questa applicazione abbiamo creato un sito web, ristrutturalo, cambia tutto, lo voglio more aestetich, più bello. analizza le palette dell'app, il flow, lo stile e crea la pagina da capo
+- **Scrivere primo paper per candidatura dottorato MSCA** (`user-intent-primo-paper-per-msca`)
+  - **Tags:** `#paper` `#msca` `#ai` `#chimica` `#fisica` `#biologia` `#costo-zero`
+  - **Sintesi:** Pierfrancesco vuole pubblicare un primo paper utile, sensato, a costo zero, eseguibile in autonomia, per accedere al programma di dottorato Marie Curie; interessi: AI, chimica, fisica, biologia.
+  - **Dettagli:** `user_prompt`: allora io dovrei scrivere un paper perchè voglio far parte del programma di dottorato marie curie. io sono un informatico e mi piace l'ai. però anche la chimica, fisica, biologia. magari un paper che posso fare io, una ricerca abbastanza utile s buona, anche sensata, magari anche su questi altri ambiti. in modo tale che faccio un paper, qualcosa di utile, che non richieda soldi per realizzarla, ma che mi permetta di accedere a questo mondo delle pubblicaizni, `context`: Tesi triennale su classificazione ecografie mammarie BUS-BRA (ResNet-34, SimCLR, USF-MAE) svolta presso ICAR-CNR; prof suggeriscono di iniziare a pubblicare. Nell'analisi precedente rilevato leakage: selezione epoca/early stopping/iperparametri sul fold di test.
 - **Sincronizzazione GitHub Release SubTracker v1.1 su App Store** (`user-intent-github-sync-subtracker-release-v1-1`)
   - **Tags:** `#subtracker` `#github` `#git-push` `#release-1.1` `#app-store`
   - **Sintesi:** Caricamento completo su GitHub (repo PierfrancescoAmendola/SubTracker) di tutte le modifiche e novità implementate per il rilascio su App Store della versione 1.1 di SubTracker.
@@ -3346,6 +3359,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#episode` `#projector3d` `#design` `#session`
   - **Sintesi:** Sessione di sviluppo per arricchire il visualizzatore neurale 3D con proiezione a globo, controllo di luminosità e spaziatura, e layout ergonomico.
   - **Dettagli:** `key_takeaways`: Il Projector 3D dispone ora di 3 modalità spaziali (3D Volum., 2D Planare, Emisferi Globo), controlli ottici in tempo reale e uscita rapida. Il grafo 2D e la sidebar restano invariati., `participants`: ['Pierfrancesco Amendola', 'Antigravity 2.0'], `pending_tasks`: Nessuno, `topic`: Evoluzione del 3D Cognitive Embedding Projector & Ottica Neurale
+- **Pianificazione primo paper per dottorato Marie Curie** (`episode-pianificazione-primo-paper-msca`)
+  - **Tags:** `#chat` `#continuità-cognitiva` `#ricerca`
+  - **Sintesi:** Dialogo su come entrare nel mondo delle pubblicazioni a costo zero per candidarsi all'MSCA, partendo dalla tesi su ecografie mammarie.
+  - **Dettagli:** `participants`: ['Pierfrancesco Amendola', 'Claude Opus 5.5'], `topic`: Primo paper e strategia MSCA, `key_takeaways`: Non disperdersi: tesi come primo paper con coautori; coerenza del profilo conta più della varietà; verificare requisito laurea magistrale per MSCA DN., `pending_tasks`: Correggere leakage (validazione interna) in train_resnet_busbra.py; aggiungere AUC/QWK, ROI crop, pad-to-square; rilanciare baseline; scrivere preprint arXiv.
 - **Progettazione Piattaforma Personale di Apprendimento Linguistico** (`episode-language-app-architecture`)
   - **Tags:** `#language-learning` `#software-design` `#chat-session`
   - **Sintesi:** Discussione architetturale incentrata sulla creazione di un'applicazione proprietaria e non divulgata per lo studio del portoghese e del tedesco senza restrizioni di utilizzo.
@@ -3927,6 +3944,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`doc-master-research-mg-dvon`) --[AUTHORED_FOR]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`person-pierfrancesco`) --[AUTHOR_OF]--> (`proj-kdp-ai-book`) *(Corpo Calloso)*
 - (`app-store-marketing-assets-subtracker`) --[BELONGS_TO]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
+- (`domain-ricerca-scientifica`) --[BELONGS_TO]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`screenshot-editor-bilingual-deck`) --[BELONGS_TO]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
 - (`ui-component-smart-rating-gate`) --[BELONGS_TO]--> (`proj-appabbonamenti`) *(Corpo Calloso)*
 - (`ux-natural-gesture-controls-3d`) --[BELONGS_TO]--> (`domain-ai-cognitive-systems`) *(Corpo Calloso)*
@@ -4323,6 +4341,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-ottimizzazione-mobile-web-8880`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-cognitivo-obsidian-bridge`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-potenziamento-skill-e-ril-8338`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
+- (`user-intent-primo-paper-per-msca`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quali-sono-i-progetti-principali-di-8169`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quali-sono-le-abitudini-monitorate-2979`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
 - (`user-intent-quanti-nodi-ci-sono-nel-mio-cervell-4794`) --[EXPRESSED_BY]--> (`person-pierfrancesco`) *(Corpo Calloso)*
@@ -4496,6 +4515,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_INTENT]--> (`user-intent-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_INTENT]--> (`user-intent-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-perfezionamento-cappello-tabelle-cap-6`) --[RECORDS_INTENT]--> (`user-intent-integrazione-tabelle-cappello-capitolo-6`) *(Corpo Calloso)*
+- (`episode-pianificazione-primo-paper-msca`) --[RECORDS_INTENT]--> (`user-intent-primo-paper-per-msca`) *(Corpo Calloso)*
 - (`episode-potenziamento-cognitivo-obsidian-bridge`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-cognitivo-obsidian-bridge`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_INTENT]--> (`user-intent-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_INTENT]--> (`user-intent-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
@@ -4597,6 +4617,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-occultamento-pulsanti-mob-9019`) --[RECORDS_REASONING]--> (`reasoning-occultamento-pulsanti-mob-9019`) *(Corpo Calloso)*
 - (`episode-ottimizzazione-mobile-web-8880`) --[RECORDS_REASONING]--> (`reasoning-ottimizzazione-mobile-web-8880`) *(Corpo Calloso)*
 - (`episode-perfezionamento-cappello-tabelle-cap-6`) --[RECORDS_REASONING]--> (`reasoning-integrazione-esplicita-tabelle-comparative`) *(Corpo Calloso)*
+- (`episode-pianificazione-primo-paper-msca`) --[RECORDS_REASONING]--> (`reasoning-strategia-primo-paper-msca`) *(Corpo Calloso)*
 - (`episode-potenziamento-cognitivo-obsidian-bridge`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-cognitivo-obsidian-bridge`) *(Corpo Calloso)*
 - (`episode-potenziamento-skill-e-ril-8338`) --[RECORDS_REASONING]--> (`reasoning-potenziamento-skill-e-ril-8338`) *(Corpo Calloso)*
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[RECORDS_REASONING]--> (`reasoning-quali-sono-i-progetti-principali-di-8169`) *(Corpo Calloso)*
@@ -5204,6 +5225,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-sintesi-teorica-swin-e-deep-stable-learning`) --[FULFILLS]--> (`user-intent-spiegazione-swin-transformer-deep-stable-learning`)
 - (`reasoning-smart-rating-gate-implementation`) --[FULFILLS]--> (`user-intent-smart-rating-gate-promo-code`)
 - (`reasoning-spiegazione-indici-dispersione`) --[FULFILLS]--> (`user-intent-spiegazione-varianza-deviazione-standard`)
+- (`reasoning-strategia-primo-paper-msca`) --[FULFILLS]--> (`user-intent-primo-paper-per-msca`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[FULFILLS]--> (`user-intent-subtracker-i18n-completion-and-brain-sync`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[FULFILLS]--> (`user-intent-subtracker-i18n-currency-ux-overhaul`)
 - (`reasoning-subtracker-release-screenshots-copy`) --[FULFILLS]--> (`user-intent-subtracker-v1-1-release-prep`)
@@ -5317,6 +5339,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`episode-occultamento-pulsanti-mob-9019`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-ottimizzazione-mobile-web-8880`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-perfezionamento-cappello-tabelle-cap-6`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
+- (`episode-pianificazione-primo-paper-msca`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-cognitivo-obsidian-bridge`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-potenziamento-skill-e-ril-8338`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
 - (`episode-quali-sono-i-progetti-principali-di-8169`) --[INTERACTION_WITH]--> (`person-pierfrancesco`)
@@ -5424,6 +5447,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`reasoning-sessione-di-lavoro-4157`) --[OPTIMIZES]--> (`proj-digital-art-museum`)
 - (`reasoning-sessione-di-lavoro-5986`) --[OPTIMIZES]--> (`universal-ai-brain`)
 - (`reasoning-smart-rating-gate-implementation`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
+- (`reasoning-strategia-primo-paper-msca`) --[OPTIMIZES]--> (`domain-ricerca-scientifica`)
 - (`reasoning-subtracker-full-i18n-architecture`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-subtracker-i18n-currency-ux-overhaul`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
 - (`reasoning-subtracker-release-screenshots-copy`) --[OPTIMIZES]--> (`proj-appabbonamenti`)
@@ -5504,6 +5528,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-digital-art-museum-expansion`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
 - (`user-intent-digital-pathology-storage-business`) --[TARGETS_DOMAIN]--> (`domain-medicina-salute`)
 - (`user-intent-obsidian-vault-setup`) --[TARGETS_DOMAIN]--> (`domain-software-engineering`)
+- (`user-intent-primo-paper-per-msca`) --[TARGETS_DOMAIN]--> (`domain-ricerca-scientifica`)
 - (`user-intent-abbandono-jarvis-nuovo-progetto`) --[TARGETS_PROJECT]--> (`proj-jarvis-voice-assistant`)
 - (`user-intent-abbonamento-ai-chatgpt-vs-claude`) --[TARGETS_PROJECT]--> (`universal-ai-brain`)
 - (`user-intent-ai-shorts-evaluation`) --[TARGETS_PROJECT]--> (`domain-finanza-economia`)
