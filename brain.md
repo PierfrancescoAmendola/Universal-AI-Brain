@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-10-03 11:25:36 UTC | **Nodi Restituiti:** 751 (SX: 518 · DX: 233) | **Sinapsi Restituite:** 1697
-> **Consistenza Reale Connettoma:** 751 Nodi Totali nel Database | 1697 Sinapsi Totali
+> **Data Generazione:** 2026-10-03 11:26:39 UTC | **Nodi Restituiti:** 753 (SX: 518 · DX: 235) | **Sinapsi Restituite:** 1700
+> **Consistenza Reale Connettoma:** 753 Nodi Totali nel Database | 1700 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -3630,6 +3630,9 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Tags:** `#domain-hub` `#filosofia` `#etica` `#stoicismo` `#valori-personali` `#decision-making`
   - **Sintesi:** Filosofia, Stoicismo, Modelli Mentali, Principi Etici, Decision Making, Autodisciplina e Modelli di Saggezza.
   - **Dettagli:** `scope`: Philosophy, stoic mental models, ethical principles, core personal values
+- **Laurea in Informatica a 20 anni (2026)** (`fact-pierfrancesco-laurea-2026`)
+  - **Tags:** `#education` `#federico-ii` `#milestone`
+  - **Sintesi:** Laureato in Informatica alla Federico II nel 2026 a 20 anni: primo nella storia del suo corso di laurea a laurearsi prima dei 21 anni. Parla italiano, inglese e spagnolo da madrelingua. Ha una certificazione Yale University.
 - **Lealtà & Cura dei Legami Significativi** (`val-transparency-loyalty`)
   - **Tags:** `#core-value` `#loyalty` `#family` `#friendship`
   - **Sintesi:** Fedeltà incondizionata a chi ha dimostrato supporto autentico, rispetto e presenza nei momenti critici.
@@ -3746,6 +3749,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+- **Libro: Cos'è davvero l'informatica** (`book-cose-davvero-informatica`)
+  - **Tags:** `#book` `#author` `#divulgazione`
+  - **Sintesi:** Libro di divulgazione di Pierfrancesco Amendola, luglio 2026, 250 pagine, italiano, independently published. Amazon: https://amzn.eu/d/03ivBk1e
 - **Mary** (`proj-mary`)
   - **Tags:** `#mac-project` `#web`
   - **Sintesi:** Progetto Mac: Mary. Stack: Varie.
@@ -4680,6 +4686,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`sqlite-wal-persistence`) --[ZERO_OVERHEAD_THEME]--> (`cyber-slate-space-aesthetic`) *(Corpo Calloso)*
 
 ### Connessioni Intra-Emisfero:
+- (`person-pierfrancesco`) --[ACHIEVED]--> (`fact-pierfrancesco-laurea-2026`)
 - (`node-hierarchical-dendrogram`) --[ACTS_AS_INDEXING_OVERLAY_UPON]--> (`node-knowledge-graph-memory`)
 - (`proj-streaksup-app`) --[ALIGNED_WITH]--> (`rule-zero-cost`)
 - (`episode-frontend-deeptech-redesign-and-physics-zero-lag`) --[APPLIED_DESIGN_SYSTEM]--> (`design-token-cyberpunk-minimalist-palette`)
@@ -4690,6 +4697,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-design-creativita`)
 - (`person-pierfrancesco`) --[ARCHITECT_AND_CREATOR]--> (`domain-filosofia-valori`)
 - (`identity-cs-researcher`) --[AUTHORED]--> (`proj-kdp-ai-book`)
+- (`person-pierfrancesco`) --[AUTHORED]--> (`book-cose-davvero-informatica`)
 - (`architecture-mg-dvon-busbra`) --[BELONGS_TO]--> (`domain-medicina-salute`)
 - (`dataset-birads-structured-busbra`) --[BELONGS_TO]--> (`domain-medicina-salute`)
 - (`pipeline-experiment-logging-framework`) --[BELONGS_TO]--> (`domain-medicina-salute`)
@@ -5129,6 +5137,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`user-intent-provenance-model-tracking`) --[EXTENDS]--> (`ai-memory-ingest-spec`)
 - (`proj-jarvis-voice-assistant`) --[EXTENDS_BRAIN]--> (`universal-ai-brain`)
 - (`concept-graph-of-graphs-hypergraph`) --[EXTENDS_MODULARITY]--> (`concept-modular-domain-subgraphs`)
+- (`proj-amendola-studios-website`) --[FEATURES]--> (`book-cose-davvero-informatica`)
 - (`repo-github-universal-ai-brain`) --[FEEDS_DEPLOY]--> (`deploy-render-zero-cost`)
 - (`node-ubiquitous-ingestion`) --[FEEDS_REALTIME_DATA_INTO]--> (`node-knowledge-graph-memory`)
 - (`ai-reasoning-infinite-context-architecture`) --[FORMALIZES]--> (`user-intent-infinite-context-persistence`)
