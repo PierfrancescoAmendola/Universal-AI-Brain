@@ -70,8 +70,8 @@
 ---
 
 # STATO CORRENTE DEL GRAFO COGNITIVO
-> **Data Generazione:** 2026-10-03 10:53:40 UTC | **Nodi Restituiti:** 750 (SX: 518 · DX: 232) | **Sinapsi Restituite:** 1696
-> **Consistenza Reale Connettoma:** 750 Nodi Totali nel Database | 1696 Sinapsi Totali
+> **Data Generazione:** 2026-10-03 10:54:08 UTC | **Nodi Restituiti:** 751 (SX: 518 · DX: 233) | **Sinapsi Restituite:** 1697
+> **Consistenza Reale Connettoma:** 751 Nodi Totali nel Database | 1697 Sinapsi Totali
 
 ### 🏛️ OVERVIEW PALAZZO COGNITIVO (Mappa Globale Permanente)
 - **Macro-Domini Fondativi (Piano 0):** `person-pierfrancesco`, `domain-software-engineering`, `domain-ai-cognitive-systems`, `domain-medicina-salute`, `domain-filosofia-valori`, `domain-design-creativita`.
@@ -3648,6 +3648,10 @@ FreshCheck è un'app mobile minimalista per iOS e Android che ti aiuta a gestire
   - **Dettagli:** `raw`: `mission`: Salute digitale, prevenzione, accessibilità ed educazione
 
 ### [Macro-Label: `PROJECT`]
+- **Amendola Studios — sito web** (`proj-amendola-studios-website`)
+  - **Tags:** `#amendola-studios` `#web` `#design` `#brand`
+  - **Sintesi:** Design della homepage di Amendola Studios: one-page dark navy + blu elettrico (#1FA9FF) dal logo infinito; sezioni Hero, Servizi, Metodo (loop infinito a 6 fasi), Portfolio con filtri e carosello, About con tab, Contatti con form.
+  - **Dettagli:** `design_url`: https://claude.ai/artifact/Mdan39CHb729tcSm2zEUUS, `fonts`: Sora, Manrope, JetBrains Mono, `date`: 2026-10-03
 - **App Alcool** (`proj-appalcool`)
   - **Tags:** `#c` `#c-lang` `#dart` `#flutter` `#javascript` `#mac-project` `#swift` `#typescript` `#web`
   - **Sintesi:** **SafeCheck** is a Flutter mobile app that helps users assess their alcohol consumption safety in real‑time. It combines a series of physical‑performance tests (reflex, balance, coordination, HGN) wit
@@ -5137,6 +5141,7 @@ Un sito web moderno e responsivo che contiene Privacy Policy, Termini e Condizio
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-filosofia-valori`)
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-musica-audio`)
 - (`person-pierfrancesco`) --[FOUNDATIONAL_PILLAR]--> (`domain-relazioni-comunicazione`)
+- (`person-pierfrancesco`) --[FOUNDED]--> (`proj-amendola-studios-website`)
 - (`ai-reasoning-alternative-monetization-strategies`) --[FULFILLS]--> (`user-intent-alternative-income-generation`)
 - (`ai-reasoning-analisi-problemi-ad-alto-impatto-emotivo-economico`) --[FULFILLS]--> (`user-intent-ricerca-idee-app-alto-impatto-reale`)
 - (`ai-reasoning-analisi-psicologia-prezzo-micro-abbonamenti`) --[FULFILLS]--> (`user-intent-ricerca-idee-app-abbonamento-micro-saas`)
